@@ -16,27 +16,26 @@ const icons=[Briefcase01Icon,UserGroupIcon,UserIcon,ComputerIcon];
       <header class="why-introduction">
         <h2 id="why-heading">Why <em>Dr RankUP</em></h2>
       </header>
-      <p class="why-swipe" id="why-scroll-help">Swipe to compare all five areas</p>
-      <div class="why-comparison-scroll" role="region" aria-label="Dr RankUP and alternative delivery models" aria-describedby="why-scroll-help why-context" tabindex="0">
-        <table class="why-comparison">
+      <div class="why-comparison-scroll" role="region" aria-labelledby="why-heading" aria-describedby="why-context">
+        <table class="why-comparison" role="table">
           <caption class="sr-only">{content.heading}: how delivery models approach healthcare growth and technology</caption>
           <colgroup><col class="why-platform-column"/>{content.criteria.map(()=> <col/>)}</colgroup>
-          <thead>
-            <tr>
-              <th scope="col">Approach</th>
-              {content.criteria.map(criterion=><th scope="col"><h3>{criterion.heading}</h3></th>)}
+          <thead role="rowgroup">
+            <tr role="row">
+              <th scope="col" role="columnheader">Approach</th>
+              {content.criteria.map((criterion,index)=><th scope="col" role="columnheader" style={`--criterion-row: ${index+2}`}><h3>{criterion.heading}</h3></th>)}
             </tr>
           </thead>
-          <tbody>
-            <tr class="why-featured" data-why-row>
-              <th scope="row">
+          <tbody role="rowgroup">
+            <tr class="why-featured" role="row" data-why-row>
+              <th scope="row" role="rowheader">
                 <div class="why-platform">
                   <span class="why-brand-icon"><Image src={brand} alt="" title="Dr RankUP brand icon" width={80} height={80} widths={[80,160,240]} sizes="(min-width: 1100px) 64px, 56px" format="webp" loading="lazy" decoding="async"/></span>
                   <div><strong>Dr RankUP</strong><p>{content.brandDescription}</p></div>
                 </div>
               </th>
-              {content.criteria.map(criterion=>(
-                <td><Icon icon={Tick02Icon} size={32} strokeWidth={1.8}/><span class="sr-only">Included in our approach. </span><p class="why-criterion-description">{criterion.description}</p></td>
+              {content.criteria.map((criterion,index)=>(
+                <td role="cell" style={`--criterion-row: ${index+2}`}><Icon icon={Tick02Icon} size={32} strokeWidth={1.8}/><span class="sr-only">Included in our approach. </span><p class="why-criterion-description">{criterion.description}</p></td>
               ))}
             </tr>
             {content.alternatives.map((alternative,index)=>(
@@ -65,7 +64,6 @@ const icons=[Briefcase01Icon,UserGroupIcon,UserIcon,ComputerIcon];
   .why-introduction { display: grid; justify-items: center; gap: 20px; text-align: center; }
   .why-introduction h2 { margin: 0; font-size: clamp(32px,4vw,50px); font-weight: 650; line-height: 1.25; letter-spacing: -.035em; text-wrap: balance; }
   .why-introduction em { font-family: Georgia,'Times New Roman',serif; font-style: italic; font-weight: 600; }
-  .why-swipe { margin: 32px 0 12px; color: #c6d8ce; font-size: 12px; line-height: 1.5; text-align: right; }
   /* Reserve the entrance's 16px travel so it cannot create a nested vertical scroller. */
   .why-comparison-scroll { position: relative; max-width: 100%; overflow-x: auto; overflow-y: hidden; padding-bottom: 16px; scrollbar-width: thin; scrollbar-color: #63df9d #102019; border-radius: 4px; }
   .why-comparison-scroll:focus-visible { outline: 2px solid #bae5ff; outline-offset: 5px; }
@@ -96,12 +94,10 @@ const icons=[Briefcase01Icon,UserGroupIcon,UserIcon,ComputerIcon];
   .why-context { margin: 20px 0 0; color: #b8cdc1; font-size: 12px; line-height: 1.7; }
   @media (min-width: 640px) {
     .why-section { --why-top-space: 72px; padding-bottom: 72px; border-radius: 36px 36px 0 0; }
-    .why-swipe { margin-top: 40px; }
     .why-platform-column { width: 310px; }
   }
   @media (min-width: 1100px) {
     .why-section { --why-top-space: 88px; padding-bottom: 88px; }
-    .why-swipe { display: none; }
     .why-comparison-scroll { margin-top: 48px; }
     .why-comparison { min-width: 0; }
     .why-comparison h3 { font-size: 16px; }
@@ -118,5 +114,22 @@ const icons=[Briefcase01Icon,UserGroupIcon,UserIcon,ComputerIcon];
   }
   @media (min-width: 900px) {
     .why-section { border-radius: 40px 40px 0 0; }
+  }
+  @media (max-width: 1099px) {
+    .why-comparison-scroll { max-width: 760px; margin: 32px auto 0; overflow: visible; }
+    .why-comparison { display: grid; grid-template-columns: minmax(0,1fr); min-width: 0; padding: 0 20px; border: 1px solid #229f6080; border-radius: 24px; background: radial-gradient(ellipse at 0% 100%,#229f6033,transparent 45%),linear-gradient(110deg,#10251b,#0b1711 55%,#153827); }
+    .why-comparison colgroup,.why-comparison thead th:first-child,.why-comparison tbody tr:not(.why-featured) { display: none; }
+    .why-comparison thead,.why-comparison thead tr,.why-comparison tbody,.why-featured { display: contents; }
+    .why-comparison thead th { position: relative; z-index: 1; grid-column: 1; grid-row: var(--criterion-row); align-self: start; padding: 22px 40px 0 0; text-align: left; }
+    .why-comparison h3 { font-size: 16px; }
+    .why-comparison .why-featured th { grid-column: 1; grid-row: 1; padding: 24px 0; border: 0; border-radius: 0; }
+    .why-comparison .why-featured td { position: relative; grid-column: 1; grid-row: var(--criterion-row); min-width: 0; padding: 54px 0 24px; border: 0; border-top: 1px solid #ffffff1f; border-radius: 0; text-align: left; }
+    .why-featured td :global(.ui-icon) { position: absolute; top: 20px; right: 0; width: 24px; height: 24px; color: var(--accent-green-on-dark); }
+    .why-platform { display: grid; grid-template-columns: 56px minmax(0,1fr); align-items: center; gap: 16px; }
+    .why-platform > div { display: contents; }
+    .why-platform strong { font-size: 22px; }
+    .why-platform p { grid-column: 1 / -1; margin: 0; }
+    .why-criterion-description { margin: 0; font-size: 14px; }
+    .why-context { max-width: 760px; margin-inline: auto; }
   }
 </style>
