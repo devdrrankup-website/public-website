@@ -4,12 +4,9 @@
 
 @theme {
   --font-sans: 'Plus Jakarta Sans Variable', system-ui, sans-serif;
-  --color-brand-purple: #6131c6;
-  --color-sky: #bae5ff;
-  --color-micro-green: #e1ffb9;
 }
 
-:root { --ink: #102a35; --muted: #536977; --purple: #6131c6; --accent-green: #165f3a; --accent-green-on-dark: #63df9d; --accent-green-line: #229f602e; --line: #dce9ef; --header-height: 94px; --section-width: 1468px; --section-gutter: 16px; --copy-width: 660px; --copy-gap: 24px; --content-gap: 32px; --section-gap: 40px; }
+:root { --ink: #102a35; --muted: #536977; --purple: #6131c6; --accent-green: #165f3a; --accent-green-on-dark: #63df9d; --accent-green-line: #229f602e; --header-height: 94px; --section-width: 1468px; --section-gutter: 16px; --copy-width: 660px; --copy-gap: 24px; --content-gap: 32px; --section-gap: 40px; }
 html { scroll-behavior: smooth; scroll-padding-top: 108px; }
 body { margin: 0; font-family: var(--font-sans); color: var(--ink); background: #fff; }
 button, summary, a { -webkit-tap-highlight-color: transparent; }

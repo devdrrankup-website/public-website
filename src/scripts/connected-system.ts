@@ -1,6 +1,6 @@
 import {defineScrollSection} from './scroll-section';
 
-defineScrollSection('connected-system',(element,gsap,ScrollTrigger)=>{
+defineScrollSection('connected-system',(element,gsap)=>{
   const scene=element.querySelector<HTMLElement>('.system-hub-scene')!;
   const hub=element.querySelector<HTMLElement>('.system-hub')!;
   const connectors=element.querySelector<SVGElement>('.system-connectors')!;

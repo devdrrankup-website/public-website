@@ -12,14 +12,18 @@ import {navigationMenus} from '../data/navigation';
 <header class="site-header">
   <div class="container">
     <site-navigation class="nav-shell">
-      <div class="brand"><Image src={logo} width={190} widths={[190,380,570]} sizes="(min-width: 1100px) 190px, 174px" format="webp" quality={100} title="Dr RankUP — healthcare growth and technology" alt="Dr RankUP" loading="eager"/></div>
+      <div class="brand"><Image src={logo} width={224} widths={[190,224,380,448,570,672]} sizes="(min-width: 1100px) 190px, (min-width: 400px) 224px, (min-width: 358px) 56vw, 200px" format="webp" quality={100} title="Dr RankUP — healthcare growth and technology" alt="Dr RankUP" loading="eager"/></div>
       <nav id="main-navigation" class="main-navigation" aria-label="Main navigation">
-        {navigationMenus.map(menu=>menu.id==='resources'?<><span class="nav-direct-item">Contact Us</span><NavigationMenu menu={menu}/></>:<NavigationMenu menu={menu}/>)}
+        {navigationMenus.map(menu=><>
+          {menu.id==='about'&&<span class="nav-direct-item">Healthcare Marketing</span>}
+          {menu.id==='resources'&&<span class="nav-direct-item">Contact Us</span>}
+          <NavigationMenu menu={menu}/>
+        </>)}
         <span class="button button-primary nav-mobile-cta">Let’s talk <ActionIcon purpose="conversation"/></span>
       </nav>
       <span class="button button-primary nav-cta">Let’s talk <ActionIcon purpose="conversation"/></span>
       <button class="navigation-toggle" type="button" aria-controls="main-navigation" aria-expanded="false" aria-label="Open navigation menu" hidden>
-        <span>Menu</span><Icon icon={Menu01Icon} class="menu-open" size={22}/><Icon icon={Cancel01Icon} class="menu-close" size={22}/>
+        <Icon icon={Menu01Icon} class="menu-open" size={32}/><Icon icon={Cancel01Icon} class="menu-close" size={32}/>
       </button>
     </site-navigation>
   </div>
