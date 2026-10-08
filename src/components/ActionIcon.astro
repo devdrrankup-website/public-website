@@ -1,0 +1,10 @@
+---
+import ArrowUpRight03Icon from '@hugeicons/core-free-icons/ArrowUpRight03Icon';
+import ArrowRight02Icon from '@hugeicons/core-free-icons/ArrowRight02Icon';
+import CallIcon from '@hugeicons/core-free-icons/CallIcon';
+import Icon from './Icon.astro';
+interface Props { purpose: 'conversation' | 'explore' | 'call'; }
+const { purpose } = Astro.props;
+const icon = purpose === 'call' ? CallIcon : purpose === 'conversation' ? ArrowUpRight03Icon : ArrowRight02Icon;
+---
+<span class="action-icon"><Icon icon={icon} size={24} strokeWidth={2.25} /></span>

@@ -1,0 +1,70 @@
+---
+import {Image} from 'astro:assets';
+import hridoy from '../../public/team/founder-hridoy-chowdhury.jpeg';
+import monwara from '../../public/team/co-founder-monwara-moni.jpeg';
+import sirajul from '../../public/team/co-founder-sirajul-islam.jpeg';
+import {homepageConnectedSystem as content} from '../data/homepage-connected-system';
+const team = [
+  {src: hridoy, name: 'Hridoy Chowdhury', role: 'Founder'},
+  {src: monwara, name: 'Monwara Moni', role: 'Co-Founder'},
+  {src: sirajul, name: 'Sirajul Islam', role: 'Co-Founder'},
+];
+const emphasis = 'qualified clinical judgment';
+const [noteStart, noteEnd] = content.conclusion.split(emphasis);
+---
+<aside id="healthcare-trust" class="healthcare-trust" aria-labelledby="healthcare-trust-label">
+  <div class="section-container trust-container">
+    <div class="trust-layout">
+      <div class="trust-introduction">
+        <p id="healthcare-trust-label" class="trust-eyebrow">Healthcare trust</p>
+        <p class="trust-statement">{content.trustIntroduction}</p>
+      </div>
+      <div class="trust-principles">
+        {content.trust.map((item,index) => (
+          <div class="trust-principle">
+            <span class="trust-index" aria-hidden="true">0{index + 1}</span>
+            <div><h3>{item.title}</h3><p>{item.description}</p></div>
+          </div>
+        ))}
+      </div>
+    </div>
+    <div class="trust-clinical-banner">
+      <div class="trust-team-portraits">
+        {team.map(person => <Image src={person.src} alt={`${person.name}, ${person.role} of Dr RankUP`}
+          title={`${person.name} — ${person.role}`} width={40} height={40} widths={[40,80,120]}
+          sizes="40px" format="webp" fit="cover" quality={80} loading="lazy" decoding="async"/>)}
+      </div>
+      <p class="trust-clinical-note">{noteStart}<em>{emphasis}</em>{noteEnd}</p>
+    </div>
+  </div>
+</aside>
+
+<style>
+  .healthcare-trust {
+    padding-block: 56px;
+    color: var(--ink);
+    /* The shared light surface continues into Responsible healthcare. */
+  }
+  .trust-container { max-width: 1250px; }
+  .trust-layout { display: grid; gap: 36px; }
+  .trust-introduction { max-width: 550px; }
+  .trust-eyebrow { margin: 0 0 16px; color: var(--accent-green); font-size: 12px; font-weight: 650; line-height: 1.5; letter-spacing: .09em; text-transform: uppercase; }
+  .trust-statement { margin: 0; font-size: clamp(23px,2.2vw,30px); font-weight: 550; line-height: 1.45; letter-spacing: -.025em; text-wrap: pretty; }
+  .trust-principles { display: grid; gap: 28px; }
+  .trust-principle { display: grid; grid-template-columns: 24px minmax(0,1fr); gap: 16px; }
+  .trust-principle+.trust-principle { padding-top: 28px; border-top: 1px solid var(--accent-green-line); }
+  .trust-index { padding-top: 5px; color: var(--accent-green); font-size: 12px; font-weight: 600; line-height: 1.5; }
+  .trust-principle h3 { margin: 0 0 12px; font-size: clamp(21px,2vw,24px); font-weight: 600; line-height: 1.3; letter-spacing: -.025em; }
+  .trust-principle p { max-width: 600px; margin: 0; color: var(--muted); font-size: 15px; line-height: 1.75; }
+  .trust-clinical-banner { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 32px; padding: 20px 18px; border: 1px solid var(--accent-green-line); border-radius: 28px; background: linear-gradient(90deg,#e1ffb9 0%,#e1ffb9 12%,#fff 45%,#fff 55%,#e1ffb9 100%); }
+  .trust-team-portraits { display: flex; flex: none; padding-left: 10px; }
+  .trust-team-portraits img { display: block; width: 40px; height: 40px; margin-left: -10px; border: 2px solid #fff; border-radius: 50%; object-fit: cover; object-position: 50% 35%; }
+  .trust-clinical-note { flex: 1; margin: 0; color: var(--ink); font-size: clamp(15px,1.4vw,20px); font-weight: 500; line-height: 1.6; text-align: center; text-wrap: pretty; }
+  .trust-clinical-note em { margin-inline-start: .1em; color: var(--accent-green); font-family: Georgia,'Times New Roman',serif; font-size: 1.15em; font-weight: 600; }
+  @media (min-width: 900px) {
+    .healthcare-trust { padding-block: 80px; }
+    .trust-layout { grid-template-columns: minmax(0,.9fr) minmax(0,1.15fr); gap: clamp(48px,6vw,96px); align-items: start; }
+    .trust-principle { grid-template-columns: 28px minmax(0,1fr); gap: 20px; }
+    .trust-clinical-banner { flex-direction: row; gap: 24px; min-height: 72px; margin-top: 40px; padding: 14px 20px; border-radius: 999px; }
+  }
+</style>

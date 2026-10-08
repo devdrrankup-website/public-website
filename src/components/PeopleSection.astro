@@ -1,0 +1,78 @@
+---
+import {Image} from 'astro:assets';
+import Arrow from './Arrow.astro';
+import monwara from '../assets/team/monwara-moni-studio-v2.png';
+import sirajul from '../assets/team/sirajul-islam-studio-v2.png';
+import {homepagePeople as content} from '../data/homepage-people';
+const portraits = [monwara, sirajul];
+const clinicalNoteEmphasis = 'clinical accuracy.';
+const clinicalNoteStart = content.clinicalNote.slice(0,-clinicalNoteEmphasis.length);
+const sizes = '(min-width: 768px) 320px, (min-width: 640px) calc((100vw - 128px) / 2), (min-width: 368px) 320px, calc(100vw - 48px)';
+---
+<healthcare-people>
+  <section id="people" class="people-section" aria-labelledby="people-heading">
+    <div class="section-container people-container">
+      <header class="people-introduction">
+        <p class="people-eyebrow">Our co-founders</p>
+        <h2 id="people-heading">{content.heading}</h2>
+      </header>
+
+      <div class="people-profiles">
+        {content.profiles.map((profile,index) => (
+          <article class:list={['people-profile', {'people-profile-lavender': index === 1}]} aria-labelledby={`${profile.id}-heading`}>
+            <div class="people-photo">
+              <div class="people-portrait-frame">
+                <Image src={portraits[index]} alt={`${profile.name}, ${profile.role} at Dr RankUP.`}
+                  title={`${profile.name} — ${profile.role}, Dr RankUP`}
+                  width={960} widths={[320,480,640,960]} sizes={sizes}
+                  format="webp" quality={85} loading="lazy" decoding="async"/>
+              </div>
+            </div>
+            <div class="people-copy">
+              <header>
+                <h3 id={`${profile.id}-heading`}>{profile.name}</h3>
+                <p class="people-role">{profile.role}</p>
+              </header>
+              <p>{profile.introduction}</p>
+              {/* Profile destinations will be connected when internal pages exist. */}
+              <span class="people-profile-link">{profile.meetLabel}<Arrow/></span>
+            </div>
+          </article>
+        ))}
+      </div>
+      <p class="people-clinical-note">{clinicalNoteStart}<em>{clinicalNoteEmphasis}</em></p>
+    </div>
+  </section>
+</healthcare-people>
+
+<style>
+  healthcare-people { display: block; }
+  .people-section { --people-bottom-space: 64px; padding-block: 32px var(--people-bottom-space); color: var(--ink); background: linear-gradient(180deg,#fff 0%,#eaf7ff 45%,#eeedfe 80%,#fff 100%); }
+  .people-container { max-width: 1250px; }
+  .people-introduction { display: grid; gap: 16px; }
+  .people-eyebrow { margin: 0; color: var(--accent-green); font-size: 12px; font-weight: 650; line-height: 1.5; letter-spacing: .09em; text-transform: uppercase; }
+  .people-introduction h2 { max-width: 900px; margin: 0; font-size: clamp(30px,4vw,48px); font-weight: 650; line-height: 1.2; letter-spacing: -.035em; text-wrap: balance; }
+  .people-profiles { display: grid; gap: 48px; max-width: 1040px; margin: 32px auto 0; }
+  .people-profile { display: grid; grid-template-rows: auto 1fr; align-content: start; gap: 24px; min-width: 0; }
+  .people-photo { width: 100%; max-width: 336px; margin-inline: auto; }
+  .people-portrait-frame { padding: 7px; overflow: clip; border: 1px solid #bae5ff; border-radius: 32px; background: linear-gradient(145deg,#fff,#bae5ff80); box-shadow: 0 16px 48px -28px #102a3533; }
+  .people-profile-lavender .people-portrait-frame { border-color: #afa9ec; background: linear-gradient(145deg,#fff,#afa9ec80); }
+  .people-portrait-frame img { display: block; width: 100%; height: auto; border-radius: 25px; object-fit: contain; }
+  .people-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; min-width: 0; max-width: 440px; margin-inline: auto; width: 100%; }
+  .people-copy h3 { margin: 0; font-size: clamp(27px,2.5vw,34px); font-weight: 650; line-height: 1.25; letter-spacing: -.025em; }
+  .people-copy p { max-width: 660px; margin: 0; color: var(--muted); font-size: 15px; line-height: 1.8; }
+  .people-copy .people-role { margin-top: 10px; font-weight: 500; line-height: 1.6; }
+  .people-profile-link { display: inline-flex; align-items: center; margin-top: auto; max-width: 100%; min-height: 44px; gap: 8px; color: var(--purple); font-size: 12px; font-weight: 600; }
+  .people-clinical-note { margin: 48px 0 0; padding: 18px 24px; border: 1px solid var(--accent-green-line); border-radius: 999px; color: var(--ink); background: linear-gradient(90deg,#e1ffb9 0%,#fff 50%,#e1ffb9 100%); font-size: clamp(15px,1.2vw,18px); font-weight: 500; line-height: 1.65; text-align: center; text-wrap: pretty; }
+  .people-clinical-note em { color: var(--accent-green); font-family: Georgia,'Times New Roman',serif; font-size: 1.15em; font-style: italic; font-weight: 600; }
+  @media (min-width: 640px) {
+    .people-section { --people-bottom-space: 80px; padding-top: 40px; }
+    .people-profiles { grid-template-columns: repeat(2,minmax(0,1fr)); column-gap: 40px; margin-top: 40px; }
+    .people-copy p { font-size: 16px; }
+  }
+  @media (min-width: 900px) {
+    .people-section { --people-bottom-space: 96px; padding-top: 48px; }
+    .people-profiles { column-gap: 80px; margin-top: 48px; }
+    .people-clinical-note { margin-top: 64px; }
+  }
+</style>

@@ -1,0 +1,132 @@
+---
+import { Image } from 'astro:assets';
+import { homepageServices } from '../data/homepage-services';
+import Arrow from './Arrow.astro';
+import ActionIcon from './ActionIcon.astro';
+import marketing from '../assets/services/marketing.png';
+import branding from '../assets/services/branding.png';
+import websites from '../assets/services/websites.png';
+import software from '../assets/services/software.png';
+const visuals = [
+  { src: branding, split: .5, alts: ['Doctor profile website displayed on a tablet beside matching printed profile materials.', 'Doctor profile with articles and practice information displayed on a smartphone.'], titles: ['Doctor profile and personal branding', 'Doctor profile on mobile'] },
+  { src: software, split: .5625, alts: ['Clinic appointment dashboard with a calendar, billing and patient-management options on a tablet.', 'Clinic appointment form with available dates and times on a smartphone.'], titles: ['Clinic appointment management', 'Clinic appointment booking on mobile'] },
+  { src: websites, split: .5, alts: ['Healthcare website with a clinical team and appointment options displayed on a laptop.', 'Healthcare website with specialty search and doctor profiles displayed on a tablet.'], titles: ['Healthcare website on desktop', 'Doctor and specialty directory on tablet'] },
+  { src: marketing, split: 791 / 1536, alts: ['Healthcare search website with a map and doctor listings displayed on a desktop monitor.', 'Healthcare articles and service categories displayed on a smartphone.'], titles: ['Healthcare search and discovery', 'Healthcare content on mobile'] },
+];
+---
+<healthcare-services>
+  <section id="healthcare-services" class="services-section" aria-labelledby="services-heading">
+    <div class="section-container services-container">
+      <header class="services-introduction">
+        <h2 id="services-heading">Healthcare Growth and Technology Under One Roof</h2>
+      </header>
+      <div class="services-experience">
+        <div class="services-copy-dock">
+          <div class="services-copy-window">
+            {homepageServices.items.map((item, index) => (
+              <article class="service-copy" aria-labelledby={`service-${item.id}`} style={`--service-order: ${index + 1}`}>
+                <div class="service-copy-inner">
+                  <h3 id={`service-${item.id}`}>{item.heading}</h3>
+                  <span class="service-divider" aria-hidden="true"></span>
+                  <p class="service-summary">{item.description}</p>
+                  <p class="service-details">{item.services}</p>
+                  <a class="service-link" href={item.href} aria-label={`See more: ${item.heading}`}>See more<span class="sr-only"> {item.heading}</span><Arrow /></a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+        <div class="services-gallery">
+          {homepageServices.items.map((item, index) => (
+            <div class="service-image-pair" data-service={item.id} style={`--service-order: ${index + 1}`}>
+              {[0, 1].map(side => (
+                <figure class:list={['service-visual', {'service-visual-second': side === 1}]}
+                  style={`--image-width: ${100 / (side === 0 ? visuals[index].split : 1 - visuals[index].split)}%; --image-offset: ${side === 0 ? 0 : -100 * visuals[index].split / (1 - visuals[index].split)}%; --desktop-scale: ${Math.max(1, (side === 0 ? visuals[index].split : 1 - visuals[index].split) * 1.5 / (3 / 4.2))}`}>
+                  <Image src={visuals[index].src} alt={visuals[index].alts[side]}
+                    title={visuals[index].titles[side]}
+                    widths={[640, 960, 1280, 1536]}
+                    sizes="(min-width: 1500px) 940px, (min-width: 900px) and (min-height: 700px) calc(66vw - 96px), (min-width: 640px) 100vw, calc(200vw - 64px)"
+                    format="webp" quality={78} loading="lazy" decoding="async" />
+                </figure>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div class="services-footer">
+        <a href="/contact/" class="button button-primary">Book a strategy call <ActionIcon purpose="call" /></a>
+      </div>
+    </div>
+  </section>
+</healthcare-services>
+
+<style>
+  healthcare-services { display: block; background: #fff; }
+  /* Services and Connected healthcare share one uninterrupted dark surface. */
+  .services-section { padding-block: 56px 64px; border-radius: 28px 28px 0 0; background: #0a0a0a; color: #fff; }
+  /* Keep the heading above the sticky dock's upper image shield on arrival.
+     The shield remains behind the title while hiding scrolling gallery images. */
+  .services-introduction { position: relative; z-index: 3; display: grid; justify-items: start; gap: 20px; margin-bottom: 48px; }
+  .services-introduction h2 { max-width: 1060px; margin: 0; font-size: clamp(30px, 4vw, 48px); font-weight: 650; line-height: 1.2; letter-spacing: -.035em; text-wrap: balance; }
+  /* Static fallback interleaves each audience with its images. */
+  .services-experience { display: grid; gap: 32px; }
+  .services-copy-dock, .services-copy-window, .services-gallery { display: contents; }
+  .service-copy { min-width: 0; grid-row: calc(var(--service-order) * 2 - 1); }
+  .service-copy-inner { padding: 20px 3px; }
+  .service-copy h3 { margin: 0; font-size: clamp(24px, 3.2vw, 34px); font-weight: 600; line-height: 1.24; letter-spacing: -.025em; }
+  .service-divider { display: block; height: 1px; margin-block: 16px; background: linear-gradient(90deg, #6131c6aa, #6131c626); }
+  .service-copy p { margin: 0; color: #c7cbd0; font-size: 14px; line-height: 1.7; }
+  .service-copy .service-details { margin-top: 12px; }
+  .service-link { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; margin-top: 18px; color: #b58aff; font-size: 14px; font-weight: 650; }
+  .service-link:hover { color: #e1ffb9; }
+  .service-link:focus-visible { outline-color: #e1ffb9; outline-offset: 3px; }
+  .service-image-pair { display: grid; gap: 24px; min-width: 0; grid-row: calc(var(--service-order) * 2); }
+  .service-visual { position: relative; height: clamp(240px, 69vw, 300px); overflow: clip; min-width: 0; margin: 0; border-radius: 22px; background: #bae5ff; }
+  .service-visual-second { background: #e1ffb9; }
+  /* Two views of an original diptych reuse one responsive WebP request. */
+  .service-visual img { position: absolute; top: 50%; left: 0; display: block; width: var(--image-width); max-width: none; height: auto; margin-left: var(--image-offset); transform: translateY(-50%); }
+  .services-footer { display: flex; justify-content: center; padding-top: 56px; padding-bottom: var(--service-tail, 0px); }
+  .services-footer .button { max-width: 100%; }
+  healthcare-services[data-service-window] .services-experience { display: block; }
+  healthcare-services[data-service-window] .services-copy-dock { display: block; position: sticky; top: var(--service-top); z-index: 2; background: #0a0a0a; }
+  healthcare-services[data-service-window] .services-copy-window { display: block; position: relative; height: var(--copy-height); overflow: clip; }
+  healthcare-services[data-service-window] .service-copy { position: absolute; inset: 0 0 auto; height: var(--copy-height); }
+  healthcare-services[data-service-window] .service-copy-inner { padding-bottom: 82px; }
+  healthcare-services[data-service-window] .service-link { position: absolute; left: 3px; bottom: 20px; margin-top: 0; }
+  healthcare-services[data-service-window] .services-copy-dock::before { content: ''; position: absolute; top: calc(-1 * var(--service-top)); height: var(--service-top); inset-inline: 0; background: #0a0a0a; }
+  healthcare-services[data-service-window] .services-gallery { display: grid; gap: 50px; margin-top: 32px; }
+  healthcare-services[data-service-window] .service-image-pair { grid-row: auto; grid-column: auto; }
+  @media (max-height: 650px) {
+    .service-copy-inner { padding-block: 12px; }
+    .service-copy p { font-size: 13px; line-height: 1.55; }
+    .service-divider { margin-block: 12px; }
+    .service-copy .service-details { margin-top: 8px; }
+    .service-link { margin-top: 12px; }
+    healthcare-services[data-service-window] .service-copy-inner { padding-bottom: 68px; }
+    healthcare-services[data-service-window] .service-link { bottom: 12px; }
+  }
+  @media (min-width: 640px) {
+    .services-section { padding-block: 72px; border-radius: 36px 36px 0 0; }
+    .services-introduction { margin-bottom: 64px; }
+    .service-copy p { font-size: 15px; }
+    .service-image-pair { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+    .service-visual { height: 340px; }
+    .service-visual-second { margin-top: 64px; }
+  }
+  @media (min-width: 900px) and (min-height: 700px) {
+    .services-section { padding-block: 96px 88px; border-radius: 40px 40px 0 0; }
+    .services-container { max-width: 1250px; }
+    .services-experience { grid-template-columns: minmax(0, 1fr) minmax(0, 2.08fr); column-gap: 32px; row-gap: 50px; }
+    .service-copy { grid-column: 1; grid-row: var(--service-order); }
+    .service-copy-inner { padding-block: 40px 20px; }
+    .service-copy p { font-size: 15px; line-height: 1.65; }
+    .service-image-pair { grid-column: 2; grid-row: var(--service-order); gap: 32px; }
+    .service-visual { height: auto; aspect-ratio: 3 / 4.2; border-radius: 24px; }
+    .service-visual img { width: calc(var(--image-width) * var(--desktop-scale)); margin-left: calc(var(--image-offset) * var(--desktop-scale)); }
+    .service-visual-second { margin-top: 120px; }
+    healthcare-services[data-service-window] .services-experience { display: grid; }
+    healthcare-services[data-service-window] .services-copy-dock { align-self: start; grid-row: 1; grid-column: 1; }
+    healthcare-services[data-service-window] .services-gallery { grid-row: 1; grid-column: 2; min-width: 0; margin-top: 0; }
+    .services-footer { padding-top: 72px; }
+  }
+</style>

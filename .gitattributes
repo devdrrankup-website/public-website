@@ -1,0 +1,18 @@
+* text=auto
+
+# Keep source line endings predictable across Windows and hosting builds.
+*.astro text eol=lf
+*.ts text eol=lf
+*.mjs text eol=lf
+*.css text eol=lf
+*.json text eol=lf
+*.jsonc text eol=lf
+.node-version text eol=lf
+*.py text eol=lf
+*.ps1 text eol=crlf
+
+# Public files are copied verbatim to the production build.
+public/** -text
+
+# Preserve supplied Markdown references exactly, including fixed-width text.
+*.md -text

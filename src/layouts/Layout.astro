@@ -1,0 +1,33 @@
+---
+import '../styles/global.css';
+import '../styles/section-rendering.css';
+import '@fontsource-variable/plus-jakarta-sans/wght.css';
+import jakartaLatin from '@fontsource-variable/plus-jakarta-sans/files/plus-jakarta-sans-latin-wght-normal.woff2?url';
+
+interface Props {
+  title?: string;
+  description?: string;
+  imagePreload?: {href:string;srcset:string;sizes:string};
+}
+
+const { title = 'Dr RankUP', description = 'Healthcare digital marketing, SEO, websites and software for doctors, clinics and hospitals across Bangladesh.', imagePreload } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#6131C6" />
+    <link rel="icon" type="image/png" href="/brand/dr-rankup-icon.png" />
+    <link rel="preload" href={jakartaLatin} as="font" type="font/woff2" crossorigin />
+    {imagePreload && <link rel="preload" as="image" type="image/webp" href={imagePreload.href} imagesrcset={imagePreload.srcset} imagesizes={imagePreload.sizes} fetchpriority="high" />}
+    <title>{title}</title>
+  </head>
+  <body class="antialiased">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <slot />
+  </body>
+</html>

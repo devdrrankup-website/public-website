@@ -1,0 +1,143 @@
+---
+import {Image} from 'astro:assets';
+import Icon from './Icon.astro';
+import Search01Icon from '@hugeicons/core-free-icons/Search01Icon';
+import Location01Icon from '@hugeicons/core-free-icons/Location01Icon';
+import StethoscopeIcon from '@hugeicons/core-free-icons/StethoscopeIcon';
+import File01Icon from '@hugeicons/core-free-icons/File01Icon';
+import UserAccountIcon from '@hugeicons/core-free-icons/UserAccountIcon';
+import CheckmarkBadge01Icon from '@hugeicons/core-free-icons/CheckmarkBadge01Icon';
+import BrowserIcon from '@hugeicons/core-free-icons/BrowserIcon';
+import Calendar03Icon from '@hugeicons/core-free-icons/Calendar03Icon';
+import MedicalFileIcon from '@hugeicons/core-free-icons/MedicalFileIcon';
+import DashboardSquare01Icon from '@hugeicons/core-free-icons/DashboardSquare01Icon';
+import Database01Icon from '@hugeicons/core-free-icons/Database01Icon';
+import ChartIncreaseIcon from '@hugeicons/core-free-icons/ChartIncreaseIcon';
+import brandIcon from '../assets/brand/dr-rankup-icon.png';
+import {homepageConnectedSystem as content} from '../data/homepage-connected-system';
+const iconGroups = [
+  [Search01Icon,Location01Icon,StethoscopeIcon],
+  [File01Icon,UserAccountIcon,CheckmarkBadge01Icon],
+  [BrowserIcon,Calendar03Icon,MedicalFileIcon],
+  [DashboardSquare01Icon,Database01Icon,ChartIncreaseIcon],
+];
+const icons = iconGroups.flat();
+const paths = [
+  'M625 0V44Q625 64 605 64H166Q147 64 147 84V124',
+  'M625 0V44Q625 64 605 64H485Q466 64 466 84V124',
+  'M625 0V44Q625 64 645 64H765Q784 64 784 84V124',
+  'M625 0V44Q625 64 645 64H1084Q1103 64 1103 84V124',
+];
+---
+<connected-system>
+  {/* Define each decorative glyph once; the moving rows reuse the same artwork. */}
+  <svg class="system-symbols" aria-hidden="true" focusable="false">
+    <defs>{icons.map((icon,index)=><symbol id={`system-glyph-${index}`} viewBox="0 0 24 24"><Icon icon={icon} size={24} strokeWidth={1.8}/></symbol>)}</defs>
+  </svg>
+  <section id="connected-healthcare-system" class="connected-section" aria-labelledby="connected-heading">
+    <header class="section-container connected-introduction">
+      <h2 id="connected-heading">{content.heading}</h2>
+      <p>{content.introduction}</p>
+    </header>
+    <div class="system-diagram">
+      <div class="system-hub-scene">
+        <div class="system-marquee" aria-hidden="true">
+          {[0,1].map(row => (
+            <div class:list={['system-tape',{'system-tape-reverse': row === 1}]}>
+              {[0,1,2].map(() => (
+                <div class="system-icon-group">
+                  {icons.map((_,index) => (
+                    <span class="system-floating-icon" style={`--icon-accent: ${['#BAE5FF','#E1FFB9','#AFA9EC','#EDDAFA'][index % 4]}`}>
+                      <svg class="ui-icon" width="34" height="34" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href={`#system-glyph-${row===0?index:(index+5)%icons.length}`}/></svg>
+                    </span>
+                  ))}
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+        <div class="system-hub-position">
+          <div class="system-hub">
+            <div class="system-brand-tile">
+              <Image src={brandIcon} alt="Dr RankUP" title="Dr RankUP — connected healthcare growth and technology"
+                width={96} height={96} widths={[96,192,288]} sizes="68px" format="webp" quality={85} loading="lazy" decoding="async"/>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section-container system-network">
+        <svg class="system-connectors" viewBox="0 0 1250 124" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+          {paths.map(d => <path d={d} fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke"/>)}
+          {[147,466,784,1103].map(cx => <circle cx={cx} cy="123" r="2.5" fill="#fff"/>)}
+          <circle cx="625" cy="1" r="2.5" fill="#fff"/>
+        </svg>
+        <ol class="system-cards" role="list" aria-label="How the healthcare digital system connects">
+          {content.stages.map((stage,index) => (
+            <li class="system-card" aria-labelledby={`system-stage-${index}`}>
+              <p class="system-card-title" id={`system-stage-${index}`}>{stage.title}</p>
+              <div class="system-card-icons" aria-hidden="true">
+                {iconGroups[index].map((icon,n) => (
+                  <span class="system-card-icon" style={`--icon-accent: ${['#BAE5FF','#E1FFB9','#AFA9EC'][n]}`}><svg class="ui-icon" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href={`#system-glyph-${index*3+n}`}/></svg></span>
+                ))}
+              </div>
+              <div class="system-card-output">
+                <p class="system-output-label">Supports</p>
+                <ul class="system-output-pills" role="list">
+                  {stage.outputs.map(output => <li>{output}</li>)}
+                </ul>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </div>
+  </section>
+</connected-system>
+
+<style>
+  connected-system { display: block; background: #fff; }
+  .system-symbols { position: absolute; width: 0; height: 0; overflow: hidden; }
+  .connected-section { padding-block: 60px; border-radius: 0 0 28px 28px; color: #fff; background: #0a0a0a; overflow: clip; }
+  .connected-introduction { position: relative; z-index: 1; display: grid; justify-items: center; gap: 16px; text-align: center; }
+  .connected-introduction h2 { max-width: 1060px; margin: 0; font-size: clamp(30px,4vw,48px); font-weight: 650; line-height: 1.2; letter-spacing: -.035em; text-wrap: balance; }
+  .connected-introduction p { max-width: 700px; margin: 0; color: #c7cbd0; font-size: 16px; line-height: 1.6; }
+  .system-diagram { position: relative; margin-top: 56px; }
+  .system-hub-scene { position: relative; height: 202px; isolation: isolate; }
+  .system-marquee { display: grid; gap: 24px; max-width: 1920px; margin-inline: auto; padding-block: 29px; overflow: clip; opacity: .4; mask-image: linear-gradient(90deg,transparent,#000 30%,#000 70%,transparent); }
+  .system-tape,.system-icon-group { display: flex; flex: none; width: max-content; }
+  .system-icon-group { gap: 24px; padding-right: 24px; }
+  .system-floating-icon { display: grid; place-items: center; flex: none; width: 60px; height: 60px; color: var(--icon-accent); background: linear-gradient(145deg,#eeedfe33,#bae5ff66); border-radius: 20px; }
+  .system-hub-position { position: absolute; z-index: 1; left: 50%; top: 50%; width: 212px; height: 212px; transform: translate(-50%,-50%); pointer-events: none; }
+  .system-hub { position: relative; display: grid; place-items: center; width: 100%; height: 100%; border: 1.5px solid #bae5ffb8; border-radius: 50%; background: radial-gradient(ellipse at 50% 100%,#159cc969,transparent 73%),linear-gradient(180deg,#229f6012,#bae5ff1a); box-shadow: 0 0 16px #bae5ff40, 0 12px 32px -10px #229f607a, inset 0 -8px 28px #bae5ff26; }
+  /* Static palette glow follows the existing hub entrance without a new loop. */
+  .system-hub::after { content: ''; position: absolute; left: 24px; right: 24px; bottom: -18px; height: 24px; border-radius: 50%; background: linear-gradient(90deg,#229f6066,#bae5ffa6,#229f6066); filter: blur(12px); pointer-events: none; }
+  .system-brand-tile { display: grid; place-items: center; width: 68px; height: 68px; border-radius: 24px 24px 24px 4px; background: #fff; }
+  .system-brand-tile img { display: block; width: 68px; height: 68px; }
+  .system-connectors { display: none; }
+  .system-cards { display: grid; grid-template-columns: minmax(0,1fr); gap: 16px; margin: 60px 0 0; padding: 0; list-style: none; }
+  .system-card { display: flex; flex-direction: column; min-width: 0; min-height: 239px; padding: 20px; border: 1px solid #ffffff1f; border-radius: 16px; background: radial-gradient(ellipse at 70% 90%,#bae5ff0a,transparent 85%),linear-gradient(145deg,#0a0a0a,#10212dc9); }
+  .system-card-title { margin: 0; font-size: 20px; font-weight: 650; line-height: 1.2; letter-spacing: -.035em; }
+  .system-card-icons { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+  .system-card-icon { display: grid; place-items: center; width: 48px; height: 48px; border: 1px solid #bae5ff26; border-radius: 12px; color: var(--icon-accent); background: linear-gradient(160deg,#061322,#081b27); box-shadow: 0 14px 22px -15px #bae5ff99; }
+  .system-card-output { margin-top: auto; padding-top: 32px; }
+  .system-output-label { margin: 0 0 8px; color: #b3b9be; font-size: 12px; line-height: 1.5; text-transform: uppercase; }
+  .system-output-pills { display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 0; list-style: none; }
+  .system-output-pills li { padding: 3px 9px; border-radius: var(--control-radius); background: #bae5ff33; color: #eeedfe; font-size: 13px; font-weight: 600; line-height: 1.5; }
+  @media (min-width: 640px) {
+    .connected-section { padding-block: 72px; border-radius: 0 0 36px 36px; }
+    .system-cards { grid-template-columns: repeat(2,minmax(0,1fr)); }
+    .system-card-title { font-size: 24px; }
+    .system-card-icon { width: 56px; height: 56px; }
+  }
+  @media (min-width: 992px) {
+    .connected-section { padding-block: 96px; border-radius: 0 0 40px 40px; }
+    .connected-introduction p { font-size: 18px; line-height: 1.5; }
+    .system-diagram { margin-top: 96px; }
+    .system-marquee { padding-block: 5px; }
+    .system-floating-icon { width: 84px; height: 84px; border-radius: 28px; }
+    .system-network { max-width: 1250px; }
+    .system-connectors { display: block; width: 100%; height: 124px; color: #bae5ff; filter: drop-shadow(0 0 2px #bae5ff99); }
+    .system-cards { grid-template-columns: repeat(4,minmax(0,1fr)); gap: 24px; margin-top: 0; }
+    .system-card { min-height: 268px; border-radius: 24px; }
+  }
+</style>

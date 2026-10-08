@@ -1,0 +1,14 @@
+---
+import {neutral,activated,baseImages,blueImages,sizes,srcset} from '../lib/hospital-images';
+---
+<hospital-visual class="hospital-visual">
+  <div class="hospital-stage">
+    <div class="hospital-backdrop">
+      <img class="hospital-base" src={baseImages[1].src} srcset={srcset(baseImages)} sizes={sizes} width={neutral.width} height={neutral.height} title="Dr RankUP — complete hospital ecosystem visualization" alt="Three-storey hospital cutaway showing pathology, an operating theatre, patient wards, reception and diagnostics, with an ambulance outside." loading="eager" fetchpriority="high" decoding="async" />
+      <img class="hospital-active" data-src={blueImages[1].src} data-srcset={srcset(blueImages)} sizes={sizes} width={activated.width} height={activated.height} title="Hospital ecosystem — blue-lit interactive state" alt="" aria-hidden="true" decoding="async" />
+    </div>
+    <div class="hospital-shade" aria-hidden="true"></div>
+    <div class="hospital-atmosphere" aria-hidden="true"></div>
+    <div class="hospital-content"><slot /></div>
+  </div>
+</hospital-visual>

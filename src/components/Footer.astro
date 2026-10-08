@@ -1,0 +1,108 @@
+---
+import {Image} from 'astro:assets';
+import CallIcon from '@hugeicons/core-free-icons/CallIcon';
+import Mail01Icon from '@hugeicons/core-free-icons/Mail01Icon';
+import Clock01Icon from '@hugeicons/core-free-icons/Clock01Icon';
+import logo from '../../public/brand/dr-rankup-logo.png';
+import Icon from './Icon.astro';
+import {footer as content} from '../data/footer';
+import FooterSocials from './FooterSocials.astro';
+const year = new Intl.DateTimeFormat('en',{year:'numeric',timeZone:'Asia/Dhaka'}).format(new Date());
+---
+<div class="footer-frame">
+  <footer id="footer" class="site-footer" aria-label="Dr RankUP footer">
+    <div class="section-container footer-container">
+      <div class="footer-introduction">
+        <div class="footer-brand">
+          <div class="footer-wordmark">
+            <Image src={logo} widths={[240,360,480]} sizes="210px" format="webp" quality={85}
+              alt="Dr RankUP" title="Dr RankUP — Healthcare Growth and Technology" loading="lazy" decoding="async" />
+          </div>
+          <p class="footer-tagline">{content.tagline}</p>
+          <p class="footer-description">{content.description}</p>
+        </div>
+        <div class="footer-column footer-contact-column">
+          <h2>Contact &amp; Hours</h2>
+        <address class="footer-contact" aria-label="Contact details and office hours">
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon"><Icon icon={CallIcon} size={22} /></span>
+            <div><p class="footer-label">Call us</p><p class="footer-contact-value">{content.phone}</p></div>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon"><Icon icon={Mail01Icon} size={22} /></span>
+            <div><p class="footer-label">Email us</p><p class="footer-contact-value footer-email">{content.email}</p></div>
+          </div>
+          <div class="footer-contact-item footer-hours">
+            <span class="footer-contact-icon"><Icon icon={Clock01Icon} size={22} /></span>
+            <div>
+              <p class="footer-label">Office hours</p><p class="footer-contact-value">{content.hours}</p>
+              <p class="footer-contact-note">{content.days}<br />{content.closed}</p>
+            </div>
+          </div>
+        </address>
+        </div>
+          <div class="footer-column footer-company" aria-label="Company information">
+            <h2>Company</h2>
+            <ul>{content.company.map(item=><li><span>{item}</span></li>)}</ul>
+          </div>
+          <div class="footer-column footer-services-column">
+            <h2>Services</h2>
+            <ul class="footer-quick-services">{content.audiences.map(audience=><li><span>{audience.title}</span></li>)}</ul>
+          </div>
+      </div>
+      <div class="footer-social-row">
+        <h2>Follow us</h2>
+        <FooterSocials />
+      </div>
+      <div class="footer-bottom">
+        <p>© {year} Dr RankUP. All rights reserved.</p>
+        <ul class="footer-legal" aria-label="Legal information">{content.legal.map(item=><li><span>{item}</span></li>)}</ul>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<style>
+  .footer-frame { background: #0a0a0a; }
+  .site-footer { padding-bottom: 24px; color: #fff; background: linear-gradient(180deg,#0a0a0a,#0c1b13); }
+  .footer-container { max-width: 1250px; padding-top: 40px; border-top: 1px solid #63df9d40; }
+  .footer-introduction { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); align-items: start; gap: 32px 24px; padding-bottom: 32px; }
+  .footer-brand,.footer-contact-column { grid-column: 1/-1; min-width: 0; }
+  .footer-wordmark { display: inline-flex; align-items: center; max-width: 100%; padding: 10px 14px; border: 1px solid #bae5ff80; border-radius: 13px; background: #fff; }
+  .footer-wordmark img { display: block; width: 210px; max-width: 100%; height: auto; }
+  .footer-tagline { max-width: 440px; margin: 20px 0 12px; font-size: 20px; font-weight: 600; line-height: 1.5; letter-spacing: -.02em; text-wrap: balance; }
+  .footer-description { max-width: 400px; margin: 0; color: #bdcbc5; font-size: 13px; line-height: 1.8; }
+  .footer-contact { display: grid; align-content: start; gap: 20px; min-width: 0; margin: 0; font-style: normal; }
+  .footer-contact-item { display: flex; align-items: start; gap: 12px; min-width: 0; }
+  .footer-contact-item > div { min-width: 0; }
+  .footer-contact-icon { display: grid; place-items: center; flex-shrink: 0; width: 40px; height: 40px; border: 1px solid #bae5ff66; border-radius: 12px; color: #bae5ff; background: #bae5ff0d; }
+  .footer-contact-item:nth-child(2) .footer-contact-icon { color: #eeedfe; background: #afa9ec14; border-color: #afa9ec80; }
+  .footer-contact-item:nth-child(3) .footer-contact-icon { color: #fef2cc; background: #fef2cc0d; border-color: #fef2cc66; }
+  .footer-label { margin: 0 0 4px; color: #bdcbc5; font-size: 12px; line-height: 1.5; }
+  .footer-contact-value { margin: 0; font-size: 16px; font-weight: 550; line-height: 1.5; }
+  .footer-email { overflow-wrap: anywhere; }
+  .footer-contact-note { margin: 6px 0 0; color: #bdcbc5; font-size: 12px; line-height: 1.8; }
+  .footer-company ul,.footer-quick-services,.footer-legal { margin: 0; padding: 0; list-style: none; }
+  .footer-column { display: grid; align-content: start; gap: 16px; min-width: 0; }
+  .footer-column h2,.footer-social-row h2 { margin: 0; color: var(--accent-green-on-dark); font-size: 15px; font-weight: 600; line-height: 1.7; }
+  .footer-company ul,.footer-quick-services { display: grid; gap: 8px; color: #dce5e0; font-size: 13px; line-height: 1.7; }
+  .footer-social-row { display: flex; flex-direction: column; align-items: start; gap: 16px; padding-block: 24px; border-top: 1px solid #a0b9ac33; }
+  .footer-social-row h2 { flex-shrink: 0; }
+  .footer-social-row :global(.footer-socials) { min-width: 0; }
+  .footer-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px 24px; padding-top: 24px; border-top: 1px solid #a0b9ac33; color: #bdcbc5; font-size: 12px; line-height: 1.8; }
+  .footer-bottom p { margin: 0; }
+  .footer-legal { display: flex; flex-wrap: wrap; gap: 12px 24px; }
+  @media(min-width:640px) {
+    .site-footer { padding-bottom: 28px; }
+    .footer-container { padding-top: 48px; }
+    .footer-introduction { gap: 32px; }
+    .footer-brand,.footer-contact-column { grid-column: auto; }
+    .footer-social-row { flex-direction: row; gap: 24px; }
+    .footer-social-row h2 { padding-top: 7px; }
+  }
+  @media(min-width:1000px) {
+    .footer-container { width: min(100% - 112px,1250px); padding-top: 56px; }
+    .footer-introduction { grid-template-columns: minmax(0,1.4fr) minmax(0,1.15fr) minmax(0,.7fr) minmax(0,.85fr); gap: 32px; padding-bottom: 32px; }
+    .footer-contact-value { font-size: 14px; }
+  }
+</style>

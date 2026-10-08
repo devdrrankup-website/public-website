@@ -1,0 +1,117 @@
+---
+import { Image } from 'astro:assets';
+import { homepageOutcomes } from '../data/homepage-outcomes';
+import ActionIcon from './ActionIcon.astro';
+import found from '../assets/outcomes/be-found-home-v2.png';
+import understood from '../assets/outcomes/be-understood.png';
+import trust from '../assets/outcomes/build-trust.png';
+import action from '../assets/outcomes/make-action-home-v2.png';
+import authority from '../assets/outcomes/build-authority.png';
+import operations from '../assets/outcomes/operate-better.png';
+const visuals = [
+  { src: found, alt: 'A Bangladeshi woman searches nearby clinic locations on her smartphone from her home sofa.', title: 'Be found — healthcare discovery in Bangladesh' },
+  { src: understood, alt: 'A Bangladeshi man reviews doctor and service information on a tablet.', title: 'Be understood — clear doctor and service information' },
+  { src: trust, alt: 'A Bangladeshi doctor speaks with a woman in a clinic office.', title: 'Build trust — professional healthcare communication' },
+  { src: action, alt: 'A Bangladeshi woman selects an appointment date on her smartphone at her home dining table.', title: 'Make action easier — a simpler appointment journey' },
+  { src: authority, alt: 'A Bangladeshi doctor and editor review healthcare educational content.', title: 'Build long-term authority — healthcare knowledge and authorship' },
+  { src: operations, alt: 'Bangladeshi clinic staff coordinate appointments at a reception computer.', title: 'Operate better — connected healthcare workflows' },
+];
+---
+
+<healthcare-outcomes>
+  <section id="healthcare-outcomes" class="outcomes-section" aria-labelledby="outcomes-heading">
+    <div class="section-container">
+      <div class="outcomes-introduction" data-reveal-intro>
+        <h2 id="outcomes-heading">{homepageOutcomes.heading}</h2>
+        <p>{homepageOutcomes.introduction}</p>
+      </div>
+      <div class="outcomes-list">
+        {homepageOutcomes.items.map((item, index) => (
+          <div class="outcome-track" style={`--stack-index: ${index}; z-index: ${index + 1}`}>
+            <article class="outcome-row" data-reveal-card aria-labelledby={`outcome-heading-${index + 1}`}>
+              <div class="outcome-copy">
+                <div class="outcome-identity">
+                  <span class="outcome-number" aria-hidden="true">Outcome / 0{index + 1}</span>
+                  <h3 id={`outcome-heading-${index + 1}`}>{item.heading}</h3>
+                </div>
+                <dl class="outcome-details">
+                  <div class="outcome-problem">
+                    <dt>Problem</dt>
+                    <dd>{item.problem}</dd>
+                  </div>
+                  <div class="outcome-method">
+                    <dt>Method</dt>
+                    <dd>{item.method}</dd>
+                  </div>
+                  <div class="outcome-result">
+                    <dt>Outcome</dt>
+                    <dd>{item.outcome}</dd>
+                  </div>
+                </dl>
+              </div>
+              <figure class="outcome-image">
+                <Image src={visuals[index].src} alt={visuals[index].alt} title={visuals[index].title}
+                  width={1200} height={800} widths={[360, 540, 600, 720, 800, 960, 1200]}
+                  sizes="(min-width: 1500px) 700px, (min-width: 900px) calc(52vw - 64px), (min-width: 640px) calc(100vw - 96px), calc(100vw - 72px)"
+                  format="webp" quality={78} loading="lazy" decoding="async" />
+              </figure>
+            </article>
+          </div>
+        ))}
+      </div>
+      <div class="outcomes-footer">
+        <a href="/contact/" class="button button-primary outcomes-cta">Book a strategy call <ActionIcon purpose="call" /></a>
+      </div>
+    </div>
+  </section>
+</healthcare-outcomes>
+
+<style>
+  healthcare-outcomes { display: block; }
+  .outcomes-section { padding-block: 64px 72px; background: linear-gradient(180deg, #eaf7ff00 calc(100% - 140px), #eaf7ff 100%); color: var(--ink); }
+  .outcomes-introduction { display: grid; gap: var(--copy-gap); margin-bottom: var(--section-gap); }
+  .outcomes-introduction h2 { margin: 0; max-width: 750px; font-size: clamp(30px, 4.5vw, 40px); line-height: 1.24; font-weight: 650; letter-spacing: -.035em; text-wrap: balance; }
+  .outcomes-introduction > p { margin: 0; max-width: 560px; font-size: 16px; line-height: 1.85; color: var(--muted); }
+  .outcomes-list { display: grid; gap: 28px; padding-bottom: 64px; isolation: isolate; }
+  .outcome-track { min-width: 0; --stack-step: 12px; }
+  healthcare-outcomes[data-stack-ready] .outcome-track { position: sticky; top: min(calc(var(--header-height) + 12px + var(--stack-index) * var(--stack-step)), calc(100svh - var(--stack-card-height) - 16px)); }
+  .outcome-row { display: grid; gap: 24px; padding: 20px; border: 1px solid #102a3514; border-radius: 22px; background: #eeedfe; box-shadow: 0 8px 24px #102a350a; transform-origin: top center; }
+  .outcome-track:nth-of-type(2) .outcome-row { background: #fef2cc; }
+  .outcome-track:nth-of-type(3) .outcome-row { background: #eddafa; }
+  .outcome-track:nth-of-type(4) .outcome-row { background: #e1ffb9; }
+  .outcome-track:nth-of-type(5) .outcome-row { background: #afa9ec; }
+  .outcome-copy { display: grid; gap: 24px; align-content: start; min-width: 0; }
+  .outcome-identity { display: grid; gap: 16px; }
+  .outcome-number { font-size: 12px; line-height: 1.5; font-weight: 650; letter-spacing: .08em; text-transform: uppercase; }
+  .outcome-identity h3 { margin: 0; font-size: clamp(28px, 3.3vw, 38px); line-height: 1.2; font-weight: 650; letter-spacing: -.035em; text-wrap: balance; }
+  .outcome-details { display: grid; gap: 0; margin: 0; }
+  .outcome-details > div { display: grid; grid-template-columns: 66px minmax(0, 1fr); align-items: baseline; gap: 12px; min-width: 0; padding: 14px 0; }
+  .outcome-details > div + div { border-top: 1px solid #102a3512; }
+  .outcome-details dt { margin: 0; font-size: 12px; line-height: 1.6; font-weight: 650; }
+  .outcome-details dd { min-width: 0; margin: 0; font-size: 14px; line-height: 1.65; overflow-wrap: anywhere; }
+  .outcome-result dd { font-weight: 650; }
+  .outcomes-footer { display: flex; justify-content: center; padding-top: 12px; }
+  .outcomes-cta { max-width: 100%; }
+  .outcome-image { position: relative; min-width: 0; aspect-ratio: 3 / 2; overflow: hidden; margin: 0; border-radius: 14px; background: #ffffff50; }
+  .outcome-image img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  @media (min-width: 640px) {
+    .outcomes-section { padding-block: 80px; }
+    .outcome-row { padding: 32px; gap: 28px; border-radius: 26px; }
+    .outcome-copy { gap: 28px; }
+    .outcome-details > div { grid-template-columns: 76px minmax(0, 1fr); gap: 16px; padding: 16px 0; }
+    .outcome-details dt { font-size: 13px; }
+    .outcome-details dd { font-size: 15px; }
+  }
+  @media (min-width: 900px) {
+    .outcome-track { --stack-step: 56px; }
+    .outcome-row { grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr); gap: 40px; min-height: 480px; }
+    .outcome-copy { padding: 8px 0; gap: 32px; }
+    .outcome-image { aspect-ratio: auto; min-height: 416px; }
+  }
+  @media (min-width: 1100px) {
+    .outcomes-section { padding-block: 104px 88px; }
+    .outcomes-introduction { grid-template-columns: 1.2fr 1fr; align-items: start; gap: clamp(48px, 6vw, 112px); margin-bottom: 56px; }
+    .outcome-row { padding: 24px 24px 24px 40px; gap: 48px; min-height: 500px; }
+    .outcome-image { min-height: 450px; border-radius: 18px; }
+  }
+</style>

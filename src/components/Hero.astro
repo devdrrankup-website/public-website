@@ -1,0 +1,38 @@
+---
+import { Image } from 'astro:assets';
+import Arrow from './Arrow.astro';
+import ActionIcon from './ActionIcon.astro';
+import HospitalVisual from './HospitalVisual.astro';
+import founder from '../../public/team/founder-hridoy-chowdhury.jpeg';
+import { homepageHero } from '../data/homepage-hero';
+import StethoscopeIcon from '@hugeicons/core-free-icons/StethoscopeIcon';
+import HeartPulseIcon from '@hugeicons/core-free-icons/HeartPulseIcon';
+import SearchFocusIcon from '@hugeicons/core-free-icons/SearchFocusIcon';
+import ShieldCheckIcon from '@hugeicons/core-free-icons/ShieldCheckIcon';
+import LocationCheck01Icon from '@hugeicons/core-free-icons/LocationCheck01Icon';
+import Icon from './Icon.astro';
+const principleIcons = [HeartPulseIcon, SearchFocusIcon, ShieldCheckIcon, LocationCheck01Icon];
+---
+<section class="hero" aria-labelledby="hero-heading">
+  <HospitalVisual>
+  <div class="section-container">
+    <div class="hero-layout">
+      <div class="hero-copy">
+        <div class="hero-eyebrow"><span class="eyebrow-mark"><Icon icon={StethoscopeIcon} size={15} /></span>Healthcare growth, built for Bangladesh</div>
+        <h1 id="hero-heading">{homepageHero.heading}</h1>
+        <p class="hero-tagline">{homepageHero.tagline}</p>
+        <div class="hero-description">{homepageHero.paragraphs.map(paragraph => <p>{paragraph}</p>)}</div>
+        <div class="hero-actions"><a href="/contact/" class="button button-primary" data-hospital-light>Start a conversation <ActionIcon purpose="conversation" /></a><a href="/healthcare-marketing/" class="button button-secondary" data-hospital-light>Explore solutions <ActionIcon purpose="explore" /></a></div>
+        <aside class="founder-note" aria-labelledby="founder-context">
+          <h2 id="founder-context" class="sr-only">Search expertise behind Dr RankUP</h2>
+          <Image src={founder} width={52} height={52} widths={[52, 104, 156]} sizes="48px" format="webp" quality={80} title="Hridoy Chowdhury — Founder of Dr RankUP" alt="Hridoy Chowdhury" class="founder-avatar" />
+          <div><h3>{homepageHero.founderHeading}</h3><p>{homepageHero.founderBio}</p><a class="founder-profile" href="/about/">Meet Hridoy <Arrow /></a></div>
+        </aside>
+      </div>
+    </div>
+    <div class="hero-principles" aria-label="Our approach">
+      <ul>{homepageHero.principles.map((principle, index) => <li><span class="principle-icon"><Icon icon={principleIcons[index]} size={24} /></span>{principle}</li>)}</ul>
+    </div>
+  </div>
+  </HospitalVisual>
+</section>

@@ -1,0 +1,84 @@
+---
+import {Image} from 'astro:assets';
+import Arrow from './Arrow.astro';
+import hridoy from '../../public/team/founder-hridoy-chowdhury.jpeg';
+import {homepageSearchExpertise as content} from '../data/homepage-search-expertise';
+---
+<search-expertise>
+  <section id="search-expertise" class="expertise-section" aria-labelledby="expertise-heading">
+    <div class="section-container expertise-container">
+      <header class="expertise-introduction">
+        <p class="expertise-eyebrow">Search expertise</p>
+        <h2 id="expertise-heading">{content.heading}</h2>
+      </header>
+
+      <div class="expertise-feature">
+        <div class="expertise-photo">
+          <div class="expertise-portrait-frame">
+            <Image src={hridoy} alt="Hridoy Chowdhury, Founder and SEO Consultant at Dr RankUP."
+              title="Hridoy Chowdhury — Founder & SEO Consultant, Dr RankUP"
+              width={960} height={960} widths={[320,480,640,960]} sizes="(min-width: 1100px) 480px, (min-width: 900px) 38vw, (min-width: 480px) 420px, calc(100vw - 32px)"
+              format="webp" quality={85} loading="lazy" decoding="async"/>
+          </div>
+        </div>
+
+        <div class="expertise-copy">
+          <h3>{content.founder}<span class="expertise-role"> — {content.role}</span></h3>
+          <div class="expertise-skills">
+            <p>{content.introduction}</p>
+            <ul aria-label="Search strategy expertise">
+              {content.skills.map(skill => <li>{skill}</li>)}
+            </ul>
+          </div>
+          <p>{content.explanation}</p>
+          <p class="expertise-conclusion">{content.conclusion}</p>
+          <span class="expertise-consultation">
+            <span>{content.consultation.label}</span>
+            <Arrow/>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+</search-expertise>
+
+<style>
+  search-expertise { display: block; }
+  .expertise-section { padding-block: 32px 64px; color: var(--ink); background: var(--journey-lavender-gradient); }
+  .expertise-container { max-width: 1250px; }
+  .expertise-introduction { display: grid; gap: 16px; }
+  .expertise-eyebrow { margin: 0; color: var(--accent-green); font-size: 12px; font-weight: 650; line-height: 1.5; letter-spacing: .09em; text-transform: uppercase; }
+  .expertise-introduction h2 { max-width: 900px; margin: 0; font-size: clamp(30px,4vw,48px); font-weight: 650; line-height: 1.2; letter-spacing: -.035em; text-wrap: balance; }
+  .expertise-feature { display: grid; gap: 32px; margin-top: 32px; }
+  .expertise-photo { width: 100%; max-width: 420px; margin-inline: auto; align-self: center; }
+  .expertise-portrait-frame { aspect-ratio: 1; padding: 7px; overflow: clip; border: 1px solid #afa9ec; border-radius: 32px; background: linear-gradient(145deg,#fff,#afa9ec80); box-shadow: 0 16px 48px -28px #6131c64d; }
+  .expertise-portrait-frame img { display: block; width: 100%; height: 100%; border-radius: 25px; object-fit: contain; }
+  .expertise-copy { display: grid; align-content: center; gap: 24px; min-width: 0; }
+  .expertise-copy h3 { margin: 0; font-size: clamp(27px,2.5vw,34px); font-weight: 650; line-height: 1.25; letter-spacing: -.025em; }
+  .expertise-role { display: block; margin-top: 10px; color: var(--muted); font-size: 15px; font-weight: 500; line-height: 1.6; letter-spacing: 0; }
+  .expertise-copy p { max-width: 660px; margin: 0; color: var(--muted); font-size: 15px; line-height: 1.8; }
+  .expertise-skills { display: grid; gap: 16px; }
+  .expertise-skills ul { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+  .expertise-skills li { --skill-accent: #bae5ff; --skill-surface: #bae5ff80; max-width: 100%; padding: 7px 12px; border: 1px solid var(--skill-accent); border-radius: var(--control-radius); background: var(--skill-surface); color: var(--ink); font-size: 12px; font-weight: 550; line-height: 1.5; }
+  .expertise-skills li:nth-child(5n+2) { --skill-accent: #afa9ec; --skill-surface: #ffffff80; }
+  .expertise-skills li:nth-child(5n+3) { --skill-accent: #e1ffb9; --skill-surface: #e1ffb980; }
+  .expertise-skills li:nth-child(5n+4) { --skill-accent: #eddafa; --skill-surface: #eddafa80; }
+  .expertise-skills li:nth-child(5n+5) { --skill-accent: #fef2cc; --skill-surface: #fef2cc; }
+  .expertise-copy .expertise-conclusion { padding-top: 24px; border-top: 1px solid #afa9ec80; color: var(--ink); font-size: 14px; }
+  .expertise-consultation { display: inline-flex; align-items: center; justify-self: start; max-width: 100%; min-height: 44px; gap: 8px; color: var(--purple); font-size: 12px; font-weight: 600; text-align: left; }
+  .expertise-consultation > span:first-child { min-width: 0; }
+  @media (min-width: 640px) {
+    .expertise-section { padding-block: 40px 80px; }
+    .expertise-feature { gap: 40px; margin-top: 40px; }
+    .expertise-copy p { font-size: 16px; }
+    .expertise-skills li { font-size: 13px; }
+    .expertise-copy .expertise-conclusion { font-size: 15px; }
+  }
+  @media (min-width: 900px) {
+    .expertise-section { padding-block: 48px 96px; }
+    .expertise-feature { grid-template-columns: minmax(0,.85fr) minmax(0,1.2fr); align-items: center; column-gap: clamp(48px,6vw,88px); margin-top: 56px; }
+    .expertise-photo { max-width: 480px; }
+    .expertise-copy { gap: 28px; }
+    .expertise-role { font-size: 16px; }
+  }
+</style>

@@ -1,0 +1,32 @@
+---
+import Icon from './Icon.astro';
+import Facebook01Icon from '@hugeicons/core-free-icons/Facebook01Icon';
+import InstagramIcon from '@hugeicons/core-free-icons/InstagramIcon';
+import Linkedin01Icon from '@hugeicons/core-free-icons/Linkedin01Icon';
+import NewTwitterIcon from '@hugeicons/core-free-icons/NewTwitterIcon';
+import YoutubeIcon from '@hugeicons/core-free-icons/YoutubeIcon';
+import TiktokIcon from '@hugeicons/core-free-icons/TiktokIcon';
+import ThreadsIcon from '@hugeicons/core-free-icons/ThreadsIcon';
+import PinterestIcon from '@hugeicons/core-free-icons/PinterestIcon';
+import WhatsappBusinessIcon from '@hugeicons/core-free-icons/WhatsappBusinessIcon';
+import SnapchatIcon from '@hugeicons/core-free-icons/SnapchatIcon';
+import RedditIcon from '@hugeicons/core-free-icons/RedditIcon';
+import QuoraIcon from '@hugeicons/core-free-icons/QuoraIcon';
+import MediumIcon from '@hugeicons/core-free-icons/MediumIcon';
+import BlueskyIcon from '@hugeicons/core-free-icons/BlueskyIcon';
+import VimeoIcon from '@hugeicons/core-free-icons/VimeoIcon';
+// Platforms supplied by the user; account URLs remain pending.
+const socials = [
+  ['Facebook',Facebook01Icon],['Instagram',InstagramIcon],['LinkedIn',Linkedin01Icon],['X (Twitter)',NewTwitterIcon],
+  ['YouTube',YoutubeIcon],['TikTok',TiktokIcon],['Pinterest',PinterestIcon],['Threads',ThreadsIcon],
+  ['WhatsApp Business',WhatsappBusinessIcon],['Reddit',RedditIcon],['Snapchat',SnapchatIcon],['Bluesky',BlueskyIcon],
+  ['Medium',MediumIcon],['Quora',QuoraIcon],['Vimeo',VimeoIcon],
+] as const;
+---
+<ul class="footer-socials" aria-label="Social profile placeholders">
+  {socials.map(([name,icon])=><li><span class="footer-social-placeholder" role="img" aria-label={`${name} profile placeholder`} title={`${name} — placeholder`}><Icon icon={icon} size={21} strokeWidth={1.8} /></span></li>)}
+</ul>
+<style>
+  .footer-socials { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+  .footer-social-placeholder { display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid #afa9ec59; border-radius: 11px; background: #afa9ec0d; color: #eeedfe; }
+</style>

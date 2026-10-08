@@ -1,0 +1,66 @@
+---
+import {homepageFaq as content} from '../data/homepage-faq';
+import Add01Icon from '@hugeicons/core-free-icons/Add01Icon';
+import Icon from './Icon.astro';
+---
+<faq-motion>
+  <section id="faq" class="faq-section" aria-labelledby="faq-heading">
+    <div class="section-container faq-layout">
+      <header class="faq-introduction">
+        <h2 id="faq-heading">{content.heading}</h2>
+      </header>
+      <healthcare-faq class="faq-list">
+        {content.items.map((item,index)=>(
+          <article class="faq-item">
+            <h3 id={`faq-question-${index+1}`} class="faq-question">
+              <span class="faq-question-label">{item.question}</span>
+              <span class="faq-toggle-icon" aria-hidden="true"><Icon icon={Add01Icon} size={20}/></span>
+            </h3>
+            <div id={`faq-answer-${index+1}`} class="faq-answer">
+              <p>{item.answer}</p>
+            </div>
+          </article>
+        ))}
+      </healthcare-faq>
+    </div>
+  </section>
+</faq-motion>
+
+<style>
+  faq-motion { display: block; }
+  .faq-section { padding-block: 40px 64px; color: var(--ink); background: linear-gradient(180deg,#fff 0%,#eeedfe 55%,#fff 100%); }
+  .faq-layout { display: grid; gap: 32px; max-width: 1250px; }
+  .faq-introduction { display: grid; align-content: start; justify-items: start; gap: 16px; }
+  .faq-introduction h2 { max-width: 500px; margin: 0; font-size: clamp(32px,4vw,48px); font-weight: 650; line-height: 1.2; letter-spacing: -.035em; text-wrap: balance; }
+  .faq-list { display: block; min-width: 0; }
+  .faq-item { padding-inline: 16px; border-bottom: 1px solid #afa9ec50; }
+  .faq-item:first-child { border-top: 1px solid #afa9ec50; }
+  .faq-item:has(:global(.faq-trigger[aria-expanded='true'])) { border-color: transparent; border-radius: 20px; background: linear-gradient(120deg,#fff 0%,#ffffffa6 55%,#eaf7ffb3 100%); box-shadow: 0 16px 32px -28px #102a3540; }
+  .faq-question { margin: 0; padding-block: 22px; font-size: 17px; font-weight: 600; line-height: 1.6; letter-spacing: -.018em; }
+  .faq-list[data-enhanced] .faq-question { padding: 0; }
+  .faq-question :global(.faq-trigger) { display: flex; align-items: center; gap: 16px; width: 100%; min-height: 76px; margin: 0; padding: 22px 0; border: 0; border-radius: 8px; color: inherit; background: transparent; font: inherit; text-align: left; }
+  .faq-question-label { flex: 1; min-width: 0; }
+  .faq-toggle-icon { display: none; }
+  .faq-question :global(.faq-trigger) .faq-toggle-icon { display: grid; place-items: center; flex: 0 0 32px; width: 32px; height: 32px; border: 1px solid #afa9ec80; border-radius: 50%; color: var(--purple); background: #eeedfe; }
+  .faq-question :global(.faq-trigger[aria-expanded='true']) .faq-toggle-icon { border-color: #bae5ff; background: #eaf7ff; }
+  .faq-toggle-icon :global(svg) { transition: transform 180ms ease; }
+  .faq-question :global(.faq-trigger[aria-expanded='true']) .faq-toggle-icon :global(svg) { transform: rotate(45deg); }
+  .faq-question :global(.faq-trigger:focus-visible) { outline: 2px solid var(--purple); outline-offset: 4px; }
+  .faq-answer { padding: 0 0 24px; }
+  .faq-answer[hidden] { display: none; }
+  .faq-answer p { max-width: 660px; margin: 0; color: var(--muted); font-size: 15px; line-height: 1.85; }
+  @media (prefers-reduced-motion: reduce) { .faq-toggle-icon :global(svg) { transition: none; } }
+  @media (min-width: 640px) {
+    .faq-section { padding-block: 56px 80px; }
+    .faq-layout { gap: 40px; }
+    .faq-item { padding-inline: 24px; }
+    .faq-question { font-size: 19px; }
+    .faq-answer p { font-size: 16px; }
+  }
+  @media (min-width: 1000px) {
+    .faq-section { padding-block: 72px 96px; }
+    .faq-layout { grid-template-columns: minmax(0,.85fr) minmax(0,1.6fr); gap: 72px; }
+    .faq-introduction { padding-top: 18px; }
+    .faq-introduction h2 { max-width: 380px; }
+  }
+</style>

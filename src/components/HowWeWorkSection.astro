@@ -1,0 +1,121 @@
+---
+import {Image} from 'astro:assets';
+import {homepageWork as content} from '../data/homepage-work';
+import understand from '../assets/how-we-work/understand.png';
+import diagnose from '../assets/how-we-work/diagnose-agency-v2.png';
+import strategize from '../assets/how-we-work/strategize-agency-v2.png';
+import implement from '../assets/how-we-work/implement-onsite-v2.png';
+import measure from '../assets/how-we-work/measure-review-v3.png';
+const images = [understand,diagnose,strategize,implement,measure];
+const accents = [
+  // The user's repeated reference explicitly overrides the pastel ribbon palette.
+  ['#ff69da','#b431ac','#ffd2f3','#8c246f'],
+  ['#b7dd88','#77a746','#e4f4ce','#41651e'],
+  ['#fcc65c','#e69745','#ffe6ac','#805800'],
+  ['#8bd391','#399a80','#c5f1d7','#1d6d52'],
+  ['#6dd1f5','#328ab5','#c4eeff','#176280'],
+];
+---
+<healthcare-work>
+  <section id="how-we-work" class="work-section" aria-labelledby="work-heading">
+    <div class="section-container work-container">
+      <header class="work-introduction">
+        <p class="work-eyebrow">Our process</p>
+        <h2 id="work-heading">{content.heading}</h2>
+      </header>
+      <div class="work-scroll" role="region" aria-label="How we work: five steps" tabindex="0">
+        <ol class="work-steps" role="list">
+          {content.steps.map((step,index) => (
+            <li class="work-step" style={`--step:${index};--ribbon:${accents[index][0]};--fold:${accents[index][1]};--ribbon-light:${accents[index][2]};--step-title:${accents[index][3]}`}>
+              <article class="work-paper" aria-labelledby={`work-${step.id}`}>
+                <div class="work-ribbon" aria-hidden="true">
+                  <svg class="work-ribbon-surface" viewBox="0 0 240 188" preserveAspectRatio="none">
+                    <defs>
+                      <linearGradient id={`work-face-${index}`} x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0" stop-color="var(--ribbon-light)"/>
+                        <stop offset=".21" stop-color="var(--ribbon)"/>
+                        <stop offset=".82" stop-color="var(--ribbon)"/>
+                        <stop offset="1" stop-color="var(--ribbon-light)"/>
+                      </linearGradient>
+                      <linearGradient id={`work-curl-${index}`} x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0" stop-color="var(--ribbon)"/>
+                        <stop offset=".55" stop-color="var(--fold)"/>
+                        <stop offset="1" stop-color="var(--fold)"/>
+                      </linearGradient>
+                      <linearGradient id={`work-edge-${index}`} x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0" stop-color="#fff" stop-opacity=".35"/>
+                        <stop offset=".2" stop-color="#fff" stop-opacity="0"/>
+                        <stop offset=".8" stop-color="#fff" stop-opacity="0"/>
+                        <stop offset="1" stop-color="var(--fold)" stop-opacity=".13"/>
+                      </linearGradient>
+                      <filter id={`work-shadow-${index}`} x="-20%" y="-12%" width="145%" height="140%" color-interpolation-filters="sRGB">
+                        <feDropShadow dx="3" dy="8" stdDeviation="5" flood-color="#26302b" flood-opacity=".17"/>
+                      </filter>
+                    </defs>
+                    {/* One continuous curled strip: darker reverse above the paper,
+                        a rounded return at the left, then the broad arrow face. */}
+                    <path d="M3 52V22C3 6 14 2 32 2H35V36H17C8 36 3 43 3 52Z" fill={`url(#work-curl-${index})`}/>
+                    <path d="M32 2H35V38H32Z" fill="var(--fold)" opacity=".38"/>
+                    <g filter={`url(#work-shadow-${index})`}>
+                      <path class="work-ribbon-base" d="M17 36H190Q195 36 198 41L237 105Q240 110 237 115L198 179Q195 184 190 184H17Q3 184 3 170V51Q3 36 17 36Z" fill={`url(#work-face-${index})`}/>
+                      <path d="M17 36H190Q195 36 198 41L237 105Q240 110 237 115L198 179Q195 184 190 184H17Q3 184 3 170V51Q3 36 17 36Z" fill={`url(#work-edge-${index})`}/>
+                    </g>
+                  </svg>
+                  <div class="work-ribbon-content">
+                  <span class="work-number">{String(index+1).padStart(2,'0')}</span>
+                  <span class="work-step-label">Step</span>
+                  </div>
+                </div>
+                <div class="work-body">
+                  <div class="work-image">
+                    <Image src={images[index]} alt={step.alt} title={`${step.title} — Dr RankUP's approach`}
+                      width={600} widths={[240,360,480,600]} sizes="136px"
+                      format="webp" quality={80} loading="lazy" decoding="async"/>
+                  </div>
+                  <h3 id={`work-${step.id}`}>{step.title}</h3>
+                  <p>{step.description}</p>
+                </div>
+              </article>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </div>
+  </section>
+</healthcare-work>
+
+<style>
+  healthcare-work { display: block; background: #0a0a0a; }
+  .work-section { padding-block: 56px 40px; border-radius: 28px 28px 0 0; color: var(--ink); background: linear-gradient(180deg,#fff 0%,#eaf7ff 55%,#fff 100%); }
+  .work-container { max-width: 1250px; }
+  .work-introduction { display: grid; gap: 16px; }
+  .work-eyebrow { margin: 0; color: var(--accent-green); font-size: 12px; font-weight: 650; line-height: 1.5; letter-spacing: .09em; text-transform: uppercase; }
+  .work-introduction h2 { margin: 0; font-size: clamp(32px,4vw,48px); font-weight: 650; line-height: 1.2; letter-spacing: -.035em; }
+  .work-scroll { position: relative; max-width: 1000px; margin: 28px auto 0; overflow-x: auto; overflow-y: hidden; scrollbar-width: thin; scrollbar-color: #afa9ec #eeedfe; scroll-snap-type: x proximity; scroll-padding-inline: 32px; }
+  .work-scroll:focus-visible { outline: 2px solid var(--purple); outline-offset: 4px; border-radius: 8px; }
+  .work-steps { --ribbon-rise: 46px; isolation: isolate; display: grid; grid-template-columns: repeat(5,188px); align-items: stretch; gap: 0; width: max-content; min-width: 100%; margin: 0; padding: 32px 46px 42px 32px; list-style: none; }
+  .work-step { position: relative; display: grid; min-width: 0; scroll-snap-align: start; }
+  .work-paper { position: relative; min-height: 700px; padding-top: calc((4 - var(--step))*var(--ribbon-rise)); background: linear-gradient(180deg,#ffffff00 0%,#fff 110px,#fdfefb 100%); }
+  .work-paper::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg,#2530270c,#fff0 12px,#fff0 90%,#25302705); mask-image: linear-gradient(180deg,transparent,#000 110px,#000 95%,transparent); pointer-events: none; }
+  .work-step + .work-step .work-paper::before { background: linear-gradient(90deg,#25302724,#25302708 7px,#fff0 20px,#fff0 94%,#25302709); }
+  .work-paper::after { content: ''; position: absolute; top: 0; bottom: -12px; right: -9px; width: 13px; background: linear-gradient(90deg,#25302720,#25302709 45%,#25302700); mask-image: linear-gradient(180deg,transparent,#000 110px,#000 94%,transparent); pointer-events: none; }
+  .work-ribbon { position: relative; z-index: calc(10 - var(--step)); height: 188px; width: calc(100% + 48px); margin-left: -30px; color: #171d18; transform-origin: 30px 55%; }
+  .work-ribbon-surface { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+  .work-ribbon-content { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 148px; top: 36px; gap: 2px; padding-right: 36px; }
+  .work-number { display: block; font-size: 57px; font-weight: 250; font-variant-numeric: tabular-nums; line-height: 1; letter-spacing: -.055em; transform: scaleX(.72); }
+  .work-step-label { color: #fff; font-size: 16px; font-weight: 750; line-height: 1.4; letter-spacing: -.02em; text-transform: uppercase; text-shadow: 0 1px 2px #26302b24; }
+  .work-body { padding: 20px 16px 34px; text-align: center; }
+  .work-image { max-width: 136px; margin-inline: auto; overflow: clip; border-radius: 3px; background: #fff; aspect-ratio: 3/2; }
+  .work-image img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .work-body h3 { margin: 18px 0 10px; color: var(--step-title); font-size: 18px; font-weight: 650; line-height: 1.35; letter-spacing: -.025em; }
+  .work-body p { margin: 0; color: #455449; font-size: 14px; line-height: 1.7; }
+  @media (min-width: 640px) {
+    .work-section { padding-block: 72px 56px; border-radius: 36px 36px 0 0; }
+    .work-scroll { margin-top: 36px; }
+  }
+  @media (min-width: 900px) { .work-section { border-radius: 40px 40px 0 0; } }
+  @media (min-width: 1100px) {
+    .work-section { padding-block: 88px 64px; }
+    .work-steps { width: 100%; grid-template-columns: repeat(5,minmax(0,1fr)); }
+  }
+</style>

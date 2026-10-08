@@ -1,0 +1,9 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "dr-rankup-website",
+  "account_id": "62819ec110204cd83acd547e81064f63",
+  "compatibility_date": "2026-10-08",
+  "assets": {
+    "directory": "./dist"
+  }
+}

@@ -1,0 +1,72 @@
+---
+import { homepageDiscovery } from '../data/homepage-discovery';
+import Icon from './Icon.astro';
+import SearchFocusIcon from '@hugeicons/core-free-icons/SearchFocusIcon';
+import BookOpen02Icon from '@hugeicons/core-free-icons/BookOpen02Icon';
+import ShieldCheckIcon from '@hugeicons/core-free-icons/ShieldCheckIcon';
+import CursorInWindowIcon from '@hugeicons/core-free-icons/CursorInWindowIcon';
+const icons = [SearchFocusIcon, BookOpen02Icon, ShieldCheckIcon, CursorInWindowIcon];
+---
+<healthcare-discovery>
+  <section id="healthcare-discovery" class="discovery-section" aria-labelledby="discovery-heading">
+    <div class="section-container">
+      <div class="discovery-introduction" data-reveal-intro>
+        <h2 id="discovery-heading">{homepageDiscovery.heading}</h2>
+        <p>{homepageDiscovery.introduction}</p>
+      </div>
+      <p class="discovery-prompt">{homepageDiscovery.prompt}</p>
+      <div class="discovery-questions">
+        <span class="discovery-connection" data-reveal-connection aria-hidden="true"></span>
+        {homepageDiscovery.questions.map((question, index) => (
+          <article class="discovery-question" data-reveal-card aria-labelledby={`discovery-question-${index + 1}`}>
+            <div class="discovery-card-top">
+              <span class="discovery-icon"><Icon icon={icons[index]} size={28} strokeWidth={1.8} /></span>
+              <span class="discovery-number" aria-hidden="true">0{index + 1}</span>
+            </div>
+            <h3 id={`discovery-question-${index + 1}`}>{question.heading}</h3>
+            <p>{question.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</healthcare-discovery>
+
+
+<style>
+  healthcare-discovery { display: block; }
+  .discovery-section { position: relative; overflow: clip; padding-block: 72px; color: var(--ink); }
+  .discovery-introduction { display: grid; gap: var(--copy-gap); }
+  .discovery-introduction h2 { max-width: 620px; margin: 0; font-size: clamp(30px, 4.5vw, 40px); font-weight: 650; line-height: 1.24; letter-spacing: -.035em; text-wrap: balance; }
+  .discovery-introduction > p { max-width: 660px; margin: 0; font-size: 16px; line-height: 1.85; color: var(--muted); }
+  .discovery-prompt { margin: var(--section-gap) 0 24px; font-size: 14px; font-weight: 650; letter-spacing: -.01em; }
+  .discovery-questions { position: relative; display: grid; gap: 16px; }
+  .discovery-connection { display: none; }
+  .discovery-question { position: relative; padding: 28px; border: 1px solid #fff; border-radius: 24px; background: #eeedfe; box-shadow: inset 0 0 0 1px #dce9ef80; }
+  /* Supplied card roles: service, key information, trust/social proof, growth. */
+  .discovery-question:nth-of-type(2) { background: #fef2cc; }
+  .discovery-question:nth-of-type(3) { background: #eddafa; }
+  .discovery-question:nth-of-type(4) { background: #e1ffb9; }
+  .discovery-card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; }
+  .discovery-icon { display: grid; place-items: center; width: 56px; height: 56px; border-radius: 18px; color: var(--ink); background: #bae5ff; border: 1px solid #102a3514; }
+  .discovery-question:nth-of-type(2) .discovery-icon { color: #6131c6; background: #eeedfe; }
+  .discovery-question:nth-of-type(3) .discovery-icon { color: #165f3a; background: #e1ffb9; }
+  .discovery-question:nth-of-type(4) .discovery-icon { color: #6131c6; background: #eddafa; }
+  .discovery-number { font-size: 13px; font-weight: 600; letter-spacing: .06em; color: var(--ink); }
+  .discovery-question h3 { margin: 0 0 16px; font-size: 21px; font-weight: 650; line-height: 1.4; letter-spacing: -.025em; text-wrap: balance; }
+  .discovery-question p { margin: 0; font-size: 15px; line-height: 1.85; color: var(--ink); }
+  @media (min-width: 640px) {
+    .discovery-section { padding-block: 88px; }
+    .discovery-questions { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+    .discovery-question { padding: 32px; }
+  }
+  @media (min-width: 1100px) {
+    .discovery-section { padding-block: 112px; }
+    .discovery-introduction { grid-template-columns: 1fr 1fr; align-items: start; gap: clamp(48px, 6vw, 112px); }
+    .discovery-introduction > p { font-size: 16px; }
+    .discovery-prompt { margin-top: 56px; margin-bottom: 28px; }
+    .discovery-questions { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+    .discovery-connection { display: block; position: absolute; left: 40px; right: 40px; top: -14px; height: 2px; background: linear-gradient(90deg, #bae5ff, #6131c680, #229f6080, #bae5ff); }
+    .discovery-question { padding: 32px 24px; }
+  }
+</style>

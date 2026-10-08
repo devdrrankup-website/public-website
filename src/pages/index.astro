@@ -1,0 +1,64 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import DiscoverySection from '../components/DiscoverySection.astro';
+import OutcomesSection from '../components/OutcomesSection.astro';
+import JourneySection from '../components/JourneySection.astro';
+import ServicesSection from '../components/ServicesSection.astro';
+import ConnectedSystemSection from '../components/ConnectedSystemSection.astro';
+import HealthcareTrustSection from '../components/HealthcareTrustSection.astro';
+import ResponsibleHealthcareSection from '../components/ResponsibleHealthcareSection.astro';
+import SearchExpertiseSection from '../components/SearchExpertiseSection.astro';
+import PeopleSection from '../components/PeopleSection.astro';
+import WhyRankupSection from '../components/WhyRankupSection.astro';
+import HowWeWorkSection from '../components/HowWeWorkSection.astro';
+import FaqSection from '../components/FaqSection.astro';
+import ConsultationSection from '../components/ConsultationSection.astro';
+import Footer from '../components/Footer.astro';
+import {hospitalPreload} from '../lib/hospital-images';
+---
+
+<Layout title="Dr RankUP — Healthcare Marketing, SEO & Software in Bangladesh" imagePreload={hospitalPreload}>
+  <Navbar />
+  <main id="main-content" class="hero-page" tabindex="-1">
+    <Hero />
+    <div class="healthcare-light-sections">
+      <DiscoverySection />
+      <OutcomesSection />
+    </div>
+    <JourneySection />
+    <ServicesSection />
+    <ConnectedSystemSection />
+    <div class="healthcare-responsibility-sections">
+      <HealthcareTrustSection />
+      <ResponsibleHealthcareSection />
+      <SearchExpertiseSection />
+    </div>
+    <PeopleSection />
+    <WhyRankupSection />
+    <HowWeWorkSection />
+    <FaqSection />
+    <ConsultationSection />
+  </main>
+  <Footer />
+</Layout>
+
+<script>
+  // One homepage entry registers scoped lighting and section behaviors.
+  // Each custom element scopes and cleans up its own enhancement; GSAP stays
+  // dynamically imported only when lighting or section entry needs it.
+  import '../scripts/hospital-visual';
+  import '../scripts/healthcare-discovery';
+  import '../scripts/healthcare-outcomes';
+  import '../scripts/healthcare-journey';
+  import '../scripts/healthcare-services';
+  import '../scripts/connected-system';
+  import '../scripts/healthcare-responsibility';
+  import '../scripts/search-expertise';
+  import '../scripts/healthcare-people';
+  import '../scripts/why-rankup';
+  import '../scripts/healthcare-work';
+  import '../scripts/healthcare-faq';
+  import '../scripts/healthcare-consultation';
+</script>

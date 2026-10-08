@@ -1,0 +1,35 @@
+﻿---
+import '../styles/navigation.css';
+import ActionIcon from './ActionIcon.astro';
+import NavigationMenu from './NavigationMenu.astro';
+import {Image} from 'astro:assets';
+import logo from '../../public/brand/dr-rankup-logo.png';
+import Menu01Icon from '@hugeicons/core-free-icons/Menu01Icon';
+import Cancel01Icon from '@hugeicons/core-free-icons/Cancel01Icon';
+import Icon from './Icon.astro';
+import {navigationMenus} from '../data/navigation';
+---
+<header class="site-header">
+  <div class="container">
+    <site-navigation class="nav-shell">
+      <div class="brand"><Image src={logo} width={190} widths={[190,380,570]} sizes="(min-width: 1100px) 190px, 174px" format="webp" quality={100} title="Dr RankUP — healthcare growth and technology" alt="Dr RankUP" loading="eager"/></div>
+      <nav id="main-navigation" class="main-navigation" aria-label="Main navigation">
+        {navigationMenus.map(menu=>menu.id==='resources'?<><span class="nav-direct-item">Contact Us</span><NavigationMenu menu={menu}/></>:<NavigationMenu menu={menu}/>)}
+        <span class="button button-primary nav-mobile-cta">Let’s talk <ActionIcon purpose="conversation"/></span>
+      </nav>
+      <span class="button button-primary nav-cta">Let’s talk <ActionIcon purpose="conversation"/></span>
+      <button class="navigation-toggle" type="button" aria-controls="main-navigation" aria-expanded="false" aria-label="Open navigation menu" hidden>
+        <span>Menu</span><Icon icon={Menu01Icon} class="menu-open" size={22}/><Icon icon={Cancel01Icon} class="menu-close" size={22}/>
+      </button>
+    </site-navigation>
+  </div>
+</header>
+<noscript><style is:inline>
+  @media(max-width:1099px) {
+    site-navigation .main-navigation { display:block; }
+    .site-header { position:relative; }
+  }
+</style></noscript>
+<script>
+  import '../scripts/site-navigation';
+</script>

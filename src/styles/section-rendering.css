@@ -1,0 +1,91 @@
+/* Let the browser defer independent offscreen sections. These are provisional
+   size hints, not fixed heights: `auto` remembers the actual responsive layout.
+   The hero stays immediately renderable. Whole section boundaries retain the
+   native sticky containers; never contain an individual sticky card/window.
+   The browser renders nearby content before the 400px motion observer runs. */
+@supports (content-visibility: auto) {
+  :is(healthcare-discovery,healthcare-outcomes,healthcare-journey,healthcare-services,connected-system,responsible-healthcare,search-expertise,healthcare-people,why-rankup,healthcare-work,faq-motion,consultation-motion,.footer-frame,.healthcare-trust) {
+    content-visibility: auto;
+    contain-intrinsic-block-size: auto var(--section-estimate, 1000px);
+  }
+  healthcare-discovery { --section-estimate: 1903px; }
+  healthcare-outcomes { --section-estimate: 4757px; }
+  healthcare-services { --section-estimate: 4013px; }
+  healthcare-journey { --section-estimate: 964px; }
+  connected-system { --section-estimate: 1632px; }
+  .healthcare-trust { --section-estimate: 831px; }
+  responsible-healthcare { --section-estimate: 2213px; }
+  search-expertise { --section-estimate: 1362px; }
+  healthcare-people { --section-estimate: 1677px; }
+  why-rankup { --section-estimate: 1615px; }
+  healthcare-work { --section-estimate: 970px; }
+  faq-motion { --section-estimate: 818px; }
+  consultation-motion { --section-estimate: 1950px; }
+  .footer-frame { --section-estimate: 1215px; }
+  @media (min-width: 360px) {
+    healthcare-discovery { --section-estimate: 1665px; }
+    healthcare-outcomes { --section-estimate: 4575px; }
+    healthcare-services { --section-estimate: 4103px; }
+    healthcare-journey { --section-estimate: 920px; }
+    connected-system { --section-estimate: 1607px; }
+    .healthcare-trust { --section-estimate: 754px; }
+    responsible-healthcare { --section-estimate: 2104px; }
+    search-expertise { --section-estimate: 1284px; }
+    healthcare-people { --section-estimate: 1694px; }
+    faq-motion { --section-estimate: 751px; }
+    consultation-motion { --section-estimate: 1815px; }
+    .footer-frame { --section-estimate: 1192px; }
+  }
+  @media (min-width: 640px) {
+    healthcare-discovery { --section-estimate: 1080px; }
+    healthcare-outcomes { --section-estimate: 5803px; }
+    healthcare-services { --section-estimate: 3235px; }
+    healthcare-journey { --section-estimate: 676px; }
+    connected-system { --section-estimate: 1063px; }
+    .healthcare-trust { --section-estimate: 558px; }
+    responsible-healthcare { --section-estimate: 2445px; }
+    search-expertise { --section-estimate: 1192px; }
+    healthcare-people { --section-estimate: 993px; }
+    why-rankup { --section-estimate: 1437px; }
+    healthcare-work { --section-estimate: 1011px; }
+    faq-motion { --section-estimate: 685px; }
+    consultation-motion { --section-estimate: 1628px; }
+    .footer-frame { --section-estimate: 807px; }
+  }
+  @media (min-width: 900px) {
+    healthcare-discovery { --section-estimate: 811px; }
+    healthcare-outcomes { --section-estimate: 3681px; }
+    healthcare-services { --section-estimate: 2895px; }
+    healthcare-journey { --section-estimate: 546px; }
+    connected-system { --section-estimate: 1005px; }
+    .healthcare-trust { --section-estimate: 381px; }
+    responsible-healthcare { --section-estimate: 1505px; }
+    search-expertise { --section-estimate: 888px; }
+    healthcare-people { --section-estimate: 1002px; }
+    why-rankup { --section-estimate: 1583px; }
+    healthcare-work { --section-estimate: 1049px; }
+    faq-motion { --section-estimate: 637px; }
+    consultation-motion { --section-estimate: 1000px; }
+    .footer-frame { --section-estimate: 512px; }
+  }
+  @media (min-width: 1200px) {
+    healthcare-discovery { --section-estimate: 764px; }
+    healthcare-outcomes { --section-estimate: 3631px; }
+    healthcare-services { --section-estimate: 3347px; }
+    healthcare-journey { --section-estimate: 518px; }
+    connected-system { --section-estimate: 1010px; }
+    .healthcare-trust { --section-estimate: 360px; }
+    responsible-healthcare { --section-estimate: 1618px; }
+    search-expertise { --section-estimate: 817px; }
+    healthcare-people { --section-estimate: 1019px; }
+    why-rankup { --section-estimate: 1412px; }
+    healthcare-work { --section-estimate: 1054px; }
+    consultation-motion { --section-estimate: 973px; }
+  }
+}
+@media print {
+  :is(healthcare-discovery,healthcare-outcomes,healthcare-journey,healthcare-services,connected-system,responsible-healthcare,search-expertise,healthcare-people,why-rankup,healthcare-work,faq-motion,consultation-motion,.footer-frame,.healthcare-trust) {
+    content-visibility: visible;
+    contain-intrinsic-block-size: none;
+  }
+}

@@ -1,0 +1,18 @@
+---
+/** Hugeicons node data is rendered at build time; no icon client script. */
+interface Props {
+  icon: readonly (readonly [string, Record<string, string | number>])[];
+  size?: number;
+  class?: string;
+  strokeWidth?: number;
+}
+const { icon, size = 20, class: className, strokeWidth = 2 } = Astro.props;
+const svgAttributes = (attributes: Record<string, string | number>) => Object.fromEntries(
+  Object.entries(attributes).filter(([name]) => !['key', 'strokeWidth'].includes(name)).map(([name, value]) => [
+    name.replace(/[A-Z]/g, letter => `-${letter.toLowerCase()}`), value,
+  ]),
+);
+---
+<svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width={strokeWidth} stroke-linecap="round" stroke-linejoin="round" class:list={['ui-icon', className]} aria-hidden="true" focusable="false">
+  {icon.map(([tag, attributes]) => { const Element = tag; return <Element {...svgAttributes(attributes)} />; })}
+</svg>
