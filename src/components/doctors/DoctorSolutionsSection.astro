@@ -27,7 +27,7 @@ const groupVisuals = [visuals.slice(0, 10), visuals.slice(10, 14), visuals.slice
         <div class="doctor-solutions-stage" hidden></div>
       </div>
       <div class="doctor-solutions-panels">
-        {copy.groups.map((group, index) => <div id={`solution-panel-${group.id}`} class="doctor-solution-panel" data-solution-panel>
+        {copy.groups.map((group, index) => <div id={`solution-panel-${group.id}`} class:list={['doctor-solution-panel', { 'is-initially-hidden': index !== 0 }]} data-solution-panel>
           <h3 id={`solution-heading-${group.id}`}>{group.heading}</h3>
           <dl class="doctor-solution-list">
             {group.services.map(([name, description], serviceIndex) => <div class="doctor-solution-row" data-service={groupVisuals[index][serviceIndex].key}>
@@ -53,4 +53,7 @@ const groupVisuals = [visuals.slice(0, 10), visuals.slice(10, 14), visuals.slice
     </doctor-solutions>
   </div>
 </section>
+<noscript><style is:inline>
+  #doctor-solutions .doctor-solution-panel.is-initially-hidden { display: block; }
+</style></noscript>
 <script>import '../../scripts/doctor-solutions';</script>

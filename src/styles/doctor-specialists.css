@@ -1,0 +1,101 @@
+.doctor-specialists-motion { display: block; }
+.doctor-specialists {
+  padding-block: 28px 32px;
+  scroll-margin-top: calc(var(--header-height) + 12px);
+  color: #000;
+  background: linear-gradient(180deg, #fff 0%, #f7fbff 100%);
+  border-block: 1px solid #bae5ff80;
+}
+.doctor-specialists-layout { display: grid; gap: 14px; }
+.doctor-specialists-header h2 {
+  max-width: 360px;
+  margin: 0;
+  color: #000;
+  font-size: clamp(26px, 7vw, 34px);
+  font-weight: 650;
+  line-height: 1.18;
+  letter-spacing: -.035em;
+  text-wrap: balance;
+}
+.doctor-specialists-list { border-top: 1px solid #afa9ec80; }
+.doctor-specialist {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  padding-block: 12px;
+  border-bottom: 1px solid #afa9ec80;
+}
+.doctor-specialist img {
+  display: block;
+  width: 54px;
+  height: 54px;
+  border: 3px solid #e1ffb9;
+  border-radius: 15px;
+  object-fit: cover;
+  object-position: 50% 24%;
+  background: #eeedfe;
+}
+.doctor-specialist:nth-child(2) img { border-color: #bae5ff; }
+.doctor-specialist:nth-child(3) img { border-color: #fef2cc; }
+.doctor-specialist-copy { min-width: 0; }
+.doctor-specialist h3 {
+  margin: 0;
+  color: #000;
+  font-size: 14px;
+  font-weight: 650;
+  line-height: 1.4;
+  letter-spacing: -.02em;
+}
+.doctor-specialist h3 span { display: inline; }
+.doctor-specialist p {
+  margin: 4px 0 0;
+  color: #000;
+  font-size: 12px;
+  line-height: 1.52;
+}
+
+@media (min-width: 640px) {
+  .doctor-specialists { padding-block: 40px 48px; }
+  .doctor-specialists-layout { gap: 26px; }
+  .doctor-specialists-header h2 { font-size: clamp(32px, 4.7vw, 40px); }
+  .doctor-specialists-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-bottom: 1px solid #afa9ec80;
+  }
+  .doctor-specialist {
+    display: block;
+    padding: 18px;
+    border-bottom: 0;
+  }
+  .doctor-specialist + .doctor-specialist { border-left: 1px solid #afa9ec80; }
+  .doctor-specialist img { width: 64px; height: 64px; border-radius: 17px; }
+  .doctor-specialist-copy { margin-top: 14px; }
+  .doctor-specialist h3 { font-size: 15px; }
+  .doctor-specialist h3 span { display: block; }
+  .doctor-specialist-separator { display: none !important; }
+  .doctor-specialist p { font-size: 12px; line-height: 1.65; }
+}
+
+@media (min-width: 1100px) {
+  .doctor-specialists { padding-block: 34px; }
+  .doctor-specialists-layout {
+    grid-template-columns: minmax(200px, .58fr) minmax(0, 2.42fr);
+    align-items: center;
+    gap: clamp(28px, 3.4vw, 52px);
+  }
+  .doctor-specialists-header h2 { max-width: 260px; font-size: clamp(32px, 2.35vw, 36px); }
+  .doctor-specialist {
+    grid-template-columns: 52px minmax(0, 1fr);
+    align-items: center;
+    gap: 10px;
+    padding: 14px clamp(12px, 1.15vw, 18px);
+  }
+  .doctor-specialist:first-child { padding-left: 0; }
+  .doctor-specialist img { width: 52px; height: 52px; border-radius: 14px; }
+  .doctor-specialist-copy { margin-top: 0; }
+  .doctor-specialist h3 { font-size: 14px; line-height: 1.35; }
+  .doctor-specialist p { margin-top: 4px; font-size: 11.5px; line-height: 1.5; }
+}

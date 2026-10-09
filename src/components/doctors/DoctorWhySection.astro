@@ -1,0 +1,28 @@
+---
+import DoctorEntrance from './DoctorEntrance.astro';
+import { doctorWhy as copy } from '../../data/for-doctors-why';
+import '../../styles/doctor-why.css';
+---
+<DoctorEntrance class="doctor-why-motion">
+  <section id="doctor-why" class="doctor-why" aria-labelledby="doctor-why-heading">
+    <div class="doctor-why-glow" aria-hidden="true"></div>
+    <div class="section-container doctor-why-layout">
+      <header class="doctor-why-header" data-discovery-motion>
+        <span class="doctor-why-range" aria-hidden="true">01—04</span>
+        <h2 id="doctor-why-heading">{copy.heading}</h2>
+      </header>
+
+      <div class="doctor-why-principles">
+        {copy.principles.map((principle, index) => (
+          <article class="doctor-why-principle" aria-labelledby={`doctor-why-principle-${index + 1}`} data-discovery-motion>
+            <span class="doctor-why-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+            <div>
+              <h3 id={`doctor-why-principle-${index + 1}`}>{principle.title}</h3>
+              <p>{principle.description}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</DoctorEntrance>

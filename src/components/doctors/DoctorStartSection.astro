@@ -1,0 +1,42 @@
+---
+import Icon from '../Icon.astro';
+import DoctorEntrance from './DoctorEntrance.astro';
+import Search01Icon from '@hugeicons/core-free-icons/Search01Icon';
+import UserAccountIcon from '@hugeicons/core-free-icons/UserAccountIcon';
+import LinkSquare01Icon from '@hugeicons/core-free-icons/LinkSquare01Icon';
+import Megaphone01Icon from '@hugeicons/core-free-icons/Megaphone01Icon';
+import Calendar03Icon from '@hugeicons/core-free-icons/Calendar03Icon';
+import Target01Icon from '@hugeicons/core-free-icons/Target01Icon';
+import ArrowRight01Icon from '@hugeicons/core-free-icons/ArrowRight01Icon';
+import {doctorStart as copy} from '../../data/for-doctors-start';
+import '../../styles/doctor-start.css';
+const icons=[Search01Icon,UserAccountIcon,LinkSquare01Icon,Megaphone01Icon,Calendar03Icon,Target01Icon];
+---
+<DoctorEntrance class="doctor-start-motion">
+  <section id="doctor-start" class="doctor-start" aria-labelledby="doctor-start-heading">
+    <div class="section-container doctor-start-layout">
+      <header class="doctor-start-header">
+        <h2 id="doctor-start-heading" data-discovery-motion>{copy.heading}</h2>
+        <div class="doctor-start-map" aria-hidden="true" data-discovery-motion>
+          <div class="doctor-start-dial">
+            <span class="doctor-start-dial-index">01</span>
+            <span class="doctor-start-dial-label doctor-start-dial-label--assess">Assess</span>
+            <span class="doctor-start-dial-label doctor-start-dial-label--priority">Prioritize</span>
+            <span class="doctor-start-dial-label doctor-start-dial-label--begin">Begin</span>
+            <span class="doctor-start-dial-marker doctor-start-dial-marker--one"></span>
+            <span class="doctor-start-dial-marker doctor-start-dial-marker--two"></span>
+            <span class="doctor-start-dial-marker doctor-start-dial-marker--three"></span>
+            <span class="doctor-start-dial-line"></span>
+            <span class="doctor-start-dial-core"><small>Start with</small><strong>Clarity</strong></span>
+          </div>
+        </div>
+      </header>
+      <ul class="doctor-start-priorities" role="list">
+        {copy.priorities.map((item,index)=><li class="doctor-start-row" data-discovery-motion>
+          <span class="doctor-start-icon"><Icon icon={icons[index]} size={24} /></span>
+          <p><strong>{item.question}</strong>{' '}<span class="doctor-start-recommendation"><span class="doctor-start-direction"><Icon icon={ArrowRight01Icon} size={18} /></span><span>{item.recommendation}</span></span></p>
+        </li>)}
+      </ul>
+    </div>
+  </section>
+</DoctorEntrance>

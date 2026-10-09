@@ -1,0 +1,42 @@
+---
+import {Image} from 'astro:assets';
+import Icon from '../Icon.astro';
+import DoctorEntrance from './DoctorEntrance.astro';
+import UserAccountIcon from '@hugeicons/core-free-icons/UserAccountIcon';
+import ShieldCheckIcon from '@hugeicons/core-free-icons/ShieldCheckIcon';
+import LockKeyIcon from '@hugeicons/core-free-icons/LockKeyIcon';
+import photo from '../../assets/for-doctors/clinical-content-review-v1.webp';
+import {doctorTrust as copy} from '../../data/for-doctors-trust';
+import '../../styles/doctor-trust.css';
+const icons=[UserAccountIcon,ShieldCheckIcon,LockKeyIcon];
+const emphasis='registered-doctor responsibility';
+const [start,end]=copy.conclusion.split(emphasis);
+---
+<DoctorEntrance class="doctor-trust-motion">
+  <section id="doctor-trust" class="doctor-trust" aria-labelledby="doctor-trust-heading">
+    <div class="section-container">
+      <header class="doctor-trust-header">
+        <h2 id="doctor-trust-heading">{copy.heading}</h2>
+        <p>{copy.introduction}</p>
+      </header>
+      <div class="doctor-trust-layout">
+        <div class="doctor-trust-visual">
+          <figure class="doctor-trust-photo" data-discovery-motion>
+            <Image src={photo} width={1536} height={1024} widths={[360,540,720,960,1200]}
+              sizes="(min-width: 1100px) min(43vw, 640px), (min-width: 640px) 640px, calc(100vw - 32px)"
+              format="webp" quality={78} loading="lazy" decoding="async"
+              alt="Doctor and healthcare content specialist reviewing educational material in a chamber"
+              title="Clinical content review in a doctor's chamber" />
+          </figure>
+        </div>
+        <div class="doctor-trust-principles">
+          {copy.principles.map((item,index)=><article class="doctor-trust-principle" aria-labelledby={`doctor-trust-principle-${index}`} data-discovery-motion>
+            <span class="doctor-trust-icon"><Icon icon={icons[index]} size={26} /></span>
+            <div><h3 id={`doctor-trust-principle-${index}`}>{item.heading}</h3>{item.paragraphs.map(paragraph=><p>{paragraph}</p>)}</div>
+          </article>)}
+        </div>
+      </div>
+      <p class="doctor-trust-conclusion">{start}<em>{emphasis}</em>{end}</p>
+    </div>
+  </section>
+</DoctorEntrance>

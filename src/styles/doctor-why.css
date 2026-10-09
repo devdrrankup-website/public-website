@@ -1,0 +1,138 @@
+.doctor-why-motion { display: block; background: #f7fbff; }
+.doctor-why {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  padding-block: 44px 56px;
+  border-radius: 28px 28px 0 0;
+  scroll-margin-top: calc(var(--header-height) + 12px);
+  color: #fff;
+  background: radial-gradient(ellipse at 50% 0%, #229f6040 0%, #229f6000 58%), linear-gradient(145deg, #0b1b12 0%, #0a0a0a 60%, #0c1b13 100%);
+}
+.doctor-why-glow {
+  position: absolute;
+  z-index: -1;
+  top: -160px;
+  right: -170px;
+  width: 360px;
+  height: 360px;
+  border: 1px solid #63df9d33;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 48px #229f6008, inset 0 0 0 49px #63df9d1f, inset 0 0 0 100px #229f6006, inset 0 0 0 101px #63df9d14;
+  pointer-events: none;
+}
+.doctor-why-layout { display: grid; gap: 28px; }
+.doctor-why-header { max-width: 430px; }
+.doctor-why-range {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  color: #63df9d;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: .16em;
+}
+.doctor-why-range::after { content: ''; width: 48px; height: 1px; background: #63df9d; }
+.doctor-why h2 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(32px, 9.2vw, 42px);
+  font-weight: 650;
+  line-height: 1.16;
+  letter-spacing: -.04em;
+  text-wrap: balance;
+}
+.doctor-why-principles { position: relative; }
+.doctor-why-principles::before {
+  content: '';
+  position: absolute;
+  top: 26px;
+  bottom: 26px;
+  left: 18px;
+  width: 1px;
+  background: linear-gradient(#63df9d, #229f6040 85%, transparent);
+}
+.doctor-why-principle {
+  position: relative;
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  gap: 14px;
+  min-width: 0;
+  padding-block: 22px;
+  border-top: 1px solid #ffffff1f;
+}
+.doctor-why-principle:last-child { border-bottom: 1px solid #ffffff1f; }
+.doctor-why-number {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid #e1ffb9;
+  border-radius: 50%;
+  color: #0a0a0a;
+  background: #e1ffb9;
+  box-shadow: 0 0 0 6px #0d1e15, 0 0 24px #229f604d;
+  font-size: 10px;
+  font-weight: 750;
+  line-height: 1;
+  letter-spacing: .08em;
+}
+.doctor-why-principle h3 {
+  margin: 2px 0 0;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 650;
+  line-height: 1.35;
+  letter-spacing: -.025em;
+}
+.doctor-why-principle p {
+  max-width: 650px;
+  margin: 8px 0 0;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+@media (min-width: 640px) {
+  .doctor-why { padding-block: 64px 72px; border-radius: 36px 36px 0 0; }
+  .doctor-why-glow { top: -230px; right: -170px; width: 520px; height: 520px; }
+  .doctor-why-layout { gap: 40px; }
+  .doctor-why-header { max-width: 620px; }
+  .doctor-why h2 { font-size: clamp(42px, 6.3vw, 52px); }
+  .doctor-why-principles {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .doctor-why-principles::before { display: none; }
+  .doctor-why-principle {
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 16px;
+    min-height: 200px;
+    padding: 28px 24px;
+  }
+  .doctor-why-principle:nth-child(even) { border-left: 1px solid #ffffff1f; }
+  .doctor-why-principle:nth-child(-n + 2) { border-top-color: #63df9d66; }
+  .doctor-why-principle:nth-child(3) { border-bottom: 1px solid #ffffff1f; }
+  .doctor-why-number { width: 42px; height: 42px; box-shadow: 0 0 0 6px #0d1e15, 0 0 28px #229f604d; }
+  .doctor-why-principle h3 { font-size: 21px; }
+  .doctor-why-principle p { font-size: 15px; }
+}
+
+@media (min-width: 1100px) {
+  .doctor-why { padding-block: 88px; border-radius: 40px 40px 0 0; }
+  .doctor-why-glow { top: -300px; right: -120px; width: 680px; height: 680px; }
+  .doctor-why-layout {
+    grid-template-columns: minmax(260px, .55fr) minmax(0, 1.45fr);
+    align-items: start;
+    gap: clamp(40px, 4.5vw, 68px);
+  }
+  .doctor-why-header { padding-top: 18px; }
+  .doctor-why h2 { max-width: 430px; font-size: clamp(48px, 4.2vw, 64px); }
+  .doctor-why-principle { min-height: 200px; padding: 28px 20px; }
+  .doctor-why-principle h3 { font-size: 23px; }
+  .doctor-why-principle p { font-size: 16px; }
+}

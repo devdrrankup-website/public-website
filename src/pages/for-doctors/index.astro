@@ -6,6 +6,14 @@ import DoctorDiscoverySection from '../../components/doctors/DoctorDiscoverySect
 import DoctorOutcomesSection from '../../components/doctors/DoctorOutcomesSection.astro';
 import DoctorBangladeshSection from '../../components/doctors/DoctorBangladeshSection.astro';
 import DoctorSolutionsSection from '../../components/doctors/DoctorSolutionsSection.astro';
+import DoctorTrustSection from '../../components/doctors/DoctorTrustSection.astro';
+import DoctorStartSection from '../../components/doctors/DoctorStartSection.astro';
+import DoctorSpecialistsSection from '../../components/doctors/DoctorSpecialistsSection.astro';
+import DoctorWhySection from '../../components/doctors/DoctorWhySection.astro';
+import DoctorProcessSection from '../../components/doctors/DoctorProcessSection.astro';
+import DoctorFaqSection from '../../components/doctors/DoctorFaqSection.astro';
+import ConsultationSection from '../../components/ConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
 import { doctorHeroPreload } from '../../lib/doctor-hero-image';
 ---
 <Layout title="Digital Growth, SEO, Websites & Software for Doctors | Dr RankUP" description="Dr RankUP connects SEO, personal branding, healthcare content, professional websites and chamber-management technology for doctors in Bangladesh." imagePreload={doctorHeroPreload}>
@@ -16,5 +24,17 @@ import { doctorHeroPreload } from '../../lib/doctor-hero-image';
     <DoctorOutcomesSection />
     <DoctorBangladeshSection />
     <DoctorSolutionsSection />
+    <DoctorTrustSection />
+    <DoctorStartSection />
+    <DoctorSpecialistsSection />
+    <DoctorWhySection />
+    <DoctorProcessSection />
+    <DoctorFaqSection />
+    <ConsultationSection page="for-doctors" />
   </main>
+  <Footer />
 </Layout>
+
+<script>
+  import '../../scripts/healthcare-consultation';
+</script>

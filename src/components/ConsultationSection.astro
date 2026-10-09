@@ -6,25 +6,45 @@ import hridoy from '../assets/team/founder-hridoy-chowdhury.jpeg';
 import Icon from './Icon.astro';
 import Arrow from './Arrow.astro';
 import {homepageConsultation as content} from '../data/homepage-consultation';
+import {forDoctorsConsultation} from '../data/for-doctors-consultation';
 import {homepageSearchExpertise as expertise} from '../data/homepage-search-expertise';
+
+interface Props { page?: 'homepage' | 'for-doctors' }
+const {page = 'homepage'} = Astro.props;
+const isDoctors = page === 'for-doctors';
+const sectionId = isDoctors ? 'doctor-consultation' : 'consultation';
+const headingId = `${sectionId}-heading`;
+const primary = isDoctors ? forDoctorsConsultation.primary : content.primary;
+const secondary = isDoctors ? forDoctorsConsultation.secondary : content.secondary;
 ---
-<consultation-motion>
-  <section id="consultation" class="consultation-section" aria-labelledby="consultation-heading">
+<consultation-motion class:list={{'consultation-motion-doctors': isDoctors}}>
+  <section id={sectionId} class:list={['consultation-section', {'consultation-doctors': isDoctors}]} aria-labelledby={headingId}>
     <div class="section-container consultation-grid">
       <div class="consultation-copy">
         <header class="consultation-introduction">
-          <h2 id="consultation-heading">Your Expertise Deserves to Be <em>Discoverable</em></h2>
-          <ul class="consultation-principles">
-            {content.principles.map(principle => <li><Icon icon={CheckmarkCircle02Icon} size={21} /><span>{principle}</span></li>)}
-          </ul>
-          <p class="consultation-lead">{content.lead}</p>
-          <ol class="consultation-journey" aria-label="Your digital presence journey">
-            {content.journey.map((step,index) => <li>
-              <span class="consultation-journey-pill">{step}</span>
-              {index < content.journey.length - 1 && <span class="consultation-journey-arrow" aria-hidden="true">→</span>}
-            </li>)}
-          </ol>
-          <p class="consultation-description">{content.description}</p>
+          {isDoctors ? (
+            <>
+              <h2 id={headingId}>Your Expertise Deserves a Digital Presence People and Search Systems Can <em>Understand</em></h2>
+              <div class="consultation-doctor-description">
+                {forDoctorsConsultation.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+              </div>
+            </>
+          ) : (
+            <>
+              <h2 id={headingId}>Your Expertise Deserves to Be <em>Discoverable</em></h2>
+              <ul class="consultation-principles">
+                {content.principles.map(principle => <li><Icon icon={CheckmarkCircle02Icon} size={21} /><span>{principle}</span></li>)}
+              </ul>
+              <p class="consultation-lead">{content.lead}</p>
+              <ol class="consultation-journey" aria-label="Your digital presence journey">
+                {content.journey.map((step,index) => <li>
+                  <span class="consultation-journey-pill">{step}</span>
+                  {index < content.journey.length - 1 && <span class="consultation-journey-arrow" aria-hidden="true">→</span>}
+                </li>)}
+              </ol>
+              <p class="consultation-description">{content.description}</p>
+            </>
+          )}
         </header>
         <div class="consultation-contact">
           <div class="consultation-portrait">
@@ -34,12 +54,14 @@ import {homepageSearchExpertise as expertise} from '../data/homepage-search-expe
           </div>
           <h3>{expertise.founder}</h3>
           <p>{expertise.role}, Dr RankUP</p>
-          <span class="consultation-link">{content.primary}<Arrow size={18} /></span>
-          <a class="consultation-solutions" href="/healthcare-marketing/">{content.secondary}<Arrow size={18} /></a>
+          <span class="consultation-link">{primary}<Arrow size={18} /></span>
+          {isDoctors
+            ? <span class="consultation-solutions">{secondary}<Arrow size={18} /></span>
+            : <a class="consultation-solutions" href="/healthcare-marketing/">{secondary}<Arrow size={18} /></a>}
         </div>
       </div>
       <healthcare-enquiry>
-        <form class="consultation-form" aria-label="Healthcare consultation enquiry" method="post" action="#consultation">
+        <form class="consultation-form" aria-label={isDoctors ? 'Doctor consultation enquiry' : 'Healthcare consultation enquiry'} method="post" action={`#${sectionId}`}>
           <div class="consultation-field">
             <label for="enquiry-name">Full Name<span aria-hidden="true">*</span><span class="sr-only"> (required)</span></label>
             <input id="enquiry-name" name="name" autocomplete="name" placeholder="Your full name" maxlength="100" required />
@@ -79,6 +101,7 @@ import {homepageSearchExpertise as expertise} from '../data/homepage-search-expe
 
 <style>
   consultation-motion { display: block; padding-top: 8px; background: #fff; }
+  consultation-motion.consultation-motion-doctors { padding-top: 0; background: #f2f1fb; }
   .consultation-section { padding-block: 40px; border-radius: 28px 28px 0 0; color: #fff; background: radial-gradient(ellipse at 100% 0%,#229f606b,transparent 58%),#0a0a0a; }
   .consultation-grid { display: grid; gap: 48px; max-width: 1250px; }
   .consultation-copy { min-width: 0; }
@@ -96,6 +119,8 @@ import {homepageSearchExpertise as expertise} from '../data/homepage-search-expe
   .consultation-principles li { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 550; line-height: 1.5; }
   .consultation-principles :global(svg) { color: #e1ffb9; }
   .consultation-description { max-width: 510px; margin: 20px 0 0; color: #bdcbc5; font-size: 14px; line-height: 1.8; }
+  .consultation-doctor-description { display: grid; gap: 16px; max-width: 540px; }
+  .consultation-doctor-description p { margin: 0; color: #dce5e0; font-size: 15px; line-height: 1.8; }
   .consultation-contact { margin-top: 32px; }
   .consultation-portrait { width: 180px; aspect-ratio: 1; overflow: clip; border-radius: 20px; background: #eeedfe; }
   .consultation-portrait img { display: block; width: 100%; height: 100%; object-fit: contain; }

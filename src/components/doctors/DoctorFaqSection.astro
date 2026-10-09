@@ -1,0 +1,51 @@
+---
+import Add01Icon from '@hugeicons/core-free-icons/Add01Icon';
+import Icon from '../Icon.astro';
+import DoctorEntrance from './DoctorEntrance.astro';
+import { doctorFaq as copy } from '../../data/for-doctors-faq';
+import '../../styles/doctor-faq.css';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: copy.items.map(item => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: { '@type': 'Answer', text: item.answer },
+  })),
+};
+---
+
+<DoctorEntrance class="doctor-faq-motion">
+  <section id="doctor-faq" class="doctor-faq" aria-labelledby="doctor-faq-heading">
+    <div class="doctor-faq-atmosphere" aria-hidden="true">?</div>
+    <div class="section-container doctor-faq-layout">
+      <header class="doctor-faq-header" data-discovery-motion>
+        <span class="doctor-faq-range" aria-hidden="true">01—05</span>
+        <h2 id="doctor-faq-heading">{copy.heading}</h2>
+      </header>
+
+      <doctor-faq class="doctor-faq-list">
+        {copy.items.map((item, index) => (
+          <article class="doctor-faq-item" data-discovery-motion>
+            <span class="doctor-faq-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+            <div class="doctor-faq-content">
+              <h3 id={`doctor-faq-question-${index + 1}`} class="doctor-faq-question">
+                <span class="doctor-faq-question-label">{item.question}</span>
+                <span class="doctor-faq-toggle" aria-hidden="true"><Icon icon={Add01Icon} size={20} /></span>
+              </h3>
+              <div id={`doctor-faq-answer-${index + 1}`} class="doctor-faq-answer" role="region" aria-labelledby={`doctor-faq-question-${index + 1}`}>
+                <p>{item.answer}</p>
+              </div>
+            </div>
+          </article>
+        ))}
+      </doctor-faq>
+    </div>
+  </section>
+</DoctorEntrance>
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+<script>
+  import '../../scripts/doctor-faq';
+</script>

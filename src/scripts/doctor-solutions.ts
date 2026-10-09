@@ -19,22 +19,38 @@ class DoctorSolutions extends HTMLElement {
   private frame = 0;
   private measureFrame = 0;
   private visibility?: IntersectionObserver;
+  private activation?: IntersectionObserver;
   private resize?: ResizeObserver;
   private animations = new Set<Animation>();
   private motion = matchMedia('(prefers-reduced-motion: reduce)');
   private compact = matchMedia('(max-width: 1099px)');
   private wide = matchMedia('(min-width: 1100px) and (hover: hover) and (pointer: fine)');
+  private initialized = false;
 
   connectedCallback() {
     this.cleanup = new AbortController();
+    this.activation = new IntersectionObserver(entries => {
+      if (!entries.some(entry => entry.isIntersecting)) return;
+      this.activation?.disconnect();
+      this.activation = undefined;
+      this.initialize();
+    }, { rootMargin: '700px 0px' });
+    this.activation.observe(this);
+  }
+
+  private initialize() {
+    if (this.initialized || !this.isConnected || !this.cleanup) return;
+    this.initialized = true;
     const options = { signal: this.cleanup.signal };
     this.tabs = [...this.querySelectorAll<HTMLButtonElement>('[role="tab"]')];
     this.panels = [...this.querySelectorAll<HTMLElement>('[data-solution-panel]')];
     this.rows = this.panels.map(panel => [...panel.querySelectorAll<HTMLElement>('.doctor-solution-row')]);
+    this.panels.forEach(panel => panel.classList.remove('is-initially-hidden'));
     this.dock = this.querySelector<HTMLElement>('.doctor-solutions-dock')!;
     this.stage = this.querySelector<HTMLElement>('.doctor-solutions-stage')!;
     const tablist = this.querySelector<HTMLElement>('[role="tablist"]')!;
     if (!this.stage || !this.dock || !tablist || this.tabs.length !== this.panels.length) return;
+    this.photos.clear(); this.homes.clear();
     this.rows.flat().forEach(row => {
       const photo = row.querySelector<HTMLElement>('.doctor-solution-photo')!;
       this.photos.set(row, photo); this.homes.set(photo, photo.parentElement!);
@@ -196,12 +212,13 @@ class DoctorSolutions extends HTMLElement {
 
   disconnectedCallback() {
     this.imageVersion++; this.stop(); this.restoreDisplayed(); this.cleanup?.abort();
-    this.visibility?.disconnect(); this.resize?.disconnect();
+    this.activation?.disconnect(); this.visibility?.disconnect(); this.resize?.disconnect();
     cancelAnimationFrame(this.frame); cancelAnimationFrame(this.measureFrame);
     this.classList.remove('doctor-solutions-ready', 'is-pinned');
     this.querySelector<HTMLElement>('[role="tablist"]')?.setAttribute('hidden', '');
     this.stage?.setAttribute('hidden', '');
     this.panels.forEach(panel => { panel.hidden = false; panel.removeAttribute('role'); panel.removeAttribute('aria-labelledby'); panel.removeAttribute('tabindex'); });
+    this.initialized = false;
   }
 }
 if (!customElements.get('doctor-solutions')) customElements.define('doctor-solutions', DoctorSolutions);

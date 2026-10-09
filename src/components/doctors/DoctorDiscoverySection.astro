@@ -17,6 +17,15 @@ const icons = [Search01Icon, UserAccountIcon, ShieldCheckIcon, Calendar03Icon];
     <div class="doctor-discovery-editorial">
       <div class="doctor-discovery-copy">
         {copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+        <div class="doctor-discovery-journey">
+          <p>{copy.goal}</p>
+          <ol aria-label="Patient discovery journey">
+            {copy.journey.map((label, index) => <li>
+              <span class="doctor-discovery-chip">{label}</span>
+              {index < copy.journey.length - 1 && <span class="doctor-discovery-journey-arrow" aria-hidden="true">→</span>}
+            </li>)}
+          </ol>
+        </div>
       </div>
       <div class="doctor-discovery-photo" data-discovery-motion>
         <Image src={photo} widths={[360, 540, 720, 960, 1200]} sizes="(min-width: 1100px) min(43vw, 640px), (min-width: 640px) calc(100vw - 56px), calc(100vw - 32px)"
@@ -24,15 +33,6 @@ const icons = [Search01Icon, UserAccountIcon, ShieldCheckIcon, Calendar03Icon];
           alt="Woman at home looking at a doctor's profile on her phone"
           title="Researching doctor information from home" loading="lazy" decoding="async" />
       </div>
-    </div>
-    <div class="doctor-discovery-journey">
-      <p>{copy.goal}</p>
-      <ol aria-label="Patient discovery journey">
-        {copy.journey.map((label, index) => <li>
-          <span class="doctor-discovery-chip">{label}</span>
-          {index < copy.journey.length - 1 && <span class="doctor-discovery-journey-arrow" aria-hidden="true">→</span>}
-        </li>)}
-      </ol>
     </div>
     <ol class="doctor-discovery-stages" aria-label="Four parts of a clear doctor presence">
       {copy.stages.map((stage, index) => <li data-discovery-motion>

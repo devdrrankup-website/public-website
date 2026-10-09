@@ -28,6 +28,7 @@ const icons = [Search01Icon, Location01Icon, UserAccountIcon, Calendar03Icon, Ch
       <div class="doctor-bangladesh-path" data-discovery-motion>
         <ol role="list" aria-label="Doctor discovery touchpoints in Bangladesh">
           {copy.touchpoints.map((label, index) => <li>
+            <span class="doctor-bangladesh-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
             <span class="doctor-bangladesh-icon"><Icon icon={icons[index]} size={26} /></span>
             <span class="doctor-bangladesh-label">{label}</span>
             {index < copy.touchpoints.length - 1 && <span class="doctor-bangladesh-arrow" aria-hidden="true">
