@@ -1,0 +1,25 @@
+---
+import { doctorOutcomes as copy } from '../../data/for-doctors-outcomes';
+import DoctorOutcomeVisual from './DoctorOutcomeVisual.astro';
+import DoctorEntrance from './DoctorEntrance.astro';
+import '../../styles/doctor-outcomes.css';
+---
+<!-- Reuse the existing scoped, engine-free entrance element. Each instance
+     observes only its own descendants and retains a complete static fallback. -->
+<DoctorEntrance class="doctor-outcomes-motion">
+  <section id="doctor-outcomes" class="doctor-outcomes" aria-labelledby="doctor-outcomes-heading">
+    <div class="section-container">
+      <h2 id="doctor-outcomes-heading">{copy.heading}</h2>
+      <div class="doctor-outcomes-grid">
+        {copy.items.map((item, index) => <article class="doctor-outcome-card" aria-labelledby={`doctor-outcome-${index+1}`} data-discovery-motion>
+          <div class="doctor-outcome-copy">
+            <span class="doctor-outcome-number" aria-hidden="true">0{index+1}</span>
+            <h3 id={`doctor-outcome-${index+1}`}>{item.heading}</h3>
+            <p>{item.description}</p>
+          </div>
+          <DoctorOutcomeVisual index={index} />
+        </article>)}
+      </div>
+    </div>
+  </section>
+</DoctorEntrance>

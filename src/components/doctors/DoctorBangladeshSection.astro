@@ -1,0 +1,42 @@
+---
+import { Image } from 'astro:assets';
+import Icon from '../Icon.astro';
+import DoctorEntrance from './DoctorEntrance.astro';
+import Search01Icon from '@hugeicons/core-free-icons/Search01Icon';
+import Location01Icon from '@hugeicons/core-free-icons/Location01Icon';
+import UserAccountIcon from '@hugeicons/core-free-icons/UserAccountIcon';
+import Calendar03Icon from '@hugeicons/core-free-icons/Calendar03Icon';
+import CheckmarkCircle02Icon from '@hugeicons/core-free-icons/CheckmarkCircle02Icon';
+import ShieldCheckIcon from '@hugeicons/core-free-icons/ShieldCheckIcon';
+import Call02Icon from '@hugeicons/core-free-icons/Call02Icon';
+import { doctorBangladesh as copy } from '../../data/for-doctors-bangladesh';
+import background from '../../assets/for-doctors/bangladesh-healthcare-background-v1.png';
+import '../../styles/doctor-bangladesh.css';
+const icons = [Search01Icon, Location01Icon, UserAccountIcon, Calendar03Icon, CheckmarkCircle02Icon, ShieldCheckIcon, Call02Icon];
+---
+<DoctorEntrance class="doctor-bangladesh-motion">
+  <section id="doctor-bangladesh" class="doctor-bangladesh" aria-labelledby="doctor-bangladesh-heading">
+    <div class="doctor-bangladesh-background" aria-hidden="true">
+      <Image src={background} width={960} widths={[480, 768, 960]} sizes="100vw" format="webp" quality={35}
+        alt="" title="Healthcare building in a Bangladesh urban neighborhood" loading="lazy" decoding="async" />
+    </div>
+    <div class="section-container doctor-bangladesh-layout">
+      <div class="doctor-bangladesh-header">
+        <h2 id="doctor-bangladesh-heading">{copy.heading}</h2>
+        <p>{copy.introduction}</p>
+      </div>
+      <div class="doctor-bangladesh-path" data-discovery-motion>
+        <ol role="list" aria-label="Doctor discovery touchpoints in Bangladesh">
+          {copy.touchpoints.map((label, index) => <li>
+            <span class="doctor-bangladesh-icon"><Icon icon={icons[index]} size={26} /></span>
+            <span class="doctor-bangladesh-label">{label}</span>
+            {index < copy.touchpoints.length - 1 && <span class="doctor-bangladesh-arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" focusable="false"><path d="M2 7h10m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </span>}
+          </li>)}
+        </ol>
+      </div>
+      <p class="doctor-bangladesh-conclusion">{copy.conclusion}</p>
+    </div>
+  </section>
+</DoctorEntrance>

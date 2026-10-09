@@ -3,13 +3,13 @@ export {navigationVisuals};
 export type NavigationVisual = keyof typeof navigationVisuals;
 export interface NavigationItem {title:string;description:string;visual:NavigationVisual}
 export interface NavigationGroup {title:string;items:NavigationItem[]}
-export interface NavigationMenu {id:string;title:string;description:string;viewAll:string;groups:NavigationGroup[]}
+export interface NavigationMenu {id:string;title:string;description:string;viewAll:string;viewAllHref?:string;groups:NavigationGroup[]}
 const item=(title:string,description:string,visual:NavigationVisual):NavigationItem=>({title,description,visual});
 
-// Source taxonomy: WEBSITE_STRUCTURE.md. No URLs/endpoints are assigned.
+// Source taxonomy: WEBSITE_STRUCTURE.md. Only the built For Doctors parent is linked.
 // Website capabilities remain in their parent category, not new service pages.
 export const navigationMenus:NavigationMenu[]=[
-  {id:'doctors',title:'For Doctors',description:'Build visibility around your expertise.',viewAll:'View all doctor services',groups:[
+  {id:'doctors',title:'For Doctors',description:'Build visibility around your expertise.',viewAll:'View all doctor services',viewAllHref:'/for-doctors/',groups:[
     {title:'Doctor Digital Marketing',items:[
       item('Doctor SEO','Help patients discover your expertise in search.','doctor-seo'),
       item('Doctor Local SEO','Make your chamber easier to find locally.','doctor-local-seo'),

@@ -1,5 +1,5 @@
-// Native disclosures and static content work without JavaScript. No menu URLs,
-// framework hydration, GSAP, image prefetch loop or new dependency is needed.
+// Native disclosures and parent links work without JavaScript. No framework
+// hydration, GSAP, image prefetch loop or new dependency is needed.
 if(!customElements.get('site-navigation')) {
   customElements.define('site-navigation',class extends HTMLElement {
     private controller?:AbortController;
@@ -67,8 +67,8 @@ if(!customElements.get('site-navigation')) {
           button.setAttribute('aria-pressed',String(!menu.querySelector<HTMLElement>(`#${row.dataset.preview}`)!.hidden));
           button.append(...Array.from(label.childNodes));label.replaceWith(button);
         });
-        const viewLabel=menu.querySelector<HTMLElement>('[data-view-all-label]')!;
-        if(viewLabel.tagName!=='BUTTON'){
+        const viewLabel=menu.querySelector<HTMLElement>('[data-view-all-label]');
+        if(viewLabel?.tagName==='SPAN'){
           const button=document.createElement('button');button.type='button';button.className='nav-view-all';button.dataset.viewAllLabel='';
           button.setAttribute('aria-expanded',String([...menu.querySelectorAll<HTMLDetailsElement>('.mega-category')].every(category=>category.open)));
           button.append(...Array.from(viewLabel.childNodes));viewLabel.replaceWith(button);
@@ -103,7 +103,7 @@ if(!customElements.get('site-navigation')) {
               const first=category.querySelector<HTMLElement>('.mega-service');if(first)void preview(first);
             }
             const allOpen=[...menu.querySelectorAll<HTMLDetailsElement>('.mega-category')].every(el=>el.open);
-            menu.querySelector('.nav-view-all')?.setAttribute('aria-expanded',String(allOpen));
+            menu.querySelector('button.nav-view-all')?.setAttribute('aria-expanded',String(allOpen));
           },options);
         });
       });
@@ -129,7 +129,7 @@ if(!customElements.get('site-navigation')) {
         }
         const previewButton=target.closest('.nav-preview-trigger');
         if(previewButton){const row=previewButton.closest<HTMLElement>('.mega-service');if(row)void preview(row);}
-        const viewAll=target.closest<HTMLButtonElement>('.nav-view-all');
+        const viewAll=target.closest<HTMLButtonElement>('button.nav-view-all');
         if(viewAll){
           const categories=[...viewAll.closest('[data-nav-menu]')!.querySelectorAll<HTMLDetailsElement>('.mega-category')];
           categories.forEach(category=>{category.open=true;});

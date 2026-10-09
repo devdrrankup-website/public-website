@@ -1,0 +1,46 @@
+---
+import ActionIcon from '../ActionIcon.astro';
+import Icon from '../Icon.astro';
+import ShieldCheckIcon from '@hugeicons/core-free-icons/ShieldCheckIcon';
+import LocationCheck01Icon from '@hugeicons/core-free-icons/LocationCheck01Icon';
+import BrowserIcon from '@hugeicons/core-free-icons/BrowserIcon';
+import Calendar03Icon from '@hugeicons/core-free-icons/Calendar03Icon';
+import { forDoctorsHero as copy } from '../../data/for-doctors-hero';
+import { doctorHeroImage as photo } from '../../lib/doctor-hero-image';
+import '../../styles/doctor-hero.css';
+const icons = [ShieldCheckIcon, BrowserIcon, LocationCheck01Icon, Calendar03Icon];
+---
+<section class="doctor-hero" aria-labelledby="doctor-hero-heading">
+  <div class="section-container">
+    <div class="doctor-hero-layout">
+      <div class="doctor-hero-copy">
+        <h1 id="doctor-hero-heading">{copy.heading}</h1>
+        <p class="doctor-hero-tagline">{copy.tagline}</p>
+        <div class="doctor-hero-description">{copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}</div>
+        <div class="doctor-hero-actions" aria-label="Planned consultation and solution options">
+          <!-- Destinations remain deferred by the user. These are display-only labels,
+               without dead buttons, tabindex or links to pages not yet built. -->
+          <span class="button button-primary">{copy.primaryCta}<ActionIcon purpose="conversation" /></span>
+          <span class="button button-secondary">{copy.secondaryCta}<ActionIcon purpose="conversation" /></span>
+        </div>
+      </div>
+      <div class="doctor-hero-visual">
+        <div class="doctor-hero-photo-frame">
+          <img src={photo.src} srcset={photo.srcset} sizes={photo.sizes} width={photo.width} height={photo.height}
+            alt="Bangladeshi doctor seated at his desk in a bright private chamber"
+            title="Doctor in his chamber in Bangladesh"
+            loading="eager" fetchpriority="high" decoding="async" />
+        </div>
+        <div class="doctor-hero-photo-edge" aria-hidden="true"></div>
+      </div>
+      <aside class="doctor-hero-specialists" aria-labelledby="doctor-specialists-heading">
+        <h2 class="sr-only">Doctor growth specialists</h2>
+        <h3 id="doctor-specialists-heading">{copy.specialistsHeading}</h3>
+        <p>{copy.specialistsDescription}</p>
+      </aside>
+    </div>
+    <ul class="doctor-hero-principles" aria-label="Doctor practice considerations">
+      {copy.principles.map((principle, index) => <li><span class="doctor-principle-icon"><Icon icon={icons[index]} size={23} /></span>{principle}</li>)}
+    </ul>
+  </div>
+</section>

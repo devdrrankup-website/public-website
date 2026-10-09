@@ -1,0 +1,56 @@
+---
+import { Image } from 'astro:assets';
+import DoctorEntrance from './DoctorEntrance.astro';
+import ActionIcon from '../ActionIcon.astro';
+import Arrow from '../Arrow.astro';
+import { doctorSolutions as copy } from '../../data/for-doctors-solutions';
+import { doctorSolutionVisuals as visuals } from '../../data/for-doctors-solution-images';
+import '../../styles/doctor-solutions.css';
+const groupVisuals = [visuals.slice(0, 10), visuals.slice(10, 14), visuals.slice(14)];
+---
+<section id="doctor-solutions" class="doctor-solutions" aria-labelledby="doctor-solutions-heading">
+  <div class="section-container doctor-solutions-inner">
+    <DoctorEntrance>
+      <header class="doctor-solutions-header" data-discovery-motion>
+        <h2 id="doctor-solutions-heading">{copy.heading}</h2>
+        <p>{copy.introduction}</p>
+      </header>
+    </DoctorEntrance>
+    <doctor-solutions>
+      <div class="doctor-solutions-dock">
+      <div class="doctor-solutions-tabs" role="tablist" aria-label="Doctor solution categories" hidden>
+        {copy.groups.map((group, index) => <button type="button" role="tab" id={`solution-tab-${group.id}`}
+          aria-controls={`solution-panel-${group.id}`} aria-selected={index === 0 ? 'true' : 'false'} tabindex={index === 0 ? 0 : -1}>
+          <span>{group.heading}</span><span class="doctor-solutions-count" aria-hidden="true">{group.services.length}</span>
+        </button>)}
+      </div>
+        <div class="doctor-solutions-stage" hidden></div>
+      </div>
+      <div class="doctor-solutions-panels">
+        {copy.groups.map((group, index) => <div id={`solution-panel-${group.id}`} class="doctor-solution-panel" data-solution-panel>
+          <h3 id={`solution-heading-${group.id}`}>{group.heading}</h3>
+          <dl class="doctor-solution-list">
+            {group.services.map(([name, description], serviceIndex) => <div class="doctor-solution-row" data-service={groupVisuals[index][serviceIndex].key}>
+              <dt>
+                <span class="doctor-solution-number" aria-hidden="true">{String(serviceIndex + 1).padStart(2, '0')}</span>
+                <span class="doctor-solution-reveal" aria-hidden="true"></span>
+                <span class="doctor-solution-name">{name}</span>
+                <span class="doctor-solution-arrow" aria-hidden="true"><Arrow /></span>
+              </dt>
+              <dd><span class="doctor-solution-description">{description}</span>
+                <figure class="doctor-solution-photo">
+                  <Image src={groupVisuals[index][serviceIndex].src} width={960} widths={[360, 640, 960]}
+                    sizes="(min-width: 1280px) 1152px, calc(100vw - 80px)"
+                    format="webp" quality={75} alt={groupVisuals[index][serviceIndex].alt} title={groupVisuals[index][serviceIndex].alt} loading="lazy" decoding="async" />
+                  <figcaption>{name}</figcaption>
+                </figure>
+              </dd>
+            </div>)}
+          </dl>
+          <span class="doctor-solution-cta">{group.cta}<ActionIcon purpose="conversation" /></span>
+        </div>)}
+      </div>
+    </doctor-solutions>
+  </div>
+</section>
+<script>import '../../scripts/doctor-solutions';</script>

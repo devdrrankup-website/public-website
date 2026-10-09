@@ -1,0 +1,20 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import DoctorHero from '../../components/doctors/DoctorHero.astro';
+import DoctorDiscoverySection from '../../components/doctors/DoctorDiscoverySection.astro';
+import DoctorOutcomesSection from '../../components/doctors/DoctorOutcomesSection.astro';
+import DoctorBangladeshSection from '../../components/doctors/DoctorBangladeshSection.astro';
+import DoctorSolutionsSection from '../../components/doctors/DoctorSolutionsSection.astro';
+import { doctorHeroPreload } from '../../lib/doctor-hero-image';
+---
+<Layout title="Digital Growth, SEO, Websites & Software for Doctors | Dr RankUP" description="Dr RankUP connects SEO, personal branding, healthcare content, professional websites and chamber-management technology for doctors in Bangladesh." imagePreload={doctorHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="doctor-page" tabindex="-1">
+    <DoctorHero />
+    <DoctorDiscoverySection />
+    <DoctorOutcomesSection />
+    <DoctorBangladeshSection />
+    <DoctorSolutionsSection />
+  </main>
+</Layout>

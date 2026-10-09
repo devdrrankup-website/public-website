@@ -1,0 +1,44 @@
+---
+import { Image } from 'astro:assets';
+import Icon from '../Icon.astro';
+import DoctorEntrance from './DoctorEntrance.astro';
+import Search01Icon from '@hugeicons/core-free-icons/Search01Icon';
+import UserAccountIcon from '@hugeicons/core-free-icons/UserAccountIcon';
+import ShieldCheckIcon from '@hugeicons/core-free-icons/ShieldCheckIcon';
+import Calendar03Icon from '@hugeicons/core-free-icons/Calendar03Icon';
+import photo from '../../assets/for-doctors/patient-profile-research-v3.png';
+import { doctorDiscovery as copy } from '../../data/for-doctors-discovery';
+import '../../styles/doctor-discovery.css';
+const icons = [Search01Icon, UserAccountIcon, ShieldCheckIcon, Calendar03Icon];
+---
+<DoctorEntrance class="doctor-discovery">
+  <section class="section-container" aria-labelledby="doctor-discovery-heading">
+    <h2 id="doctor-discovery-heading">{copy.heading}</h2>
+    <div class="doctor-discovery-editorial">
+      <div class="doctor-discovery-copy">
+        {copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+      </div>
+      <div class="doctor-discovery-photo" data-discovery-motion>
+        <Image src={photo} widths={[360, 540, 720, 960, 1200]} sizes="(min-width: 1100px) min(43vw, 640px), (min-width: 640px) calc(100vw - 56px), calc(100vw - 32px)"
+          format="webp" quality={78} width={1536} height={1024}
+          alt="Woman at home looking at a doctor's profile on her phone"
+          title="Researching doctor information from home" loading="lazy" decoding="async" />
+      </div>
+    </div>
+    <div class="doctor-discovery-journey">
+      <p>{copy.goal}</p>
+      <ol aria-label="Patient discovery journey">
+        {copy.journey.map((label, index) => <li>
+          <span class="doctor-discovery-chip">{label}</span>
+          {index < copy.journey.length - 1 && <span class="doctor-discovery-journey-arrow" aria-hidden="true">→</span>}
+        </li>)}
+      </ol>
+    </div>
+    <ol class="doctor-discovery-stages" aria-label="Four parts of a clear doctor presence">
+      {copy.stages.map((stage, index) => <li data-discovery-motion>
+        <div class="doctor-discovery-stage-marker"><span class="doctor-discovery-stage-icon"><Icon icon={icons[index]} size={25} /></span><span class="doctor-discovery-stage-number" aria-hidden="true">0{index + 1}</span></div>
+        <div class="doctor-discovery-stage-copy"><h3>{stage.heading}</h3><p>{stage.description}</p></div>
+      </li>)}
+    </ol>
+  </section>
+</DoctorEntrance>

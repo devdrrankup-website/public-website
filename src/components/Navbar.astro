@@ -3,7 +3,7 @@ import '../styles/navigation.css';
 import ActionIcon from './ActionIcon.astro';
 import NavigationMenu from './NavigationMenu.astro';
 import {Image} from 'astro:assets';
-import logo from '../../public/brand/dr-rankup-logo.png';
+import logo from '../assets/brand/dr-rankup-logo.png';
 import Menu01Icon from '@hugeicons/core-free-icons/Menu01Icon';
 import Cancel01Icon from '@hugeicons/core-free-icons/Cancel01Icon';
 import Icon from './Icon.astro';
@@ -12,7 +12,7 @@ import {navigationMenus} from '../data/navigation';
 <header class="site-header">
   <div class="container">
     <site-navigation class="nav-shell">
-      <div class="brand"><Image src={logo} width={224} widths={[190,224,380,448,570,672]} sizes="(min-width: 1100px) 190px, (min-width: 400px) 224px, (min-width: 358px) 56vw, 200px" format="webp" quality={100} title="Dr RankUP — healthcare growth and technology" alt="Dr RankUP" loading="eager"/></div>
+      <a class="brand" href="/" aria-label="Dr RankUP homepage" aria-current={Astro.url.pathname === '/' ? 'page' : undefined}><Image src={logo} width={224} widths={[190,224,380,448,570,672]} sizes="(min-width: 1100px) 190px, (min-width: 400px) 224px, (min-width: 358px) 56vw, 200px" format="webp" quality={100} title="Dr RankUP — healthcare growth and technology" alt="Dr RankUP" loading="eager"/></a>
       <nav id="main-navigation" class="main-navigation" aria-label="Main navigation">
         {navigationMenus.map(menu=><>
           {menu.id==='about'&&<span class="nav-direct-item">Healthcare Marketing</span>}

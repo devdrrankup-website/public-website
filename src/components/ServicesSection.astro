@@ -26,7 +26,7 @@ const visuals = [
             {homepageServices.items.map((item, index) => (
               <article class="service-copy" aria-labelledby={`service-${item.id}`} style={`--service-order: ${index + 1}`}>
                 <div class="service-copy-inner">
-                  <h3 id={`service-${item.id}`}>{item.heading}</h3>
+                  <h3 id={`service-${item.id}`}>{item.id === 'doctors' ? <a class="service-heading-link" href={item.href}>{item.heading}</a> : item.heading}</h3>
                   <span class="service-divider" aria-hidden="true"></span>
                   <p class="service-summary">{item.description}</p>
                   <p class="service-details">{item.services}</p>
@@ -61,6 +61,8 @@ const visuals = [
 </healthcare-services>
 
 <style>
+  .service-heading-link { color: inherit; }
+  .service-heading-link:hover { text-decoration: underline; text-underline-offset: .14em; }
   healthcare-services { display: block; background: #fff; }
   /* Services and Connected healthcare share one uninterrupted dark surface. */
   .services-section { padding-block: 56px 64px; border-radius: 28px 28px 0 0; background: #0a0a0a; color: #fff; }

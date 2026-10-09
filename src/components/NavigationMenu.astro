@@ -34,7 +34,7 @@ let entryIndex=0;
             </ul>
           </details>)}
         </div>
-        <div class="mega-view-all"><span data-view-all-label>{menu.viewAll}<Arrow size={17}/></span></div>
+        <div class="mega-view-all">{menu.viewAllHref ? <a class="nav-view-all" href={menu.viewAllHref} aria-current={Astro.url.pathname === menu.viewAllHref ? 'page' : undefined}>{menu.viewAll}<Arrow size={17}/></a> : <span data-view-all-label>{menu.viewAll}<Arrow size={17}/></span>}</div>
       </div>
       <div class="mega-preview" role="group" aria-label={`${menu.title} image previews`}>
         <div class="mega-preview-stage">

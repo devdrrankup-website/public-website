@@ -1,5 +1,5 @@
-// User-supplied contact details, 8 October 2026. Footer is display-only by request.
-// Service names follow WEBSITE_STRUCTURE.md; destinations will be added later.
+// User-supplied contact details. Only the built For Doctors parent is linked.
+// Other service/company/contact destinations remain deferred.
 export const footer = {
   phone: '01342114762',
   email: 'contact@drrankup.com',
@@ -10,5 +10,5 @@ export const footer = {
   description: 'Healthcare marketing, websites and software for doctors, clinics and hospitals in Bangladesh.',
   company: ['Home', 'About', 'Case Studies', 'Resources', 'Pricing', 'Contact'],
   legal: ['Privacy Policy', 'Terms & Conditions'],
-  audiences: [{title:'For Doctors'},{title:'For Clinics'},{title:'For Hospitals'},{title:'For Healthcare'}],
+  audiences: [{title:'For Doctors',href:'/for-doctors/'},{title:'For Clinics'},{title:'For Hospitals'},{title:'For Healthcare'}] as {title:string;href?:string}[],
 };
