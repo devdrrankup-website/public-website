@@ -6,17 +6,25 @@ defineScrollSection('healthcare-outcomes', (element, gsap, ScrollTrigger) => {
   const rows = tracks.map(track => track.querySelector<HTMLElement>('.outcome-row')!);
   let offsets: number[] = [], tops: number[] = [];
   let frame = 0;
+  let dimensions = '';
 
   const measure = () => {
     const heights = rows.map(row => row.offsetHeight);
     const gap = parseFloat(getComputedStyle(list).rowGap);
     const header = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-height'));
     const step = parseFloat(getComputedStyle(tracks[0]).getPropertyValue('--stack-step'));
+    // ResizeObserver also delivers an initial notification after observe().
+    // A repeated measurement must not rewrite the same heights and refresh
+    // every scroll animation while a visitor is opening the navigation.
+    const nextDimensions = [innerWidth, innerHeight, list.clientWidth, gap, header, step, ...heights].join(':');
+    if (nextDimensions === dimensions) return false;
+    dimensions = nextDimensions;
     let offset = 0;
     offsets = heights.map(height => { const top = offset; offset += height + gap; return top; });
     // Tall cards scroll completely into view before resting against the next card.
     tops = heights.map((height, index) => Math.min(header + 12 + index * step, innerHeight - height - 16));
     tracks.forEach((track, index) => track.style.setProperty('--stack-card-height', `${heights[index]}px`));
+    return true;
   };
   const flowTop = (index: number) => list.getBoundingClientRect().top + scrollY + offsets[index];
   measure();
@@ -34,7 +42,7 @@ defineScrollSection('healthcare-outcomes', (element, gsap, ScrollTrigger) => {
   });
   const refresh = () => {
     cancelAnimationFrame(frame);
-    frame = requestAnimationFrame(() => { measure(); ScrollTrigger.refresh(); });
+    frame = requestAnimationFrame(() => { if (measure()) ScrollTrigger.refresh(); });
   };
   const observer = new ResizeObserver(refresh);
   observer.observe(list);

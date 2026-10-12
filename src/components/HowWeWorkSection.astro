@@ -22,6 +22,7 @@ const accents = [
       <header class="work-introduction">
         <p class="work-eyebrow">Our process</p>
         <h2 id="work-heading">{content.heading}</h2>
+        <p class="work-journey">{content.journey}</p>
       </header>
       <div class="work-scroll" role="region" aria-label="How we work: five steps">
         <ol class="work-steps" role="list">
@@ -91,6 +92,7 @@ const accents = [
   .work-introduction { display: grid; gap: 16px; }
   .work-eyebrow { margin: 0; color: var(--accent-green); font-size: 12px; font-weight: 650; line-height: 1.5; letter-spacing: .09em; text-transform: uppercase; }
   .work-introduction h2 { margin: 0; font-size: clamp(32px,4vw,48px); font-weight: 650; line-height: 1.2; letter-spacing: -.035em; }
+  .work-journey { margin: 0; color: #000; font-size: 14px; line-height: 1.7; }
   .work-scroll { position: relative; max-width: 1000px; margin: 28px auto 0; overflow-x: auto; overflow-y: hidden; scrollbar-width: thin; scrollbar-color: #afa9ec #eeedfe; scroll-snap-type: x proximity; scroll-padding-inline: 32px; }
   .work-scroll:focus-visible { outline: 2px solid var(--purple); outline-offset: 4px; border-radius: 8px; }
   .work-steps { --ribbon-rise: 46px; isolation: isolate; display: grid; grid-template-columns: repeat(5,188px); align-items: stretch; gap: 0; width: max-content; min-width: 100%; margin: 0; padding: 32px 46px 42px 32px; list-style: none; }

@@ -1,21 +1,24 @@
-// Exact homepage source, checked against Drive on 7 October 2026.
+// Supplied 12 October 2026 content with approved doctor-friendly wording at unchanged word counts.
 export const homepageResponsibility = {
-  heading: 'Responsible Healthcare Communication & Technology',
-  introduction: 'Healthcare growth should improve visibility and access without weakening professional responsibility, privacy or patient trust.',
-  communication: {
-    heading: 'BM&DC-Aware Communication',
-    paragraphs: [
-      'Where doctor promotion or professional healthcare communication is involved, applicable BM&DC professional conduct and ethics guidance should be considered.',
-      'Information should be accurate, factual, verifiable and balanced—not exaggerated or misleading.',
-      'We avoid fabricated proof, unsupported superiority claims and guaranteed ranking or patient-outcome promises.',
+  "heading": "Responsible Healthcare Communication and Technology",
+  "introduction": "We consider who shares healthcare information, its readers, accuracy and privacy.",
+  "communication": {
+    "heading": "Medical Ethics and Advertising Rules",
+    "paragraphs": [
+      "We check doctors' information and promotions against applicable BM&DC professional rules. Website content follows Google's search guidance and focuses on readers. Google and Meta advertising needs separate checks for rules and eligibility. No agency can give advance approval for medical advertising."
+    ]
+  },
+  "privacy": {
+    "heading": "Patient Privacy and Online Consultations",
+    "paragraphs": [
+      "We keep patients' personal health details out of advertising trackers. Online consultations, prescriptions and patient records need applicable BM&DC and DGHS checks covering consent, privacy and clinicians' qualifications and responsibility. Search improvements do not automatically require every online consultation check."
     ],
-  },
-  privacy: {
-    heading: 'Privacy, Telehealth & Digital Responsibility',
-    introduction: 'Healthcare websites, forms, analytics and software should protect patient confidentiality and sensitive information.',
-    considerationsIntroduction: 'For telehealth-enabled or patient-data systems, design should consider:',
-    considerations: ['Identity & Authentication', 'Informed Consent', 'Privacy', 'Secure Records', 'Appropriate Retention'],
-    guidance: 'DGHS telehealth guidance addresses these areas, while BM&DC telemedicine guidance remains relevant to professional teleconsultation responsibilities.',
-  },
-  conclusion: 'Healthcare technology should improve access and operations without compromising healthcare responsibilities.',
-};
+    "considerations": [
+      "Identity",
+      "Consent",
+      "Privacy",
+      "Authorised Access",
+      "Safe Handling"
+    ]
+  }
+} as const;

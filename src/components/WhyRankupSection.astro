@@ -9,14 +9,15 @@ import UserIcon from '@hugeicons/core-free-icons/UserIcon';
 import ComputerIcon from '@hugeicons/core-free-icons/ComputerIcon';
 import {homepageWhy as content} from '../data/homepage-why';
 const icons=[Briefcase01Icon,UserGroupIcon,UserIcon,ComputerIcon];
+const [headingStart, headingEnd] = content.heading.split('Dr RankUP');
 ---
 <why-rankup>
   <section id="why-dr-rankup" class="why-section" aria-labelledby="why-heading">
     <div class="section-container why-container">
       <header class="why-introduction">
-        <h2 id="why-heading">Why <em>Dr RankUP</em></h2>
+        <h2 id="why-heading">{headingStart}<em>Dr RankUP</em>{headingEnd}</h2>
       </header>
-      <div class="why-comparison-scroll" role="region" aria-labelledby="why-heading" aria-describedby="why-context">
+      <div class="why-comparison-scroll" role="region" aria-label="Dr RankUP features and delivery approaches" aria-describedby="why-context">
         <table class="why-comparison" role="table">
           <caption class="sr-only">{content.heading}: how delivery models approach healthcare growth and technology</caption>
           <colgroup><col class="why-platform-column"/>{content.criteria.map(()=> <col/>)}</colgroup>
@@ -120,11 +121,11 @@ const icons=[Briefcase01Icon,UserGroupIcon,UserIcon,ComputerIcon];
     .why-comparison { display: grid; grid-template-columns: minmax(0,1fr); min-width: 0; padding: 0 20px; border: 1px solid #229f6080; border-radius: 24px; background: radial-gradient(ellipse at 0% 100%,#229f6033,transparent 45%),linear-gradient(110deg,#10251b,#0b1711 55%,#153827); }
     .why-comparison colgroup,.why-comparison thead th:first-child,.why-comparison tbody tr:not(.why-featured) { display: none; }
     .why-comparison thead,.why-comparison thead tr,.why-comparison tbody,.why-featured { display: contents; }
-    .why-comparison thead th { position: relative; z-index: 1; grid-column: 1; grid-row: var(--criterion-row); align-self: start; padding: 22px 40px 0 0; text-align: left; }
+    .why-comparison thead th { position: relative; z-index: 1; grid-column: 1; grid-row: calc(var(--criterion-row) * 2 - 2); align-self: start; padding: 21px 40px 0 0; border-top: 1px solid #ffffff1f; text-align: left; }
     .why-comparison h3 { font-size: 16px; }
     .why-comparison .why-featured th { grid-column: 1; grid-row: 1; padding: 24px 0; border: 0; border-radius: 0; }
-    .why-comparison .why-featured td { position: relative; grid-column: 1; grid-row: var(--criterion-row); min-width: 0; padding: 54px 0 24px; border: 0; border-top: 1px solid #ffffff1f; border-radius: 0; text-align: left; }
-    .why-featured td :global(.ui-icon) { position: absolute; top: 20px; right: 0; width: 24px; height: 24px; color: var(--accent-green-on-dark); }
+    .why-comparison .why-featured td { position: relative; grid-column: 1; grid-row: calc(var(--criterion-row) * 2 - 1); min-width: 0; padding: 9px 0 24px; border: 0; border-radius: 0; text-align: left; }
+    .why-featured td :global(.ui-icon) { position: absolute; top: -26px; right: 0; width: 24px; height: 24px; color: var(--accent-green-on-dark); }
     .why-platform { display: grid; grid-template-columns: 56px minmax(0,1fr); align-items: center; gap: 16px; }
     .why-platform > div { display: contents; }
     .why-platform strong { font-size: 22px; }

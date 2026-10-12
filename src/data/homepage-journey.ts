@@ -1,8 +1,8 @@
-// Exact Bangladesh discovery copy from the supplied homepage content, 10 October 2026.
+// Supplied Bangladesh discovery copy, with approved plain-language wording at unchanged word counts.
 export const homepageJourney = {
   "heading": "Understanding Healthcare Discovery in Bangladesh",
-  "introduction": "Searches may begin with a doctor, specialty, service or location. Actual audience research determines the relevant journey.",
-  "connection": "Local SEO checks real location information; website content clarifies services and contact options. The next steps differ between an individual chamber, a multi-practitioner clinic and a hospital with several departments.",
+  "introduction": "Patients may search by doctor, specialty, service or location. Understanding their needs helps plan their next steps.",
+  "connection": "Accurate locations help patients find you; booking or enquiry steps differ for doctors, clinics and larger hospitals.",
   "steps": [
     "Search",
     "Maps or Website",

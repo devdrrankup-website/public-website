@@ -44,7 +44,8 @@ summary::-webkit-details-marker { display: none; }
 .healthcare-responsibility-sections { background: radial-gradient(ellipse at 8% 30%,#eeedfeb3,transparent 65%),radial-gradient(ellipse at 100% 65%,#bae5ff40,transparent 65%),#fff; }
 /* A clean curved handoff avoids a black-to-white gray band or extra spacer.
    Background rounding does not clip descendants: keep native stacking intact. */
-.healthcare-light-sections { border-radius: clamp(24px, 3vw, 48px) clamp(24px, 3vw, 48px) 0 0; background: linear-gradient(180deg, #fff 0%, #ffffff00 96px), radial-gradient(ellipse at 90% 12%, #bae5ff80 0%, #bae5ff00 50%), radial-gradient(ellipse at 8% 68%, #bae5ff66 0%, #bae5ff00 55%), #fff; }
+/* Match the join beneath fractional gradient edges, without moving section content. */
+.healthcare-light-sections { border-radius: clamp(24px, 3vw, 48px) clamp(24px, 3vw, 48px) 0 0; background: linear-gradient(0deg, #eaf7ff 3px, #eaf7ff00 4px), linear-gradient(180deg, #fff 0%, #ffffff00 96px), radial-gradient(ellipse at 90% 12%, #bae5ff80 0%, #bae5ff00 50%), radial-gradient(ellipse at 8% 68%, #bae5ff66 0%, #bae5ff00 55%), #fff; }
 .hospital-visual { display: block; }
 .hospital-stage { position: relative; isolation: isolate; overflow: hidden; touch-action: pan-y; padding-bottom: 32px; }
 .hospital-stage::after { content: ''; position: absolute; inset: auto 0 0; height: 32px; background: linear-gradient(180deg, #0a0a0a00, #0a0a0a); pointer-events: none; }

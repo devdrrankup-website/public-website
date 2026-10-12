@@ -15,15 +15,15 @@ import {homepageSearchExpertise as content} from '../data/homepage-search-expert
       <div class="expertise-feature">
         <div class="expertise-photo">
           <div class="expertise-portrait-frame">
-            <Image src={hridoy} alt="Hridoy Chowdhury, Founder and SEO Consultant at Dr RankUP."
-              title="Hridoy Chowdhury — Founder & SEO Consultant, Dr RankUP"
+            <Image src={hridoy} alt="Hridoy Chowdhury, Founder, SEO Consultant and AI Search Specialist at Dr RankUP."
+              title={`Hridoy Chowdhury — ${content.profileRole}, Dr RankUP`}
               width={960} height={960} widths={[320,480,640,960]} sizes="(min-width: 1100px) 480px, (min-width: 900px) 38vw, (min-width: 480px) 420px, calc(100vw - 32px)"
               format="webp" quality={85} loading="lazy" decoding="async"/>
           </div>
         </div>
 
         <div class="expertise-copy">
-          <h3>{content.founder}<span class="expertise-role"> — {content.role}</span></h3>
+          <h3>{content.founder}<span class="expertise-role"> — {content.profileRole}</span></h3>
           <div class="expertise-skills">
             <p>{content.introduction}</p>
             <ul aria-label="Search strategy expertise">

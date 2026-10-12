@@ -1,11 +1,24 @@
-// Homepage source checked read-only on 7 October 2026; canonical brand spelling.
+// Approved homepage role and doctor-friendly wording, 12 October 2026.
+// Paragraph word counts preserved; role expanded exactly as requested.
 export const homepageSearchExpertise = {
-  heading: 'Search Expertise Behind Dr RankUP',
-  founder: 'Hridoy Chowdhury',
-  role: 'Founder & SEO Consultant',
-  introduction: 'Search strategy at Dr RankUP is led by Hridoy Chowdhury, with expertise across:',
-  skills: ['Technical SEO', 'Local SEO', 'Entity SEO', 'Structured Data', 'Topical Authority', 'AEO', 'GEO', 'AI Search'],
-  explanation: 'For healthcare organizations, technical depth should support a visible outcome: mapping search intent to the right page, improving crawlability and indexation, clarifying relationships between doctors, services and locations, strengthening internal linking and structured data, and building content search systems can interpret.',
-  conclusion: 'Modern discovery may happen through search, Maps, answer systems and AI-driven search.',
-  consultation: { label: 'Get a consultation with Hridoy' },
-};
+  "heading": "Search Expertise Behind Dr RankUP",
+  "founder": "Hridoy Chowdhury",
+  "role": "Founder & SEO Consultant",
+  "profileRole": "Founder & SEO Consultant & AI Search Specialist",
+  "introduction": "Hridoy Chowdhury leads Dr RankUP's search work, helping patients find healthcare information online:",
+  "skills": [
+    "Technical SEO",
+    "Local SEO",
+    "Entity SEO",
+    "Structured Data",
+    "Topical Authority",
+    "AEO",
+    "GEO",
+    "AI Search"
+  ],
+  "explanation": "For doctors, clinics and hospitals, Hridoy helps connect patients' searches with the right page. He helps Google find and understand your website, clearly connects doctors, services and locations, links related pages, and organises healthcare information so search systems can understand it.",
+  "conclusion": "Patients may find you through Google, Maps, online answers and AI search.",
+  "consultation": {
+    "label": "Get a consultation with Hridoy"
+  }
+} as const;

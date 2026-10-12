@@ -4,8 +4,6 @@ import communication from '../assets/responsibility/responsible-communication.pn
 import telehealth from '../assets/responsibility/private-telehealth.png';
 import {homepageResponsibility as content} from '../data/homepage-responsibility';
 const sizes = '(min-width: 1340px) 589px, (min-width: 900px) calc((100vw - 128px) / 2), (min-width: 640px) calc(100vw - 56px), calc(100vw - 32px)';
-const conclusionEmphasis = 'healthcare responsibilities.';
-const conclusionStart = content.conclusion.slice(0,-conclusionEmphasis.length);
 ---
 <responsible-healthcare>
   <section id="responsible-healthcare" class="responsibility-section" aria-labelledby="responsibility-heading">
@@ -31,8 +29,8 @@ const conclusionStart = content.conclusion.slice(0,-conclusionEmphasis.length);
             </div>
           </div>
           <div class="responsibility-copy">
-            {content.communication.paragraphs.map((paragraph,index) => (
-              <p class:list={{'responsibility-key-statement': index === 1}}>{paragraph}</p>
+            {content.communication.paragraphs.map(paragraph => (
+              <p>{paragraph}</p>
             ))}
           </div>
         </article>
@@ -51,19 +49,16 @@ const conclusionStart = content.conclusion.slice(0,-conclusionEmphasis.length);
             </div>
           </div>
           <div class="responsibility-copy">
-            <p>{content.privacy.introduction}</p>
+            {content.privacy.paragraphs.map(paragraph => <p>{paragraph}</p>)}
             <div class="responsibility-considerations">
-              <p>{content.privacy.considerationsIntroduction}</p>
               <ul aria-label="Telehealth and patient-data considerations">
                 {content.privacy.considerations.map(item => <li>{item}</li>)}
               </ul>
             </div>
-            <p>{content.privacy.guidance}</p>
           </div>
         </article>
       </div>
 
-      <p class="responsibility-conclusion">{conclusionStart}<em>{conclusionEmphasis}</em></p>
     </div>
   </section>
 </responsible-healthcare>
@@ -87,7 +82,6 @@ const conclusionStart = content.conclusion.slice(0,-conclusionEmphasis.length);
   .responsibility-image-frame img { display: block; width: 100%; height: 100%; object-fit: cover; }
   .responsibility-copy { grid-area: copy; display: grid; align-content: start; gap: 20px; min-width: 0; }
   .responsibility-copy p { max-width: 620px; margin: 0; color: var(--muted); font-size: 15px; line-height: 1.8; }
-  .responsibility-copy .responsibility-key-statement { padding-left: 18px; border-left: 2px solid #229f6066; color: var(--ink); font-weight: 550; }
   .responsibility-considerations { display: grid; gap: 14px; }
   .responsibility-considerations ul { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
   .responsibility-considerations li { --pill-accent: #bae5ff; --pill-surface: #bae5ff4d; max-width: 100%; padding: 6px 10px; border: 1px solid var(--pill-accent); border-radius: var(--control-radius); color: var(--ink); background: var(--pill-surface); font-size: 12px; font-weight: 550; line-height: 1.6; }
@@ -95,8 +89,6 @@ const conclusionStart = content.conclusion.slice(0,-conclusionEmphasis.length);
   .responsibility-considerations li:nth-child(3) { --pill-accent: #e1ffb9; --pill-surface: #e1ffb966; }
   .responsibility-considerations li:nth-child(4) { --pill-accent: #eddafa; --pill-surface: #eddafa66; }
   .responsibility-considerations li:nth-child(5) { --pill-accent: #fef2cc; --pill-surface: #fef2cc80; }
-  .responsibility-conclusion { margin: 40px 0 0; padding: 18px 24px; border: 1px solid var(--accent-green-line); border-radius: 999px; color: var(--ink); background: linear-gradient(90deg,#e1ffb9 0%,#fff 50%,#e1ffb9 100%); font-size: clamp(15px,1.35vw,20px); font-weight: 500; line-height: 1.65; text-align: center; text-wrap: pretty; }
-  .responsibility-conclusion em { margin-inline-start: .1em; color: var(--accent-green); font-family: Georgia,'Times New Roman',serif; font-size: 1.15em; font-weight: 600; }
   @media (min-width: 640px) {
     .responsibility-section { padding-block: 40px 72px; }
     .responsibility-introduction { gap: 20px; }
@@ -114,6 +106,5 @@ const conclusionStart = content.conclusion.slice(0,-conclusionEmphasis.length);
     .responsibility-principle+.responsibility-principle { padding-top: 72px; }
     .responsibility-title { padding-top: 8px; }
     .responsibility-image-frame { border-radius: 32px; }
-    .responsibility-conclusion { margin-top: 64px; }
   }
 </style>

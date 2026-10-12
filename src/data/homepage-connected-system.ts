@@ -1,20 +1,19 @@
-// Source refreshed from the connected homepage document on 7 October 2026,
-// modified 05:08:54 UTC. Four diagram labels group the five source clauses;
-// the intro now uses the user-approved organization/system perspective;
-// both supplied H3s appear in the separate HealthcareTrustSection.
+// Homepage content refreshed on 12 October 2026.
+// Keep the approved four-part diagram and its companion trust layout.
+// The source journey occupies the existing statement; both H3s stay below.
 export const homepageConnectedSystem = {
-  heading: 'From Discovery to Action—and Beyond',
-  introduction: 'For doctors, clinics, hospitals and other healthcare organizations, here’s how discovery connects with everyday operations.',
-  trustIntroduction: 'Because healthcare is a YMYL — Your Money or Your Life — category, stronger trust signals are essential.',
+  heading: 'From Discovery to Responsible Action',
+  introduction: 'Search helps patients find you; accurate information explains your services; easy contact and suitable software can support office tasks.',
+  trustIntroduction: 'Find → Understand → Check → Contact → Manage → Improve',
   stages: [
     {title: 'Search', outputs: ['Discovery']},
-    {title: 'Content', outputs: ['Understanding', 'Trust']},
-    {title: 'Websites', outputs: ['Action']},
-    {title: 'Software & Analytics', outputs: ['Operations', 'Improvement']},
+    {title: 'Verified Content', outputs: ['Understanding', 'Verification']},
+    {title: 'Clear Navigation', outputs: ['Appropriate Contact']},
+    {title: 'Scoped Technology', outputs: ['Administration', 'Improvement']},
   ],
   trust: [
-    {title: 'Experience & Expertise', description: 'Content should reflect genuine professional experience, while material healthcare claims should be created or reviewed by appropriately qualified professionals.'},
-    {title: 'Authority & Trust', description: 'Doctor profiles, authorship, credible references, accuracy, transparency and privacy should make responsibility and trust clear.'},
+    {title: 'Qualifications and Medical Review', description: 'Check qualifications and have qualified professionals review important medical information.'},
+    {title: 'Responsibility and Trust', description: "Show who's responsible for information and protect patients' privacy."},
   ],
-  conclusion: 'SEO can improve discoverability and structure, but it does not replace qualified clinical judgment.',
+  conclusion: 'Decisions about treatment and patient safety remain with qualified professionals.',
 } as const;

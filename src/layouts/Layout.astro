@@ -4,13 +4,15 @@ import '../styles/section-rendering.css';
 import '@fontsource-variable/plus-jakarta-sans/wght.css';
 import jakartaLatin from '@fontsource-variable/plus-jakarta-sans/files/plus-jakarta-sans-latin-wght-normal.woff2?url';
 
+interface ImagePreload { href:string; srcset:string; sizes:string; media?:string; }
 interface Props {
   title?: string;
   description?: string;
-  imagePreload?: {href:string;srcset:string;sizes:string};
+  imagePreload?: ImagePreload | ImagePreload[];
 }
 
 const { title = 'Dr RankUP', description = 'Healthcare digital marketing, SEO, websites and software for doctors, clinics and hospitals across Bangladesh.', imagePreload } = Astro.props;
+const imagePreloads = imagePreload ? (Array.isArray(imagePreload) ? imagePreload : [imagePreload]) : [];
 ---
 
 <!doctype html>
@@ -23,7 +25,7 @@ const { title = 'Dr RankUP', description = 'Healthcare digital marketing, SEO, w
     <meta name="theme-color" content="#6131C6" />
     <link rel="icon" type="image/webp" href="/brand/dr-rankup-icon.webp" />
     <link rel="preload" href={jakartaLatin} as="font" type="font/woff2" crossorigin />
-    {imagePreload && <link rel="preload" as="image" type="image/webp" href={imagePreload.href} imagesrcset={imagePreload.srcset} imagesizes={imagePreload.sizes} fetchpriority="high" />}
+    {imagePreloads.map(image => <link rel="preload" as="image" type="image/webp" href={image.href} imagesrcset={image.srcset} imagesizes={image.sizes} media={image.media} fetchpriority="high" />)}
     <title>{title}</title>
   </head>
   <body class="antialiased">

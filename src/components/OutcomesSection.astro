@@ -34,20 +34,9 @@ const visuals = [
                   <span class="outcome-number" aria-hidden="true">Outcome / 0{index + 1}</span>
                   <h3 id={`outcome-heading-${index + 1}`}>{item.heading}</h3>
                 </div>
-                <dl class="outcome-details">
-                  <div class="outcome-problem">
-                    <dt>Problem</dt>
-                    <dd>{item.problem}</dd>
-                  </div>
-                  <div class="outcome-method">
-                    <dt>Method</dt>
-                    <dd>{item.method}</dd>
-                  </div>
-                  <div class="outcome-result">
-                    <dt>Outcome</dt>
-                    <dd>{item.outcome}</dd>
-                  </div>
-                </dl>
+                <div class="outcome-details">
+                  <p>{item.description}</p>
+                </div>
               </div>
               <figure class="outcome-image">
                 <Image src={visuals[index].src} alt={visuals[index].alt} title={visuals[index].title}
@@ -85,11 +74,7 @@ const visuals = [
   .outcome-number { font-size: 12px; line-height: 1.5; font-weight: 650; letter-spacing: .08em; text-transform: uppercase; }
   .outcome-identity h3 { margin: 0; font-size: clamp(28px, 3.3vw, 38px); line-height: 1.2; font-weight: 650; letter-spacing: -.035em; text-wrap: balance; }
   .outcome-details { display: grid; gap: 0; margin: 0; }
-  .outcome-details > div { display: grid; grid-template-columns: 66px minmax(0, 1fr); align-items: baseline; gap: 12px; min-width: 0; padding: 14px 0; }
-  .outcome-details > div + div { border-top: 1px solid #102a3512; }
-  .outcome-details dt { margin: 0; font-size: 12px; line-height: 1.6; font-weight: 650; }
-  .outcome-details dd { min-width: 0; margin: 0; font-size: 14px; line-height: 1.65; overflow-wrap: anywhere; }
-  .outcome-result dd { font-weight: 650; }
+  .outcome-details p { min-width: 0; margin: 0; font-size: 14px; line-height: 1.65; overflow-wrap: anywhere; }
   .outcomes-footer { display: flex; justify-content: center; padding-top: 12px; }
   .outcomes-cta { max-width: 100%; }
   .outcome-image { position: relative; min-width: 0; aspect-ratio: 3 / 2; overflow: hidden; margin: 0; border-radius: 14px; background: #ffffff50; }
@@ -102,9 +87,7 @@ const visuals = [
     .outcomes-section { padding-block: 80px; }
     .outcome-row { padding: 32px; gap: 28px; border-radius: 26px; }
     .outcome-copy { gap: 28px; }
-    .outcome-details > div { grid-template-columns: 76px minmax(0, 1fr); gap: 16px; padding: 16px 0; }
-    .outcome-details dt { font-size: 13px; }
-    .outcome-details dd { font-size: 15px; }
+    .outcome-details p { font-size: 15px; }
   }
   @media (min-width: 900px) {
     .outcome-track { --stack-step: 56px; }

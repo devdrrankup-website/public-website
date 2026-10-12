@@ -1,0 +1,120 @@
+/* Homepage-only reading styles. Keep the shared font, layout, media and motion
+   rules intact; the doctor pages and global navigation/footer do not inherit
+   these adjustments. Smaller supporting copy stays distinct from body copy. */
+#main-content.hero-page .hero-description {
+  color: #fff;
+  font-size: 15px;
+  line-height: 1.8;
+}
+#main-content.hero-page .hero-tagline { color: #fff; }
+#main-content.hero-page .hero-eyebrow { color: #fff; font-size: 12px; }
+#main-content.hero-page .founder-note h3 { font-size: 15px; font-weight: 650; }
+#main-content.hero-page .founder-note p { color: #fff; font-size: 14px; }
+#main-content.hero-page .hero-principles li { font-size: 13px; line-height: 1.6; }
+
+/* The image still fills the same frame. On compact screens its detail sits
+   behind the copy, so deepen the existing shade rather than moving the image. */
+@media (max-width: 1099px) {
+  #main-content.hero-page .hospital-shade {
+    background: linear-gradient(180deg, #0a0a0abf 0%, #0a0a0ae6 38%, #0a0a0ae6 72%, #0a0a0a99 100%);
+  }
+}
+
+#main-content.hero-page :is(.discovery-section, .outcomes-section, .journey-section,
+  .healthcare-trust, .responsibility-section, .expertise-section,
+  .people-section, .work-section, .faq-section) { color: #000; }
+
+#main-content.hero-page :is(.discovery-introduction, .discovery-question,
+  .outcomes-introduction, .trust-principle, .responsibility-copy,
+  .expertise-copy, .people-copy, .faq-answer) p,
+#main-content.hero-page :is(.responsibility-summary, .expertise-role,
+  .trust-statement, .trust-clinical-note, .responsibility-conclusion,
+  .people-clinical-note, .journey-pill, .responsibility-considerations li,
+  .expertise-skills li, .discovery-number),
+#main-content.hero-page .work-body h3,
+#main-content.hero-page .work-body p { color: #000; }
+#main-content.hero-page :is(.trust-eyebrow, .responsibility-eyebrow,
+  .expertise-eyebrow, .people-eyebrow, .work-eyebrow) { color: #000; font-size: 14px; }
+
+#main-content.hero-page .discovery-prompt,
+#main-content.hero-page .expertise-copy .expertise-conclusion,
+#main-content.hero-page .service-copy p,
+#main-content.hero-page .work-body p,
+#main-content.hero-page .why-platform p,
+#main-content.hero-page .consultation-description { font-size: 15px; }
+
+#main-content.hero-page .service-copy p { color: #fff; }
+#main-content.hero-page .connected-introduction p { color: #fff; }
+#main-content.hero-page .outcome-details p { font-size: 15px; }
+
+/* Compact labels and the wide comparison's narrow columns need a readable
+   secondary size, without flattening the existing heading hierarchy. */
+#main-content.hero-page :is(.journey-pill, .system-output-pills li,
+  .responsibility-considerations li, .expertise-skills li,
+  .expertise-consultation, .people-profile-link) { font-size: 14px; }
+#main-content.hero-page :is(.system-output-label, .why-criterion-description,
+  .why-coverage, .why-context) { color: #fff; font-size: 14px; }
+#main-content.hero-page .why-platform p { color: #fff; }
+
+#main-content.hero-page :is(.consultation-lead, .consultation-description,
+  .consultation-contact > p, .consultation-hint, .consultation-optional,
+  .consultation-organization legend > span,
+  .consultation-organization-option > span) { color: #fff; }
+#main-content.hero-page :is(.consultation-hint, .consultation-optional,
+  .consultation-organization legend > span,
+  .consultation-organization-option > span) { font-size: 14px; }
+#main-content.hero-page .consultation-status { font-size: 14px; }
+
+@media (min-width: 640px) {
+  #main-content.hero-page .hero-description,
+  #main-content.hero-page .discovery-question p,
+  #main-content.hero-page .discovery-prompt,
+  #main-content.hero-page .trust-principle p,
+  #main-content.hero-page .expertise-copy .expertise-conclusion,
+  #main-content.hero-page .service-copy p,
+  #main-content.hero-page .outcome-details p,
+  #main-content.hero-page .work-body p,
+  #main-content.hero-page .why-platform p,
+  #main-content.hero-page .consultation-lead,
+  #main-content.hero-page .consultation-description { font-size: 16px; }
+  #main-content.hero-page .hero-eyebrow { font-size: 13px; }
+  #main-content.hero-page .hero-principles li { font-size: 14px; }
+}
+
+/* Reserve the current hero copy's measured final lines during font swap.
+   These minimums match the loaded font's existing geometry; text zoom/longer
+   copy can still grow. Recheck the line map when this hero copy changes. */
+@media (max-width: 1099px) {
+  #main-content.hero-page {
+    --home-eyebrow-lines: 2;
+    --home-heading-lines: 5;
+    --home-first-copy-lines: 3;
+    --home-last-copy-lines: 3;
+    --home-founder-copy-lines: 6;
+    --home-tagline-lines: 2;
+  }
+  #main-content.hero-page .hero-eyebrow { min-block-size: calc(var(--home-eyebrow-lines) * 1lh); }
+  #main-content.hero-page .hero h1 { min-block-size: calc(var(--home-heading-lines) * 1lh); }
+  #main-content.hero-page .hero-description p:first-child { min-block-size: calc(var(--home-first-copy-lines) * 1lh); }
+  #main-content.hero-page .hero-description p:last-child { min-block-size: calc(var(--home-last-copy-lines) * 1lh); }
+  #main-content.hero-page .founder-note p { min-block-size: calc(var(--home-founder-copy-lines) * 1lh); }
+  #main-content.hero-page :is(.hero-tagline, .founder-note h3) { min-block-size: calc(var(--home-tagline-lines) * 1lh); }
+}
+@media (323px <= width < 1100px) { #main-content.hero-page { --home-heading-lines: 4; } }
+@media (385px <= width < 1100px) { #main-content.hero-page { --home-founder-copy-lines: 5; } }
+@media (409px <= width < 1100px) { #main-content.hero-page { --home-last-copy-lines: 2; } }
+@media (413px <= width < 1100px) { #main-content.hero-page { --home-first-copy-lines: 2; } }
+@media (419px <= width < 1100px) { #main-content.hero-page { --home-eyebrow-lines: 1; } }
+@media (442px <= width < 1100px) { #main-content.hero-page { --home-founder-copy-lines: 4; } }
+@media (463px <= width < 1100px) { #main-content.hero-page { --home-tagline-lines: 1; } }
+@media (518px <= width < 1100px) { #main-content.hero-page { --home-founder-copy-lines: 3; } }
+@media (585px <= width < 1100px) { #main-content.hero-page { --home-heading-lines: 3; } }
+@media (640px <= width < 1100px) {
+  #main-content.hero-page { --home-heading-lines: 4; --home-first-copy-lines: 2; --home-last-copy-lines: 2; }
+}
+@media (688px <= width < 1100px) { #main-content.hero-page { --home-heading-lines: 3; } }
+@media (min-width: 1100px) {
+  #main-content.hero-page .hero-description p { min-block-size: 2lh; }
+  #main-content.hero-page .founder-note p { min-block-size: 3lh; }
+}
+@media (1512px <= width < 1526px) { #main-content.hero-page .hero h1 { min-block-size: 4lh; } }

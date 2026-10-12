@@ -11,4 +11,13 @@ const quality=(width:number)=>width===1122?58:64;
 export const baseImages=await Promise.all(widths.map(width=>getImage({src:neutral,width,format:'webp',quality:quality(width)})));
 export const blueImages=await Promise.all(widths.map(width=>getImage({src:activated,width,format:'webp',quality:quality(width)})));
 export const srcset=(images:typeof baseImages)=>images.map((image,i)=>`${image.src} ${widths[i]}w`).join(', ');
-export const hospitalPreload={href:baseImages[1].src,srcset:srcset(baseImages),sizes};
+// Compact layouts show the artwork under the reading shade. A separate WebP
+// set avoids downloading the desktop-detail image for this background, without
+// changing its frame/crop or the optional lighting image and animation.
+const compactWidths=[480,672,736,800,960];
+export const compactImages=await Promise.all(compactWidths.map(width=>getImage({src:neutral,width,format:'webp',quality:24})));
+export const compactSrcset=compactImages.map((image,i)=>`${image.src} ${compactWidths[i]}w`).join(', ');
+export const hospitalPreload=[
+  {href:compactImages[1].src,srcset:compactSrcset,sizes:'100vw',media:'(max-width: 1099px)'},
+  {href:baseImages[1].src,srcset:srcset(baseImages),sizes,media:'(min-width: 1100px)'},
+];
