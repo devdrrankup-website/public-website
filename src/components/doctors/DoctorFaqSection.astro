@@ -5,15 +5,6 @@ import DoctorEntrance from './DoctorEntrance.astro';
 import { doctorFaq as copy } from '../../data/for-doctors-faq';
 import '../../styles/doctor-faq.css';
 
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: copy.items.map(item => ({
-    '@type': 'Question',
-    name: item.question,
-    acceptedAnswer: { '@type': 'Answer', text: item.answer },
-  })),
-};
 ---
 
 <DoctorEntrance class="doctor-faq-motion">
@@ -45,7 +36,6 @@ const faqSchema = {
   </section>
 </DoctorEntrance>
 
-<script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
 <script>
   import '../../scripts/doctor-faq';
 </script>

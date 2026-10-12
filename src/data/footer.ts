@@ -10,5 +10,5 @@ export const footer = {
   description: 'Healthcare marketing, websites and software for doctors, clinics and hospitals in Bangladesh.',
   company: ['Home', 'About', 'Case Studies', 'Resources', 'Pricing', 'Contact'],
   legal: ['Privacy Policy', 'Terms & Conditions'],
-  audiences: [{title:'For Doctors',href:'/for-doctors/'},{title:'For Clinics'},{title:'For Hospitals'},{title:'For Healthcare'}] as {title:string;href?:string}[],
+  audiences: [{title:'For Doctors',href:'/doctors/'},{title:'For Clinics'},{title:'For Hospitals'},{title:'For Healthcare'}] as {title:string;href?:string}[],
 };

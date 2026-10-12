@@ -10,7 +10,7 @@ const item=(title:string,description:string,visual:NavigationVisual):NavigationI
 // Source taxonomy: WEBSITE_STRUCTURE.md. Link only authorized built destinations.
 // Website capabilities remain in their parent category, not new service pages.
 export const navigationMenus:NavigationMenu[]=[
-  {id:'doctors',title:'For Doctors',description:'Build visibility around your expertise.',viewAll:'View all doctor services',viewAllHref:'/for-doctors/',groups:[
+  {id:'doctors',title:'For Doctors',description:'Build visibility around your expertise.',viewAll:'View all doctor services',viewAllHref:'/doctors/',groups:[
     {title:'Doctor Digital Marketing',items:[
       item('Doctor SEO','Help patients discover your expertise in search.','doctor-seo'),
       item('Doctor Local SEO','Make your chamber easier to find locally.','doctor-local-seo'),

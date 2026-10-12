@@ -18,12 +18,11 @@ import DoctorSeoFaqSection from '../../../components/doctors/seo/DoctorSeoFaqSec
 import DoctorSeoConsultationSection from '../../../components/doctors/seo/DoctorSeoConsultationSection.astro';
 import Footer from '../../../components/Footer.astro';
 import { doctorSeoHeroPreload } from '../../../lib/doctor-seo-hero-image';
+import { pageMetadata } from '../../../data/page-metadata';
 import '../../../styles/doctor-seo-rendering.css';
 ---
 
-<Layout title="Doctor SEO Services in Bangladesh | Dr RankUP"
-  description="Doctor SEO services in Bangladesh connecting verified professional details with useful website pages, stronger search foundations and easier contact journeys."
-  imagePreload={doctorSeoHeroPreload}>
+<Layout metadata={pageMetadata.doctorSeo} imagePreload={doctorSeoHeroPreload}>
   <Navbar />
   <main id="main-content" class="doctor-seo-page" tabindex="-1">
     <DoctorSeoHero />

@@ -5,28 +5,49 @@ import '@fontsource-variable/plus-jakarta-sans/wght.css';
 import jakartaLatin from '@fontsource-variable/plus-jakarta-sans/files/plus-jakarta-sans-latin-wght-normal.woff2?url';
 
 interface ImagePreload { href:string; srcset:string; sizes:string; media?:string; }
+interface PageMetadata {
+  title: string;
+  description: string;
+  canonical: string;
+  twitterCard: string;
+  schema: unknown;
+}
 interface Props {
   title?: string;
   description?: string;
   imagePreload?: ImagePreload | ImagePreload[];
+  metadata?: PageMetadata;
 }
 
-const { title = 'Dr RankUP', description = 'Healthcare digital marketing, SEO, websites and software for doctors, clinics and hospitals across Bangladesh.', imagePreload } = Astro.props;
+const { title = 'Dr RankUP', description = 'Healthcare digital marketing, SEO, websites and software for doctors, clinics and hospitals across Bangladesh.', imagePreload, metadata } = Astro.props;
 const imagePreloads = imagePreload ? (Array.isArray(imagePreload) ? imagePreload : [imagePreload]) : [];
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en-BD">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={description} />
+    <meta name="description" content={metadata?.description ?? description} />
     <meta name="theme-color" content="#6131C6" />
+    {metadata && <>
+      <link rel="canonical" href={metadata.canonical} />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="Dr RankUp" />
+      <meta property="og:locale" content="en_BD" />
+      <meta property="og:url" content={metadata.canonical} />
+      <meta property="og:title" content={metadata.title} />
+      <meta property="og:description" content={metadata.description} />
+      <meta name="twitter:card" content={metadata.twitterCard} />
+      <meta name="twitter:title" content={metadata.title} />
+      <meta name="twitter:description" content={metadata.description} />
+      <script is:inline type="application/ld+json" set:html={JSON.stringify(metadata.schema)}></script>
+    </>}
     <link rel="icon" type="image/webp" href="/brand/dr-rankup-icon.webp" />
     <link rel="preload" href={jakartaLatin} as="font" type="font/woff2" crossorigin />
     {imagePreloads.map(image => <link rel="preload" as="image" type="image/webp" href={image.href} imagesrcset={image.srcset} imagesizes={image.sizes} media={image.media} fetchpriority="high" />)}
-    <title>{title}</title>
+    <title>{metadata?.title ?? title}</title>
   </head>
   <body class="antialiased">
     <a class="skip-link" href="#main-content">Skip to content</a>

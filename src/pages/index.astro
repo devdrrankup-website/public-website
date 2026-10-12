@@ -17,10 +17,11 @@ import FaqSection from '../components/FaqSection.astro';
 import ConsultationSection from '../components/ConsultationSection.astro';
 import Footer from '../components/Footer.astro';
 import {hospitalPreload} from '../lib/hospital-images';
+import {pageMetadata} from '../data/page-metadata';
 import '../styles/homepage-readability.css';
 ---
 
-<Layout title="Dr RankUP — Healthcare Marketing, SEO & Software in Bangladesh" imagePreload={hospitalPreload}>
+<Layout metadata={pageMetadata.home} imagePreload={hospitalPreload}>
   <Navbar />
   <main id="main-content" class="hero-page" tabindex="-1">
     <Hero />

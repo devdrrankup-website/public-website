@@ -1,0 +1,174 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.drrankup.com/#organization",
+      "name": "Dr RankUp",
+      "url": "https://www.drrankup.com/",
+      "description": "Healthcare-focused SEO, digital marketing, websites and software services for doctors, clinics and hospitals in Bangladesh.",
+      "telephone": "+8801342114762",
+      "email": "contact@drrankup.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "230A, 2nd Floor, Chowdhury Surgical Market, Topkhana Road, Dhaka South City Corporation",
+        "addressLocality": "Dhaka",
+        "postalCode": "1000",
+        "addressCountry": "BD"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Bangladesh"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.drrankup.com/#website",
+      "name": "Dr RankUp",
+      "url": "https://www.drrankup.com/",
+      "inLanguage": "en-BD",
+      "publisher": {
+        "@id": "https://www.drrankup.com/#organization"
+      }
+    },
+    {
+      "@type": [
+        "WebPage",
+        "FAQPage"
+      ],
+      "@id": "https://www.drrankup.com/doctors/seo/#webpage",
+      "url": "https://www.drrankup.com/doctors/seo/",
+      "name": "Doctor SEO Services in Bangladesh",
+      "headline": "Doctor SEO Services in Bangladesh",
+      "description": "Doctor SEO for verified profiles, technical search foundations and clearer practice information in Bangladesh. Explore Dr RankUp services.",
+      "inLanguage": "en-BD",
+      "isPartOf": {
+        "@id": "https://www.drrankup.com/#website"
+      },
+      "publisher": {
+        "@id": "https://www.drrankup.com/#organization"
+      },
+      "mainEntityOfPage": "https://www.drrankup.com/doctors/seo/",
+      "about": {
+        "@id": "https://www.drrankup.com/doctors/seo/#service"
+      },
+      "breadcrumb": {
+        "@id": "https://www.drrankup.com/doctors/seo/#breadcrumb"
+      },
+      "mentions": [
+        {
+          "@id": "https://www.drrankup.com/#person-hridoy-chowdhury"
+        }
+      ],
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Doctor SEO?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Doctor SEO improves discovery of verified professional information and helps visitors reach relevant details."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is Doctor SEO different from Doctor Local SEO?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Doctor SEO covers organic website visibility; Local SEO focuses on chamber-area discovery."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a new website?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not always. An audit may favour improvements to existing pages before a rebuild."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How soon can I evaluate progress?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Milestones follow the website audit and scope; we assess observed changes over time."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Doctor SEO support AI-assisted search?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Clear identities and helpful answers support readiness for evolving AI search experiences."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who checks medical information?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Qualified doctors must review material clinical claims before publication; SEO specialists organise approved content."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the service include Google Business Profile management?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is a separate service; we coordinate verified information where relevant."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.drrankup.com/doctors/seo/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.drrankup.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "For Doctors",
+          "item": "https://www.drrankup.com/doctors/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Doctor SEO",
+          "item": "https://www.drrankup.com/doctors/seo/"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.drrankup.com/doctors/seo/#service",
+      "name": "Doctor SEO Services",
+      "serviceType": "Doctor SEO",
+      "description": "SEO strategy for doctors covering verified professional information, technical website checks, search intent, on-page structure, content connections and performance review.",
+      "provider": {
+        "@id": "https://www.drrankup.com/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Bangladesh"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Doctors and practice decision-makers in Bangladesh"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.drrankup.com/doctors/seo/#webpage"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.drrankup.com/#person-hridoy-chowdhury",
+      "name": "Hridoy Chowdhury",
+      "description": "SEO consultant specialising in technical SEO, entity SEO and AI search readiness"
+    }
+  ]
+}

@@ -15,8 +15,9 @@ import DoctorFaqSection from '../../components/doctors/DoctorFaqSection.astro';
 import ConsultationSection from '../../components/ConsultationSection.astro';
 import Footer from '../../components/Footer.astro';
 import { doctorHeroPreload } from '../../lib/doctor-hero-image';
+import { pageMetadata } from '../../data/page-metadata';
 ---
-<Layout title="Digital Growth, SEO, Websites & Software for Doctors | Dr RankUP" description="Dr RankUP connects SEO, personal branding, healthcare content, professional websites and chamber-management technology for doctors in Bangladesh." imagePreload={doctorHeroPreload}>
+<Layout metadata={pageMetadata.doctors} imagePreload={doctorHeroPreload}>
   <Navbar />
   <main id="main-content" class="doctor-page" tabindex="-1">
     <DoctorHero />
