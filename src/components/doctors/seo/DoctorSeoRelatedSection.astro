@@ -1,0 +1,61 @@
+---
+import { Image } from 'astro:assets';
+import Icon from '../../Icon.astro';
+import Arrow from '../../Arrow.astro';
+import Location04Icon from '@hugeicons/core-free-icons/Location04Icon';
+import Store01Icon from '@hugeicons/core-free-icons/Store01Icon';
+import WebDesign01Icon from '@hugeicons/core-free-icons/WebDesign01Icon';
+import { doctorSeoRelated as copy } from '../../../data/doctor-seo-related';
+import local from '../../../assets/doctor-seo/related/doctor-local-seo-v1.webp';
+import profile from '../../../assets/doctor-seo/related/doctor-google-business-profile-v1.webp';
+import website from '../../../assets/doctor-seo/related/doctor-website-development-v1.webp';
+import '../../../styles/doctor-seo-related.css';
+const visuals = [
+  { image: local, icon: Location04Icon, accent: '#BAE5FF', description: 'Woman checking nearby chamber locations on her phone at home in Dhaka' },
+  { image: profile, icon: Store01Icon, accent: '#EEEDFE', description: 'Chamber administrator reviewing listing address, hours and contact details at reception' },
+  { image: website, icon: WebDesign01Icon, accent: '#FEF2CC', description: 'Sirajul Islam reviewing printed website layouts with a doctor at an agency table' },
+];
+---
+<section id="doctor-seo-related" class="doctor-seo-related" aria-labelledby="doctor-seo-related-heading">
+  <div class="section-container doctor-seo-related-container">
+    <doctor-seo-related>
+      <header class="doctor-seo-related-header" data-related-entry>
+        <h2 id="doctor-seo-related-heading">{copy.heading}</h2>
+      </header>
+      <div class="doctor-seo-related-layout">
+        <div class="doctor-seo-related-dock">
+          <div class="doctor-seo-related-selectors" role="group" aria-label="Service image previews" hidden>
+            {copy.services.map((service, index) => <button type="button" aria-pressed={index === 0 ? 'true' : 'false'} aria-controls={`related-${service.key}`} data-related-select={index}>
+              <span>{service.name}</span>
+            </button>)}
+          </div>
+          <div class="doctor-seo-related-stage" aria-hidden="true" hidden></div>
+        </div>
+        <div class="doctor-seo-related-details">
+          <div class="doctor-seo-related-labels"><span>{copy.headers[0]}</span><span>{copy.headers[1]}</span></div>
+          <dl class="doctor-seo-related-list">
+            {copy.services.map((service, index) => <div class="doctor-seo-related-row" id={`related-${service.key}`} data-service={service.key}>
+              <dt>
+                <span class="doctor-seo-related-badge" style={`--related-accent:${visuals[index].accent}`}><Icon icon={visuals[index].icon} size={21} strokeWidth={1.8} /></span>
+                <span class="doctor-seo-related-reveal" aria-hidden="true"></span>
+                <span class="doctor-seo-related-name">{service.name}</span>
+                <span class="doctor-seo-related-arrow" aria-hidden="true"><Arrow /></span>
+              </dt>
+              <dd>
+                <span>{service.responsibility}</span>
+                <figure class="doctor-seo-related-photo">
+                  <Image src={visuals[index].image} alt={visuals[index].description} title={visuals[index].description} width={960} widths={[360,640,960]} sizes="(min-width:1100px) 700px, (min-width:640px) 700px, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+                  <figcaption>{service.name}</figcaption>
+                </figure>
+              </dd>
+            </div>)}
+          </dl>
+          <p class="doctor-seo-related-note">{copy.note}</p>
+        </div>
+      </div>
+    </doctor-seo-related>
+  </div>
+</section>
+<script>
+  import '../../../scripts/doctor-seo-related';
+</script>

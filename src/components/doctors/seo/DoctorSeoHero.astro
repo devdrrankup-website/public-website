@@ -1,0 +1,35 @@
+---
+import ActionIcon from '../../ActionIcon.astro';
+import { doctorSeoHero as copy } from '../../../data/doctor-seo-hero';
+import { doctorSeoHeroImage as photo } from '../../../lib/doctor-seo-hero-image';
+import '../../../styles/doctor-seo-hero.css';
+---
+
+<section class="doctor-seo-hero" aria-labelledby="doctor-seo-heading">
+  <div class="section-container doctor-seo-hero-layout">
+    <div class="doctor-seo-hero-copy">
+      <h1 id="doctor-seo-heading">{copy.heading}</h1>
+      <p class="doctor-seo-hero-tagline">{copy.tagline}</p>
+      <div class="doctor-seo-hero-description">
+        {copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+      </div>
+      <div class="doctor-seo-hero-actions" aria-label="Planned consultation and doctor solution options">
+        <span class="button button-primary">
+          <span>{copy.primaryCta}</span><ActionIcon purpose="conversation" />
+        </span>
+        <span class="button button-secondary">
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </span>
+      </div>
+    </div>
+    <div class="doctor-seo-hero-visual">
+      <div class="doctor-seo-hero-photo">
+        <img src={photo.src} srcset={photo.srcset} sizes={photo.sizes}
+          width={photo.width} height={photo.height}
+          alt="Man looking through a doctor profile on his laptop at home in Bangladesh"
+          title="Researching a doctor online from home"
+          loading="eager" fetchpriority="high" decoding="async" />
+      </div>
+    </div>
+  </div>
+</section>

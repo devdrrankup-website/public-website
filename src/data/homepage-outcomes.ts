@@ -1,44 +1,43 @@
-// Original outcomes retained; Method copy simplified at the user's request.
-// Approved replacements are recorded in docs/homepage-content/editorial-overrides-2026-10-07.json.
+// Exact Outcomes copy from the supplied homepage content, 10 October 2026.
 export const homepageOutcomes = {
-  "heading": "The Outcomes We Help Healthcare Organizations Build",
-  "introduction": "Dr RankUP starts with the desired outcome, then connects the right method and technical depth behind it.",
+  "heading": "Six Outcomes That Shape Our Work",
+  "introduction": "Each outcome connects a practical problem with an appropriate method, without guaranteed rankings or patient numbers.",
   "items": [
     {
-      "heading": "Be Found",
-      "problem": "Important doctors, services or locations are difficult to discover.",
-      "outcome": "Stronger relevant visibility.",
-      "method": "Keep your locations, contact details and opening hours accurate on Google Search and Maps."
+      "heading": "Improve Relevant Discovery",
+      "problem": "Important pages are difficult to locate.",
+      "outcome": "Clearer access to relevant information.",
+      "method": "Healthcare SEO assigns distinct queries to appropriate pages for clearer discovery."
     },
     {
-      "heading": "Be Understood",
-      "problem": "Patients see the organization but do not clearly understand its services or professionals.",
-      "outcome": "Clearer service and expertise communication.",
-      "method": "Explain each service in plain language, including who it is for and which doctor or department provides it."
+      "heading": "Make Healthcare Information Easier to Understand",
+      "problem": "Visitors cannot distinguish professionals, departments or services.",
+      "outcome": "More informed enquiries.",
+      "method": "Content strategy organizes verified details around visitor questions."
     },
     {
-      "heading": "Build Trust",
-      "problem": "The digital presence does not communicate enough professional credibility.",
-      "outcome": "Greater confidence before contact.",
-      "method": "Present your team’s qualifications and experience clearly, with accurate professional details kept consistent across your website and profiles."
+      "heading": "Communicate Professional Credibility",
+      "problem": "Online profiles do not clearly explain qualifications or practice context.",
+      "outcome": "More transparent professional identity.",
+      "method": "Personal branding presents substantiated credentials without exaggeration."
     },
     {
-      "heading": "Make Action Easier",
-      "problem": "The user is interested, but the next step is unclear.",
-      "outcome": "A simpler path to enquiry, call or appointment.",
-      "method": "Place clear call, enquiry and appointment options on relevant pages, with simple instructions for the next step."
+      "heading": "Remove Friction Before Contact",
+      "problem": "Relevant information exists but contact options are buried.",
+      "outcome": "A clearer path to the appropriate team.",
+      "method": "Website UX clarifies contact and enquiry pathways."
     },
     {
-      "heading": "Build Long-Term Authority",
-      "problem": "Visibility depends on isolated pages or short-term activity.",
-      "outcome": "A stronger digital entity and topical presence.",
-      "method": "Build and regularly update useful information around your specialties, linking related services and topics so patients can explore further."
+      "heading": "Build a Coherent Search Presence",
+      "problem": "Related pages compete or lack context.",
+      "outcome": "More understandable website relationships.",
+      "method": "Internal linking and schema markup describe factual page and entity relationships."
     },
     {
-      "heading": "Operate Better",
-      "problem": "Marketing and patient-facing systems are disconnected from operations.",
-      "outcome": "Less digital friction.",
-      "method": "Help your team manage appointments, schedules, patient records and billing together, with fewer repeated tasks."
+      "heading": "Plan Better Digital Operations",
+      "problem": "Administrative processes rely on disconnected tools.",
+      "outcome": "Better-defined workflow requirements.",
+      "method": "Software discovery examines appointment, scheduling and administrative workflows before feature claims."
     }
   ]
 } as const;

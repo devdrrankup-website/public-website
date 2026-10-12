@@ -1,12 +1,21 @@
-// Approved homepage copy; hero paragraphs replaced with the user's latest wording.
+// Hero copy from the supplied homepage content, 10 October 2026.
+// Existing approved Hridoy expertise note remains unchanged.
 export const homepageHero = {
-  heading: 'Healthcare Digital Marketing, SEO & Software for Doctors, Clinics & Hospitals',
-  tagline: 'Be Visible. Build Trust. Grow Your Practice.',
-  paragraphs: [
-    'We bring together healthcare SEO, digital marketing, personal branding, paid advertising, websites and healthcare management software so visibility, patient-facing experiences and essential digital operations can work as one connected system.',
-    'Instead of treating marketing, websites and practice technology as separate problems, we help healthcare organizations move from being difficult to discover to becoming easier to find, understand, trust and engage with.',
+  "eyebrow": "HEALTHCARE GROWTH & TECHNOLOGY · BANGLADESH",
+  "heading": "Healthcare SEO, Digital Marketing & Software for Doctors, Clinics and Hospitals",
+  "tagline": "Rank Higher. Reach More Patients. Grow Your Practice.",
+  "paragraphs": [
+    "Dr RankUP supports doctors, clinics and hospitals in Bangladesh with healthcare SEO, digital marketing, professional branding, websites and software services.",
+    "We connect discovery, accurate information and useful digital experiences around your audience and priorities. We identify what visitors need and your team delivers."
   ],
-  founderHeading: 'Backed by the SEO Expertise of Hridoy Chowdhury',
-  founderBio: 'The brand is backed by the SEO experience, personal reputation and strategic direction of Hridoy Chowdhury, a London-based SEO Consultant specialising in SEO, AEO, GEO and AI Search.',
-  principles: ['Healthcare-Focused', 'Search-Driven', 'Compliance-Aware', 'Bangladesh-Focused'],
-};
+  "primary": "Book a Consultation",
+  "secondary": "Explore Healthcare Solutions",
+  "founderHeading": "Backed by the SEO Expertise of Hridoy Chowdhury",
+  "founderBio": "The brand is backed by the SEO experience, personal reputation and strategic direction of Hridoy Chowdhury, a London-based SEO Consultant specialising in SEO, AEO, GEO and AI Search.",
+  "principles": [
+    "Healthcare-Focused",
+    "Bangladesh-First",
+    "Search-Led",
+    "Trust-Conscious"
+  ]
+} as const;

@@ -1,0 +1,25 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/doctor-seo/patient-doctor-search-balcony-v1.webp';
+import { doctorSeoIntent as copy } from '../../../data/doctor-seo-intent';
+import '../../../styles/doctor-seo-intent.css';
+---
+<doctor-seo-intent class="doctor-seo-intent">
+  <section id="doctor-seo-intent" class="section-container doctor-seo-intent-layout" aria-labelledby="doctor-seo-intent-heading">
+    <div class="doctor-seo-intent-copy" data-seo-intent-motion>
+      <h2 id="doctor-seo-intent-heading">{copy.heading}</h2>
+      {copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+    </div>
+    <div class="doctor-seo-intent-photo" data-seo-intent-motion>
+      <Image src={photo} widths={[360, 540, 720, 960, 1200]} width={1536} height={1024}
+        sizes="(min-width: 1100px) min(43vw, 576px), (min-width: 640px) min(calc(100vw - 56px), 760px), calc(100vw - 32px)"
+        format="webp" quality={76} loading="lazy" decoding="async"
+        alt="Woman searching doctor names, specialties and chambers on a phone at her Dhaka apartment balcony"
+        title="Looking up doctor information from home in Bangladesh" />
+    </div>
+  </section>
+</doctor-seo-intent>
+
+<script>
+  import '../../../scripts/doctor-seo-intent';
+</script>

@@ -1,0 +1,25 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/doctor-seo/example/patient-two-chamber-research-v1.webp';
+import { doctorSeoExample as copy } from '../../../data/doctor-seo-example';
+import '../../../styles/doctor-seo-example.css';
+---
+<doctor-seo-example class="doctor-seo-example-motion">
+  <section id="doctor-seo-example" class="doctor-seo-example" aria-labelledby="doctor-seo-example-heading">
+    <div class="section-container doctor-seo-example-layout">
+      <header class="doctor-seo-example-header" data-example-entry>
+        <h2 id="doctor-seo-example-heading">{copy.heading}</h2>
+        <span class="doctor-seo-example-rule" data-example-rule aria-hidden="true"></span>
+      </header>
+      <figure class="doctor-seo-example-photo" data-example-entry data-example-photo>
+        <Image src={photo} alt="Man checking two chamber locations and schedules on a doctor profile from his home in Dhaka" title="Man checking two chamber locations and schedules on a doctor profile from his home in Dhaka" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <div class="doctor-seo-example-copy">
+        {copy.paragraphs.map(paragraph => <p data-example-entry>{paragraph}</p>)}
+      </div>
+    </div>
+  </section>
+</doctor-seo-example>
+<script>
+  import '../../../scripts/doctor-seo-example';
+</script>

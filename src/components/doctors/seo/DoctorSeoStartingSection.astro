@@ -1,0 +1,22 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/doctor-seo/starting/doctor-website-review-monwara-v1.webp';
+import { doctorSeoStarting as copy } from '../../../data/doctor-seo-starting';
+import '../../../styles/doctor-seo-starting.css';
+---
+<doctor-seo-starting class="doctor-seo-starting-motion">
+  <section id="doctor-seo-starting" class="doctor-seo-starting" aria-labelledby="doctor-seo-starting-heading">
+    <div class="section-container doctor-seo-starting-layout">
+      <h2 id="doctor-seo-starting-heading" data-starting-entry>{copy.heading}</h2>
+      <div class="doctor-seo-starting-copy" data-starting-entry>
+        {copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+      </div>
+      <figure class="doctor-seo-starting-visual" data-starting-entry data-starting-visual>
+        <Image src={photo} alt="Monwara Moni and a doctor reviewing printed website and chamber information at an agency office" title="Monwara Moni and a doctor reviewing printed website and chamber information at an agency office" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 540px, (min-width:640px) 320px, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+    </div>
+  </section>
+</doctor-seo-starting>
+<script>
+  import '../../../scripts/doctor-seo-starting';
+</script>

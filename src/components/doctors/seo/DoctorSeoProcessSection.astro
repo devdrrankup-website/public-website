@@ -1,0 +1,62 @@
+---
+import { Image } from 'astro:assets';
+import { doctorSeoProcess as copy } from '../../../data/doctor-seo-process';
+import processBackground from '../../../assets/doctor-seo/process/audit-v1.webp';
+import '../../../styles/doctor-seo-process.css';
+// Destination-owned copy of the approved For Doctors process composition.
+const titleParts = (title: string) => [title.match(/^\d+\.\s+/)?.[0] ?? '', title.replace(/^\d+\.\s+/, '')];
+---
+
+<doctor-seo-process class="doctor-seo-process-motion">
+  <section id="doctor-seo-process" class="doctor-seo-process" aria-labelledby="doctor-seo-process-heading">
+    <div class="doctor-seo-process-background" aria-hidden="true">
+      <Image src={processBackground} width={1024} widths={[480, 768, 1024]} sizes="100vw" format="webp" quality={40}
+        alt="" title="Doctor and SEO consultant reviewing a printed website search audit" loading="lazy" decoding="async" />
+    </div>
+    <div class="doctor-seo-process-atmosphere" aria-hidden="true"></div>
+    <div class="section-container doctor-seo-process-layout">
+      <header class="doctor-seo-process-header" data-seo-process-copy>
+        <span class="doctor-seo-process-range" aria-hidden="true">01—05</span>
+        <h2 id="doctor-seo-process-heading">{copy.heading}</h2>
+      </header>
+
+      <div class="doctor-seo-process-flow" role="list" aria-label="Doctor SEO: five steps">
+        <svg class="doctor-seo-process-route" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="doctor-seo-process-route-gradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="100" y2="100">
+              <stop offset="0" stop-color="#6131c6" />
+              <stop offset="0.5" stop-color="#229f60" />
+              <stop offset="1" stop-color="#6131c6" />
+            </linearGradient>
+          </defs>
+          <path class="doctor-seo-process-route-base" d="M 16.667 12 H 50 H 83.333 H 98 V 58 H 83.333 H 50" />
+          <g class="doctor-seo-process-route-progress">
+            <line class="doctor-seo-process-route-horizontal" x1="16.667" y1="12" x2="50" y2="12" />
+            <line class="doctor-seo-process-route-horizontal" x1="50" y1="12" x2="83.333" y2="12" />
+            <line class="doctor-seo-process-route-horizontal" x1="83.333" y1="12" x2="98" y2="12" />
+            <line class="doctor-seo-process-route-vertical" x1="98" y1="12" x2="98" y2="58" />
+            <line class="doctor-seo-process-route-horizontal doctor-seo-process-route-reverse" x1="98" y1="58" x2="83.333" y2="58" />
+            <line class="doctor-seo-process-route-horizontal doctor-seo-process-route-reverse" x1="83.333" y1="58" x2="50" y2="58" />
+          </g>
+        </svg>
+
+        {copy.steps.map((step, index) => (
+          <div class="doctor-seo-process-step" role="listitem" data-seo-process-step>
+            <div class="doctor-seo-process-node-column" aria-hidden="true">
+              <span class="doctor-seo-process-node"><span>{String(index + 1).padStart(2, '0')}</span></span>
+              {index < copy.steps.length - 1 && <span class="doctor-seo-process-connector"></span>}
+            </div>
+            <div class="doctor-seo-process-copy" data-seo-process-copy>
+              <h3><span>{titleParts(step.title)[0]}</span>{titleParts(step.title)[1]}</h3>
+              {step.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</doctor-seo-process>
+
+<script>
+  import '../../../scripts/doctor-seo-process';
+</script>

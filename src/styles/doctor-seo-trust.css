@@ -1,0 +1,34 @@
+.doctor-seo-trust-motion { display: block; background: #fff; }
+.doctor-seo-trust { padding-block: 40px 56px; border-radius: 28px 28px 0 0; color: #fff; background: radial-gradient(ellipse at 50% 0%, #229f6040 0%, #229f6000 58%), linear-gradient(145deg, #0b1b12 0%, #0a0a0a 60%, #0c1b13 100%); }
+.doctor-seo-trust-layout { display: grid; grid-template-areas: "heading" "profile" "photo" "privacy"; gap: 24px; max-width: 1200px; }
+.doctor-seo-trust h2 { grid-area: heading; margin: 0; color: #fff; font-size: clamp(28px, 7.3vw, 38px); font-weight: 650; line-height: 1.24; letter-spacing: -.035em; text-wrap: pretty; }
+.doctor-seo-trust p { margin: 0; color: #fff; font-size: 15px; line-height: 1.85; }
+.doctor-seo-trust-profile { grid-area: profile; min-width: 0; }
+.doctor-seo-trust-photo { grid-area: photo; align-self: center; width: 100%; min-width: 0; aspect-ratio: 3 / 2; overflow: hidden; border: 1px solid #63df9d40; border-radius: 24px; background: #0c1b13; }
+.doctor-seo-trust-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.doctor-seo-trust-privacy { grid-area: privacy; display: grid; grid-template-columns: 44px minmax(0, 1fr); align-items: start; gap: 16px; min-width: 0; padding-top: 24px; border-top: 1px solid #63df9d40; }
+.doctor-seo-trust-lock { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: #e1ffb9; color: #000; }
+
+@media (min-width: 640px) {
+  .doctor-seo-trust { padding-block: 44px 72px; border-radius: 36px 36px 0 0; }
+  .doctor-seo-trust-layout { gap: 28px; }
+  .doctor-seo-trust h2 { max-width: 900px; font-size: clamp(34px, 4.3vw, 44px); }
+  .doctor-seo-trust p { font-size: 16px; }
+  .doctor-seo-trust-photo { max-width: 760px; justify-self: center; border-radius: 30px; }
+  .doctor-seo-trust-privacy { padding-top: 28px; }
+}
+
+@media (min-width: 900px) {
+  .doctor-seo-trust { border-radius: 40px 40px 0 0; }
+}
+
+@media (min-width: 1100px) {
+  .doctor-seo-trust { padding-block: 56px 80px; }
+  .doctor-seo-trust-layout {
+    grid-template-areas: "heading heading" "profile photo" "privacy photo";
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    gap: 28px clamp(40px, 4.5vw, 64px);
+  }
+  .doctor-seo-trust h2 { max-width: 1000px; margin-bottom: 8px; font-size: clamp(40px, 3.25vw, 46px); }
+  .doctor-seo-trust-photo { max-width: none; }
+}

@@ -1,0 +1,46 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Navbar from '../../../components/Navbar.astro';
+import DoctorSeoHero from '../../../components/doctors/seo/DoctorSeoHero.astro';
+import DoctorSeoChallengesSection from '../../../components/doctors/seo/DoctorSeoChallengesSection.astro';
+import DoctorSeoOutcomesSection from '../../../components/doctors/seo/DoctorSeoOutcomesSection.astro';
+import DoctorSeoIntentSection from '../../../components/doctors/seo/DoctorSeoIntentSection.astro';
+import DoctorSeoTrustSection from '../../../components/doctors/seo/DoctorSeoTrustSection.astro';
+import DoctorSeoExpertiseSection from '../../../components/doctors/seo/DoctorSeoExpertiseSection.astro';
+import DoctorSeoProcessSection from '../../../components/doctors/seo/DoctorSeoProcessSection.astro';
+import DoctorSeoMappingSection from '../../../components/doctors/seo/DoctorSeoMappingSection.astro';
+import DoctorSeoRelatedSection from '../../../components/doctors/seo/DoctorSeoRelatedSection.astro';
+import DoctorSeoStartingSection from '../../../components/doctors/seo/DoctorSeoStartingSection.astro';
+import DoctorSeoExampleSection from '../../../components/doctors/seo/DoctorSeoExampleSection.astro';
+import DoctorSeoProgressSection from '../../../components/doctors/seo/DoctorSeoProgressSection.astro';
+import DoctorSeoWhySection from '../../../components/doctors/seo/DoctorSeoWhySection.astro';
+import DoctorSeoFaqSection from '../../../components/doctors/seo/DoctorSeoFaqSection.astro';
+import DoctorSeoConsultationSection from '../../../components/doctors/seo/DoctorSeoConsultationSection.astro';
+import Footer from '../../../components/Footer.astro';
+import { doctorSeoHeroPreload } from '../../../lib/doctor-seo-hero-image';
+import '../../../styles/doctor-seo-rendering.css';
+---
+
+<Layout title="Doctor SEO Services in Bangladesh | Dr RankUP"
+  description="Doctor SEO services in Bangladesh connecting verified professional details with useful website pages, stronger search foundations and easier contact journeys."
+  imagePreload={doctorSeoHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="doctor-seo-page" tabindex="-1">
+    <DoctorSeoHero />
+    <DoctorSeoChallengesSection />
+    <DoctorSeoOutcomesSection />
+    <DoctorSeoIntentSection />
+    <DoctorSeoTrustSection />
+    <DoctorSeoExpertiseSection />
+    <DoctorSeoProcessSection />
+    <DoctorSeoMappingSection />
+    <DoctorSeoRelatedSection />
+    <DoctorSeoStartingSection />
+    <DoctorSeoExampleSection />
+    <DoctorSeoProgressSection />
+    <DoctorSeoWhySection />
+    <DoctorSeoFaqSection />
+    <DoctorSeoConsultationSection />
+  </main>
+  <Footer />
+</Layout>

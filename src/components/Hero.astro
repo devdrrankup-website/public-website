@@ -18,11 +18,11 @@ const principleIcons = [HeartPulseIcon, SearchFocusIcon, ShieldCheckIcon, Locati
   <div class="section-container">
     <div class="hero-layout">
       <div class="hero-copy">
-        <div class="hero-eyebrow"><span class="eyebrow-mark"><Icon icon={StethoscopeIcon} size={15} /></span>Healthcare growth, built for Bangladesh</div>
+        <div class="hero-eyebrow"><span class="eyebrow-mark"><Icon icon={StethoscopeIcon} size={15} /></span>{homepageHero.eyebrow}</div>
         <h1 id="hero-heading">{homepageHero.heading}</h1>
         <p class="hero-tagline">{homepageHero.tagline}</p>
         <div class="hero-description">{homepageHero.paragraphs.map(paragraph => <p>{paragraph}</p>)}</div>
-        <div class="hero-actions"><a href="/contact/" class="button button-primary" data-hospital-light>Start a conversation <ActionIcon purpose="conversation" /></a><a href="/healthcare-marketing/" class="button button-secondary" data-hospital-light>Explore solutions <ActionIcon purpose="explore" /></a></div>
+        <div class="hero-actions"><a href="/contact/" class="button button-primary" data-hospital-light>{homepageHero.primary} <ActionIcon purpose="conversation" /></a><a href="/healthcare-marketing/" class="button button-secondary" data-hospital-light>{homepageHero.secondary} <ActionIcon purpose="explore" /></a></div>
         <aside class="founder-note" aria-labelledby="founder-context">
           <h2 id="founder-context" class="sr-only">Search expertise behind Dr RankUP</h2>
           <Image src={founder} width={52} height={52} widths={[52, 104, 156]} sizes="48px" format="webp" quality={80} title="Hridoy Chowdhury — Founder of Dr RankUP" alt="Hridoy Chowdhury" class="founder-avatar" />

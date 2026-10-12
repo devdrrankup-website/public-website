@@ -1,0 +1,24 @@
+---
+import DoctorSeoOutcomeVisual from './DoctorSeoOutcomeVisual.astro';
+import { doctorSeoOutcomes as copy } from '../../../data/doctor-seo-outcomes';
+import '../../../styles/doctor-seo-outcomes.css';
+---
+<doctor-seo-outcomes class="doctor-seo-outcomes">
+  <section id="doctor-seo-outcomes" class="section-container" aria-labelledby="doctor-seo-outcomes-heading">
+    <div class="doctor-seo-outcomes-heading">
+      <h2 id="doctor-seo-outcomes-heading">{copy.heading}</h2>
+      <p class="doctor-seo-outcomes-introduction">{copy.introduction}</p>
+    </div>
+    <ul class="doctor-seo-outcomes-list" role="list">
+      {copy.items.map((item, index) => <li class="doctor-seo-outcome" data-seo-outcomes-motion>
+        <DoctorSeoOutcomeVisual index={index} />
+        <p><strong>{item.label}</strong><span>{item.description}</span></p>
+      </li>)}
+    </ul>
+    <p class="doctor-seo-outcomes-conclusion">{copy.conclusion}</p>
+  </section>
+</doctor-seo-outcomes>
+
+<script>
+  import '../../../scripts/doctor-seo-outcomes';
+</script>

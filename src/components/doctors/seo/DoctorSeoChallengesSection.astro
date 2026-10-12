@@ -1,0 +1,37 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/doctor-seo/doctor-website-review-v1.webp';
+import { doctorSeoChallenges as copy } from '../../../data/doctor-seo-challenges';
+import '../../../styles/doctor-seo-challenges.css';
+---
+
+<doctor-seo-challenges class="doctor-seo-challenges">
+  <section id="doctor-seo-challenges" class="section-container doctor-seo-challenges-layout" aria-labelledby="doctor-seo-challenges-heading">
+    <div class="doctor-seo-challenges-editorial">
+      <h2 id="doctor-seo-challenges-heading">{copy.heading}</h2>
+      <p class="doctor-seo-challenges-introduction">{copy.introduction}</p>
+      <div class="doctor-seo-challenges-photo" data-seo-challenges-motion>
+        <Image src={photo} widths={[360, 540, 720, 960, 1200]} width={1536} height={1024}
+          sizes="(min-width: 1100px) min(41vw, 568px), (min-width: 640px) min(calc(100vw - 56px), 760px), calc(100vw - 32px)"
+          format="webp" quality={76}
+          alt="Digital marketing professional reviewing doctor profiles on a desktop monitor at an agency office"
+          title="Reviewing doctor website information at an agency workstation"
+          loading="lazy" decoding="async" />
+      </div>
+    </div>
+    <div class="doctor-seo-challenges-details">
+      <p id="doctor-seo-challenges-list-heading" class="doctor-seo-challenges-list-intro">{copy.listIntroduction}</p>
+      <ul class="doctor-seo-challenges-list" role="list" aria-labelledby="doctor-seo-challenges-list-heading" data-seo-challenges-motion>
+        {copy.challenges.map((challenge, index) => <li>
+          <span class="doctor-seo-challenge-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+          <span>{challenge}</span>
+        </li>)}
+      </ul>
+      <p class="doctor-seo-challenges-conclusion">{copy.conclusion}</p>
+    </div>
+  </section>
+</doctor-seo-challenges>
+
+<script>
+  import '../../../scripts/doctor-seo-challenges';
+</script>

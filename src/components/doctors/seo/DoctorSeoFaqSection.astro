@@ -1,0 +1,29 @@
+---
+import Icon from '../../Icon.astro';
+import Add01Icon from '@hugeicons/core-free-icons/Add01Icon';
+import { doctorSeoFaq as copy } from '../../../data/doctor-seo-faq';
+import '../../../styles/doctor-seo-faq.css';
+---
+<doctor-seo-faq class="doctor-seo-faq-motion">
+  <section id="doctor-seo-faq" class="doctor-seo-faq" aria-labelledby="doctor-seo-faq-heading">
+    <div class="section-container doctor-seo-faq-layout">
+      <header class="doctor-seo-faq-header" data-faq-entry>
+        <h2 id="doctor-seo-faq-heading">{copy.heading}</h2>
+      </header>
+      <div class="doctor-seo-faq-list">
+        {copy.items.map((item,index) => <article class="doctor-seo-faq-item" data-faq-entry aria-labelledby={`doctor-seo-faq-question-${index+1}`}>
+          <h3 class="doctor-seo-faq-question" id={`doctor-seo-faq-question-${index+1}`}>
+            <span class="doctor-seo-faq-label">{item.question}</span>
+            <span class="doctor-seo-faq-toggle" aria-hidden="true"><Icon icon={Add01Icon} size={20} strokeWidth={1.8} /></span>
+          </h3>
+          <div class="doctor-seo-faq-answer" id={`doctor-seo-faq-answer-${index+1}`} role="region" aria-labelledby={`doctor-seo-faq-question-${index+1}`}>
+            <p>{item.answer}</p>
+          </div>
+        </article>)}
+      </div>
+    </div>
+  </section>
+</doctor-seo-faq>
+<script>
+  import '../../../scripts/doctor-seo-faq';
+</script>

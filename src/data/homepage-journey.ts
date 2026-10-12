@@ -1,14 +1,12 @@
+// Exact Bangladesh discovery copy from the supplied homepage content, 10 October 2026.
 export const homepageJourney = {
-  heading: 'Built Around the Bangladesh Healthcare Journey',
-  introduction: 'Healthcare discovery in Bangladesh may begin with a doctor name, specialty, clinic, hospital, diagnostic service, location or health-related question.',
-  // User-approved intent revision: this section describes the patient's needs.
-  connection: 'People need clear, verifiable information to understand whether a doctor or service matches their needs, where care is available, and how to make an enquiry or book an appointment.',
-  steps: [
-    'Google Search',
-    'Maps / Website',
-    'Doctor or Service Information',
-    'Verification',
-    'Trust',
-    'Enquiry / Appointment',
-  ],
+  "heading": "Understanding Healthcare Discovery in Bangladesh",
+  "introduction": "Searches may begin with a doctor, specialty, service or location. Actual audience research determines the relevant journey.",
+  "connection": "Local SEO checks real location information; website content clarifies services and contact options. The next steps differ between an individual chamber, a multi-practitioner clinic and a hospital with several departments.",
+  "steps": [
+    "Search",
+    "Maps or Website",
+    "Verified Details",
+    "Enquiry or Appointment"
+  ]
 } as const;

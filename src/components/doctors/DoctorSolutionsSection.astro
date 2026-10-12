@@ -5,6 +5,7 @@ import ActionIcon from '../ActionIcon.astro';
 import Arrow from '../Arrow.astro';
 import { doctorSolutions as copy } from '../../data/for-doctors-solutions';
 import { doctorSolutionVisuals as visuals } from '../../data/for-doctors-solution-images';
+import { doctorServiceRoutes } from '../../data/doctor-service-routes';
 import '../../styles/doctor-solutions.css';
 const groupVisuals = [visuals.slice(0, 10), visuals.slice(10, 14), visuals.slice(14)];
 ---
@@ -34,7 +35,9 @@ const groupVisuals = [visuals.slice(0, 10), visuals.slice(10, 14), visuals.slice
               <dt>
                 <span class="doctor-solution-number" aria-hidden="true">{String(serviceIndex + 1).padStart(2, '0')}</span>
                 <span class="doctor-solution-reveal" aria-hidden="true"></span>
-                <span class="doctor-solution-name">{name}</span>
+                {doctorServiceRoutes[groupVisuals[index][serviceIndex].key]
+                  ? <a class="doctor-solution-name" href={doctorServiceRoutes[groupVisuals[index][serviceIndex].key]}>{name}</a>
+                  : <span class="doctor-solution-name">{name}</span>}
                 <span class="doctor-solution-arrow" aria-hidden="true"><Arrow /></span>
               </dt>
               <dd><span class="doctor-solution-description">{description}</span>

@@ -1,0 +1,29 @@
+---
+import Icon from '../../Icon.astro';
+import UserAccountIcon from '@hugeicons/core-free-icons/UserAccountIcon';
+import WorkflowSquare01Icon from '@hugeicons/core-free-icons/WorkflowSquare01Icon';
+import TaskEdit01Icon from '@hugeicons/core-free-icons/TaskEdit01Icon';
+import { doctorSeoWhy as copy } from '../../../data/doctor-seo-why';
+import '../../../styles/doctor-seo-why.css';
+const visuals = [
+  { icon: UserAccountIcon, accent: '#E1FFB9' },
+  { icon: WorkflowSquare01Icon, accent: '#BAE5FF' },
+  { icon: TaskEdit01Icon, accent: '#EEEDFE' },
+];
+---
+<doctor-seo-why class="doctor-seo-why-motion">
+  <section id="doctor-seo-why" class="doctor-seo-why" aria-labelledby="doctor-seo-why-heading">
+    <div class="section-container doctor-seo-why-layout">
+      <h2 id="doctor-seo-why-heading" data-why-entry>{copy.heading}</h2>
+      <ul class="doctor-seo-why-principles">
+        {copy.principles.map((principle,index) => <li data-why-entry data-why-row>
+          <span class="doctor-seo-why-icon" data-why-icon style={`--why-accent:${visuals[index].accent}`} aria-hidden="true"><Icon icon={visuals[index].icon} size={24} strokeWidth={1.7} /></span>
+          <p><strong>{principle.label}</strong>{' '}{principle.description}</p>
+        </li>)}
+      </ul>
+    </div>
+  </section>
+</doctor-seo-why>
+<script>
+  import '../../../scripts/doctor-seo-why';
+</script>

@@ -1,12 +1,13 @@
 import {navigationVisuals} from './navigation-visuals';
+import {doctorServiceRoutes} from './doctor-service-routes';
 export {navigationVisuals};
 export type NavigationVisual = keyof typeof navigationVisuals;
-export interface NavigationItem {title:string;description:string;visual:NavigationVisual}
+export interface NavigationItem {title:string;description:string;visual:NavigationVisual;href?:string}
 export interface NavigationGroup {title:string;items:NavigationItem[]}
 export interface NavigationMenu {id:string;title:string;description:string;viewAll:string;viewAllHref?:string;groups:NavigationGroup[]}
-const item=(title:string,description:string,visual:NavigationVisual):NavigationItem=>({title,description,visual});
+const item=(title:string,description:string,visual:NavigationVisual):NavigationItem=>({title,description,visual,href:doctorServiceRoutes[visual]});
 
-// Source taxonomy: WEBSITE_STRUCTURE.md. Only the built For Doctors parent is linked.
+// Source taxonomy: WEBSITE_STRUCTURE.md. Link only authorized built destinations.
 // Website capabilities remain in their parent category, not new service pages.
 export const navigationMenus:NavigationMenu[]=[
   {id:'doctors',title:'For Doctors',description:'Build visibility around your expertise.',viewAll:'View all doctor services',viewAllHref:'/for-doctors/',groups:[
