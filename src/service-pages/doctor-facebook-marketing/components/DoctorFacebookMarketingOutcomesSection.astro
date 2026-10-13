@@ -1,0 +1,25 @@
+---
+import DoctorFacebookMarketingOutcomeVisual from './DoctorFacebookMarketingOutcomeVisual.astro';
+import { pageCopy } from '../data/doctor-facebook-marketing-source';
+const copy = pageCopy.outcomes;
+import '../styles/doctor-facebook-marketing-outcomes.css';
+---
+<doctor-facebook-marketing-outcomes class="doctor-facebook-marketing-outcomes">
+  <section id="doctor-facebook-marketing-outcomes" class="section-container" aria-labelledby="doctor-facebook-marketing-outcomes-heading">
+    <div class="doctor-facebook-marketing-outcomes-heading">
+      <h2 id="doctor-facebook-marketing-outcomes-heading">{copy.heading}</h2>
+      <div class="doctor-facebook-marketing-outcomes-introduction doctor-facebook-marketing-source-content" set:html={copy.before} />
+    </div>
+    <ul class="doctor-facebook-marketing-outcomes-list" role="list">
+      {copy.items.map((item, index) => <li class="doctor-facebook-marketing-outcome" data-seo-outcomes-motion>
+        <DoctorFacebookMarketingOutcomeVisual index={index} />
+        <p><strong>{item.label}</strong><span>{item.description}</span></p>
+      </li>)}
+    </ul>
+    <div class="doctor-facebook-marketing-outcomes-conclusion doctor-facebook-marketing-source-content" set:html={copy.after} />
+  </section>
+</doctor-facebook-marketing-outcomes>
+
+<script>
+  import '../scripts/doctor-facebook-marketing-outcomes';
+</script>

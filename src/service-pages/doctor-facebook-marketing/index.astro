@@ -1,0 +1,47 @@
+---
+// Destination-owned static page. Service-specific images are pending review before publication.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import DoctorFacebookMarketingHero from './components/DoctorFacebookMarketingHero.astro';
+import DoctorFacebookMarketingChallengesSection from './components/DoctorFacebookMarketingChallengesSection.astro';
+import DoctorFacebookMarketingOutcomesSection from './components/DoctorFacebookMarketingOutcomesSection.astro';
+import DoctorFacebookMarketingIntentSection from './components/DoctorFacebookMarketingIntentSection.astro';
+import DoctorFacebookMarketingTrustSection from './components/DoctorFacebookMarketingTrustSection.astro';
+import DoctorFacebookMarketingExpertiseSection from './components/DoctorFacebookMarketingExpertiseSection.astro';
+import DoctorFacebookMarketingProcessSection from './components/DoctorFacebookMarketingProcessSection.astro';
+import DoctorFacebookMarketingMappingSection from './components/DoctorFacebookMarketingMappingSection.astro';
+import DoctorFacebookMarketingRelatedSection from './components/DoctorFacebookMarketingRelatedSection.astro';
+import DoctorFacebookMarketingStartingSection from './components/DoctorFacebookMarketingStartingSection.astro';
+import DoctorFacebookMarketingExampleSection from './components/DoctorFacebookMarketingExampleSection.astro';
+import DoctorFacebookMarketingProgressSection from './components/DoctorFacebookMarketingProgressSection.astro';
+import DoctorFacebookMarketingWhySection from './components/DoctorFacebookMarketingWhySection.astro';
+import DoctorFacebookMarketingFaqSection from './components/DoctorFacebookMarketingFaqSection.astro';
+import DoctorFacebookMarketingConsultationSection from './components/DoctorFacebookMarketingConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { doctorFacebookMarketingHeroPreload } from './lib/doctor-facebook-marketing-hero-image';
+import './styles/doctor-facebook-marketing-rendering.css';
+import './styles/doctor-facebook-marketing-source-content.css';
+import { metadata } from './data/doctor-facebook-marketing-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={doctorFacebookMarketingHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="doctor-facebook-marketing-page" tabindex="-1">
+    <DoctorFacebookMarketingHero />
+    <DoctorFacebookMarketingChallengesSection />
+    <DoctorFacebookMarketingOutcomesSection />
+    <DoctorFacebookMarketingIntentSection />
+    <DoctorFacebookMarketingTrustSection />
+    <DoctorFacebookMarketingExpertiseSection />
+    <DoctorFacebookMarketingProcessSection />
+    <DoctorFacebookMarketingMappingSection />
+    <DoctorFacebookMarketingRelatedSection />
+    <DoctorFacebookMarketingStartingSection />
+    <DoctorFacebookMarketingExampleSection />
+    <DoctorFacebookMarketingProgressSection />
+    <DoctorFacebookMarketingWhySection />
+    <DoctorFacebookMarketingFaqSection />
+    <DoctorFacebookMarketingConsultationSection />
+  </main>
+  <Footer />
+</Layout>

@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/doctor-facebook-marketing/doctor-facebook-marketing-progress-v1.webp';
+import { pageCopy } from '../data/doctor-facebook-marketing-source';
+const copy = pageCopy.progress;
+import '../styles/doctor-facebook-marketing-progress.css';
+---
+<doctor-facebook-marketing-progress class="doctor-facebook-marketing-progress-motion">
+  <section id="doctor-facebook-marketing-progress" class="doctor-facebook-marketing-progress" aria-labelledby="doctor-facebook-marketing-progress-heading">
+    <div class="section-container doctor-facebook-marketing-progress-layout">
+      <h2 id="doctor-facebook-marketing-progress-heading" data-progress-entry>{copy.heading}</h2>
+      <p class="doctor-facebook-marketing-progress-baseline" data-progress-entry set:html={copy.paragraphsHtml[0]} />
+      <figure class="doctor-facebook-marketing-progress-photo" data-progress-entry data-progress-photo>
+        <Image src={photo} alt="Marketing specialist reviewing a doctor social media report" title="Marketing specialist reviewing a doctor social media report" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <p class="doctor-facebook-marketing-progress-evidence" data-progress-entry set:html={copy.paragraphsHtml[1]} />
+
+    </div>
+  </section>
+</doctor-facebook-marketing-progress>
+<script>
+  import '../scripts/doctor-facebook-marketing-progress';
+</script>

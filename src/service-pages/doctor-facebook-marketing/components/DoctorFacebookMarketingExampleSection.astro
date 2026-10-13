@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/doctor-facebook-marketing/doctor-facebook-marketing-example-v1.webp';
+import { pageCopy } from '../data/doctor-facebook-marketing-source';
+const copy = pageCopy.example;
+import '../styles/doctor-facebook-marketing-example.css';
+---
+<doctor-facebook-marketing-example class="doctor-facebook-marketing-example-motion">
+  <section id="doctor-facebook-marketing-example" class="doctor-facebook-marketing-example" aria-labelledby="doctor-facebook-marketing-example-heading">
+    <div class="section-container doctor-facebook-marketing-example-layout">
+      <header class="doctor-facebook-marketing-example-header" data-example-entry>
+        <h2 id="doctor-facebook-marketing-example-heading">{copy.heading}</h2>
+        <span class="doctor-facebook-marketing-example-rule" data-example-rule aria-hidden="true"></span>
+      </header>
+      <figure class="doctor-facebook-marketing-example-photo" data-example-entry data-example-photo>
+        <Image src={photo} alt="Doctor showing social information during a consultation" title="Doctor showing social information during a consultation" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <div class="doctor-facebook-marketing-example-copy">
+        <div class="doctor-facebook-marketing-source-content" data-example-entry set:html={copy.html} />
+      </div>
+    </div>
+  </section>
+</doctor-facebook-marketing-example>
+<script>
+  import '../scripts/doctor-facebook-marketing-example';
+</script>
