@@ -1,0 +1,42 @@
+---
+import { Image } from 'astro:assets';
+import hridoy from '../../../assets/team/founder-hridoy-chowdhury.jpeg';
+import { pageCopy } from '../data/doctor-local-seo-source';
+const copy = pageCopy.expertise;
+import '../styles/doctor-local-seo-expertise.css';
+---
+<doctor-local-seo-expertise class="doctor-local-seo-expertise-motion">
+  <section id="doctor-local-seo-expertise" class="doctor-local-seo-expertise" aria-labelledby="doctor-local-seo-expertise-heading">
+    <div class="section-container doctor-local-seo-expertise-layout">
+      <h2 id="doctor-local-seo-expertise-heading">{copy.heading}</h2>
+      <figure class="doctor-local-seo-expertise-portrait">
+        <div class="doctor-local-seo-expertise-photo">
+          <Image src={hridoy} widths={[320, 480, 640, 960]} width={1254} height={1254}
+            sizes="(min-width: 1100px) min(40vw, 480px), (min-width: 640px) min(36vw, 360px), min(calc(100vw - 32px), 360px)"
+            format="webp" quality={80} loading="lazy" decoding="async"
+            alt="Hridoy Chowdhury in a navy blazer against a grey studio background"
+            title="Hridoy Chowdhury — SEO expertise at Dr RankUP"
+            data-expertise-reveal="portrait" />
+        </div>
+        <figcaption data-expertise-reveal="copy">{copy.founder}</figcaption>
+      </figure>
+      <div class="doctor-local-seo-expertise-record">
+        <ul class="doctor-local-seo-expertise-metrics" role="list" aria-label="Hridoy Chowdhury's SEO experience">
+          {copy.metrics.map((metric, index) => <li data-expertise-reveal="copy" data-expertise-delay={index * 60}>
+            <strong>{metric.value}</strong><span>{metric.label}</span>
+          </li>)}
+        </ul>
+        <p class="doctor-local-seo-expertise-context" data-expertise-reveal="copy">{copy.context}</p>
+      </div>
+      <div class="doctor-local-seo-expertise-principles">
+        <span class="doctor-local-seo-expertise-rule" data-expertise-reveal="rule" aria-hidden="true"></span>
+        <ul role="list">
+          {copy.principles.map(principle => <li data-expertise-reveal="copy">{principle}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+</doctor-local-seo-expertise>
+<script>
+  import '../scripts/doctor-local-seo-expertise';
+</script>

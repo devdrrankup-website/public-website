@@ -1,0 +1,65 @@
+---
+import { Image } from 'astro:assets';
+import Icon from '../../../components/Icon.astro';
+import Arrow from '../../../components/Arrow.astro';
+import Search02Icon from '@hugeicons/core-free-icons/Search02Icon';
+import Store01Icon from '@hugeicons/core-free-icons/Store01Icon';
+import WebDesign01Icon from '@hugeicons/core-free-icons/WebDesign01Icon';
+import { pageCopy } from '../data/doctor-local-seo-source';
+const copy = pageCopy.related;
+import doctorSeo from '../../../assets/related-services/doctor-seo-preview-v1.webp';
+import profile from '../../../assets/doctor-google-business-profile/doctor-google-business-profile-related-preview-v1.webp';
+import website from '../../../assets/related-services/doctor-website-development-preview-v1.webp';
+import '../styles/doctor-local-seo-related.css';
+const visuals = [
+  { image: doctorSeo, icon: Search02Icon, accent: '#EEEDFE', description: "At home in Bangladesh, a prospective patient compares two doctor profile pages on a front-facing laptop." },
+  { image: profile, icon: Store01Icon, accent: '#FEF2CC', description: "At a doctor's chamber entrance, a civilian profile specialist photographs the doorway while an assistant checks the entrance details." },
+  { image: website, icon: WebDesign01Icon, accent: '#DFFFB7', description: "At a Bangladesh digital agency design studio, a civilian web designer and a doctor review large unbranded doctor-website wireframes showing profile, chamber and booking blocks, from the viewer's side." },
+];
+if (visuals.length !== copy.services.length) throw new Error('Local SEO related service visual count mismatch');
+---
+<section id="doctor-local-seo-related" class="doctor-local-seo-related" aria-labelledby="doctor-local-seo-related-heading">
+  <div class="section-container doctor-local-seo-related-container">
+    <doctor-local-seo-related>
+      <header class="doctor-local-seo-related-header" data-related-entry>
+        <h2 id="doctor-local-seo-related-heading">{copy.heading}</h2>
+        <div class="doctor-local-seo-source-content" set:html={copy.introductionHtml} />
+      </header>
+      <div class="doctor-local-seo-related-layout">
+        <div class="doctor-local-seo-related-dock">
+          <div class="doctor-local-seo-related-selectors" role="group" aria-label="Service image previews" hidden>
+            {copy.services.map((service, index) => <button type="button" aria-pressed={index === 0 ? 'true' : 'false'} aria-controls={`related-${service.key}`} data-related-select={index}>
+              <span>{service.name}</span>
+            </button>)}
+          </div>
+          <div class="doctor-local-seo-related-stage" aria-hidden="true" hidden></div>
+        </div>
+        <div class="doctor-local-seo-related-details">
+          <div class="doctor-local-seo-related-labels"><span>{copy.headers[0]}</span><span>{copy.headers[1]}</span></div>
+          <dl class="doctor-local-seo-related-list">
+            {copy.services.map((service, index) => <div class="doctor-local-seo-related-row" id={`related-${service.key}`} data-service={service.key}>
+              <dt>
+                <span class="doctor-local-seo-related-badge" style={`--related-accent:${visuals[index].accent}`}><Icon icon={visuals[index].icon} size={21} strokeWidth={1.8} /></span>
+                <span class="doctor-local-seo-related-reveal" aria-hidden="true"></span>
+                {service.href ? <a class="doctor-local-seo-related-name" href={service.href}>{service.name}</a>
+                  : <span class="doctor-local-seo-related-name">{service.name}</span>}
+                <span class="doctor-local-seo-related-arrow" aria-hidden="true"><Arrow /></span>
+              </dt>
+              <dd>
+                <span>{service.responsibility}</span>
+                <figure class="doctor-local-seo-related-photo">
+                  <Image src={visuals[index].image} alt={visuals[index].description} title={visuals[index].description} width={960} widths={[360,640,960]} sizes="(min-width:1100px) 700px, (min-width:640px) 700px, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+                  <figcaption>{service.name}</figcaption>
+                </figure>
+              </dd>
+            </div>)}
+          </dl>
+          <div class="doctor-local-seo-related-note doctor-local-seo-source-content" set:html={copy.noteHtml} />
+        </div>
+      </div>
+    </doctor-local-seo-related>
+  </div>
+</section>
+<script>
+  import '../scripts/doctor-local-seo-related';
+</script>

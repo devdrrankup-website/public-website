@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/doctor-local-seo/patient-two-location-comparison-v1.webp';
+import { pageCopy } from '../data/doctor-local-seo-source';
+const copy = pageCopy.example;
+import '../styles/doctor-local-seo-example.css';
+---
+<doctor-local-seo-example class="doctor-local-seo-example-motion">
+  <section id="doctor-local-seo-example" class="doctor-local-seo-example" aria-labelledby="doctor-local-seo-example-heading">
+    <div class="section-container doctor-local-seo-example-layout">
+      <header class="doctor-local-seo-example-header" data-example-entry>
+        <h2 id="doctor-local-seo-example-heading">{copy.heading}</h2>
+        <span class="doctor-local-seo-example-rule" data-example-rule aria-hidden="true"></span>
+      </header>
+      <figure class="doctor-local-seo-example-photo" data-example-entry data-example-photo>
+        <Image src={photo} alt="Patient at home comparing two doctor chamber locations on a tablet" title="Patient at home comparing two doctor chamber locations on a tablet" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <div class="doctor-local-seo-example-copy">
+        {copy.paragraphs.map(paragraph => <p data-example-entry>{paragraph}</p>)}
+      </div>
+    </div>
+  </section>
+</doctor-local-seo-example>
+<script>
+  import '../scripts/doctor-local-seo-example';
+</script>

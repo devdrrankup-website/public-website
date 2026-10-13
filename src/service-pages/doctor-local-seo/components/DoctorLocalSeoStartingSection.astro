@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/doctor-local-seo/monwara-onsite-chamber-review-v1.webp';
+import { pageCopy } from '../data/doctor-local-seo-source';
+const copy = pageCopy.starting;
+import '../styles/doctor-local-seo-starting.css';
+---
+<doctor-local-seo-starting class="doctor-local-seo-starting-motion">
+  <section id="doctor-local-seo-starting" class="doctor-local-seo-starting" aria-labelledby="doctor-local-seo-starting-heading">
+    <div class="section-container doctor-local-seo-starting-layout">
+      <h2 id="doctor-local-seo-starting-heading" data-starting-entry>{copy.heading}</h2>
+      <div class="doctor-local-seo-starting-copy" data-starting-entry>
+        <div class="doctor-local-seo-source-content" set:html={copy.html} />
+      </div>
+      <figure class="doctor-local-seo-starting-visual" data-starting-entry data-starting-visual>
+        <Image src={photo} alt="Monwara Moni and a doctor reviewing two chamber locations in the doctor's office" title="Monwara Moni and a doctor reviewing two chamber locations in the doctor's office" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 540px, (min-width:640px) 320px, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+    </div>
+  </section>
+</doctor-local-seo-starting>
+<script>
+  import '../scripts/doctor-local-seo-starting';
+</script>

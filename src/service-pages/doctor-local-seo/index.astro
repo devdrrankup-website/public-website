@@ -1,0 +1,47 @@
+---
+// Destination-owned static page.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import DoctorLocalSeoHero from './components/DoctorLocalSeoHero.astro';
+import DoctorLocalSeoChallengesSection from './components/DoctorLocalSeoChallengesSection.astro';
+import DoctorLocalSeoOutcomesSection from './components/DoctorLocalSeoOutcomesSection.astro';
+import DoctorLocalSeoIntentSection from './components/DoctorLocalSeoIntentSection.astro';
+import DoctorLocalSeoTrustSection from './components/DoctorLocalSeoTrustSection.astro';
+import DoctorLocalSeoExpertiseSection from './components/DoctorLocalSeoExpertiseSection.astro';
+import DoctorLocalSeoProcessSection from './components/DoctorLocalSeoProcessSection.astro';
+import DoctorLocalSeoMappingSection from './components/DoctorLocalSeoMappingSection.astro';
+import DoctorLocalSeoRelatedSection from './components/DoctorLocalSeoRelatedSection.astro';
+import DoctorLocalSeoStartingSection from './components/DoctorLocalSeoStartingSection.astro';
+import DoctorLocalSeoExampleSection from './components/DoctorLocalSeoExampleSection.astro';
+import DoctorLocalSeoProgressSection from './components/DoctorLocalSeoProgressSection.astro';
+import DoctorLocalSeoWhySection from './components/DoctorLocalSeoWhySection.astro';
+import DoctorLocalSeoFaqSection from './components/DoctorLocalSeoFaqSection.astro';
+import DoctorLocalSeoConsultationSection from './components/DoctorLocalSeoConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { doctorLocalSeoHeroPreload } from './lib/doctor-local-seo-hero-image';
+import './styles/doctor-local-seo-rendering.css';
+import './styles/doctor-local-seo-source-content.css';
+import { metadata } from './data/doctor-local-seo-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={doctorLocalSeoHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="doctor-local-seo-page" tabindex="-1">
+    <DoctorLocalSeoHero />
+    <DoctorLocalSeoChallengesSection />
+    <DoctorLocalSeoOutcomesSection />
+    <DoctorLocalSeoIntentSection />
+    <DoctorLocalSeoTrustSection />
+    <DoctorLocalSeoExpertiseSection />
+    <DoctorLocalSeoProcessSection />
+    <DoctorLocalSeoMappingSection />
+    <DoctorLocalSeoRelatedSection />
+    <DoctorLocalSeoStartingSection />
+    <DoctorLocalSeoExampleSection />
+    <DoctorLocalSeoProgressSection />
+    <DoctorLocalSeoWhySection />
+    <DoctorLocalSeoFaqSection />
+    <DoctorLocalSeoConsultationSection />
+  </main>
+  <Footer />
+</Layout>

@@ -1,0 +1,25 @@
+---
+import DoctorLocalSeoOutcomeVisual from './DoctorLocalSeoOutcomeVisual.astro';
+import { pageCopy } from '../data/doctor-local-seo-source';
+const copy = pageCopy.outcomes;
+import '../styles/doctor-local-seo-outcomes.css';
+---
+<doctor-local-seo-outcomes class="doctor-local-seo-outcomes">
+  <section id="doctor-local-seo-outcomes" class="section-container" aria-labelledby="doctor-local-seo-outcomes-heading">
+    <div class="doctor-local-seo-outcomes-heading">
+      <h2 id="doctor-local-seo-outcomes-heading">{copy.heading}</h2>
+      <div class="doctor-local-seo-outcomes-introduction doctor-local-seo-source-content" set:html={copy.before} />
+    </div>
+    <ul class="doctor-local-seo-outcomes-list" role="list">
+      {copy.items.map((item, index) => <li class="doctor-local-seo-outcome" data-seo-outcomes-motion>
+        <DoctorLocalSeoOutcomeVisual index={index} />
+        <p><strong>{item.label}</strong><span>{item.description}</span></p>
+      </li>)}
+    </ul>
+    <div class="doctor-local-seo-outcomes-conclusion doctor-local-seo-source-content" set:html={copy.after} />
+  </section>
+</doctor-local-seo-outcomes>
+
+<script>
+  import '../scripts/doctor-local-seo-outcomes';
+</script>

@@ -1,0 +1,38 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/doctor-local-seo/chamber-listing-audit-v2.webp';
+import { pageCopy } from '../data/doctor-local-seo-source';
+const copy = pageCopy.challenges;
+import '../styles/doctor-local-seo-challenges.css';
+---
+
+<doctor-local-seo-challenges class="doctor-local-seo-challenges">
+  <section id="doctor-local-seo-challenges" class="section-container doctor-local-seo-challenges-layout" aria-labelledby="doctor-local-seo-challenges-heading">
+    <div class="doctor-local-seo-challenges-editorial">
+      <h2 id="doctor-local-seo-challenges-heading">{copy.heading}</h2>
+      <p class="doctor-local-seo-challenges-introduction">{copy.introduction}</p>
+      <div class="doctor-local-seo-challenges-photo" data-seo-challenges-motion>
+        <Image src={photo} widths={[360, 540, 720, 960, 1200]} width={1536} height={1024}
+          sizes="(min-width: 1100px) min(41vw, 568px), (min-width: 640px) min(calc(100vw - 56px), 760px), calc(100vw - 32px)"
+          format="webp" quality={76}
+          alt="Digital strategist comparing two chamber listings and map details at an agency office"
+          title="Checking conflicting doctor chamber details"
+          loading="lazy" decoding="async" />
+      </div>
+    </div>
+    <div class="doctor-local-seo-challenges-details">
+      <p id="doctor-local-seo-challenges-list-heading" class="doctor-local-seo-challenges-list-intro">{copy.listIntroduction}</p>
+      <ul class="doctor-local-seo-challenges-list" role="list" aria-labelledby="doctor-local-seo-challenges-list-heading" data-seo-challenges-motion>
+        {copy.challenges.map((challenge, index) => <li>
+          <span class="doctor-local-seo-challenge-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+          <span>{challenge}</span>
+        </li>)}
+      </ul>
+      <p class="doctor-local-seo-challenges-conclusion">{copy.conclusion}</p>
+    </div>
+  </section>
+</doctor-local-seo-challenges>
+
+<script>
+  import '../scripts/doctor-local-seo-challenges';
+</script>

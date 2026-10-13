@@ -1,0 +1,108 @@
+/* Page-owned offscreen rendering. Whole section boundaries preserve native
+   sticky containers; the hero and desktop remain immediately renderable.
+   Auto remembers real sizes after entry; source content is always in HTML. */
+@supports (content-visibility: auto) {
+  @media (max-width:1099px) {
+    .doctor-local-seo-page > :is(doctor-local-seo-challenges,doctor-local-seo-outcomes,doctor-local-seo-intent,doctor-local-seo-trust,doctor-local-seo-expertise,doctor-local-seo-process,doctor-local-seo-mapping,#doctor-local-seo-related,doctor-local-seo-starting,doctor-local-seo-example,doctor-local-seo-progress,doctor-local-seo-why,doctor-local-seo-faq,doctor-local-seo-consultation) {
+      content-visibility: auto;
+      contain-intrinsic-block-size: auto var(--seo-section-estimate,1000px);
+    }
+      .doctor-local-seo-page > doctor-local-seo-challenges { --seo-section-estimate:1252px; }
+      .doctor-local-seo-page > doctor-local-seo-outcomes { --seo-section-estimate:1780px; }
+      .doctor-local-seo-page > doctor-local-seo-intent { --seo-section-estimate:698px; }
+      .doctor-local-seo-page > doctor-local-seo-trust { --seo-section-estimate:906px; }
+      .doctor-local-seo-page > doctor-local-seo-expertise { --seo-section-estimate:1063px; }
+      .doctor-local-seo-page > doctor-local-seo-process { --seo-section-estimate:1767px; }
+      .doctor-local-seo-page > doctor-local-seo-mapping { --seo-section-estimate:1475px; }
+      .doctor-local-seo-page > #doctor-local-seo-related { --seo-section-estimate:1284px; }
+      .doctor-local-seo-page > doctor-local-seo-starting { --seo-section-estimate:804px; }
+      .doctor-local-seo-page > doctor-local-seo-example { --seo-section-estimate:896px; }
+      .doctor-local-seo-page > doctor-local-seo-progress { --seo-section-estimate:798px; }
+      .doctor-local-seo-page > doctor-local-seo-why { --seo-section-estimate:948px; }
+      .doctor-local-seo-page > doctor-local-seo-faq { --seo-section-estimate:1111px; }
+      .doctor-local-seo-page > doctor-local-seo-consultation { --seo-section-estimate:1621px; }
+    @media (min-width:360px) {
+      .doctor-local-seo-page > doctor-local-seo-challenges { --seo-section-estimate:1148px; }
+      .doctor-local-seo-page > doctor-local-seo-outcomes { --seo-section-estimate:1638px; }
+      .doctor-local-seo-page > doctor-local-seo-intent { --seo-section-estimate:663px; }
+      .doctor-local-seo-page > doctor-local-seo-trust { --seo-section-estimate:808px; }
+      .doctor-local-seo-page > doctor-local-seo-expertise { --seo-section-estimate:1089px; }
+      .doctor-local-seo-page > doctor-local-seo-process { --seo-section-estimate:1525px; }
+      .doctor-local-seo-page > doctor-local-seo-mapping { --seo-section-estimate:1398px; }
+      .doctor-local-seo-page > #doctor-local-seo-related { --seo-section-estimate:1305px; }
+      .doctor-local-seo-page > doctor-local-seo-starting { --seo-section-estimate:789px; }
+      .doctor-local-seo-page > doctor-local-seo-example { --seo-section-estimate:920px; }
+      .doctor-local-seo-page > doctor-local-seo-progress { --seo-section-estimate:789px; }
+      .doctor-local-seo-page > doctor-local-seo-why { --seo-section-estimate:866px; }
+      .doctor-local-seo-page > doctor-local-seo-faq { --seo-section-estimate:1063px; }
+      .doctor-local-seo-page > doctor-local-seo-consultation { --seo-section-estimate:1555px; }
+    }
+    @media (min-width:640px) {
+      .doctor-local-seo-page > doctor-local-seo-challenges { --seo-section-estimate:1225px; }
+      .doctor-local-seo-page > doctor-local-seo-outcomes { --seo-section-estimate:1303px; }
+      .doctor-local-seo-page > doctor-local-seo-intent { --seo-section-estimate:753px; }
+      .doctor-local-seo-page > doctor-local-seo-trust { --seo-section-estimate:940px; }
+      .doctor-local-seo-page > doctor-local-seo-expertise { --seo-section-estimate:692px; }
+      .doctor-local-seo-page > doctor-local-seo-process { --seo-section-estimate:1764px; }
+      .doctor-local-seo-page > doctor-local-seo-mapping { --seo-section-estimate:1046px; }
+      .doctor-local-seo-page > #doctor-local-seo-related { --seo-section-estimate:1424px; }
+      .doctor-local-seo-page > doctor-local-seo-starting { --seo-section-estimate:608px; }
+      .doctor-local-seo-page > doctor-local-seo-example { --seo-section-estimate:779px; }
+      .doctor-local-seo-page > doctor-local-seo-progress { --seo-section-estimate:668px; }
+      .doctor-local-seo-page > doctor-local-seo-why { --seo-section-estimate:794px; }
+      .doctor-local-seo-page > doctor-local-seo-faq { --seo-section-estimate:1051px; }
+      .doctor-local-seo-page > doctor-local-seo-consultation { --seo-section-estimate:1402px; }
+    }
+    @media (min-width:820px) {
+      .doctor-local-seo-page > doctor-local-seo-challenges { --seo-section-estimate:1304px; }
+      .doctor-local-seo-page > doctor-local-seo-outcomes { --seo-section-estimate:1149px; }
+      .doctor-local-seo-page > doctor-local-seo-intent { --seo-section-estimate:821px; }
+      .doctor-local-seo-page > doctor-local-seo-trust { --seo-section-estimate:957px; }
+      .doctor-local-seo-page > doctor-local-seo-expertise { --seo-section-estimate:743px; }
+      .doctor-local-seo-page > doctor-local-seo-process { --seo-section-estimate:1372px; }
+      .doctor-local-seo-page > doctor-local-seo-mapping { --seo-section-estimate:965px; }
+      .doctor-local-seo-page > #doctor-local-seo-related { --seo-section-estimate:1412px; }
+      .doctor-local-seo-page > doctor-local-seo-starting { --seo-section-estimate:577px; }
+      .doctor-local-seo-page > doctor-local-seo-example { --seo-section-estimate:640px; }
+      .doctor-local-seo-page > doctor-local-seo-progress { --seo-section-estimate:544px; }
+      .doctor-local-seo-page > doctor-local-seo-why { --seo-section-estimate:718px; }
+      .doctor-local-seo-page > doctor-local-seo-faq { --seo-section-estimate:1031px; }
+      .doctor-local-seo-page > doctor-local-seo-consultation { --seo-section-estimate:1402px; }
+    }
+    @media (min-width:999px) {
+      .doctor-local-seo-page > doctor-local-seo-challenges { --seo-section-estimate:1290px; }
+      .doctor-local-seo-page > doctor-local-seo-outcomes { --seo-section-estimate:1125px; }
+      .doctor-local-seo-page > doctor-local-seo-intent { --seo-section-estimate:836px; }
+      .doctor-local-seo-page > doctor-local-seo-trust { --seo-section-estimate:991px; }
+      .doctor-local-seo-page > doctor-local-seo-expertise { --seo-section-estimate:772px; }
+      .doctor-local-seo-page > doctor-local-seo-process { --seo-section-estimate:1118px; }
+      .doctor-local-seo-page > doctor-local-seo-mapping { --seo-section-estimate:958px; }
+      .doctor-local-seo-page > #doctor-local-seo-related { --seo-section-estimate:1430px; }
+      .doctor-local-seo-page > doctor-local-seo-starting { --seo-section-estimate:577px; }
+      .doctor-local-seo-page > doctor-local-seo-example { --seo-section-estimate:585px; }
+      .doctor-local-seo-page > doctor-local-seo-progress { --seo-section-estimate:551px; }
+      .doctor-local-seo-page > doctor-local-seo-why { --seo-section-estimate:750px; }
+      .doctor-local-seo-page > doctor-local-seo-faq { --seo-section-estimate:1011px; }
+      .doctor-local-seo-page > doctor-local-seo-consultation { --seo-section-estimate:1413px; }
+    }
+    @media (min-width:1000px) {
+      .doctor-local-seo-page > doctor-local-seo-challenges { --seo-section-estimate:1290px; }
+      .doctor-local-seo-page > doctor-local-seo-outcomes { --seo-section-estimate:1125px; }
+      .doctor-local-seo-page > doctor-local-seo-intent { --seo-section-estimate:836px; }
+      .doctor-local-seo-page > doctor-local-seo-trust { --seo-section-estimate:991px; }
+      .doctor-local-seo-page > doctor-local-seo-expertise { --seo-section-estimate:772px; }
+      .doctor-local-seo-page > doctor-local-seo-process { --seo-section-estimate:1118px; }
+      .doctor-local-seo-page > doctor-local-seo-mapping { --seo-section-estimate:958px; }
+      .doctor-local-seo-page > #doctor-local-seo-related { --seo-section-estimate:1430px; }
+      .doctor-local-seo-page > doctor-local-seo-starting { --seo-section-estimate:577px; }
+      .doctor-local-seo-page > doctor-local-seo-example { --seo-section-estimate:585px; }
+      .doctor-local-seo-page > doctor-local-seo-progress { --seo-section-estimate:551px; }
+      .doctor-local-seo-page > doctor-local-seo-why { --seo-section-estimate:750px; }
+      .doctor-local-seo-page > doctor-local-seo-faq { --seo-section-estimate:1011px; }
+      .doctor-local-seo-page > doctor-local-seo-consultation { --seo-section-estimate:851px; }
+    }
+  }
+}
+@media print {
+  .doctor-local-seo-page > :is(doctor-local-seo-challenges,doctor-local-seo-outcomes,doctor-local-seo-intent,doctor-local-seo-trust,doctor-local-seo-expertise,doctor-local-seo-process,doctor-local-seo-mapping,#doctor-local-seo-related,doctor-local-seo-starting,doctor-local-seo-example,doctor-local-seo-progress,doctor-local-seo-why,doctor-local-seo-faq,doctor-local-seo-consultation) { content-visibility:visible; contain-intrinsic-block-size:none; }
+}

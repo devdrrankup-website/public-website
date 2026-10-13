@@ -1,0 +1,73 @@
+---
+import Icon from '../../../components/Icon.astro';
+import ArrowRight02Icon from '@hugeicons/core-free-icons/ArrowRight02Icon';
+import { pageCopy } from '../data/doctor-local-seo-source';
+const copy = pageCopy.mapping;
+import '../styles/doctor-local-seo-mapping.css';
+const accents = ['#E1FFB9', '#BAE5FF', '#EEEDFE', '#FEF2CC', '#EDDAFA'];
+---
+<doctor-local-seo-mapping class="doctor-local-seo-mapping-motion">
+  <section id="doctor-local-seo-mapping" class="doctor-local-seo-mapping" aria-labelledby="doctor-local-seo-mapping-heading">
+    <div class="section-container doctor-local-seo-mapping-layout">
+      <div class="doctor-local-seo-mapping-editorial">
+        <header data-mapping-entry>
+          <h2 id="doctor-local-seo-mapping-heading">{copy.heading}</h2>
+          <div id="doctor-local-seo-mapping-introduction" class="doctor-local-seo-source-content" set:html={copy.introductionHtml} />
+        </header>
+        <div class="doctor-local-seo-mapping-visual" aria-hidden="true" data-mapping-entry data-mapping-visual>
+          <svg viewBox="0 0 440 248" width="440" height="248" fill="none" focusable="false">
+            <title>Doctor profile connected to specialty, chamber, educational and contact pages</title>
+            <ellipse cx="220" cy="225" rx="205" ry="15" fill="#AFA9EC" fill-opacity=".1" />
+            <g stroke="#6131C6" stroke-opacity=".52" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path class="doctor-local-seo-mapping-route" pathLength="1" d="M220 94V130H63V167" />
+              <path class="doctor-local-seo-mapping-route" pathLength="1" d="M220 130H166V167" />
+              <path class="doctor-local-seo-mapping-route" pathLength="1" d="M220 130H269V167" />
+              <path class="doctor-local-seo-mapping-route" pathLength="1" d="M220 130H372V167" />
+            </g>
+            <g data-mapping-page>
+              <rect x="157" y="12" width="126" height="82" rx="12" fill="white" stroke="#AFA9EC" />
+              <path d="M157 34H283" stroke="#AFA9EC" stroke-opacity=".45" />
+              <g fill="#AFA9EC"><circle cx="170" cy="23" r="2" /><circle cx="178" cy="23" r="2" /><circle cx="186" cy="23" r="2" /></g>
+              <circle cx="185" cy="61" r="18" fill="#E1FFB9" />
+              <circle cx="185" cy="56" r="5" fill="#6131C6" />
+              <path d="M175 70C175 61 195 61 195 70" fill="#6131C6" />
+              <path d="M214 51H266M214 61H258M214 72H245" stroke="#AFA9EC" stroke-width="3" stroke-linecap="round" />
+            </g>
+            {[19, 122, 225, 328].map((x, index) => <g data-mapping-page>
+              <rect x={x} y="167" width="88" height="67" rx="10" fill="white" stroke="#AFA9EC" />
+              <path d={`M${x} 182H${x + 88}`} stroke="#AFA9EC" stroke-opacity=".4" />
+              <rect x={x + 10} y="191" width="21" height="25" rx="5" fill={accents[index + 1]} />
+              <path d={`M${x + 40} 193H${x + 76}M${x + 40} 203H${x + 72}M${x + 40} 213H${x + 61}M${x + 11} 224H${x + 75}`} stroke="#AFA9EC" stroke-width="2.5" stroke-linecap="round" />
+            </g>)}
+            <g fill="white" stroke="#6131C6" stroke-width="1.5"><circle cx="220" cy="130" r="4" /><circle cx="63" cy="167" r="3" /><circle cx="166" cy="167" r="3" /><circle cx="269" cy="167" r="3" /><circle cx="372" cy="167" r="3" /></g>
+          </svg>
+        </div>
+      </div>
+      <div class="doctor-local-seo-mapping-details">
+        <table class="doctor-local-seo-mapping-table" role="table" aria-labelledby="doctor-local-seo-mapping-heading" aria-describedby="doctor-local-seo-mapping-introduction">
+          <thead role="rowgroup">
+            <tr role="row">
+              {copy.headers.map((heading, index) => <th scope="col" role="columnheader" id={`doctor-local-seo-mapping-column-${index}`}>{heading}</th>)}
+            </tr>
+          </thead>
+          <tbody role="rowgroup">
+            {copy.rows.map((row, index) => <tr role="row" data-mapping-entry data-mapping-row style={`--mapping-accent:${accents[index % accents.length]}`}>
+              <th scope="row" role="rowheader" id={`doctor-local-seo-mapping-question-${index}`}>
+                <span class="doctor-local-seo-mapping-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+                <span class="doctor-local-seo-mapping-question">{row.cells[0]}</span>
+              </th>
+              {row.cells.slice(1).map((cell, cellIndex) => <td role="cell" headers={`doctor-local-seo-mapping-column-${cellIndex + 1} doctor-local-seo-mapping-question-${index}`}>
+                <span class="doctor-local-seo-mapping-arrow" aria-hidden="true" data-mapping-arrow><Icon icon={ArrowRight02Icon} size={20} strokeWidth={1.8} /></span>
+                <span class="doctor-local-seo-mapping-destination">{cell}</span>
+              </td>)}
+            </tr>)}
+          </tbody>
+        </table>
+        <div class="doctor-local-seo-mapping-conclusion doctor-local-seo-source-content" data-mapping-entry set:html={copy.conclusionHtml} />
+      </div>
+    </div>
+  </section>
+</doctor-local-seo-mapping>
+<script>
+  import '../scripts/doctor-local-seo-mapping';
+</script>
