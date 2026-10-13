@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/doctor-google-ads/doctor-google-ads-intent-v1.webp';
+import { pageCopy } from '../data/doctor-google-ads-source';
+const copy = pageCopy.intent;
+import '../styles/doctor-google-ads-intent.css';
+---
+<doctor-google-ads-intent class="doctor-google-ads-intent">
+  <section id="doctor-google-ads-intent" class="section-container doctor-google-ads-intent-layout" aria-labelledby="doctor-google-ads-intent-heading">
+    <div class="doctor-google-ads-intent-copy" data-seo-intent-motion>
+      <h2 id="doctor-google-ads-intent-heading">{copy.heading}</h2>
+      <div class="doctor-google-ads-source-content" set:html={copy.html} />
+    </div>
+    <div class="doctor-google-ads-intent-photo" data-seo-intent-motion>
+      <Image src={photo} widths={[360, 540, 720, 960, 1200]} width={1536} height={1024}
+        sizes="(min-width: 1100px) min(43vw, 576px), (min-width: 640px) min(calc(100vw - 56px), 760px), calc(100vw - 32px)"
+        format="webp" quality={76} loading="lazy" decoding="async"
+        alt="Man viewing a doctor search advertisement on his phone at home"
+        title="Man viewing a doctor search advertisement on his phone at home" />
+    </div>
+  </section>
+</doctor-google-ads-intent>
+
+<script>
+  import '../scripts/doctor-google-ads-intent';
+</script>

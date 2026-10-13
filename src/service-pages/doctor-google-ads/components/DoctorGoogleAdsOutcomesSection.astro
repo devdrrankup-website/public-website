@@ -1,0 +1,25 @@
+---
+import DoctorGoogleAdsOutcomeVisual from './DoctorGoogleAdsOutcomeVisual.astro';
+import { pageCopy } from '../data/doctor-google-ads-source';
+const copy = pageCopy.outcomes;
+import '../styles/doctor-google-ads-outcomes.css';
+---
+<doctor-google-ads-outcomes class="doctor-google-ads-outcomes">
+  <section id="doctor-google-ads-outcomes" class="section-container" aria-labelledby="doctor-google-ads-outcomes-heading">
+    <div class="doctor-google-ads-outcomes-heading">
+      <h2 id="doctor-google-ads-outcomes-heading">{copy.heading}</h2>
+      <div class="doctor-google-ads-outcomes-introduction doctor-google-ads-source-content" set:html={copy.before} />
+    </div>
+    <ul class="doctor-google-ads-outcomes-list" role="list">
+      {copy.items.map((item, index) => <li class="doctor-google-ads-outcome" data-seo-outcomes-motion>
+        <DoctorGoogleAdsOutcomeVisual index={index} />
+        <p><strong>{item.label}</strong><span>{item.description}</span></p>
+      </li>)}
+    </ul>
+    <div class="doctor-google-ads-outcomes-conclusion doctor-google-ads-source-content" set:html={copy.after} />
+  </section>
+</doctor-google-ads-outcomes>
+
+<script>
+  import '../scripts/doctor-google-ads-outcomes';
+</script>

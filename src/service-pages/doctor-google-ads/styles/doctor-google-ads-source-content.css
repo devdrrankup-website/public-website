@@ -1,0 +1,8 @@
+.doctor-google-ads-source-content:empty { display: none; }
+.doctor-google-ads-source-content :where(p) { margin: 0 0 1em; line-height: 1.7; }
+.doctor-google-ads-source-content :where(p:last-child) { margin-bottom: 0; }
+.doctor-google-ads-source-content ul, .doctor-google-ads-source-content ol { margin: .75em 0 1em; padding-left: 1.35em; }
+.doctor-google-ads-source-content li { margin: .42em 0; line-height: 1.65; }
+.doctor-google-ads-source-content strong { font-weight: 700; }
+.doctor-google-ads-source-content table { width: 100%; border-collapse: collapse; }
+.doctor-google-ads-source-content th, .doctor-google-ads-source-content td { padding: .7em; text-align: left; border-bottom: 1px solid #0002; }

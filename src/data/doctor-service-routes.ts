@@ -5,4 +5,5 @@ export const doctorServiceRoutes: Readonly<Partial<Record<string, string>>> = {
   'doctor-google-business-profile': '/doctors/google-business-profile/',
   'doctor-social-media-marketing': '/doctors/social-media-marketing/',
   'doctor-facebook-marketing': '/doctors/facebook-marketing/',
+  'doctor-google-ads': '/doctors/google-ads/',
 };

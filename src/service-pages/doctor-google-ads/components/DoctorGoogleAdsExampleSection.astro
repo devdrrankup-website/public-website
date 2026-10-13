@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/doctor-google-ads/doctor-google-ads-example-v1.webp';
+import { pageCopy } from '../data/doctor-google-ads-source';
+const copy = pageCopy.example;
+import '../styles/doctor-google-ads-example.css';
+---
+<doctor-google-ads-example class="doctor-google-ads-example-motion">
+  <section id="doctor-google-ads-example" class="doctor-google-ads-example" aria-labelledby="doctor-google-ads-example-heading">
+    <div class="section-container doctor-google-ads-example-layout">
+      <header class="doctor-google-ads-example-header" data-example-entry>
+        <h2 id="doctor-google-ads-example-heading">{copy.heading}</h2>
+        <span class="doctor-google-ads-example-rule" data-example-rule aria-hidden="true"></span>
+      </header>
+      <figure class="doctor-google-ads-example-photo" data-example-entry data-example-photo>
+        <Image src={photo} alt="Man looking up a healthcare service on a laptop at home" title="Man looking up a healthcare service on a laptop at home" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <div class="doctor-google-ads-example-copy">
+        <div class="doctor-google-ads-source-content" data-example-entry set:html={copy.html} />
+      </div>
+    </div>
+  </section>
+</doctor-google-ads-example>
+<script>
+  import '../scripts/doctor-google-ads-example';
+</script>

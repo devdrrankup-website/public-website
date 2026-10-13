@@ -1,0 +1,47 @@
+---
+// Destination-owned static page. Service-specific images are pending review before publication.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import DoctorGoogleAdsHero from './components/DoctorGoogleAdsHero.astro';
+import DoctorGoogleAdsChallengesSection from './components/DoctorGoogleAdsChallengesSection.astro';
+import DoctorGoogleAdsOutcomesSection from './components/DoctorGoogleAdsOutcomesSection.astro';
+import DoctorGoogleAdsIntentSection from './components/DoctorGoogleAdsIntentSection.astro';
+import DoctorGoogleAdsTrustSection from './components/DoctorGoogleAdsTrustSection.astro';
+import DoctorGoogleAdsExpertiseSection from './components/DoctorGoogleAdsExpertiseSection.astro';
+import DoctorGoogleAdsProcessSection from './components/DoctorGoogleAdsProcessSection.astro';
+import DoctorGoogleAdsMappingSection from './components/DoctorGoogleAdsMappingSection.astro';
+import DoctorGoogleAdsRelatedSection from './components/DoctorGoogleAdsRelatedSection.astro';
+import DoctorGoogleAdsStartingSection from './components/DoctorGoogleAdsStartingSection.astro';
+import DoctorGoogleAdsExampleSection from './components/DoctorGoogleAdsExampleSection.astro';
+import DoctorGoogleAdsProgressSection from './components/DoctorGoogleAdsProgressSection.astro';
+import DoctorGoogleAdsWhySection from './components/DoctorGoogleAdsWhySection.astro';
+import DoctorGoogleAdsFaqSection from './components/DoctorGoogleAdsFaqSection.astro';
+import DoctorGoogleAdsConsultationSection from './components/DoctorGoogleAdsConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { doctorGoogleAdsHeroPreload } from './lib/doctor-google-ads-hero-image';
+import './styles/doctor-google-ads-rendering.css';
+import './styles/doctor-google-ads-source-content.css';
+import { metadata } from './data/doctor-google-ads-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={doctorGoogleAdsHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="doctor-google-ads-page" tabindex="-1">
+    <DoctorGoogleAdsHero />
+    <DoctorGoogleAdsChallengesSection />
+    <DoctorGoogleAdsOutcomesSection />
+    <DoctorGoogleAdsIntentSection />
+    <DoctorGoogleAdsTrustSection />
+    <DoctorGoogleAdsExpertiseSection />
+    <DoctorGoogleAdsProcessSection />
+    <DoctorGoogleAdsMappingSection />
+    <DoctorGoogleAdsRelatedSection />
+    <DoctorGoogleAdsStartingSection />
+    <DoctorGoogleAdsExampleSection />
+    <DoctorGoogleAdsProgressSection />
+    <DoctorGoogleAdsWhySection />
+    <DoctorGoogleAdsFaqSection />
+    <DoctorGoogleAdsConsultationSection />
+  </main>
+  <Footer />
+</Layout>
