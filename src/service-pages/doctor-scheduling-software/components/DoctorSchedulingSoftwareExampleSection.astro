@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/doctor-scheduling-software/doctor-scheduling-software-example-v1.webp';
+import { pageCopy } from '../data/doctor-scheduling-software-source';
+const copy = pageCopy.example;
+import '../styles/doctor-scheduling-software-example.css';
+---
+<doctor-scheduling-software-example class="doctor-scheduling-software-example-motion">
+  <section id="doctor-scheduling-software-example" class="doctor-scheduling-software-example" aria-labelledby="doctor-scheduling-software-example-heading">
+    <div class="section-container doctor-scheduling-software-example-layout">
+      <header class="doctor-scheduling-software-example-header" data-example-entry>
+        <h2 id="doctor-scheduling-software-example-heading">{copy.heading}</h2>
+        <span class="doctor-scheduling-software-example-rule" data-example-rule aria-hidden="true"></span>
+      </header>
+      <figure class="doctor-scheduling-software-example-photo" data-example-entry data-example-photo>
+        <Image src={photo} alt="Doctor showing scheduling information to a patient" title="Doctor showing scheduling information to a patient" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <div class="doctor-scheduling-software-example-copy">
+        <div class="doctor-scheduling-software-source-content" data-example-entry set:html={copy.html} />
+      </div>
+    </div>
+  </section>
+</doctor-scheduling-software-example>
+<script>
+  import '../scripts/doctor-scheduling-software-example';
+</script>

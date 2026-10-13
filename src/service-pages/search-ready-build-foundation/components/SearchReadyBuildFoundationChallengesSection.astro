@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/search-ready-build-foundation/search-ready-build-foundation-challenges-v1.webp';
+import { pageCopy } from '../data/search-ready-build-foundation-source';
+const copy = pageCopy.challenges;
+const introductionParagraph = copy.html.match(/^<p>([\s\S]*?)<\/p>/)?.[1] ?? '';
+const detailHtml = copy.html.replace(/^<p>[\s\S]*?<\/p>/, '');
+import '../styles/search-ready-build-foundation-challenges.css';
+---
+
+<search-ready-build-foundation-challenges class="search-ready-build-foundation-challenges">
+  <section id="search-ready-build-foundation-challenges" class="section-container search-ready-build-foundation-challenges-layout" aria-labelledby="search-ready-build-foundation-challenges-heading">
+    <div class="search-ready-build-foundation-challenges-editorial">
+      <h2 id="search-ready-build-foundation-challenges-heading">{copy.heading}</h2>
+      <p class="search-ready-build-foundation-challenges-introduction" set:html={introductionParagraph} />
+      <div class="search-ready-build-foundation-challenges-photo" data-seo-challenges-motion>
+        <Image src={photo} widths={[360, 540, 720, 960, 1200]} width={1536} height={1024}
+          sizes="(min-width: 1100px) min(41vw, 568px), (min-width: 640px) min(calc(100vw - 56px), 760px), calc(100vw - 32px)"
+          format="webp" quality={76}
+          alt="Doctor and team reviewing a website that is hard to navigate"
+          title="Doctor and team reviewing a website that is hard to navigate"
+          loading="lazy" decoding="async" />
+      </div>
+    </div>
+    <div class="search-ready-build-foundation-challenges-details search-ready-build-foundation-source-content" set:html={detailHtml} />
+  </section>
+</search-ready-build-foundation-challenges>
+
+<script>
+  import '../scripts/search-ready-build-foundation-challenges';
+</script>

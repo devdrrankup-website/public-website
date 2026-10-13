@@ -1,0 +1,25 @@
+---
+import PatientAppointmentManagementOutcomeVisual from './PatientAppointmentManagementOutcomeVisual.astro';
+import { pageCopy } from '../data/patient-appointment-management-source';
+const copy = pageCopy.outcomes;
+import '../styles/patient-appointment-management-outcomes.css';
+---
+<patient-appointment-management-outcomes class="patient-appointment-management-outcomes">
+  <section id="patient-appointment-management-outcomes" class="section-container" aria-labelledby="patient-appointment-management-outcomes-heading">
+    <div class="patient-appointment-management-outcomes-heading">
+      <h2 id="patient-appointment-management-outcomes-heading">{copy.heading}</h2>
+      <div class="patient-appointment-management-outcomes-introduction patient-appointment-management-source-content" set:html={copy.before} />
+    </div>
+    <ul class="patient-appointment-management-outcomes-list" role="list">
+      {copy.items.map((item, index) => <li class="patient-appointment-management-outcome" data-seo-outcomes-motion>
+        <PatientAppointmentManagementOutcomeVisual index={index} />
+        <p><strong>{item.label}</strong><span>{item.description}</span></p>
+      </li>)}
+    </ul>
+    <div class="patient-appointment-management-outcomes-conclusion patient-appointment-management-source-content" set:html={copy.after} />
+  </section>
+</patient-appointment-management-outcomes>
+
+<script>
+  import '../scripts/patient-appointment-management-outcomes';
+</script>

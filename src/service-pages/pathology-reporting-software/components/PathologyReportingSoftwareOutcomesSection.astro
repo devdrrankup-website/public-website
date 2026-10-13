@@ -1,0 +1,25 @@
+---
+import PathologyReportingSoftwareOutcomeVisual from './PathologyReportingSoftwareOutcomeVisual.astro';
+import { pageCopy } from '../data/pathology-reporting-software-source';
+const copy = pageCopy.outcomes;
+import '../styles/pathology-reporting-software-outcomes.css';
+---
+<pathology-reporting-software-outcomes class="pathology-reporting-software-outcomes">
+  <section id="pathology-reporting-software-outcomes" class="section-container" aria-labelledby="pathology-reporting-software-outcomes-heading">
+    <div class="pathology-reporting-software-outcomes-heading">
+      <h2 id="pathology-reporting-software-outcomes-heading">{copy.heading}</h2>
+      <div class="pathology-reporting-software-outcomes-introduction pathology-reporting-software-source-content" set:html={copy.before} />
+    </div>
+    <ul class="pathology-reporting-software-outcomes-list" role="list">
+      {copy.items.map((item, index) => <li class="pathology-reporting-software-outcome" data-seo-outcomes-motion>
+        <PathologyReportingSoftwareOutcomeVisual index={index} />
+        <p><strong>{item.label}</strong><span>{item.description}</span></p>
+      </li>)}
+    </ul>
+    <div class="pathology-reporting-software-outcomes-conclusion pathology-reporting-software-source-content" set:html={copy.after} />
+  </section>
+</pathology-reporting-software-outcomes>
+
+<script>
+  import '../scripts/pathology-reporting-software-outcomes';
+</script>

@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/clinic-online-appointment-system/clinic-online-appointment-system-example-v1.webp';
+import { pageCopy } from '../data/clinic-online-appointment-system-source';
+const copy = pageCopy.example;
+import '../styles/clinic-online-appointment-system-example.css';
+---
+<clinic-online-appointment-system-example class="clinic-online-appointment-system-example-motion">
+  <section id="clinic-online-appointment-system-example" class="clinic-online-appointment-system-example" aria-labelledby="clinic-online-appointment-system-example-heading">
+    <div class="section-container clinic-online-appointment-system-example-layout">
+      <header class="clinic-online-appointment-system-example-header" data-example-entry>
+        <h2 id="clinic-online-appointment-system-example-heading">{copy.heading}</h2>
+        <span class="clinic-online-appointment-system-example-rule" data-example-rule aria-hidden="true"></span>
+      </header>
+      <figure class="clinic-online-appointment-system-example-photo" data-example-entry data-example-photo>
+        <Image src={photo} alt="Receptionist showing available appointments to a visitor" title="Receptionist showing available appointments to a visitor" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <div class="clinic-online-appointment-system-example-copy">
+        <div class="clinic-online-appointment-system-source-content" data-example-entry set:html={copy.html} />
+      </div>
+    </div>
+  </section>
+</clinic-online-appointment-system-example>
+<script>
+  import '../scripts/clinic-online-appointment-system-example';
+</script>

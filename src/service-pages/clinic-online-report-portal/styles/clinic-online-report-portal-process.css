@@ -1,0 +1,224 @@
+.clinic-online-report-portal-process-motion {
+  display: block;
+  background: #fff;
+}
+
+.clinic-online-report-portal-process {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  padding-block: 52px 68px;
+  border-radius: 28px 28px 0 0;
+  scroll-margin-top: calc(var(--header-height) + 12px);
+  color: #000;
+  background:
+    linear-gradient(180deg, transparent calc(100% - 72px), #f3f5ff 100%),
+    radial-gradient(ellipse at 92% 10%, #bae5ff80 0%, #bae5ff00 48%),
+    radial-gradient(ellipse at 4% 84%, #eeedfe 0%, #eeedfe00 52%),
+    #fff;
+}
+
+.clinic-online-report-portal-process-atmosphere {
+  position: absolute;
+  z-index: -1;
+  top: 20px;
+  right: -120px;
+  width: 300px;
+  aspect-ratio: 1;
+  border: 1px solid #6131c61a;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 42px #ffffff70, inset 0 0 0 43px #229f6014, inset 0 0 0 88px #ffffff66, inset 0 0 0 89px #6131c612;
+  pointer-events: none;
+}
+
+.clinic-online-report-portal-process-background {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  overflow: hidden;
+  opacity: .075;
+  pointer-events: none;
+  mask-image: linear-gradient(180deg, transparent 0%, #000 10%, #000 90%, transparent 100%);
+}
+.clinic-online-report-portal-process-background img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 68% center;
+  filter: saturate(.58) contrast(.88);
+}
+
+.clinic-online-report-portal-process-layout { display: grid; gap: 34px; }
+.clinic-online-report-portal-process-header { max-width: 520px; }
+.clinic-online-report-portal-process-range {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  color: #6131c6;
+  font-size: 11px;
+  font-weight: 750;
+  line-height: 1;
+  letter-spacing: .16em;
+}
+.clinic-online-report-portal-process-range::after { content: ''; width: 48px; height: 1px; background: #6131c6; }
+.clinic-online-report-portal-process h2 {
+  margin: 0;
+  color: #000;
+  font-size: clamp(36px, 10.8vw, 48px);
+  font-weight: 650;
+  line-height: 1.08;
+  letter-spacing: -.05em;
+}
+
+.clinic-online-report-portal-process-flow { position: relative; }
+.clinic-online-report-portal-process-route { display: none; visibility: hidden; }
+.clinic-online-report-portal-process-motion[data-seo-route-measured] .clinic-online-report-portal-process-route { visibility: visible; }
+.clinic-online-report-portal-process-step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr);
+  gap: 16px;
+  min-width: 0;
+  padding-block: 18px 24px;
+  border-top: 1px solid #0000001a;
+}
+.clinic-online-report-portal-process-step:last-child { border-bottom: 1px solid #0000001a; }
+.clinic-online-report-portal-process-node-column { position: relative; align-self: stretch; min-height: 76px; }
+.clinic-online-report-portal-process-node {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #6131c6;
+  border-radius: 50%;
+  color: #6131c6;
+  background: #fff;
+  box-shadow: 0 0 0 6px #ffffffcc;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: .08em;
+  transition: color 420ms, background-color 420ms, border-color 420ms, box-shadow 420ms;
+  transition-delay: var(--seo-process-delay, 0ms);
+}
+.clinic-online-report-portal-process-connector {
+  position: absolute;
+  z-index: 1;
+  top: 44px;
+  bottom: -25px;
+  left: 21px;
+  width: 2px;
+  transform-origin: 50% 0;
+  background: linear-gradient(180deg, #6131c6 0%, #229f60 72%, #229f6028 100%);
+  transition: transform 640ms cubic-bezier(.2,.65,.3,1);
+  transition-delay: var(--seo-process-delay, 0ms);
+}
+.clinic-online-report-portal-process-copy { min-width: 0; padding-top: 4px; }
+.clinic-online-report-portal-process-step h3 {
+  margin: 0;
+  color: #000;
+  font-size: 22px;
+  font-weight: 650;
+  line-height: 1.25;
+  letter-spacing: -.03em;
+}
+.clinic-online-report-portal-process-step h3 span { color: #6131c6; font-size: .62em; letter-spacing: .04em; }
+.clinic-online-report-portal-process-step p {
+  max-width: 620px;
+  margin: 9px 0 0;
+  color: #000;
+  font-size: 14px;
+  line-height: 1.72;
+}
+
+.clinic-online-report-portal-process-motion.is-enhanced .clinic-online-report-portal-process-step:not(.is-active) .clinic-online-report-portal-process-node {
+  color: #0000008f;
+  border-color: #0000002e;
+  box-shadow: 0 0 0 6px #ffffffcc;
+}
+.clinic-online-report-portal-process-motion.is-enhanced .clinic-online-report-portal-process-step:not(.is-active) .clinic-online-report-portal-process-connector { transform: scaleY(.08); }
+.clinic-online-report-portal-process-step.is-active .clinic-online-report-portal-process-node {
+  color: #000;
+  border-color: #e1ffb9;
+  background: #e1ffb9;
+  box-shadow: 0 0 0 6px #ffffffcc, 0 8px 26px #229f6038;
+}
+
+@media (min-width: 640px) {
+  .clinic-online-report-portal-process { padding-block: 72px 84px; border-radius: 36px 36px 0 0; }
+  .clinic-online-report-portal-process-atmosphere { top: -50px; right: -170px; width: 470px; }
+  .clinic-online-report-portal-process-background { opacity: .08; }
+  .clinic-online-report-portal-process-background img { object-position: 70% center; }
+  .clinic-online-report-portal-process-layout {
+    grid-template-columns: minmax(220px, .72fr) minmax(0, 1.28fr);
+    align-items: start;
+    gap: clamp(40px, 7vw, 76px);
+  }
+  .clinic-online-report-portal-process-header { position: sticky; top: calc(var(--header-height) + 28px); }
+  .clinic-online-report-portal-process h2 { font-size: clamp(48px, 7vw, 64px); }
+  .clinic-online-report-portal-process-step { grid-template-columns: 50px minmax(0, 1fr); gap: 20px; padding-block: 24px 30px; }
+  .clinic-online-report-portal-process-node { width: 48px; height: 48px; }
+  .clinic-online-report-portal-process-connector { top: 48px; bottom: -31px; left: 23px; }
+  .clinic-online-report-portal-process-step h3 { font-size: 25px; }
+  .clinic-online-report-portal-process-step p { font-size: 15px; }
+}
+
+@media (min-width: 1100px) {
+  .clinic-online-report-portal-process { padding-block: 88px 104px; border-radius: 40px 40px 0 0; }
+  .clinic-online-report-portal-process-atmosphere { top: -220px; right: -130px; width: 680px; }
+  .clinic-online-report-portal-process-background { opacity: .085; }
+  .clinic-online-report-portal-process-background img { object-position: center; }
+  .clinic-online-report-portal-process-layout { display: block; }
+  .clinic-online-report-portal-process-header { position: static; max-width: none; margin-bottom: 72px; }
+  .clinic-online-report-portal-process h2 { font-size: clamp(58px, 5vw, 76px); }
+  .clinic-online-report-portal-process-flow {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: minmax(220px, auto);
+    column-gap: clamp(30px, 4vw, 64px);
+    row-gap: 62px;
+  }
+  .clinic-online-report-portal-process-route { display: block; position: absolute; z-index: 0; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+  .clinic-online-report-portal-process-route path { fill: none; vector-effect: non-scaling-stroke; }
+  .clinic-online-report-portal-process-route-base { stroke: #6131c626; stroke-width: 1.4; }
+  .clinic-online-report-portal-process-route-progress {
+    stroke: url('#clinic-online-report-portal-process-route-gradient');
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-dasharray: var(--seo-route-length, 0);
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1600ms cubic-bezier(.2,.65,.3,1);
+  }
+  .clinic-online-report-portal-process-motion.is-enhanced:not(.is-route-active) .clinic-online-report-portal-process-route-progress { stroke-dashoffset: var(--seo-route-length, 0); }
+  .clinic-online-report-portal-process-step {
+    z-index: 1;
+    display: block;
+    padding: 0 12px;
+    border: 0;
+    text-align: center;
+  }
+  .clinic-online-report-portal-process-step:last-child { border: 0; }
+  .clinic-online-report-portal-process-step:nth-child(5) { grid-column: 3; grid-row: 2; }
+  .clinic-online-report-portal-process-step:nth-child(6) { grid-column: 2; grid-row: 2; }
+  .clinic-online-report-portal-process-step:nth-child(7) { grid-column: 1; grid-row: 2; }
+  .clinic-online-report-portal-process-step:nth-child(8) { grid-column: 1; grid-row: 3; }
+  .clinic-online-report-portal-process-node-column { min-height: 66px; }
+  .clinic-online-report-portal-process-node { width: 58px; height: 58px; margin-inline: auto; font-size: 11px; box-shadow: 0 0 0 8px #ffffffcc; }
+  .clinic-online-report-portal-process-connector { display: none; }
+  .clinic-online-report-portal-process-copy { padding-top: 14px; }
+  .clinic-online-report-portal-process-step h3 { font-size: 27px; }
+  .clinic-online-report-portal-process-step p { max-width: 330px; margin: 12px auto 0; font-size: 15px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clinic-online-report-portal-process-node,
+  .clinic-online-report-portal-process-connector,
+  .clinic-online-report-portal-process-route-progress { transition-property: none !important; transition-duration: 0ms !important; transition-delay: 0ms !important; }
+}
+
+
+.clinic-online-report-portal-process-step p + p { margin-top: 14px; }

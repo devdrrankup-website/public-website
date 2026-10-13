@@ -1,0 +1,31 @@
+---
+import Icon from '../../../components/Icon.astro';
+import Add01Icon from '@hugeicons/core-free-icons/Add01Icon';
+import { pageCopy } from '../data/e-prescription-software-source';
+const copy = pageCopy.faq;
+import '../styles/e-prescription-software-faq.css';
+---
+<e-prescription-software-faq class="e-prescription-software-faq-motion">
+  <section id="e-prescription-software-faq" class="e-prescription-software-faq" aria-labelledby="e-prescription-software-faq-heading">
+    <div class="section-container e-prescription-software-faq-layout">
+      <header class="e-prescription-software-faq-header" data-faq-entry>
+        <h2 id="e-prescription-software-faq-heading">{copy.heading}</h2>
+        <div class="e-prescription-software-source-content" set:html={copy.preface} />
+      </header>
+      <div class="e-prescription-software-faq-list">
+        {copy.items.map((item,index) => <article class="e-prescription-software-faq-item" data-faq-entry aria-labelledby={`e-prescription-software-faq-question-${index+1}`}>
+          <h3 class="e-prescription-software-faq-question" id={`e-prescription-software-faq-question-${index+1}`}>
+            <span class="e-prescription-software-faq-label">{item.question}</span>
+            <span class="e-prescription-software-faq-toggle" aria-hidden="true"><Icon icon={Add01Icon} size={20} strokeWidth={1.8} /></span>
+          </h3>
+          <div class="e-prescription-software-faq-answer" id={`e-prescription-software-faq-answer-${index+1}`} role="region" aria-labelledby={`e-prescription-software-faq-question-${index+1}`}>
+            <div class="e-prescription-software-source-content" set:html={item.answerHtml} />
+          </div>
+        </article>)}
+      </div>
+    </div>
+  </section>
+</e-prescription-software-faq>
+<script>
+  import '../scripts/e-prescription-software-faq';
+</script>

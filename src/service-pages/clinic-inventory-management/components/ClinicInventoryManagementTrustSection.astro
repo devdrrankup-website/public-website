@@ -1,0 +1,33 @@
+---
+import { Image } from 'astro:assets';
+import Icon from '../../../components/Icon.astro';
+import LockKeyIcon from '@hugeicons/core-free-icons/LockKeyIcon';
+import photo from '../../../assets/clinic-inventory-management/clinic-inventory-management-trust-v1.webp';
+import { pageCopy } from '../data/clinic-inventory-management-source';
+const copy = pageCopy.trust;
+import '../styles/clinic-inventory-management-trust.css';
+---
+
+<clinic-inventory-management-trust class="clinic-inventory-management-trust-motion">
+  <section id="clinic-inventory-management-trust" class="clinic-inventory-management-trust" aria-labelledby="clinic-inventory-management-trust-heading">
+    <div class="section-container clinic-inventory-management-trust-layout">
+      <h2 id="clinic-inventory-management-trust-heading">{copy.heading}</h2>
+      <div class="clinic-inventory-management-trust-profile clinic-inventory-management-source-content" data-seo-trust-motion set:html={copy.firstHtml} />
+      <div class="clinic-inventory-management-trust-photo" data-seo-trust-motion>
+        <Image src={photo} widths={[360, 540, 720, 960, 1200]} width={1536} height={1024}
+          sizes="(min-width: 1100px) min(43vw, 576px), (min-width: 640px) min(calc(100vw - 56px), 760px), calc(100vw - 32px)"
+          format="webp" quality={76} loading="lazy" decoding="async"
+          alt="Clinic manager and clinician checking stock items against a tablet"
+          title="Clinic manager and clinician checking stock items against a tablet" />
+      </div>
+      <div class="clinic-inventory-management-trust-privacy" data-seo-trust-motion>
+        <span class="clinic-inventory-management-trust-lock" aria-hidden="true"><Icon icon={LockKeyIcon} size={24} /></span>
+        <div class="clinic-inventory-management-source-content" set:html={copy.restHtml} />
+      </div>
+    </div>
+  </section>
+</clinic-inventory-management-trust>
+
+<script>
+  import '../scripts/clinic-inventory-management-trust';
+</script>

@@ -1,0 +1,8 @@
+.clinic-inventory-management-source-content:empty { display: none; }
+.clinic-inventory-management-source-content :where(p) { margin: 0 0 1em; line-height: 1.7; }
+.clinic-inventory-management-source-content :where(p:last-child) { margin-bottom: 0; }
+.clinic-inventory-management-source-content ul, .clinic-inventory-management-source-content ol { margin: .75em 0 1em; padding-left: 1.35em; }
+.clinic-inventory-management-source-content li { margin: .42em 0; line-height: 1.65; }
+.clinic-inventory-management-source-content strong { font-weight: 700; }
+.clinic-inventory-management-source-content table { width: 100%; border-collapse: collapse; }
+.clinic-inventory-management-source-content th, .clinic-inventory-management-source-content td { padding: .7em; text-align: left; border-bottom: 1px solid #0002; }

@@ -1,0 +1,25 @@
+---
+import ClinicOnlineAppointmentSystemOutcomeVisual from './ClinicOnlineAppointmentSystemOutcomeVisual.astro';
+import { pageCopy } from '../data/clinic-online-appointment-system-source';
+const copy = pageCopy.outcomes;
+import '../styles/clinic-online-appointment-system-outcomes.css';
+---
+<clinic-online-appointment-system-outcomes class="clinic-online-appointment-system-outcomes">
+  <section id="clinic-online-appointment-system-outcomes" class="section-container" aria-labelledby="clinic-online-appointment-system-outcomes-heading">
+    <div class="clinic-online-appointment-system-outcomes-heading">
+      <h2 id="clinic-online-appointment-system-outcomes-heading">{copy.heading}</h2>
+      <div class="clinic-online-appointment-system-outcomes-introduction clinic-online-appointment-system-source-content" set:html={copy.before} />
+    </div>
+    <ul class="clinic-online-appointment-system-outcomes-list" role="list">
+      {copy.items.map((item, index) => <li class="clinic-online-appointment-system-outcome" data-seo-outcomes-motion>
+        <ClinicOnlineAppointmentSystemOutcomeVisual index={index} />
+        <p><strong>{item.label}</strong><span>{item.description}</span></p>
+      </li>)}
+    </ul>
+    <div class="clinic-online-appointment-system-outcomes-conclusion clinic-online-appointment-system-source-content" set:html={copy.after} />
+  </section>
+</clinic-online-appointment-system-outcomes>
+
+<script>
+  import '../scripts/clinic-online-appointment-system-outcomes';
+</script>

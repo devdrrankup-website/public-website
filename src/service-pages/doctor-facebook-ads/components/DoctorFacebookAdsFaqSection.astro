@@ -1,0 +1,31 @@
+---
+import Icon from '../../../components/Icon.astro';
+import Add01Icon from '@hugeicons/core-free-icons/Add01Icon';
+import { pageCopy } from '../data/doctor-facebook-ads-source';
+const copy = pageCopy.faq;
+import '../styles/doctor-facebook-ads-faq.css';
+---
+<doctor-facebook-ads-faq class="doctor-facebook-ads-faq-motion">
+  <section id="doctor-facebook-ads-faq" class="doctor-facebook-ads-faq" aria-labelledby="doctor-facebook-ads-faq-heading">
+    <div class="section-container doctor-facebook-ads-faq-layout">
+      <header class="doctor-facebook-ads-faq-header" data-faq-entry>
+        <h2 id="doctor-facebook-ads-faq-heading">{copy.heading}</h2>
+        <div class="doctor-facebook-ads-source-content" set:html={copy.preface} />
+      </header>
+      <div class="doctor-facebook-ads-faq-list">
+        {copy.items.map((item,index) => <article class="doctor-facebook-ads-faq-item" data-faq-entry aria-labelledby={`doctor-facebook-ads-faq-question-${index+1}`}>
+          <h3 class="doctor-facebook-ads-faq-question" id={`doctor-facebook-ads-faq-question-${index+1}`}>
+            <span class="doctor-facebook-ads-faq-label">{item.question}</span>
+            <span class="doctor-facebook-ads-faq-toggle" aria-hidden="true"><Icon icon={Add01Icon} size={20} strokeWidth={1.8} /></span>
+          </h3>
+          <div class="doctor-facebook-ads-faq-answer" id={`doctor-facebook-ads-faq-answer-${index+1}`} role="region" aria-labelledby={`doctor-facebook-ads-faq-question-${index+1}`}>
+            <div class="doctor-facebook-ads-source-content" set:html={item.answerHtml} />
+          </div>
+        </article>)}
+      </div>
+    </div>
+  </section>
+</doctor-facebook-ads-faq>
+<script>
+  import '../scripts/doctor-facebook-ads-faq';
+</script>

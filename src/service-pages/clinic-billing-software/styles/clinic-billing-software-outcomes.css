@@ -1,0 +1,43 @@
+.clinic-billing-software-outcomes { display: block; padding-block: 32px 56px; color: #000; background: linear-gradient(180deg, #fff 0%, #f5faff 40%, #f6f5ff 75%, #fff 100%); }
+.clinic-billing-software-outcomes > .section-container { max-width: 1200px; }
+.clinic-billing-software-outcomes h2 { margin: 0; color: #000; font-size: clamp(28px, 7.3vw, 38px); font-weight: 650; line-height: 1.24; letter-spacing: -.035em; text-wrap: pretty; }
+.clinic-billing-software-outcomes-introduction { margin: 20px 0 0; color: #000; font-size: 15px; line-height: 1.85; }
+.clinic-billing-software-outcomes-list { display: grid; gap: 0; list-style: none; margin: 12px 0 0; padding: 0; }
+.clinic-billing-software-outcome { min-width: 0; padding-block: 24px; border-bottom: 1px solid #afa9ec55; }
+.clinic-billing-software-outcome p { margin: 12px 0 0; color: #000; font-size: 15px; line-height: 1.8; }
+.clinic-billing-software-outcome strong { display: block; margin-bottom: 8px; color: #000; font-size: 20px; line-height: 1.4; font-weight: 650; letter-spacing: -.02em; }
+.clinic-billing-software-outcome-visual { position: relative; width: 180px; max-width: 100%; height: 112px; color: #6131c6; }
+.clinic-billing-software-outcome-visual > svg { display: block; width: 100%; height: 100%; }
+.clinic-billing-software-outcome-badge { position: absolute; top: 33px; right: 0; display: grid; place-items: center; width: 44px; height: 44px; border: 3px solid #fff; border-radius: 50%; background: #eeedfe; }
+.clinic-billing-software-outcome-visual-1 .clinic-billing-software-outcome-badge { background: #bae5ff; }
+.clinic-billing-software-outcome-visual-2 .clinic-billing-software-outcome-badge { background: #e1ffb9; color: #000; }
+.clinic-billing-software-outcome-visual-3 .clinic-billing-software-outcome-badge { background: #fef2cc; color: #000; }
+.clinic-billing-software-outcome-visual-4 .clinic-billing-software-outcome-badge { background: #eddafa; }
+.clinic-billing-software-outcomes-conclusion { margin: 28px 0 0; color: #000; font-size: 15px; line-height: 1.85; }
+@media (min-width: 640px) {
+  .clinic-billing-software-outcomes { padding-block: 44px 72px; }
+  .clinic-billing-software-outcomes h2 { max-width: 820px; font-size: clamp(34px, 4.6vw, 44px); }
+  .clinic-billing-software-outcomes-introduction { max-width: 720px; font-size: 16px; }
+  .clinic-billing-software-outcomes-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 32px; margin-top: 24px; }
+  .clinic-billing-software-outcome { padding-block: 24px 28px; }
+  .clinic-billing-software-outcome:last-child { grid-column: 1 / -1; width: calc(50% - 16px); justify-self: center; }
+  .clinic-billing-software-outcome p { font-size: 16px; }
+  .clinic-billing-software-outcome strong { font-size: 22px; }
+  .clinic-billing-software-outcome-visual { width: 200px; height: 124px; }
+  .clinic-billing-software-outcome-badge { top: 37px; }
+  .clinic-billing-software-outcomes-conclusion { margin-top: 32px; font-size: 16px; text-align: center; }
+}
+@media (min-width: 1100px) {
+  .clinic-billing-software-outcomes { padding-block: 56px 88px; }
+  .clinic-billing-software-outcomes-heading { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); align-items: end; gap: 64px; }
+  .clinic-billing-software-outcomes h2 { font-size: clamp(40px, 3.15vw, 46px); }
+  .clinic-billing-software-outcomes-introduction { margin: 0 0 4px; }
+  .clinic-billing-software-outcomes-list { grid-template-columns: repeat(6, minmax(0, 1fr)); column-gap: 48px; row-gap: 12px; margin-top: 36px; }
+  .clinic-billing-software-outcome { grid-column: span 2; padding-bottom: 32px; }
+  .clinic-billing-software-outcome:nth-child(4):nth-last-child(2),
+  .clinic-billing-software-outcome:nth-child(5):last-child { grid-column: span 3; }
+  .clinic-billing-software-outcome:last-child { grid-column: span 2; justify-self: stretch; width: 100%; }
+}
+
+.clinic-billing-software-outcomes-introduction p { line-height: inherit; }
+.clinic-billing-software-outcomes-conclusion p { line-height: inherit; }

@@ -1,0 +1,47 @@
+---
+// Destination-owned static page. Service-specific images are pending review before publication.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import ClinicOnlineReportPortalHero from './components/ClinicOnlineReportPortalHero.astro';
+import ClinicOnlineReportPortalChallengesSection from './components/ClinicOnlineReportPortalChallengesSection.astro';
+import ClinicOnlineReportPortalOutcomesSection from './components/ClinicOnlineReportPortalOutcomesSection.astro';
+import ClinicOnlineReportPortalIntentSection from './components/ClinicOnlineReportPortalIntentSection.astro';
+import ClinicOnlineReportPortalTrustSection from './components/ClinicOnlineReportPortalTrustSection.astro';
+import ClinicOnlineReportPortalExpertiseSection from './components/ClinicOnlineReportPortalExpertiseSection.astro';
+import ClinicOnlineReportPortalProcessSection from './components/ClinicOnlineReportPortalProcessSection.astro';
+import ClinicOnlineReportPortalMappingSection from './components/ClinicOnlineReportPortalMappingSection.astro';
+import ClinicOnlineReportPortalRelatedSection from './components/ClinicOnlineReportPortalRelatedSection.astro';
+import ClinicOnlineReportPortalStartingSection from './components/ClinicOnlineReportPortalStartingSection.astro';
+import ClinicOnlineReportPortalExampleSection from './components/ClinicOnlineReportPortalExampleSection.astro';
+import ClinicOnlineReportPortalProgressSection from './components/ClinicOnlineReportPortalProgressSection.astro';
+import ClinicOnlineReportPortalWhySection from './components/ClinicOnlineReportPortalWhySection.astro';
+import ClinicOnlineReportPortalFaqSection from './components/ClinicOnlineReportPortalFaqSection.astro';
+import ClinicOnlineReportPortalConsultationSection from './components/ClinicOnlineReportPortalConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { clinicOnlineReportPortalHeroPreload } from './lib/clinic-online-report-portal-hero-image';
+import './styles/clinic-online-report-portal-rendering.css';
+import './styles/clinic-online-report-portal-source-content.css';
+import { metadata } from './data/clinic-online-report-portal-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={clinicOnlineReportPortalHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="clinic-online-report-portal-page" tabindex="-1">
+    <ClinicOnlineReportPortalHero />
+    <ClinicOnlineReportPortalChallengesSection />
+    <ClinicOnlineReportPortalOutcomesSection />
+    <ClinicOnlineReportPortalIntentSection />
+    <ClinicOnlineReportPortalTrustSection />
+    <ClinicOnlineReportPortalExpertiseSection />
+    <ClinicOnlineReportPortalProcessSection />
+    <ClinicOnlineReportPortalMappingSection />
+    <ClinicOnlineReportPortalRelatedSection />
+    <ClinicOnlineReportPortalStartingSection />
+    <ClinicOnlineReportPortalExampleSection />
+    <ClinicOnlineReportPortalProgressSection />
+    <ClinicOnlineReportPortalWhySection />
+    <ClinicOnlineReportPortalFaqSection />
+    <ClinicOnlineReportPortalConsultationSection />
+  </main>
+  <Footer />
+</Layout>

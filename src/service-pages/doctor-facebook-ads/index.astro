@@ -1,0 +1,47 @@
+---
+// Destination-owned static page. Service-specific images are pending review before publication.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import DoctorFacebookAdsHero from './components/DoctorFacebookAdsHero.astro';
+import DoctorFacebookAdsChallengesSection from './components/DoctorFacebookAdsChallengesSection.astro';
+import DoctorFacebookAdsOutcomesSection from './components/DoctorFacebookAdsOutcomesSection.astro';
+import DoctorFacebookAdsIntentSection from './components/DoctorFacebookAdsIntentSection.astro';
+import DoctorFacebookAdsTrustSection from './components/DoctorFacebookAdsTrustSection.astro';
+import DoctorFacebookAdsExpertiseSection from './components/DoctorFacebookAdsExpertiseSection.astro';
+import DoctorFacebookAdsProcessSection from './components/DoctorFacebookAdsProcessSection.astro';
+import DoctorFacebookAdsMappingSection from './components/DoctorFacebookAdsMappingSection.astro';
+import DoctorFacebookAdsRelatedSection from './components/DoctorFacebookAdsRelatedSection.astro';
+import DoctorFacebookAdsStartingSection from './components/DoctorFacebookAdsStartingSection.astro';
+import DoctorFacebookAdsExampleSection from './components/DoctorFacebookAdsExampleSection.astro';
+import DoctorFacebookAdsProgressSection from './components/DoctorFacebookAdsProgressSection.astro';
+import DoctorFacebookAdsWhySection from './components/DoctorFacebookAdsWhySection.astro';
+import DoctorFacebookAdsFaqSection from './components/DoctorFacebookAdsFaqSection.astro';
+import DoctorFacebookAdsConsultationSection from './components/DoctorFacebookAdsConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { doctorFacebookAdsHeroPreload } from './lib/doctor-facebook-ads-hero-image';
+import './styles/doctor-facebook-ads-rendering.css';
+import './styles/doctor-facebook-ads-source-content.css';
+import { metadata } from './data/doctor-facebook-ads-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={doctorFacebookAdsHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="doctor-facebook-ads-page" tabindex="-1">
+    <DoctorFacebookAdsHero />
+    <DoctorFacebookAdsChallengesSection />
+    <DoctorFacebookAdsOutcomesSection />
+    <DoctorFacebookAdsIntentSection />
+    <DoctorFacebookAdsTrustSection />
+    <DoctorFacebookAdsExpertiseSection />
+    <DoctorFacebookAdsProcessSection />
+    <DoctorFacebookAdsMappingSection />
+    <DoctorFacebookAdsRelatedSection />
+    <DoctorFacebookAdsStartingSection />
+    <DoctorFacebookAdsExampleSection />
+    <DoctorFacebookAdsProgressSection />
+    <DoctorFacebookAdsWhySection />
+    <DoctorFacebookAdsFaqSection />
+    <DoctorFacebookAdsConsultationSection />
+  </main>
+  <Footer />
+</Layout>

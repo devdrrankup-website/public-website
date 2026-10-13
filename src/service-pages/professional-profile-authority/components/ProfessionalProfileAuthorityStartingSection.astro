@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/professional-profile-authority/professional-profile-authority-starting-v1.webp';
+import { pageCopy } from '../data/professional-profile-authority-source';
+const copy = pageCopy.starting;
+import '../styles/professional-profile-authority-starting.css';
+---
+<professional-profile-authority-starting class="professional-profile-authority-starting-motion">
+  <section id="professional-profile-authority-starting" class="professional-profile-authority-starting" aria-labelledby="professional-profile-authority-starting-heading">
+    <div class="section-container professional-profile-authority-starting-layout">
+      <h2 id="professional-profile-authority-starting-heading" data-starting-entry>{copy.heading}</h2>
+      <div class="professional-profile-authority-starting-copy" data-starting-entry>
+        <div class="professional-profile-authority-source-content" set:html={copy.html} />
+      </div>
+      <figure class="professional-profile-authority-starting-visual" data-starting-entry data-starting-visual>
+        <Image src={photo} alt="Doctor and specialist planning a professional profile" title="Doctor and specialist planning a professional profile" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 540px, (min-width:640px) 320px, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+    </div>
+  </section>
+</professional-profile-authority-starting>
+<script>
+  import '../scripts/professional-profile-authority-starting';
+</script>

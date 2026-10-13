@@ -1,0 +1,34 @@
+.clinic-seo-faq-motion { display: block; background: #0a0a0a; }
+.clinic-seo-faq { padding-block: 60px 64px; border-radius: 28px 28px 0 0; color: #000; background: linear-gradient(180deg,#eaf7ff 0%,#eeedfe 68%,#fff 100%); scroll-margin-top: calc(var(--header-height,98px) + 12px); }
+.clinic-seo-faq-layout { display: grid; gap: 32px; max-width: 1200px; }
+.clinic-seo-faq h2 { margin: 0; color: #000; font-size: clamp(36px,9.5vw,44px); font-weight: 650; line-height: 1.15; letter-spacing: -.035em; text-wrap: pretty; }
+.clinic-seo-faq-list { min-width: 0; }
+.clinic-seo-faq-item { padding-block: 24px; border-top: 1px solid #afa9ec66; }
+.clinic-seo-faq-item:last-child { border-bottom: 1px solid #afa9ec66; }
+.clinic-seo-faq-question { margin: 0; color: #000; font-size: 18px; font-weight: 600; line-height: 1.45; letter-spacing: -.02em; }
+.clinic-seo-faq-trigger { display: flex; align-items: center; gap: 16px; width: 100%; min-height: 48px; padding: 4px 0; border: 0; border-radius: var(--control-radius); color: #000; background: transparent; font: inherit; text-align: left; }
+.clinic-seo-faq-label { flex: 1; min-width: 0; }
+.clinic-seo-faq-toggle { display: none; }
+clinic-seo-faq[data-enhanced] .clinic-seo-faq-toggle { display: grid; place-items: center; flex: none; width: 34px; height: 34px; border: 1px solid #afa9ec80; border-radius: 50%; color: #000; background: #eeedfe; }
+.clinic-seo-faq-toggle svg { transition: transform 220ms ease; }
+.clinic-seo-faq-trigger[aria-expanded=true] .clinic-seo-faq-toggle svg { transform: rotate(45deg); }
+.clinic-seo-faq-trigger:focus-visible { outline: 3px solid #6131c6; outline-offset: 5px; }
+.clinic-seo-faq-answer[hidden] { display: none; }
+.clinic-seo-faq-answer p { margin: 0; padding-top: 12px; padding-bottom: 4px; color: #000; font-size: 16px; line-height: 1.85; }
+@media (min-width:640px) {
+  .clinic-seo-faq { padding-block: 72px 80px; border-radius: 36px 36px 0 0; }
+  .clinic-seo-faq-layout { gap: 40px; }
+  .clinic-seo-faq h2 { max-width: 800px; font-size: clamp(44px,5.5vw,56px); }
+  .clinic-seo-faq-question { font-size: 21px; }
+  .clinic-seo-faq-answer p { font-size: 17px; }
+  .clinic-seo-faq-item { padding-block: 26px; }
+}
+@media (min-width:1100px) {
+  .clinic-seo-faq { padding-block: 88px 96px; border-radius: 40px 40px 0 0; }
+  .clinic-seo-faq-layout { grid-template-columns: 350px minmax(0,1fr); gap: 72px; align-items: start; }
+  .clinic-seo-faq-header { position: sticky; top: calc(var(--header-height,94px) + 28px); }
+  .clinic-seo-faq h2 { font-size: clamp(48px,4vw,58px); }
+  .clinic-seo-faq-question { font-size: 22px; }
+  .clinic-seo-faq-item { padding-block: 28px; }
+}
+@media (prefers-reduced-motion:reduce) { .clinic-seo-faq-toggle svg { transition: none; } }

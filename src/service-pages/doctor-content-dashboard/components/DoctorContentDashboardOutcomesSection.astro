@@ -1,0 +1,25 @@
+---
+import DoctorContentDashboardOutcomeVisual from './DoctorContentDashboardOutcomeVisual.astro';
+import { pageCopy } from '../data/doctor-content-dashboard-source';
+const copy = pageCopy.outcomes;
+import '../styles/doctor-content-dashboard-outcomes.css';
+---
+<doctor-content-dashboard-outcomes class="doctor-content-dashboard-outcomes">
+  <section id="doctor-content-dashboard-outcomes" class="section-container" aria-labelledby="doctor-content-dashboard-outcomes-heading">
+    <div class="doctor-content-dashboard-outcomes-heading">
+      <h2 id="doctor-content-dashboard-outcomes-heading">{copy.heading}</h2>
+      <div class="doctor-content-dashboard-outcomes-introduction doctor-content-dashboard-source-content" set:html={copy.before} />
+    </div>
+    <ul class="doctor-content-dashboard-outcomes-list" role="list">
+      {copy.items.map((item, index) => <li class="doctor-content-dashboard-outcome" data-seo-outcomes-motion>
+        <DoctorContentDashboardOutcomeVisual index={index} />
+        <p><strong>{item.label}</strong><span>{item.description}</span></p>
+      </li>)}
+    </ul>
+    <div class="doctor-content-dashboard-outcomes-conclusion doctor-content-dashboard-source-content" set:html={copy.after} />
+  </section>
+</doctor-content-dashboard-outcomes>
+
+<script>
+  import '../scripts/doctor-content-dashboard-outcomes';
+</script>

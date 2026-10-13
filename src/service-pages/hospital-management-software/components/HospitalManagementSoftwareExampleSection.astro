@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/hospital-management-software/hospital-management-software-example-v1.webp';
+import { pageCopy } from '../data/hospital-management-software-source';
+const copy = pageCopy.example;
+import '../styles/hospital-management-software-example.css';
+---
+<hospital-management-software-example class="hospital-management-software-example-motion">
+  <section id="hospital-management-software-example" class="hospital-management-software-example" aria-labelledby="hospital-management-software-example-heading">
+    <div class="section-container hospital-management-software-example-layout">
+      <header class="hospital-management-software-example-header" data-example-entry>
+        <h2 id="hospital-management-software-example-heading">{copy.heading}</h2>
+        <span class="hospital-management-software-example-rule" data-example-rule aria-hidden="true"></span>
+      </header>
+      <figure class="hospital-management-software-example-photo" data-example-entry data-example-photo>
+        <Image src={photo} alt="Hospital staff checking bedside information against a tablet" title="Hospital staff checking bedside information against a tablet" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <div class="hospital-management-software-example-copy">
+        <div class="hospital-management-software-source-content" data-example-entry set:html={copy.html} />
+      </div>
+    </div>
+  </section>
+</hospital-management-software-example>
+<script>
+  import '../scripts/hospital-management-software-example';
+</script>

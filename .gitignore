@@ -4,6 +4,8 @@ dist/
 
 # Generated audits, screenshots, image revisions and local archives
 artifacts/
+src/drafts/
+src/pages/service-drafts/
 coverage/
 playwright-report/
 test-results/

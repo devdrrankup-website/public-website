@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/doctor-personal-branding/doctor-personal-branding-example-v1.webp';
+import { pageCopy } from '../data/doctor-personal-branding-source';
+const copy = pageCopy.example;
+import '../styles/doctor-personal-branding-example.css';
+---
+<doctor-personal-branding-example class="doctor-personal-branding-example-motion">
+  <section id="doctor-personal-branding-example" class="doctor-personal-branding-example" aria-labelledby="doctor-personal-branding-example-heading">
+    <div class="section-container doctor-personal-branding-example-layout">
+      <header class="doctor-personal-branding-example-header" data-example-entry>
+        <h2 id="doctor-personal-branding-example-heading">{copy.heading}</h2>
+        <span class="doctor-personal-branding-example-rule" data-example-rule aria-hidden="true"></span>
+      </header>
+      <figure class="doctor-personal-branding-example-photo" data-example-entry data-example-photo>
+        <Image src={photo} alt="Doctor explaining professional information to a visitor" title="Doctor explaining professional information to a visitor" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <div class="doctor-personal-branding-example-copy">
+        <div class="doctor-personal-branding-source-content" data-example-entry set:html={copy.html} />
+      </div>
+    </div>
+  </section>
+</doctor-personal-branding-example>
+<script>
+  import '../scripts/doctor-personal-branding-example';
+</script>

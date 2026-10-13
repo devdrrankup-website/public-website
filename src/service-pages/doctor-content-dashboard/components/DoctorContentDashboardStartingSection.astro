@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/doctor-content-dashboard/doctor-content-dashboard-starting-v1.webp';
+import { pageCopy } from '../data/doctor-content-dashboard-source';
+const copy = pageCopy.starting;
+import '../styles/doctor-content-dashboard-starting.css';
+---
+<doctor-content-dashboard-starting class="doctor-content-dashboard-starting-motion">
+  <section id="doctor-content-dashboard-starting" class="doctor-content-dashboard-starting" aria-labelledby="doctor-content-dashboard-starting-heading">
+    <div class="section-container doctor-content-dashboard-starting-layout">
+      <h2 id="doctor-content-dashboard-starting-heading" data-starting-entry>{copy.heading}</h2>
+      <div class="doctor-content-dashboard-starting-copy" data-starting-entry>
+        <div class="doctor-content-dashboard-source-content" set:html={copy.html} />
+      </div>
+      <figure class="doctor-content-dashboard-starting-visual" data-starting-entry data-starting-visual>
+        <Image src={photo} alt="Doctor and specialist planning a content dashboard workflow" title="Doctor and specialist planning a content dashboard workflow" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 540px, (min-width:640px) 320px, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+    </div>
+  </section>
+</doctor-content-dashboard-starting>
+<script>
+  import '../scripts/doctor-content-dashboard-starting';
+</script>

@@ -1,0 +1,47 @@
+---
+// Destination-owned static page. Service-specific images are pending review before publication.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import DoctorPersonalBrandingHero from './components/DoctorPersonalBrandingHero.astro';
+import DoctorPersonalBrandingChallengesSection from './components/DoctorPersonalBrandingChallengesSection.astro';
+import DoctorPersonalBrandingOutcomesSection from './components/DoctorPersonalBrandingOutcomesSection.astro';
+import DoctorPersonalBrandingIntentSection from './components/DoctorPersonalBrandingIntentSection.astro';
+import DoctorPersonalBrandingTrustSection from './components/DoctorPersonalBrandingTrustSection.astro';
+import DoctorPersonalBrandingExpertiseSection from './components/DoctorPersonalBrandingExpertiseSection.astro';
+import DoctorPersonalBrandingProcessSection from './components/DoctorPersonalBrandingProcessSection.astro';
+import DoctorPersonalBrandingMappingSection from './components/DoctorPersonalBrandingMappingSection.astro';
+import DoctorPersonalBrandingRelatedSection from './components/DoctorPersonalBrandingRelatedSection.astro';
+import DoctorPersonalBrandingStartingSection from './components/DoctorPersonalBrandingStartingSection.astro';
+import DoctorPersonalBrandingExampleSection from './components/DoctorPersonalBrandingExampleSection.astro';
+import DoctorPersonalBrandingProgressSection from './components/DoctorPersonalBrandingProgressSection.astro';
+import DoctorPersonalBrandingWhySection from './components/DoctorPersonalBrandingWhySection.astro';
+import DoctorPersonalBrandingFaqSection from './components/DoctorPersonalBrandingFaqSection.astro';
+import DoctorPersonalBrandingConsultationSection from './components/DoctorPersonalBrandingConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { doctorPersonalBrandingHeroPreload } from './lib/doctor-personal-branding-hero-image';
+import './styles/doctor-personal-branding-rendering.css';
+import './styles/doctor-personal-branding-source-content.css';
+import { metadata } from './data/doctor-personal-branding-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={doctorPersonalBrandingHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="doctor-personal-branding-page" tabindex="-1">
+    <DoctorPersonalBrandingHero />
+    <DoctorPersonalBrandingChallengesSection />
+    <DoctorPersonalBrandingOutcomesSection />
+    <DoctorPersonalBrandingIntentSection />
+    <DoctorPersonalBrandingTrustSection />
+    <DoctorPersonalBrandingExpertiseSection />
+    <DoctorPersonalBrandingProcessSection />
+    <DoctorPersonalBrandingMappingSection />
+    <DoctorPersonalBrandingRelatedSection />
+    <DoctorPersonalBrandingStartingSection />
+    <DoctorPersonalBrandingExampleSection />
+    <DoctorPersonalBrandingProgressSection />
+    <DoctorPersonalBrandingWhySection />
+    <DoctorPersonalBrandingFaqSection />
+    <DoctorPersonalBrandingConsultationSection />
+  </main>
+  <Footer />
+</Layout>

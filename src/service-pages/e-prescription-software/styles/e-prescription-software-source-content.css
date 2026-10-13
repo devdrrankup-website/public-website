@@ -1,0 +1,8 @@
+.e-prescription-software-source-content:empty { display: none; }
+.e-prescription-software-source-content :where(p) { margin: 0 0 1em; line-height: 1.7; }
+.e-prescription-software-source-content :where(p:last-child) { margin-bottom: 0; }
+.e-prescription-software-source-content ul, .e-prescription-software-source-content ol { margin: .75em 0 1em; padding-left: 1.35em; }
+.e-prescription-software-source-content li { margin: .42em 0; line-height: 1.65; }
+.e-prescription-software-source-content strong { font-weight: 700; }
+.e-prescription-software-source-content table { width: 100%; border-collapse: collapse; }
+.e-prescription-software-source-content th, .e-prescription-software-source-content td { padding: .7em; text-align: left; border-bottom: 1px solid #0002; }

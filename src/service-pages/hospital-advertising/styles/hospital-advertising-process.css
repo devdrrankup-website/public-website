@@ -1,0 +1,224 @@
+.hospital-advertising-process-motion {
+  display: block;
+  background: #fff;
+}
+
+.hospital-advertising-process {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  padding-block: 52px 68px;
+  border-radius: 28px 28px 0 0;
+  scroll-margin-top: calc(var(--header-height) + 12px);
+  color: #000;
+  background:
+    linear-gradient(180deg, transparent calc(100% - 72px), #f3f5ff 100%),
+    radial-gradient(ellipse at 92% 10%, #bae5ff80 0%, #bae5ff00 48%),
+    radial-gradient(ellipse at 4% 84%, #eeedfe 0%, #eeedfe00 52%),
+    #fff;
+}
+
+.hospital-advertising-process-atmosphere {
+  position: absolute;
+  z-index: -1;
+  top: 20px;
+  right: -120px;
+  width: 300px;
+  aspect-ratio: 1;
+  border: 1px solid #6131c61a;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 42px #ffffff70, inset 0 0 0 43px #229f6014, inset 0 0 0 88px #ffffff66, inset 0 0 0 89px #6131c612;
+  pointer-events: none;
+}
+
+.hospital-advertising-process-background {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  overflow: hidden;
+  opacity: .075;
+  pointer-events: none;
+  mask-image: linear-gradient(180deg, transparent 0%, #000 10%, #000 90%, transparent 100%);
+}
+.hospital-advertising-process-background img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 68% center;
+  filter: saturate(.58) contrast(.88);
+}
+
+.hospital-advertising-process-layout { display: grid; gap: 34px; }
+.hospital-advertising-process-header { max-width: 520px; }
+.hospital-advertising-process-range {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  color: #6131c6;
+  font-size: 11px;
+  font-weight: 750;
+  line-height: 1;
+  letter-spacing: .16em;
+}
+.hospital-advertising-process-range::after { content: ''; width: 48px; height: 1px; background: #6131c6; }
+.hospital-advertising-process h2 {
+  margin: 0;
+  color: #000;
+  font-size: clamp(36px, 10.8vw, 48px);
+  font-weight: 650;
+  line-height: 1.08;
+  letter-spacing: -.05em;
+}
+
+.hospital-advertising-process-flow { position: relative; }
+.hospital-advertising-process-route { display: none; visibility: hidden; }
+.hospital-advertising-process-motion[data-seo-route-measured] .hospital-advertising-process-route { visibility: visible; }
+.hospital-advertising-process-step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr);
+  gap: 16px;
+  min-width: 0;
+  padding-block: 18px 24px;
+  border-top: 1px solid #0000001a;
+}
+.hospital-advertising-process-step:last-child { border-bottom: 1px solid #0000001a; }
+.hospital-advertising-process-node-column { position: relative; align-self: stretch; min-height: 76px; }
+.hospital-advertising-process-node {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #6131c6;
+  border-radius: 50%;
+  color: #6131c6;
+  background: #fff;
+  box-shadow: 0 0 0 6px #ffffffcc;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: .08em;
+  transition: color 420ms, background-color 420ms, border-color 420ms, box-shadow 420ms;
+  transition-delay: var(--seo-process-delay, 0ms);
+}
+.hospital-advertising-process-connector {
+  position: absolute;
+  z-index: 1;
+  top: 44px;
+  bottom: -25px;
+  left: 21px;
+  width: 2px;
+  transform-origin: 50% 0;
+  background: linear-gradient(180deg, #6131c6 0%, #229f60 72%, #229f6028 100%);
+  transition: transform 640ms cubic-bezier(.2,.65,.3,1);
+  transition-delay: var(--seo-process-delay, 0ms);
+}
+.hospital-advertising-process-copy { min-width: 0; padding-top: 4px; }
+.hospital-advertising-process-step h3 {
+  margin: 0;
+  color: #000;
+  font-size: 22px;
+  font-weight: 650;
+  line-height: 1.25;
+  letter-spacing: -.03em;
+}
+.hospital-advertising-process-step h3 span { color: #6131c6; font-size: .62em; letter-spacing: .04em; }
+.hospital-advertising-process-step p {
+  max-width: 620px;
+  margin: 9px 0 0;
+  color: #000;
+  font-size: 14px;
+  line-height: 1.72;
+}
+
+.hospital-advertising-process-motion.is-enhanced .hospital-advertising-process-step:not(.is-active) .hospital-advertising-process-node {
+  color: #0000008f;
+  border-color: #0000002e;
+  box-shadow: 0 0 0 6px #ffffffcc;
+}
+.hospital-advertising-process-motion.is-enhanced .hospital-advertising-process-step:not(.is-active) .hospital-advertising-process-connector { transform: scaleY(.08); }
+.hospital-advertising-process-step.is-active .hospital-advertising-process-node {
+  color: #000;
+  border-color: #e1ffb9;
+  background: #e1ffb9;
+  box-shadow: 0 0 0 6px #ffffffcc, 0 8px 26px #229f6038;
+}
+
+@media (min-width: 640px) {
+  .hospital-advertising-process { padding-block: 72px 84px; border-radius: 36px 36px 0 0; }
+  .hospital-advertising-process-atmosphere { top: -50px; right: -170px; width: 470px; }
+  .hospital-advertising-process-background { opacity: .08; }
+  .hospital-advertising-process-background img { object-position: 70% center; }
+  .hospital-advertising-process-layout {
+    grid-template-columns: minmax(220px, .72fr) minmax(0, 1.28fr);
+    align-items: start;
+    gap: clamp(40px, 7vw, 76px);
+  }
+  .hospital-advertising-process-header { position: sticky; top: calc(var(--header-height) + 28px); }
+  .hospital-advertising-process h2 { font-size: clamp(48px, 7vw, 64px); }
+  .hospital-advertising-process-step { grid-template-columns: 50px minmax(0, 1fr); gap: 20px; padding-block: 24px 30px; }
+  .hospital-advertising-process-node { width: 48px; height: 48px; }
+  .hospital-advertising-process-connector { top: 48px; bottom: -31px; left: 23px; }
+  .hospital-advertising-process-step h3 { font-size: 25px; }
+  .hospital-advertising-process-step p { font-size: 15px; }
+}
+
+@media (min-width: 1100px) {
+  .hospital-advertising-process { padding-block: 88px 104px; border-radius: 40px 40px 0 0; }
+  .hospital-advertising-process-atmosphere { top: -220px; right: -130px; width: 680px; }
+  .hospital-advertising-process-background { opacity: .085; }
+  .hospital-advertising-process-background img { object-position: center; }
+  .hospital-advertising-process-layout { display: block; }
+  .hospital-advertising-process-header { position: static; max-width: none; margin-bottom: 72px; }
+  .hospital-advertising-process h2 { font-size: clamp(58px, 5vw, 76px); }
+  .hospital-advertising-process-flow {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: minmax(220px, auto);
+    column-gap: clamp(30px, 4vw, 64px);
+    row-gap: 62px;
+  }
+  .hospital-advertising-process-route { display: block; position: absolute; z-index: 0; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+  .hospital-advertising-process-route path { fill: none; vector-effect: non-scaling-stroke; }
+  .hospital-advertising-process-route-base { stroke: #6131c626; stroke-width: 1.4; }
+  .hospital-advertising-process-route-progress {
+    stroke: url('#hospital-advertising-process-route-gradient');
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-dasharray: var(--seo-route-length, 0);
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1600ms cubic-bezier(.2,.65,.3,1);
+  }
+  .hospital-advertising-process-motion.is-enhanced:not(.is-route-active) .hospital-advertising-process-route-progress { stroke-dashoffset: var(--seo-route-length, 0); }
+  .hospital-advertising-process-step {
+    z-index: 1;
+    display: block;
+    padding: 0 12px;
+    border: 0;
+    text-align: center;
+  }
+  .hospital-advertising-process-step:last-child { border: 0; }
+  .hospital-advertising-process-step:nth-child(5) { grid-column: 3; grid-row: 2; }
+  .hospital-advertising-process-step:nth-child(6) { grid-column: 2; grid-row: 2; }
+  .hospital-advertising-process-step:nth-child(7) { grid-column: 1; grid-row: 2; }
+  .hospital-advertising-process-step:nth-child(8) { grid-column: 1; grid-row: 3; }
+  .hospital-advertising-process-node-column { min-height: 66px; }
+  .hospital-advertising-process-node { width: 58px; height: 58px; margin-inline: auto; font-size: 11px; box-shadow: 0 0 0 8px #ffffffcc; }
+  .hospital-advertising-process-connector { display: none; }
+  .hospital-advertising-process-copy { padding-top: 14px; }
+  .hospital-advertising-process-step h3 { font-size: 27px; }
+  .hospital-advertising-process-step p { max-width: 330px; margin: 12px auto 0; font-size: 15px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hospital-advertising-process-node,
+  .hospital-advertising-process-connector,
+  .hospital-advertising-process-route-progress { transition-property: none !important; transition-duration: 0ms !important; transition-delay: 0ms !important; }
+}
+
+
+.hospital-advertising-process-step p + p { margin-top: 14px; }

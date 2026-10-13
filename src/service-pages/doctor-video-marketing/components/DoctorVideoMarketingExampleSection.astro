@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/doctor-video-marketing/doctor-video-marketing-example-v1.webp';
+import { pageCopy } from '../data/doctor-video-marketing-source';
+const copy = pageCopy.example;
+import '../styles/doctor-video-marketing-example.css';
+---
+<doctor-video-marketing-example class="doctor-video-marketing-example-motion">
+  <section id="doctor-video-marketing-example" class="doctor-video-marketing-example" aria-labelledby="doctor-video-marketing-example-heading">
+    <div class="section-container doctor-video-marketing-example-layout">
+      <header class="doctor-video-marketing-example-header" data-example-entry>
+        <h2 id="doctor-video-marketing-example-heading">{copy.heading}</h2>
+        <span class="doctor-video-marketing-example-rule" data-example-rule aria-hidden="true"></span>
+      </header>
+      <figure class="doctor-video-marketing-example-photo" data-example-entry data-example-photo>
+        <Image src={photo} alt="Doctor recording a short educational video in his chamber" title="Doctor recording a short educational video in his chamber" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <div class="doctor-video-marketing-example-copy">
+        <div class="doctor-video-marketing-source-content" data-example-entry set:html={copy.html} />
+      </div>
+    </div>
+  </section>
+</doctor-video-marketing-example>
+<script>
+  import '../scripts/doctor-video-marketing-example';
+</script>

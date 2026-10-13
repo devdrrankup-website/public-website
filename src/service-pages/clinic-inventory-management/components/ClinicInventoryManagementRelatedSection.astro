@@ -1,0 +1,66 @@
+---
+import { Image } from 'astro:assets';
+import Icon from '../../../components/Icon.astro';
+import Arrow from '../../../components/Arrow.astro';
+import MicroscopeIcon from '@hugeicons/core-free-icons/MicroscopeIcon';
+import CreditCardIcon from '@hugeicons/core-free-icons/CreditCardIcon';
+import Calendar03Icon from '@hugeicons/core-free-icons/Calendar03Icon';
+import { pageCopy } from '../data/clinic-inventory-management-source';
+const copy = pageCopy.related;
+import relatedImage0 from '../../../assets/diagnostic-management/diagnostic-management-related-preview-v1.webp';
+import relatedImage1 from '../../../assets/pathology-reporting-software/pathology-reporting-software-related-preview-v1.webp';
+import relatedImage2 from '../../../assets/clinic-billing-software/clinic-billing-software-related-preview-v1.webp';
+import relatedImage3 from '../../../assets/clinic-doctor-schedule-management/clinic-doctor-schedule-management-related-preview-v1.webp';
+import '../styles/clinic-inventory-management-related.css';
+const visuals = [
+  { image: relatedImage0, icon: MicroscopeIcon, accent: '#BAE5FF', description: "Inside a diagnostic centre, an administrator observes a technician moving sealed specimen tubes between clearly separate reception and processing trays." },
+  { image: relatedImage1, icon: MicroscopeIcon, accent: '#EEEDFE', description: "A pathology laboratory supervisor reviews a neutral digital report layout at a lab workstation, with sample racks safely behind the screen and no results visible." },
+  { image: relatedImage2, icon: CreditCardIcon, accent: '#FEF2CC', description: "At a clinic checkout counter, a cashier prints an itemised blank receipt after verifying charge categories on a properly oriented workstation." },
+  { image: relatedImage3, icon: Calendar03Icon, accent: '#E4FFBD', description: "At a clinic reception before opening, a scheduling coordinator posts a doctor's weekly availability on an unmarked notice board while staff prepare the desk." },
+];
+---
+<section id="clinic-inventory-management-related" class="clinic-inventory-management-related" aria-labelledby="clinic-inventory-management-related-heading">
+  <div class="section-container clinic-inventory-management-related-container">
+    <clinic-inventory-management-related>
+      <header class="clinic-inventory-management-related-header" data-related-entry>
+        <h2 id="clinic-inventory-management-related-heading">{copy.heading}</h2>
+        <div class="clinic-inventory-management-source-content" set:html={copy.introductionHtml} />
+      </header>
+      <div class="clinic-inventory-management-related-layout">
+        <div class="clinic-inventory-management-related-dock">
+          <div class="clinic-inventory-management-related-selectors" role="group" aria-label="Service image previews" hidden>
+            {copy.services.map((service, index) => <button type="button" aria-pressed={index === 0 ? 'true' : 'false'} aria-controls={`related-${service.key}`} data-related-select={index}>
+              <span>{service.name}</span>
+            </button>)}
+          </div>
+          <div class="clinic-inventory-management-related-stage" aria-hidden="true" hidden></div>
+        </div>
+        <div class="clinic-inventory-management-related-details">
+          <div class="clinic-inventory-management-related-labels"><span>{copy.headers[0]}</span><span>{copy.headers[1]}</span></div>
+          <dl class="clinic-inventory-management-related-list">
+            {copy.services.map((service, index) => <div class="clinic-inventory-management-related-row" id={`related-${service.key}`} data-service={service.key}>
+              <dt>
+                <span class="clinic-inventory-management-related-badge" style={`--related-accent:${visuals[index % visuals.length].accent}`}><Icon icon={visuals[index % visuals.length].icon} size={21} strokeWidth={1.8} /></span>
+                <span class="clinic-inventory-management-related-reveal" aria-hidden="true"></span>
+                {service.href ? <a class="clinic-inventory-management-related-name" href={service.href}>{service.name}</a>
+                  : <span class="clinic-inventory-management-related-name">{service.name}</span>}
+                <span class="clinic-inventory-management-related-arrow" aria-hidden="true"><Arrow /></span>
+              </dt>
+              <dd>
+                <span>{service.responsibility}</span>
+                <figure class="clinic-inventory-management-related-photo">
+                  <Image src={visuals[index % visuals.length].image} alt={visuals[index % visuals.length].description} title={visuals[index % visuals.length].description} width={960} widths={[360,640,960]} sizes="(min-width:1100px) 700px, (min-width:640px) 700px, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+                  <figcaption>{service.name}</figcaption>
+                </figure>
+              </dd>
+            </div>)}
+          </dl>
+          <div class="clinic-inventory-management-related-note clinic-inventory-management-source-content" set:html={copy.noteHtml} />
+        </div>
+      </div>
+    </clinic-inventory-management-related>
+  </div>
+</section>
+<script>
+  import '../scripts/clinic-inventory-management-related';
+</script>

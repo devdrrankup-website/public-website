@@ -1,0 +1,38 @@
+---
+import ActionIcon from '../../../components/ActionIcon.astro';
+import { pageCopy } from '../data/patient-fee-management-source';
+const copy = pageCopy.hero;
+import { patientFeeManagementHeroImage as photo } from '../lib/patient-fee-management-hero-image';
+import '../styles/patient-fee-management-hero.css';
+---
+
+<section class="patient-fee-management-hero" aria-labelledby="patient-fee-management-heading">
+  <div class="section-container patient-fee-management-hero-layout">
+    <div class="patient-fee-management-hero-copy">
+      <h1 id="patient-fee-management-heading">{copy.heading}</h1>
+      <p class="patient-fee-management-hero-tagline">{copy.tagline}</p>
+      <div class="patient-fee-management-hero-description">
+        {copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+      </div>
+      <div class="patient-fee-management-hero-actions" aria-label={`${copy.heading} options`}>
+        <span class="button button-primary">
+          <span>{copy.primaryCta}</span><ActionIcon purpose="conversation" />
+        </span>
+        {copy.secondaryHref ? <a class="button button-secondary" href={copy.secondaryHref}>
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </a> : <span class="button button-secondary">
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </span>}
+      </div>
+    </div>
+    <div class="patient-fee-management-hero-visual">
+      <div class="patient-fee-management-hero-photo">
+        <img src={photo.src} srcset={photo.srcset} sizes={photo.sizes}
+          width={photo.width} height={photo.height}
+          alt="Chamber cashier giving a visitor a receipt after checking payment"
+          title="Managing patient fees at the front desk"
+          loading="eager" fetchpriority="high" decoding="async" />
+      </div>
+    </div>
+  </div>
+</section>

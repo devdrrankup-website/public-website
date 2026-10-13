@@ -1,0 +1,39 @@
+---
+import { Image } from 'astro:assets';
+import expertPortrait from '../../../assets/team/sirajul-islam-studio-v2.webp';
+import { pageCopy } from '../data/hospital-website-development-source';
+const copy = pageCopy.expertise;
+const paragraphs = Array.from(copy.html.matchAll(/<p>([\s\S]*?)<\/p>/g), match => match[1]);
+const principleSentences = paragraphs.slice(1).flatMap(paragraph => paragraph.split(/(?<=[.!?])\s+(?=[A-Z])/));
+import '../styles/hospital-website-development-expertise.css';
+---
+<hospital-website-development-expertise class="hospital-website-development-expertise-motion">
+  <section id="hospital-website-development-expertise" class="hospital-website-development-expertise" aria-labelledby="hospital-website-development-expertise-heading">
+    <div class="section-container hospital-website-development-expertise-layout">
+      <h2 id="hospital-website-development-expertise-heading">{copy.heading}</h2>
+      <figure class="hospital-website-development-expertise-portrait">
+        <div class="hospital-website-development-expertise-photo">
+          <Image src={expertPortrait} widths={[320, 480, 640, 960]} width={1254} height={1254}
+            sizes="(min-width: 1100px) min(40vw, 480px), (min-width: 640px) min(36vw, 360px), min(calc(100vw - 32px), 360px)"
+            format="webp" quality={80} loading="lazy" decoding="async"
+            alt="Sirajul Islam in a navy blazer against a grey studio background"
+            title="Sirajul Islam — Dr RankUP specialist"
+            data-expertise-reveal="portrait" />
+        </div>
+        <figcaption data-expertise-reveal="copy">{copy.founder}</figcaption>
+      </figure>
+      <div class="hospital-website-development-expertise-record">
+        <p class="hospital-website-development-expertise-context" data-expertise-reveal="copy" set:html={paragraphs[0]} />
+      </div>
+      <div class="hospital-website-development-expertise-principles">
+        <span class="hospital-website-development-expertise-rule" data-expertise-reveal="rule" aria-hidden="true"></span>
+        <ul role="list">
+          {principleSentences.map((sentence, index) => <li data-expertise-reveal="copy" data-expertise-delay={Math.min(index * 60, 100)} set:html={sentence} />)}
+        </ul>
+      </div>
+    </div>
+  </section>
+</hospital-website-development-expertise>
+<script>
+  import '../scripts/hospital-website-development-expertise';
+</script>

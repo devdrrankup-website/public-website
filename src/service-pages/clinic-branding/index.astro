@@ -1,0 +1,47 @@
+---
+// Destination-owned static page. Service-specific images are pending review before publication.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import ClinicBrandingHero from './components/ClinicBrandingHero.astro';
+import ClinicBrandingChallengesSection from './components/ClinicBrandingChallengesSection.astro';
+import ClinicBrandingOutcomesSection from './components/ClinicBrandingOutcomesSection.astro';
+import ClinicBrandingIntentSection from './components/ClinicBrandingIntentSection.astro';
+import ClinicBrandingTrustSection from './components/ClinicBrandingTrustSection.astro';
+import ClinicBrandingExpertiseSection from './components/ClinicBrandingExpertiseSection.astro';
+import ClinicBrandingProcessSection from './components/ClinicBrandingProcessSection.astro';
+import ClinicBrandingMappingSection from './components/ClinicBrandingMappingSection.astro';
+import ClinicBrandingRelatedSection from './components/ClinicBrandingRelatedSection.astro';
+import ClinicBrandingStartingSection from './components/ClinicBrandingStartingSection.astro';
+import ClinicBrandingExampleSection from './components/ClinicBrandingExampleSection.astro';
+import ClinicBrandingProgressSection from './components/ClinicBrandingProgressSection.astro';
+import ClinicBrandingWhySection from './components/ClinicBrandingWhySection.astro';
+import ClinicBrandingFaqSection from './components/ClinicBrandingFaqSection.astro';
+import ClinicBrandingConsultationSection from './components/ClinicBrandingConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { clinicBrandingHeroPreload } from './lib/clinic-branding-hero-image';
+import './styles/clinic-branding-rendering.css';
+import './styles/clinic-branding-source-content.css';
+import { metadata } from './data/clinic-branding-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={clinicBrandingHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="clinic-branding-page" tabindex="-1">
+    <ClinicBrandingHero />
+    <ClinicBrandingChallengesSection />
+    <ClinicBrandingOutcomesSection />
+    <ClinicBrandingIntentSection />
+    <ClinicBrandingTrustSection />
+    <ClinicBrandingExpertiseSection />
+    <ClinicBrandingProcessSection />
+    <ClinicBrandingMappingSection />
+    <ClinicBrandingRelatedSection />
+    <ClinicBrandingStartingSection />
+    <ClinicBrandingExampleSection />
+    <ClinicBrandingProgressSection />
+    <ClinicBrandingWhySection />
+    <ClinicBrandingFaqSection />
+    <ClinicBrandingConsultationSection />
+  </main>
+  <Footer />
+</Layout>

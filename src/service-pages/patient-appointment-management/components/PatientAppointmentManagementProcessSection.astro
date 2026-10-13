@@ -1,0 +1,57 @@
+---
+import { Image } from 'astro:assets';
+import { pageCopy } from '../data/patient-appointment-management-source';
+const copy = pageCopy.process;
+import processBackground from '../../../assets/patient-appointment-management/patient-appointment-management-process-workflow-v1.webp';
+import '../styles/patient-appointment-management-process.css';
+// Destination-owned copy of the approved For Doctors process composition.
+const titleParts = (title: string) => [title.match(/^\d+\.\s+/)?.[0] ?? '', title.replace(/^\d+\.\s+/, '')];
+---
+
+<patient-appointment-management-process class="patient-appointment-management-process-motion">
+  <section id="patient-appointment-management-process" class="patient-appointment-management-process" aria-labelledby="patient-appointment-management-process-heading">
+    <div class="patient-appointment-management-process-background" aria-hidden="true">
+      <Image src={processBackground} width={1024} widths={[480, 768, 1024]} sizes="100vw" format="webp" quality={40}
+        alt="" title="At a doctor's chamber reception, two administrative workers reconcile appointment request cards with a desk schedule before patients arrive; no patient information visible." loading="lazy" decoding="async" />
+    </div>
+    <div class="patient-appointment-management-process-atmosphere" aria-hidden="true"></div>
+    <div class="section-container patient-appointment-management-process-layout">
+      <header class="patient-appointment-management-process-header" data-seo-process-copy>
+        <span class="patient-appointment-management-process-range" aria-hidden="true">{`01—${String(copy.steps.length).padStart(2, '0')}`}</span>
+        <h2 id="patient-appointment-management-process-heading">{copy.heading}</h2>
+        <div class="patient-appointment-management-source-content" set:html={copy.introductionHtml} />
+      </header>
+
+      <div class="patient-appointment-management-process-flow" role="list" aria-label={`${copy.steps.length} service steps`}>
+        <svg class="patient-appointment-management-process-route" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="patient-appointment-management-process-route-gradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="100" y2="100">
+              <stop offset="0" stop-color="#6131c6" />
+              <stop offset="0.5" stop-color="#229f60" />
+              <stop offset="1" stop-color="#6131c6" />
+            </linearGradient>
+          </defs>
+          <path class="patient-appointment-management-process-route-base" />
+          <path class="patient-appointment-management-process-route-progress" />
+        </svg>
+
+        {copy.steps.map((step, index) => (
+          <div class="patient-appointment-management-process-step" role="listitem" data-seo-process-step>
+            <div class="patient-appointment-management-process-node-column" aria-hidden="true">
+              <span class="patient-appointment-management-process-node"><span>{String(index + 1).padStart(2, '0')}</span></span>
+              {index < copy.steps.length - 1 && <span class="patient-appointment-management-process-connector"></span>}
+            </div>
+            <div class="patient-appointment-management-process-copy" data-seo-process-copy>
+              <h3><span>{titleParts(step.title)[0]}</span>{titleParts(step.title)[1]}</h3>
+              <div class="patient-appointment-management-source-content" set:html={step.html} />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</patient-appointment-management-process>
+
+<script>
+  import '../scripts/patient-appointment-management-process';
+</script>

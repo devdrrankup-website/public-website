@@ -1,0 +1,43 @@
+.patient-fee-management-outcomes { display: block; padding-block: 32px 56px; color: #000; background: linear-gradient(180deg, #fff 0%, #f5faff 40%, #f6f5ff 75%, #fff 100%); }
+.patient-fee-management-outcomes > .section-container { max-width: 1200px; }
+.patient-fee-management-outcomes h2 { margin: 0; color: #000; font-size: clamp(28px, 7.3vw, 38px); font-weight: 650; line-height: 1.24; letter-spacing: -.035em; text-wrap: pretty; }
+.patient-fee-management-outcomes-introduction { margin: 20px 0 0; color: #000; font-size: 15px; line-height: 1.85; }
+.patient-fee-management-outcomes-list { display: grid; gap: 0; list-style: none; margin: 12px 0 0; padding: 0; }
+.patient-fee-management-outcome { min-width: 0; padding-block: 24px; border-bottom: 1px solid #afa9ec55; }
+.patient-fee-management-outcome p { margin: 12px 0 0; color: #000; font-size: 15px; line-height: 1.8; }
+.patient-fee-management-outcome strong { display: block; margin-bottom: 8px; color: #000; font-size: 20px; line-height: 1.4; font-weight: 650; letter-spacing: -.02em; }
+.patient-fee-management-outcome-visual { position: relative; width: 180px; max-width: 100%; height: 112px; color: #6131c6; }
+.patient-fee-management-outcome-visual > svg { display: block; width: 100%; height: 100%; }
+.patient-fee-management-outcome-badge { position: absolute; top: 33px; right: 0; display: grid; place-items: center; width: 44px; height: 44px; border: 3px solid #fff; border-radius: 50%; background: #eeedfe; }
+.patient-fee-management-outcome-visual-1 .patient-fee-management-outcome-badge { background: #bae5ff; }
+.patient-fee-management-outcome-visual-2 .patient-fee-management-outcome-badge { background: #e1ffb9; color: #000; }
+.patient-fee-management-outcome-visual-3 .patient-fee-management-outcome-badge { background: #fef2cc; color: #000; }
+.patient-fee-management-outcome-visual-4 .patient-fee-management-outcome-badge { background: #eddafa; }
+.patient-fee-management-outcomes-conclusion { margin: 28px 0 0; color: #000; font-size: 15px; line-height: 1.85; }
+@media (min-width: 640px) {
+  .patient-fee-management-outcomes { padding-block: 44px 72px; }
+  .patient-fee-management-outcomes h2 { max-width: 820px; font-size: clamp(34px, 4.6vw, 44px); }
+  .patient-fee-management-outcomes-introduction { max-width: 720px; font-size: 16px; }
+  .patient-fee-management-outcomes-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 32px; margin-top: 24px; }
+  .patient-fee-management-outcome { padding-block: 24px 28px; }
+  .patient-fee-management-outcome:last-child { grid-column: 1 / -1; width: calc(50% - 16px); justify-self: center; }
+  .patient-fee-management-outcome p { font-size: 16px; }
+  .patient-fee-management-outcome strong { font-size: 22px; }
+  .patient-fee-management-outcome-visual { width: 200px; height: 124px; }
+  .patient-fee-management-outcome-badge { top: 37px; }
+  .patient-fee-management-outcomes-conclusion { margin-top: 32px; font-size: 16px; text-align: center; }
+}
+@media (min-width: 1100px) {
+  .patient-fee-management-outcomes { padding-block: 56px 88px; }
+  .patient-fee-management-outcomes-heading { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); align-items: end; gap: 64px; }
+  .patient-fee-management-outcomes h2 { font-size: clamp(40px, 3.15vw, 46px); }
+  .patient-fee-management-outcomes-introduction { margin: 0 0 4px; }
+  .patient-fee-management-outcomes-list { grid-template-columns: repeat(6, minmax(0, 1fr)); column-gap: 48px; row-gap: 12px; margin-top: 36px; }
+  .patient-fee-management-outcome { grid-column: span 2; padding-bottom: 32px; }
+  .patient-fee-management-outcome:nth-child(4):nth-last-child(2),
+  .patient-fee-management-outcome:nth-child(5):last-child { grid-column: span 3; }
+  .patient-fee-management-outcome:last-child { grid-column: span 2; justify-self: stretch; width: 100%; }
+}
+
+.patient-fee-management-outcomes-introduction p { line-height: inherit; }
+.patient-fee-management-outcomes-conclusion p { line-height: inherit; }

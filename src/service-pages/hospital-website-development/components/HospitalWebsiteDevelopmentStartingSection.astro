@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/hospital-website-development/hospital-website-development-starting-v1.webp';
+import { pageCopy } from '../data/hospital-website-development-source';
+const copy = pageCopy.starting;
+import '../styles/hospital-website-development-starting.css';
+---
+<hospital-website-development-starting class="hospital-website-development-starting-motion">
+  <section id="hospital-website-development-starting" class="hospital-website-development-starting" aria-labelledby="hospital-website-development-starting-heading">
+    <div class="section-container hospital-website-development-starting-layout">
+      <h2 id="hospital-website-development-starting-heading" data-starting-entry>{copy.heading}</h2>
+      <div class="hospital-website-development-starting-copy" data-starting-entry>
+        <div class="hospital-website-development-source-content" set:html={copy.html} />
+      </div>
+      <figure class="hospital-website-development-starting-visual" data-starting-entry data-starting-visual>
+        <Image src={photo} alt="Hospital manager and specialist planning a website structure" title="Hospital manager and specialist planning a website structure" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 540px, (min-width:640px) 320px, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+    </div>
+  </section>
+</hospital-website-development-starting>
+<script>
+  import '../scripts/hospital-website-development-starting';
+</script>

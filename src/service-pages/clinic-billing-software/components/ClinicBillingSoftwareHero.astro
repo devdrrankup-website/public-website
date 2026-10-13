@@ -1,0 +1,38 @@
+---
+import ActionIcon from '../../../components/ActionIcon.astro';
+import { pageCopy } from '../data/clinic-billing-software-source';
+const copy = pageCopy.hero;
+import { clinicBillingSoftwareHeroImage as photo } from '../lib/clinic-billing-software-hero-image';
+import '../styles/clinic-billing-software-hero.css';
+---
+
+<section class="clinic-billing-software-hero" aria-labelledby="clinic-billing-software-heading">
+  <div class="section-container clinic-billing-software-hero-layout">
+    <div class="clinic-billing-software-hero-copy">
+      <h1 id="clinic-billing-software-heading">{copy.heading}</h1>
+      <p class="clinic-billing-software-hero-tagline">{copy.tagline}</p>
+      <div class="clinic-billing-software-hero-description">
+        {copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+      </div>
+      <div class="clinic-billing-software-hero-actions" aria-label={`${copy.heading} options`}>
+        <span class="button button-primary">
+          <span>{copy.primaryCta}</span><ActionIcon purpose="conversation" />
+        </span>
+        {copy.secondaryHref ? <a class="button button-secondary" href={copy.secondaryHref}>
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </a> : <span class="button button-secondary">
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </span>}
+      </div>
+    </div>
+    <div class="clinic-billing-software-hero-visual">
+      <div class="clinic-billing-software-hero-photo">
+        <img src={photo.src} srcset={photo.srcset} sizes={photo.sizes}
+          width={photo.width} height={photo.height}
+          alt="Clinic reception and accounts staff checking payment receipts at the front desk"
+          title="Reviewing clinic payments at reception"
+          loading="eager" fetchpriority="high" decoding="async" />
+      </div>
+    </div>
+  </div>
+</section>

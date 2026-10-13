@@ -1,0 +1,47 @@
+---
+// Destination-owned static page. Service-specific images are pending review before publication.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import DoctorSchedulingSoftwareHero from './components/DoctorSchedulingSoftwareHero.astro';
+import DoctorSchedulingSoftwareChallengesSection from './components/DoctorSchedulingSoftwareChallengesSection.astro';
+import DoctorSchedulingSoftwareOutcomesSection from './components/DoctorSchedulingSoftwareOutcomesSection.astro';
+import DoctorSchedulingSoftwareIntentSection from './components/DoctorSchedulingSoftwareIntentSection.astro';
+import DoctorSchedulingSoftwareTrustSection from './components/DoctorSchedulingSoftwareTrustSection.astro';
+import DoctorSchedulingSoftwareExpertiseSection from './components/DoctorSchedulingSoftwareExpertiseSection.astro';
+import DoctorSchedulingSoftwareProcessSection from './components/DoctorSchedulingSoftwareProcessSection.astro';
+import DoctorSchedulingSoftwareMappingSection from './components/DoctorSchedulingSoftwareMappingSection.astro';
+import DoctorSchedulingSoftwareRelatedSection from './components/DoctorSchedulingSoftwareRelatedSection.astro';
+import DoctorSchedulingSoftwareStartingSection from './components/DoctorSchedulingSoftwareStartingSection.astro';
+import DoctorSchedulingSoftwareExampleSection from './components/DoctorSchedulingSoftwareExampleSection.astro';
+import DoctorSchedulingSoftwareProgressSection from './components/DoctorSchedulingSoftwareProgressSection.astro';
+import DoctorSchedulingSoftwareWhySection from './components/DoctorSchedulingSoftwareWhySection.astro';
+import DoctorSchedulingSoftwareFaqSection from './components/DoctorSchedulingSoftwareFaqSection.astro';
+import DoctorSchedulingSoftwareConsultationSection from './components/DoctorSchedulingSoftwareConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { doctorSchedulingSoftwareHeroPreload } from './lib/doctor-scheduling-software-hero-image';
+import './styles/doctor-scheduling-software-rendering.css';
+import './styles/doctor-scheduling-software-source-content.css';
+import { metadata } from './data/doctor-scheduling-software-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={doctorSchedulingSoftwareHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="doctor-scheduling-software-page" tabindex="-1">
+    <DoctorSchedulingSoftwareHero />
+    <DoctorSchedulingSoftwareChallengesSection />
+    <DoctorSchedulingSoftwareOutcomesSection />
+    <DoctorSchedulingSoftwareIntentSection />
+    <DoctorSchedulingSoftwareTrustSection />
+    <DoctorSchedulingSoftwareExpertiseSection />
+    <DoctorSchedulingSoftwareProcessSection />
+    <DoctorSchedulingSoftwareMappingSection />
+    <DoctorSchedulingSoftwareRelatedSection />
+    <DoctorSchedulingSoftwareStartingSection />
+    <DoctorSchedulingSoftwareExampleSection />
+    <DoctorSchedulingSoftwareProgressSection />
+    <DoctorSchedulingSoftwareWhySection />
+    <DoctorSchedulingSoftwareFaqSection />
+    <DoctorSchedulingSoftwareConsultationSection />
+  </main>
+  <Footer />
+</Layout>

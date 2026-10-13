@@ -1,0 +1,31 @@
+---
+import Icon from '../../../components/Icon.astro';
+import Add01Icon from '@hugeicons/core-free-icons/Add01Icon';
+import { pageCopy } from '../data/clinic-doctor-directory-source';
+const copy = pageCopy.faq;
+import '../styles/clinic-doctor-directory-faq.css';
+---
+<clinic-doctor-directory-faq class="clinic-doctor-directory-faq-motion">
+  <section id="clinic-doctor-directory-faq" class="clinic-doctor-directory-faq" aria-labelledby="clinic-doctor-directory-faq-heading">
+    <div class="section-container clinic-doctor-directory-faq-layout">
+      <header class="clinic-doctor-directory-faq-header" data-faq-entry>
+        <h2 id="clinic-doctor-directory-faq-heading">{copy.heading}</h2>
+        <div class="clinic-doctor-directory-source-content" set:html={copy.preface} />
+      </header>
+      <div class="clinic-doctor-directory-faq-list">
+        {copy.items.map((item,index) => <article class="clinic-doctor-directory-faq-item" data-faq-entry aria-labelledby={`clinic-doctor-directory-faq-question-${index+1}`}>
+          <h3 class="clinic-doctor-directory-faq-question" id={`clinic-doctor-directory-faq-question-${index+1}`}>
+            <span class="clinic-doctor-directory-faq-label">{item.question}</span>
+            <span class="clinic-doctor-directory-faq-toggle" aria-hidden="true"><Icon icon={Add01Icon} size={20} strokeWidth={1.8} /></span>
+          </h3>
+          <div class="clinic-doctor-directory-faq-answer" id={`clinic-doctor-directory-faq-answer-${index+1}`} role="region" aria-labelledby={`clinic-doctor-directory-faq-question-${index+1}`}>
+            <div class="clinic-doctor-directory-source-content" set:html={item.answerHtml} />
+          </div>
+        </article>)}
+      </div>
+    </div>
+  </section>
+</clinic-doctor-directory-faq>
+<script>
+  import '../scripts/clinic-doctor-directory-faq';
+</script>

@@ -1,0 +1,8 @@
+.clinic-local-seo-source-content:empty { display: none; }
+.clinic-local-seo-source-content :where(p) { margin: 0 0 1em; line-height: 1.7; }
+.clinic-local-seo-source-content :where(p:last-child) { margin-bottom: 0; }
+.clinic-local-seo-source-content ul, .clinic-local-seo-source-content ol { margin: .75em 0 1em; padding-left: 1.35em; }
+.clinic-local-seo-source-content li { margin: .42em 0; line-height: 1.65; }
+.clinic-local-seo-source-content strong { font-weight: 700; }
+.clinic-local-seo-source-content table { width: 100%; border-collapse: collapse; }
+.clinic-local-seo-source-content th, .clinic-local-seo-source-content td { padding: .7em; text-align: left; border-bottom: 1px solid #0002; }

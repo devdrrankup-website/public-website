@@ -1,0 +1,25 @@
+---
+import EPrescriptionSoftwareOutcomeVisual from './EPrescriptionSoftwareOutcomeVisual.astro';
+import { pageCopy } from '../data/e-prescription-software-source';
+const copy = pageCopy.outcomes;
+import '../styles/e-prescription-software-outcomes.css';
+---
+<e-prescription-software-outcomes class="e-prescription-software-outcomes">
+  <section id="e-prescription-software-outcomes" class="section-container" aria-labelledby="e-prescription-software-outcomes-heading">
+    <div class="e-prescription-software-outcomes-heading">
+      <h2 id="e-prescription-software-outcomes-heading">{copy.heading}</h2>
+      <div class="e-prescription-software-outcomes-introduction e-prescription-software-source-content" set:html={copy.before} />
+    </div>
+    <ul class="e-prescription-software-outcomes-list" role="list">
+      {copy.items.map((item, index) => <li class="e-prescription-software-outcome" data-seo-outcomes-motion>
+        <EPrescriptionSoftwareOutcomeVisual index={index} />
+        <p><strong>{item.label}</strong><span>{item.description}</span></p>
+      </li>)}
+    </ul>
+    <div class="e-prescription-software-outcomes-conclusion e-prescription-software-source-content" set:html={copy.after} />
+  </section>
+</e-prescription-software-outcomes>
+
+<script>
+  import '../scripts/e-prescription-software-outcomes';
+</script>

@@ -1,0 +1,8 @@
+.hospital-website-development-source-content:empty { display: none; }
+.hospital-website-development-source-content :where(p) { margin: 0 0 1em; line-height: 1.7; }
+.hospital-website-development-source-content :where(p:last-child) { margin-bottom: 0; }
+.hospital-website-development-source-content ul, .hospital-website-development-source-content ol { margin: .75em 0 1em; padding-left: 1.35em; }
+.hospital-website-development-source-content li { margin: .42em 0; line-height: 1.65; }
+.hospital-website-development-source-content strong { font-weight: 700; }
+.hospital-website-development-source-content table { width: 100%; border-collapse: collapse; }
+.hospital-website-development-source-content th, .hospital-website-development-source-content td { padding: .7em; text-align: left; border-bottom: 1px solid #0002; }

@@ -1,0 +1,47 @@
+---
+// Destination-owned static page. Service-specific images are pending review before publication.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import ClinicBillingSoftwareHero from './components/ClinicBillingSoftwareHero.astro';
+import ClinicBillingSoftwareChallengesSection from './components/ClinicBillingSoftwareChallengesSection.astro';
+import ClinicBillingSoftwareOutcomesSection from './components/ClinicBillingSoftwareOutcomesSection.astro';
+import ClinicBillingSoftwareIntentSection from './components/ClinicBillingSoftwareIntentSection.astro';
+import ClinicBillingSoftwareTrustSection from './components/ClinicBillingSoftwareTrustSection.astro';
+import ClinicBillingSoftwareExpertiseSection from './components/ClinicBillingSoftwareExpertiseSection.astro';
+import ClinicBillingSoftwareProcessSection from './components/ClinicBillingSoftwareProcessSection.astro';
+import ClinicBillingSoftwareMappingSection from './components/ClinicBillingSoftwareMappingSection.astro';
+import ClinicBillingSoftwareRelatedSection from './components/ClinicBillingSoftwareRelatedSection.astro';
+import ClinicBillingSoftwareStartingSection from './components/ClinicBillingSoftwareStartingSection.astro';
+import ClinicBillingSoftwareExampleSection from './components/ClinicBillingSoftwareExampleSection.astro';
+import ClinicBillingSoftwareProgressSection from './components/ClinicBillingSoftwareProgressSection.astro';
+import ClinicBillingSoftwareWhySection from './components/ClinicBillingSoftwareWhySection.astro';
+import ClinicBillingSoftwareFaqSection from './components/ClinicBillingSoftwareFaqSection.astro';
+import ClinicBillingSoftwareConsultationSection from './components/ClinicBillingSoftwareConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { clinicBillingSoftwareHeroPreload } from './lib/clinic-billing-software-hero-image';
+import './styles/clinic-billing-software-rendering.css';
+import './styles/clinic-billing-software-source-content.css';
+import { metadata } from './data/clinic-billing-software-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={clinicBillingSoftwareHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="clinic-billing-software-page" tabindex="-1">
+    <ClinicBillingSoftwareHero />
+    <ClinicBillingSoftwareChallengesSection />
+    <ClinicBillingSoftwareOutcomesSection />
+    <ClinicBillingSoftwareIntentSection />
+    <ClinicBillingSoftwareTrustSection />
+    <ClinicBillingSoftwareExpertiseSection />
+    <ClinicBillingSoftwareProcessSection />
+    <ClinicBillingSoftwareMappingSection />
+    <ClinicBillingSoftwareRelatedSection />
+    <ClinicBillingSoftwareStartingSection />
+    <ClinicBillingSoftwareExampleSection />
+    <ClinicBillingSoftwareProgressSection />
+    <ClinicBillingSoftwareWhySection />
+    <ClinicBillingSoftwareFaqSection />
+    <ClinicBillingSoftwareConsultationSection />
+  </main>
+  <Footer />
+</Layout>

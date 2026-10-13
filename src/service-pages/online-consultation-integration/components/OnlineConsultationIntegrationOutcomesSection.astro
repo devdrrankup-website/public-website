@@ -1,0 +1,25 @@
+---
+import OnlineConsultationIntegrationOutcomeVisual from './OnlineConsultationIntegrationOutcomeVisual.astro';
+import { pageCopy } from '../data/online-consultation-integration-source';
+const copy = pageCopy.outcomes;
+import '../styles/online-consultation-integration-outcomes.css';
+---
+<online-consultation-integration-outcomes class="online-consultation-integration-outcomes">
+  <section id="online-consultation-integration-outcomes" class="section-container" aria-labelledby="online-consultation-integration-outcomes-heading">
+    <div class="online-consultation-integration-outcomes-heading">
+      <h2 id="online-consultation-integration-outcomes-heading">{copy.heading}</h2>
+      <div class="online-consultation-integration-outcomes-introduction online-consultation-integration-source-content" set:html={copy.before} />
+    </div>
+    <ul class="online-consultation-integration-outcomes-list" role="list">
+      {copy.items.map((item, index) => <li class="online-consultation-integration-outcome" data-seo-outcomes-motion>
+        <OnlineConsultationIntegrationOutcomeVisual index={index} />
+        <p><strong>{item.label}</strong><span>{item.description}</span></p>
+      </li>)}
+    </ul>
+    <div class="online-consultation-integration-outcomes-conclusion online-consultation-integration-source-content" set:html={copy.after} />
+  </section>
+</online-consultation-integration-outcomes>
+
+<script>
+  import '../scripts/online-consultation-integration-outcomes';
+</script>

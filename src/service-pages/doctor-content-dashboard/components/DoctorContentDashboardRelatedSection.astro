@@ -1,0 +1,67 @@
+---
+import { Image } from 'astro:assets';
+import Icon from '../../../components/Icon.astro';
+import Arrow from '../../../components/Arrow.astro';
+import DatabaseIcon from '@hugeicons/core-free-icons/DatabaseIcon';
+import Calendar03Icon from '@hugeicons/core-free-icons/Calendar03Icon';
+import WebDesign01Icon from '@hugeicons/core-free-icons/WebDesign01Icon';
+import NoteEditIcon from '@hugeicons/core-free-icons/NoteEditIcon';
+import { pageCopy } from '../data/doctor-content-dashboard-source';
+const copy = pageCopy.related;
+import relatedImage0 from '../../../assets/patient-medical-record-software/patient-medical-record-software-related-preview-v1.webp';
+import relatedImage1 from '../../../assets/patient-appointment-management/patient-appointment-management-related-preview-v1.webp';
+import relatedImage2 from '../../../assets/related-services/doctor-website-development-preview-v1.webp';
+import relatedImage3 from '../../../assets/doctor-content-marketing/doctor-content-marketing-related-preview-v1.webp';
+import '../styles/doctor-content-dashboard-related.css';
+const visuals = [
+  { image: relatedImage0, icon: DatabaseIcon, accent: '#BAE5FF', description: "In a private chamber, a doctor checks a neutral, anonymised visit timeline on a front-facing monitor while an assistant waits beside a closed folder." },
+  { image: relatedImage1, icon: Calendar03Icon, accent: '#EEEDFE', description: "At a doctor's chamber reception, a receptionist welcomes a visitor while another staff member checks a clearly blank appointment list on the front of a tablet." },
+  { image: relatedImage2, icon: WebDesign01Icon, accent: '#FEF2CC', description: "At a Bangladesh digital agency design studio, a civilian web designer and a doctor review large unbranded doctor-website wireframes showing profile, chamber and booking blocks, from the viewer's side." },
+  { image: relatedImage3, icon: NoteEditIcon, accent: '#E4FFBD', description: "At an agency editing desk, a civilian editor and doctor review a patient-education article proof with source notes, no readable health claim." },
+];
+---
+<section id="doctor-content-dashboard-related" class="doctor-content-dashboard-related" aria-labelledby="doctor-content-dashboard-related-heading">
+  <div class="section-container doctor-content-dashboard-related-container">
+    <doctor-content-dashboard-related>
+      <header class="doctor-content-dashboard-related-header" data-related-entry>
+        <h2 id="doctor-content-dashboard-related-heading">{copy.heading}</h2>
+        <div class="doctor-content-dashboard-source-content" set:html={copy.introductionHtml} />
+      </header>
+      <div class="doctor-content-dashboard-related-layout">
+        <div class="doctor-content-dashboard-related-dock">
+          <div class="doctor-content-dashboard-related-selectors" role="group" aria-label="Service image previews" hidden>
+            {copy.services.map((service, index) => <button type="button" aria-pressed={index === 0 ? 'true' : 'false'} aria-controls={`related-${service.key}`} data-related-select={index}>
+              <span>{service.name}</span>
+            </button>)}
+          </div>
+          <div class="doctor-content-dashboard-related-stage" aria-hidden="true" hidden></div>
+        </div>
+        <div class="doctor-content-dashboard-related-details">
+          <div class="doctor-content-dashboard-related-labels"><span>{copy.headers[0]}</span><span>{copy.headers[1]}</span></div>
+          <dl class="doctor-content-dashboard-related-list">
+            {copy.services.map((service, index) => <div class="doctor-content-dashboard-related-row" id={`related-${service.key}`} data-service={service.key}>
+              <dt>
+                <span class="doctor-content-dashboard-related-badge" style={`--related-accent:${visuals[index % visuals.length].accent}`}><Icon icon={visuals[index % visuals.length].icon} size={21} strokeWidth={1.8} /></span>
+                <span class="doctor-content-dashboard-related-reveal" aria-hidden="true"></span>
+                {service.href ? <a class="doctor-content-dashboard-related-name" href={service.href}>{service.name}</a>
+                  : <span class="doctor-content-dashboard-related-name">{service.name}</span>}
+                <span class="doctor-content-dashboard-related-arrow" aria-hidden="true"><Arrow /></span>
+              </dt>
+              <dd>
+                <span>{service.responsibility}</span>
+                <figure class="doctor-content-dashboard-related-photo">
+                  <Image src={visuals[index % visuals.length].image} alt={visuals[index % visuals.length].description} title={visuals[index % visuals.length].description} width={960} widths={[360,640,960]} sizes="(min-width:1100px) 700px, (min-width:640px) 700px, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+                  <figcaption>{service.name}</figcaption>
+                </figure>
+              </dd>
+            </div>)}
+          </dl>
+          <div class="doctor-content-dashboard-related-note doctor-content-dashboard-source-content" set:html={copy.noteHtml} />
+        </div>
+      </div>
+    </doctor-content-dashboard-related>
+  </div>
+</section>
+<script>
+  import '../scripts/doctor-content-dashboard-related';
+</script>

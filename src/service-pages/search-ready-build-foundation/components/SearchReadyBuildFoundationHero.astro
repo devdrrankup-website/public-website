@@ -1,0 +1,38 @@
+---
+import ActionIcon from '../../../components/ActionIcon.astro';
+import { pageCopy } from '../data/search-ready-build-foundation-source';
+const copy = pageCopy.hero;
+import { searchReadyBuildFoundationHeroImage as photo } from '../lib/search-ready-build-foundation-hero-image';
+import '../styles/search-ready-build-foundation-hero.css';
+---
+
+<section class="search-ready-build-foundation-hero" aria-labelledby="search-ready-build-foundation-heading">
+  <div class="section-container search-ready-build-foundation-hero-layout">
+    <div class="search-ready-build-foundation-hero-copy">
+      <h1 id="search-ready-build-foundation-heading">{copy.heading}</h1>
+      <p class="search-ready-build-foundation-hero-tagline">{copy.tagline}</p>
+      <div class="search-ready-build-foundation-hero-description">
+        {copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+      </div>
+      <div class="search-ready-build-foundation-hero-actions" aria-label={`${copy.heading} options`}>
+        <span class="button button-primary">
+          <span>{copy.primaryCta}</span><ActionIcon purpose="conversation" />
+        </span>
+        {copy.secondaryHref ? <a class="button button-secondary" href={copy.secondaryHref}>
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </a> : <span class="button button-secondary">
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </span>}
+      </div>
+    </div>
+    <div class="search-ready-build-foundation-hero-visual">
+      <div class="search-ready-build-foundation-hero-photo">
+        <img src={photo.src} srcset={photo.srcset} sizes={photo.sizes}
+          width={photo.width} height={photo.height}
+          alt="Website developer checking a doctor profile on laptop and phone at an agency"
+          title="Testing a search-ready doctor website"
+          loading="eager" fetchpriority="high" decoding="async" />
+      </div>
+    </div>
+  </div>
+</section>

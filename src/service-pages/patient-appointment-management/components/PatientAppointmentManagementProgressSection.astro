@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/patient-appointment-management/patient-appointment-management-progress-v1.webp';
+import { pageCopy } from '../data/patient-appointment-management-source';
+const copy = pageCopy.progress;
+import '../styles/patient-appointment-management-progress.css';
+---
+<patient-appointment-management-progress class="patient-appointment-management-progress-motion">
+  <section id="patient-appointment-management-progress" class="patient-appointment-management-progress" aria-labelledby="patient-appointment-management-progress-heading">
+    <div class="section-container patient-appointment-management-progress-layout">
+      <h2 id="patient-appointment-management-progress-heading" data-progress-entry>{copy.heading}</h2>
+      <p class="patient-appointment-management-progress-baseline" data-progress-entry set:html={copy.paragraphsHtml[0]} />
+      <figure class="patient-appointment-management-progress-photo" data-progress-entry data-progress-photo>
+        <Image src={photo} alt="Doctor and team reviewing appointment operations together" title="Doctor and team reviewing appointment operations together" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <p class="patient-appointment-management-progress-evidence" data-progress-entry set:html={copy.paragraphsHtml[1]} />
+
+    </div>
+  </section>
+</patient-appointment-management-progress>
+<script>
+  import '../scripts/patient-appointment-management-progress';
+</script>

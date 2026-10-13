@@ -1,0 +1,47 @@
+---
+// Destination-owned static page. Service-specific images are pending review before publication.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import HospitalManagementSoftwareHero from './components/HospitalManagementSoftwareHero.astro';
+import HospitalManagementSoftwareChallengesSection from './components/HospitalManagementSoftwareChallengesSection.astro';
+import HospitalManagementSoftwareOutcomesSection from './components/HospitalManagementSoftwareOutcomesSection.astro';
+import HospitalManagementSoftwareIntentSection from './components/HospitalManagementSoftwareIntentSection.astro';
+import HospitalManagementSoftwareTrustSection from './components/HospitalManagementSoftwareTrustSection.astro';
+import HospitalManagementSoftwareExpertiseSection from './components/HospitalManagementSoftwareExpertiseSection.astro';
+import HospitalManagementSoftwareProcessSection from './components/HospitalManagementSoftwareProcessSection.astro';
+import HospitalManagementSoftwareMappingSection from './components/HospitalManagementSoftwareMappingSection.astro';
+import HospitalManagementSoftwareRelatedSection from './components/HospitalManagementSoftwareRelatedSection.astro';
+import HospitalManagementSoftwareStartingSection from './components/HospitalManagementSoftwareStartingSection.astro';
+import HospitalManagementSoftwareExampleSection from './components/HospitalManagementSoftwareExampleSection.astro';
+import HospitalManagementSoftwareProgressSection from './components/HospitalManagementSoftwareProgressSection.astro';
+import HospitalManagementSoftwareWhySection from './components/HospitalManagementSoftwareWhySection.astro';
+import HospitalManagementSoftwareFaqSection from './components/HospitalManagementSoftwareFaqSection.astro';
+import HospitalManagementSoftwareConsultationSection from './components/HospitalManagementSoftwareConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { hospitalManagementSoftwareHeroPreload } from './lib/hospital-management-software-hero-image';
+import './styles/hospital-management-software-rendering.css';
+import './styles/hospital-management-software-source-content.css';
+import { metadata } from './data/hospital-management-software-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={hospitalManagementSoftwareHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="hospital-management-software-page" tabindex="-1">
+    <HospitalManagementSoftwareHero />
+    <HospitalManagementSoftwareChallengesSection />
+    <HospitalManagementSoftwareOutcomesSection />
+    <HospitalManagementSoftwareIntentSection />
+    <HospitalManagementSoftwareTrustSection />
+    <HospitalManagementSoftwareExpertiseSection />
+    <HospitalManagementSoftwareProcessSection />
+    <HospitalManagementSoftwareMappingSection />
+    <HospitalManagementSoftwareRelatedSection />
+    <HospitalManagementSoftwareStartingSection />
+    <HospitalManagementSoftwareExampleSection />
+    <HospitalManagementSoftwareProgressSection />
+    <HospitalManagementSoftwareWhySection />
+    <HospitalManagementSoftwareFaqSection />
+    <HospitalManagementSoftwareConsultationSection />
+  </main>
+  <Footer />
+</Layout>

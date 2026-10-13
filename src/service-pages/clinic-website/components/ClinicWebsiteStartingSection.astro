@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/clinic-website/clinic-website-starting-v1.webp';
+import { pageCopy } from '../data/clinic-website-source';
+const copy = pageCopy.starting;
+import '../styles/clinic-website-starting.css';
+---
+<clinic-website-starting class="clinic-website-starting-motion">
+  <section id="clinic-website-starting" class="clinic-website-starting" aria-labelledby="clinic-website-starting-heading">
+    <div class="section-container clinic-website-starting-layout">
+      <h2 id="clinic-website-starting-heading" data-starting-entry>{copy.heading}</h2>
+      <div class="clinic-website-starting-copy" data-starting-entry>
+        <div class="clinic-website-source-content" set:html={copy.html} />
+      </div>
+      <figure class="clinic-website-starting-visual" data-starting-entry data-starting-visual>
+        <Image src={photo} alt="Clinic owner and specialist planning the website structure" title="Clinic owner and specialist planning the website structure" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 540px, (min-width:640px) 320px, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+    </div>
+  </section>
+</clinic-website-starting>
+<script>
+  import '../scripts/clinic-website-starting';
+</script>

@@ -1,0 +1,69 @@
+---
+import { Image } from 'astro:assets';
+import Icon from '../../../components/Icon.astro';
+import Arrow from '../../../components/Arrow.astro';
+import Megaphone01Icon from '@hugeicons/core-free-icons/Megaphone01Icon';
+import Facebook01Icon from '@hugeicons/core-free-icons/Facebook01Icon';
+import Search01Icon from '@hugeicons/core-free-icons/Search01Icon';
+import Hospital01Icon from '@hugeicons/core-free-icons/Hospital01Icon';
+import { pageCopy } from '../data/hospital-advertising-source';
+const copy = pageCopy.related;
+import hospitalGoogleAds from '../../../assets/related-services/hospital-google-ads-preview-v1.webp';
+import hospitalFacebookAds from '../../../assets/related-services/hospital-facebook-ads-preview-v1.webp';
+import relatedImage1 from '../../../assets/hospital-social-media-marketing/hospital-social-media-marketing-related-preview-v1.webp';
+import relatedImage2 from '../../../assets/hospital-seo/hospital-seo-related-preview-v1.webp';
+import relatedImage3 from '../../../assets/hospital-digital-marketing/hospital-digital-marketing-related-preview-v1.webp';
+import '../styles/hospital-advertising-related.css';
+const visuals = [
+  { image: hospitalGoogleAds, icon: Megaphone01Icon, accent: '#BAE5FF', description: "In a hospital communications office, a civilian paid-search specialist and hospital administrator compare keyword cards and a hospital service-page wireframe." },
+  { image: hospitalFacebookAds, icon: Facebook01Icon, accent: '#EEEDFE', description: "At a civilian agency workstation, a hospital communications manager reviews two neutral campaign-photo mockups with a media specialist." },
+  { image: relatedImage1, icon: Facebook01Icon, accent: '#FEF2CC', description: "A hospital communications photographer documents a bright public waiting corridor with an administrator, with no patients or clinical procedures in frame." },
+  { image: relatedImage2, icon: Search01Icon, accent: '#E4FFBD', description: "At home in Bangladesh, a family member researches hospital departments on a front-facing laptop and checks which location offers the needed service." },
+  { image: relatedImage3, icon: Hospital01Icon, accent: '#F7E4FB', description: "At a hospital communications office, a civilian digital strategist and administrator review a department-information journey laid out as generic print cards." },
+];
+---
+<section id="hospital-advertising-related" class="hospital-advertising-related" aria-labelledby="hospital-advertising-related-heading">
+  <div class="section-container hospital-advertising-related-container">
+    <hospital-advertising-related>
+      <header class="hospital-advertising-related-header" data-related-entry>
+        <h2 id="hospital-advertising-related-heading">{copy.heading}</h2>
+        <div class="hospital-advertising-source-content" set:html={copy.introductionHtml} />
+      </header>
+      <div class="hospital-advertising-related-layout">
+        <div class="hospital-advertising-related-dock">
+          <div class="hospital-advertising-related-selectors" role="group" aria-label="Service image previews" hidden>
+            {copy.services.map((service, index) => <button type="button" aria-pressed={index === 0 ? 'true' : 'false'} aria-controls={`related-${service.key}`} data-related-select={index}>
+              <span>{service.name}</span>
+            </button>)}
+          </div>
+          <div class="hospital-advertising-related-stage" aria-hidden="true" hidden></div>
+        </div>
+        <div class="hospital-advertising-related-details">
+          <div class="hospital-advertising-related-labels"><span>{copy.headers[0]}</span><span>{copy.headers[1]}</span></div>
+          <dl class="hospital-advertising-related-list">
+            {copy.services.map((service, index) => <div class="hospital-advertising-related-row" id={`related-${service.key}`} data-service={service.key}>
+              <dt>
+                <span class="hospital-advertising-related-badge" style={`--related-accent:${visuals[index % visuals.length].accent}`}><Icon icon={visuals[index % visuals.length].icon} size={21} strokeWidth={1.8} /></span>
+                <span class="hospital-advertising-related-reveal" aria-hidden="true"></span>
+                {service.href ? <a class="hospital-advertising-related-name" href={service.href}>{service.name}</a>
+                  : <span class="hospital-advertising-related-name">{service.name}</span>}
+                <span class="hospital-advertising-related-arrow" aria-hidden="true"><Arrow /></span>
+              </dt>
+              <dd>
+                <span>{service.responsibility}</span>
+                <figure class="hospital-advertising-related-photo">
+                  <Image src={visuals[index % visuals.length].image} alt={visuals[index % visuals.length].description} title={visuals[index % visuals.length].description} width={960} widths={[360,640,960]} sizes="(min-width:1100px) 700px, (min-width:640px) 700px, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+                  <figcaption>{service.name}</figcaption>
+                </figure>
+              </dd>
+            </div>)}
+          </dl>
+          <div class="hospital-advertising-related-note hospital-advertising-source-content" set:html={copy.noteHtml} />
+        </div>
+      </div>
+    </hospital-advertising-related>
+  </div>
+</section>
+<script>
+  import '../scripts/hospital-advertising-related';
+</script>

@@ -1,0 +1,64 @@
+---
+import { Image } from 'astro:assets';
+import Icon from '../../../components/Icon.astro';
+import Arrow from '../../../components/Arrow.astro';
+import Megaphone01Icon from '@hugeicons/core-free-icons/Megaphone01Icon';
+import Search01Icon from '@hugeicons/core-free-icons/Search01Icon';
+import Hospital01Icon from '@hugeicons/core-free-icons/Hospital01Icon';
+import { pageCopy } from '../data/hospital-social-media-marketing-source';
+const copy = pageCopy.related;
+import relatedImage0 from '../../../assets/hospital-advertising/hospital-advertising-related-preview-v1.webp';
+import relatedImage1 from '../../../assets/hospital-seo/hospital-seo-related-preview-v1.webp';
+import relatedImage2 from '../../../assets/hospital-digital-marketing/hospital-digital-marketing-related-preview-v1.webp';
+import '../styles/hospital-social-media-marketing-related.css';
+const visuals = [
+  { image: relatedImage0, icon: Megaphone01Icon, accent: '#BAE5FF', description: "At a hospital communications desk, a civilian designer selects a public-service campaign photograph while an administrator checks factual wording, no outcome promises." },
+  { image: relatedImage1, icon: Search01Icon, accent: '#EEEDFE', description: "At home in Bangladesh, a family member researches hospital departments on a front-facing laptop and checks which location offers the needed service." },
+  { image: relatedImage2, icon: Hospital01Icon, accent: '#FEF2CC', description: "At a hospital communications office, a civilian digital strategist and administrator review a department-information journey laid out as generic print cards." },
+];
+---
+<section id="hospital-social-media-marketing-related" class="hospital-social-media-marketing-related" aria-labelledby="hospital-social-media-marketing-related-heading">
+  <div class="section-container hospital-social-media-marketing-related-container">
+    <hospital-social-media-marketing-related>
+      <header class="hospital-social-media-marketing-related-header" data-related-entry>
+        <h2 id="hospital-social-media-marketing-related-heading">{copy.heading}</h2>
+        <div class="hospital-social-media-marketing-source-content" set:html={copy.introductionHtml} />
+      </header>
+      <div class="hospital-social-media-marketing-related-layout">
+        <div class="hospital-social-media-marketing-related-dock">
+          <div class="hospital-social-media-marketing-related-selectors" role="group" aria-label="Service image previews" hidden>
+            {copy.services.map((service, index) => <button type="button" aria-pressed={index === 0 ? 'true' : 'false'} aria-controls={`related-${service.key}`} data-related-select={index}>
+              <span>{service.name}</span>
+            </button>)}
+          </div>
+          <div class="hospital-social-media-marketing-related-stage" aria-hidden="true" hidden></div>
+        </div>
+        <div class="hospital-social-media-marketing-related-details">
+          <div class="hospital-social-media-marketing-related-labels"><span>{copy.headers[0]}</span><span>{copy.headers[1]}</span></div>
+          <dl class="hospital-social-media-marketing-related-list">
+            {copy.services.map((service, index) => <div class="hospital-social-media-marketing-related-row" id={`related-${service.key}`} data-service={service.key}>
+              <dt>
+                <span class="hospital-social-media-marketing-related-badge" style={`--related-accent:${visuals[index % visuals.length].accent}`}><Icon icon={visuals[index % visuals.length].icon} size={21} strokeWidth={1.8} /></span>
+                <span class="hospital-social-media-marketing-related-reveal" aria-hidden="true"></span>
+                {service.href ? <a class="hospital-social-media-marketing-related-name" href={service.href}>{service.name}</a>
+                  : <span class="hospital-social-media-marketing-related-name">{service.name}</span>}
+                <span class="hospital-social-media-marketing-related-arrow" aria-hidden="true"><Arrow /></span>
+              </dt>
+              <dd>
+                <span>{service.responsibility}</span>
+                <figure class="hospital-social-media-marketing-related-photo">
+                  <Image src={visuals[index % visuals.length].image} alt={visuals[index % visuals.length].description} title={visuals[index % visuals.length].description} width={960} widths={[360,640,960]} sizes="(min-width:1100px) 700px, (min-width:640px) 700px, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+                  <figcaption>{service.name}</figcaption>
+                </figure>
+              </dd>
+            </div>)}
+          </dl>
+          <div class="hospital-social-media-marketing-related-note hospital-social-media-marketing-source-content" set:html={copy.noteHtml} />
+        </div>
+      </div>
+    </hospital-social-media-marketing-related>
+  </div>
+</section>
+<script>
+  import '../scripts/hospital-social-media-marketing-related';
+</script>

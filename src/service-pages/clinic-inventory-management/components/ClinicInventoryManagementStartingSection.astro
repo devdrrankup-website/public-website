@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/clinic-inventory-management/clinic-inventory-management-starting-v1.webp';
+import { pageCopy } from '../data/clinic-inventory-management-source';
+const copy = pageCopy.starting;
+import '../styles/clinic-inventory-management-starting.css';
+---
+<clinic-inventory-management-starting class="clinic-inventory-management-starting-motion">
+  <section id="clinic-inventory-management-starting" class="clinic-inventory-management-starting" aria-labelledby="clinic-inventory-management-starting-heading">
+    <div class="section-container clinic-inventory-management-starting-layout">
+      <h2 id="clinic-inventory-management-starting-heading" data-starting-entry>{copy.heading}</h2>
+      <div class="clinic-inventory-management-starting-copy" data-starting-entry>
+        <div class="clinic-inventory-management-source-content" set:html={copy.html} />
+      </div>
+      <figure class="clinic-inventory-management-starting-visual" data-starting-entry data-starting-visual>
+        <Image src={photo} alt="Clinic owner and specialist mapping a supply inventory workflow" title="Clinic owner and specialist mapping a supply inventory workflow" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 540px, (min-width:640px) 320px, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+    </div>
+  </section>
+</clinic-inventory-management-starting>
+<script>
+  import '../scripts/clinic-inventory-management-starting';
+</script>

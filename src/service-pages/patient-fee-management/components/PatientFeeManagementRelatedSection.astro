@@ -1,0 +1,68 @@
+---
+import { Image } from 'astro:assets';
+import Icon from '../../../components/Icon.astro';
+import Arrow from '../../../components/Arrow.astro';
+import Calendar03Icon from '@hugeicons/core-free-icons/Calendar03Icon';
+import DatabaseIcon from '@hugeicons/core-free-icons/DatabaseIcon';
+import CreditCardIcon from '@hugeicons/core-free-icons/CreditCardIcon';
+import { pageCopy } from '../data/patient-fee-management-source';
+const copy = pageCopy.related;
+import relatedImage0 from '../../../assets/patient-appointment-management/patient-appointment-management-related-preview-v1.webp';
+import relatedImage1 from '../../../assets/doctor-scheduling-software/doctor-scheduling-software-related-preview-v1.webp';
+import relatedImage2 from '../../../assets/patient-medical-record-software/patient-medical-record-software-related-preview-v1.webp';
+import relatedImage3 from '../../../assets/e-prescription-software/e-prescription-software-related-preview-v1.webp';
+import relatedImage4 from '../../../assets/clinic-billing-software/clinic-billing-software-related-preview-v1.webp';
+import '../styles/patient-fee-management-related.css';
+const visuals = [
+  { image: relatedImage0, icon: Calendar03Icon, accent: '#BAE5FF', description: "At a doctor's chamber reception, a receptionist welcomes a visitor while another staff member checks a clearly blank appointment list on the front of a tablet." },
+  { image: relatedImage1, icon: Calendar03Icon, accent: '#EEEDFE', description: "At a quiet doctor's chamber desk, an assistant and doctor compare a weekly room timetable and session blocks on a front-facing laptop." },
+  { image: relatedImage2, icon: DatabaseIcon, accent: '#FEF2CC', description: "In a private chamber, a doctor checks a neutral, anonymised visit timeline on a front-facing monitor while an assistant waits beside a closed folder." },
+  { image: relatedImage3, icon: DatabaseIcon, accent: '#E4FFBD', description: "At a doctor's chamber desk, the clinician checks a blank prescription preview on a front-facing computer before printing, with no patient details." },
+  { image: relatedImage4, icon: CreditCardIcon, accent: '#F7E4FB', description: "At a clinic checkout counter, a cashier prints an itemised blank receipt after verifying charge categories on a properly oriented workstation." },
+];
+---
+<section id="patient-fee-management-related" class="patient-fee-management-related" aria-labelledby="patient-fee-management-related-heading">
+  <div class="section-container patient-fee-management-related-container">
+    <patient-fee-management-related>
+      <header class="patient-fee-management-related-header" data-related-entry>
+        <h2 id="patient-fee-management-related-heading">{copy.heading}</h2>
+        <div class="patient-fee-management-source-content" set:html={copy.introductionHtml} />
+      </header>
+      <div class="patient-fee-management-related-layout">
+        <div class="patient-fee-management-related-dock">
+          <div class="patient-fee-management-related-selectors" role="group" aria-label="Service image previews" hidden>
+            {copy.services.map((service, index) => <button type="button" aria-pressed={index === 0 ? 'true' : 'false'} aria-controls={`related-${service.key}`} data-related-select={index}>
+              <span>{service.name}</span>
+            </button>)}
+          </div>
+          <div class="patient-fee-management-related-stage" aria-hidden="true" hidden></div>
+        </div>
+        <div class="patient-fee-management-related-details">
+          <div class="patient-fee-management-related-labels"><span>{copy.headers[0]}</span><span>{copy.headers[1]}</span></div>
+          <dl class="patient-fee-management-related-list">
+            {copy.services.map((service, index) => <div class="patient-fee-management-related-row" id={`related-${service.key}`} data-service={service.key}>
+              <dt>
+                <span class="patient-fee-management-related-badge" style={`--related-accent:${visuals[index % visuals.length].accent}`}><Icon icon={visuals[index % visuals.length].icon} size={21} strokeWidth={1.8} /></span>
+                <span class="patient-fee-management-related-reveal" aria-hidden="true"></span>
+                {service.href ? <a class="patient-fee-management-related-name" href={service.href}>{service.name}</a>
+                  : <span class="patient-fee-management-related-name">{service.name}</span>}
+                <span class="patient-fee-management-related-arrow" aria-hidden="true"><Arrow /></span>
+              </dt>
+              <dd>
+                <span>{service.responsibility}</span>
+                <figure class="patient-fee-management-related-photo">
+                  <Image src={visuals[index % visuals.length].image} alt={visuals[index % visuals.length].description} title={visuals[index % visuals.length].description} width={960} widths={[360,640,960]} sizes="(min-width:1100px) 700px, (min-width:640px) 700px, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+                  <figcaption>{service.name}</figcaption>
+                </figure>
+              </dd>
+            </div>)}
+          </dl>
+          <div class="patient-fee-management-related-note patient-fee-management-source-content" set:html={copy.noteHtml} />
+        </div>
+      </div>
+    </patient-fee-management-related>
+  </div>
+</section>
+<script>
+  import '../scripts/patient-fee-management-related';
+</script>

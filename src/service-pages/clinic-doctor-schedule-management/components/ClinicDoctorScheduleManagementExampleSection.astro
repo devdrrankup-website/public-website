@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/clinic-doctor-schedule-management/clinic-doctor-schedule-management-example-v1.webp';
+import { pageCopy } from '../data/clinic-doctor-schedule-management-source';
+const copy = pageCopy.example;
+import '../styles/clinic-doctor-schedule-management-example.css';
+---
+<clinic-doctor-schedule-management-example class="clinic-doctor-schedule-management-example-motion">
+  <section id="clinic-doctor-schedule-management-example" class="clinic-doctor-schedule-management-example" aria-labelledby="clinic-doctor-schedule-management-example-heading">
+    <div class="section-container clinic-doctor-schedule-management-example-layout">
+      <header class="clinic-doctor-schedule-management-example-header" data-example-entry>
+        <h2 id="clinic-doctor-schedule-management-example-heading">{copy.heading}</h2>
+        <span class="clinic-doctor-schedule-management-example-rule" data-example-rule aria-hidden="true"></span>
+      </header>
+      <figure class="clinic-doctor-schedule-management-example-photo" data-example-entry data-example-photo>
+        <Image src={photo} alt="Doctor checking appointment availability with clinic staff" title="Doctor checking appointment availability with clinic staff" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <div class="clinic-doctor-schedule-management-example-copy">
+        <div class="clinic-doctor-schedule-management-source-content" data-example-entry set:html={copy.html} />
+      </div>
+    </div>
+  </section>
+</clinic-doctor-schedule-management-example>
+<script>
+  import '../scripts/clinic-doctor-schedule-management-example';
+</script>

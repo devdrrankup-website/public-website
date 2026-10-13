@@ -1,0 +1,47 @@
+---
+// Destination-owned static page. Service-specific images are pending review before publication.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import ClinicLocalSeoHero from './components/ClinicLocalSeoHero.astro';
+import ClinicLocalSeoChallengesSection from './components/ClinicLocalSeoChallengesSection.astro';
+import ClinicLocalSeoOutcomesSection from './components/ClinicLocalSeoOutcomesSection.astro';
+import ClinicLocalSeoIntentSection from './components/ClinicLocalSeoIntentSection.astro';
+import ClinicLocalSeoTrustSection from './components/ClinicLocalSeoTrustSection.astro';
+import ClinicLocalSeoExpertiseSection from './components/ClinicLocalSeoExpertiseSection.astro';
+import ClinicLocalSeoProcessSection from './components/ClinicLocalSeoProcessSection.astro';
+import ClinicLocalSeoMappingSection from './components/ClinicLocalSeoMappingSection.astro';
+import ClinicLocalSeoRelatedSection from './components/ClinicLocalSeoRelatedSection.astro';
+import ClinicLocalSeoStartingSection from './components/ClinicLocalSeoStartingSection.astro';
+import ClinicLocalSeoExampleSection from './components/ClinicLocalSeoExampleSection.astro';
+import ClinicLocalSeoProgressSection from './components/ClinicLocalSeoProgressSection.astro';
+import ClinicLocalSeoWhySection from './components/ClinicLocalSeoWhySection.astro';
+import ClinicLocalSeoFaqSection from './components/ClinicLocalSeoFaqSection.astro';
+import ClinicLocalSeoConsultationSection from './components/ClinicLocalSeoConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { clinicLocalSeoHeroPreload } from './lib/clinic-local-seo-hero-image';
+import './styles/clinic-local-seo-rendering.css';
+import './styles/clinic-local-seo-source-content.css';
+import { metadata } from './data/clinic-local-seo-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={clinicLocalSeoHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="clinic-local-seo-page" tabindex="-1">
+    <ClinicLocalSeoHero />
+    <ClinicLocalSeoChallengesSection />
+    <ClinicLocalSeoOutcomesSection />
+    <ClinicLocalSeoIntentSection />
+    <ClinicLocalSeoTrustSection />
+    <ClinicLocalSeoExpertiseSection />
+    <ClinicLocalSeoProcessSection />
+    <ClinicLocalSeoMappingSection />
+    <ClinicLocalSeoRelatedSection />
+    <ClinicLocalSeoStartingSection />
+    <ClinicLocalSeoExampleSection />
+    <ClinicLocalSeoProgressSection />
+    <ClinicLocalSeoWhySection />
+    <ClinicLocalSeoFaqSection />
+    <ClinicLocalSeoConsultationSection />
+  </main>
+  <Footer />
+</Layout>

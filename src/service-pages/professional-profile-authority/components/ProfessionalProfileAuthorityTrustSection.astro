@@ -1,0 +1,33 @@
+---
+import { Image } from 'astro:assets';
+import Icon from '../../../components/Icon.astro';
+import LockKeyIcon from '@hugeicons/core-free-icons/LockKeyIcon';
+import photo from '../../../assets/professional-profile-authority/professional-profile-authority-trust-v1.webp';
+import { pageCopy } from '../data/professional-profile-authority-source';
+const copy = pageCopy.trust;
+import '../styles/professional-profile-authority-trust.css';
+---
+
+<professional-profile-authority-trust class="professional-profile-authority-trust-motion">
+  <section id="professional-profile-authority-trust" class="professional-profile-authority-trust" aria-labelledby="professional-profile-authority-trust-heading">
+    <div class="section-container professional-profile-authority-trust-layout">
+      <h2 id="professional-profile-authority-trust-heading">{copy.heading}</h2>
+      <div class="professional-profile-authority-trust-profile professional-profile-authority-source-content" data-seo-trust-motion set:html={copy.firstHtml} />
+      <div class="professional-profile-authority-trust-photo" data-seo-trust-motion>
+        <Image src={photo} widths={[360, 540, 720, 960, 1200]} width={1536} height={1024}
+          sizes="(min-width: 1100px) min(43vw, 576px), (min-width: 640px) min(calc(100vw - 56px), 760px), calc(100vw - 32px)"
+          format="webp" quality={76} loading="lazy" decoding="async"
+          alt="Doctor and specialist verifying professional credentials"
+          title="Doctor and specialist verifying professional credentials" />
+      </div>
+      <div class="professional-profile-authority-trust-privacy" data-seo-trust-motion>
+        <span class="professional-profile-authority-trust-lock" aria-hidden="true"><Icon icon={LockKeyIcon} size={24} /></span>
+        <div class="professional-profile-authority-source-content" set:html={copy.restHtml} />
+      </div>
+    </div>
+  </section>
+</professional-profile-authority-trust>
+
+<script>
+  import '../scripts/professional-profile-authority-trust';
+</script>

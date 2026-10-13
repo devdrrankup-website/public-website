@@ -6,6 +6,7 @@ import Location04Icon from '@hugeicons/core-free-icons/Location04Icon';
 import Store01Icon from '@hugeicons/core-free-icons/Store01Icon';
 import WebDesign01Icon from '@hugeicons/core-free-icons/WebDesign01Icon';
 import { doctorSeoRelated as copy } from '../../../data/doctor-seo-related';
+import { serviceRoutes } from '../../../data/service-routes';
 import local from '../../../assets/doctor-seo/related/doctor-local-seo-v1.webp';
 import profile from '../../../assets/doctor-seo/related/doctor-google-business-profile-v1.webp';
 import website from '../../../assets/doctor-seo/related/doctor-website-development-v1.webp';
@@ -38,7 +39,7 @@ const visuals = [
               <dt>
                 <span class="doctor-seo-related-badge" style={`--related-accent:${visuals[index].accent}`}><Icon icon={visuals[index].icon} size={21} strokeWidth={1.8} /></span>
                 <span class="doctor-seo-related-reveal" aria-hidden="true"></span>
-                <span class="doctor-seo-related-name">{service.name}</span>
+                <a class="doctor-seo-related-name" href={service.key === 'doctor-website-development' ? '/doctors/#doctor-solutions' : serviceRoutes[service.key]}>{service.name}</a>
                 <span class="doctor-seo-related-arrow" aria-hidden="true"><Arrow /></span>
               </dt>
               <dd>

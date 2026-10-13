@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/doctor-content-dashboard/doctor-content-dashboard-example-v1.webp';
+import { pageCopy } from '../data/doctor-content-dashboard-source';
+const copy = pageCopy.example;
+import '../styles/doctor-content-dashboard-example.css';
+---
+<doctor-content-dashboard-example class="doctor-content-dashboard-example-motion">
+  <section id="doctor-content-dashboard-example" class="doctor-content-dashboard-example" aria-labelledby="doctor-content-dashboard-example-heading">
+    <div class="section-container doctor-content-dashboard-example-layout">
+      <header class="doctor-content-dashboard-example-header" data-example-entry>
+        <h2 id="doctor-content-dashboard-example-heading">{copy.heading}</h2>
+        <span class="doctor-content-dashboard-example-rule" data-example-rule aria-hidden="true"></span>
+      </header>
+      <figure class="doctor-content-dashboard-example-photo" data-example-entry data-example-photo>
+        <Image src={photo} alt="Doctor and colleague checking online practice information on a monitor" title="Doctor and colleague checking online practice information on a monitor" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <div class="doctor-content-dashboard-example-copy">
+        <div class="doctor-content-dashboard-source-content" data-example-entry set:html={copy.html} />
+      </div>
+    </div>
+  </section>
+</doctor-content-dashboard-example>
+<script>
+  import '../scripts/doctor-content-dashboard-example';
+</script>

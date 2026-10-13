@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/professional-profile-authority/professional-profile-authority-challenges-v1.webp';
+import { pageCopy } from '../data/professional-profile-authority-source';
+const copy = pageCopy.challenges;
+const introductionParagraph = copy.html.match(/^<p>([\s\S]*?)<\/p>/)?.[1] ?? '';
+const detailHtml = copy.html.replace(/^<p>[\s\S]*?<\/p>/, '');
+import '../styles/professional-profile-authority-challenges.css';
+---
+
+<professional-profile-authority-challenges class="professional-profile-authority-challenges">
+  <section id="professional-profile-authority-challenges" class="section-container professional-profile-authority-challenges-layout" aria-labelledby="professional-profile-authority-challenges-heading">
+    <div class="professional-profile-authority-challenges-editorial">
+      <h2 id="professional-profile-authority-challenges-heading">{copy.heading}</h2>
+      <p class="professional-profile-authority-challenges-introduction" set:html={introductionParagraph} />
+      <div class="professional-profile-authority-challenges-photo" data-seo-challenges-motion>
+        <Image src={photo} widths={[360, 540, 720, 960, 1200]} width={1536} height={1024}
+          sizes="(min-width: 1100px) min(41vw, 568px), (min-width: 640px) min(calc(100vw - 56px), 760px), calc(100vw - 32px)"
+          format="webp" quality={76}
+          alt="Doctor and assistant comparing printed professional profile details"
+          title="Doctor and assistant comparing printed professional profile details"
+          loading="lazy" decoding="async" />
+      </div>
+    </div>
+    <div class="professional-profile-authority-challenges-details professional-profile-authority-source-content" set:html={detailHtml} />
+  </section>
+</professional-profile-authority-challenges>
+
+<script>
+  import '../scripts/professional-profile-authority-challenges';
+</script>

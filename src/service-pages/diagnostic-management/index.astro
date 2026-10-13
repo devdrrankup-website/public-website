@@ -1,0 +1,47 @@
+---
+// Destination-owned static page. Service-specific images are pending review before publication.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import DiagnosticManagementHero from './components/DiagnosticManagementHero.astro';
+import DiagnosticManagementChallengesSection from './components/DiagnosticManagementChallengesSection.astro';
+import DiagnosticManagementOutcomesSection from './components/DiagnosticManagementOutcomesSection.astro';
+import DiagnosticManagementIntentSection from './components/DiagnosticManagementIntentSection.astro';
+import DiagnosticManagementTrustSection from './components/DiagnosticManagementTrustSection.astro';
+import DiagnosticManagementExpertiseSection from './components/DiagnosticManagementExpertiseSection.astro';
+import DiagnosticManagementProcessSection from './components/DiagnosticManagementProcessSection.astro';
+import DiagnosticManagementMappingSection from './components/DiagnosticManagementMappingSection.astro';
+import DiagnosticManagementRelatedSection from './components/DiagnosticManagementRelatedSection.astro';
+import DiagnosticManagementStartingSection from './components/DiagnosticManagementStartingSection.astro';
+import DiagnosticManagementExampleSection from './components/DiagnosticManagementExampleSection.astro';
+import DiagnosticManagementProgressSection from './components/DiagnosticManagementProgressSection.astro';
+import DiagnosticManagementWhySection from './components/DiagnosticManagementWhySection.astro';
+import DiagnosticManagementFaqSection from './components/DiagnosticManagementFaqSection.astro';
+import DiagnosticManagementConsultationSection from './components/DiagnosticManagementConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { diagnosticManagementHeroPreload } from './lib/diagnostic-management-hero-image';
+import './styles/diagnostic-management-rendering.css';
+import './styles/diagnostic-management-source-content.css';
+import { metadata } from './data/diagnostic-management-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={diagnosticManagementHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="diagnostic-management-page" tabindex="-1">
+    <DiagnosticManagementHero />
+    <DiagnosticManagementChallengesSection />
+    <DiagnosticManagementOutcomesSection />
+    <DiagnosticManagementIntentSection />
+    <DiagnosticManagementTrustSection />
+    <DiagnosticManagementExpertiseSection />
+    <DiagnosticManagementProcessSection />
+    <DiagnosticManagementMappingSection />
+    <DiagnosticManagementRelatedSection />
+    <DiagnosticManagementStartingSection />
+    <DiagnosticManagementExampleSection />
+    <DiagnosticManagementProgressSection />
+    <DiagnosticManagementWhySection />
+    <DiagnosticManagementFaqSection />
+    <DiagnosticManagementConsultationSection />
+  </main>
+  <Footer />
+</Layout>

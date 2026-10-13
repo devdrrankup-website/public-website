@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/clinic-online-report-portal/clinic-online-report-portal-example-v1.webp';
+import { pageCopy } from '../data/clinic-online-report-portal-source';
+const copy = pageCopy.example;
+import '../styles/clinic-online-report-portal-example.css';
+---
+<clinic-online-report-portal-example class="clinic-online-report-portal-example-motion">
+  <section id="clinic-online-report-portal-example" class="clinic-online-report-portal-example" aria-labelledby="clinic-online-report-portal-example-heading">
+    <div class="section-container clinic-online-report-portal-example-layout">
+      <header class="clinic-online-report-portal-example-header" data-example-entry>
+        <h2 id="clinic-online-report-portal-example-heading">{copy.heading}</h2>
+        <span class="clinic-online-report-portal-example-rule" data-example-rule aria-hidden="true"></span>
+      </header>
+      <figure class="clinic-online-report-portal-example-photo" data-example-entry data-example-photo>
+        <Image src={photo} alt="Laboratory staff showing a report status on a front desk screen" title="Laboratory staff showing a report status on a front desk screen" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <div class="clinic-online-report-portal-example-copy">
+        <div class="clinic-online-report-portal-source-content" data-example-entry set:html={copy.html} />
+      </div>
+    </div>
+  </section>
+</clinic-online-report-portal-example>
+<script>
+  import '../scripts/clinic-online-report-portal-example';
+</script>

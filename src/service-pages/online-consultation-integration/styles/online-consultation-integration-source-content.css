@@ -1,0 +1,8 @@
+.online-consultation-integration-source-content:empty { display: none; }
+.online-consultation-integration-source-content :where(p) { margin: 0 0 1em; line-height: 1.7; }
+.online-consultation-integration-source-content :where(p:last-child) { margin-bottom: 0; }
+.online-consultation-integration-source-content ul, .online-consultation-integration-source-content ol { margin: .75em 0 1em; padding-left: 1.35em; }
+.online-consultation-integration-source-content li { margin: .42em 0; line-height: 1.65; }
+.online-consultation-integration-source-content strong { font-weight: 700; }
+.online-consultation-integration-source-content table { width: 100%; border-collapse: collapse; }
+.online-consultation-integration-source-content th, .online-consultation-integration-source-content td { padding: .7em; text-align: left; border-bottom: 1px solid #0002; }

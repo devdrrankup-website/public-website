@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/patient-medical-record-software/patient-medical-record-software-example-v1.webp';
+import { pageCopy } from '../data/patient-medical-record-software-source';
+const copy = pageCopy.example;
+import '../styles/patient-medical-record-software-example.css';
+---
+<patient-medical-record-software-example class="patient-medical-record-software-example-motion">
+  <section id="patient-medical-record-software-example" class="patient-medical-record-software-example" aria-labelledby="patient-medical-record-software-example-heading">
+    <div class="section-container patient-medical-record-software-example-layout">
+      <header class="patient-medical-record-software-example-header" data-example-entry>
+        <h2 id="patient-medical-record-software-example-heading">{copy.heading}</h2>
+        <span class="patient-medical-record-software-example-rule" data-example-rule aria-hidden="true"></span>
+      </header>
+      <figure class="patient-medical-record-software-example-photo" data-example-entry data-example-photo>
+        <Image src={photo} alt="Doctor explaining a medical record screen to a patient" title="Doctor explaining a medical record screen to a patient" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <div class="patient-medical-record-software-example-copy">
+        <div class="patient-medical-record-software-source-content" data-example-entry set:html={copy.html} />
+      </div>
+    </div>
+  </section>
+</patient-medical-record-software-example>
+<script>
+  import '../scripts/patient-medical-record-software-example';
+</script>

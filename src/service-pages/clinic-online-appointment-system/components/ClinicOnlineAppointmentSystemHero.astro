@@ -1,0 +1,38 @@
+---
+import ActionIcon from '../../../components/ActionIcon.astro';
+import { pageCopy } from '../data/clinic-online-appointment-system-source';
+const copy = pageCopy.hero;
+import { clinicOnlineAppointmentSystemHeroImage as photo } from '../lib/clinic-online-appointment-system-hero-image';
+import '../styles/clinic-online-appointment-system-hero.css';
+---
+
+<section class="clinic-online-appointment-system-hero" aria-labelledby="clinic-online-appointment-system-heading">
+  <div class="section-container clinic-online-appointment-system-hero-layout">
+    <div class="clinic-online-appointment-system-hero-copy">
+      <h1 id="clinic-online-appointment-system-heading">{copy.heading}</h1>
+      <p class="clinic-online-appointment-system-hero-tagline">{copy.tagline}</p>
+      <div class="clinic-online-appointment-system-hero-description">
+        {copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+      </div>
+      <div class="clinic-online-appointment-system-hero-actions" aria-label={`${copy.heading} options`}>
+        <span class="button button-primary">
+          <span>{copy.primaryCta}</span><ActionIcon purpose="conversation" />
+        </span>
+        {copy.secondaryHref ? <a class="button button-secondary" href={copy.secondaryHref}>
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </a> : <span class="button button-secondary">
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </span>}
+      </div>
+    </div>
+    <div class="clinic-online-appointment-system-hero-visual">
+      <div class="clinic-online-appointment-system-hero-photo">
+        <img src={photo.src} srcset={photo.srcset} sizes={photo.sizes}
+          width={photo.width} height={photo.height}
+          alt="Clinic receptionist reviewing an appointment schedule with a visitor at the front desk"
+          title="Confirming a clinic appointment request"
+          loading="eager" fetchpriority="high" decoding="async" />
+      </div>
+    </div>
+  </div>
+</section>

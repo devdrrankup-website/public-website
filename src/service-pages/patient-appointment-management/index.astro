@@ -1,0 +1,47 @@
+---
+// Destination-owned static page. Service-specific images are pending review before publication.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import PatientAppointmentManagementHero from './components/PatientAppointmentManagementHero.astro';
+import PatientAppointmentManagementChallengesSection from './components/PatientAppointmentManagementChallengesSection.astro';
+import PatientAppointmentManagementOutcomesSection from './components/PatientAppointmentManagementOutcomesSection.astro';
+import PatientAppointmentManagementIntentSection from './components/PatientAppointmentManagementIntentSection.astro';
+import PatientAppointmentManagementTrustSection from './components/PatientAppointmentManagementTrustSection.astro';
+import PatientAppointmentManagementExpertiseSection from './components/PatientAppointmentManagementExpertiseSection.astro';
+import PatientAppointmentManagementProcessSection from './components/PatientAppointmentManagementProcessSection.astro';
+import PatientAppointmentManagementMappingSection from './components/PatientAppointmentManagementMappingSection.astro';
+import PatientAppointmentManagementRelatedSection from './components/PatientAppointmentManagementRelatedSection.astro';
+import PatientAppointmentManagementStartingSection from './components/PatientAppointmentManagementStartingSection.astro';
+import PatientAppointmentManagementExampleSection from './components/PatientAppointmentManagementExampleSection.astro';
+import PatientAppointmentManagementProgressSection from './components/PatientAppointmentManagementProgressSection.astro';
+import PatientAppointmentManagementWhySection from './components/PatientAppointmentManagementWhySection.astro';
+import PatientAppointmentManagementFaqSection from './components/PatientAppointmentManagementFaqSection.astro';
+import PatientAppointmentManagementConsultationSection from './components/PatientAppointmentManagementConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { patientAppointmentManagementHeroPreload } from './lib/patient-appointment-management-hero-image';
+import './styles/patient-appointment-management-rendering.css';
+import './styles/patient-appointment-management-source-content.css';
+import { metadata } from './data/patient-appointment-management-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={patientAppointmentManagementHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="patient-appointment-management-page" tabindex="-1">
+    <PatientAppointmentManagementHero />
+    <PatientAppointmentManagementChallengesSection />
+    <PatientAppointmentManagementOutcomesSection />
+    <PatientAppointmentManagementIntentSection />
+    <PatientAppointmentManagementTrustSection />
+    <PatientAppointmentManagementExpertiseSection />
+    <PatientAppointmentManagementProcessSection />
+    <PatientAppointmentManagementMappingSection />
+    <PatientAppointmentManagementRelatedSection />
+    <PatientAppointmentManagementStartingSection />
+    <PatientAppointmentManagementExampleSection />
+    <PatientAppointmentManagementProgressSection />
+    <PatientAppointmentManagementWhySection />
+    <PatientAppointmentManagementFaqSection />
+    <PatientAppointmentManagementConsultationSection />
+  </main>
+  <Footer />
+</Layout>

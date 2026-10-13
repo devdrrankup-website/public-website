@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/doctor-content-marketing/doctor-content-marketing-example-v1.webp';
+import { pageCopy } from '../data/doctor-content-marketing-source';
+const copy = pageCopy.example;
+import '../styles/doctor-content-marketing-example.css';
+---
+<doctor-content-marketing-example class="doctor-content-marketing-example-motion">
+  <section id="doctor-content-marketing-example" class="doctor-content-marketing-example" aria-labelledby="doctor-content-marketing-example-heading">
+    <div class="section-container doctor-content-marketing-example-layout">
+      <header class="doctor-content-marketing-example-header" data-example-entry>
+        <h2 id="doctor-content-marketing-example-heading">{copy.heading}</h2>
+        <span class="doctor-content-marketing-example-rule" data-example-rule aria-hidden="true"></span>
+      </header>
+      <figure class="doctor-content-marketing-example-photo" data-example-entry data-example-photo>
+        <Image src={photo} alt="Doctor explaining health information to a family in the chamber" title="Doctor explaining health information to a family in the chamber" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <div class="doctor-content-marketing-example-copy">
+        <div class="doctor-content-marketing-source-content" data-example-entry set:html={copy.html} />
+      </div>
+    </div>
+  </section>
+</doctor-content-marketing-example>
+<script>
+  import '../scripts/doctor-content-marketing-example';
+</script>

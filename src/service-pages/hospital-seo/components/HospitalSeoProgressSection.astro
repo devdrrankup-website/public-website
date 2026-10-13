@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/hospital-seo/hospital-seo-progress-v1.webp';
+import { pageCopy } from '../data/hospital-seo-source';
+const copy = pageCopy.progress;
+import '../styles/hospital-seo-progress.css';
+---
+<hospital-seo-progress class="hospital-seo-progress-motion">
+  <section id="hospital-seo-progress" class="hospital-seo-progress" aria-labelledby="hospital-seo-progress-heading">
+    <div class="section-container hospital-seo-progress-layout">
+      <h2 id="hospital-seo-progress-heading" data-progress-entry>{copy.heading}</h2>
+      <p class="hospital-seo-progress-baseline" data-progress-entry set:html={copy.paragraphsHtml[0]} />
+      <figure class="hospital-seo-progress-photo" data-progress-entry data-progress-photo>
+        <Image src={photo} alt="Search specialist reviewing a hospital visibility report" title="Search specialist reviewing a hospital visibility report" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <p class="hospital-seo-progress-evidence" data-progress-entry set:html={copy.paragraphsHtml[1]} />
+
+    </div>
+  </section>
+</hospital-seo-progress>
+<script>
+  import '../scripts/hospital-seo-progress';
+</script>

@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/clinic-google-ads/clinic-google-ads-example-v1.webp';
+import { pageCopy } from '../data/clinic-google-ads-source';
+const copy = pageCopy.example;
+import '../styles/clinic-google-ads-example.css';
+---
+<clinic-google-ads-example class="clinic-google-ads-example-motion">
+  <section id="clinic-google-ads-example" class="clinic-google-ads-example" aria-labelledby="clinic-google-ads-example-heading">
+    <div class="section-container clinic-google-ads-example-layout">
+      <header class="clinic-google-ads-example-header" data-example-entry>
+        <h2 id="clinic-google-ads-example-heading">{copy.heading}</h2>
+        <span class="clinic-google-ads-example-rule" data-example-rule aria-hidden="true"></span>
+      </header>
+      <figure class="clinic-google-ads-example-photo" data-example-entry data-example-photo>
+        <Image src={photo} alt="Woman comparing clinic locations on a laptop at home" title="Woman comparing clinic locations on a laptop at home" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <div class="clinic-google-ads-example-copy">
+        <div class="clinic-google-ads-source-content" data-example-entry set:html={copy.html} />
+      </div>
+    </div>
+  </section>
+</clinic-google-ads-example>
+<script>
+  import '../scripts/clinic-google-ads-example';
+</script>

@@ -1,0 +1,47 @@
+---
+// Destination-owned static page. Service-specific images are pending review before publication.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import ClinicGoogleAdsHero from './components/ClinicGoogleAdsHero.astro';
+import ClinicGoogleAdsChallengesSection from './components/ClinicGoogleAdsChallengesSection.astro';
+import ClinicGoogleAdsOutcomesSection from './components/ClinicGoogleAdsOutcomesSection.astro';
+import ClinicGoogleAdsIntentSection from './components/ClinicGoogleAdsIntentSection.astro';
+import ClinicGoogleAdsTrustSection from './components/ClinicGoogleAdsTrustSection.astro';
+import ClinicGoogleAdsExpertiseSection from './components/ClinicGoogleAdsExpertiseSection.astro';
+import ClinicGoogleAdsProcessSection from './components/ClinicGoogleAdsProcessSection.astro';
+import ClinicGoogleAdsMappingSection from './components/ClinicGoogleAdsMappingSection.astro';
+import ClinicGoogleAdsRelatedSection from './components/ClinicGoogleAdsRelatedSection.astro';
+import ClinicGoogleAdsStartingSection from './components/ClinicGoogleAdsStartingSection.astro';
+import ClinicGoogleAdsExampleSection from './components/ClinicGoogleAdsExampleSection.astro';
+import ClinicGoogleAdsProgressSection from './components/ClinicGoogleAdsProgressSection.astro';
+import ClinicGoogleAdsWhySection from './components/ClinicGoogleAdsWhySection.astro';
+import ClinicGoogleAdsFaqSection from './components/ClinicGoogleAdsFaqSection.astro';
+import ClinicGoogleAdsConsultationSection from './components/ClinicGoogleAdsConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { clinicGoogleAdsHeroPreload } from './lib/clinic-google-ads-hero-image';
+import './styles/clinic-google-ads-rendering.css';
+import './styles/clinic-google-ads-source-content.css';
+import { metadata } from './data/clinic-google-ads-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={clinicGoogleAdsHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="clinic-google-ads-page" tabindex="-1">
+    <ClinicGoogleAdsHero />
+    <ClinicGoogleAdsChallengesSection />
+    <ClinicGoogleAdsOutcomesSection />
+    <ClinicGoogleAdsIntentSection />
+    <ClinicGoogleAdsTrustSection />
+    <ClinicGoogleAdsExpertiseSection />
+    <ClinicGoogleAdsProcessSection />
+    <ClinicGoogleAdsMappingSection />
+    <ClinicGoogleAdsRelatedSection />
+    <ClinicGoogleAdsStartingSection />
+    <ClinicGoogleAdsExampleSection />
+    <ClinicGoogleAdsProgressSection />
+    <ClinicGoogleAdsWhySection />
+    <ClinicGoogleAdsFaqSection />
+    <ClinicGoogleAdsConsultationSection />
+  </main>
+  <Footer />
+</Layout>

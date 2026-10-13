@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/clinic-google-business-profile/clinic-google-business-profile-example-v1.webp';
+import { pageCopy } from '../data/clinic-google-business-profile-source';
+const copy = pageCopy.example;
+import '../styles/clinic-google-business-profile-example.css';
+---
+<clinic-google-business-profile-example class="clinic-google-business-profile-example-motion">
+  <section id="clinic-google-business-profile-example" class="clinic-google-business-profile-example" aria-labelledby="clinic-google-business-profile-example-heading">
+    <div class="section-container clinic-google-business-profile-example-layout">
+      <header class="clinic-google-business-profile-example-header" data-example-entry>
+        <h2 id="clinic-google-business-profile-example-heading">{copy.heading}</h2>
+        <span class="clinic-google-business-profile-example-rule" data-example-rule aria-hidden="true"></span>
+      </header>
+      <figure class="clinic-google-business-profile-example-photo" data-example-entry data-example-photo>
+        <Image src={photo} alt="Receptionist helping a visitor check clinic listing details" title="Receptionist helping a visitor check clinic listing details" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <div class="clinic-google-business-profile-example-copy">
+        <div class="clinic-google-business-profile-source-content" data-example-entry set:html={copy.html} />
+      </div>
+    </div>
+  </section>
+</clinic-google-business-profile-example>
+<script>
+  import '../scripts/clinic-google-business-profile-example';
+</script>

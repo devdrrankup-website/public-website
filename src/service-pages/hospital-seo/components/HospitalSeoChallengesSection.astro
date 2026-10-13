@@ -1,0 +1,39 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/hospital-seo/hospital-seo-challenges-v1.webp';
+import { pageCopy } from '../data/hospital-seo-source';
+const copy = pageCopy.challenges;
+import '../styles/hospital-seo-challenges.css';
+---
+
+<hospital-seo-challenges class="hospital-seo-challenges">
+  <section id="hospital-seo-challenges" class="section-container hospital-seo-challenges-layout" aria-labelledby="hospital-seo-challenges-heading">
+    <div class="hospital-seo-challenges-editorial">
+      <h2 id="hospital-seo-challenges-heading">{copy.heading}</h2>
+      <p class="hospital-seo-challenges-introduction" set:html={copy.introductionHtml} />
+      <div class="hospital-seo-challenges-photo" data-seo-challenges-motion>
+        <Image src={photo} widths={[360, 540, 720, 960, 1200]} width={1536} height={1024}
+          sizes="(min-width: 1100px) min(41vw, 568px), (min-width: 640px) min(calc(100vw - 56px), 760px), calc(100vw - 32px)"
+          format="webp" quality={76}
+          alt="Hospital manager and staff comparing search information with records"
+          title="Hospital manager and staff comparing search information with records"
+          loading="lazy" decoding="async" />
+      </div>
+    </div>
+    <div class="hospital-seo-challenges-details">
+      {copy.preListHtml && <p class="hospital-seo-challenges-prelist" set:html={copy.preListHtml} />}
+      <p id="hospital-seo-challenges-list-heading" class="hospital-seo-challenges-list-intro" set:html={copy.listIntroductionHtml} />
+      <ul class="hospital-seo-challenges-list" role="list" aria-labelledby="hospital-seo-challenges-list-heading" data-seo-challenges-motion>
+        {copy.challengesHtml.map((challenge, index) => <li>
+          <span class="hospital-seo-challenge-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+          <span set:html={challenge} />
+        </li>)}
+      </ul>
+      {copy.conclusionHtml && <p class="hospital-seo-challenges-conclusion" set:html={copy.conclusionHtml} />}
+    </div>
+  </section>
+</hospital-seo-challenges>
+
+<script>
+  import '../scripts/hospital-seo-challenges';
+</script>

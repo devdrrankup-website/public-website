@@ -1,0 +1,38 @@
+---
+import ActionIcon from '../../../components/ActionIcon.astro';
+import { pageCopy } from '../data/online-consultation-integration-source';
+const copy = pageCopy.hero;
+import { onlineConsultationIntegrationHeroImage as photo } from '../lib/online-consultation-integration-hero-image';
+import '../styles/online-consultation-integration-hero.css';
+---
+
+<section class="online-consultation-integration-hero" aria-labelledby="online-consultation-integration-heading">
+  <div class="section-container online-consultation-integration-hero-layout">
+    <div class="online-consultation-integration-hero-copy">
+      <h1 id="online-consultation-integration-heading">{copy.heading}</h1>
+      <p class="online-consultation-integration-hero-tagline">{copy.tagline}</p>
+      <div class="online-consultation-integration-hero-description">
+        {copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+      </div>
+      <div class="online-consultation-integration-hero-actions" aria-label={`${copy.heading} options`}>
+        <span class="button button-primary">
+          <span>{copy.primaryCta}</span><ActionIcon purpose="conversation" />
+        </span>
+        {copy.secondaryHref ? <a class="button button-secondary" href={copy.secondaryHref}>
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </a> : <span class="button button-secondary">
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </span>}
+      </div>
+    </div>
+    <div class="online-consultation-integration-hero-visual">
+      <div class="online-consultation-integration-hero-photo">
+        <img src={photo.src} srcset={photo.srcset} sizes={photo.sizes}
+          width={photo.width} height={photo.height}
+          alt="Doctor speaking with a patient by video call from his chamber"
+          title="Connecting a doctor and patient for an online consultation"
+          loading="eager" fetchpriority="high" decoding="async" />
+      </div>
+    </div>
+  </div>
+</section>

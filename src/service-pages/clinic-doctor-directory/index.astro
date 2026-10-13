@@ -1,0 +1,47 @@
+---
+// Destination-owned static page. Service-specific images are pending review before publication.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import ClinicDoctorDirectoryHero from './components/ClinicDoctorDirectoryHero.astro';
+import ClinicDoctorDirectoryChallengesSection from './components/ClinicDoctorDirectoryChallengesSection.astro';
+import ClinicDoctorDirectoryOutcomesSection from './components/ClinicDoctorDirectoryOutcomesSection.astro';
+import ClinicDoctorDirectoryIntentSection from './components/ClinicDoctorDirectoryIntentSection.astro';
+import ClinicDoctorDirectoryTrustSection from './components/ClinicDoctorDirectoryTrustSection.astro';
+import ClinicDoctorDirectoryExpertiseSection from './components/ClinicDoctorDirectoryExpertiseSection.astro';
+import ClinicDoctorDirectoryProcessSection from './components/ClinicDoctorDirectoryProcessSection.astro';
+import ClinicDoctorDirectoryMappingSection from './components/ClinicDoctorDirectoryMappingSection.astro';
+import ClinicDoctorDirectoryRelatedSection from './components/ClinicDoctorDirectoryRelatedSection.astro';
+import ClinicDoctorDirectoryStartingSection from './components/ClinicDoctorDirectoryStartingSection.astro';
+import ClinicDoctorDirectoryExampleSection from './components/ClinicDoctorDirectoryExampleSection.astro';
+import ClinicDoctorDirectoryProgressSection from './components/ClinicDoctorDirectoryProgressSection.astro';
+import ClinicDoctorDirectoryWhySection from './components/ClinicDoctorDirectoryWhySection.astro';
+import ClinicDoctorDirectoryFaqSection from './components/ClinicDoctorDirectoryFaqSection.astro';
+import ClinicDoctorDirectoryConsultationSection from './components/ClinicDoctorDirectoryConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { clinicDoctorDirectoryHeroPreload } from './lib/clinic-doctor-directory-hero-image';
+import './styles/clinic-doctor-directory-rendering.css';
+import './styles/clinic-doctor-directory-source-content.css';
+import { metadata } from './data/clinic-doctor-directory-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={clinicDoctorDirectoryHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="clinic-doctor-directory-page" tabindex="-1">
+    <ClinicDoctorDirectoryHero />
+    <ClinicDoctorDirectoryChallengesSection />
+    <ClinicDoctorDirectoryOutcomesSection />
+    <ClinicDoctorDirectoryIntentSection />
+    <ClinicDoctorDirectoryTrustSection />
+    <ClinicDoctorDirectoryExpertiseSection />
+    <ClinicDoctorDirectoryProcessSection />
+    <ClinicDoctorDirectoryMappingSection />
+    <ClinicDoctorDirectoryRelatedSection />
+    <ClinicDoctorDirectoryStartingSection />
+    <ClinicDoctorDirectoryExampleSection />
+    <ClinicDoctorDirectoryProgressSection />
+    <ClinicDoctorDirectoryWhySection />
+    <ClinicDoctorDirectoryFaqSection />
+    <ClinicDoctorDirectoryConsultationSection />
+  </main>
+  <Footer />
+</Layout>

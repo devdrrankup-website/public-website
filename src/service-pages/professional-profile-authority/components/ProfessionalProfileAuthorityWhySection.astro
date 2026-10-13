@@ -1,0 +1,32 @@
+---
+import Icon from '../../../components/Icon.astro';
+import UserAccountIcon from '@hugeicons/core-free-icons/UserAccountIcon';
+import WorkflowSquare01Icon from '@hugeicons/core-free-icons/WorkflowSquare01Icon';
+import TaskEdit01Icon from '@hugeicons/core-free-icons/TaskEdit01Icon';
+import { pageCopy } from '../data/professional-profile-authority-source';
+const copy = pageCopy.why;
+import '../styles/professional-profile-authority-why.css';
+const visuals = [
+  { icon: UserAccountIcon, accent: '#E1FFB9' },
+  { icon: WorkflowSquare01Icon, accent: '#BAE5FF' },
+  { icon: TaskEdit01Icon, accent: '#EEEDFE' },
+];
+---
+<professional-profile-authority-why class="professional-profile-authority-why-motion">
+  <section id="professional-profile-authority-why" class="professional-profile-authority-why" aria-labelledby="professional-profile-authority-why-heading">
+    <div class="section-container professional-profile-authority-why-layout">
+      <h2 id="professional-profile-authority-why-heading" data-why-entry>{copy.heading}</h2>
+      <div class="professional-profile-authority-source-content" set:html={copy.before} />
+      {copy.items.length > 0 && <ul class="professional-profile-authority-why-principles">
+        {copy.items.map((principle,index) => <li data-why-entry data-why-row>
+          <span class="professional-profile-authority-why-icon" data-why-icon style={`--why-accent:${visuals[index % visuals.length].accent}`} aria-hidden="true"><Icon icon={visuals[index % visuals.length].icon} size={24} strokeWidth={1.7} /></span>
+          <p><strong>{principle.label}</strong>{' '}{principle.description}</p>
+        </li>)}
+      </ul>}
+      <div class="professional-profile-authority-source-content" set:html={copy.after} />
+    </div>
+  </section>
+</professional-profile-authority-why>
+<script>
+  import '../scripts/professional-profile-authority-why';
+</script>

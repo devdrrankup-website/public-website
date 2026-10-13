@@ -1,0 +1,47 @@
+---
+// Destination-owned static page. Service-specific images are pending review before publication.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import EPrescriptionSoftwareHero from './components/EPrescriptionSoftwareHero.astro';
+import EPrescriptionSoftwareChallengesSection from './components/EPrescriptionSoftwareChallengesSection.astro';
+import EPrescriptionSoftwareOutcomesSection from './components/EPrescriptionSoftwareOutcomesSection.astro';
+import EPrescriptionSoftwareIntentSection from './components/EPrescriptionSoftwareIntentSection.astro';
+import EPrescriptionSoftwareTrustSection from './components/EPrescriptionSoftwareTrustSection.astro';
+import EPrescriptionSoftwareExpertiseSection from './components/EPrescriptionSoftwareExpertiseSection.astro';
+import EPrescriptionSoftwareProcessSection from './components/EPrescriptionSoftwareProcessSection.astro';
+import EPrescriptionSoftwareMappingSection from './components/EPrescriptionSoftwareMappingSection.astro';
+import EPrescriptionSoftwareRelatedSection from './components/EPrescriptionSoftwareRelatedSection.astro';
+import EPrescriptionSoftwareStartingSection from './components/EPrescriptionSoftwareStartingSection.astro';
+import EPrescriptionSoftwareExampleSection from './components/EPrescriptionSoftwareExampleSection.astro';
+import EPrescriptionSoftwareProgressSection from './components/EPrescriptionSoftwareProgressSection.astro';
+import EPrescriptionSoftwareWhySection from './components/EPrescriptionSoftwareWhySection.astro';
+import EPrescriptionSoftwareFaqSection from './components/EPrescriptionSoftwareFaqSection.astro';
+import EPrescriptionSoftwareConsultationSection from './components/EPrescriptionSoftwareConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { ePrescriptionSoftwareHeroPreload } from './lib/e-prescription-software-hero-image';
+import './styles/e-prescription-software-rendering.css';
+import './styles/e-prescription-software-source-content.css';
+import { metadata } from './data/e-prescription-software-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={ePrescriptionSoftwareHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="e-prescription-software-page" tabindex="-1">
+    <EPrescriptionSoftwareHero />
+    <EPrescriptionSoftwareChallengesSection />
+    <EPrescriptionSoftwareOutcomesSection />
+    <EPrescriptionSoftwareIntentSection />
+    <EPrescriptionSoftwareTrustSection />
+    <EPrescriptionSoftwareExpertiseSection />
+    <EPrescriptionSoftwareProcessSection />
+    <EPrescriptionSoftwareMappingSection />
+    <EPrescriptionSoftwareRelatedSection />
+    <EPrescriptionSoftwareStartingSection />
+    <EPrescriptionSoftwareExampleSection />
+    <EPrescriptionSoftwareProgressSection />
+    <EPrescriptionSoftwareWhySection />
+    <EPrescriptionSoftwareFaqSection />
+    <EPrescriptionSoftwareConsultationSection />
+  </main>
+  <Footer />
+</Layout>

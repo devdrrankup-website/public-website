@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/hospital-advertising/hospital-advertising-starting-v1.webp';
+import { pageCopy } from '../data/hospital-advertising-source';
+const copy = pageCopy.starting;
+import '../styles/hospital-advertising-starting.css';
+---
+<hospital-advertising-starting class="hospital-advertising-starting-motion">
+  <section id="hospital-advertising-starting" class="hospital-advertising-starting" aria-labelledby="hospital-advertising-starting-heading">
+    <div class="section-container hospital-advertising-starting-layout">
+      <h2 id="hospital-advertising-starting-heading" data-starting-entry>{copy.heading}</h2>
+      <div class="hospital-advertising-starting-copy" data-starting-entry>
+        <div class="hospital-advertising-source-content" set:html={copy.html} />
+      </div>
+      <figure class="hospital-advertising-starting-visual" data-starting-entry data-starting-visual>
+        <Image src={photo} alt="Hospital owner and specialist reviewing an advertising report" title="Hospital owner and specialist reviewing an advertising report" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 540px, (min-width:640px) 320px, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+    </div>
+  </section>
+</hospital-advertising-starting>
+<script>
+  import '../scripts/hospital-advertising-starting';
+</script>

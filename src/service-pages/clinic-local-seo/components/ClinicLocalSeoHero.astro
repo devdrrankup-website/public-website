@@ -1,0 +1,38 @@
+---
+import ActionIcon from '../../../components/ActionIcon.astro';
+import { pageCopy } from '../data/clinic-local-seo-source';
+const copy = pageCopy.hero;
+import { clinicLocalSeoHeroImage as photo } from '../lib/clinic-local-seo-hero-image';
+import '../styles/clinic-local-seo-hero.css';
+---
+
+<section class="clinic-local-seo-hero" aria-labelledby="clinic-local-seo-heading">
+  <div class="section-container clinic-local-seo-hero-layout">
+    <div class="clinic-local-seo-hero-copy">
+      <h1 id="clinic-local-seo-heading">{copy.heading}</h1>
+      <p class="clinic-local-seo-hero-tagline">{copy.tagline}</p>
+      <div class="clinic-local-seo-hero-description">
+        {copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+      </div>
+      <div class="clinic-local-seo-hero-actions" aria-label={`${copy.heading} options`}>
+        <span class="button button-primary">
+          <span>{copy.primaryCta}</span><ActionIcon purpose="conversation" />
+        </span>
+        {copy.secondaryHref ? <a class="button button-secondary" href={copy.secondaryHref}>
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </a> : <span class="button button-secondary">
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </span>}
+      </div>
+    </div>
+    <div class="clinic-local-seo-hero-visual">
+      <div class="clinic-local-seo-hero-photo">
+        <img src={photo.src} srcset={photo.srcset} sizes={photo.sizes}
+          width={photo.width} height={photo.height}
+          alt="Mother and son comparing nearby clinic locations on a phone at home"
+          title="Finding a local clinic from home"
+          loading="eager" fetchpriority="high" decoding="async" />
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,47 @@
+---
+// Destination-owned static page. Service-specific images are pending review before publication.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import SearchReadyBuildFoundationHero from './components/SearchReadyBuildFoundationHero.astro';
+import SearchReadyBuildFoundationChallengesSection from './components/SearchReadyBuildFoundationChallengesSection.astro';
+import SearchReadyBuildFoundationOutcomesSection from './components/SearchReadyBuildFoundationOutcomesSection.astro';
+import SearchReadyBuildFoundationIntentSection from './components/SearchReadyBuildFoundationIntentSection.astro';
+import SearchReadyBuildFoundationTrustSection from './components/SearchReadyBuildFoundationTrustSection.astro';
+import SearchReadyBuildFoundationExpertiseSection from './components/SearchReadyBuildFoundationExpertiseSection.astro';
+import SearchReadyBuildFoundationProcessSection from './components/SearchReadyBuildFoundationProcessSection.astro';
+import SearchReadyBuildFoundationMappingSection from './components/SearchReadyBuildFoundationMappingSection.astro';
+import SearchReadyBuildFoundationRelatedSection from './components/SearchReadyBuildFoundationRelatedSection.astro';
+import SearchReadyBuildFoundationStartingSection from './components/SearchReadyBuildFoundationStartingSection.astro';
+import SearchReadyBuildFoundationExampleSection from './components/SearchReadyBuildFoundationExampleSection.astro';
+import SearchReadyBuildFoundationProgressSection from './components/SearchReadyBuildFoundationProgressSection.astro';
+import SearchReadyBuildFoundationWhySection from './components/SearchReadyBuildFoundationWhySection.astro';
+import SearchReadyBuildFoundationFaqSection from './components/SearchReadyBuildFoundationFaqSection.astro';
+import SearchReadyBuildFoundationConsultationSection from './components/SearchReadyBuildFoundationConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { searchReadyBuildFoundationHeroPreload } from './lib/search-ready-build-foundation-hero-image';
+import './styles/search-ready-build-foundation-rendering.css';
+import './styles/search-ready-build-foundation-source-content.css';
+import { metadata } from './data/search-ready-build-foundation-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={searchReadyBuildFoundationHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="search-ready-build-foundation-page" tabindex="-1">
+    <SearchReadyBuildFoundationHero />
+    <SearchReadyBuildFoundationChallengesSection />
+    <SearchReadyBuildFoundationOutcomesSection />
+    <SearchReadyBuildFoundationIntentSection />
+    <SearchReadyBuildFoundationTrustSection />
+    <SearchReadyBuildFoundationExpertiseSection />
+    <SearchReadyBuildFoundationProcessSection />
+    <SearchReadyBuildFoundationMappingSection />
+    <SearchReadyBuildFoundationRelatedSection />
+    <SearchReadyBuildFoundationStartingSection />
+    <SearchReadyBuildFoundationExampleSection />
+    <SearchReadyBuildFoundationProgressSection />
+    <SearchReadyBuildFoundationWhySection />
+    <SearchReadyBuildFoundationFaqSection />
+    <SearchReadyBuildFoundationConsultationSection />
+  </main>
+  <Footer />
+</Layout>

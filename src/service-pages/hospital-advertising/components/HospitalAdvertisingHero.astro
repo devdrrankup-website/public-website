@@ -1,0 +1,38 @@
+---
+import ActionIcon from '../../../components/ActionIcon.astro';
+import { pageCopy } from '../data/hospital-advertising-source';
+const copy = pageCopy.hero;
+import { hospitalAdvertisingHeroImage as photo } from '../lib/hospital-advertising-hero-image';
+import '../styles/hospital-advertising-hero.css';
+---
+
+<section class="hospital-advertising-hero" aria-labelledby="hospital-advertising-heading">
+  <div class="section-container hospital-advertising-hero-layout">
+    <div class="hospital-advertising-hero-copy">
+      <h1 id="hospital-advertising-heading">{copy.heading}</h1>
+      <p class="hospital-advertising-hero-tagline">{copy.tagline}</p>
+      <div class="hospital-advertising-hero-description">
+        {copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+      </div>
+      <div class="hospital-advertising-hero-actions" aria-label={`${copy.heading} options`}>
+        <span class="button button-primary">
+          <span>{copy.primaryCta}</span><ActionIcon purpose="conversation" />
+        </span>
+        {copy.secondaryHref ? <a class="button button-secondary" href={copy.secondaryHref}>
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </a> : <span class="button button-secondary">
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </span>}
+      </div>
+    </div>
+    <div class="hospital-advertising-hero-visual">
+      <div class="hospital-advertising-hero-photo">
+        <img src={photo.src} srcset={photo.srcset} sizes={photo.sizes}
+          width={photo.width} height={photo.height}
+          alt="Hospital marketing manager and ad specialist reviewing an outpatient entrance photo"
+          title="Planning a hospital advertising campaign"
+          loading="eager" fetchpriority="high" decoding="async" />
+      </div>
+    </div>
+  </div>
+</section>

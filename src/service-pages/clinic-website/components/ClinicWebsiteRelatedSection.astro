@@ -1,0 +1,70 @@
+---
+import { Image } from 'astro:assets';
+import Icon from '../../../components/Icon.astro';
+import Arrow from '../../../components/Arrow.astro';
+import UserGroupIcon from '@hugeicons/core-free-icons/UserGroupIcon';
+import Calendar03Icon from '@hugeicons/core-free-icons/Calendar03Icon';
+import DatabaseIcon from '@hugeicons/core-free-icons/DatabaseIcon';
+import Search01Icon from '@hugeicons/core-free-icons/Search01Icon';
+import PaintBrush01Icon from '@hugeicons/core-free-icons/PaintBrush01Icon';
+import { pageCopy } from '../data/clinic-website-source';
+const copy = pageCopy.related;
+import relatedImage0 from '../../../assets/clinic-doctor-directory/clinic-doctor-directory-related-preview-v1.webp';
+import relatedImage1 from '../../../assets/clinic-online-appointment-system/clinic-online-appointment-system-related-preview-v1.webp';
+import relatedImage2 from '../../../assets/clinic-online-report-portal/clinic-online-report-portal-related-preview-v1.webp';
+import relatedImage3 from '../../../assets/clinic-seo/clinic-seo-related-preview-v1.webp';
+import relatedImage4 from '../../../assets/clinic-branding/clinic-branding-related-preview-v1.webp';
+import '../styles/clinic-website-related.css';
+const visuals = [
+  { image: relatedImage0, icon: UserGroupIcon, accent: '#BAE5FF', description: "A patient at home compares doctor specialties and chamber availability within a clinic directory on a correctly oriented tablet; generic nonlegible interface." },
+  { image: relatedImage1, icon: Calendar03Icon, accent: '#EEEDFE', description: "A patient at home selects a clinic appointment time on a front-facing smartphone; one natural hand holds the phone and the other taps inside the visible screen." },
+  { image: relatedImage2, icon: DatabaseIcon, accent: '#FEF2CC', description: "At home, a patient opens a secure clinic report portal on a front-facing laptop, with a neutral blurred interface and no medical results or identifying details." },
+  { image: relatedImage3, icon: Search01Icon, accent: '#E4FFBD', description: "At home in Bangladesh, a prospective patient uses a correctly oriented laptop to compare a clinic's service and location information before deciding whom to contact." },
+  { image: relatedImage4, icon: PaintBrush01Icon, accent: '#F7E4FB', description: "A civilian designer studies blank clinic signage mockups mounted in an actual reception corridor, with a clinic manager checking legibility from a distance." },
+];
+---
+<section id="clinic-website-related" class="clinic-website-related" aria-labelledby="clinic-website-related-heading">
+  <div class="section-container clinic-website-related-container">
+    <clinic-website-related>
+      <header class="clinic-website-related-header" data-related-entry>
+        <h2 id="clinic-website-related-heading">{copy.heading}</h2>
+        <div class="clinic-website-source-content" set:html={copy.introductionHtml} />
+      </header>
+      <div class="clinic-website-related-layout">
+        <div class="clinic-website-related-dock">
+          <div class="clinic-website-related-selectors" role="group" aria-label="Service image previews" hidden>
+            {copy.services.map((service, index) => <button type="button" aria-pressed={index === 0 ? 'true' : 'false'} aria-controls={`related-${service.key}`} data-related-select={index}>
+              <span>{service.name}</span>
+            </button>)}
+          </div>
+          <div class="clinic-website-related-stage" aria-hidden="true" hidden></div>
+        </div>
+        <div class="clinic-website-related-details">
+          <div class="clinic-website-related-labels"><span>{copy.headers[0]}</span><span>{copy.headers[1]}</span></div>
+          <dl class="clinic-website-related-list">
+            {copy.services.map((service, index) => <div class="clinic-website-related-row" id={`related-${service.key}`} data-service={service.key}>
+              <dt>
+                <span class="clinic-website-related-badge" style={`--related-accent:${visuals[index % visuals.length].accent}`}><Icon icon={visuals[index % visuals.length].icon} size={21} strokeWidth={1.8} /></span>
+                <span class="clinic-website-related-reveal" aria-hidden="true"></span>
+                {service.href ? <a class="clinic-website-related-name" href={service.href}>{service.name}</a>
+                  : <span class="clinic-website-related-name">{service.name}</span>}
+                <span class="clinic-website-related-arrow" aria-hidden="true"><Arrow /></span>
+              </dt>
+              <dd>
+                <span>{service.responsibility}</span>
+                <figure class="clinic-website-related-photo">
+                  <Image src={visuals[index % visuals.length].image} alt={visuals[index % visuals.length].description} title={visuals[index % visuals.length].description} width={960} widths={[360,640,960]} sizes="(min-width:1100px) 700px, (min-width:640px) 700px, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+                  <figcaption>{service.name}</figcaption>
+                </figure>
+              </dd>
+            </div>)}
+          </dl>
+          <div class="clinic-website-related-note clinic-website-source-content" set:html={copy.noteHtml} />
+        </div>
+      </div>
+    </clinic-website-related>
+  </div>
+</section>
+<script>
+  import '../scripts/clinic-website-related';
+</script>

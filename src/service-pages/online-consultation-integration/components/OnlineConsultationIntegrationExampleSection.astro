@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/online-consultation-integration/online-consultation-integration-example-v1.webp';
+import { pageCopy } from '../data/online-consultation-integration-source';
+const copy = pageCopy.example;
+import '../styles/online-consultation-integration-example.css';
+---
+<online-consultation-integration-example class="online-consultation-integration-example-motion">
+  <section id="online-consultation-integration-example" class="online-consultation-integration-example" aria-labelledby="online-consultation-integration-example-heading">
+    <div class="section-container online-consultation-integration-example-layout">
+      <header class="online-consultation-integration-example-header" data-example-entry>
+        <h2 id="online-consultation-integration-example-heading">{copy.heading}</h2>
+        <span class="online-consultation-integration-example-rule" data-example-rule aria-hidden="true"></span>
+      </header>
+      <figure class="online-consultation-integration-example-photo" data-example-entry data-example-photo>
+        <Image src={photo} alt="Doctor demonstrating online consultation access on a phone" title="Doctor demonstrating online consultation access on a phone" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <div class="online-consultation-integration-example-copy">
+        <div class="online-consultation-integration-source-content" data-example-entry set:html={copy.html} />
+      </div>
+    </div>
+  </section>
+</online-consultation-integration-example>
+<script>
+  import '../scripts/online-consultation-integration-example';
+</script>

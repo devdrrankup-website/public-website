@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/hospital-seo/hospital-seo-starting-v1.webp';
+import { pageCopy } from '../data/hospital-seo-source';
+const copy = pageCopy.starting;
+import '../styles/hospital-seo-starting.css';
+---
+<hospital-seo-starting class="hospital-seo-starting-motion">
+  <section id="hospital-seo-starting" class="hospital-seo-starting" aria-labelledby="hospital-seo-starting-heading">
+    <div class="section-container hospital-seo-starting-layout">
+      <h2 id="hospital-seo-starting-heading" data-starting-entry>{copy.heading}</h2>
+      <div class="hospital-seo-starting-copy" data-starting-entry>
+        <div class="hospital-seo-source-content" set:html={copy.html} />
+      </div>
+      <figure class="hospital-seo-starting-visual" data-starting-entry data-starting-visual>
+        <Image src={photo} alt="Hospital owner and specialist reviewing an organic search report" title="Hospital owner and specialist reviewing an organic search report" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 540px, (min-width:640px) 320px, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+    </div>
+  </section>
+</hospital-seo-starting>
+<script>
+  import '../scripts/hospital-seo-starting';
+</script>

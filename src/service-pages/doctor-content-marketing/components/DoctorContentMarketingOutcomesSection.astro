@@ -1,0 +1,25 @@
+---
+import DoctorContentMarketingOutcomeVisual from './DoctorContentMarketingOutcomeVisual.astro';
+import { pageCopy } from '../data/doctor-content-marketing-source';
+const copy = pageCopy.outcomes;
+import '../styles/doctor-content-marketing-outcomes.css';
+---
+<doctor-content-marketing-outcomes class="doctor-content-marketing-outcomes">
+  <section id="doctor-content-marketing-outcomes" class="section-container" aria-labelledby="doctor-content-marketing-outcomes-heading">
+    <div class="doctor-content-marketing-outcomes-heading">
+      <h2 id="doctor-content-marketing-outcomes-heading">{copy.heading}</h2>
+      <div class="doctor-content-marketing-outcomes-introduction doctor-content-marketing-source-content" set:html={copy.before} />
+    </div>
+    <ul class="doctor-content-marketing-outcomes-list" role="list">
+      {copy.items.map((item, index) => <li class="doctor-content-marketing-outcome" data-seo-outcomes-motion>
+        <DoctorContentMarketingOutcomeVisual index={index} />
+        <p><strong>{item.label}</strong><span>{item.description}</span></p>
+      </li>)}
+    </ul>
+    <div class="doctor-content-marketing-outcomes-conclusion doctor-content-marketing-source-content" set:html={copy.after} />
+  </section>
+</doctor-content-marketing-outcomes>
+
+<script>
+  import '../scripts/doctor-content-marketing-outcomes';
+</script>

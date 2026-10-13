@@ -1,0 +1,31 @@
+---
+import Icon from '../../../components/Icon.astro';
+import Add01Icon from '@hugeicons/core-free-icons/Add01Icon';
+import { pageCopy } from '../data/clinic-social-media-marketing-source';
+const copy = pageCopy.faq;
+import '../styles/clinic-social-media-marketing-faq.css';
+---
+<clinic-social-media-marketing-faq class="clinic-social-media-marketing-faq-motion">
+  <section id="clinic-social-media-marketing-faq" class="clinic-social-media-marketing-faq" aria-labelledby="clinic-social-media-marketing-faq-heading">
+    <div class="section-container clinic-social-media-marketing-faq-layout">
+      <header class="clinic-social-media-marketing-faq-header" data-faq-entry>
+        <h2 id="clinic-social-media-marketing-faq-heading">{copy.heading}</h2>
+        <div class="clinic-social-media-marketing-source-content" set:html={copy.preface} />
+      </header>
+      <div class="clinic-social-media-marketing-faq-list">
+        {copy.items.map((item,index) => <article class="clinic-social-media-marketing-faq-item" data-faq-entry aria-labelledby={`clinic-social-media-marketing-faq-question-${index+1}`}>
+          <h3 class="clinic-social-media-marketing-faq-question" id={`clinic-social-media-marketing-faq-question-${index+1}`}>
+            <span class="clinic-social-media-marketing-faq-label">{item.question}</span>
+            <span class="clinic-social-media-marketing-faq-toggle" aria-hidden="true"><Icon icon={Add01Icon} size={20} strokeWidth={1.8} /></span>
+          </h3>
+          <div class="clinic-social-media-marketing-faq-answer" id={`clinic-social-media-marketing-faq-answer-${index+1}`} role="region" aria-labelledby={`clinic-social-media-marketing-faq-question-${index+1}`}>
+            <div class="clinic-social-media-marketing-source-content" set:html={item.answerHtml} />
+          </div>
+        </article>)}
+      </div>
+    </div>
+  </section>
+</clinic-social-media-marketing-faq>
+<script>
+  import '../scripts/clinic-social-media-marketing-faq';
+</script>

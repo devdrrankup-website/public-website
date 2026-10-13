@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/doctor-personal-branding/doctor-personal-branding-intent-v1.webp';
+import { pageCopy } from '../data/doctor-personal-branding-source';
+const copy = pageCopy.intent;
+import '../styles/doctor-personal-branding-intent.css';
+---
+<doctor-personal-branding-intent class="doctor-personal-branding-intent">
+  <section id="doctor-personal-branding-intent" class="section-container doctor-personal-branding-intent-layout" aria-labelledby="doctor-personal-branding-intent-heading">
+    <div class="doctor-personal-branding-intent-copy" data-seo-intent-motion>
+      <h2 id="doctor-personal-branding-intent-heading">{copy.heading}</h2>
+      <div class="doctor-personal-branding-source-content" set:html={copy.html} />
+    </div>
+    <div class="doctor-personal-branding-intent-photo" data-seo-intent-motion>
+      <Image src={photo} widths={[360, 540, 720, 960, 1200]} width={1536} height={1024}
+        sizes="(min-width: 1100px) min(43vw, 576px), (min-width: 640px) min(calc(100vw - 56px), 760px), calc(100vw - 32px)"
+        format="webp" quality={76} loading="lazy" decoding="async"
+        alt="Man viewing a doctor professional profile on a laptop at home"
+        title="Man viewing a doctor professional profile on a laptop at home" />
+    </div>
+  </section>
+</doctor-personal-branding-intent>
+
+<script>
+  import '../scripts/doctor-personal-branding-intent';
+</script>

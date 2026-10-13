@@ -24,6 +24,9 @@ doctor-seo-related { display: block; }
 .doctor-seo-related-row dt { position: relative; display: flex; align-items: center; gap: 12px; padding-right: 32px; }
 .doctor-seo-related-badge { flex: none; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 9px; color: #000; background: var(--related-accent); }
 .doctor-seo-related-name { display: block; color: #fff; font-size: clamp(24px,6.1vw,32px); line-height: 1.25; letter-spacing: -.025em; font-weight: 600; }
+.doctor-seo-related-name[href] { text-decoration: none; }
+.doctor-seo-related-name[href]:hover { text-decoration: underline; text-decoration-thickness: .06em; text-underline-offset: .13em; }
+.doctor-seo-related-name[href]:focus-visible { outline: 2px solid #afa9ec; outline-offset: 5px; }
 .doctor-seo-related-arrow { position: absolute; right: 0; top: 50%; transform: translateY(-50%); display: flex; width: 24px; height: 24px; color: #fff; }
 .doctor-seo-related-arrow .arrow-icon { display: flex; }
 .doctor-seo-related-row dd { margin: 12px 0 0 46px; color: #fff; font-size: 14px; line-height: 1.8; }

@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/diagnostic-management/diagnostic-management-starting-v1.webp';
+import { pageCopy } from '../data/diagnostic-management-source';
+const copy = pageCopy.starting;
+import '../styles/diagnostic-management-starting.css';
+---
+<diagnostic-management-starting class="diagnostic-management-starting-motion">
+  <section id="diagnostic-management-starting" class="diagnostic-management-starting" aria-labelledby="diagnostic-management-starting-heading">
+    <div class="section-container diagnostic-management-starting-layout">
+      <h2 id="diagnostic-management-starting-heading" data-starting-entry>{copy.heading}</h2>
+      <div class="diagnostic-management-starting-copy" data-starting-entry>
+        <div class="diagnostic-management-source-content" set:html={copy.html} />
+      </div>
+      <figure class="diagnostic-management-starting-visual" data-starting-entry data-starting-visual>
+        <Image src={photo} alt="Diagnostic centre manager and specialist mapping a laboratory workflow" title="Diagnostic centre manager and specialist mapping a laboratory workflow" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 540px, (min-width:640px) 320px, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+    </div>
+  </section>
+</diagnostic-management-starting>
+<script>
+  import '../scripts/diagnostic-management-starting';
+</script>

@@ -1,0 +1,25 @@
+---
+import PatientMedicalRecordSoftwareOutcomeVisual from './PatientMedicalRecordSoftwareOutcomeVisual.astro';
+import { pageCopy } from '../data/patient-medical-record-software-source';
+const copy = pageCopy.outcomes;
+import '../styles/patient-medical-record-software-outcomes.css';
+---
+<patient-medical-record-software-outcomes class="patient-medical-record-software-outcomes">
+  <section id="patient-medical-record-software-outcomes" class="section-container" aria-labelledby="patient-medical-record-software-outcomes-heading">
+    <div class="patient-medical-record-software-outcomes-heading">
+      <h2 id="patient-medical-record-software-outcomes-heading">{copy.heading}</h2>
+      <div class="patient-medical-record-software-outcomes-introduction patient-medical-record-software-source-content" set:html={copy.before} />
+    </div>
+    <ul class="patient-medical-record-software-outcomes-list" role="list">
+      {copy.items.map((item, index) => <li class="patient-medical-record-software-outcome" data-seo-outcomes-motion>
+        <PatientMedicalRecordSoftwareOutcomeVisual index={index} />
+        <p><strong>{item.label}</strong><span>{item.description}</span></p>
+      </li>)}
+    </ul>
+    <div class="patient-medical-record-software-outcomes-conclusion patient-medical-record-software-source-content" set:html={copy.after} />
+  </section>
+</patient-medical-record-software-outcomes>
+
+<script>
+  import '../scripts/patient-medical-record-software-outcomes';
+</script>

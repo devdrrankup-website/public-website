@@ -1,0 +1,47 @@
+---
+// Destination-owned static page. Service-specific images are pending review before publication.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import OnlineConsultationIntegrationHero from './components/OnlineConsultationIntegrationHero.astro';
+import OnlineConsultationIntegrationChallengesSection from './components/OnlineConsultationIntegrationChallengesSection.astro';
+import OnlineConsultationIntegrationOutcomesSection from './components/OnlineConsultationIntegrationOutcomesSection.astro';
+import OnlineConsultationIntegrationIntentSection from './components/OnlineConsultationIntegrationIntentSection.astro';
+import OnlineConsultationIntegrationTrustSection from './components/OnlineConsultationIntegrationTrustSection.astro';
+import OnlineConsultationIntegrationExpertiseSection from './components/OnlineConsultationIntegrationExpertiseSection.astro';
+import OnlineConsultationIntegrationProcessSection from './components/OnlineConsultationIntegrationProcessSection.astro';
+import OnlineConsultationIntegrationMappingSection from './components/OnlineConsultationIntegrationMappingSection.astro';
+import OnlineConsultationIntegrationRelatedSection from './components/OnlineConsultationIntegrationRelatedSection.astro';
+import OnlineConsultationIntegrationStartingSection from './components/OnlineConsultationIntegrationStartingSection.astro';
+import OnlineConsultationIntegrationExampleSection from './components/OnlineConsultationIntegrationExampleSection.astro';
+import OnlineConsultationIntegrationProgressSection from './components/OnlineConsultationIntegrationProgressSection.astro';
+import OnlineConsultationIntegrationWhySection from './components/OnlineConsultationIntegrationWhySection.astro';
+import OnlineConsultationIntegrationFaqSection from './components/OnlineConsultationIntegrationFaqSection.astro';
+import OnlineConsultationIntegrationConsultationSection from './components/OnlineConsultationIntegrationConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { onlineConsultationIntegrationHeroPreload } from './lib/online-consultation-integration-hero-image';
+import './styles/online-consultation-integration-rendering.css';
+import './styles/online-consultation-integration-source-content.css';
+import { metadata } from './data/online-consultation-integration-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={onlineConsultationIntegrationHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="online-consultation-integration-page" tabindex="-1">
+    <OnlineConsultationIntegrationHero />
+    <OnlineConsultationIntegrationChallengesSection />
+    <OnlineConsultationIntegrationOutcomesSection />
+    <OnlineConsultationIntegrationIntentSection />
+    <OnlineConsultationIntegrationTrustSection />
+    <OnlineConsultationIntegrationExpertiseSection />
+    <OnlineConsultationIntegrationProcessSection />
+    <OnlineConsultationIntegrationMappingSection />
+    <OnlineConsultationIntegrationRelatedSection />
+    <OnlineConsultationIntegrationStartingSection />
+    <OnlineConsultationIntegrationExampleSection />
+    <OnlineConsultationIntegrationProgressSection />
+    <OnlineConsultationIntegrationWhySection />
+    <OnlineConsultationIntegrationFaqSection />
+    <OnlineConsultationIntegrationConsultationSection />
+  </main>
+  <Footer />
+</Layout>

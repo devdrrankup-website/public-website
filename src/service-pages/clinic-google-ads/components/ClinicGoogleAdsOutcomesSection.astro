@@ -1,0 +1,25 @@
+---
+import ClinicGoogleAdsOutcomeVisual from './ClinicGoogleAdsOutcomeVisual.astro';
+import { pageCopy } from '../data/clinic-google-ads-source';
+const copy = pageCopy.outcomes;
+import '../styles/clinic-google-ads-outcomes.css';
+---
+<clinic-google-ads-outcomes class="clinic-google-ads-outcomes">
+  <section id="clinic-google-ads-outcomes" class="section-container" aria-labelledby="clinic-google-ads-outcomes-heading">
+    <div class="clinic-google-ads-outcomes-heading">
+      <h2 id="clinic-google-ads-outcomes-heading">{copy.heading}</h2>
+      <div class="clinic-google-ads-outcomes-introduction clinic-google-ads-source-content" set:html={copy.before} />
+    </div>
+    <ul class="clinic-google-ads-outcomes-list" role="list">
+      {copy.items.map((item, index) => <li class="clinic-google-ads-outcome" data-seo-outcomes-motion>
+        <ClinicGoogleAdsOutcomeVisual index={index} />
+        <p><strong>{item.label}</strong><span>{item.description}</span></p>
+      </li>)}
+    </ul>
+    <div class="clinic-google-ads-outcomes-conclusion clinic-google-ads-source-content" set:html={copy.after} />
+  </section>
+</clinic-google-ads-outcomes>
+
+<script>
+  import '../scripts/clinic-google-ads-outcomes';
+</script>

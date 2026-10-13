@@ -1,0 +1,108 @@
+/* Page-owned offscreen rendering. Whole section boundaries preserve native
+   sticky containers; the hero and desktop remain immediately renderable.
+   Auto remembers real sizes after entry; source content is always in HTML. */
+@supports (content-visibility: auto) {
+  @media (max-width:1099px) {
+    .doctor-content-dashboard-page > :is(doctor-content-dashboard-challenges,doctor-content-dashboard-outcomes,doctor-content-dashboard-intent,doctor-content-dashboard-trust,doctor-content-dashboard-expertise,doctor-content-dashboard-process,doctor-content-dashboard-mapping,#doctor-content-dashboard-related,doctor-content-dashboard-starting,doctor-content-dashboard-example,doctor-content-dashboard-progress,doctor-content-dashboard-why,doctor-content-dashboard-faq,doctor-content-dashboard-consultation) {
+      content-visibility: auto;
+      contain-intrinsic-block-size: auto var(--seo-section-estimate,1000px);
+    }
+      .doctor-content-dashboard-page > doctor-content-dashboard-challenges { --seo-section-estimate:1252px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-outcomes { --seo-section-estimate:1780px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-intent { --seo-section-estimate:698px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-trust { --seo-section-estimate:906px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-expertise { --seo-section-estimate:1063px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-process { --seo-section-estimate:1767px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-mapping { --seo-section-estimate:1475px; }
+      .doctor-content-dashboard-page > #doctor-content-dashboard-related { --seo-section-estimate:1284px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-starting { --seo-section-estimate:804px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-example { --seo-section-estimate:896px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-progress { --seo-section-estimate:798px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-why { --seo-section-estimate:948px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-faq { --seo-section-estimate:1111px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-consultation { --seo-section-estimate:1621px; }
+    @media (min-width:360px) {
+      .doctor-content-dashboard-page > doctor-content-dashboard-challenges { --seo-section-estimate:1148px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-outcomes { --seo-section-estimate:1638px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-intent { --seo-section-estimate:663px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-trust { --seo-section-estimate:808px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-expertise { --seo-section-estimate:1089px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-process { --seo-section-estimate:1525px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-mapping { --seo-section-estimate:1398px; }
+      .doctor-content-dashboard-page > #doctor-content-dashboard-related { --seo-section-estimate:1305px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-starting { --seo-section-estimate:789px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-example { --seo-section-estimate:920px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-progress { --seo-section-estimate:789px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-why { --seo-section-estimate:866px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-faq { --seo-section-estimate:1063px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-consultation { --seo-section-estimate:1555px; }
+    }
+    @media (min-width:640px) {
+      .doctor-content-dashboard-page > doctor-content-dashboard-challenges { --seo-section-estimate:1225px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-outcomes { --seo-section-estimate:1303px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-intent { --seo-section-estimate:753px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-trust { --seo-section-estimate:940px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-expertise { --seo-section-estimate:692px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-process { --seo-section-estimate:1764px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-mapping { --seo-section-estimate:1046px; }
+      .doctor-content-dashboard-page > #doctor-content-dashboard-related { --seo-section-estimate:1424px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-starting { --seo-section-estimate:608px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-example { --seo-section-estimate:779px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-progress { --seo-section-estimate:668px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-why { --seo-section-estimate:794px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-faq { --seo-section-estimate:1051px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-consultation { --seo-section-estimate:1402px; }
+    }
+    @media (min-width:820px) {
+      .doctor-content-dashboard-page > doctor-content-dashboard-challenges { --seo-section-estimate:1304px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-outcomes { --seo-section-estimate:1149px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-intent { --seo-section-estimate:821px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-trust { --seo-section-estimate:957px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-expertise { --seo-section-estimate:743px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-process { --seo-section-estimate:1372px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-mapping { --seo-section-estimate:965px; }
+      .doctor-content-dashboard-page > #doctor-content-dashboard-related { --seo-section-estimate:1412px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-starting { --seo-section-estimate:577px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-example { --seo-section-estimate:640px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-progress { --seo-section-estimate:544px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-why { --seo-section-estimate:718px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-faq { --seo-section-estimate:1031px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-consultation { --seo-section-estimate:1402px; }
+    }
+    @media (min-width:999px) {
+      .doctor-content-dashboard-page > doctor-content-dashboard-challenges { --seo-section-estimate:1290px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-outcomes { --seo-section-estimate:1125px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-intent { --seo-section-estimate:836px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-trust { --seo-section-estimate:991px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-expertise { --seo-section-estimate:772px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-process { --seo-section-estimate:1118px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-mapping { --seo-section-estimate:958px; }
+      .doctor-content-dashboard-page > #doctor-content-dashboard-related { --seo-section-estimate:1430px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-starting { --seo-section-estimate:577px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-example { --seo-section-estimate:585px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-progress { --seo-section-estimate:551px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-why { --seo-section-estimate:750px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-faq { --seo-section-estimate:1011px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-consultation { --seo-section-estimate:1413px; }
+    }
+    @media (min-width:1000px) {
+      .doctor-content-dashboard-page > doctor-content-dashboard-challenges { --seo-section-estimate:1290px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-outcomes { --seo-section-estimate:1125px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-intent { --seo-section-estimate:836px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-trust { --seo-section-estimate:991px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-expertise { --seo-section-estimate:772px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-process { --seo-section-estimate:1118px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-mapping { --seo-section-estimate:958px; }
+      .doctor-content-dashboard-page > #doctor-content-dashboard-related { --seo-section-estimate:1430px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-starting { --seo-section-estimate:577px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-example { --seo-section-estimate:585px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-progress { --seo-section-estimate:551px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-why { --seo-section-estimate:750px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-faq { --seo-section-estimate:1011px; }
+      .doctor-content-dashboard-page > doctor-content-dashboard-consultation { --seo-section-estimate:851px; }
+    }
+  }
+}
+@media print {
+  .doctor-content-dashboard-page > :is(doctor-content-dashboard-challenges,doctor-content-dashboard-outcomes,doctor-content-dashboard-intent,doctor-content-dashboard-trust,doctor-content-dashboard-expertise,doctor-content-dashboard-process,doctor-content-dashboard-mapping,#doctor-content-dashboard-related,doctor-content-dashboard-starting,doctor-content-dashboard-example,doctor-content-dashboard-progress,doctor-content-dashboard-why,doctor-content-dashboard-faq,doctor-content-dashboard-consultation) { content-visibility:visible; contain-intrinsic-block-size:none; }
+}

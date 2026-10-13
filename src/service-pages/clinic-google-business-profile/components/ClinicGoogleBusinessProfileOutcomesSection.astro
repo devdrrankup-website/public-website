@@ -1,0 +1,25 @@
+---
+import ClinicGoogleBusinessProfileOutcomeVisual from './ClinicGoogleBusinessProfileOutcomeVisual.astro';
+import { pageCopy } from '../data/clinic-google-business-profile-source';
+const copy = pageCopy.outcomes;
+import '../styles/clinic-google-business-profile-outcomes.css';
+---
+<clinic-google-business-profile-outcomes class="clinic-google-business-profile-outcomes">
+  <section id="clinic-google-business-profile-outcomes" class="section-container" aria-labelledby="clinic-google-business-profile-outcomes-heading">
+    <div class="clinic-google-business-profile-outcomes-heading">
+      <h2 id="clinic-google-business-profile-outcomes-heading">{copy.heading}</h2>
+      <div class="clinic-google-business-profile-outcomes-introduction clinic-google-business-profile-source-content" set:html={copy.before} />
+    </div>
+    <ul class="clinic-google-business-profile-outcomes-list" role="list">
+      {copy.items.map((item, index) => <li class="clinic-google-business-profile-outcome" data-seo-outcomes-motion>
+        <ClinicGoogleBusinessProfileOutcomeVisual index={index} />
+        <p><strong>{item.label}</strong><span>{item.description}</span></p>
+      </li>)}
+    </ul>
+    <div class="clinic-google-business-profile-outcomes-conclusion clinic-google-business-profile-source-content" set:html={copy.after} />
+  </section>
+</clinic-google-business-profile-outcomes>
+
+<script>
+  import '../scripts/clinic-google-business-profile-outcomes';
+</script>

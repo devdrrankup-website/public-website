@@ -1,0 +1,47 @@
+---
+// Destination-owned static page. Service-specific images are pending review before publication.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import DoctorContentMarketingHero from './components/DoctorContentMarketingHero.astro';
+import DoctorContentMarketingChallengesSection from './components/DoctorContentMarketingChallengesSection.astro';
+import DoctorContentMarketingOutcomesSection from './components/DoctorContentMarketingOutcomesSection.astro';
+import DoctorContentMarketingIntentSection from './components/DoctorContentMarketingIntentSection.astro';
+import DoctorContentMarketingTrustSection from './components/DoctorContentMarketingTrustSection.astro';
+import DoctorContentMarketingExpertiseSection from './components/DoctorContentMarketingExpertiseSection.astro';
+import DoctorContentMarketingProcessSection from './components/DoctorContentMarketingProcessSection.astro';
+import DoctorContentMarketingMappingSection from './components/DoctorContentMarketingMappingSection.astro';
+import DoctorContentMarketingRelatedSection from './components/DoctorContentMarketingRelatedSection.astro';
+import DoctorContentMarketingStartingSection from './components/DoctorContentMarketingStartingSection.astro';
+import DoctorContentMarketingExampleSection from './components/DoctorContentMarketingExampleSection.astro';
+import DoctorContentMarketingProgressSection from './components/DoctorContentMarketingProgressSection.astro';
+import DoctorContentMarketingWhySection from './components/DoctorContentMarketingWhySection.astro';
+import DoctorContentMarketingFaqSection from './components/DoctorContentMarketingFaqSection.astro';
+import DoctorContentMarketingConsultationSection from './components/DoctorContentMarketingConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { doctorContentMarketingHeroPreload } from './lib/doctor-content-marketing-hero-image';
+import './styles/doctor-content-marketing-rendering.css';
+import './styles/doctor-content-marketing-source-content.css';
+import { metadata } from './data/doctor-content-marketing-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={doctorContentMarketingHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="doctor-content-marketing-page" tabindex="-1">
+    <DoctorContentMarketingHero />
+    <DoctorContentMarketingChallengesSection />
+    <DoctorContentMarketingOutcomesSection />
+    <DoctorContentMarketingIntentSection />
+    <DoctorContentMarketingTrustSection />
+    <DoctorContentMarketingExpertiseSection />
+    <DoctorContentMarketingProcessSection />
+    <DoctorContentMarketingMappingSection />
+    <DoctorContentMarketingRelatedSection />
+    <DoctorContentMarketingStartingSection />
+    <DoctorContentMarketingExampleSection />
+    <DoctorContentMarketingProgressSection />
+    <DoctorContentMarketingWhySection />
+    <DoctorContentMarketingFaqSection />
+    <DoctorContentMarketingConsultationSection />
+  </main>
+  <Footer />
+</Layout>

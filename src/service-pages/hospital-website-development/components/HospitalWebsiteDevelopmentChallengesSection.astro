@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/hospital-website-development/hospital-website-development-challenges-v1.webp';
+import { pageCopy } from '../data/hospital-website-development-source';
+const copy = pageCopy.challenges;
+const introductionParagraph = copy.html.match(/^<p>([\s\S]*?)<\/p>/)?.[1] ?? '';
+const detailHtml = copy.html.replace(/^<p>[\s\S]*?<\/p>/, '');
+import '../styles/hospital-website-development-challenges.css';
+---
+
+<hospital-website-development-challenges class="hospital-website-development-challenges">
+  <section id="hospital-website-development-challenges" class="section-container hospital-website-development-challenges-layout" aria-labelledby="hospital-website-development-challenges-heading">
+    <div class="hospital-website-development-challenges-editorial">
+      <h2 id="hospital-website-development-challenges-heading">{copy.heading}</h2>
+      <p class="hospital-website-development-challenges-introduction" set:html={introductionParagraph} />
+      <div class="hospital-website-development-challenges-photo" data-seo-challenges-motion>
+        <Image src={photo} widths={[360, 540, 720, 960, 1200]} width={1536} height={1024}
+          sizes="(min-width: 1100px) min(41vw, 568px), (min-width: 640px) min(calc(100vw - 56px), 760px), calc(100vw - 32px)"
+          format="webp" quality={76}
+          alt="Hospital team comparing paper service records with a website draft"
+          title="Hospital team comparing paper service records with a website draft"
+          loading="lazy" decoding="async" />
+      </div>
+    </div>
+    <div class="hospital-website-development-challenges-details hospital-website-development-source-content" set:html={detailHtml} />
+  </section>
+</hospital-website-development-challenges>
+
+<script>
+  import '../scripts/hospital-website-development-challenges';
+</script>

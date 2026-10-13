@@ -1,0 +1,31 @@
+---
+import Icon from '../../../components/Icon.astro';
+import Add01Icon from '@hugeicons/core-free-icons/Add01Icon';
+import { pageCopy } from '../data/pathology-reporting-software-source';
+const copy = pageCopy.faq;
+import '../styles/pathology-reporting-software-faq.css';
+---
+<pathology-reporting-software-faq class="pathology-reporting-software-faq-motion">
+  <section id="pathology-reporting-software-faq" class="pathology-reporting-software-faq" aria-labelledby="pathology-reporting-software-faq-heading">
+    <div class="section-container pathology-reporting-software-faq-layout">
+      <header class="pathology-reporting-software-faq-header" data-faq-entry>
+        <h2 id="pathology-reporting-software-faq-heading">{copy.heading}</h2>
+        <div class="pathology-reporting-software-source-content" set:html={copy.preface} />
+      </header>
+      <div class="pathology-reporting-software-faq-list">
+        {copy.items.map((item,index) => <article class="pathology-reporting-software-faq-item" data-faq-entry aria-labelledby={`pathology-reporting-software-faq-question-${index+1}`}>
+          <h3 class="pathology-reporting-software-faq-question" id={`pathology-reporting-software-faq-question-${index+1}`}>
+            <span class="pathology-reporting-software-faq-label">{item.question}</span>
+            <span class="pathology-reporting-software-faq-toggle" aria-hidden="true"><Icon icon={Add01Icon} size={20} strokeWidth={1.8} /></span>
+          </h3>
+          <div class="pathology-reporting-software-faq-answer" id={`pathology-reporting-software-faq-answer-${index+1}`} role="region" aria-labelledby={`pathology-reporting-software-faq-question-${index+1}`}>
+            <div class="pathology-reporting-software-source-content" set:html={item.answerHtml} />
+          </div>
+        </article>)}
+      </div>
+    </div>
+  </section>
+</pathology-reporting-software-faq>
+<script>
+  import '../scripts/pathology-reporting-software-faq';
+</script>

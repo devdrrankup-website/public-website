@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/hospital-website-development/hospital-website-development-example-v1.webp';
+import { pageCopy } from '../data/hospital-website-development-source';
+const copy = pageCopy.example;
+import '../styles/hospital-website-development-example.css';
+---
+<hospital-website-development-example class="hospital-website-development-example-motion">
+  <section id="hospital-website-development-example" class="hospital-website-development-example" aria-labelledby="hospital-website-development-example-heading">
+    <div class="section-container hospital-website-development-example-layout">
+      <header class="hospital-website-development-example-header" data-example-entry>
+        <h2 id="hospital-website-development-example-heading">{copy.heading}</h2>
+        <span class="hospital-website-development-example-rule" data-example-rule aria-hidden="true"></span>
+      </header>
+      <figure class="hospital-website-development-example-photo" data-example-entry data-example-photo>
+        <Image src={photo} alt="Receptionist helping a visitor locate hospital services online" title="Receptionist helping a visitor locate hospital services online" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <div class="hospital-website-development-example-copy">
+        <div class="hospital-website-development-source-content" data-example-entry set:html={copy.html} />
+      </div>
+    </div>
+  </section>
+</hospital-website-development-example>
+<script>
+  import '../scripts/hospital-website-development-example';
+</script>

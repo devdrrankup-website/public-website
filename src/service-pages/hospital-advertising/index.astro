@@ -1,0 +1,47 @@
+---
+// Destination-owned static page. Service-specific images are pending review before publication.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import HospitalAdvertisingHero from './components/HospitalAdvertisingHero.astro';
+import HospitalAdvertisingChallengesSection from './components/HospitalAdvertisingChallengesSection.astro';
+import HospitalAdvertisingOutcomesSection from './components/HospitalAdvertisingOutcomesSection.astro';
+import HospitalAdvertisingIntentSection from './components/HospitalAdvertisingIntentSection.astro';
+import HospitalAdvertisingTrustSection from './components/HospitalAdvertisingTrustSection.astro';
+import HospitalAdvertisingExpertiseSection from './components/HospitalAdvertisingExpertiseSection.astro';
+import HospitalAdvertisingProcessSection from './components/HospitalAdvertisingProcessSection.astro';
+import HospitalAdvertisingMappingSection from './components/HospitalAdvertisingMappingSection.astro';
+import HospitalAdvertisingRelatedSection from './components/HospitalAdvertisingRelatedSection.astro';
+import HospitalAdvertisingStartingSection from './components/HospitalAdvertisingStartingSection.astro';
+import HospitalAdvertisingExampleSection from './components/HospitalAdvertisingExampleSection.astro';
+import HospitalAdvertisingProgressSection from './components/HospitalAdvertisingProgressSection.astro';
+import HospitalAdvertisingWhySection from './components/HospitalAdvertisingWhySection.astro';
+import HospitalAdvertisingFaqSection from './components/HospitalAdvertisingFaqSection.astro';
+import HospitalAdvertisingConsultationSection from './components/HospitalAdvertisingConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { hospitalAdvertisingHeroPreload } from './lib/hospital-advertising-hero-image';
+import './styles/hospital-advertising-rendering.css';
+import './styles/hospital-advertising-source-content.css';
+import { metadata } from './data/hospital-advertising-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={hospitalAdvertisingHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="hospital-advertising-page" tabindex="-1">
+    <HospitalAdvertisingHero />
+    <HospitalAdvertisingChallengesSection />
+    <HospitalAdvertisingOutcomesSection />
+    <HospitalAdvertisingIntentSection />
+    <HospitalAdvertisingTrustSection />
+    <HospitalAdvertisingExpertiseSection />
+    <HospitalAdvertisingProcessSection />
+    <HospitalAdvertisingMappingSection />
+    <HospitalAdvertisingRelatedSection />
+    <HospitalAdvertisingStartingSection />
+    <HospitalAdvertisingExampleSection />
+    <HospitalAdvertisingProgressSection />
+    <HospitalAdvertisingWhySection />
+    <HospitalAdvertisingFaqSection />
+    <HospitalAdvertisingConsultationSection />
+  </main>
+  <Footer />
+</Layout>

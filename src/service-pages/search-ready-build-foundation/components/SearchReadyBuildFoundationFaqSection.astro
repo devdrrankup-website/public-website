@@ -1,0 +1,31 @@
+---
+import Icon from '../../../components/Icon.astro';
+import Add01Icon from '@hugeicons/core-free-icons/Add01Icon';
+import { pageCopy } from '../data/search-ready-build-foundation-source';
+const copy = pageCopy.faq;
+import '../styles/search-ready-build-foundation-faq.css';
+---
+<search-ready-build-foundation-faq class="search-ready-build-foundation-faq-motion">
+  <section id="search-ready-build-foundation-faq" class="search-ready-build-foundation-faq" aria-labelledby="search-ready-build-foundation-faq-heading">
+    <div class="section-container search-ready-build-foundation-faq-layout">
+      <header class="search-ready-build-foundation-faq-header" data-faq-entry>
+        <h2 id="search-ready-build-foundation-faq-heading">{copy.heading}</h2>
+        <div class="search-ready-build-foundation-source-content" set:html={copy.preface} />
+      </header>
+      <div class="search-ready-build-foundation-faq-list">
+        {copy.items.map((item,index) => <article class="search-ready-build-foundation-faq-item" data-faq-entry aria-labelledby={`search-ready-build-foundation-faq-question-${index+1}`}>
+          <h3 class="search-ready-build-foundation-faq-question" id={`search-ready-build-foundation-faq-question-${index+1}`}>
+            <span class="search-ready-build-foundation-faq-label">{item.question}</span>
+            <span class="search-ready-build-foundation-faq-toggle" aria-hidden="true"><Icon icon={Add01Icon} size={20} strokeWidth={1.8} /></span>
+          </h3>
+          <div class="search-ready-build-foundation-faq-answer" id={`search-ready-build-foundation-faq-answer-${index+1}`} role="region" aria-labelledby={`search-ready-build-foundation-faq-question-${index+1}`}>
+            <div class="search-ready-build-foundation-source-content" set:html={item.answerHtml} />
+          </div>
+        </article>)}
+      </div>
+    </div>
+  </section>
+</search-ready-build-foundation-faq>
+<script>
+  import '../scripts/search-ready-build-foundation-faq';
+</script>

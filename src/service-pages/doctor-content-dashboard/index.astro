@@ -1,0 +1,47 @@
+---
+// Destination-owned static page. Service-specific images are pending review before publication.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import DoctorContentDashboardHero from './components/DoctorContentDashboardHero.astro';
+import DoctorContentDashboardChallengesSection from './components/DoctorContentDashboardChallengesSection.astro';
+import DoctorContentDashboardOutcomesSection from './components/DoctorContentDashboardOutcomesSection.astro';
+import DoctorContentDashboardIntentSection from './components/DoctorContentDashboardIntentSection.astro';
+import DoctorContentDashboardTrustSection from './components/DoctorContentDashboardTrustSection.astro';
+import DoctorContentDashboardExpertiseSection from './components/DoctorContentDashboardExpertiseSection.astro';
+import DoctorContentDashboardProcessSection from './components/DoctorContentDashboardProcessSection.astro';
+import DoctorContentDashboardMappingSection from './components/DoctorContentDashboardMappingSection.astro';
+import DoctorContentDashboardRelatedSection from './components/DoctorContentDashboardRelatedSection.astro';
+import DoctorContentDashboardStartingSection from './components/DoctorContentDashboardStartingSection.astro';
+import DoctorContentDashboardExampleSection from './components/DoctorContentDashboardExampleSection.astro';
+import DoctorContentDashboardProgressSection from './components/DoctorContentDashboardProgressSection.astro';
+import DoctorContentDashboardWhySection from './components/DoctorContentDashboardWhySection.astro';
+import DoctorContentDashboardFaqSection from './components/DoctorContentDashboardFaqSection.astro';
+import DoctorContentDashboardConsultationSection from './components/DoctorContentDashboardConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { doctorContentDashboardHeroPreload } from './lib/doctor-content-dashboard-hero-image';
+import './styles/doctor-content-dashboard-rendering.css';
+import './styles/doctor-content-dashboard-source-content.css';
+import { metadata } from './data/doctor-content-dashboard-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={doctorContentDashboardHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="doctor-content-dashboard-page" tabindex="-1">
+    <DoctorContentDashboardHero />
+    <DoctorContentDashboardChallengesSection />
+    <DoctorContentDashboardOutcomesSection />
+    <DoctorContentDashboardIntentSection />
+    <DoctorContentDashboardTrustSection />
+    <DoctorContentDashboardExpertiseSection />
+    <DoctorContentDashboardProcessSection />
+    <DoctorContentDashboardMappingSection />
+    <DoctorContentDashboardRelatedSection />
+    <DoctorContentDashboardStartingSection />
+    <DoctorContentDashboardExampleSection />
+    <DoctorContentDashboardProgressSection />
+    <DoctorContentDashboardWhySection />
+    <DoctorContentDashboardFaqSection />
+    <DoctorContentDashboardConsultationSection />
+  </main>
+  <Footer />
+</Layout>

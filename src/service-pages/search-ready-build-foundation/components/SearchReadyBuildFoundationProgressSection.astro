@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/search-ready-build-foundation/search-ready-build-foundation-progress-v1.webp';
+import { pageCopy } from '../data/search-ready-build-foundation-source';
+const copy = pageCopy.progress;
+import '../styles/search-ready-build-foundation-progress.css';
+---
+<search-ready-build-foundation-progress class="search-ready-build-foundation-progress-motion">
+  <section id="search-ready-build-foundation-progress" class="search-ready-build-foundation-progress" aria-labelledby="search-ready-build-foundation-progress-heading">
+    <div class="section-container search-ready-build-foundation-progress-layout">
+      <h2 id="search-ready-build-foundation-progress-heading" data-progress-entry>{copy.heading}</h2>
+      <p class="search-ready-build-foundation-progress-baseline" data-progress-entry set:html={copy.paragraphsHtml[0]} />
+      <figure class="search-ready-build-foundation-progress-photo" data-progress-entry data-progress-photo>
+        <Image src={photo} alt="Doctor and team reviewing a website foundation report" title="Doctor and team reviewing a website foundation report" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <p class="search-ready-build-foundation-progress-evidence" data-progress-entry set:html={copy.paragraphsHtml[1]} />
+
+    </div>
+  </section>
+</search-ready-build-foundation-progress>
+<script>
+  import '../scripts/search-ready-build-foundation-progress';
+</script>

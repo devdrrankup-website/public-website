@@ -1,0 +1,47 @@
+---
+// Destination-owned static page. Service-specific images are pending review before publication.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import ClinicDoctorScheduleManagementHero from './components/ClinicDoctorScheduleManagementHero.astro';
+import ClinicDoctorScheduleManagementChallengesSection from './components/ClinicDoctorScheduleManagementChallengesSection.astro';
+import ClinicDoctorScheduleManagementOutcomesSection from './components/ClinicDoctorScheduleManagementOutcomesSection.astro';
+import ClinicDoctorScheduleManagementIntentSection from './components/ClinicDoctorScheduleManagementIntentSection.astro';
+import ClinicDoctorScheduleManagementTrustSection from './components/ClinicDoctorScheduleManagementTrustSection.astro';
+import ClinicDoctorScheduleManagementExpertiseSection from './components/ClinicDoctorScheduleManagementExpertiseSection.astro';
+import ClinicDoctorScheduleManagementProcessSection from './components/ClinicDoctorScheduleManagementProcessSection.astro';
+import ClinicDoctorScheduleManagementMappingSection from './components/ClinicDoctorScheduleManagementMappingSection.astro';
+import ClinicDoctorScheduleManagementRelatedSection from './components/ClinicDoctorScheduleManagementRelatedSection.astro';
+import ClinicDoctorScheduleManagementStartingSection from './components/ClinicDoctorScheduleManagementStartingSection.astro';
+import ClinicDoctorScheduleManagementExampleSection from './components/ClinicDoctorScheduleManagementExampleSection.astro';
+import ClinicDoctorScheduleManagementProgressSection from './components/ClinicDoctorScheduleManagementProgressSection.astro';
+import ClinicDoctorScheduleManagementWhySection from './components/ClinicDoctorScheduleManagementWhySection.astro';
+import ClinicDoctorScheduleManagementFaqSection from './components/ClinicDoctorScheduleManagementFaqSection.astro';
+import ClinicDoctorScheduleManagementConsultationSection from './components/ClinicDoctorScheduleManagementConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { clinicDoctorScheduleManagementHeroPreload } from './lib/clinic-doctor-schedule-management-hero-image';
+import './styles/clinic-doctor-schedule-management-rendering.css';
+import './styles/clinic-doctor-schedule-management-source-content.css';
+import { metadata } from './data/clinic-doctor-schedule-management-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={clinicDoctorScheduleManagementHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="clinic-doctor-schedule-management-page" tabindex="-1">
+    <ClinicDoctorScheduleManagementHero />
+    <ClinicDoctorScheduleManagementChallengesSection />
+    <ClinicDoctorScheduleManagementOutcomesSection />
+    <ClinicDoctorScheduleManagementIntentSection />
+    <ClinicDoctorScheduleManagementTrustSection />
+    <ClinicDoctorScheduleManagementExpertiseSection />
+    <ClinicDoctorScheduleManagementProcessSection />
+    <ClinicDoctorScheduleManagementMappingSection />
+    <ClinicDoctorScheduleManagementRelatedSection />
+    <ClinicDoctorScheduleManagementStartingSection />
+    <ClinicDoctorScheduleManagementExampleSection />
+    <ClinicDoctorScheduleManagementProgressSection />
+    <ClinicDoctorScheduleManagementWhySection />
+    <ClinicDoctorScheduleManagementFaqSection />
+    <ClinicDoctorScheduleManagementConsultationSection />
+  </main>
+  <Footer />
+</Layout>

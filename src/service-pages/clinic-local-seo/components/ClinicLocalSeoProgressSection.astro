@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/clinic-local-seo/clinic-local-seo-progress-v1.webp';
+import { pageCopy } from '../data/clinic-local-seo-source';
+const copy = pageCopy.progress;
+import '../styles/clinic-local-seo-progress.css';
+---
+<clinic-local-seo-progress class="clinic-local-seo-progress-motion">
+  <section id="clinic-local-seo-progress" class="clinic-local-seo-progress" aria-labelledby="clinic-local-seo-progress-heading">
+    <div class="section-container clinic-local-seo-progress-layout">
+      <h2 id="clinic-local-seo-progress-heading" data-progress-entry>{copy.heading}</h2>
+      <p class="clinic-local-seo-progress-baseline" data-progress-entry set:html={copy.paragraphsHtml[0]} />
+      <figure class="clinic-local-seo-progress-photo" data-progress-entry data-progress-photo>
+        <Image src={photo} alt="Search specialist reviewing clinic location results" title="Search specialist reviewing clinic location results" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <p class="clinic-local-seo-progress-evidence" data-progress-entry set:html={copy.paragraphsHtml[1]} />
+
+    </div>
+  </section>
+</clinic-local-seo-progress>
+<script>
+  import '../scripts/clinic-local-seo-progress';
+</script>

@@ -1,0 +1,31 @@
+---
+import Icon from '../../../components/Icon.astro';
+import Add01Icon from '@hugeicons/core-free-icons/Add01Icon';
+import { pageCopy } from '../data/doctor-content-marketing-source';
+const copy = pageCopy.faq;
+import '../styles/doctor-content-marketing-faq.css';
+---
+<doctor-content-marketing-faq class="doctor-content-marketing-faq-motion">
+  <section id="doctor-content-marketing-faq" class="doctor-content-marketing-faq" aria-labelledby="doctor-content-marketing-faq-heading">
+    <div class="section-container doctor-content-marketing-faq-layout">
+      <header class="doctor-content-marketing-faq-header" data-faq-entry>
+        <h2 id="doctor-content-marketing-faq-heading">{copy.heading}</h2>
+        <div class="doctor-content-marketing-source-content" set:html={copy.preface} />
+      </header>
+      <div class="doctor-content-marketing-faq-list">
+        {copy.items.map((item,index) => <article class="doctor-content-marketing-faq-item" data-faq-entry aria-labelledby={`doctor-content-marketing-faq-question-${index+1}`}>
+          <h3 class="doctor-content-marketing-faq-question" id={`doctor-content-marketing-faq-question-${index+1}`}>
+            <span class="doctor-content-marketing-faq-label">{item.question}</span>
+            <span class="doctor-content-marketing-faq-toggle" aria-hidden="true"><Icon icon={Add01Icon} size={20} strokeWidth={1.8} /></span>
+          </h3>
+          <div class="doctor-content-marketing-faq-answer" id={`doctor-content-marketing-faq-answer-${index+1}`} role="region" aria-labelledby={`doctor-content-marketing-faq-question-${index+1}`}>
+            <div class="doctor-content-marketing-source-content" set:html={item.answerHtml} />
+          </div>
+        </article>)}
+      </div>
+    </div>
+  </section>
+</doctor-content-marketing-faq>
+<script>
+  import '../scripts/doctor-content-marketing-faq';
+</script>

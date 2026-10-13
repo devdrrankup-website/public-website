@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/hospital-advertising/hospital-advertising-example-v1.webp';
+import { pageCopy } from '../data/hospital-advertising-source';
+const copy = pageCopy.example;
+import '../styles/hospital-advertising-example.css';
+---
+<hospital-advertising-example class="hospital-advertising-example-motion">
+  <section id="hospital-advertising-example" class="hospital-advertising-example" aria-labelledby="hospital-advertising-example-heading">
+    <div class="section-container hospital-advertising-example-layout">
+      <header class="hospital-advertising-example-header" data-example-entry>
+        <h2 id="hospital-advertising-example-heading">{copy.heading}</h2>
+        <span class="hospital-advertising-example-rule" data-example-rule aria-hidden="true"></span>
+      </header>
+      <figure class="hospital-advertising-example-photo" data-example-entry data-example-photo>
+        <Image src={photo} alt="Family comparing hospital service information on a laptop at home" title="Family comparing hospital service information on a laptop at home" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <div class="hospital-advertising-example-copy">
+        <div class="hospital-advertising-source-content" data-example-entry set:html={copy.html} />
+      </div>
+    </div>
+  </section>
+</hospital-advertising-example>
+<script>
+  import '../scripts/hospital-advertising-example';
+</script>

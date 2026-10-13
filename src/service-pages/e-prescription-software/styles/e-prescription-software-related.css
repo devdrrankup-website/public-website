@@ -1,0 +1,83 @@
+.e-prescription-software-related { padding: 64px 0 72px; color: #fff; background: #000; border-radius: 28px 28px 0 0; }
+.e-prescription-software-related-container { max-width: 1200px; }
+e-prescription-software-related { display: block; }
+.e-prescription-software-related-header { margin-bottom: 36px; }
+.e-prescription-software-related h2 { margin: 0; max-width: 900px; color: #fff; font-size: clamp(36px,9.5vw,56px); line-height: 1.12; font-weight: 650; letter-spacing: -.04em; }
+.e-prescription-software-related-dock { display: contents; }
+.e-prescription-software-related-ready .e-prescription-software-related-dock { display: block; position: sticky; top: calc(var(--header-height,98px) + 12px); z-index: 4; padding: 8px 0 16px; background: #000; }
+.e-prescription-software-related-ready .e-prescription-software-related-dock::before { content: ''; position: absolute; bottom: calc(100% - 3px); left: -2px; right: -2px; height: calc(var(--header-height,98px) + 15px); background: #000; opacity: 0; pointer-events: none; }
+.e-prescription-software-related-ready.is-pinned .e-prescription-software-related-dock::before { opacity: 1; }
+.e-prescription-software-related-selectors { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 0 16px; }
+.e-prescription-software-related-selectors[hidden], .e-prescription-software-related-stage[hidden] { display: none; }
+.e-prescription-software-related-selectors button { position: relative; min-height: 100px; padding: 12px 0; text-align: left; border: 0; background: transparent; color: #fff; font: inherit; font-size: 13px; line-height: 1.5; font-weight: 600; cursor: pointer; }
+.e-prescription-software-related-selectors button span { opacity: .65; transition: opacity 400ms ease; }
+.e-prescription-software-related-selectors button[aria-pressed=true] span { opacity: 1; }
+.e-prescription-software-related-selectors button::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: #afa9ec; transform: scaleX(0); transform-origin: left; transition: transform 500ms cubic-bezier(.16,1,.3,1); }
+.e-prescription-software-related-selectors button[aria-pressed=true]::after { transform: scaleX(1); }
+.e-prescription-software-related-selectors button:focus-visible { outline: 2px solid #afa9ec; outline-offset: 3px; }
+.e-prescription-software-related-stage { position: relative; width: min(100%,42svh,540px); aspect-ratio: 3/2; margin: 16px auto 0; overflow: hidden; border-radius: 14px; background: #111; }
+.e-prescription-software-related-stage .e-prescription-software-related-photo { position: absolute; inset: 0; margin: 0; }
+.e-prescription-software-related-labels { display: flex; justify-content: space-between; gap: 20px; padding: 24px 0 16px; color: #fff; font-size: 12px; }
+.e-prescription-software-related-list { margin: 0; border-top: 1px solid #ffffff26; }
+.e-prescription-software-related-row { position: relative; padding: 28px 0; border-bottom: 1px solid #ffffff26; }
+.e-prescription-software-related-ready .e-prescription-software-related-row { min-height: 210px; }
+.e-prescription-software-related-row dt { position: relative; display: flex; align-items: center; gap: 12px; padding-right: 32px; }
+.e-prescription-software-related-badge { flex: none; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 9px; color: #000; background: var(--related-accent); }
+.e-prescription-software-related-name { display: block; color: #fff; font-size: clamp(24px,6.1vw,32px); line-height: 1.25; letter-spacing: -.025em; font-weight: 600; }
+.e-prescription-software-related-arrow { position: absolute; right: 0; top: 50%; transform: translateY(-50%); display: flex; width: 24px; height: 24px; color: #fff; }
+.e-prescription-software-related-arrow .arrow-icon { display: flex; }
+.e-prescription-software-related-row dd { margin: 12px 0 0 46px; color: #fff; font-size: 14px; line-height: 1.8; }
+.e-prescription-software-related-reveal { display: none; }
+.e-prescription-software-related-photo { position: relative; margin: 20px 0 0; aspect-ratio: 3/2; overflow: hidden; border-radius: 14px; background: #111; }
+.e-prescription-software-related-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.e-prescription-software-related-photo figcaption { position: absolute; inset: auto 0 0; padding: 24px 12px 10px; background: linear-gradient(transparent,#000c); color: #fff; font-size: 12px; font-weight: 600; line-height: 1.5; }
+.e-prescription-software-related-ready .e-prescription-software-related-row dd > .e-prescription-software-related-photo { display: none; }
+.e-prescription-software-related-note { margin: 28px 0 0; color: #fff; font-size: 14px; line-height: 1.8; }
+@media (min-width:640px) {
+  .e-prescription-software-related { padding-block: 80px 88px; border-radius: 36px 36px 0 0; }
+  .e-prescription-software-related-header { margin-bottom: 48px; }
+  .e-prescription-software-related h2 { font-size: clamp(48px,7.8vw,72px); }
+  .e-prescription-software-related-selectors { gap: 24px; }
+  .e-prescription-software-related-selectors button { min-height: 104px; font-size: 17px; }
+  .e-prescription-software-related-row { padding-block: 32px; }
+  .e-prescription-software-related-name { font-size: 36px; }
+  .e-prescription-software-related-row dd { font-size: 16px; }
+  .e-prescription-software-related-note { font-size: 16px; }
+}
+@media (min-width:1100px) {
+  .e-prescription-software-related { padding-block: 96px 112px; border-radius: 40px 40px 0 0; }
+  .e-prescription-software-related-header { margin-bottom: 72px; }
+  .e-prescription-software-related-ready .e-prescription-software-related-layout { display: grid; grid-template-columns: 350px minmax(0,1fr); gap: 80px; align-items: start; }
+  .e-prescription-software-related-ready .e-prescription-software-related-dock { top: calc(var(--header-height,94px) + 34px); padding: 0; }
+  .e-prescription-software-related-ready .e-prescription-software-related-dock::before { display: none; }
+  .e-prescription-software-related-selectors { display: flex; flex-direction: column; gap: 0; border-left: 1px solid #ffffff26; }
+  .e-prescription-software-related-selectors button { width: 100%; min-height: 112px; padding: 24px 24px 24px 38px; font-size: 26px; line-height: 1.35; }
+  .e-prescription-software-related-selectors button span { display: block; transition: opacity 400ms ease,transform 500ms cubic-bezier(.16,1,.3,1); }
+  .e-prescription-software-related-selectors button[aria-pressed=true] span { transform: translateX(8px); }
+  .e-prescription-software-related-selectors button::after { top: 0; bottom: 0; left: -1px; right: auto; height: auto; width: 2px; transform: scaleY(0); transform-origin: top; }
+  .e-prescription-software-related-selectors button[aria-pressed=true]::after { transform: scaleY(1); }
+  .e-prescription-software-related-row dt { gap: 20px; }
+  .e-prescription-software-related-name { font-size: clamp(32px,2.8vw,42px); }
+  .e-prescription-software-related-row dd { margin-left: 54px; }
+  .e-prescription-software-related-labels { padding-top: 0; }
+}
+@media (min-width:1100px) and (hover:hover) and (pointer:fine) {
+  .e-prescription-software-related-ready .e-prescription-software-related-stage { display: none; }
+  .e-prescription-software-related-ready .e-prescription-software-related-row dt { min-height: 94px; }
+  .e-prescription-software-related-ready .e-prescription-software-related-name { width: calc(100% - 218px); transition: transform 500ms cubic-bezier(.16,1,.3,1); }
+  .e-prescription-software-related-row.has-photo .e-prescription-software-related-name { transform: translateX(170px); }
+  .e-prescription-software-related-reveal { position: absolute; display: block; left: 54px; top: 50%; width: 150px; height: 100px; opacity: 0; transform: translateY(-50%) scaleX(.01); transform-origin: left; pointer-events: none; transition: transform 500ms cubic-bezier(.16,1,.3,1),opacity 400ms ease; }
+  .e-prescription-software-related-row.has-photo .e-prescription-software-related-reveal { opacity: 1; transform: translateY(-50%) scaleX(1); }
+  .e-prescription-software-related-reveal .e-prescription-software-related-photo { width: 150px; height: 100px; margin: 0; border-radius: 999px; }
+  .e-prescription-software-related-reveal figcaption { display: none; }
+}
+@media (prefers-reduced-motion:reduce) { .e-prescription-software-related-selectors button::after, .e-prescription-software-related-selectors button span, .e-prescription-software-related-name, .e-prescription-software-related-reveal { transition: none !important; } }
+
+.e-prescription-software-related-name[href] { text-decoration: none; }
+.e-prescription-software-related-name[href]:hover { text-decoration: underline; text-decoration-thickness: .06em; text-underline-offset: .13em; }
+.e-prescription-software-related-name[href]:focus-visible { outline: 2px solid #afa9ec; outline-offset: 5px; }
+
+.e-prescription-software-related-note a { color: #e1ffb9; text-decoration: underline; text-underline-offset: .16em; }
+.e-prescription-software-related-note a:focus-visible { outline: 2px solid #e1ffb9; outline-offset: 4px; }
+
+.e-prescription-software-related-note p { line-height: inherit; }

@@ -1,0 +1,39 @@
+---
+import { Image } from 'astro:assets';
+import expertPortrait from '../../../assets/team/monwara-moni-studio-v2.webp';
+import { pageCopy } from '../data/doctor-personal-branding-source';
+const copy = pageCopy.expertise;
+const paragraphs = Array.from(copy.html.matchAll(/<p>([\s\S]*?)<\/p>/g), match => match[1]);
+const principleSentences = paragraphs.slice(1).flatMap(paragraph => paragraph.split(/(?<=[.!?])\s+(?=[A-Z])/));
+import '../styles/doctor-personal-branding-expertise.css';
+---
+<doctor-personal-branding-expertise class="doctor-personal-branding-expertise-motion">
+  <section id="doctor-personal-branding-expertise" class="doctor-personal-branding-expertise" aria-labelledby="doctor-personal-branding-expertise-heading">
+    <div class="section-container doctor-personal-branding-expertise-layout">
+      <h2 id="doctor-personal-branding-expertise-heading">{copy.heading}</h2>
+      <figure class="doctor-personal-branding-expertise-portrait">
+        <div class="doctor-personal-branding-expertise-photo">
+          <Image src={expertPortrait} widths={[320, 480, 640, 960]} width={1254} height={1254}
+            sizes="(min-width: 1100px) min(40vw, 480px), (min-width: 640px) min(36vw, 360px), min(calc(100vw - 32px), 360px)"
+            format="webp" quality={80} loading="lazy" decoding="async"
+            alt="Monwara Moni in a navy blazer against a grey studio background"
+            title="Monwara Moni — Dr RankUP specialist"
+            data-expertise-reveal="portrait" />
+        </div>
+        <figcaption data-expertise-reveal="copy">{copy.founder}</figcaption>
+      </figure>
+      <div class="doctor-personal-branding-expertise-record">
+        <p class="doctor-personal-branding-expertise-context" data-expertise-reveal="copy" set:html={paragraphs[0]} />
+      </div>
+      <div class="doctor-personal-branding-expertise-principles">
+        <span class="doctor-personal-branding-expertise-rule" data-expertise-reveal="rule" aria-hidden="true"></span>
+        <ul role="list">
+          {principleSentences.map((sentence, index) => <li data-expertise-reveal="copy" data-expertise-delay={Math.min(index * 60, 100)} set:html={sentence} />)}
+        </ul>
+      </div>
+    </div>
+  </section>
+</doctor-personal-branding-expertise>
+<script>
+  import '../scripts/doctor-personal-branding-expertise';
+</script>

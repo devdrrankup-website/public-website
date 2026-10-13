@@ -1,0 +1,38 @@
+---
+import ActionIcon from '../../../components/ActionIcon.astro';
+import { pageCopy } from '../data/doctor-facebook-ads-source';
+const copy = pageCopy.hero;
+import { doctorFacebookAdsHeroImage as photo } from '../lib/doctor-facebook-ads-hero-image';
+import '../styles/doctor-facebook-ads-hero.css';
+---
+
+<section class="doctor-facebook-ads-hero" aria-labelledby="doctor-facebook-ads-heading">
+  <div class="section-container doctor-facebook-ads-hero-layout">
+    <div class="doctor-facebook-ads-hero-copy">
+      <h1 id="doctor-facebook-ads-heading">{copy.heading}</h1>
+      <p class="doctor-facebook-ads-hero-tagline">{copy.tagline}</p>
+      <div class="doctor-facebook-ads-hero-description">
+        {copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+      </div>
+      <div class="doctor-facebook-ads-hero-actions" aria-label={`${copy.heading} options`}>
+        <span class="button button-primary">
+          <span>{copy.primaryCta}</span><ActionIcon purpose="conversation" />
+        </span>
+        {copy.secondaryHref ? <a class="button button-secondary" href={copy.secondaryHref}>
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </a> : <span class="button button-secondary">
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </span>}
+      </div>
+    </div>
+    <div class="doctor-facebook-ads-hero-visual">
+      <div class="doctor-facebook-ads-hero-photo">
+        <img src={photo.src} srcset={photo.srcset} sizes={photo.sizes}
+          width={photo.width} height={photo.height}
+          alt="Monwara Moni and a doctor reviewing chamber photographs for a paid Facebook campaign"
+          title="Planning responsible doctor Facebook ads"
+          loading="eager" fetchpriority="high" decoding="async" />
+      </div>
+    </div>
+  </div>
+</section>

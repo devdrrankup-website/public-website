@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/clinic-facebook-ads/clinic-facebook-ads-intent-v1.webp';
+import { pageCopy } from '../data/clinic-facebook-ads-source';
+const copy = pageCopy.intent;
+import '../styles/clinic-facebook-ads-intent.css';
+---
+<clinic-facebook-ads-intent class="clinic-facebook-ads-intent">
+  <section id="clinic-facebook-ads-intent" class="section-container clinic-facebook-ads-intent-layout" aria-labelledby="clinic-facebook-ads-intent-heading">
+    <div class="clinic-facebook-ads-intent-copy" data-seo-intent-motion>
+      <h2 id="clinic-facebook-ads-intent-heading">{copy.heading}</h2>
+      <div class="clinic-facebook-ads-source-content" set:html={copy.html} />
+    </div>
+    <div class="clinic-facebook-ads-intent-photo" data-seo-intent-motion>
+      <Image src={photo} widths={[360, 540, 720, 960, 1200]} width={1536} height={1024}
+        sizes="(min-width: 1100px) min(43vw, 576px), (min-width: 640px) min(calc(100vw - 56px), 760px), calc(100vw - 32px)"
+        format="webp" quality={76} loading="lazy" decoding="async"
+        alt="Woman viewing a clinic advertisement on her phone at home"
+        title="Woman viewing a clinic advertisement on her phone at home" />
+    </div>
+  </section>
+</clinic-facebook-ads-intent>
+
+<script>
+  import '../scripts/clinic-facebook-ads-intent';
+</script>

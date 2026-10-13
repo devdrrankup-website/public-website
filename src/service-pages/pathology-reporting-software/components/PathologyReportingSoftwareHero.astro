@@ -1,0 +1,38 @@
+---
+import ActionIcon from '../../../components/ActionIcon.astro';
+import { pageCopy } from '../data/pathology-reporting-software-source';
+const copy = pageCopy.hero;
+import { pathologyReportingSoftwareHeroImage as photo } from '../lib/pathology-reporting-software-hero-image';
+import '../styles/pathology-reporting-software-hero.css';
+---
+
+<section class="pathology-reporting-software-hero" aria-labelledby="pathology-reporting-software-heading">
+  <div class="section-container pathology-reporting-software-hero-layout">
+    <div class="pathology-reporting-software-hero-copy">
+      <h1 id="pathology-reporting-software-heading">{copy.heading}</h1>
+      <p class="pathology-reporting-software-hero-tagline">{copy.tagline}</p>
+      <div class="pathology-reporting-software-hero-description">
+        {copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+      </div>
+      <div class="pathology-reporting-software-hero-actions" aria-label={`${copy.heading} options`}>
+        <span class="button button-primary">
+          <span>{copy.primaryCta}</span><ActionIcon purpose="conversation" />
+        </span>
+        {copy.secondaryHref ? <a class="button button-secondary" href={copy.secondaryHref}>
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </a> : <span class="button button-secondary">
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </span>}
+      </div>
+    </div>
+    <div class="pathology-reporting-software-hero-visual">
+      <div class="pathology-reporting-software-hero-photo">
+        <img src={photo.src} srcset={photo.srcset} sizes={photo.sizes}
+          width={photo.width} height={photo.height}
+          alt="Laboratory supervisor and technician checking a report before release"
+          title="Reviewing a pathology report in the lab"
+          loading="eager" fetchpriority="high" decoding="async" />
+      </div>
+    </div>
+  </div>
+</section>

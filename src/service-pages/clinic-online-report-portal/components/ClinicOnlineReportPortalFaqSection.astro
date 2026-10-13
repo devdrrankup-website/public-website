@@ -1,0 +1,31 @@
+---
+import Icon from '../../../components/Icon.astro';
+import Add01Icon from '@hugeicons/core-free-icons/Add01Icon';
+import { pageCopy } from '../data/clinic-online-report-portal-source';
+const copy = pageCopy.faq;
+import '../styles/clinic-online-report-portal-faq.css';
+---
+<clinic-online-report-portal-faq class="clinic-online-report-portal-faq-motion">
+  <section id="clinic-online-report-portal-faq" class="clinic-online-report-portal-faq" aria-labelledby="clinic-online-report-portal-faq-heading">
+    <div class="section-container clinic-online-report-portal-faq-layout">
+      <header class="clinic-online-report-portal-faq-header" data-faq-entry>
+        <h2 id="clinic-online-report-portal-faq-heading">{copy.heading}</h2>
+        <div class="clinic-online-report-portal-source-content" set:html={copy.preface} />
+      </header>
+      <div class="clinic-online-report-portal-faq-list">
+        {copy.items.map((item,index) => <article class="clinic-online-report-portal-faq-item" data-faq-entry aria-labelledby={`clinic-online-report-portal-faq-question-${index+1}`}>
+          <h3 class="clinic-online-report-portal-faq-question" id={`clinic-online-report-portal-faq-question-${index+1}`}>
+            <span class="clinic-online-report-portal-faq-label">{item.question}</span>
+            <span class="clinic-online-report-portal-faq-toggle" aria-hidden="true"><Icon icon={Add01Icon} size={20} strokeWidth={1.8} /></span>
+          </h3>
+          <div class="clinic-online-report-portal-faq-answer" id={`clinic-online-report-portal-faq-answer-${index+1}`} role="region" aria-labelledby={`clinic-online-report-portal-faq-question-${index+1}`}>
+            <div class="clinic-online-report-portal-source-content" set:html={item.answerHtml} />
+          </div>
+        </article>)}
+      </div>
+    </div>
+  </section>
+</clinic-online-report-portal-faq>
+<script>
+  import '../scripts/clinic-online-report-portal-faq';
+</script>

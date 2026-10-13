@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/patient-medical-record-software/patient-medical-record-software-progress-v1.webp';
+import { pageCopy } from '../data/patient-medical-record-software-source';
+const copy = pageCopy.progress;
+import '../styles/patient-medical-record-software-progress.css';
+---
+<patient-medical-record-software-progress class="patient-medical-record-software-progress-motion">
+  <section id="patient-medical-record-software-progress" class="patient-medical-record-software-progress" aria-labelledby="patient-medical-record-software-progress-heading">
+    <div class="section-container patient-medical-record-software-progress-layout">
+      <h2 id="patient-medical-record-software-progress-heading" data-progress-entry>{copy.heading}</h2>
+      <p class="patient-medical-record-software-progress-baseline" data-progress-entry set:html={copy.paragraphsHtml[0]} />
+      <figure class="patient-medical-record-software-progress-photo" data-progress-entry data-progress-photo>
+        <Image src={photo} alt="Doctor and team reviewing medical record operations" title="Doctor and team reviewing medical record operations" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <p class="patient-medical-record-software-progress-evidence" data-progress-entry set:html={copy.paragraphsHtml[1]} />
+
+    </div>
+  </section>
+</patient-medical-record-software-progress>
+<script>
+  import '../scripts/patient-medical-record-software-progress';
+</script>

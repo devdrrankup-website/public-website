@@ -1,0 +1,108 @@
+/* Page-owned offscreen rendering. Whole section boundaries preserve native
+   sticky containers; the hero and desktop remain immediately renderable.
+   Auto remembers real sizes after entry; source content is always in HTML. */
+@supports (content-visibility: auto) {
+  @media (max-width:1099px) {
+    .patient-fee-management-page > :is(patient-fee-management-challenges,patient-fee-management-outcomes,patient-fee-management-intent,patient-fee-management-trust,patient-fee-management-expertise,patient-fee-management-process,patient-fee-management-mapping,#patient-fee-management-related,patient-fee-management-starting,patient-fee-management-example,patient-fee-management-progress,patient-fee-management-why,patient-fee-management-faq,patient-fee-management-consultation) {
+      content-visibility: auto;
+      contain-intrinsic-block-size: auto var(--seo-section-estimate,1000px);
+    }
+      .patient-fee-management-page > patient-fee-management-challenges { --seo-section-estimate:1252px; }
+      .patient-fee-management-page > patient-fee-management-outcomes { --seo-section-estimate:1780px; }
+      .patient-fee-management-page > patient-fee-management-intent { --seo-section-estimate:698px; }
+      .patient-fee-management-page > patient-fee-management-trust { --seo-section-estimate:906px; }
+      .patient-fee-management-page > patient-fee-management-expertise { --seo-section-estimate:1063px; }
+      .patient-fee-management-page > patient-fee-management-process { --seo-section-estimate:1767px; }
+      .patient-fee-management-page > patient-fee-management-mapping { --seo-section-estimate:1475px; }
+      .patient-fee-management-page > #patient-fee-management-related { --seo-section-estimate:1284px; }
+      .patient-fee-management-page > patient-fee-management-starting { --seo-section-estimate:804px; }
+      .patient-fee-management-page > patient-fee-management-example { --seo-section-estimate:896px; }
+      .patient-fee-management-page > patient-fee-management-progress { --seo-section-estimate:798px; }
+      .patient-fee-management-page > patient-fee-management-why { --seo-section-estimate:948px; }
+      .patient-fee-management-page > patient-fee-management-faq { --seo-section-estimate:1111px; }
+      .patient-fee-management-page > patient-fee-management-consultation { --seo-section-estimate:1621px; }
+    @media (min-width:360px) {
+      .patient-fee-management-page > patient-fee-management-challenges { --seo-section-estimate:1148px; }
+      .patient-fee-management-page > patient-fee-management-outcomes { --seo-section-estimate:1638px; }
+      .patient-fee-management-page > patient-fee-management-intent { --seo-section-estimate:663px; }
+      .patient-fee-management-page > patient-fee-management-trust { --seo-section-estimate:808px; }
+      .patient-fee-management-page > patient-fee-management-expertise { --seo-section-estimate:1089px; }
+      .patient-fee-management-page > patient-fee-management-process { --seo-section-estimate:1525px; }
+      .patient-fee-management-page > patient-fee-management-mapping { --seo-section-estimate:1398px; }
+      .patient-fee-management-page > #patient-fee-management-related { --seo-section-estimate:1305px; }
+      .patient-fee-management-page > patient-fee-management-starting { --seo-section-estimate:789px; }
+      .patient-fee-management-page > patient-fee-management-example { --seo-section-estimate:920px; }
+      .patient-fee-management-page > patient-fee-management-progress { --seo-section-estimate:789px; }
+      .patient-fee-management-page > patient-fee-management-why { --seo-section-estimate:866px; }
+      .patient-fee-management-page > patient-fee-management-faq { --seo-section-estimate:1063px; }
+      .patient-fee-management-page > patient-fee-management-consultation { --seo-section-estimate:1555px; }
+    }
+    @media (min-width:640px) {
+      .patient-fee-management-page > patient-fee-management-challenges { --seo-section-estimate:1225px; }
+      .patient-fee-management-page > patient-fee-management-outcomes { --seo-section-estimate:1303px; }
+      .patient-fee-management-page > patient-fee-management-intent { --seo-section-estimate:753px; }
+      .patient-fee-management-page > patient-fee-management-trust { --seo-section-estimate:940px; }
+      .patient-fee-management-page > patient-fee-management-expertise { --seo-section-estimate:692px; }
+      .patient-fee-management-page > patient-fee-management-process { --seo-section-estimate:1764px; }
+      .patient-fee-management-page > patient-fee-management-mapping { --seo-section-estimate:1046px; }
+      .patient-fee-management-page > #patient-fee-management-related { --seo-section-estimate:1424px; }
+      .patient-fee-management-page > patient-fee-management-starting { --seo-section-estimate:608px; }
+      .patient-fee-management-page > patient-fee-management-example { --seo-section-estimate:779px; }
+      .patient-fee-management-page > patient-fee-management-progress { --seo-section-estimate:668px; }
+      .patient-fee-management-page > patient-fee-management-why { --seo-section-estimate:794px; }
+      .patient-fee-management-page > patient-fee-management-faq { --seo-section-estimate:1051px; }
+      .patient-fee-management-page > patient-fee-management-consultation { --seo-section-estimate:1402px; }
+    }
+    @media (min-width:820px) {
+      .patient-fee-management-page > patient-fee-management-challenges { --seo-section-estimate:1304px; }
+      .patient-fee-management-page > patient-fee-management-outcomes { --seo-section-estimate:1149px; }
+      .patient-fee-management-page > patient-fee-management-intent { --seo-section-estimate:821px; }
+      .patient-fee-management-page > patient-fee-management-trust { --seo-section-estimate:957px; }
+      .patient-fee-management-page > patient-fee-management-expertise { --seo-section-estimate:743px; }
+      .patient-fee-management-page > patient-fee-management-process { --seo-section-estimate:1372px; }
+      .patient-fee-management-page > patient-fee-management-mapping { --seo-section-estimate:965px; }
+      .patient-fee-management-page > #patient-fee-management-related { --seo-section-estimate:1412px; }
+      .patient-fee-management-page > patient-fee-management-starting { --seo-section-estimate:577px; }
+      .patient-fee-management-page > patient-fee-management-example { --seo-section-estimate:640px; }
+      .patient-fee-management-page > patient-fee-management-progress { --seo-section-estimate:544px; }
+      .patient-fee-management-page > patient-fee-management-why { --seo-section-estimate:718px; }
+      .patient-fee-management-page > patient-fee-management-faq { --seo-section-estimate:1031px; }
+      .patient-fee-management-page > patient-fee-management-consultation { --seo-section-estimate:1402px; }
+    }
+    @media (min-width:999px) {
+      .patient-fee-management-page > patient-fee-management-challenges { --seo-section-estimate:1290px; }
+      .patient-fee-management-page > patient-fee-management-outcomes { --seo-section-estimate:1125px; }
+      .patient-fee-management-page > patient-fee-management-intent { --seo-section-estimate:836px; }
+      .patient-fee-management-page > patient-fee-management-trust { --seo-section-estimate:991px; }
+      .patient-fee-management-page > patient-fee-management-expertise { --seo-section-estimate:772px; }
+      .patient-fee-management-page > patient-fee-management-process { --seo-section-estimate:1118px; }
+      .patient-fee-management-page > patient-fee-management-mapping { --seo-section-estimate:958px; }
+      .patient-fee-management-page > #patient-fee-management-related { --seo-section-estimate:1430px; }
+      .patient-fee-management-page > patient-fee-management-starting { --seo-section-estimate:577px; }
+      .patient-fee-management-page > patient-fee-management-example { --seo-section-estimate:585px; }
+      .patient-fee-management-page > patient-fee-management-progress { --seo-section-estimate:551px; }
+      .patient-fee-management-page > patient-fee-management-why { --seo-section-estimate:750px; }
+      .patient-fee-management-page > patient-fee-management-faq { --seo-section-estimate:1011px; }
+      .patient-fee-management-page > patient-fee-management-consultation { --seo-section-estimate:1413px; }
+    }
+    @media (min-width:1000px) {
+      .patient-fee-management-page > patient-fee-management-challenges { --seo-section-estimate:1290px; }
+      .patient-fee-management-page > patient-fee-management-outcomes { --seo-section-estimate:1125px; }
+      .patient-fee-management-page > patient-fee-management-intent { --seo-section-estimate:836px; }
+      .patient-fee-management-page > patient-fee-management-trust { --seo-section-estimate:991px; }
+      .patient-fee-management-page > patient-fee-management-expertise { --seo-section-estimate:772px; }
+      .patient-fee-management-page > patient-fee-management-process { --seo-section-estimate:1118px; }
+      .patient-fee-management-page > patient-fee-management-mapping { --seo-section-estimate:958px; }
+      .patient-fee-management-page > #patient-fee-management-related { --seo-section-estimate:1430px; }
+      .patient-fee-management-page > patient-fee-management-starting { --seo-section-estimate:577px; }
+      .patient-fee-management-page > patient-fee-management-example { --seo-section-estimate:585px; }
+      .patient-fee-management-page > patient-fee-management-progress { --seo-section-estimate:551px; }
+      .patient-fee-management-page > patient-fee-management-why { --seo-section-estimate:750px; }
+      .patient-fee-management-page > patient-fee-management-faq { --seo-section-estimate:1011px; }
+      .patient-fee-management-page > patient-fee-management-consultation { --seo-section-estimate:851px; }
+    }
+  }
+}
+@media print {
+  .patient-fee-management-page > :is(patient-fee-management-challenges,patient-fee-management-outcomes,patient-fee-management-intent,patient-fee-management-trust,patient-fee-management-expertise,patient-fee-management-process,patient-fee-management-mapping,#patient-fee-management-related,patient-fee-management-starting,patient-fee-management-example,patient-fee-management-progress,patient-fee-management-why,patient-fee-management-faq,patient-fee-management-consultation) { content-visibility:visible; contain-intrinsic-block-size:none; }
+}

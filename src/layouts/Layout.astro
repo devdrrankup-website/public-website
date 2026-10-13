@@ -10,6 +10,7 @@ interface PageMetadata {
   description: string;
   canonical: string;
   twitterCard: string;
+  ogDescription?: string;
   schema: unknown;
 }
 interface Props {
@@ -34,11 +35,11 @@ const imagePreloads = imagePreload ? (Array.isArray(imagePreload) ? imagePreload
     {metadata && <>
       <link rel="canonical" href={metadata.canonical} />
       <meta property="og:type" content="website" />
-      <meta property="og:site_name" content="Dr RankUp" />
+      <meta property="og:site_name" content="Dr RankUP" />
       <meta property="og:locale" content="en_BD" />
       <meta property="og:url" content={metadata.canonical} />
       <meta property="og:title" content={metadata.title} />
-      <meta property="og:description" content={metadata.description} />
+      <meta property="og:description" content={metadata.ogDescription ?? metadata.description} />
       <meta name="twitter:card" content={metadata.twitterCard} />
       <meta name="twitter:title" content={metadata.title} />
       <meta name="twitter:description" content={metadata.description} />

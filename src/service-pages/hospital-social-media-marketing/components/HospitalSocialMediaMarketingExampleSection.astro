@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/hospital-social-media-marketing/hospital-social-media-marketing-example-v1.webp';
+import { pageCopy } from '../data/hospital-social-media-marketing-source';
+const copy = pageCopy.example;
+import '../styles/hospital-social-media-marketing-example.css';
+---
+<hospital-social-media-marketing-example class="hospital-social-media-marketing-example-motion">
+  <section id="hospital-social-media-marketing-example" class="hospital-social-media-marketing-example" aria-labelledby="hospital-social-media-marketing-example-heading">
+    <div class="section-container hospital-social-media-marketing-example-layout">
+      <header class="hospital-social-media-marketing-example-header" data-example-entry>
+        <h2 id="hospital-social-media-marketing-example-heading">{copy.heading}</h2>
+        <span class="hospital-social-media-marketing-example-rule" data-example-rule aria-hidden="true"></span>
+      </header>
+      <figure class="hospital-social-media-marketing-example-photo" data-example-entry data-example-photo>
+        <Image src={photo} alt="Family asking reception about hospital information seen on phones" title="Family asking reception about hospital information seen on phones" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <div class="hospital-social-media-marketing-example-copy">
+        <div class="hospital-social-media-marketing-source-content" data-example-entry set:html={copy.html} />
+      </div>
+    </div>
+  </section>
+</hospital-social-media-marketing-example>
+<script>
+  import '../scripts/hospital-social-media-marketing-example';
+</script>

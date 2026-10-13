@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/clinic-content-marketing/clinic-content-marketing-progress-v1.webp';
+import { pageCopy } from '../data/clinic-content-marketing-source';
+const copy = pageCopy.progress;
+import '../styles/clinic-content-marketing-progress.css';
+---
+<clinic-content-marketing-progress class="clinic-content-marketing-progress-motion">
+  <section id="clinic-content-marketing-progress" class="clinic-content-marketing-progress" aria-labelledby="clinic-content-marketing-progress-heading">
+    <div class="section-container clinic-content-marketing-progress-layout">
+      <h2 id="clinic-content-marketing-progress-heading" data-progress-entry>{copy.heading}</h2>
+      <p class="clinic-content-marketing-progress-baseline" data-progress-entry set:html={copy.paragraphsHtml[0]} />
+      <figure class="clinic-content-marketing-progress-photo" data-progress-entry data-progress-photo>
+        <Image src={photo} alt="Content specialist comparing clinic information with an unlabeled report" title="Content specialist comparing clinic information with an unlabeled report" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <p class="clinic-content-marketing-progress-evidence" data-progress-entry set:html={copy.paragraphsHtml[1]} />
+
+    </div>
+  </section>
+</clinic-content-marketing-progress>
+<script>
+  import '../scripts/clinic-content-marketing-progress';
+</script>

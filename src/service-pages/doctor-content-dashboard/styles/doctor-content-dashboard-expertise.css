@@ -1,0 +1,49 @@
+.doctor-content-dashboard-expertise-motion { display: block; background: #0a0a0a; }
+.doctor-content-dashboard-expertise { padding-block: 40px 56px; border-radius: 28px 28px 0 0; color: #000; background: linear-gradient(180deg, #fff 0%, #eaf7ff 42%, #eeedfe 76%, #fff 100%); }
+.doctor-content-dashboard-expertise-layout { display: grid; grid-template-areas: "heading" "portrait" "record" "principles"; gap: 30px; max-width: 1200px; }
+.doctor-content-dashboard-expertise h2 { grid-area: heading; margin: 0; color: #000; font-size: clamp(28px, 7.3vw, 38px); font-weight: 650; line-height: 1.24; letter-spacing: -.035em; text-wrap: pretty; }
+.doctor-content-dashboard-expertise-portrait { grid-area: portrait; margin: 0; width: 100%; max-width: 360px; justify-self: center; min-width: 0; }
+.doctor-content-dashboard-expertise-photo { aspect-ratio: 1; border-radius: 28px; overflow: hidden; background: #d4d4d4; }
+.doctor-content-dashboard-expertise-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.doctor-content-dashboard-expertise-portrait figcaption { padding-top: 16px; color: #000; font-size: 23px; line-height: 1.4; font-weight: 650; letter-spacing: -.025em; }
+.doctor-content-dashboard-expertise-record { grid-area: record; min-width: 0; }
+.doctor-content-dashboard-expertise-metrics { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 20px; list-style: none; margin: 0 0 24px; padding: 0; }
+.doctor-content-dashboard-expertise-metrics li { min-width: 0; }
+.doctor-content-dashboard-expertise-metrics strong { display: block; color: #000; font-size: clamp(36px, 12vw, 52px); font-weight: 650; line-height: 1.15; letter-spacing: -.055em; font-variant-numeric: tabular-nums; }
+.doctor-content-dashboard-expertise-metrics span { display: block; color: #000; margin-top: 8px; font-size: 14px; line-height: 1.6; }
+.doctor-content-dashboard-expertise-context { margin: 0; color: #000; font-size: 15px; line-height: 1.85; }
+.doctor-content-dashboard-expertise-principles { grid-area: principles; min-width: 0; }
+.doctor-content-dashboard-expertise-rule { display: block; height: 1px; background: #afa9ec80; transform-origin: left center; }
+.doctor-content-dashboard-expertise-principles ul { display: grid; gap: 20px; list-style: disc; margin: 24px 0 0; padding-left: 20px; color: #000; font-size: 15px; line-height: 1.85; }
+.doctor-content-dashboard-expertise-principles li { padding-left: 4px; min-width: 0; }
+
+@media (min-width: 640px) {
+  .doctor-content-dashboard-expertise { padding-block: 48px 72px; border-radius: 36px 36px 0 0; }
+  .doctor-content-dashboard-expertise-layout { grid-template-areas: "heading heading" "portrait record" "principles principles"; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 36px; align-items: start; }
+  .doctor-content-dashboard-expertise h2 { max-width: 860px; font-size: clamp(34px, 4.6vw, 44px); }
+  .doctor-content-dashboard-expertise-portrait { justify-self: start; }
+  .doctor-content-dashboard-expertise-photo { border-radius: 32px; }
+  .doctor-content-dashboard-expertise-portrait figcaption { font-size: 25px; }
+  .doctor-content-dashboard-expertise-metrics { margin-bottom: 28px; }
+  .doctor-content-dashboard-expertise-metrics strong { font-size: clamp(40px, 5.8vw, 56px); }
+  .doctor-content-dashboard-expertise-metrics span { font-size: 15px; }
+  .doctor-content-dashboard-expertise-context,.doctor-content-dashboard-expertise-principles ul { font-size: 16px; }
+  .doctor-content-dashboard-expertise-principles ul { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 36px; }
+}
+
+@media (min-width: 900px) {
+  .doctor-content-dashboard-expertise { border-radius: 40px 40px 0 0; }
+}
+
+@media (min-width: 1100px) {
+  .doctor-content-dashboard-expertise { padding-block: 56px 88px; }
+  .doctor-content-dashboard-expertise-layout { grid-template-areas: "heading heading" "portrait record" "portrait principles"; grid-template-columns: minmax(0, .95fr) minmax(0, 1.15fr); gap: 36px clamp(44px, 5vw, 72px); }
+  .doctor-content-dashboard-expertise h2 { max-width: 1000px; margin-bottom: 8px; font-size: clamp(40px, 3.25vw, 46px); }
+  .doctor-content-dashboard-expertise-portrait { max-width: 480px; }
+  .doctor-content-dashboard-expertise-photo { border-radius: 40px; }
+  .doctor-content-dashboard-expertise-portrait figcaption { padding-top: 22px; font-size: 30px; }
+  .doctor-content-dashboard-expertise-metrics { margin-bottom: 32px; gap: 28px; }
+  .doctor-content-dashboard-expertise-metrics strong { font-size: clamp(54px, 5vw, 72px); }
+  .doctor-content-dashboard-expertise-metrics span { font-size: 16px; }
+  .doctor-content-dashboard-expertise-principles ul { grid-template-columns: minmax(0, 1fr); gap: 22px; margin-top: 28px; }
+}

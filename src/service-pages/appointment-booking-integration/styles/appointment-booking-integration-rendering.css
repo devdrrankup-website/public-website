@@ -1,0 +1,108 @@
+/* Page-owned offscreen rendering. Whole section boundaries preserve native
+   sticky containers; the hero and desktop remain immediately renderable.
+   Auto remembers real sizes after entry; source content is always in HTML. */
+@supports (content-visibility: auto) {
+  @media (max-width:1099px) {
+    .appointment-booking-integration-page > :is(appointment-booking-integration-challenges,appointment-booking-integration-outcomes,appointment-booking-integration-intent,appointment-booking-integration-trust,appointment-booking-integration-expertise,appointment-booking-integration-process,appointment-booking-integration-mapping,#appointment-booking-integration-related,appointment-booking-integration-starting,appointment-booking-integration-example,appointment-booking-integration-progress,appointment-booking-integration-why,appointment-booking-integration-faq,appointment-booking-integration-consultation) {
+      content-visibility: auto;
+      contain-intrinsic-block-size: auto var(--seo-section-estimate,1000px);
+    }
+      .appointment-booking-integration-page > appointment-booking-integration-challenges { --seo-section-estimate:1252px; }
+      .appointment-booking-integration-page > appointment-booking-integration-outcomes { --seo-section-estimate:1780px; }
+      .appointment-booking-integration-page > appointment-booking-integration-intent { --seo-section-estimate:698px; }
+      .appointment-booking-integration-page > appointment-booking-integration-trust { --seo-section-estimate:906px; }
+      .appointment-booking-integration-page > appointment-booking-integration-expertise { --seo-section-estimate:1063px; }
+      .appointment-booking-integration-page > appointment-booking-integration-process { --seo-section-estimate:1767px; }
+      .appointment-booking-integration-page > appointment-booking-integration-mapping { --seo-section-estimate:1475px; }
+      .appointment-booking-integration-page > #appointment-booking-integration-related { --seo-section-estimate:1284px; }
+      .appointment-booking-integration-page > appointment-booking-integration-starting { --seo-section-estimate:804px; }
+      .appointment-booking-integration-page > appointment-booking-integration-example { --seo-section-estimate:896px; }
+      .appointment-booking-integration-page > appointment-booking-integration-progress { --seo-section-estimate:798px; }
+      .appointment-booking-integration-page > appointment-booking-integration-why { --seo-section-estimate:948px; }
+      .appointment-booking-integration-page > appointment-booking-integration-faq { --seo-section-estimate:1111px; }
+      .appointment-booking-integration-page > appointment-booking-integration-consultation { --seo-section-estimate:1621px; }
+    @media (min-width:360px) {
+      .appointment-booking-integration-page > appointment-booking-integration-challenges { --seo-section-estimate:1148px; }
+      .appointment-booking-integration-page > appointment-booking-integration-outcomes { --seo-section-estimate:1638px; }
+      .appointment-booking-integration-page > appointment-booking-integration-intent { --seo-section-estimate:663px; }
+      .appointment-booking-integration-page > appointment-booking-integration-trust { --seo-section-estimate:808px; }
+      .appointment-booking-integration-page > appointment-booking-integration-expertise { --seo-section-estimate:1089px; }
+      .appointment-booking-integration-page > appointment-booking-integration-process { --seo-section-estimate:1525px; }
+      .appointment-booking-integration-page > appointment-booking-integration-mapping { --seo-section-estimate:1398px; }
+      .appointment-booking-integration-page > #appointment-booking-integration-related { --seo-section-estimate:1305px; }
+      .appointment-booking-integration-page > appointment-booking-integration-starting { --seo-section-estimate:789px; }
+      .appointment-booking-integration-page > appointment-booking-integration-example { --seo-section-estimate:920px; }
+      .appointment-booking-integration-page > appointment-booking-integration-progress { --seo-section-estimate:789px; }
+      .appointment-booking-integration-page > appointment-booking-integration-why { --seo-section-estimate:866px; }
+      .appointment-booking-integration-page > appointment-booking-integration-faq { --seo-section-estimate:1063px; }
+      .appointment-booking-integration-page > appointment-booking-integration-consultation { --seo-section-estimate:1555px; }
+    }
+    @media (min-width:640px) {
+      .appointment-booking-integration-page > appointment-booking-integration-challenges { --seo-section-estimate:1225px; }
+      .appointment-booking-integration-page > appointment-booking-integration-outcomes { --seo-section-estimate:1303px; }
+      .appointment-booking-integration-page > appointment-booking-integration-intent { --seo-section-estimate:753px; }
+      .appointment-booking-integration-page > appointment-booking-integration-trust { --seo-section-estimate:940px; }
+      .appointment-booking-integration-page > appointment-booking-integration-expertise { --seo-section-estimate:692px; }
+      .appointment-booking-integration-page > appointment-booking-integration-process { --seo-section-estimate:1764px; }
+      .appointment-booking-integration-page > appointment-booking-integration-mapping { --seo-section-estimate:1046px; }
+      .appointment-booking-integration-page > #appointment-booking-integration-related { --seo-section-estimate:1424px; }
+      .appointment-booking-integration-page > appointment-booking-integration-starting { --seo-section-estimate:608px; }
+      .appointment-booking-integration-page > appointment-booking-integration-example { --seo-section-estimate:779px; }
+      .appointment-booking-integration-page > appointment-booking-integration-progress { --seo-section-estimate:668px; }
+      .appointment-booking-integration-page > appointment-booking-integration-why { --seo-section-estimate:794px; }
+      .appointment-booking-integration-page > appointment-booking-integration-faq { --seo-section-estimate:1051px; }
+      .appointment-booking-integration-page > appointment-booking-integration-consultation { --seo-section-estimate:1402px; }
+    }
+    @media (min-width:820px) {
+      .appointment-booking-integration-page > appointment-booking-integration-challenges { --seo-section-estimate:1304px; }
+      .appointment-booking-integration-page > appointment-booking-integration-outcomes { --seo-section-estimate:1149px; }
+      .appointment-booking-integration-page > appointment-booking-integration-intent { --seo-section-estimate:821px; }
+      .appointment-booking-integration-page > appointment-booking-integration-trust { --seo-section-estimate:957px; }
+      .appointment-booking-integration-page > appointment-booking-integration-expertise { --seo-section-estimate:743px; }
+      .appointment-booking-integration-page > appointment-booking-integration-process { --seo-section-estimate:1372px; }
+      .appointment-booking-integration-page > appointment-booking-integration-mapping { --seo-section-estimate:965px; }
+      .appointment-booking-integration-page > #appointment-booking-integration-related { --seo-section-estimate:1412px; }
+      .appointment-booking-integration-page > appointment-booking-integration-starting { --seo-section-estimate:577px; }
+      .appointment-booking-integration-page > appointment-booking-integration-example { --seo-section-estimate:640px; }
+      .appointment-booking-integration-page > appointment-booking-integration-progress { --seo-section-estimate:544px; }
+      .appointment-booking-integration-page > appointment-booking-integration-why { --seo-section-estimate:718px; }
+      .appointment-booking-integration-page > appointment-booking-integration-faq { --seo-section-estimate:1031px; }
+      .appointment-booking-integration-page > appointment-booking-integration-consultation { --seo-section-estimate:1402px; }
+    }
+    @media (min-width:999px) {
+      .appointment-booking-integration-page > appointment-booking-integration-challenges { --seo-section-estimate:1290px; }
+      .appointment-booking-integration-page > appointment-booking-integration-outcomes { --seo-section-estimate:1125px; }
+      .appointment-booking-integration-page > appointment-booking-integration-intent { --seo-section-estimate:836px; }
+      .appointment-booking-integration-page > appointment-booking-integration-trust { --seo-section-estimate:991px; }
+      .appointment-booking-integration-page > appointment-booking-integration-expertise { --seo-section-estimate:772px; }
+      .appointment-booking-integration-page > appointment-booking-integration-process { --seo-section-estimate:1118px; }
+      .appointment-booking-integration-page > appointment-booking-integration-mapping { --seo-section-estimate:958px; }
+      .appointment-booking-integration-page > #appointment-booking-integration-related { --seo-section-estimate:1430px; }
+      .appointment-booking-integration-page > appointment-booking-integration-starting { --seo-section-estimate:577px; }
+      .appointment-booking-integration-page > appointment-booking-integration-example { --seo-section-estimate:585px; }
+      .appointment-booking-integration-page > appointment-booking-integration-progress { --seo-section-estimate:551px; }
+      .appointment-booking-integration-page > appointment-booking-integration-why { --seo-section-estimate:750px; }
+      .appointment-booking-integration-page > appointment-booking-integration-faq { --seo-section-estimate:1011px; }
+      .appointment-booking-integration-page > appointment-booking-integration-consultation { --seo-section-estimate:1413px; }
+    }
+    @media (min-width:1000px) {
+      .appointment-booking-integration-page > appointment-booking-integration-challenges { --seo-section-estimate:1290px; }
+      .appointment-booking-integration-page > appointment-booking-integration-outcomes { --seo-section-estimate:1125px; }
+      .appointment-booking-integration-page > appointment-booking-integration-intent { --seo-section-estimate:836px; }
+      .appointment-booking-integration-page > appointment-booking-integration-trust { --seo-section-estimate:991px; }
+      .appointment-booking-integration-page > appointment-booking-integration-expertise { --seo-section-estimate:772px; }
+      .appointment-booking-integration-page > appointment-booking-integration-process { --seo-section-estimate:1118px; }
+      .appointment-booking-integration-page > appointment-booking-integration-mapping { --seo-section-estimate:958px; }
+      .appointment-booking-integration-page > #appointment-booking-integration-related { --seo-section-estimate:1430px; }
+      .appointment-booking-integration-page > appointment-booking-integration-starting { --seo-section-estimate:577px; }
+      .appointment-booking-integration-page > appointment-booking-integration-example { --seo-section-estimate:585px; }
+      .appointment-booking-integration-page > appointment-booking-integration-progress { --seo-section-estimate:551px; }
+      .appointment-booking-integration-page > appointment-booking-integration-why { --seo-section-estimate:750px; }
+      .appointment-booking-integration-page > appointment-booking-integration-faq { --seo-section-estimate:1011px; }
+      .appointment-booking-integration-page > appointment-booking-integration-consultation { --seo-section-estimate:851px; }
+    }
+  }
+}
+@media print {
+  .appointment-booking-integration-page > :is(appointment-booking-integration-challenges,appointment-booking-integration-outcomes,appointment-booking-integration-intent,appointment-booking-integration-trust,appointment-booking-integration-expertise,appointment-booking-integration-process,appointment-booking-integration-mapping,#appointment-booking-integration-related,appointment-booking-integration-starting,appointment-booking-integration-example,appointment-booking-integration-progress,appointment-booking-integration-why,appointment-booking-integration-faq,appointment-booking-integration-consultation) { content-visibility:visible; contain-intrinsic-block-size:none; }
+}

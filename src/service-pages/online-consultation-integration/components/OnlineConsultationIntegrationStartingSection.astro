@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/online-consultation-integration/online-consultation-integration-starting-v1.webp';
+import { pageCopy } from '../data/online-consultation-integration-source';
+const copy = pageCopy.starting;
+import '../styles/online-consultation-integration-starting.css';
+---
+<online-consultation-integration-starting class="online-consultation-integration-starting-motion">
+  <section id="online-consultation-integration-starting" class="online-consultation-integration-starting" aria-labelledby="online-consultation-integration-starting-heading">
+    <div class="section-container online-consultation-integration-starting-layout">
+      <h2 id="online-consultation-integration-starting-heading" data-starting-entry>{copy.heading}</h2>
+      <div class="online-consultation-integration-starting-copy" data-starting-entry>
+        <div class="online-consultation-integration-source-content" set:html={copy.html} />
+      </div>
+      <figure class="online-consultation-integration-starting-visual" data-starting-entry data-starting-visual>
+        <Image src={photo} alt="Doctor and specialist mapping an online consultation workflow" title="Doctor and specialist mapping an online consultation workflow" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 540px, (min-width:640px) 320px, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+    </div>
+  </section>
+</online-consultation-integration-starting>
+<script>
+  import '../scripts/online-consultation-integration-starting';
+</script>

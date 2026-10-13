@@ -1,0 +1,38 @@
+---
+import ActionIcon from '../../../components/ActionIcon.astro';
+import { pageCopy } from '../data/patient-medical-record-software-source';
+const copy = pageCopy.hero;
+import { patientMedicalRecordSoftwareHeroImage as photo } from '../lib/patient-medical-record-software-hero-image';
+import '../styles/patient-medical-record-software-hero.css';
+---
+
+<section class="patient-medical-record-software-hero" aria-labelledby="patient-medical-record-software-heading">
+  <div class="section-container patient-medical-record-software-hero-layout">
+    <div class="patient-medical-record-software-hero-copy">
+      <h1 id="patient-medical-record-software-heading">{copy.heading}</h1>
+      <p class="patient-medical-record-software-hero-tagline">{copy.tagline}</p>
+      <div class="patient-medical-record-software-hero-description">
+        {copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+      </div>
+      <div class="patient-medical-record-software-hero-actions" aria-label={`${copy.heading} options`}>
+        <span class="button button-primary">
+          <span>{copy.primaryCta}</span><ActionIcon purpose="conversation" />
+        </span>
+        {copy.secondaryHref ? <a class="button button-secondary" href={copy.secondaryHref}>
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </a> : <span class="button button-secondary">
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </span>}
+      </div>
+    </div>
+    <div class="patient-medical-record-software-hero-visual">
+      <div class="patient-medical-record-software-hero-photo">
+        <img src={photo.src} srcset={photo.srcset} sizes={photo.sizes}
+          width={photo.width} height={photo.height}
+          alt="Doctor reviewing a visit timeline on a computer with a patient in his chamber"
+          title="Checking patient history during a chamber visit"
+          loading="eager" fetchpriority="high" decoding="async" />
+      </div>
+    </div>
+  </div>
+</section>

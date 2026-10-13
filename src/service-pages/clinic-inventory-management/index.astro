@@ -1,0 +1,47 @@
+---
+// Destination-owned static page. Service-specific images are pending review before publication.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import ClinicInventoryManagementHero from './components/ClinicInventoryManagementHero.astro';
+import ClinicInventoryManagementChallengesSection from './components/ClinicInventoryManagementChallengesSection.astro';
+import ClinicInventoryManagementOutcomesSection from './components/ClinicInventoryManagementOutcomesSection.astro';
+import ClinicInventoryManagementIntentSection from './components/ClinicInventoryManagementIntentSection.astro';
+import ClinicInventoryManagementTrustSection from './components/ClinicInventoryManagementTrustSection.astro';
+import ClinicInventoryManagementExpertiseSection from './components/ClinicInventoryManagementExpertiseSection.astro';
+import ClinicInventoryManagementProcessSection from './components/ClinicInventoryManagementProcessSection.astro';
+import ClinicInventoryManagementMappingSection from './components/ClinicInventoryManagementMappingSection.astro';
+import ClinicInventoryManagementRelatedSection from './components/ClinicInventoryManagementRelatedSection.astro';
+import ClinicInventoryManagementStartingSection from './components/ClinicInventoryManagementStartingSection.astro';
+import ClinicInventoryManagementExampleSection from './components/ClinicInventoryManagementExampleSection.astro';
+import ClinicInventoryManagementProgressSection from './components/ClinicInventoryManagementProgressSection.astro';
+import ClinicInventoryManagementWhySection from './components/ClinicInventoryManagementWhySection.astro';
+import ClinicInventoryManagementFaqSection from './components/ClinicInventoryManagementFaqSection.astro';
+import ClinicInventoryManagementConsultationSection from './components/ClinicInventoryManagementConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { clinicInventoryManagementHeroPreload } from './lib/clinic-inventory-management-hero-image';
+import './styles/clinic-inventory-management-rendering.css';
+import './styles/clinic-inventory-management-source-content.css';
+import { metadata } from './data/clinic-inventory-management-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={clinicInventoryManagementHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="clinic-inventory-management-page" tabindex="-1">
+    <ClinicInventoryManagementHero />
+    <ClinicInventoryManagementChallengesSection />
+    <ClinicInventoryManagementOutcomesSection />
+    <ClinicInventoryManagementIntentSection />
+    <ClinicInventoryManagementTrustSection />
+    <ClinicInventoryManagementExpertiseSection />
+    <ClinicInventoryManagementProcessSection />
+    <ClinicInventoryManagementMappingSection />
+    <ClinicInventoryManagementRelatedSection />
+    <ClinicInventoryManagementStartingSection />
+    <ClinicInventoryManagementExampleSection />
+    <ClinicInventoryManagementProgressSection />
+    <ClinicInventoryManagementWhySection />
+    <ClinicInventoryManagementFaqSection />
+    <ClinicInventoryManagementConsultationSection />
+  </main>
+  <Footer />
+</Layout>

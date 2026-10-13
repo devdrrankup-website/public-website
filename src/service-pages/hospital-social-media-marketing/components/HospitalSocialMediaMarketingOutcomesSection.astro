@@ -1,0 +1,25 @@
+---
+import HospitalSocialMediaMarketingOutcomeVisual from './HospitalSocialMediaMarketingOutcomeVisual.astro';
+import { pageCopy } from '../data/hospital-social-media-marketing-source';
+const copy = pageCopy.outcomes;
+import '../styles/hospital-social-media-marketing-outcomes.css';
+---
+<hospital-social-media-marketing-outcomes class="hospital-social-media-marketing-outcomes">
+  <section id="hospital-social-media-marketing-outcomes" class="section-container" aria-labelledby="hospital-social-media-marketing-outcomes-heading">
+    <div class="hospital-social-media-marketing-outcomes-heading">
+      <h2 id="hospital-social-media-marketing-outcomes-heading">{copy.heading}</h2>
+      <div class="hospital-social-media-marketing-outcomes-introduction hospital-social-media-marketing-source-content" set:html={copy.before} />
+    </div>
+    <ul class="hospital-social-media-marketing-outcomes-list" role="list">
+      {copy.items.map((item, index) => <li class="hospital-social-media-marketing-outcome" data-seo-outcomes-motion>
+        <HospitalSocialMediaMarketingOutcomeVisual index={index} />
+        <p><strong>{item.label}</strong><span>{item.description}</span></p>
+      </li>)}
+    </ul>
+    <div class="hospital-social-media-marketing-outcomes-conclusion hospital-social-media-marketing-source-content" set:html={copy.after} />
+  </section>
+</hospital-social-media-marketing-outcomes>
+
+<script>
+  import '../scripts/hospital-social-media-marketing-outcomes';
+</script>

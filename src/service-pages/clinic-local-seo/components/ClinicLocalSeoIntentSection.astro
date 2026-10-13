@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/clinic-local-seo/clinic-local-seo-intent-v1.webp';
+import { pageCopy } from '../data/clinic-local-seo-source';
+const copy = pageCopy.intent;
+import '../styles/clinic-local-seo-intent.css';
+---
+<clinic-local-seo-intent class="clinic-local-seo-intent">
+  <section id="clinic-local-seo-intent" class="section-container clinic-local-seo-intent-layout" aria-labelledby="clinic-local-seo-intent-heading">
+    <div class="clinic-local-seo-intent-copy" data-seo-intent-motion>
+      <h2 id="clinic-local-seo-intent-heading">{copy.heading}</h2>
+      <div class="clinic-local-seo-source-content" set:html={copy.html} />
+    </div>
+    <div class="clinic-local-seo-intent-photo" data-seo-intent-motion>
+      <Image src={photo} widths={[360, 540, 720, 960, 1200]} width={1536} height={1024}
+        sizes="(min-width: 1100px) min(43vw, 576px), (min-width: 640px) min(calc(100vw - 56px), 760px), calc(100vw - 32px)"
+        format="webp" quality={76} loading="lazy" decoding="async"
+        alt="Woman comparing nearby clinic locations on her phone at home"
+        title="Woman comparing nearby clinic locations on her phone at home" />
+    </div>
+  </section>
+</clinic-local-seo-intent>
+
+<script>
+  import '../scripts/clinic-local-seo-intent';
+</script>

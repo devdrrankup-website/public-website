@@ -1,0 +1,66 @@
+---
+import { Image } from 'astro:assets';
+import Icon from '../../../components/Icon.astro';
+import Arrow from '../../../components/Arrow.astro';
+import Calendar03Icon from '@hugeicons/core-free-icons/Calendar03Icon';
+import WebDesign01Icon from '@hugeicons/core-free-icons/WebDesign01Icon';
+import UserGroupIcon from '@hugeicons/core-free-icons/UserGroupIcon';
+import { pageCopy } from '../data/clinic-online-appointment-system-source';
+const copy = pageCopy.related;
+import relatedImage0 from '../../../assets/clinic-doctor-schedule-management/clinic-doctor-schedule-management-related-preview-v1.webp';
+import relatedImage1 from '../../../assets/patient-appointment-management/patient-appointment-management-related-preview-v1.webp';
+import relatedImage2 from '../../../assets/clinic-website/clinic-website-related-preview-v1.webp';
+import relatedImage3 from '../../../assets/clinic-doctor-directory/clinic-doctor-directory-related-preview-v1.webp';
+import '../styles/clinic-online-appointment-system-related.css';
+const visuals = [
+  { image: relatedImage0, icon: Calendar03Icon, accent: '#BAE5FF', description: "At a clinic reception before opening, a scheduling coordinator posts a doctor's weekly availability on an unmarked notice board while staff prepare the desk." },
+  { image: relatedImage1, icon: Calendar03Icon, accent: '#EEEDFE', description: "At a doctor's chamber reception, a receptionist welcomes a visitor while another staff member checks a clearly blank appointment list on the front of a tablet." },
+  { image: relatedImage2, icon: WebDesign01Icon, accent: '#FEF2CC', description: "A patient at home views a clinic website's departments and contact paths on a front-facing tablet, with the screen content kept generic and text unreadable." },
+  { image: relatedImage3, icon: UserGroupIcon, accent: '#E4FFBD', description: "A patient at home compares doctor specialties and chamber availability within a clinic directory on a correctly oriented tablet; generic nonlegible interface." },
+];
+---
+<section id="clinic-online-appointment-system-related" class="clinic-online-appointment-system-related" aria-labelledby="clinic-online-appointment-system-related-heading">
+  <div class="section-container clinic-online-appointment-system-related-container">
+    <clinic-online-appointment-system-related>
+      <header class="clinic-online-appointment-system-related-header" data-related-entry>
+        <h2 id="clinic-online-appointment-system-related-heading">{copy.heading}</h2>
+        <div class="clinic-online-appointment-system-source-content" set:html={copy.introductionHtml} />
+      </header>
+      <div class="clinic-online-appointment-system-related-layout">
+        <div class="clinic-online-appointment-system-related-dock">
+          <div class="clinic-online-appointment-system-related-selectors" role="group" aria-label="Service image previews" hidden>
+            {copy.services.map((service, index) => <button type="button" aria-pressed={index === 0 ? 'true' : 'false'} aria-controls={`related-${service.key}`} data-related-select={index}>
+              <span>{service.name}</span>
+            </button>)}
+          </div>
+          <div class="clinic-online-appointment-system-related-stage" aria-hidden="true" hidden></div>
+        </div>
+        <div class="clinic-online-appointment-system-related-details">
+          <div class="clinic-online-appointment-system-related-labels"><span>{copy.headers[0]}</span><span>{copy.headers[1]}</span></div>
+          <dl class="clinic-online-appointment-system-related-list">
+            {copy.services.map((service, index) => <div class="clinic-online-appointment-system-related-row" id={`related-${service.key}`} data-service={service.key}>
+              <dt>
+                <span class="clinic-online-appointment-system-related-badge" style={`--related-accent:${visuals[index % visuals.length].accent}`}><Icon icon={visuals[index % visuals.length].icon} size={21} strokeWidth={1.8} /></span>
+                <span class="clinic-online-appointment-system-related-reveal" aria-hidden="true"></span>
+                {service.href ? <a class="clinic-online-appointment-system-related-name" href={service.href}>{service.name}</a>
+                  : <span class="clinic-online-appointment-system-related-name">{service.name}</span>}
+                <span class="clinic-online-appointment-system-related-arrow" aria-hidden="true"><Arrow /></span>
+              </dt>
+              <dd>
+                <span>{service.responsibility}</span>
+                <figure class="clinic-online-appointment-system-related-photo">
+                  <Image src={visuals[index % visuals.length].image} alt={visuals[index % visuals.length].description} title={visuals[index % visuals.length].description} width={960} widths={[360,640,960]} sizes="(min-width:1100px) 700px, (min-width:640px) 700px, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+                  <figcaption>{service.name}</figcaption>
+                </figure>
+              </dd>
+            </div>)}
+          </dl>
+          <div class="clinic-online-appointment-system-related-note clinic-online-appointment-system-source-content" set:html={copy.noteHtml} />
+        </div>
+      </div>
+    </clinic-online-appointment-system-related>
+  </div>
+</section>
+<script>
+  import '../scripts/clinic-online-appointment-system-related';
+</script>

@@ -1,0 +1,47 @@
+---
+// Destination-owned static page. Service-specific images are pending review before publication.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import ClinicGoogleBusinessProfileHero from './components/ClinicGoogleBusinessProfileHero.astro';
+import ClinicGoogleBusinessProfileChallengesSection from './components/ClinicGoogleBusinessProfileChallengesSection.astro';
+import ClinicGoogleBusinessProfileOutcomesSection from './components/ClinicGoogleBusinessProfileOutcomesSection.astro';
+import ClinicGoogleBusinessProfileIntentSection from './components/ClinicGoogleBusinessProfileIntentSection.astro';
+import ClinicGoogleBusinessProfileTrustSection from './components/ClinicGoogleBusinessProfileTrustSection.astro';
+import ClinicGoogleBusinessProfileExpertiseSection from './components/ClinicGoogleBusinessProfileExpertiseSection.astro';
+import ClinicGoogleBusinessProfileProcessSection from './components/ClinicGoogleBusinessProfileProcessSection.astro';
+import ClinicGoogleBusinessProfileMappingSection from './components/ClinicGoogleBusinessProfileMappingSection.astro';
+import ClinicGoogleBusinessProfileRelatedSection from './components/ClinicGoogleBusinessProfileRelatedSection.astro';
+import ClinicGoogleBusinessProfileStartingSection from './components/ClinicGoogleBusinessProfileStartingSection.astro';
+import ClinicGoogleBusinessProfileExampleSection from './components/ClinicGoogleBusinessProfileExampleSection.astro';
+import ClinicGoogleBusinessProfileProgressSection from './components/ClinicGoogleBusinessProfileProgressSection.astro';
+import ClinicGoogleBusinessProfileWhySection from './components/ClinicGoogleBusinessProfileWhySection.astro';
+import ClinicGoogleBusinessProfileFaqSection from './components/ClinicGoogleBusinessProfileFaqSection.astro';
+import ClinicGoogleBusinessProfileConsultationSection from './components/ClinicGoogleBusinessProfileConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { clinicGoogleBusinessProfileHeroPreload } from './lib/clinic-google-business-profile-hero-image';
+import './styles/clinic-google-business-profile-rendering.css';
+import './styles/clinic-google-business-profile-source-content.css';
+import { metadata } from './data/clinic-google-business-profile-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={clinicGoogleBusinessProfileHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="clinic-google-business-profile-page" tabindex="-1">
+    <ClinicGoogleBusinessProfileHero />
+    <ClinicGoogleBusinessProfileChallengesSection />
+    <ClinicGoogleBusinessProfileOutcomesSection />
+    <ClinicGoogleBusinessProfileIntentSection />
+    <ClinicGoogleBusinessProfileTrustSection />
+    <ClinicGoogleBusinessProfileExpertiseSection />
+    <ClinicGoogleBusinessProfileProcessSection />
+    <ClinicGoogleBusinessProfileMappingSection />
+    <ClinicGoogleBusinessProfileRelatedSection />
+    <ClinicGoogleBusinessProfileStartingSection />
+    <ClinicGoogleBusinessProfileExampleSection />
+    <ClinicGoogleBusinessProfileProgressSection />
+    <ClinicGoogleBusinessProfileWhySection />
+    <ClinicGoogleBusinessProfileFaqSection />
+    <ClinicGoogleBusinessProfileConsultationSection />
+  </main>
+  <Footer />
+</Layout>

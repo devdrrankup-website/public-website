@@ -1,0 +1,47 @@
+---
+// Destination-owned static page. Service-specific images are pending review before publication.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import PatientMedicalRecordSoftwareHero from './components/PatientMedicalRecordSoftwareHero.astro';
+import PatientMedicalRecordSoftwareChallengesSection from './components/PatientMedicalRecordSoftwareChallengesSection.astro';
+import PatientMedicalRecordSoftwareOutcomesSection from './components/PatientMedicalRecordSoftwareOutcomesSection.astro';
+import PatientMedicalRecordSoftwareIntentSection from './components/PatientMedicalRecordSoftwareIntentSection.astro';
+import PatientMedicalRecordSoftwareTrustSection from './components/PatientMedicalRecordSoftwareTrustSection.astro';
+import PatientMedicalRecordSoftwareExpertiseSection from './components/PatientMedicalRecordSoftwareExpertiseSection.astro';
+import PatientMedicalRecordSoftwareProcessSection from './components/PatientMedicalRecordSoftwareProcessSection.astro';
+import PatientMedicalRecordSoftwareMappingSection from './components/PatientMedicalRecordSoftwareMappingSection.astro';
+import PatientMedicalRecordSoftwareRelatedSection from './components/PatientMedicalRecordSoftwareRelatedSection.astro';
+import PatientMedicalRecordSoftwareStartingSection from './components/PatientMedicalRecordSoftwareStartingSection.astro';
+import PatientMedicalRecordSoftwareExampleSection from './components/PatientMedicalRecordSoftwareExampleSection.astro';
+import PatientMedicalRecordSoftwareProgressSection from './components/PatientMedicalRecordSoftwareProgressSection.astro';
+import PatientMedicalRecordSoftwareWhySection from './components/PatientMedicalRecordSoftwareWhySection.astro';
+import PatientMedicalRecordSoftwareFaqSection from './components/PatientMedicalRecordSoftwareFaqSection.astro';
+import PatientMedicalRecordSoftwareConsultationSection from './components/PatientMedicalRecordSoftwareConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { patientMedicalRecordSoftwareHeroPreload } from './lib/patient-medical-record-software-hero-image';
+import './styles/patient-medical-record-software-rendering.css';
+import './styles/patient-medical-record-software-source-content.css';
+import { metadata } from './data/patient-medical-record-software-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={patientMedicalRecordSoftwareHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="patient-medical-record-software-page" tabindex="-1">
+    <PatientMedicalRecordSoftwareHero />
+    <PatientMedicalRecordSoftwareChallengesSection />
+    <PatientMedicalRecordSoftwareOutcomesSection />
+    <PatientMedicalRecordSoftwareIntentSection />
+    <PatientMedicalRecordSoftwareTrustSection />
+    <PatientMedicalRecordSoftwareExpertiseSection />
+    <PatientMedicalRecordSoftwareProcessSection />
+    <PatientMedicalRecordSoftwareMappingSection />
+    <PatientMedicalRecordSoftwareRelatedSection />
+    <PatientMedicalRecordSoftwareStartingSection />
+    <PatientMedicalRecordSoftwareExampleSection />
+    <PatientMedicalRecordSoftwareProgressSection />
+    <PatientMedicalRecordSoftwareWhySection />
+    <PatientMedicalRecordSoftwareFaqSection />
+    <PatientMedicalRecordSoftwareConsultationSection />
+  </main>
+  <Footer />
+</Layout>

@@ -1,0 +1,38 @@
+---
+import ActionIcon from '../../../components/ActionIcon.astro';
+import { pageCopy } from '../data/clinic-google-ads-source';
+const copy = pageCopy.hero;
+import { clinicGoogleAdsHeroImage as photo } from '../lib/clinic-google-ads-hero-image';
+import '../styles/clinic-google-ads-hero.css';
+---
+
+<section class="clinic-google-ads-hero" aria-labelledby="clinic-google-ads-heading">
+  <div class="section-container clinic-google-ads-hero-layout">
+    <div class="clinic-google-ads-hero-copy">
+      <h1 id="clinic-google-ads-heading">{copy.heading}</h1>
+      <p class="clinic-google-ads-hero-tagline">{copy.tagline}</p>
+      <div class="clinic-google-ads-hero-description">
+        {copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+      </div>
+      <div class="clinic-google-ads-hero-actions" aria-label={`${copy.heading} options`}>
+        <span class="button button-primary">
+          <span>{copy.primaryCta}</span><ActionIcon purpose="conversation" />
+        </span>
+        {copy.secondaryHref ? <a class="button button-secondary" href={copy.secondaryHref}>
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </a> : <span class="button button-secondary">
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </span>}
+      </div>
+    </div>
+    <div class="clinic-google-ads-hero-visual">
+      <div class="clinic-google-ads-hero-photo">
+        <img src={photo.src} srcset={photo.srcset} sizes={photo.sizes}
+          width={photo.width} height={photo.height}
+          alt="Clinic manager and search specialist reviewing a paid search campaign at an agency"
+          title="Planning clinic search ads"
+          loading="eager" fetchpriority="high" decoding="async" />
+      </div>
+    </div>
+  </div>
+</section>

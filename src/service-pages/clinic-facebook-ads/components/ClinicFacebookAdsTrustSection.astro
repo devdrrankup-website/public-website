@@ -1,0 +1,33 @@
+---
+import { Image } from 'astro:assets';
+import Icon from '../../../components/Icon.astro';
+import LockKeyIcon from '@hugeicons/core-free-icons/LockKeyIcon';
+import photo from '../../../assets/clinic-facebook-ads/clinic-facebook-ads-trust-v1.webp';
+import { pageCopy } from '../data/clinic-facebook-ads-source';
+const copy = pageCopy.trust;
+import '../styles/clinic-facebook-ads-trust.css';
+---
+
+<clinic-facebook-ads-trust class="clinic-facebook-ads-trust-motion">
+  <section id="clinic-facebook-ads-trust" class="clinic-facebook-ads-trust" aria-labelledby="clinic-facebook-ads-trust-heading">
+    <div class="section-container clinic-facebook-ads-trust-layout">
+      <h2 id="clinic-facebook-ads-trust-heading">{copy.heading}</h2>
+      <div class="clinic-facebook-ads-trust-profile clinic-facebook-ads-source-content" data-seo-trust-motion set:html={copy.firstHtml} />
+      <div class="clinic-facebook-ads-trust-photo" data-seo-trust-motion>
+        <Image src={photo} widths={[360, 540, 720, 960, 1200]} width={1536} height={1024}
+          sizes="(min-width: 1100px) min(43vw, 576px), (min-width: 640px) min(calc(100vw - 56px), 760px), calc(100vw - 32px)"
+          format="webp" quality={76} loading="lazy" decoding="async"
+          alt="Clinician and marketing specialist checking patient-facing ad copy"
+          title="Clinician and marketing specialist checking patient-facing ad copy" />
+      </div>
+      <div class="clinic-facebook-ads-trust-privacy" data-seo-trust-motion>
+        <span class="clinic-facebook-ads-trust-lock" aria-hidden="true"><Icon icon={LockKeyIcon} size={24} /></span>
+        <div class="clinic-facebook-ads-source-content" set:html={copy.restHtml} />
+      </div>
+    </div>
+  </section>
+</clinic-facebook-ads-trust>
+
+<script>
+  import '../scripts/clinic-facebook-ads-trust';
+</script>

@@ -1,0 +1,31 @@
+---
+import Icon from '../../../components/Icon.astro';
+import Add01Icon from '@hugeicons/core-free-icons/Add01Icon';
+import { pageCopy } from '../data/patient-fee-management-source';
+const copy = pageCopy.faq;
+import '../styles/patient-fee-management-faq.css';
+---
+<patient-fee-management-faq class="patient-fee-management-faq-motion">
+  <section id="patient-fee-management-faq" class="patient-fee-management-faq" aria-labelledby="patient-fee-management-faq-heading">
+    <div class="section-container patient-fee-management-faq-layout">
+      <header class="patient-fee-management-faq-header" data-faq-entry>
+        <h2 id="patient-fee-management-faq-heading">{copy.heading}</h2>
+        <div class="patient-fee-management-source-content" set:html={copy.preface} />
+      </header>
+      <div class="patient-fee-management-faq-list">
+        {copy.items.map((item,index) => <article class="patient-fee-management-faq-item" data-faq-entry aria-labelledby={`patient-fee-management-faq-question-${index+1}`}>
+          <h3 class="patient-fee-management-faq-question" id={`patient-fee-management-faq-question-${index+1}`}>
+            <span class="patient-fee-management-faq-label">{item.question}</span>
+            <span class="patient-fee-management-faq-toggle" aria-hidden="true"><Icon icon={Add01Icon} size={20} strokeWidth={1.8} /></span>
+          </h3>
+          <div class="patient-fee-management-faq-answer" id={`patient-fee-management-faq-answer-${index+1}`} role="region" aria-labelledby={`patient-fee-management-faq-question-${index+1}`}>
+            <div class="patient-fee-management-source-content" set:html={item.answerHtml} />
+          </div>
+        </article>)}
+      </div>
+    </div>
+  </section>
+</patient-fee-management-faq>
+<script>
+  import '../scripts/patient-fee-management-faq';
+</script>

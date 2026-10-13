@@ -1,0 +1,47 @@
+---
+// Destination-owned static page. Service-specific images are pending review before publication.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import HospitalDigitalMarketingHero from './components/HospitalDigitalMarketingHero.astro';
+import HospitalDigitalMarketingChallengesSection from './components/HospitalDigitalMarketingChallengesSection.astro';
+import HospitalDigitalMarketingOutcomesSection from './components/HospitalDigitalMarketingOutcomesSection.astro';
+import HospitalDigitalMarketingIntentSection from './components/HospitalDigitalMarketingIntentSection.astro';
+import HospitalDigitalMarketingTrustSection from './components/HospitalDigitalMarketingTrustSection.astro';
+import HospitalDigitalMarketingExpertiseSection from './components/HospitalDigitalMarketingExpertiseSection.astro';
+import HospitalDigitalMarketingProcessSection from './components/HospitalDigitalMarketingProcessSection.astro';
+import HospitalDigitalMarketingMappingSection from './components/HospitalDigitalMarketingMappingSection.astro';
+import HospitalDigitalMarketingRelatedSection from './components/HospitalDigitalMarketingRelatedSection.astro';
+import HospitalDigitalMarketingStartingSection from './components/HospitalDigitalMarketingStartingSection.astro';
+import HospitalDigitalMarketingExampleSection from './components/HospitalDigitalMarketingExampleSection.astro';
+import HospitalDigitalMarketingProgressSection from './components/HospitalDigitalMarketingProgressSection.astro';
+import HospitalDigitalMarketingWhySection from './components/HospitalDigitalMarketingWhySection.astro';
+import HospitalDigitalMarketingFaqSection from './components/HospitalDigitalMarketingFaqSection.astro';
+import HospitalDigitalMarketingConsultationSection from './components/HospitalDigitalMarketingConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { hospitalDigitalMarketingHeroPreload } from './lib/hospital-digital-marketing-hero-image';
+import './styles/hospital-digital-marketing-rendering.css';
+import './styles/hospital-digital-marketing-source-content.css';
+import { metadata } from './data/hospital-digital-marketing-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={hospitalDigitalMarketingHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="hospital-digital-marketing-page" tabindex="-1">
+    <HospitalDigitalMarketingHero />
+    <HospitalDigitalMarketingChallengesSection />
+    <HospitalDigitalMarketingOutcomesSection />
+    <HospitalDigitalMarketingIntentSection />
+    <HospitalDigitalMarketingTrustSection />
+    <HospitalDigitalMarketingExpertiseSection />
+    <HospitalDigitalMarketingProcessSection />
+    <HospitalDigitalMarketingMappingSection />
+    <HospitalDigitalMarketingRelatedSection />
+    <HospitalDigitalMarketingStartingSection />
+    <HospitalDigitalMarketingExampleSection />
+    <HospitalDigitalMarketingProgressSection />
+    <HospitalDigitalMarketingWhySection />
+    <HospitalDigitalMarketingFaqSection />
+    <HospitalDigitalMarketingConsultationSection />
+  </main>
+  <Footer />
+</Layout>

@@ -1,0 +1,47 @@
+---
+// Destination-owned static page. Service-specific images are pending review before publication.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import HospitalWebsiteDevelopmentHero from './components/HospitalWebsiteDevelopmentHero.astro';
+import HospitalWebsiteDevelopmentChallengesSection from './components/HospitalWebsiteDevelopmentChallengesSection.astro';
+import HospitalWebsiteDevelopmentOutcomesSection from './components/HospitalWebsiteDevelopmentOutcomesSection.astro';
+import HospitalWebsiteDevelopmentIntentSection from './components/HospitalWebsiteDevelopmentIntentSection.astro';
+import HospitalWebsiteDevelopmentTrustSection from './components/HospitalWebsiteDevelopmentTrustSection.astro';
+import HospitalWebsiteDevelopmentExpertiseSection from './components/HospitalWebsiteDevelopmentExpertiseSection.astro';
+import HospitalWebsiteDevelopmentProcessSection from './components/HospitalWebsiteDevelopmentProcessSection.astro';
+import HospitalWebsiteDevelopmentMappingSection from './components/HospitalWebsiteDevelopmentMappingSection.astro';
+import HospitalWebsiteDevelopmentRelatedSection from './components/HospitalWebsiteDevelopmentRelatedSection.astro';
+import HospitalWebsiteDevelopmentStartingSection from './components/HospitalWebsiteDevelopmentStartingSection.astro';
+import HospitalWebsiteDevelopmentExampleSection from './components/HospitalWebsiteDevelopmentExampleSection.astro';
+import HospitalWebsiteDevelopmentProgressSection from './components/HospitalWebsiteDevelopmentProgressSection.astro';
+import HospitalWebsiteDevelopmentWhySection from './components/HospitalWebsiteDevelopmentWhySection.astro';
+import HospitalWebsiteDevelopmentFaqSection from './components/HospitalWebsiteDevelopmentFaqSection.astro';
+import HospitalWebsiteDevelopmentConsultationSection from './components/HospitalWebsiteDevelopmentConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { hospitalWebsiteDevelopmentHeroPreload } from './lib/hospital-website-development-hero-image';
+import './styles/hospital-website-development-rendering.css';
+import './styles/hospital-website-development-source-content.css';
+import { metadata } from './data/hospital-website-development-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={hospitalWebsiteDevelopmentHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="hospital-website-development-page" tabindex="-1">
+    <HospitalWebsiteDevelopmentHero />
+    <HospitalWebsiteDevelopmentChallengesSection />
+    <HospitalWebsiteDevelopmentOutcomesSection />
+    <HospitalWebsiteDevelopmentIntentSection />
+    <HospitalWebsiteDevelopmentTrustSection />
+    <HospitalWebsiteDevelopmentExpertiseSection />
+    <HospitalWebsiteDevelopmentProcessSection />
+    <HospitalWebsiteDevelopmentMappingSection />
+    <HospitalWebsiteDevelopmentRelatedSection />
+    <HospitalWebsiteDevelopmentStartingSection />
+    <HospitalWebsiteDevelopmentExampleSection />
+    <HospitalWebsiteDevelopmentProgressSection />
+    <HospitalWebsiteDevelopmentWhySection />
+    <HospitalWebsiteDevelopmentFaqSection />
+    <HospitalWebsiteDevelopmentConsultationSection />
+  </main>
+  <Footer />
+</Layout>

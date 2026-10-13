@@ -1,0 +1,39 @@
+---
+import { Image } from 'astro:assets';
+import expertPortrait from '../../../assets/team/sirajul-islam-studio-v2.webp';
+import { pageCopy } from '../data/diagnostic-management-source';
+const copy = pageCopy.expertise;
+const paragraphs = Array.from(copy.html.matchAll(/<p>([\s\S]*?)<\/p>/g), match => match[1]);
+const principleSentences = paragraphs.slice(1).flatMap(paragraph => paragraph.split(/(?<=[.!?])\s+(?=[A-Z])/));
+import '../styles/diagnostic-management-expertise.css';
+---
+<diagnostic-management-expertise class="diagnostic-management-expertise-motion">
+  <section id="diagnostic-management-expertise" class="diagnostic-management-expertise" aria-labelledby="diagnostic-management-expertise-heading">
+    <div class="section-container diagnostic-management-expertise-layout">
+      <h2 id="diagnostic-management-expertise-heading">{copy.heading}</h2>
+      <figure class="diagnostic-management-expertise-portrait">
+        <div class="diagnostic-management-expertise-photo">
+          <Image src={expertPortrait} widths={[320, 480, 640, 960]} width={1254} height={1254}
+            sizes="(min-width: 1100px) min(40vw, 480px), (min-width: 640px) min(36vw, 360px), min(calc(100vw - 32px), 360px)"
+            format="webp" quality={80} loading="lazy" decoding="async"
+            alt="Sirajul Islam in a navy blazer against a grey studio background"
+            title="Sirajul Islam — Dr RankUP specialist"
+            data-expertise-reveal="portrait" />
+        </div>
+        <figcaption data-expertise-reveal="copy">{copy.founder}</figcaption>
+      </figure>
+      <div class="diagnostic-management-expertise-record">
+        <p class="diagnostic-management-expertise-context" data-expertise-reveal="copy" set:html={paragraphs[0]} />
+      </div>
+      <div class="diagnostic-management-expertise-principles">
+        <span class="diagnostic-management-expertise-rule" data-expertise-reveal="rule" aria-hidden="true"></span>
+        <ul role="list">
+          {principleSentences.map((sentence, index) => <li data-expertise-reveal="copy" data-expertise-delay={Math.min(index * 60, 100)} set:html={sentence} />)}
+        </ul>
+      </div>
+    </div>
+  </section>
+</diagnostic-management-expertise>
+<script>
+  import '../scripts/diagnostic-management-expertise';
+</script>

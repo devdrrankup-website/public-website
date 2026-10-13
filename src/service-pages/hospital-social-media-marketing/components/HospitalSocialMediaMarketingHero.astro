@@ -1,0 +1,38 @@
+---
+import ActionIcon from '../../../components/ActionIcon.astro';
+import { pageCopy } from '../data/hospital-social-media-marketing-source';
+const copy = pageCopy.hero;
+import { hospitalSocialMediaMarketingHeroImage as photo } from '../lib/hospital-social-media-marketing-hero-image';
+import '../styles/hospital-social-media-marketing-hero.css';
+---
+
+<section class="hospital-social-media-marketing-hero" aria-labelledby="hospital-social-media-marketing-heading">
+  <div class="section-container hospital-social-media-marketing-hero-layout">
+    <div class="hospital-social-media-marketing-hero-copy">
+      <h1 id="hospital-social-media-marketing-heading">{copy.heading}</h1>
+      <p class="hospital-social-media-marketing-hero-tagline">{copy.tagline}</p>
+      <div class="hospital-social-media-marketing-hero-description">
+        {copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+      </div>
+      <div class="hospital-social-media-marketing-hero-actions" aria-label={`${copy.heading} options`}>
+        <span class="button button-primary">
+          <span>{copy.primaryCta}</span><ActionIcon purpose="conversation" />
+        </span>
+        {copy.secondaryHref ? <a class="button button-secondary" href={copy.secondaryHref}>
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </a> : <span class="button button-secondary">
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </span>}
+      </div>
+    </div>
+    <div class="hospital-social-media-marketing-hero-visual">
+      <div class="hospital-social-media-marketing-hero-photo">
+        <img src={photo.src} srcset={photo.srcset} sizes={photo.sizes}
+          width={photo.width} height={photo.height}
+          alt="Hospital communications team photographing a public corridor for social updates"
+          title="Creating accurate hospital social content"
+          loading="eager" fetchpriority="high" decoding="async" />
+      </div>
+    </div>
+  </div>
+</section>

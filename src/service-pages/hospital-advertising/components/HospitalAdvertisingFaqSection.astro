@@ -1,0 +1,31 @@
+---
+import Icon from '../../../components/Icon.astro';
+import Add01Icon from '@hugeicons/core-free-icons/Add01Icon';
+import { pageCopy } from '../data/hospital-advertising-source';
+const copy = pageCopy.faq;
+import '../styles/hospital-advertising-faq.css';
+---
+<hospital-advertising-faq class="hospital-advertising-faq-motion">
+  <section id="hospital-advertising-faq" class="hospital-advertising-faq" aria-labelledby="hospital-advertising-faq-heading">
+    <div class="section-container hospital-advertising-faq-layout">
+      <header class="hospital-advertising-faq-header" data-faq-entry>
+        <h2 id="hospital-advertising-faq-heading">{copy.heading}</h2>
+        <div class="hospital-advertising-source-content" set:html={copy.preface} />
+      </header>
+      <div class="hospital-advertising-faq-list">
+        {copy.items.map((item,index) => <article class="hospital-advertising-faq-item" data-faq-entry aria-labelledby={`hospital-advertising-faq-question-${index+1}`}>
+          <h3 class="hospital-advertising-faq-question" id={`hospital-advertising-faq-question-${index+1}`}>
+            <span class="hospital-advertising-faq-label">{item.question}</span>
+            <span class="hospital-advertising-faq-toggle" aria-hidden="true"><Icon icon={Add01Icon} size={20} strokeWidth={1.8} /></span>
+          </h3>
+          <div class="hospital-advertising-faq-answer" id={`hospital-advertising-faq-answer-${index+1}`} role="region" aria-labelledby={`hospital-advertising-faq-question-${index+1}`}>
+            <div class="hospital-advertising-source-content" set:html={item.answerHtml} />
+          </div>
+        </article>)}
+      </div>
+    </div>
+  </section>
+</hospital-advertising-faq>
+<script>
+  import '../scripts/hospital-advertising-faq';
+</script>

@@ -1,0 +1,47 @@
+---
+// Destination-owned static page. Service-specific images are pending review before publication.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import ClinicWebsiteHero from './components/ClinicWebsiteHero.astro';
+import ClinicWebsiteChallengesSection from './components/ClinicWebsiteChallengesSection.astro';
+import ClinicWebsiteOutcomesSection from './components/ClinicWebsiteOutcomesSection.astro';
+import ClinicWebsiteIntentSection from './components/ClinicWebsiteIntentSection.astro';
+import ClinicWebsiteTrustSection from './components/ClinicWebsiteTrustSection.astro';
+import ClinicWebsiteExpertiseSection from './components/ClinicWebsiteExpertiseSection.astro';
+import ClinicWebsiteProcessSection from './components/ClinicWebsiteProcessSection.astro';
+import ClinicWebsiteMappingSection from './components/ClinicWebsiteMappingSection.astro';
+import ClinicWebsiteRelatedSection from './components/ClinicWebsiteRelatedSection.astro';
+import ClinicWebsiteStartingSection from './components/ClinicWebsiteStartingSection.astro';
+import ClinicWebsiteExampleSection from './components/ClinicWebsiteExampleSection.astro';
+import ClinicWebsiteProgressSection from './components/ClinicWebsiteProgressSection.astro';
+import ClinicWebsiteWhySection from './components/ClinicWebsiteWhySection.astro';
+import ClinicWebsiteFaqSection from './components/ClinicWebsiteFaqSection.astro';
+import ClinicWebsiteConsultationSection from './components/ClinicWebsiteConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { clinicWebsiteHeroPreload } from './lib/clinic-website-hero-image';
+import './styles/clinic-website-rendering.css';
+import './styles/clinic-website-source-content.css';
+import { metadata } from './data/clinic-website-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={clinicWebsiteHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="clinic-website-page" tabindex="-1">
+    <ClinicWebsiteHero />
+    <ClinicWebsiteChallengesSection />
+    <ClinicWebsiteOutcomesSection />
+    <ClinicWebsiteIntentSection />
+    <ClinicWebsiteTrustSection />
+    <ClinicWebsiteExpertiseSection />
+    <ClinicWebsiteProcessSection />
+    <ClinicWebsiteMappingSection />
+    <ClinicWebsiteRelatedSection />
+    <ClinicWebsiteStartingSection />
+    <ClinicWebsiteExampleSection />
+    <ClinicWebsiteProgressSection />
+    <ClinicWebsiteWhySection />
+    <ClinicWebsiteFaqSection />
+    <ClinicWebsiteConsultationSection />
+  </main>
+  <Footer />
+</Layout>

@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/appointment-booking-integration/patient-awaits-booking-confirmation-v1.webp';
+import { pageCopy } from '../data/appointment-booking-integration-source';
+const copy = pageCopy.example;
+import '../styles/appointment-booking-integration-example.css';
+---
+<appointment-booking-integration-example class="appointment-booking-integration-example-motion">
+  <section id="appointment-booking-integration-example" class="appointment-booking-integration-example" aria-labelledby="appointment-booking-integration-example-heading">
+    <div class="section-container appointment-booking-integration-example-layout">
+      <header class="appointment-booking-integration-example-header" data-example-entry>
+        <h2 id="appointment-booking-integration-example-heading">{copy.heading}</h2>
+        <span class="appointment-booking-integration-example-rule" data-example-rule aria-hidden="true"></span>
+      </header>
+      <figure class="appointment-booking-integration-example-photo" data-example-entry data-example-photo>
+        <Image src={photo} alt="Woman at home checking a pending appointment request on her phone" title="Waiting for a chamber to confirm an appointment request" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <div class="appointment-booking-integration-example-copy">
+        <div class="appointment-booking-integration-source-content" data-example-entry set:html={copy.html} />
+      </div>
+    </div>
+  </section>
+</appointment-booking-integration-example>
+<script>
+  import '../scripts/appointment-booking-integration-example';
+</script>

@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/clinic-google-ads/clinic-google-ads-intent-v1.webp';
+import { pageCopy } from '../data/clinic-google-ads-source';
+const copy = pageCopy.intent;
+import '../styles/clinic-google-ads-intent.css';
+---
+<clinic-google-ads-intent class="clinic-google-ads-intent">
+  <section id="clinic-google-ads-intent" class="section-container clinic-google-ads-intent-layout" aria-labelledby="clinic-google-ads-intent-heading">
+    <div class="clinic-google-ads-intent-copy" data-seo-intent-motion>
+      <h2 id="clinic-google-ads-intent-heading">{copy.heading}</h2>
+      <div class="clinic-google-ads-source-content" set:html={copy.html} />
+    </div>
+    <div class="clinic-google-ads-intent-photo" data-seo-intent-motion>
+      <Image src={photo} widths={[360, 540, 720, 960, 1200]} width={1536} height={1024}
+        sizes="(min-width: 1100px) min(43vw, 576px), (min-width: 640px) min(calc(100vw - 56px), 760px), calc(100vw - 32px)"
+        format="webp" quality={76} loading="lazy" decoding="async"
+        alt="Man reviewing nearby clinics on a laptop at home"
+        title="Man reviewing nearby clinics on a laptop at home" />
+    </div>
+  </section>
+</clinic-google-ads-intent>
+
+<script>
+  import '../scripts/clinic-google-ads-intent';
+</script>

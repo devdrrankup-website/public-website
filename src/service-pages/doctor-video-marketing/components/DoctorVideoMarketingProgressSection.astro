@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/doctor-video-marketing/doctor-video-marketing-progress-v1.webp';
+import { pageCopy } from '../data/doctor-video-marketing-source';
+const copy = pageCopy.progress;
+import '../styles/doctor-video-marketing-progress.css';
+---
+<doctor-video-marketing-progress class="doctor-video-marketing-progress-motion">
+  <section id="doctor-video-marketing-progress" class="doctor-video-marketing-progress" aria-labelledby="doctor-video-marketing-progress-heading">
+    <div class="section-container doctor-video-marketing-progress-layout">
+      <h2 id="doctor-video-marketing-progress-heading" data-progress-entry>{copy.heading}</h2>
+      <p class="doctor-video-marketing-progress-baseline" data-progress-entry set:html={copy.paragraphsHtml[0]} />
+      <figure class="doctor-video-marketing-progress-photo" data-progress-entry data-progress-photo>
+        <Image src={photo} alt="Specialist reviewing doctor video reports at a workstation" title="Specialist reviewing doctor video reports at a workstation" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <p class="doctor-video-marketing-progress-evidence" data-progress-entry set:html={copy.paragraphsHtml[1]} />
+
+    </div>
+  </section>
+</doctor-video-marketing-progress>
+<script>
+  import '../scripts/doctor-video-marketing-progress';
+</script>

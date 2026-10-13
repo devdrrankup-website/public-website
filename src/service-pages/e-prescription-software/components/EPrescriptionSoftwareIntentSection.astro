@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/e-prescription-software/e-prescription-software-intent-v1.webp';
+import { pageCopy } from '../data/e-prescription-software-source';
+const copy = pageCopy.intent;
+import '../styles/e-prescription-software-intent.css';
+---
+<e-prescription-software-intent class="e-prescription-software-intent">
+  <section id="e-prescription-software-intent" class="section-container e-prescription-software-intent-layout" aria-labelledby="e-prescription-software-intent-heading">
+    <div class="e-prescription-software-intent-copy" data-seo-intent-motion>
+      <h2 id="e-prescription-software-intent-heading">{copy.heading}</h2>
+      <div class="e-prescription-software-source-content" set:html={copy.html} />
+    </div>
+    <div class="e-prescription-software-intent-photo" data-seo-intent-motion>
+      <Image src={photo} widths={[360, 540, 720, 960, 1200]} width={1536} height={1024}
+        sizes="(min-width: 1100px) min(43vw, 576px), (min-width: 640px) min(calc(100vw - 56px), 760px), calc(100vw - 32px)"
+        format="webp" quality={76} loading="lazy" decoding="async"
+        alt="Doctor showing an electronic prescription workflow during a consultation"
+        title="Doctor showing an electronic prescription workflow during a consultation" />
+    </div>
+  </section>
+</e-prescription-software-intent>
+
+<script>
+  import '../scripts/e-prescription-software-intent';
+</script>

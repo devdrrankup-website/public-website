@@ -1,0 +1,43 @@
+.doctor-facebook-ads-outcomes { display: block; padding-block: 32px 56px; color: #000; background: linear-gradient(180deg, #fff 0%, #f5faff 40%, #f6f5ff 75%, #fff 100%); }
+.doctor-facebook-ads-outcomes > .section-container { max-width: 1200px; }
+.doctor-facebook-ads-outcomes h2 { margin: 0; color: #000; font-size: clamp(28px, 7.3vw, 38px); font-weight: 650; line-height: 1.24; letter-spacing: -.035em; text-wrap: pretty; }
+.doctor-facebook-ads-outcomes-introduction { margin: 20px 0 0; color: #000; font-size: 15px; line-height: 1.85; }
+.doctor-facebook-ads-outcomes-list { display: grid; gap: 0; list-style: none; margin: 12px 0 0; padding: 0; }
+.doctor-facebook-ads-outcome { min-width: 0; padding-block: 24px; border-bottom: 1px solid #afa9ec55; }
+.doctor-facebook-ads-outcome p { margin: 12px 0 0; color: #000; font-size: 15px; line-height: 1.8; }
+.doctor-facebook-ads-outcome strong { display: block; margin-bottom: 8px; color: #000; font-size: 20px; line-height: 1.4; font-weight: 650; letter-spacing: -.02em; }
+.doctor-facebook-ads-outcome-visual { position: relative; width: 180px; max-width: 100%; height: 112px; color: #6131c6; }
+.doctor-facebook-ads-outcome-visual > svg { display: block; width: 100%; height: 100%; }
+.doctor-facebook-ads-outcome-badge { position: absolute; top: 33px; right: 0; display: grid; place-items: center; width: 44px; height: 44px; border: 3px solid #fff; border-radius: 50%; background: #eeedfe; }
+.doctor-facebook-ads-outcome-visual-1 .doctor-facebook-ads-outcome-badge { background: #bae5ff; }
+.doctor-facebook-ads-outcome-visual-2 .doctor-facebook-ads-outcome-badge { background: #e1ffb9; color: #000; }
+.doctor-facebook-ads-outcome-visual-3 .doctor-facebook-ads-outcome-badge { background: #fef2cc; color: #000; }
+.doctor-facebook-ads-outcome-visual-4 .doctor-facebook-ads-outcome-badge { background: #eddafa; }
+.doctor-facebook-ads-outcomes-conclusion { margin: 28px 0 0; color: #000; font-size: 15px; line-height: 1.85; }
+@media (min-width: 640px) {
+  .doctor-facebook-ads-outcomes { padding-block: 44px 72px; }
+  .doctor-facebook-ads-outcomes h2 { max-width: 820px; font-size: clamp(34px, 4.6vw, 44px); }
+  .doctor-facebook-ads-outcomes-introduction { max-width: 720px; font-size: 16px; }
+  .doctor-facebook-ads-outcomes-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 32px; margin-top: 24px; }
+  .doctor-facebook-ads-outcome { padding-block: 24px 28px; }
+  .doctor-facebook-ads-outcome:last-child { grid-column: 1 / -1; width: calc(50% - 16px); justify-self: center; }
+  .doctor-facebook-ads-outcome p { font-size: 16px; }
+  .doctor-facebook-ads-outcome strong { font-size: 22px; }
+  .doctor-facebook-ads-outcome-visual { width: 200px; height: 124px; }
+  .doctor-facebook-ads-outcome-badge { top: 37px; }
+  .doctor-facebook-ads-outcomes-conclusion { margin-top: 32px; font-size: 16px; text-align: center; }
+}
+@media (min-width: 1100px) {
+  .doctor-facebook-ads-outcomes { padding-block: 56px 88px; }
+  .doctor-facebook-ads-outcomes-heading { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); align-items: end; gap: 64px; }
+  .doctor-facebook-ads-outcomes h2 { font-size: clamp(40px, 3.15vw, 46px); }
+  .doctor-facebook-ads-outcomes-introduction { margin: 0 0 4px; }
+  .doctor-facebook-ads-outcomes-list { grid-template-columns: repeat(6, minmax(0, 1fr)); column-gap: 48px; row-gap: 12px; margin-top: 36px; }
+  .doctor-facebook-ads-outcome { grid-column: span 2; padding-bottom: 32px; }
+  .doctor-facebook-ads-outcome:nth-child(4):nth-last-child(2),
+  .doctor-facebook-ads-outcome:nth-child(5):last-child { grid-column: span 3; }
+  .doctor-facebook-ads-outcome:last-child { grid-column: span 2; justify-self: stretch; width: 100%; }
+}
+
+.doctor-facebook-ads-outcomes-introduction p { line-height: inherit; }
+.doctor-facebook-ads-outcomes-conclusion p { line-height: inherit; }

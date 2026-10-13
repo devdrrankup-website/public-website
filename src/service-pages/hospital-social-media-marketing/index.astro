@@ -1,0 +1,47 @@
+---
+// Destination-owned static page. Service-specific images are pending review before publication.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import HospitalSocialMediaMarketingHero from './components/HospitalSocialMediaMarketingHero.astro';
+import HospitalSocialMediaMarketingChallengesSection from './components/HospitalSocialMediaMarketingChallengesSection.astro';
+import HospitalSocialMediaMarketingOutcomesSection from './components/HospitalSocialMediaMarketingOutcomesSection.astro';
+import HospitalSocialMediaMarketingIntentSection from './components/HospitalSocialMediaMarketingIntentSection.astro';
+import HospitalSocialMediaMarketingTrustSection from './components/HospitalSocialMediaMarketingTrustSection.astro';
+import HospitalSocialMediaMarketingExpertiseSection from './components/HospitalSocialMediaMarketingExpertiseSection.astro';
+import HospitalSocialMediaMarketingProcessSection from './components/HospitalSocialMediaMarketingProcessSection.astro';
+import HospitalSocialMediaMarketingMappingSection from './components/HospitalSocialMediaMarketingMappingSection.astro';
+import HospitalSocialMediaMarketingRelatedSection from './components/HospitalSocialMediaMarketingRelatedSection.astro';
+import HospitalSocialMediaMarketingStartingSection from './components/HospitalSocialMediaMarketingStartingSection.astro';
+import HospitalSocialMediaMarketingExampleSection from './components/HospitalSocialMediaMarketingExampleSection.astro';
+import HospitalSocialMediaMarketingProgressSection from './components/HospitalSocialMediaMarketingProgressSection.astro';
+import HospitalSocialMediaMarketingWhySection from './components/HospitalSocialMediaMarketingWhySection.astro';
+import HospitalSocialMediaMarketingFaqSection from './components/HospitalSocialMediaMarketingFaqSection.astro';
+import HospitalSocialMediaMarketingConsultationSection from './components/HospitalSocialMediaMarketingConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { hospitalSocialMediaMarketingHeroPreload } from './lib/hospital-social-media-marketing-hero-image';
+import './styles/hospital-social-media-marketing-rendering.css';
+import './styles/hospital-social-media-marketing-source-content.css';
+import { metadata } from './data/hospital-social-media-marketing-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={hospitalSocialMediaMarketingHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="hospital-social-media-marketing-page" tabindex="-1">
+    <HospitalSocialMediaMarketingHero />
+    <HospitalSocialMediaMarketingChallengesSection />
+    <HospitalSocialMediaMarketingOutcomesSection />
+    <HospitalSocialMediaMarketingIntentSection />
+    <HospitalSocialMediaMarketingTrustSection />
+    <HospitalSocialMediaMarketingExpertiseSection />
+    <HospitalSocialMediaMarketingProcessSection />
+    <HospitalSocialMediaMarketingMappingSection />
+    <HospitalSocialMediaMarketingRelatedSection />
+    <HospitalSocialMediaMarketingStartingSection />
+    <HospitalSocialMediaMarketingExampleSection />
+    <HospitalSocialMediaMarketingProgressSection />
+    <HospitalSocialMediaMarketingWhySection />
+    <HospitalSocialMediaMarketingFaqSection />
+    <HospitalSocialMediaMarketingConsultationSection />
+  </main>
+  <Footer />
+</Layout>

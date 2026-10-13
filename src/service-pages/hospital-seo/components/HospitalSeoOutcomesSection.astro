@@ -1,0 +1,25 @@
+---
+import HospitalSeoOutcomeVisual from './HospitalSeoOutcomeVisual.astro';
+import { pageCopy } from '../data/hospital-seo-source';
+const copy = pageCopy.outcomes;
+import '../styles/hospital-seo-outcomes.css';
+---
+<hospital-seo-outcomes class="hospital-seo-outcomes">
+  <section id="hospital-seo-outcomes" class="section-container" aria-labelledby="hospital-seo-outcomes-heading">
+    <div class="hospital-seo-outcomes-heading">
+      <h2 id="hospital-seo-outcomes-heading">{copy.heading}</h2>
+      <div class="hospital-seo-outcomes-introduction hospital-seo-source-content" set:html={copy.before} />
+    </div>
+    <ul class="hospital-seo-outcomes-list" role="list">
+      {copy.items.map((item, index) => <li class="hospital-seo-outcome" data-seo-outcomes-motion>
+        <HospitalSeoOutcomeVisual index={index} />
+        <p><strong>{item.label}</strong><span>{item.description}</span></p>
+      </li>)}
+    </ul>
+    <div class="hospital-seo-outcomes-conclusion hospital-seo-source-content" set:html={copy.after} />
+  </section>
+</hospital-seo-outcomes>
+
+<script>
+  import '../scripts/hospital-seo-outcomes';
+</script>

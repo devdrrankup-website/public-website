@@ -1,0 +1,25 @@
+---
+import ClinicFacebookAdsOutcomeVisual from './ClinicFacebookAdsOutcomeVisual.astro';
+import { pageCopy } from '../data/clinic-facebook-ads-source';
+const copy = pageCopy.outcomes;
+import '../styles/clinic-facebook-ads-outcomes.css';
+---
+<clinic-facebook-ads-outcomes class="clinic-facebook-ads-outcomes">
+  <section id="clinic-facebook-ads-outcomes" class="section-container" aria-labelledby="clinic-facebook-ads-outcomes-heading">
+    <div class="clinic-facebook-ads-outcomes-heading">
+      <h2 id="clinic-facebook-ads-outcomes-heading">{copy.heading}</h2>
+      <div class="clinic-facebook-ads-outcomes-introduction clinic-facebook-ads-source-content" set:html={copy.before} />
+    </div>
+    <ul class="clinic-facebook-ads-outcomes-list" role="list">
+      {copy.items.map((item, index) => <li class="clinic-facebook-ads-outcome" data-seo-outcomes-motion>
+        <ClinicFacebookAdsOutcomeVisual index={index} />
+        <p><strong>{item.label}</strong><span>{item.description}</span></p>
+      </li>)}
+    </ul>
+    <div class="clinic-facebook-ads-outcomes-conclusion clinic-facebook-ads-source-content" set:html={copy.after} />
+  </section>
+</clinic-facebook-ads-outcomes>
+
+<script>
+  import '../scripts/clinic-facebook-ads-outcomes';
+</script>

@@ -1,0 +1,47 @@
+---
+// Destination-owned static page. Service-specific images are pending review before publication.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import DoctorVideoMarketingHero from './components/DoctorVideoMarketingHero.astro';
+import DoctorVideoMarketingChallengesSection from './components/DoctorVideoMarketingChallengesSection.astro';
+import DoctorVideoMarketingOutcomesSection from './components/DoctorVideoMarketingOutcomesSection.astro';
+import DoctorVideoMarketingIntentSection from './components/DoctorVideoMarketingIntentSection.astro';
+import DoctorVideoMarketingTrustSection from './components/DoctorVideoMarketingTrustSection.astro';
+import DoctorVideoMarketingExpertiseSection from './components/DoctorVideoMarketingExpertiseSection.astro';
+import DoctorVideoMarketingProcessSection from './components/DoctorVideoMarketingProcessSection.astro';
+import DoctorVideoMarketingMappingSection from './components/DoctorVideoMarketingMappingSection.astro';
+import DoctorVideoMarketingRelatedSection from './components/DoctorVideoMarketingRelatedSection.astro';
+import DoctorVideoMarketingStartingSection from './components/DoctorVideoMarketingStartingSection.astro';
+import DoctorVideoMarketingExampleSection from './components/DoctorVideoMarketingExampleSection.astro';
+import DoctorVideoMarketingProgressSection from './components/DoctorVideoMarketingProgressSection.astro';
+import DoctorVideoMarketingWhySection from './components/DoctorVideoMarketingWhySection.astro';
+import DoctorVideoMarketingFaqSection from './components/DoctorVideoMarketingFaqSection.astro';
+import DoctorVideoMarketingConsultationSection from './components/DoctorVideoMarketingConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { doctorVideoMarketingHeroPreload } from './lib/doctor-video-marketing-hero-image';
+import './styles/doctor-video-marketing-rendering.css';
+import './styles/doctor-video-marketing-source-content.css';
+import { metadata } from './data/doctor-video-marketing-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={doctorVideoMarketingHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="doctor-video-marketing-page" tabindex="-1">
+    <DoctorVideoMarketingHero />
+    <DoctorVideoMarketingChallengesSection />
+    <DoctorVideoMarketingOutcomesSection />
+    <DoctorVideoMarketingIntentSection />
+    <DoctorVideoMarketingTrustSection />
+    <DoctorVideoMarketingExpertiseSection />
+    <DoctorVideoMarketingProcessSection />
+    <DoctorVideoMarketingMappingSection />
+    <DoctorVideoMarketingRelatedSection />
+    <DoctorVideoMarketingStartingSection />
+    <DoctorVideoMarketingExampleSection />
+    <DoctorVideoMarketingProgressSection />
+    <DoctorVideoMarketingWhySection />
+    <DoctorVideoMarketingFaqSection />
+    <DoctorVideoMarketingConsultationSection />
+  </main>
+  <Footer />
+</Layout>

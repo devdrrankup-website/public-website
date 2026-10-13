@@ -1,0 +1,71 @@
+---
+import {Image} from 'astro:assets';
+import ArrowRight02Icon from '@hugeicons/core-free-icons/ArrowRight02Icon';
+import hridoy from '../../../assets/team/founder-hridoy-chowdhury.jpeg';
+import Icon from '../../../components/Icon.astro';
+import Arrow from '../../../components/Arrow.astro';
+import { pageCopy } from '../data/clinic-google-ads-source';
+const content = pageCopy.consultation;
+import '../styles/clinic-google-ads-consultation.css';
+---
+<clinic-google-ads-consultation>
+  <section id="clinic-google-ads-consultation" class="seo-consultation-section" aria-labelledby="clinic-google-ads-consultation-heading">
+    <div class="section-container seo-consultation-grid">
+      <div class="seo-consultation-copy">
+        <header class="seo-consultation-introduction">
+          <h2 id="clinic-google-ads-consultation-heading">{content.heading}</h2>
+          <div class="clinic-google-ads-source-content" set:html={content.html} />
+        </header>
+        <div class="seo-consultation-contact">
+          <div class="seo-consultation-portrait">
+            <Image src={hridoy} widths={[240,360,480]} sizes="(min-width: 640px) 220px, 180px" format="webp" quality={80}
+              alt="Hridoy Chowdhury, Founder and SEO Consultant at Dr RankUP" title="Hridoy Chowdhury — Dr RankUP consultation" loading="lazy" decoding="async" />
+          </div>
+          <h3>{content.founder}</h3>
+          <p>{content.role}, Dr RankUP</p>
+          <span class="seo-consultation-link">{content.primary}<Arrow size={18} /></span>
+          {content.secondary && (content.secondaryHref
+            ? <a class="seo-consultation-solutions" href={content.secondaryHref}>{content.secondary}<Arrow size={18} /></a>
+            : <span class="seo-consultation-solutions">{content.secondary}<Arrow size={18} /></span>)}
+        </div>
+      </div>
+      <clinic-google-ads-enquiry>
+        <form class="seo-consultation-form" aria-label={`${content.heading} consultation enquiry`} method="post" action="#clinic-google-ads-consultation">
+          <div class="seo-consultation-field">
+            <label for="clinic-google-ads-enquiry-name">Full Name<span aria-hidden="true">*</span><span class="sr-only"> (required)</span></label>
+            <input id="clinic-google-ads-enquiry-name" name="name" autocomplete="name" placeholder="Your full name" maxlength="100" required />
+          </div>
+          <div class="seo-consultation-field-pair">
+            <div class="seo-consultation-field">
+              <label for="clinic-google-ads-enquiry-email">Your Email <span class="seo-consultation-optional">(optional)</span></label>
+              <input id="clinic-google-ads-enquiry-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" maxlength="254" />
+            </div>
+            <div class="seo-consultation-field">
+              <label for="clinic-google-ads-enquiry-phone">Phone Number<span aria-hidden="true">*</span><span class="sr-only"> (required)</span></label>
+              <input id="clinic-google-ads-enquiry-phone" name="phone" type="tel" autocomplete="tel" placeholder="+880 1XXX XXXXXX" maxlength="30" required />
+            </div>
+          </div>
+          <fieldset class="seo-consultation-organization">
+            <legend>I’m enquiring for <span>(optional)</span></legend>
+            <div class="seo-consultation-organization-options">
+              {content.organizations.map((organization,index) => <label class="seo-consultation-organization-option" for={`clinic-google-ads-enquiry-organization-${index}`}>
+                <input id={`clinic-google-ads-enquiry-organization-${index}`} type="radio" name="organization" value={organization} />
+                <span>{organization}</span>
+              </label>)}
+            </div>
+          </fieldset>
+          <div class="seo-consultation-field">
+            <label for="clinic-google-ads-enquiry-details">Project Details<span aria-hidden="true">*</span><span class="sr-only"> (required)</span></label>
+            <textarea id="clinic-google-ads-enquiry-details" name="details" rows="4" placeholder="Tell us about your organization and what you’d like to improve…" maxlength="4000" aria-describedby="clinic-google-ads-enquiry-details-hint" required></textarea>
+            <p id="clinic-google-ads-enquiry-details-hint" class="seo-consultation-hint">Please share business needs only, without patient or medical information.</p>
+          </div>
+          <button class="seo-consultation-submit" type="submit" disabled>Send enquiry <Icon icon={ArrowRight02Icon} size={24} /></button>
+          <p class="seo-consultation-status" role="status" aria-live="polite" aria-atomic="true"></p>
+          <noscript><p class="seo-consultation-hint">This form is a preview. Enquiries cannot be sent yet.</p></noscript>
+        </form>
+      </clinic-google-ads-enquiry>
+
+    </div>
+  </section>
+</clinic-google-ads-consultation>
+<script>import '../scripts/clinic-google-ads-consultation';</script>

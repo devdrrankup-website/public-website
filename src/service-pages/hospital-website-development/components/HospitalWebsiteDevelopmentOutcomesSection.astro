@@ -1,0 +1,25 @@
+---
+import HospitalWebsiteDevelopmentOutcomeVisual from './HospitalWebsiteDevelopmentOutcomeVisual.astro';
+import { pageCopy } from '../data/hospital-website-development-source';
+const copy = pageCopy.outcomes;
+import '../styles/hospital-website-development-outcomes.css';
+---
+<hospital-website-development-outcomes class="hospital-website-development-outcomes">
+  <section id="hospital-website-development-outcomes" class="section-container" aria-labelledby="hospital-website-development-outcomes-heading">
+    <div class="hospital-website-development-outcomes-heading">
+      <h2 id="hospital-website-development-outcomes-heading">{copy.heading}</h2>
+      <div class="hospital-website-development-outcomes-introduction hospital-website-development-source-content" set:html={copy.before} />
+    </div>
+    <ul class="hospital-website-development-outcomes-list" role="list">
+      {copy.items.map((item, index) => <li class="hospital-website-development-outcome" data-seo-outcomes-motion>
+        <HospitalWebsiteDevelopmentOutcomeVisual index={index} />
+        <p><strong>{item.label}</strong><span>{item.description}</span></p>
+      </li>)}
+    </ul>
+    <div class="hospital-website-development-outcomes-conclusion hospital-website-development-source-content" set:html={copy.after} />
+  </section>
+</hospital-website-development-outcomes>
+
+<script>
+  import '../scripts/hospital-website-development-outcomes';
+</script>

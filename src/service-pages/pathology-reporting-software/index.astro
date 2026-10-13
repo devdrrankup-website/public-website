@@ -1,0 +1,47 @@
+---
+// Destination-owned static page. Service-specific images are pending review before publication.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import PathologyReportingSoftwareHero from './components/PathologyReportingSoftwareHero.astro';
+import PathologyReportingSoftwareChallengesSection from './components/PathologyReportingSoftwareChallengesSection.astro';
+import PathologyReportingSoftwareOutcomesSection from './components/PathologyReportingSoftwareOutcomesSection.astro';
+import PathologyReportingSoftwareIntentSection from './components/PathologyReportingSoftwareIntentSection.astro';
+import PathologyReportingSoftwareTrustSection from './components/PathologyReportingSoftwareTrustSection.astro';
+import PathologyReportingSoftwareExpertiseSection from './components/PathologyReportingSoftwareExpertiseSection.astro';
+import PathologyReportingSoftwareProcessSection from './components/PathologyReportingSoftwareProcessSection.astro';
+import PathologyReportingSoftwareMappingSection from './components/PathologyReportingSoftwareMappingSection.astro';
+import PathologyReportingSoftwareRelatedSection from './components/PathologyReportingSoftwareRelatedSection.astro';
+import PathologyReportingSoftwareStartingSection from './components/PathologyReportingSoftwareStartingSection.astro';
+import PathologyReportingSoftwareExampleSection from './components/PathologyReportingSoftwareExampleSection.astro';
+import PathologyReportingSoftwareProgressSection from './components/PathologyReportingSoftwareProgressSection.astro';
+import PathologyReportingSoftwareWhySection from './components/PathologyReportingSoftwareWhySection.astro';
+import PathologyReportingSoftwareFaqSection from './components/PathologyReportingSoftwareFaqSection.astro';
+import PathologyReportingSoftwareConsultationSection from './components/PathologyReportingSoftwareConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { pathologyReportingSoftwareHeroPreload } from './lib/pathology-reporting-software-hero-image';
+import './styles/pathology-reporting-software-rendering.css';
+import './styles/pathology-reporting-software-source-content.css';
+import { metadata } from './data/pathology-reporting-software-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={pathologyReportingSoftwareHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="pathology-reporting-software-page" tabindex="-1">
+    <PathologyReportingSoftwareHero />
+    <PathologyReportingSoftwareChallengesSection />
+    <PathologyReportingSoftwareOutcomesSection />
+    <PathologyReportingSoftwareIntentSection />
+    <PathologyReportingSoftwareTrustSection />
+    <PathologyReportingSoftwareExpertiseSection />
+    <PathologyReportingSoftwareProcessSection />
+    <PathologyReportingSoftwareMappingSection />
+    <PathologyReportingSoftwareRelatedSection />
+    <PathologyReportingSoftwareStartingSection />
+    <PathologyReportingSoftwareExampleSection />
+    <PathologyReportingSoftwareProgressSection />
+    <PathologyReportingSoftwareWhySection />
+    <PathologyReportingSoftwareFaqSection />
+    <PathologyReportingSoftwareConsultationSection />
+  </main>
+  <Footer />
+</Layout>

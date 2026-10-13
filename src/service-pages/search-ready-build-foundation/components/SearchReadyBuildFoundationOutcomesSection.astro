@@ -1,0 +1,25 @@
+---
+import SearchReadyBuildFoundationOutcomeVisual from './SearchReadyBuildFoundationOutcomeVisual.astro';
+import { pageCopy } from '../data/search-ready-build-foundation-source';
+const copy = pageCopy.outcomes;
+import '../styles/search-ready-build-foundation-outcomes.css';
+---
+<search-ready-build-foundation-outcomes class="search-ready-build-foundation-outcomes">
+  <section id="search-ready-build-foundation-outcomes" class="section-container" aria-labelledby="search-ready-build-foundation-outcomes-heading">
+    <div class="search-ready-build-foundation-outcomes-heading">
+      <h2 id="search-ready-build-foundation-outcomes-heading">{copy.heading}</h2>
+      <div class="search-ready-build-foundation-outcomes-introduction search-ready-build-foundation-source-content" set:html={copy.before} />
+    </div>
+    <ul class="search-ready-build-foundation-outcomes-list" role="list">
+      {copy.items.map((item, index) => <li class="search-ready-build-foundation-outcome" data-seo-outcomes-motion>
+        <SearchReadyBuildFoundationOutcomeVisual index={index} />
+        <p><strong>{item.label}</strong><span>{item.description}</span></p>
+      </li>)}
+    </ul>
+    <div class="search-ready-build-foundation-outcomes-conclusion search-ready-build-foundation-source-content" set:html={copy.after} />
+  </section>
+</search-ready-build-foundation-outcomes>
+
+<script>
+  import '../scripts/search-ready-build-foundation-outcomes';
+</script>

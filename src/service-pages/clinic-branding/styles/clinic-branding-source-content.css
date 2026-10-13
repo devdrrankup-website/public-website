@@ -1,0 +1,8 @@
+.clinic-branding-source-content:empty { display: none; }
+.clinic-branding-source-content :where(p) { margin: 0 0 1em; line-height: 1.7; }
+.clinic-branding-source-content :where(p:last-child) { margin-bottom: 0; }
+.clinic-branding-source-content ul, .clinic-branding-source-content ol { margin: .75em 0 1em; padding-left: 1.35em; }
+.clinic-branding-source-content li { margin: .42em 0; line-height: 1.65; }
+.clinic-branding-source-content strong { font-weight: 700; }
+.clinic-branding-source-content table { width: 100%; border-collapse: collapse; }
+.clinic-branding-source-content th, .clinic-branding-source-content td { padding: .7em; text-align: left; border-bottom: 1px solid #0002; }

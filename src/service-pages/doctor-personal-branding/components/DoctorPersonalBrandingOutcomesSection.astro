@@ -1,0 +1,25 @@
+---
+import DoctorPersonalBrandingOutcomeVisual from './DoctorPersonalBrandingOutcomeVisual.astro';
+import { pageCopy } from '../data/doctor-personal-branding-source';
+const copy = pageCopy.outcomes;
+import '../styles/doctor-personal-branding-outcomes.css';
+---
+<doctor-personal-branding-outcomes class="doctor-personal-branding-outcomes">
+  <section id="doctor-personal-branding-outcomes" class="section-container" aria-labelledby="doctor-personal-branding-outcomes-heading">
+    <div class="doctor-personal-branding-outcomes-heading">
+      <h2 id="doctor-personal-branding-outcomes-heading">{copy.heading}</h2>
+      <div class="doctor-personal-branding-outcomes-introduction doctor-personal-branding-source-content" set:html={copy.before} />
+    </div>
+    <ul class="doctor-personal-branding-outcomes-list" role="list">
+      {copy.items.map((item, index) => <li class="doctor-personal-branding-outcome" data-seo-outcomes-motion>
+        <DoctorPersonalBrandingOutcomeVisual index={index} />
+        <p><strong>{item.label}</strong><span>{item.description}</span></p>
+      </li>)}
+    </ul>
+    <div class="doctor-personal-branding-outcomes-conclusion doctor-personal-branding-source-content" set:html={copy.after} />
+  </section>
+</doctor-personal-branding-outcomes>
+
+<script>
+  import '../scripts/doctor-personal-branding-outcomes';
+</script>

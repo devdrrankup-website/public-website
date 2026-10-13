@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/pathology-reporting-software/pathology-reporting-software-starting-v1.webp';
+import { pageCopy } from '../data/pathology-reporting-software-source';
+const copy = pageCopy.starting;
+import '../styles/pathology-reporting-software-starting.css';
+---
+<pathology-reporting-software-starting class="pathology-reporting-software-starting-motion">
+  <section id="pathology-reporting-software-starting" class="pathology-reporting-software-starting" aria-labelledby="pathology-reporting-software-starting-heading">
+    <div class="section-container pathology-reporting-software-starting-layout">
+      <h2 id="pathology-reporting-software-starting-heading" data-starting-entry>{copy.heading}</h2>
+      <div class="pathology-reporting-software-starting-copy" data-starting-entry>
+        <div class="pathology-reporting-software-source-content" set:html={copy.html} />
+      </div>
+      <figure class="pathology-reporting-software-starting-visual" data-starting-entry data-starting-visual>
+        <Image src={photo} alt="Pathologist and specialist mapping the reporting workflow" title="Pathologist and specialist mapping the reporting workflow" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 540px, (min-width:640px) 320px, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+    </div>
+  </section>
+</pathology-reporting-software-starting>
+<script>
+  import '../scripts/pathology-reporting-software-starting';
+</script>

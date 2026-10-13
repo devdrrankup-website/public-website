@@ -1,0 +1,31 @@
+---
+import Icon from '../../../components/Icon.astro';
+import Add01Icon from '@hugeicons/core-free-icons/Add01Icon';
+import { pageCopy } from '../data/clinic-google-ads-source';
+const copy = pageCopy.faq;
+import '../styles/clinic-google-ads-faq.css';
+---
+<clinic-google-ads-faq class="clinic-google-ads-faq-motion">
+  <section id="clinic-google-ads-faq" class="clinic-google-ads-faq" aria-labelledby="clinic-google-ads-faq-heading">
+    <div class="section-container clinic-google-ads-faq-layout">
+      <header class="clinic-google-ads-faq-header" data-faq-entry>
+        <h2 id="clinic-google-ads-faq-heading">{copy.heading}</h2>
+        <div class="clinic-google-ads-source-content" set:html={copy.preface} />
+      </header>
+      <div class="clinic-google-ads-faq-list">
+        {copy.items.map((item,index) => <article class="clinic-google-ads-faq-item" data-faq-entry aria-labelledby={`clinic-google-ads-faq-question-${index+1}`}>
+          <h3 class="clinic-google-ads-faq-question" id={`clinic-google-ads-faq-question-${index+1}`}>
+            <span class="clinic-google-ads-faq-label">{item.question}</span>
+            <span class="clinic-google-ads-faq-toggle" aria-hidden="true"><Icon icon={Add01Icon} size={20} strokeWidth={1.8} /></span>
+          </h3>
+          <div class="clinic-google-ads-faq-answer" id={`clinic-google-ads-faq-answer-${index+1}`} role="region" aria-labelledby={`clinic-google-ads-faq-question-${index+1}`}>
+            <div class="clinic-google-ads-source-content" set:html={item.answerHtml} />
+          </div>
+        </article>)}
+      </div>
+    </div>
+  </section>
+</clinic-google-ads-faq>
+<script>
+  import '../scripts/clinic-google-ads-faq';
+</script>

@@ -1,0 +1,22 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/doctor-content-marketing/doctor-content-marketing-progress-v1.webp';
+import { pageCopy } from '../data/doctor-content-marketing-source';
+const copy = pageCopy.progress;
+import '../styles/doctor-content-marketing-progress.css';
+---
+<doctor-content-marketing-progress class="doctor-content-marketing-progress-motion">
+  <section id="doctor-content-marketing-progress" class="doctor-content-marketing-progress" aria-labelledby="doctor-content-marketing-progress-heading">
+    <div class="section-container doctor-content-marketing-progress-layout">
+      <h2 id="doctor-content-marketing-progress-heading" data-progress-entry>{copy.heading}</h2>
+      <div class="doctor-content-marketing-progress-baseline doctor-content-marketing-source-content" data-progress-entry set:html={copy.html} />
+      <figure class="doctor-content-marketing-progress-photo" data-progress-entry data-progress-photo>
+        <Image src={photo} alt="Content specialist reviewing an unlabeled doctor content report" title="Content specialist reviewing an unlabeled doctor content report" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+
+    </div>
+  </section>
+</doctor-content-marketing-progress>
+<script>
+  import '../scripts/doctor-content-marketing-progress';
+</script>

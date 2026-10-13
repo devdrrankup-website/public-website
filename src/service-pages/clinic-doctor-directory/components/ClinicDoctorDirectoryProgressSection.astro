@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/clinic-doctor-directory/clinic-doctor-directory-progress-v1.webp';
+import { pageCopy } from '../data/clinic-doctor-directory-source';
+const copy = pageCopy.progress;
+import '../styles/clinic-doctor-directory-progress.css';
+---
+<clinic-doctor-directory-progress class="clinic-doctor-directory-progress-motion">
+  <section id="clinic-doctor-directory-progress" class="clinic-doctor-directory-progress" aria-labelledby="clinic-doctor-directory-progress-heading">
+    <div class="section-container clinic-doctor-directory-progress-layout">
+      <h2 id="clinic-doctor-directory-progress-heading" data-progress-entry>{copy.heading}</h2>
+      <p class="clinic-doctor-directory-progress-baseline" data-progress-entry set:html={copy.paragraphsHtml[0]} />
+      <figure class="clinic-doctor-directory-progress-photo" data-progress-entry data-progress-photo>
+        <Image src={photo} alt="Clinic team reviewing doctor directory records and a report" title="Clinic team reviewing doctor directory records and a report" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <p class="clinic-doctor-directory-progress-evidence" data-progress-entry set:html={copy.paragraphsHtml[1]} />
+
+    </div>
+  </section>
+</clinic-doctor-directory-progress>
+<script>
+  import '../scripts/clinic-doctor-directory-progress';
+</script>

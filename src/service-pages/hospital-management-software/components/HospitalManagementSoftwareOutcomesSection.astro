@@ -1,0 +1,25 @@
+---
+import HospitalManagementSoftwareOutcomeVisual from './HospitalManagementSoftwareOutcomeVisual.astro';
+import { pageCopy } from '../data/hospital-management-software-source';
+const copy = pageCopy.outcomes;
+import '../styles/hospital-management-software-outcomes.css';
+---
+<hospital-management-software-outcomes class="hospital-management-software-outcomes">
+  <section id="hospital-management-software-outcomes" class="section-container" aria-labelledby="hospital-management-software-outcomes-heading">
+    <div class="hospital-management-software-outcomes-heading">
+      <h2 id="hospital-management-software-outcomes-heading">{copy.heading}</h2>
+      <div class="hospital-management-software-outcomes-introduction hospital-management-software-source-content" set:html={copy.before} />
+    </div>
+    <ul class="hospital-management-software-outcomes-list" role="list">
+      {copy.items.map((item, index) => <li class="hospital-management-software-outcome" data-seo-outcomes-motion>
+        <HospitalManagementSoftwareOutcomeVisual index={index} />
+        <p><strong>{item.label}</strong><span>{item.description}</span></p>
+      </li>)}
+    </ul>
+    <div class="hospital-management-software-outcomes-conclusion hospital-management-software-source-content" set:html={copy.after} />
+  </section>
+</hospital-management-software-outcomes>
+
+<script>
+  import '../scripts/hospital-management-software-outcomes';
+</script>

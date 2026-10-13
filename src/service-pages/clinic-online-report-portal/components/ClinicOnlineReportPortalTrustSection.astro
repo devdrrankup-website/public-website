@@ -1,0 +1,33 @@
+---
+import { Image } from 'astro:assets';
+import Icon from '../../../components/Icon.astro';
+import LockKeyIcon from '@hugeicons/core-free-icons/LockKeyIcon';
+import photo from '../../../assets/clinic-online-report-portal/clinic-online-report-portal-trust-v1.webp';
+import { pageCopy } from '../data/clinic-online-report-portal-source';
+const copy = pageCopy.trust;
+import '../styles/clinic-online-report-portal-trust.css';
+---
+
+<clinic-online-report-portal-trust class="clinic-online-report-portal-trust-motion">
+  <section id="clinic-online-report-portal-trust" class="clinic-online-report-portal-trust" aria-labelledby="clinic-online-report-portal-trust-heading">
+    <div class="section-container clinic-online-report-portal-trust-layout">
+      <h2 id="clinic-online-report-portal-trust-heading">{copy.heading}</h2>
+      <div class="clinic-online-report-portal-trust-profile clinic-online-report-portal-source-content" data-seo-trust-motion set:html={copy.firstHtml} />
+      <div class="clinic-online-report-portal-trust-photo" data-seo-trust-motion>
+        <Image src={photo} widths={[360, 540, 720, 960, 1200]} width={1536} height={1024}
+          sizes="(min-width: 1100px) min(43vw, 576px), (min-width: 640px) min(calc(100vw - 56px), 760px), calc(100vw - 32px)"
+          format="webp" quality={76} loading="lazy" decoding="async"
+          alt="Clinician and manager checking a sample report before online release"
+          title="Clinician and manager checking a sample report before online release" />
+      </div>
+      <div class="clinic-online-report-portal-trust-privacy" data-seo-trust-motion>
+        <span class="clinic-online-report-portal-trust-lock" aria-hidden="true"><Icon icon={LockKeyIcon} size={24} /></span>
+        <div class="clinic-online-report-portal-source-content" set:html={copy.restHtml} />
+      </div>
+    </div>
+  </section>
+</clinic-online-report-portal-trust>
+
+<script>
+  import '../scripts/clinic-online-report-portal-trust';
+</script>

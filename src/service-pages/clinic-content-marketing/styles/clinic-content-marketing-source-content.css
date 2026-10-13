@@ -1,0 +1,8 @@
+.clinic-content-marketing-source-content:empty { display: none; }
+.clinic-content-marketing-source-content :where(p) { margin: 0 0 1em; line-height: 1.7; }
+.clinic-content-marketing-source-content :where(p:last-child) { margin-bottom: 0; }
+.clinic-content-marketing-source-content ul, .clinic-content-marketing-source-content ol { margin: .75em 0 1em; padding-left: 1.35em; }
+.clinic-content-marketing-source-content li { margin: .42em 0; line-height: 1.65; }
+.clinic-content-marketing-source-content strong { font-weight: 700; }
+.clinic-content-marketing-source-content table { width: 100%; border-collapse: collapse; }
+.clinic-content-marketing-source-content th, .clinic-content-marketing-source-content td { padding: .7em; text-align: left; border-bottom: 1px solid #0002; }

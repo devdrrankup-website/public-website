@@ -1,0 +1,8 @@
+.diagnostic-management-source-content:empty { display: none; }
+.diagnostic-management-source-content :where(p) { margin: 0 0 1em; line-height: 1.7; }
+.diagnostic-management-source-content :where(p:last-child) { margin-bottom: 0; }
+.diagnostic-management-source-content ul, .diagnostic-management-source-content ol { margin: .75em 0 1em; padding-left: 1.35em; }
+.diagnostic-management-source-content li { margin: .42em 0; line-height: 1.65; }
+.diagnostic-management-source-content strong { font-weight: 700; }
+.diagnostic-management-source-content table { width: 100%; border-collapse: collapse; }
+.diagnostic-management-source-content th, .diagnostic-management-source-content td { padding: .7em; text-align: left; border-bottom: 1px solid #0002; }

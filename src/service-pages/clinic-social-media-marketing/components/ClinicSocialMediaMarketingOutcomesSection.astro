@@ -1,0 +1,25 @@
+---
+import ClinicSocialMediaMarketingOutcomeVisual from './ClinicSocialMediaMarketingOutcomeVisual.astro';
+import { pageCopy } from '../data/clinic-social-media-marketing-source';
+const copy = pageCopy.outcomes;
+import '../styles/clinic-social-media-marketing-outcomes.css';
+---
+<clinic-social-media-marketing-outcomes class="clinic-social-media-marketing-outcomes">
+  <section id="clinic-social-media-marketing-outcomes" class="section-container" aria-labelledby="clinic-social-media-marketing-outcomes-heading">
+    <div class="clinic-social-media-marketing-outcomes-heading">
+      <h2 id="clinic-social-media-marketing-outcomes-heading">{copy.heading}</h2>
+      <div class="clinic-social-media-marketing-outcomes-introduction clinic-social-media-marketing-source-content" set:html={copy.before} />
+    </div>
+    <ul class="clinic-social-media-marketing-outcomes-list" role="list">
+      {copy.items.map((item, index) => <li class="clinic-social-media-marketing-outcome" data-seo-outcomes-motion>
+        <ClinicSocialMediaMarketingOutcomeVisual index={index} />
+        <p><strong>{item.label}</strong><span>{item.description}</span></p>
+      </li>)}
+    </ul>
+    <div class="clinic-social-media-marketing-outcomes-conclusion clinic-social-media-marketing-source-content" set:html={copy.after} />
+  </section>
+</clinic-social-media-marketing-outcomes>
+
+<script>
+  import '../scripts/clinic-social-media-marketing-outcomes';
+</script>

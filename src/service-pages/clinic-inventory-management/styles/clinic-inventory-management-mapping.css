@@ -1,0 +1,58 @@
+.clinic-inventory-management-mapping-motion { display: block; }
+.clinic-inventory-management-mapping {
+  padding-block: 48px 64px;
+  color: #000;
+  background: linear-gradient(180deg, #f3f5ff 0%, #eaf7ff 30%, #eeedfe 62%, #fff 100%);
+  scroll-margin-top: calc(var(--header-height) + 16px);
+}
+.clinic-inventory-management-mapping-layout { display: grid; gap: 28px; max-width: 1200px; }
+.clinic-inventory-management-mapping-editorial, .clinic-inventory-management-mapping-details { min-width: 0; }
+.clinic-inventory-management-mapping h2 {
+  margin: 0;
+  color: #000;
+  font-size: clamp(30px, 8vw, 40px);
+  font-weight: 650;
+  line-height: 1.16;
+  letter-spacing: -.04em;
+  text-wrap: pretty;
+}
+.clinic-inventory-management-mapping header p { margin: 18px 0 0; color: #000; font-size: 16px; line-height: 1.75; }
+.clinic-inventory-management-mapping-visual { width: 100%; max-width: 440px; margin: 20px auto 0; aspect-ratio: 440 / 248; }
+.clinic-inventory-management-mapping-visual svg { display: block; width: 100%; height: auto; overflow: visible; }
+.clinic-inventory-management-mapping-table { display: block; width: 100%; border-collapse: collapse; }
+.clinic-inventory-management-mapping-table thead, .clinic-inventory-management-mapping-table tbody { display: block; }
+.clinic-inventory-management-mapping-table thead tr { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; padding-bottom: 18px; border-bottom: 1px solid #00000024; }
+.clinic-inventory-management-mapping-table thead th { padding: 0; color: #000; text-align: left; font-size: 13px; font-weight: 650; line-height: 1.55; }
+.clinic-inventory-management-mapping-table tbody tr { display: grid; grid-template-columns: 34px minmax(0, 1fr); row-gap: 12px; padding-block: 22px; border-bottom: 1px solid #0000001c; }
+.clinic-inventory-management-mapping-table tbody th { display: grid; grid-template-columns: 34px minmax(0, 1fr); grid-column: 1 / -1; gap: 12px; min-width: 0; padding: 0; color: #000; text-align: left; font-size: 16px; font-weight: 500; line-height: 1.6; }
+.clinic-inventory-management-mapping-number { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; color: #000; background: var(--mapping-accent); font-size: 11px; font-weight: 650; line-height: 1; }
+.clinic-inventory-management-mapping-table td { display: flex; grid-column: 2; align-items: flex-start; gap: 10px; min-width: 0; padding: 0 0 0 12px; color: #000; font-size: 16px; font-weight: 650; line-height: 1.6; }
+.clinic-inventory-management-mapping-arrow { display: inline-flex; flex: 0 0 20px; margin-top: 3px; color: #6131c6; }
+.clinic-inventory-management-mapping-destination { min-width: 0; }
+.clinic-inventory-management-mapping-conclusion { margin: 24px 0 0; color: #000; font-size: 15px; line-height: 1.8; }
+
+@media (min-width: 640px) {
+  .clinic-inventory-management-mapping { padding-block: 64px 80px; }
+  .clinic-inventory-management-mapping-layout { gap: 36px; }
+  .clinic-inventory-management-mapping-editorial { display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 24px; }
+  .clinic-inventory-management-mapping h2 { font-size: clamp(36px, 4.8vw, 46px); }
+  .clinic-inventory-management-mapping-visual { margin: 0; }
+  .clinic-inventory-management-mapping-table thead tr,
+  .clinic-inventory-management-mapping-table tbody tr { grid-template-columns: minmax(0, 1.13fr) minmax(0, 1fr); column-gap: 24px; }
+  .clinic-inventory-management-mapping-table thead th { font-size: 14px; }
+  .clinic-inventory-management-mapping-table tbody tr { padding-block: 25px; align-items: center; }
+  .clinic-inventory-management-mapping-table tbody th { grid-column: auto; }
+  .clinic-inventory-management-mapping-table td { grid-column: auto; padding: 0; }
+  .clinic-inventory-management-mapping-conclusion { margin-top: 28px; font-size: 16px; }
+}
+
+@media (min-width: 1100px) {
+  .clinic-inventory-management-mapping { padding-block: 80px 96px; }
+  .clinic-inventory-management-mapping-layout { grid-template-columns: minmax(0, .87fr) minmax(0, 1.13fr); align-items: start; gap: clamp(48px, 5vw, 76px); }
+  .clinic-inventory-management-mapping-editorial { display: block; position: sticky; top: calc(var(--header-height) + 28px); }
+  .clinic-inventory-management-mapping h2 { font-size: clamp(42px, 3.4vw, 50px); }
+  .clinic-inventory-management-mapping-visual { margin: 30px auto 0; }
+  .clinic-inventory-management-mapping-table tbody tr { padding-block: 28px; }
+}
+
+.clinic-inventory-management-mapping-conclusion p { line-height: inherit; }

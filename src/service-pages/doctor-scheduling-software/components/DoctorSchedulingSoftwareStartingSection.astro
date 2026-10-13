@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/doctor-scheduling-software/doctor-scheduling-software-starting-v1.webp';
+import { pageCopy } from '../data/doctor-scheduling-software-source';
+const copy = pageCopy.starting;
+import '../styles/doctor-scheduling-software-starting.css';
+---
+<doctor-scheduling-software-starting class="doctor-scheduling-software-starting-motion">
+  <section id="doctor-scheduling-software-starting" class="doctor-scheduling-software-starting" aria-labelledby="doctor-scheduling-software-starting-heading">
+    <div class="section-container doctor-scheduling-software-starting-layout">
+      <h2 id="doctor-scheduling-software-starting-heading" data-starting-entry>{copy.heading}</h2>
+      <div class="doctor-scheduling-software-starting-copy" data-starting-entry>
+        <div class="doctor-scheduling-software-source-content" set:html={copy.html} />
+      </div>
+      <figure class="doctor-scheduling-software-starting-visual" data-starting-entry data-starting-visual>
+        <Image src={photo} alt="Doctor and specialist mapping a scheduling workflow" title="Doctor and specialist mapping a scheduling workflow" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 540px, (min-width:640px) 320px, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+    </div>
+  </section>
+</doctor-scheduling-software-starting>
+<script>
+  import '../scripts/doctor-scheduling-software-starting';
+</script>

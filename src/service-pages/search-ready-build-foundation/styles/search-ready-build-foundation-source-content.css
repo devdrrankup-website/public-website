@@ -1,0 +1,8 @@
+.search-ready-build-foundation-source-content:empty { display: none; }
+.search-ready-build-foundation-source-content :where(p) { margin: 0 0 1em; line-height: 1.7; }
+.search-ready-build-foundation-source-content :where(p:last-child) { margin-bottom: 0; }
+.search-ready-build-foundation-source-content ul, .search-ready-build-foundation-source-content ol { margin: .75em 0 1em; padding-left: 1.35em; }
+.search-ready-build-foundation-source-content li { margin: .42em 0; line-height: 1.65; }
+.search-ready-build-foundation-source-content strong { font-weight: 700; }
+.search-ready-build-foundation-source-content table { width: 100%; border-collapse: collapse; }
+.search-ready-build-foundation-source-content th, .search-ready-build-foundation-source-content td { padding: .7em; text-align: left; border-bottom: 1px solid #0002; }

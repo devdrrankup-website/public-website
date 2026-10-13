@@ -1,0 +1,38 @@
+---
+import ActionIcon from '../../../components/ActionIcon.astro';
+import { pageCopy } from '../data/clinic-online-report-portal-source';
+const copy = pageCopy.hero;
+import { clinicOnlineReportPortalHeroImage as photo } from '../lib/clinic-online-report-portal-hero-image';
+import '../styles/clinic-online-report-portal-hero.css';
+---
+
+<section class="clinic-online-report-portal-hero" aria-labelledby="clinic-online-report-portal-heading">
+  <div class="section-container clinic-online-report-portal-hero-layout">
+    <div class="clinic-online-report-portal-hero-copy">
+      <h1 id="clinic-online-report-portal-heading">{copy.heading}</h1>
+      <p class="clinic-online-report-portal-hero-tagline">{copy.tagline}</p>
+      <div class="clinic-online-report-portal-hero-description">
+        {copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+      </div>
+      <div class="clinic-online-report-portal-hero-actions" aria-label={`${copy.heading} options`}>
+        <span class="button button-primary">
+          <span>{copy.primaryCta}</span><ActionIcon purpose="conversation" />
+        </span>
+        {copy.secondaryHref ? <a class="button button-secondary" href={copy.secondaryHref}>
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </a> : <span class="button button-secondary">
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </span>}
+      </div>
+    </div>
+    <div class="clinic-online-report-portal-hero-visual">
+      <div class="clinic-online-report-portal-hero-photo">
+        <img src={photo.src} srcset={photo.srcset} sizes={photo.sizes}
+          width={photo.width} height={photo.height}
+          alt="Patient checking that a clinic report is ready on a laptop at home"
+          title="Checking report availability from home"
+          loading="eager" fetchpriority="high" decoding="async" />
+      </div>
+    </div>
+  </div>
+</section>

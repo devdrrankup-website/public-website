@@ -1,0 +1,38 @@
+---
+import ActionIcon from '../../../components/ActionIcon.astro';
+import { pageCopy } from '../data/clinic-doctor-schedule-management-source';
+const copy = pageCopy.hero;
+import { clinicDoctorScheduleManagementHeroImage as photo } from '../lib/clinic-doctor-schedule-management-hero-image';
+import '../styles/clinic-doctor-schedule-management-hero.css';
+---
+
+<section class="clinic-doctor-schedule-management-hero" aria-labelledby="clinic-doctor-schedule-management-heading">
+  <div class="section-container clinic-doctor-schedule-management-hero-layout">
+    <div class="clinic-doctor-schedule-management-hero-copy">
+      <h1 id="clinic-doctor-schedule-management-heading">{copy.heading}</h1>
+      <p class="clinic-doctor-schedule-management-hero-tagline">{copy.tagline}</p>
+      <div class="clinic-doctor-schedule-management-hero-description">
+        {copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+      </div>
+      <div class="clinic-doctor-schedule-management-hero-actions" aria-label={`${copy.heading} options`}>
+        <span class="button button-primary">
+          <span>{copy.primaryCta}</span><ActionIcon purpose="conversation" />
+        </span>
+        {copy.secondaryHref ? <a class="button button-secondary" href={copy.secondaryHref}>
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </a> : <span class="button button-secondary">
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </span>}
+      </div>
+    </div>
+    <div class="clinic-doctor-schedule-management-hero-visual">
+      <div class="clinic-doctor-schedule-management-hero-photo">
+        <img src={photo.src} srcset={photo.srcset} sizes={photo.sizes}
+          width={photo.width} height={photo.height}
+          alt="Clinic reception staff coordinating doctors’ visiting sessions on a weekly schedule"
+          title="Coordinating clinic doctor schedules"
+          loading="eager" fetchpriority="high" decoding="async" />
+      </div>
+    </div>
+  </div>
+</section>

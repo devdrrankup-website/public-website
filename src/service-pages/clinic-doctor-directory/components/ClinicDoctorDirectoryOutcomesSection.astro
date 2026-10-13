@@ -1,0 +1,25 @@
+---
+import ClinicDoctorDirectoryOutcomeVisual from './ClinicDoctorDirectoryOutcomeVisual.astro';
+import { pageCopy } from '../data/clinic-doctor-directory-source';
+const copy = pageCopy.outcomes;
+import '../styles/clinic-doctor-directory-outcomes.css';
+---
+<clinic-doctor-directory-outcomes class="clinic-doctor-directory-outcomes">
+  <section id="clinic-doctor-directory-outcomes" class="section-container" aria-labelledby="clinic-doctor-directory-outcomes-heading">
+    <div class="clinic-doctor-directory-outcomes-heading">
+      <h2 id="clinic-doctor-directory-outcomes-heading">{copy.heading}</h2>
+      <div class="clinic-doctor-directory-outcomes-introduction clinic-doctor-directory-source-content" set:html={copy.before} />
+    </div>
+    <ul class="clinic-doctor-directory-outcomes-list" role="list">
+      {copy.items.map((item, index) => <li class="clinic-doctor-directory-outcome" data-seo-outcomes-motion>
+        <ClinicDoctorDirectoryOutcomeVisual index={index} />
+        <p><strong>{item.label}</strong><span>{item.description}</span></p>
+      </li>)}
+    </ul>
+    <div class="clinic-doctor-directory-outcomes-conclusion clinic-doctor-directory-source-content" set:html={copy.after} />
+  </section>
+</clinic-doctor-directory-outcomes>
+
+<script>
+  import '../scripts/clinic-doctor-directory-outcomes';
+</script>

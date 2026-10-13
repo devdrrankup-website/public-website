@@ -1,0 +1,66 @@
+---
+import { Image } from 'astro:assets';
+import Icon from '../../../components/Icon.astro';
+import Arrow from '../../../components/Arrow.astro';
+import Calendar03Icon from '@hugeicons/core-free-icons/Calendar03Icon';
+import DatabaseIcon from '@hugeicons/core-free-icons/DatabaseIcon';
+import WebDesign01Icon from '@hugeicons/core-free-icons/WebDesign01Icon';
+import { pageCopy } from '../data/online-consultation-integration-source';
+const copy = pageCopy.related;
+import relatedImage0 from '../../../assets/patient-appointment-management/patient-appointment-management-related-preview-v1.webp';
+import relatedImage1 from '../../../assets/e-prescription-software/e-prescription-software-related-preview-v1.webp';
+import relatedImage2 from '../../../assets/patient-medical-record-software/patient-medical-record-software-related-preview-v1.webp';
+import relatedImage3 from '../../../assets/related-services/doctor-website-development-preview-v1.webp';
+import '../styles/online-consultation-integration-related.css';
+const visuals = [
+  { image: relatedImage0, icon: Calendar03Icon, accent: '#BAE5FF', description: "At a doctor's chamber reception, a receptionist welcomes a visitor while another staff member checks a clearly blank appointment list on the front of a tablet." },
+  { image: relatedImage1, icon: DatabaseIcon, accent: '#EEEDFE', description: "At a doctor's chamber desk, the clinician checks a blank prescription preview on a front-facing computer before printing, with no patient details." },
+  { image: relatedImage2, icon: DatabaseIcon, accent: '#FEF2CC', description: "In a private chamber, a doctor checks a neutral, anonymised visit timeline on a front-facing monitor while an assistant waits beside a closed folder." },
+  { image: relatedImage3, icon: WebDesign01Icon, accent: '#E4FFBD', description: "At a Bangladesh digital agency design studio, a civilian web designer and a doctor review large unbranded doctor-website wireframes showing profile, chamber and booking blocks, from the viewer's side." },
+];
+---
+<section id="online-consultation-integration-related" class="online-consultation-integration-related" aria-labelledby="online-consultation-integration-related-heading">
+  <div class="section-container online-consultation-integration-related-container">
+    <online-consultation-integration-related>
+      <header class="online-consultation-integration-related-header" data-related-entry>
+        <h2 id="online-consultation-integration-related-heading">{copy.heading}</h2>
+        <div class="online-consultation-integration-source-content" set:html={copy.introductionHtml} />
+      </header>
+      <div class="online-consultation-integration-related-layout">
+        <div class="online-consultation-integration-related-dock">
+          <div class="online-consultation-integration-related-selectors" role="group" aria-label="Service image previews" hidden>
+            {copy.services.map((service, index) => <button type="button" aria-pressed={index === 0 ? 'true' : 'false'} aria-controls={`related-${service.key}`} data-related-select={index}>
+              <span>{service.name}</span>
+            </button>)}
+          </div>
+          <div class="online-consultation-integration-related-stage" aria-hidden="true" hidden></div>
+        </div>
+        <div class="online-consultation-integration-related-details">
+          <div class="online-consultation-integration-related-labels"><span>{copy.headers[0]}</span><span>{copy.headers[1]}</span></div>
+          <dl class="online-consultation-integration-related-list">
+            {copy.services.map((service, index) => <div class="online-consultation-integration-related-row" id={`related-${service.key}`} data-service={service.key}>
+              <dt>
+                <span class="online-consultation-integration-related-badge" style={`--related-accent:${visuals[index % visuals.length].accent}`}><Icon icon={visuals[index % visuals.length].icon} size={21} strokeWidth={1.8} /></span>
+                <span class="online-consultation-integration-related-reveal" aria-hidden="true"></span>
+                {service.href ? <a class="online-consultation-integration-related-name" href={service.href}>{service.name}</a>
+                  : <span class="online-consultation-integration-related-name">{service.name}</span>}
+                <span class="online-consultation-integration-related-arrow" aria-hidden="true"><Arrow /></span>
+              </dt>
+              <dd>
+                <span>{service.responsibility}</span>
+                <figure class="online-consultation-integration-related-photo">
+                  <Image src={visuals[index % visuals.length].image} alt={visuals[index % visuals.length].description} title={visuals[index % visuals.length].description} width={960} widths={[360,640,960]} sizes="(min-width:1100px) 700px, (min-width:640px) 700px, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+                  <figcaption>{service.name}</figcaption>
+                </figure>
+              </dd>
+            </div>)}
+          </dl>
+          <div class="online-consultation-integration-related-note online-consultation-integration-source-content" set:html={copy.noteHtml} />
+        </div>
+      </div>
+    </online-consultation-integration-related>
+  </div>
+</section>
+<script>
+  import '../scripts/online-consultation-integration-related';
+</script>

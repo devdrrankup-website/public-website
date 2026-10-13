@@ -1,0 +1,39 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/clinic-content-marketing/clinic-content-marketing-challenges-v1.webp';
+import { pageCopy } from '../data/clinic-content-marketing-source';
+const copy = pageCopy.challenges;
+import '../styles/clinic-content-marketing-challenges.css';
+---
+
+<clinic-content-marketing-challenges class="clinic-content-marketing-challenges">
+  <section id="clinic-content-marketing-challenges" class="section-container clinic-content-marketing-challenges-layout" aria-labelledby="clinic-content-marketing-challenges-heading">
+    <div class="clinic-content-marketing-challenges-editorial">
+      <h2 id="clinic-content-marketing-challenges-heading">{copy.heading}</h2>
+      <p class="clinic-content-marketing-challenges-introduction" set:html={copy.introductionHtml} />
+      <div class="clinic-content-marketing-challenges-photo" data-seo-challenges-motion>
+        <Image src={photo} widths={[360, 540, 720, 960, 1200]} width={1536} height={1024}
+          sizes="(min-width: 1100px) min(41vw, 568px), (min-width: 640px) min(calc(100vw - 56px), 760px), calc(100vw - 32px)"
+          format="webp" quality={76}
+          alt="Clinic manager and staff reviewing unclear service information at reception"
+          title="Clinic manager and staff reviewing unclear service information at reception"
+          loading="lazy" decoding="async" />
+      </div>
+    </div>
+    <div class="clinic-content-marketing-challenges-details">
+      {copy.preListHtml && <p class="clinic-content-marketing-challenges-prelist" set:html={copy.preListHtml} />}
+      <p id="clinic-content-marketing-challenges-list-heading" class="clinic-content-marketing-challenges-list-intro" set:html={copy.listIntroductionHtml} />
+      <ul class="clinic-content-marketing-challenges-list" role="list" aria-labelledby="clinic-content-marketing-challenges-list-heading" data-seo-challenges-motion>
+        {copy.challengesHtml.map((challenge, index) => <li>
+          <span class="clinic-content-marketing-challenge-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+          <span set:html={challenge} />
+        </li>)}
+      </ul>
+      {copy.conclusionHtml && <p class="clinic-content-marketing-challenges-conclusion" set:html={copy.conclusionHtml} />}
+    </div>
+  </section>
+</clinic-content-marketing-challenges>
+
+<script>
+  import '../scripts/clinic-content-marketing-challenges';
+</script>

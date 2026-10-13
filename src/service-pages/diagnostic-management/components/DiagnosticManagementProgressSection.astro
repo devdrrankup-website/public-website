@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/diagnostic-management/diagnostic-management-progress-v1.webp';
+import { pageCopy } from '../data/diagnostic-management-source';
+const copy = pageCopy.progress;
+import '../styles/diagnostic-management-progress.css';
+---
+<diagnostic-management-progress class="diagnostic-management-progress-motion">
+  <section id="diagnostic-management-progress" class="diagnostic-management-progress" aria-labelledby="diagnostic-management-progress-heading">
+    <div class="section-container diagnostic-management-progress-layout">
+      <h2 id="diagnostic-management-progress-heading" data-progress-entry>{copy.heading}</h2>
+      <p class="diagnostic-management-progress-baseline" data-progress-entry set:html={copy.paragraphsHtml[0]} />
+      <figure class="diagnostic-management-progress-photo" data-progress-entry data-progress-photo>
+        <Image src={photo} alt="Diagnostic centre team reviewing operational results on a laptop" title="Diagnostic centre team reviewing operational results on a laptop" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <p class="diagnostic-management-progress-evidence" data-progress-entry set:html={copy.paragraphsHtml[1]} />
+
+    </div>
+  </section>
+</diagnostic-management-progress>
+<script>
+  import '../scripts/diagnostic-management-progress';
+</script>

@@ -1,0 +1,25 @@
+---
+import ClinicWebsiteOutcomeVisual from './ClinicWebsiteOutcomeVisual.astro';
+import { pageCopy } from '../data/clinic-website-source';
+const copy = pageCopy.outcomes;
+import '../styles/clinic-website-outcomes.css';
+---
+<clinic-website-outcomes class="clinic-website-outcomes">
+  <section id="clinic-website-outcomes" class="section-container" aria-labelledby="clinic-website-outcomes-heading">
+    <div class="clinic-website-outcomes-heading">
+      <h2 id="clinic-website-outcomes-heading">{copy.heading}</h2>
+      <div class="clinic-website-outcomes-introduction clinic-website-source-content" set:html={copy.before} />
+    </div>
+    <ul class="clinic-website-outcomes-list" role="list">
+      {copy.items.map((item, index) => <li class="clinic-website-outcome" data-seo-outcomes-motion>
+        <ClinicWebsiteOutcomeVisual index={index} />
+        <p><strong>{item.label}</strong><span>{item.description}</span></p>
+      </li>)}
+    </ul>
+    <div class="clinic-website-outcomes-conclusion clinic-website-source-content" set:html={copy.after} />
+  </section>
+</clinic-website-outcomes>
+
+<script>
+  import '../scripts/clinic-website-outcomes';
+</script>

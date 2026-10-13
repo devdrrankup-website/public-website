@@ -1,0 +1,38 @@
+---
+import ActionIcon from '../../../components/ActionIcon.astro';
+import { pageCopy } from '../data/hospital-website-development-source';
+const copy = pageCopy.hero;
+import { hospitalWebsiteDevelopmentHeroImage as photo } from '../lib/hospital-website-development-hero-image';
+import '../styles/hospital-website-development-hero.css';
+---
+
+<section class="hospital-website-development-hero" aria-labelledby="hospital-website-development-heading">
+  <div class="section-container hospital-website-development-hero-layout">
+    <div class="hospital-website-development-hero-copy">
+      <h1 id="hospital-website-development-heading">{copy.heading}</h1>
+      <p class="hospital-website-development-hero-tagline">{copy.tagline}</p>
+      <div class="hospital-website-development-hero-description">
+        {copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+      </div>
+      <div class="hospital-website-development-hero-actions" aria-label={`${copy.heading} options`}>
+        <span class="button button-primary">
+          <span>{copy.primaryCta}</span><ActionIcon purpose="conversation" />
+        </span>
+        {copy.secondaryHref ? <a class="button button-secondary" href={copy.secondaryHref}>
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </a> : <span class="button button-secondary">
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </span>}
+      </div>
+    </div>
+    <div class="hospital-website-development-hero-visual">
+      <div class="hospital-website-development-hero-photo">
+        <img src={photo.src} srcset={photo.srcset} sizes={photo.sizes}
+          width={photo.width} height={photo.height}
+          alt="Hospital administrator and web designers reviewing a hospital website layout"
+          title="Planning the hospital website"
+          loading="eager" fetchpriority="high" decoding="async" />
+      </div>
+    </div>
+  </div>
+</section>

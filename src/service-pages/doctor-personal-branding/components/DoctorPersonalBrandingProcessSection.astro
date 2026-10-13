@@ -1,0 +1,57 @@
+---
+import { Image } from 'astro:assets';
+import { pageCopy } from '../data/doctor-personal-branding-source';
+const copy = pageCopy.process;
+import processBackground from '../../../assets/doctor-personal-branding/doctor-personal-branding-process-workflow-v1.webp';
+import '../styles/doctor-personal-branding-process.css';
+// Destination-owned copy of the approved For Doctors process composition.
+const titleParts = (title: string) => [title.match(/^\d+\.\s+/)?.[0] ?? '', title.replace(/^\d+\.\s+/, '')];
+---
+
+<doctor-personal-branding-process class="doctor-personal-branding-process-motion">
+  <section id="doctor-personal-branding-process" class="doctor-personal-branding-process" aria-labelledby="doctor-personal-branding-process-heading">
+    <div class="doctor-personal-branding-process-background" aria-hidden="true">
+      <Image src={processBackground} width={1024} widths={[480, 768, 1024]} sizes="100vw" format="webp" quality={40}
+        alt="" title="At an agency portrait-planning table, a doctor and civilian creative lead review wardrobe swatches and an unbranded professional profile layout; no fake awards or credentials." loading="lazy" decoding="async" />
+    </div>
+    <div class="doctor-personal-branding-process-atmosphere" aria-hidden="true"></div>
+    <div class="section-container doctor-personal-branding-process-layout">
+      <header class="doctor-personal-branding-process-header" data-seo-process-copy>
+        <span class="doctor-personal-branding-process-range" aria-hidden="true">{`01—${String(copy.steps.length).padStart(2, '0')}`}</span>
+        <h2 id="doctor-personal-branding-process-heading">{copy.heading}</h2>
+        <div class="doctor-personal-branding-source-content" set:html={copy.introductionHtml} />
+      </header>
+
+      <div class="doctor-personal-branding-process-flow" role="list" aria-label={`${copy.steps.length} service steps`}>
+        <svg class="doctor-personal-branding-process-route" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="doctor-personal-branding-process-route-gradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="100" y2="100">
+              <stop offset="0" stop-color="#6131c6" />
+              <stop offset="0.5" stop-color="#229f60" />
+              <stop offset="1" stop-color="#6131c6" />
+            </linearGradient>
+          </defs>
+          <path class="doctor-personal-branding-process-route-base" />
+          <path class="doctor-personal-branding-process-route-progress" />
+        </svg>
+
+        {copy.steps.map((step, index) => (
+          <div class="doctor-personal-branding-process-step" role="listitem" data-seo-process-step>
+            <div class="doctor-personal-branding-process-node-column" aria-hidden="true">
+              <span class="doctor-personal-branding-process-node"><span>{String(index + 1).padStart(2, '0')}</span></span>
+              {index < copy.steps.length - 1 && <span class="doctor-personal-branding-process-connector"></span>}
+            </div>
+            <div class="doctor-personal-branding-process-copy" data-seo-process-copy>
+              <h3><span>{titleParts(step.title)[0]}</span>{titleParts(step.title)[1]}</h3>
+              <div class="doctor-personal-branding-source-content" set:html={step.html} />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</doctor-personal-branding-process>
+
+<script>
+  import '../scripts/doctor-personal-branding-process';
+</script>

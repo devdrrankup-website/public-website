@@ -1,0 +1,47 @@
+---
+// Destination-owned static page. Service-specific images are pending review before publication.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import ClinicOnlineAppointmentSystemHero from './components/ClinicOnlineAppointmentSystemHero.astro';
+import ClinicOnlineAppointmentSystemChallengesSection from './components/ClinicOnlineAppointmentSystemChallengesSection.astro';
+import ClinicOnlineAppointmentSystemOutcomesSection from './components/ClinicOnlineAppointmentSystemOutcomesSection.astro';
+import ClinicOnlineAppointmentSystemIntentSection from './components/ClinicOnlineAppointmentSystemIntentSection.astro';
+import ClinicOnlineAppointmentSystemTrustSection from './components/ClinicOnlineAppointmentSystemTrustSection.astro';
+import ClinicOnlineAppointmentSystemExpertiseSection from './components/ClinicOnlineAppointmentSystemExpertiseSection.astro';
+import ClinicOnlineAppointmentSystemProcessSection from './components/ClinicOnlineAppointmentSystemProcessSection.astro';
+import ClinicOnlineAppointmentSystemMappingSection from './components/ClinicOnlineAppointmentSystemMappingSection.astro';
+import ClinicOnlineAppointmentSystemRelatedSection from './components/ClinicOnlineAppointmentSystemRelatedSection.astro';
+import ClinicOnlineAppointmentSystemStartingSection from './components/ClinicOnlineAppointmentSystemStartingSection.astro';
+import ClinicOnlineAppointmentSystemExampleSection from './components/ClinicOnlineAppointmentSystemExampleSection.astro';
+import ClinicOnlineAppointmentSystemProgressSection from './components/ClinicOnlineAppointmentSystemProgressSection.astro';
+import ClinicOnlineAppointmentSystemWhySection from './components/ClinicOnlineAppointmentSystemWhySection.astro';
+import ClinicOnlineAppointmentSystemFaqSection from './components/ClinicOnlineAppointmentSystemFaqSection.astro';
+import ClinicOnlineAppointmentSystemConsultationSection from './components/ClinicOnlineAppointmentSystemConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { clinicOnlineAppointmentSystemHeroPreload } from './lib/clinic-online-appointment-system-hero-image';
+import './styles/clinic-online-appointment-system-rendering.css';
+import './styles/clinic-online-appointment-system-source-content.css';
+import { metadata } from './data/clinic-online-appointment-system-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={clinicOnlineAppointmentSystemHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="clinic-online-appointment-system-page" tabindex="-1">
+    <ClinicOnlineAppointmentSystemHero />
+    <ClinicOnlineAppointmentSystemChallengesSection />
+    <ClinicOnlineAppointmentSystemOutcomesSection />
+    <ClinicOnlineAppointmentSystemIntentSection />
+    <ClinicOnlineAppointmentSystemTrustSection />
+    <ClinicOnlineAppointmentSystemExpertiseSection />
+    <ClinicOnlineAppointmentSystemProcessSection />
+    <ClinicOnlineAppointmentSystemMappingSection />
+    <ClinicOnlineAppointmentSystemRelatedSection />
+    <ClinicOnlineAppointmentSystemStartingSection />
+    <ClinicOnlineAppointmentSystemExampleSection />
+    <ClinicOnlineAppointmentSystemProgressSection />
+    <ClinicOnlineAppointmentSystemWhySection />
+    <ClinicOnlineAppointmentSystemFaqSection />
+    <ClinicOnlineAppointmentSystemConsultationSection />
+  </main>
+  <Footer />
+</Layout>

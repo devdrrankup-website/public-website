@@ -1,0 +1,25 @@
+---
+import AppointmentBookingIntegrationOutcomeVisual from './AppointmentBookingIntegrationOutcomeVisual.astro';
+import { pageCopy } from '../data/appointment-booking-integration-source';
+const copy = pageCopy.outcomes;
+import '../styles/appointment-booking-integration-outcomes.css';
+---
+<appointment-booking-integration-outcomes class="appointment-booking-integration-outcomes">
+  <section id="appointment-booking-integration-outcomes" class="section-container" aria-labelledby="appointment-booking-integration-outcomes-heading">
+    <div class="appointment-booking-integration-outcomes-heading">
+      <h2 id="appointment-booking-integration-outcomes-heading">{copy.heading}</h2>
+      <div class="appointment-booking-integration-outcomes-introduction appointment-booking-integration-source-content" set:html={copy.before} />
+    </div>
+    <ul class="appointment-booking-integration-outcomes-list" role="list">
+      {copy.items.map((item, index) => <li class="appointment-booking-integration-outcome" data-seo-outcomes-motion>
+        <AppointmentBookingIntegrationOutcomeVisual index={index} />
+        <p><strong>{item.label}</strong><span>{item.description}</span></p>
+      </li>)}
+    </ul>
+    <div class="appointment-booking-integration-outcomes-conclusion appointment-booking-integration-source-content" set:html={copy.after} />
+  </section>
+</appointment-booking-integration-outcomes>
+
+<script>
+  import '../scripts/appointment-booking-integration-outcomes';
+</script>

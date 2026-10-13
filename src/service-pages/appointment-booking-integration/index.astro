@@ -1,0 +1,47 @@
+---
+// Destination-owned static page. Service-specific images are pending review before publication.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import AppointmentBookingIntegrationHero from './components/AppointmentBookingIntegrationHero.astro';
+import AppointmentBookingIntegrationChallengesSection from './components/AppointmentBookingIntegrationChallengesSection.astro';
+import AppointmentBookingIntegrationOutcomesSection from './components/AppointmentBookingIntegrationOutcomesSection.astro';
+import AppointmentBookingIntegrationIntentSection from './components/AppointmentBookingIntegrationIntentSection.astro';
+import AppointmentBookingIntegrationTrustSection from './components/AppointmentBookingIntegrationTrustSection.astro';
+import AppointmentBookingIntegrationExpertiseSection from './components/AppointmentBookingIntegrationExpertiseSection.astro';
+import AppointmentBookingIntegrationProcessSection from './components/AppointmentBookingIntegrationProcessSection.astro';
+import AppointmentBookingIntegrationMappingSection from './components/AppointmentBookingIntegrationMappingSection.astro';
+import AppointmentBookingIntegrationRelatedSection from './components/AppointmentBookingIntegrationRelatedSection.astro';
+import AppointmentBookingIntegrationStartingSection from './components/AppointmentBookingIntegrationStartingSection.astro';
+import AppointmentBookingIntegrationExampleSection from './components/AppointmentBookingIntegrationExampleSection.astro';
+import AppointmentBookingIntegrationProgressSection from './components/AppointmentBookingIntegrationProgressSection.astro';
+import AppointmentBookingIntegrationWhySection from './components/AppointmentBookingIntegrationWhySection.astro';
+import AppointmentBookingIntegrationFaqSection from './components/AppointmentBookingIntegrationFaqSection.astro';
+import AppointmentBookingIntegrationConsultationSection from './components/AppointmentBookingIntegrationConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { appointmentBookingIntegrationHeroPreload } from './lib/appointment-booking-integration-hero-image';
+import './styles/appointment-booking-integration-rendering.css';
+import './styles/appointment-booking-integration-source-content.css';
+import { metadata } from './data/appointment-booking-integration-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={appointmentBookingIntegrationHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="appointment-booking-integration-page" tabindex="-1">
+    <AppointmentBookingIntegrationHero />
+    <AppointmentBookingIntegrationChallengesSection />
+    <AppointmentBookingIntegrationOutcomesSection />
+    <AppointmentBookingIntegrationIntentSection />
+    <AppointmentBookingIntegrationTrustSection />
+    <AppointmentBookingIntegrationExpertiseSection />
+    <AppointmentBookingIntegrationProcessSection />
+    <AppointmentBookingIntegrationMappingSection />
+    <AppointmentBookingIntegrationRelatedSection />
+    <AppointmentBookingIntegrationStartingSection />
+    <AppointmentBookingIntegrationExampleSection />
+    <AppointmentBookingIntegrationProgressSection />
+    <AppointmentBookingIntegrationWhySection />
+    <AppointmentBookingIntegrationFaqSection />
+    <AppointmentBookingIntegrationConsultationSection />
+  </main>
+  <Footer />
+</Layout>

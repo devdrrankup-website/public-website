@@ -1,0 +1,8 @@
+.hospital-advertising-source-content:empty { display: none; }
+.hospital-advertising-source-content :where(p) { margin: 0 0 1em; line-height: 1.7; }
+.hospital-advertising-source-content :where(p:last-child) { margin-bottom: 0; }
+.hospital-advertising-source-content ul, .hospital-advertising-source-content ol { margin: .75em 0 1em; padding-left: 1.35em; }
+.hospital-advertising-source-content li { margin: .42em 0; line-height: 1.65; }
+.hospital-advertising-source-content strong { font-weight: 700; }
+.hospital-advertising-source-content table { width: 100%; border-collapse: collapse; }
+.hospital-advertising-source-content th, .hospital-advertising-source-content td { padding: .7em; text-align: left; border-bottom: 1px solid #0002; }

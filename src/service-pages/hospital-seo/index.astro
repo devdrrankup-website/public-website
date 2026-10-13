@@ -1,0 +1,47 @@
+---
+// Destination-owned static page. Service-specific images are pending review before publication.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import HospitalSeoHero from './components/HospitalSeoHero.astro';
+import HospitalSeoChallengesSection from './components/HospitalSeoChallengesSection.astro';
+import HospitalSeoOutcomesSection from './components/HospitalSeoOutcomesSection.astro';
+import HospitalSeoIntentSection from './components/HospitalSeoIntentSection.astro';
+import HospitalSeoTrustSection from './components/HospitalSeoTrustSection.astro';
+import HospitalSeoExpertiseSection from './components/HospitalSeoExpertiseSection.astro';
+import HospitalSeoProcessSection from './components/HospitalSeoProcessSection.astro';
+import HospitalSeoMappingSection from './components/HospitalSeoMappingSection.astro';
+import HospitalSeoRelatedSection from './components/HospitalSeoRelatedSection.astro';
+import HospitalSeoStartingSection from './components/HospitalSeoStartingSection.astro';
+import HospitalSeoExampleSection from './components/HospitalSeoExampleSection.astro';
+import HospitalSeoProgressSection from './components/HospitalSeoProgressSection.astro';
+import HospitalSeoWhySection from './components/HospitalSeoWhySection.astro';
+import HospitalSeoFaqSection from './components/HospitalSeoFaqSection.astro';
+import HospitalSeoConsultationSection from './components/HospitalSeoConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { hospitalSeoHeroPreload } from './lib/hospital-seo-hero-image';
+import './styles/hospital-seo-rendering.css';
+import './styles/hospital-seo-source-content.css';
+import { metadata } from './data/hospital-seo-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={hospitalSeoHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="hospital-seo-page" tabindex="-1">
+    <HospitalSeoHero />
+    <HospitalSeoChallengesSection />
+    <HospitalSeoOutcomesSection />
+    <HospitalSeoIntentSection />
+    <HospitalSeoTrustSection />
+    <HospitalSeoExpertiseSection />
+    <HospitalSeoProcessSection />
+    <HospitalSeoMappingSection />
+    <HospitalSeoRelatedSection />
+    <HospitalSeoStartingSection />
+    <HospitalSeoExampleSection />
+    <HospitalSeoProgressSection />
+    <HospitalSeoWhySection />
+    <HospitalSeoFaqSection />
+    <HospitalSeoConsultationSection />
+  </main>
+  <Footer />
+</Layout>

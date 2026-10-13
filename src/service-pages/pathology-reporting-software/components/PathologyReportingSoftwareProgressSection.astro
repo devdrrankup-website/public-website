@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/pathology-reporting-software/pathology-reporting-software-progress-v1.webp';
+import { pageCopy } from '../data/pathology-reporting-software-source';
+const copy = pageCopy.progress;
+import '../styles/pathology-reporting-software-progress.css';
+---
+<pathology-reporting-software-progress class="pathology-reporting-software-progress-motion">
+  <section id="pathology-reporting-software-progress" class="pathology-reporting-software-progress" aria-labelledby="pathology-reporting-software-progress-heading">
+    <div class="section-container pathology-reporting-software-progress-layout">
+      <h2 id="pathology-reporting-software-progress-heading" data-progress-entry>{copy.heading}</h2>
+      <p class="pathology-reporting-software-progress-baseline" data-progress-entry set:html={copy.paragraphsHtml[0]} />
+      <figure class="pathology-reporting-software-progress-photo" data-progress-entry data-progress-photo>
+        <Image src={photo} alt="Laboratory team reviewing pathology report records" title="Laboratory team reviewing pathology report records" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <p class="pathology-reporting-software-progress-evidence" data-progress-entry set:html={copy.paragraphsHtml[1]} />
+
+    </div>
+  </section>
+</pathology-reporting-software-progress>
+<script>
+  import '../scripts/pathology-reporting-software-progress';
+</script>

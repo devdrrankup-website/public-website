@@ -1,0 +1,33 @@
+---
+import { Image } from 'astro:assets';
+import Icon from '../../../components/Icon.astro';
+import LockKeyIcon from '@hugeicons/core-free-icons/LockKeyIcon';
+import photo from '../../../assets/e-prescription-software/e-prescription-software-trust-v1.webp';
+import { pageCopy } from '../data/e-prescription-software-source';
+const copy = pageCopy.trust;
+import '../styles/e-prescription-software-trust.css';
+---
+
+<e-prescription-software-trust class="e-prescription-software-trust-motion">
+  <section id="e-prescription-software-trust" class="e-prescription-software-trust" aria-labelledby="e-prescription-software-trust-heading">
+    <div class="section-container e-prescription-software-trust-layout">
+      <h2 id="e-prescription-software-trust-heading">{copy.heading}</h2>
+      <div class="e-prescription-software-trust-profile e-prescription-software-source-content" data-seo-trust-motion set:html={copy.firstHtml} />
+      <div class="e-prescription-software-trust-photo" data-seo-trust-motion>
+        <Image src={photo} widths={[360, 540, 720, 960, 1200]} width={1536} height={1024}
+          sizes="(min-width: 1100px) min(43vw, 576px), (min-width: 640px) min(calc(100vw - 56px), 760px), calc(100vw - 32px)"
+          format="webp" quality={76} loading="lazy" decoding="async"
+          alt="Doctor verifying prescription details with a patient"
+          title="Doctor verifying prescription details with a patient" />
+      </div>
+      <div class="e-prescription-software-trust-privacy" data-seo-trust-motion>
+        <span class="e-prescription-software-trust-lock" aria-hidden="true"><Icon icon={LockKeyIcon} size={24} /></span>
+        <div class="e-prescription-software-source-content" set:html={copy.restHtml} />
+      </div>
+    </div>
+  </section>
+</e-prescription-software-trust>
+
+<script>
+  import '../scripts/e-prescription-software-trust';
+</script>

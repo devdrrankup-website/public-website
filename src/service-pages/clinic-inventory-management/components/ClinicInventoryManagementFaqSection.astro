@@ -1,0 +1,31 @@
+---
+import Icon from '../../../components/Icon.astro';
+import Add01Icon from '@hugeicons/core-free-icons/Add01Icon';
+import { pageCopy } from '../data/clinic-inventory-management-source';
+const copy = pageCopy.faq;
+import '../styles/clinic-inventory-management-faq.css';
+---
+<clinic-inventory-management-faq class="clinic-inventory-management-faq-motion">
+  <section id="clinic-inventory-management-faq" class="clinic-inventory-management-faq" aria-labelledby="clinic-inventory-management-faq-heading">
+    <div class="section-container clinic-inventory-management-faq-layout">
+      <header class="clinic-inventory-management-faq-header" data-faq-entry>
+        <h2 id="clinic-inventory-management-faq-heading">{copy.heading}</h2>
+        <div class="clinic-inventory-management-source-content" set:html={copy.preface} />
+      </header>
+      <div class="clinic-inventory-management-faq-list">
+        {copy.items.map((item,index) => <article class="clinic-inventory-management-faq-item" data-faq-entry aria-labelledby={`clinic-inventory-management-faq-question-${index+1}`}>
+          <h3 class="clinic-inventory-management-faq-question" id={`clinic-inventory-management-faq-question-${index+1}`}>
+            <span class="clinic-inventory-management-faq-label">{item.question}</span>
+            <span class="clinic-inventory-management-faq-toggle" aria-hidden="true"><Icon icon={Add01Icon} size={20} strokeWidth={1.8} /></span>
+          </h3>
+          <div class="clinic-inventory-management-faq-answer" id={`clinic-inventory-management-faq-answer-${index+1}`} role="region" aria-labelledby={`clinic-inventory-management-faq-question-${index+1}`}>
+            <div class="clinic-inventory-management-source-content" set:html={item.answerHtml} />
+          </div>
+        </article>)}
+      </div>
+    </div>
+  </section>
+</clinic-inventory-management-faq>
+<script>
+  import '../scripts/clinic-inventory-management-faq';
+</script>

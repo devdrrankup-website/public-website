@@ -1,0 +1,38 @@
+---
+import ActionIcon from '../../../components/ActionIcon.astro';
+import { pageCopy } from '../data/clinic-social-media-marketing-source';
+const copy = pageCopy.hero;
+import { clinicSocialMediaMarketingHeroImage as photo } from '../lib/clinic-social-media-marketing-hero-image';
+import '../styles/clinic-social-media-marketing-hero.css';
+---
+
+<section class="clinic-social-media-marketing-hero" aria-labelledby="clinic-social-media-marketing-heading">
+  <div class="section-container clinic-social-media-marketing-hero-layout">
+    <div class="clinic-social-media-marketing-hero-copy">
+      <h1 id="clinic-social-media-marketing-heading">{copy.heading}</h1>
+      <p class="clinic-social-media-marketing-hero-tagline">{copy.tagline}</p>
+      <div class="clinic-social-media-marketing-hero-description">
+        {copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+      </div>
+      <div class="clinic-social-media-marketing-hero-actions" aria-label={`${copy.heading} options`}>
+        <span class="button button-primary">
+          <span>{copy.primaryCta}</span><ActionIcon purpose="conversation" />
+        </span>
+        {copy.secondaryHref ? <a class="button button-secondary" href={copy.secondaryHref}>
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </a> : <span class="button button-secondary">
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </span>}
+      </div>
+    </div>
+    <div class="clinic-social-media-marketing-hero-visual">
+      <div class="clinic-social-media-marketing-hero-photo">
+        <img src={photo.src} srcset={photo.srcset} sizes={photo.sizes}
+          width={photo.width} height={photo.height}
+          alt="Content creator photographing a clinic reception with the clinic manager"
+          title="Creating accurate clinic social content"
+          loading="eager" fetchpriority="high" decoding="async" />
+      </div>
+    </div>
+  </div>
+</section>

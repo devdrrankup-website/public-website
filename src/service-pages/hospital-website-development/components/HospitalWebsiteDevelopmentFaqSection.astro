@@ -1,0 +1,31 @@
+---
+import Icon from '../../../components/Icon.astro';
+import Add01Icon from '@hugeicons/core-free-icons/Add01Icon';
+import { pageCopy } from '../data/hospital-website-development-source';
+const copy = pageCopy.faq;
+import '../styles/hospital-website-development-faq.css';
+---
+<hospital-website-development-faq class="hospital-website-development-faq-motion">
+  <section id="hospital-website-development-faq" class="hospital-website-development-faq" aria-labelledby="hospital-website-development-faq-heading">
+    <div class="section-container hospital-website-development-faq-layout">
+      <header class="hospital-website-development-faq-header" data-faq-entry>
+        <h2 id="hospital-website-development-faq-heading">{copy.heading}</h2>
+        <div class="hospital-website-development-source-content" set:html={copy.preface} />
+      </header>
+      <div class="hospital-website-development-faq-list">
+        {copy.items.map((item,index) => <article class="hospital-website-development-faq-item" data-faq-entry aria-labelledby={`hospital-website-development-faq-question-${index+1}`}>
+          <h3 class="hospital-website-development-faq-question" id={`hospital-website-development-faq-question-${index+1}`}>
+            <span class="hospital-website-development-faq-label">{item.question}</span>
+            <span class="hospital-website-development-faq-toggle" aria-hidden="true"><Icon icon={Add01Icon} size={20} strokeWidth={1.8} /></span>
+          </h3>
+          <div class="hospital-website-development-faq-answer" id={`hospital-website-development-faq-answer-${index+1}`} role="region" aria-labelledby={`hospital-website-development-faq-question-${index+1}`}>
+            <div class="hospital-website-development-source-content" set:html={item.answerHtml} />
+          </div>
+        </article>)}
+      </div>
+    </div>
+  </section>
+</hospital-website-development-faq>
+<script>
+  import '../scripts/hospital-website-development-faq';
+</script>

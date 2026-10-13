@@ -1,0 +1,57 @@
+---
+import { Image } from 'astro:assets';
+import { pageCopy } from '../data/clinic-local-seo-source';
+const copy = pageCopy.process;
+import processBackground from '../../../assets/clinic-local-seo/clinic-local-seo-process-workflow-v1.webp';
+import '../styles/clinic-local-seo-process.css';
+// Destination-owned copy of the approved For Doctors process composition.
+const titleParts = (title: string) => [title.match(/^\d+\.\s+/)?.[0] ?? '', title.replace(/^\d+\.\s+/, '')];
+---
+
+<clinic-local-seo-process class="clinic-local-seo-process-motion">
+  <section id="clinic-local-seo-process" class="clinic-local-seo-process" aria-labelledby="clinic-local-seo-process-heading">
+    <div class="clinic-local-seo-process-background" aria-hidden="true">
+      <Image src={processBackground} width={1024} widths={[480, 768, 1024]} sizes="100vw" format="webp" quality={40}
+        alt="" title="A civilian location specialist photographs a clinic entrance from the public sidewalk while a clinic manager checks branch-hour notes, no invented sign or street name." loading="lazy" decoding="async" />
+    </div>
+    <div class="clinic-local-seo-process-atmosphere" aria-hidden="true"></div>
+    <div class="section-container clinic-local-seo-process-layout">
+      <header class="clinic-local-seo-process-header" data-seo-process-copy>
+        <span class="clinic-local-seo-process-range" aria-hidden="true">{`01—${String(copy.steps.length).padStart(2, '0')}`}</span>
+        <h2 id="clinic-local-seo-process-heading">{copy.heading}</h2>
+        <div class="clinic-local-seo-source-content" set:html={copy.introductionHtml} />
+      </header>
+
+      <div class="clinic-local-seo-process-flow" role="list" aria-label={`${copy.steps.length} service steps`}>
+        <svg class="clinic-local-seo-process-route" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="clinic-local-seo-process-route-gradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="100" y2="100">
+              <stop offset="0" stop-color="#6131c6" />
+              <stop offset="0.5" stop-color="#229f60" />
+              <stop offset="1" stop-color="#6131c6" />
+            </linearGradient>
+          </defs>
+          <path class="clinic-local-seo-process-route-base" />
+          <path class="clinic-local-seo-process-route-progress" />
+        </svg>
+
+        {copy.steps.map((step, index) => (
+          <div class="clinic-local-seo-process-step" role="listitem" data-seo-process-step>
+            <div class="clinic-local-seo-process-node-column" aria-hidden="true">
+              <span class="clinic-local-seo-process-node"><span>{String(index + 1).padStart(2, '0')}</span></span>
+              {index < copy.steps.length - 1 && <span class="clinic-local-seo-process-connector"></span>}
+            </div>
+            <div class="clinic-local-seo-process-copy" data-seo-process-copy>
+              <h3><span>{titleParts(step.title)[0]}</span>{titleParts(step.title)[1]}</h3>
+              <div class="clinic-local-seo-source-content" set:html={step.html} />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</clinic-local-seo-process>
+
+<script>
+  import '../scripts/clinic-local-seo-process';
+</script>

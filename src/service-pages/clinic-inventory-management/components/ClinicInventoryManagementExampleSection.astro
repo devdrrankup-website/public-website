@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/clinic-inventory-management/clinic-inventory-management-example-v1.webp';
+import { pageCopy } from '../data/clinic-inventory-management-source';
+const copy = pageCopy.example;
+import '../styles/clinic-inventory-management-example.css';
+---
+<clinic-inventory-management-example class="clinic-inventory-management-example-motion">
+  <section id="clinic-inventory-management-example" class="clinic-inventory-management-example" aria-labelledby="clinic-inventory-management-example-heading">
+    <div class="section-container clinic-inventory-management-example-layout">
+      <header class="clinic-inventory-management-example-header" data-example-entry>
+        <h2 id="clinic-inventory-management-example-heading">{copy.heading}</h2>
+        <span class="clinic-inventory-management-example-rule" data-example-rule aria-hidden="true"></span>
+      </header>
+      <figure class="clinic-inventory-management-example-photo" data-example-entry data-example-photo>
+        <Image src={photo} alt="Clinician checking a stock item against an inventory screen" title="Clinician checking a stock item against an inventory screen" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <div class="clinic-inventory-management-example-copy">
+        <div class="clinic-inventory-management-source-content" data-example-entry set:html={copy.html} />
+      </div>
+    </div>
+  </section>
+</clinic-inventory-management-example>
+<script>
+  import '../scripts/clinic-inventory-management-example';
+</script>

@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/online-consultation-integration/online-consultation-integration-challenges-v1.webp';
+import { pageCopy } from '../data/online-consultation-integration-source';
+const copy = pageCopy.challenges;
+const introductionParagraph = copy.html.match(/^<p>([\s\S]*?)<\/p>/)?.[1] ?? '';
+const detailHtml = copy.html.replace(/^<p>[\s\S]*?<\/p>/, '');
+import '../styles/online-consultation-integration-challenges.css';
+---
+
+<online-consultation-integration-challenges class="online-consultation-integration-challenges">
+  <section id="online-consultation-integration-challenges" class="section-container online-consultation-integration-challenges-layout" aria-labelledby="online-consultation-integration-challenges-heading">
+    <div class="online-consultation-integration-challenges-editorial">
+      <h2 id="online-consultation-integration-challenges-heading">{copy.heading}</h2>
+      <p class="online-consultation-integration-challenges-introduction" set:html={introductionParagraph} />
+      <div class="online-consultation-integration-challenges-photo" data-seo-challenges-motion>
+        <Image src={photo} widths={[360, 540, 720, 960, 1200]} width={1536} height={1024}
+          sizes="(min-width: 1100px) min(41vw, 568px), (min-width: 640px) min(calc(100vw - 56px), 760px), calc(100vw - 32px)"
+          format="webp" quality={76}
+          alt="Doctor and assistant checking an online consultation setup"
+          title="Doctor and assistant checking an online consultation setup"
+          loading="lazy" decoding="async" />
+      </div>
+    </div>
+    <div class="online-consultation-integration-challenges-details online-consultation-integration-source-content" set:html={detailHtml} />
+  </section>
+</online-consultation-integration-challenges>
+
+<script>
+  import '../scripts/online-consultation-integration-challenges';
+</script>

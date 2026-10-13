@@ -1,0 +1,25 @@
+---
+import ProfessionalProfileAuthorityOutcomeVisual from './ProfessionalProfileAuthorityOutcomeVisual.astro';
+import { pageCopy } from '../data/professional-profile-authority-source';
+const copy = pageCopy.outcomes;
+import '../styles/professional-profile-authority-outcomes.css';
+---
+<professional-profile-authority-outcomes class="professional-profile-authority-outcomes">
+  <section id="professional-profile-authority-outcomes" class="section-container" aria-labelledby="professional-profile-authority-outcomes-heading">
+    <div class="professional-profile-authority-outcomes-heading">
+      <h2 id="professional-profile-authority-outcomes-heading">{copy.heading}</h2>
+      <div class="professional-profile-authority-outcomes-introduction professional-profile-authority-source-content" set:html={copy.before} />
+    </div>
+    <ul class="professional-profile-authority-outcomes-list" role="list">
+      {copy.items.map((item, index) => <li class="professional-profile-authority-outcome" data-seo-outcomes-motion>
+        <ProfessionalProfileAuthorityOutcomeVisual index={index} />
+        <p><strong>{item.label}</strong><span>{item.description}</span></p>
+      </li>)}
+    </ul>
+    <div class="professional-profile-authority-outcomes-conclusion professional-profile-authority-source-content" set:html={copy.after} />
+  </section>
+</professional-profile-authority-outcomes>
+
+<script>
+  import '../scripts/professional-profile-authority-outcomes';
+</script>

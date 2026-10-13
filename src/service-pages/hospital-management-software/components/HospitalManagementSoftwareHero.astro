@@ -1,0 +1,38 @@
+---
+import ActionIcon from '../../../components/ActionIcon.astro';
+import { pageCopy } from '../data/hospital-management-software-source';
+const copy = pageCopy.hero;
+import { hospitalManagementSoftwareHeroImage as photo } from '../lib/hospital-management-software-hero-image';
+import '../styles/hospital-management-software-hero.css';
+---
+
+<section class="hospital-management-software-hero" aria-labelledby="hospital-management-software-heading">
+  <div class="section-container hospital-management-software-hero-layout">
+    <div class="hospital-management-software-hero-copy">
+      <h1 id="hospital-management-software-heading">{copy.heading}</h1>
+      <p class="hospital-management-software-hero-tagline">{copy.tagline}</p>
+      <div class="hospital-management-software-hero-description">
+        {copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+      </div>
+      <div class="hospital-management-software-hero-actions" aria-label={`${copy.heading} options`}>
+        <span class="button button-primary">
+          <span>{copy.primaryCta}</span><ActionIcon purpose="conversation" />
+        </span>
+        {copy.secondaryHref ? <a class="button button-secondary" href={copy.secondaryHref}>
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </a> : <span class="button button-secondary">
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </span>}
+      </div>
+    </div>
+    <div class="hospital-management-software-hero-visual">
+      <div class="hospital-management-software-hero-photo">
+        <img src={photo.src} srcset={photo.srcset} sizes={photo.sizes}
+          width={photo.width} height={photo.height}
+          alt="Hospital staff reviewing bed, diagnostic and billing workflows on one screen"
+          title="Coordinating hospital operations"
+          loading="eager" fetchpriority="high" decoding="async" />
+      </div>
+    </div>
+  </div>
+</section>

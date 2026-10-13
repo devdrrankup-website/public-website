@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/clinic-social-media-marketing/clinic-social-media-marketing-starting-v1.webp';
+import { pageCopy } from '../data/clinic-social-media-marketing-source';
+const copy = pageCopy.starting;
+import '../styles/clinic-social-media-marketing-starting.css';
+---
+<clinic-social-media-marketing-starting class="clinic-social-media-marketing-starting-motion">
+  <section id="clinic-social-media-marketing-starting" class="clinic-social-media-marketing-starting" aria-labelledby="clinic-social-media-marketing-starting-heading">
+    <div class="section-container clinic-social-media-marketing-starting-layout">
+      <h2 id="clinic-social-media-marketing-starting-heading" data-starting-entry>{copy.heading}</h2>
+      <div class="clinic-social-media-marketing-starting-copy" data-starting-entry>
+        <div class="clinic-social-media-marketing-source-content" set:html={copy.html} />
+      </div>
+      <figure class="clinic-social-media-marketing-starting-visual" data-starting-entry data-starting-visual>
+        <Image src={photo} alt="Clinic owner and specialist reviewing social media reports" title="Clinic owner and specialist reviewing social media reports" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 540px, (min-width:640px) 320px, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+    </div>
+  </section>
+</clinic-social-media-marketing-starting>
+<script>
+  import '../scripts/clinic-social-media-marketing-starting';
+</script>

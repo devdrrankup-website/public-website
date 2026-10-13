@@ -1,0 +1,108 @@
+/* Page-owned offscreen rendering. Whole section boundaries preserve native
+   sticky containers; the hero and desktop remain immediately renderable.
+   Auto remembers real sizes after entry; source content is always in HTML. */
+@supports (content-visibility: auto) {
+  @media (max-width:1099px) {
+    .search-ready-build-foundation-page > :is(search-ready-build-foundation-challenges,search-ready-build-foundation-outcomes,search-ready-build-foundation-intent,search-ready-build-foundation-trust,search-ready-build-foundation-expertise,search-ready-build-foundation-process,search-ready-build-foundation-mapping,#search-ready-build-foundation-related,search-ready-build-foundation-starting,search-ready-build-foundation-example,search-ready-build-foundation-progress,search-ready-build-foundation-why,search-ready-build-foundation-faq,search-ready-build-foundation-consultation) {
+      content-visibility: auto;
+      contain-intrinsic-block-size: auto var(--seo-section-estimate,1000px);
+    }
+      .search-ready-build-foundation-page > search-ready-build-foundation-challenges { --seo-section-estimate:1252px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-outcomes { --seo-section-estimate:1780px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-intent { --seo-section-estimate:698px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-trust { --seo-section-estimate:906px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-expertise { --seo-section-estimate:1063px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-process { --seo-section-estimate:1767px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-mapping { --seo-section-estimate:1475px; }
+      .search-ready-build-foundation-page > #search-ready-build-foundation-related { --seo-section-estimate:1284px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-starting { --seo-section-estimate:804px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-example { --seo-section-estimate:896px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-progress { --seo-section-estimate:798px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-why { --seo-section-estimate:948px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-faq { --seo-section-estimate:1111px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-consultation { --seo-section-estimate:1621px; }
+    @media (min-width:360px) {
+      .search-ready-build-foundation-page > search-ready-build-foundation-challenges { --seo-section-estimate:1148px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-outcomes { --seo-section-estimate:1638px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-intent { --seo-section-estimate:663px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-trust { --seo-section-estimate:808px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-expertise { --seo-section-estimate:1089px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-process { --seo-section-estimate:1525px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-mapping { --seo-section-estimate:1398px; }
+      .search-ready-build-foundation-page > #search-ready-build-foundation-related { --seo-section-estimate:1305px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-starting { --seo-section-estimate:789px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-example { --seo-section-estimate:920px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-progress { --seo-section-estimate:789px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-why { --seo-section-estimate:866px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-faq { --seo-section-estimate:1063px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-consultation { --seo-section-estimate:1555px; }
+    }
+    @media (min-width:640px) {
+      .search-ready-build-foundation-page > search-ready-build-foundation-challenges { --seo-section-estimate:1225px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-outcomes { --seo-section-estimate:1303px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-intent { --seo-section-estimate:753px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-trust { --seo-section-estimate:940px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-expertise { --seo-section-estimate:692px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-process { --seo-section-estimate:1764px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-mapping { --seo-section-estimate:1046px; }
+      .search-ready-build-foundation-page > #search-ready-build-foundation-related { --seo-section-estimate:1424px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-starting { --seo-section-estimate:608px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-example { --seo-section-estimate:779px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-progress { --seo-section-estimate:668px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-why { --seo-section-estimate:794px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-faq { --seo-section-estimate:1051px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-consultation { --seo-section-estimate:1402px; }
+    }
+    @media (min-width:820px) {
+      .search-ready-build-foundation-page > search-ready-build-foundation-challenges { --seo-section-estimate:1304px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-outcomes { --seo-section-estimate:1149px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-intent { --seo-section-estimate:821px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-trust { --seo-section-estimate:957px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-expertise { --seo-section-estimate:743px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-process { --seo-section-estimate:1372px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-mapping { --seo-section-estimate:965px; }
+      .search-ready-build-foundation-page > #search-ready-build-foundation-related { --seo-section-estimate:1412px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-starting { --seo-section-estimate:577px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-example { --seo-section-estimate:640px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-progress { --seo-section-estimate:544px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-why { --seo-section-estimate:718px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-faq { --seo-section-estimate:1031px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-consultation { --seo-section-estimate:1402px; }
+    }
+    @media (min-width:999px) {
+      .search-ready-build-foundation-page > search-ready-build-foundation-challenges { --seo-section-estimate:1290px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-outcomes { --seo-section-estimate:1125px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-intent { --seo-section-estimate:836px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-trust { --seo-section-estimate:991px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-expertise { --seo-section-estimate:772px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-process { --seo-section-estimate:1118px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-mapping { --seo-section-estimate:958px; }
+      .search-ready-build-foundation-page > #search-ready-build-foundation-related { --seo-section-estimate:1430px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-starting { --seo-section-estimate:577px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-example { --seo-section-estimate:585px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-progress { --seo-section-estimate:551px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-why { --seo-section-estimate:750px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-faq { --seo-section-estimate:1011px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-consultation { --seo-section-estimate:1413px; }
+    }
+    @media (min-width:1000px) {
+      .search-ready-build-foundation-page > search-ready-build-foundation-challenges { --seo-section-estimate:1290px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-outcomes { --seo-section-estimate:1125px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-intent { --seo-section-estimate:836px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-trust { --seo-section-estimate:991px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-expertise { --seo-section-estimate:772px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-process { --seo-section-estimate:1118px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-mapping { --seo-section-estimate:958px; }
+      .search-ready-build-foundation-page > #search-ready-build-foundation-related { --seo-section-estimate:1430px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-starting { --seo-section-estimate:577px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-example { --seo-section-estimate:585px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-progress { --seo-section-estimate:551px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-why { --seo-section-estimate:750px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-faq { --seo-section-estimate:1011px; }
+      .search-ready-build-foundation-page > search-ready-build-foundation-consultation { --seo-section-estimate:851px; }
+    }
+  }
+}
+@media print {
+  .search-ready-build-foundation-page > :is(search-ready-build-foundation-challenges,search-ready-build-foundation-outcomes,search-ready-build-foundation-intent,search-ready-build-foundation-trust,search-ready-build-foundation-expertise,search-ready-build-foundation-process,search-ready-build-foundation-mapping,#search-ready-build-foundation-related,search-ready-build-foundation-starting,search-ready-build-foundation-example,search-ready-build-foundation-progress,search-ready-build-foundation-why,search-ready-build-foundation-faq,search-ready-build-foundation-consultation) { content-visibility:visible; contain-intrinsic-block-size:none; }
+}

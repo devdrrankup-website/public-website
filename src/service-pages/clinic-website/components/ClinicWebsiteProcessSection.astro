@@ -1,0 +1,57 @@
+---
+import { Image } from 'astro:assets';
+import { pageCopy } from '../data/clinic-website-source';
+const copy = pageCopy.process;
+import processBackground from '../../../assets/clinic-website/clinic-website-process-workflow-v1.webp';
+import '../styles/clinic-website-process.css';
+// Destination-owned copy of the approved For Doctors process composition.
+const titleParts = (title: string) => [title.match(/^\d+\.\s+/)?.[0] ?? '', title.replace(/^\d+\.\s+/, '')];
+---
+
+<clinic-website-process class="clinic-website-process-motion">
+  <section id="clinic-website-process" class="clinic-website-process" aria-labelledby="clinic-website-process-heading">
+    <div class="clinic-website-process-background" aria-hidden="true">
+      <Image src={processBackground} width={1024} widths={[480, 768, 1024]} sizes="100vw" format="webp" quality={40}
+        alt="" title="At an agency design desk, a civilian designer and clinic administrator review an unbranded clinic website wireframe printed on large sheets, with service navigation and access paths depicted as neutral blocks." loading="lazy" decoding="async" />
+    </div>
+    <div class="clinic-website-process-atmosphere" aria-hidden="true"></div>
+    <div class="section-container clinic-website-process-layout">
+      <header class="clinic-website-process-header" data-seo-process-copy>
+        <span class="clinic-website-process-range" aria-hidden="true">{`01—${String(copy.steps.length).padStart(2, '0')}`}</span>
+        <h2 id="clinic-website-process-heading">{copy.heading}</h2>
+        <div class="clinic-website-source-content" set:html={copy.introductionHtml} />
+      </header>
+
+      <div class="clinic-website-process-flow" role="list" aria-label={`${copy.steps.length} service steps`}>
+        <svg class="clinic-website-process-route" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="clinic-website-process-route-gradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="100" y2="100">
+              <stop offset="0" stop-color="#6131c6" />
+              <stop offset="0.5" stop-color="#229f60" />
+              <stop offset="1" stop-color="#6131c6" />
+            </linearGradient>
+          </defs>
+          <path class="clinic-website-process-route-base" />
+          <path class="clinic-website-process-route-progress" />
+        </svg>
+
+        {copy.steps.map((step, index) => (
+          <div class="clinic-website-process-step" role="listitem" data-seo-process-step>
+            <div class="clinic-website-process-node-column" aria-hidden="true">
+              <span class="clinic-website-process-node"><span>{String(index + 1).padStart(2, '0')}</span></span>
+              {index < copy.steps.length - 1 && <span class="clinic-website-process-connector"></span>}
+            </div>
+            <div class="clinic-website-process-copy" data-seo-process-copy>
+              <h3><span>{titleParts(step.title)[0]}</span>{titleParts(step.title)[1]}</h3>
+              <div class="clinic-website-source-content" set:html={step.html} />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</clinic-website-process>
+
+<script>
+  import '../scripts/clinic-website-process';
+</script>

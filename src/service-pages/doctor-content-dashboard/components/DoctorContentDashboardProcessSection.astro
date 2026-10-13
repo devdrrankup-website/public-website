@@ -1,0 +1,57 @@
+---
+import { Image } from 'astro:assets';
+import { pageCopy } from '../data/doctor-content-dashboard-source';
+const copy = pageCopy.process;
+import processBackground from '../../../assets/doctor-content-dashboard/doctor-content-dashboard-process-workflow-v1.webp';
+import '../styles/doctor-content-dashboard-process.css';
+// Destination-owned copy of the approved For Doctors process composition.
+const titleParts = (title: string) => [title.match(/^\d+\.\s+/)?.[0] ?? '', title.replace(/^\d+\.\s+/, '')];
+---
+
+<doctor-content-dashboard-process class="doctor-content-dashboard-process-motion">
+  <section id="doctor-content-dashboard-process" class="doctor-content-dashboard-process" aria-labelledby="doctor-content-dashboard-process-heading">
+    <div class="doctor-content-dashboard-process-background" aria-hidden="true">
+      <Image src={processBackground} width={1024} widths={[480, 768, 1024]} sizes="100vw" format="webp" quality={40}
+        alt="" title="In a doctor's chamber after consultations, a civilian website specialist shows the doctor a content-update checklist beside a laptop seen from the users' side; no fictitious dashboard text." loading="lazy" decoding="async" />
+    </div>
+    <div class="doctor-content-dashboard-process-atmosphere" aria-hidden="true"></div>
+    <div class="section-container doctor-content-dashboard-process-layout">
+      <header class="doctor-content-dashboard-process-header" data-seo-process-copy>
+        <span class="doctor-content-dashboard-process-range" aria-hidden="true">{`01—${String(copy.steps.length).padStart(2, '0')}`}</span>
+        <h2 id="doctor-content-dashboard-process-heading">{copy.heading}</h2>
+        <div class="doctor-content-dashboard-source-content" set:html={copy.introductionHtml} />
+      </header>
+
+      <div class="doctor-content-dashboard-process-flow" role="list" aria-label={`${copy.steps.length} service steps`}>
+        <svg class="doctor-content-dashboard-process-route" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="doctor-content-dashboard-process-route-gradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="100" y2="100">
+              <stop offset="0" stop-color="#6131c6" />
+              <stop offset="0.5" stop-color="#229f60" />
+              <stop offset="1" stop-color="#6131c6" />
+            </linearGradient>
+          </defs>
+          <path class="doctor-content-dashboard-process-route-base" />
+          <path class="doctor-content-dashboard-process-route-progress" />
+        </svg>
+
+        {copy.steps.map((step, index) => (
+          <div class="doctor-content-dashboard-process-step" role="listitem" data-seo-process-step>
+            <div class="doctor-content-dashboard-process-node-column" aria-hidden="true">
+              <span class="doctor-content-dashboard-process-node"><span>{String(index + 1).padStart(2, '0')}</span></span>
+              {index < copy.steps.length - 1 && <span class="doctor-content-dashboard-process-connector"></span>}
+            </div>
+            <div class="doctor-content-dashboard-process-copy" data-seo-process-copy>
+              <h3><span>{titleParts(step.title)[0]}</span>{titleParts(step.title)[1]}</h3>
+              <div class="doctor-content-dashboard-source-content" set:html={step.html} />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</doctor-content-dashboard-process>
+
+<script>
+  import '../scripts/doctor-content-dashboard-process';
+</script>

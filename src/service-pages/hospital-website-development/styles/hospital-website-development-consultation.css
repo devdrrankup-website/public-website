@@ -1,0 +1,56 @@
+hospital-website-development-consultation { display:block; background:#fff; }
+
+  .seo-consultation-section { padding-block: 40px; border-radius: 28px 28px 0 0; color: #fff; background: radial-gradient(ellipse at 100% 0%,#229f606b,transparent 58%),#0a0a0a; }
+  .seo-consultation-grid { display: grid; gap: 48px; max-width: 1250px; }
+  .seo-consultation-copy { min-width: 0; }
+  .seo-consultation-introduction h2 { max-width: 550px; margin: 0 0 24px; font-size: clamp(32px,3.7vw,48px); font-weight: 650; line-height: 1.2; letter-spacing: -.035em; text-wrap: balance; }
+  .seo-consultation-introduction h2 em { font-family: Georgia,serif; font-weight: 400; }
+  .seo-consultation-contact { margin-top: 32px; }
+  .seo-consultation-portrait { width: 180px; aspect-ratio: 1; overflow: clip; border-radius: 20px; background: #eeedfe; }
+  .seo-consultation-portrait img { display: block; width: 100%; height: 100%; object-fit: contain; }
+  .seo-consultation-contact h3 { margin: 14px 0 4px; font-size: 23px; font-weight: 650; line-height: 1.3; letter-spacing: -.025em; }
+  .seo-consultation-contact > p { margin: 0 0 10px; color: #bdcbc5; font-size: 14px; line-height: 1.7; }
+  .seo-consultation-link,.seo-consultation-solutions { display: flex; align-items: center; gap: 10px; width: fit-content; max-width: 100%; min-height: 44px; font-size: 14px; font-weight: 650; line-height: 1.5; }
+  .seo-consultation-link { color: #c7adff; }
+  .seo-consultation-solutions { color: #bae5ff; font-size: 13px; font-weight: 550; }
+  .seo-consultation-solutions:hover { text-decoration: underline; text-underline-offset: 4px; }
+  hospital-website-development-enquiry { display: block; min-width: 0; }
+  .seo-consultation-form { display: grid; align-content: start; gap: 26px; }
+  .seo-consultation-field { display: grid; min-width: 0; gap: 5px; }
+  .seo-consultation-field label,.seo-consultation-organization legend { padding: 0; font-size: 17px; font-weight: 650; line-height: 1.5; }
+  .seo-consultation-optional { color: #bdcbc5; font-size: 12px; font-weight: 500; }
+  .seo-consultation-field input,.seo-consultation-field textarea { display: block; box-sizing: border-box; width: 100%; min-width: 0; min-height: 48px; padding: 10px 0 14px; border: 0; border-bottom: 1px solid #a0b9ac66; border-radius: 0; background: transparent; color: #fff; font: inherit; font-size: 16px; line-height: 1.6; caret-color: #63df9d; }
+  .seo-consultation-field input::placeholder,.seo-consultation-field textarea::placeholder { color: #bdcbc5; opacity: 1; }
+  .seo-consultation-field textarea { min-height: 135px; resize: vertical; }
+  .seo-consultation-field input:focus-visible,.seo-consultation-field textarea:focus-visible { outline: 2px solid #63df9d; outline-offset: 5px; border-color: #63df9d; }
+  .seo-consultation-field-pair { display: grid; gap: 26px; min-width: 0; }
+  .seo-consultation-organization { min-width: 0; margin: 0; padding: 0; border: 0; }
+  .seo-consultation-organization legend > span { color: #bdcbc5; font-size: 12px; font-weight: 500; }
+  .seo-consultation-organization-options { display: flex; flex-wrap: wrap; gap: 12px; max-width: 520px; margin-top: 12px; }
+  .seo-consultation-organization-option { position: relative; max-width: 100%; cursor: pointer; }
+  .seo-consultation-organization-option input { position: absolute; width: 1px; height: 1px; margin: 0; clip-path: inset(50%); overflow: hidden; }
+  .seo-consultation-organization-option > span { display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 10px 15px; border: 1px solid #a0b9ac66; border-radius: var(--control-radius); color: #dce5e0; font-size: 13px; line-height: 1.5; transition: background-color 160ms,border-color 160ms; }
+  .seo-consultation-organization-option:hover > span { border-color: #afa9ec; }
+  .seo-consultation-organization-option input:checked + span { background: #6131c64d; border-color: #afa9ec; color: #fff; }
+  .seo-consultation-organization-option input:focus-visible + span { outline: 2px solid #bae5ff; outline-offset: 4px; }
+  .seo-consultation-hint { margin: 6px 0 0; color: #bdcbc5; font-size: 12px; line-height: 1.7; }
+  .seo-consultation-submit { display: inline-flex; align-items: center; justify-content: center; justify-self: start; gap: 14px; min-height: 54px; padding: 14px 22px; border: 1px solid #afa9ec80; border-radius: var(--control-radius); color: #fff; background: linear-gradient(130deg,#6131c6,#6131c6 65%,#793ee0); font-size: 14px; font-weight: 700; }
+  .seo-consultation-submit:hover { background: #5026a6; }
+  .seo-consultation-submit:focus-visible,.seo-consultation-solutions:focus-visible { outline: 2px solid #bae5ff; outline-offset: 5px; }
+  .seo-consultation-submit:disabled { cursor: default; opacity: .65; }
+  .seo-consultation-status { min-height: 44px; margin: -10px 0 0; color: #e1ffb9; font-size: 13px; line-height: 1.7; }
+
+.seo-consultation-introduction > p { max-width:540px; margin:0; color:#fff; font-size:15px; line-height:1.8; }
+  @media(min-width:640px) {
+    .seo-consultation-section { padding-block: 56px; border-radius: 36px 36px 0 0; }
+    .seo-consultation-field-pair { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; }
+    .seo-consultation-portrait { width: 220px; }
+  }
+  @media(min-width:1000px) {
+    .seo-consultation-section { padding-block: 64px; border-radius: 40px 40px 0 0; }
+    .seo-consultation-grid { width: min(100% - 112px,1250px); grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 64px; }
+    .seo-consultation-form { gap: 26px; }
+  }
+  @media(prefers-reduced-motion:reduce) { .seo-consultation-organization-option > span { transition: none; } }
+
+.seo-consultation-introduction > .hospital-website-development-source-content p { margin: 0; color: #fff; font-size: 15px; line-height: 1.8; }

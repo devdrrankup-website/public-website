@@ -1,0 +1,8 @@
+.clinic-online-report-portal-source-content:empty { display: none; }
+.clinic-online-report-portal-source-content :where(p) { margin: 0 0 1em; line-height: 1.7; }
+.clinic-online-report-portal-source-content :where(p:last-child) { margin-bottom: 0; }
+.clinic-online-report-portal-source-content ul, .clinic-online-report-portal-source-content ol { margin: .75em 0 1em; padding-left: 1.35em; }
+.clinic-online-report-portal-source-content li { margin: .42em 0; line-height: 1.65; }
+.clinic-online-report-portal-source-content strong { font-weight: 700; }
+.clinic-online-report-portal-source-content table { width: 100%; border-collapse: collapse; }
+.clinic-online-report-portal-source-content th, .clinic-online-report-portal-source-content td { padding: .7em; text-align: left; border-bottom: 1px solid #0002; }

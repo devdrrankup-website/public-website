@@ -1,0 +1,25 @@
+---
+import PatientFeeManagementOutcomeVisual from './PatientFeeManagementOutcomeVisual.astro';
+import { pageCopy } from '../data/patient-fee-management-source';
+const copy = pageCopy.outcomes;
+import '../styles/patient-fee-management-outcomes.css';
+---
+<patient-fee-management-outcomes class="patient-fee-management-outcomes">
+  <section id="patient-fee-management-outcomes" class="section-container" aria-labelledby="patient-fee-management-outcomes-heading">
+    <div class="patient-fee-management-outcomes-heading">
+      <h2 id="patient-fee-management-outcomes-heading">{copy.heading}</h2>
+      <div class="patient-fee-management-outcomes-introduction patient-fee-management-source-content" set:html={copy.before} />
+    </div>
+    <ul class="patient-fee-management-outcomes-list" role="list">
+      {copy.items.map((item, index) => <li class="patient-fee-management-outcome" data-seo-outcomes-motion>
+        <PatientFeeManagementOutcomeVisual index={index} />
+        <p><strong>{item.label}</strong><span>{item.description}</span></p>
+      </li>)}
+    </ul>
+    <div class="patient-fee-management-outcomes-conclusion patient-fee-management-source-content" set:html={copy.after} />
+  </section>
+</patient-fee-management-outcomes>
+
+<script>
+  import '../scripts/patient-fee-management-outcomes';
+</script>

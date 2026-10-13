@@ -1,0 +1,47 @@
+---
+// Destination-owned static page. Service-specific images are pending review before publication.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import ProfessionalProfileAuthorityHero from './components/ProfessionalProfileAuthorityHero.astro';
+import ProfessionalProfileAuthorityChallengesSection from './components/ProfessionalProfileAuthorityChallengesSection.astro';
+import ProfessionalProfileAuthorityOutcomesSection from './components/ProfessionalProfileAuthorityOutcomesSection.astro';
+import ProfessionalProfileAuthorityIntentSection from './components/ProfessionalProfileAuthorityIntentSection.astro';
+import ProfessionalProfileAuthorityTrustSection from './components/ProfessionalProfileAuthorityTrustSection.astro';
+import ProfessionalProfileAuthorityExpertiseSection from './components/ProfessionalProfileAuthorityExpertiseSection.astro';
+import ProfessionalProfileAuthorityProcessSection from './components/ProfessionalProfileAuthorityProcessSection.astro';
+import ProfessionalProfileAuthorityMappingSection from './components/ProfessionalProfileAuthorityMappingSection.astro';
+import ProfessionalProfileAuthorityRelatedSection from './components/ProfessionalProfileAuthorityRelatedSection.astro';
+import ProfessionalProfileAuthorityStartingSection from './components/ProfessionalProfileAuthorityStartingSection.astro';
+import ProfessionalProfileAuthorityExampleSection from './components/ProfessionalProfileAuthorityExampleSection.astro';
+import ProfessionalProfileAuthorityProgressSection from './components/ProfessionalProfileAuthorityProgressSection.astro';
+import ProfessionalProfileAuthorityWhySection from './components/ProfessionalProfileAuthorityWhySection.astro';
+import ProfessionalProfileAuthorityFaqSection from './components/ProfessionalProfileAuthorityFaqSection.astro';
+import ProfessionalProfileAuthorityConsultationSection from './components/ProfessionalProfileAuthorityConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { professionalProfileAuthorityHeroPreload } from './lib/professional-profile-authority-hero-image';
+import './styles/professional-profile-authority-rendering.css';
+import './styles/professional-profile-authority-source-content.css';
+import { metadata } from './data/professional-profile-authority-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={professionalProfileAuthorityHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="professional-profile-authority-page" tabindex="-1">
+    <ProfessionalProfileAuthorityHero />
+    <ProfessionalProfileAuthorityChallengesSection />
+    <ProfessionalProfileAuthorityOutcomesSection />
+    <ProfessionalProfileAuthorityIntentSection />
+    <ProfessionalProfileAuthorityTrustSection />
+    <ProfessionalProfileAuthorityExpertiseSection />
+    <ProfessionalProfileAuthorityProcessSection />
+    <ProfessionalProfileAuthorityMappingSection />
+    <ProfessionalProfileAuthorityRelatedSection />
+    <ProfessionalProfileAuthorityStartingSection />
+    <ProfessionalProfileAuthorityExampleSection />
+    <ProfessionalProfileAuthorityProgressSection />
+    <ProfessionalProfileAuthorityWhySection />
+    <ProfessionalProfileAuthorityFaqSection />
+    <ProfessionalProfileAuthorityConsultationSection />
+  </main>
+  <Footer />
+</Layout>

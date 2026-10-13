@@ -1,0 +1,108 @@
+/* Page-owned offscreen rendering. Whole section boundaries preserve native
+   sticky containers; the hero and desktop remain immediately renderable.
+   Auto remembers real sizes after entry; source content is always in HTML. */
+@supports (content-visibility: auto) {
+  @media (max-width:1099px) {
+    .hospital-digital-marketing-page > :is(hospital-digital-marketing-challenges,hospital-digital-marketing-outcomes,hospital-digital-marketing-intent,hospital-digital-marketing-trust,hospital-digital-marketing-expertise,hospital-digital-marketing-process,hospital-digital-marketing-mapping,#hospital-digital-marketing-related,hospital-digital-marketing-starting,hospital-digital-marketing-example,hospital-digital-marketing-progress,hospital-digital-marketing-why,hospital-digital-marketing-faq,hospital-digital-marketing-consultation) {
+      content-visibility: auto;
+      contain-intrinsic-block-size: auto var(--seo-section-estimate,1000px);
+    }
+      .hospital-digital-marketing-page > hospital-digital-marketing-challenges { --seo-section-estimate:1252px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-outcomes { --seo-section-estimate:1780px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-intent { --seo-section-estimate:698px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-trust { --seo-section-estimate:906px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-expertise { --seo-section-estimate:1063px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-process { --seo-section-estimate:1767px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-mapping { --seo-section-estimate:1475px; }
+      .hospital-digital-marketing-page > #hospital-digital-marketing-related { --seo-section-estimate:1284px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-starting { --seo-section-estimate:804px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-example { --seo-section-estimate:896px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-progress { --seo-section-estimate:798px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-why { --seo-section-estimate:948px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-faq { --seo-section-estimate:1111px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-consultation { --seo-section-estimate:1621px; }
+    @media (min-width:360px) {
+      .hospital-digital-marketing-page > hospital-digital-marketing-challenges { --seo-section-estimate:1148px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-outcomes { --seo-section-estimate:1638px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-intent { --seo-section-estimate:663px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-trust { --seo-section-estimate:808px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-expertise { --seo-section-estimate:1089px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-process { --seo-section-estimate:1525px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-mapping { --seo-section-estimate:1398px; }
+      .hospital-digital-marketing-page > #hospital-digital-marketing-related { --seo-section-estimate:1305px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-starting { --seo-section-estimate:789px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-example { --seo-section-estimate:920px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-progress { --seo-section-estimate:789px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-why { --seo-section-estimate:866px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-faq { --seo-section-estimate:1063px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-consultation { --seo-section-estimate:1555px; }
+    }
+    @media (min-width:640px) {
+      .hospital-digital-marketing-page > hospital-digital-marketing-challenges { --seo-section-estimate:1225px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-outcomes { --seo-section-estimate:1303px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-intent { --seo-section-estimate:753px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-trust { --seo-section-estimate:940px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-expertise { --seo-section-estimate:692px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-process { --seo-section-estimate:1764px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-mapping { --seo-section-estimate:1046px; }
+      .hospital-digital-marketing-page > #hospital-digital-marketing-related { --seo-section-estimate:1424px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-starting { --seo-section-estimate:608px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-example { --seo-section-estimate:779px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-progress { --seo-section-estimate:668px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-why { --seo-section-estimate:794px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-faq { --seo-section-estimate:1051px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-consultation { --seo-section-estimate:1402px; }
+    }
+    @media (min-width:820px) {
+      .hospital-digital-marketing-page > hospital-digital-marketing-challenges { --seo-section-estimate:1304px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-outcomes { --seo-section-estimate:1149px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-intent { --seo-section-estimate:821px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-trust { --seo-section-estimate:957px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-expertise { --seo-section-estimate:743px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-process { --seo-section-estimate:1372px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-mapping { --seo-section-estimate:965px; }
+      .hospital-digital-marketing-page > #hospital-digital-marketing-related { --seo-section-estimate:1412px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-starting { --seo-section-estimate:577px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-example { --seo-section-estimate:640px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-progress { --seo-section-estimate:544px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-why { --seo-section-estimate:718px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-faq { --seo-section-estimate:1031px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-consultation { --seo-section-estimate:1402px; }
+    }
+    @media (min-width:999px) {
+      .hospital-digital-marketing-page > hospital-digital-marketing-challenges { --seo-section-estimate:1290px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-outcomes { --seo-section-estimate:1125px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-intent { --seo-section-estimate:836px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-trust { --seo-section-estimate:991px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-expertise { --seo-section-estimate:772px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-process { --seo-section-estimate:1118px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-mapping { --seo-section-estimate:958px; }
+      .hospital-digital-marketing-page > #hospital-digital-marketing-related { --seo-section-estimate:1430px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-starting { --seo-section-estimate:577px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-example { --seo-section-estimate:585px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-progress { --seo-section-estimate:551px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-why { --seo-section-estimate:750px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-faq { --seo-section-estimate:1011px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-consultation { --seo-section-estimate:1413px; }
+    }
+    @media (min-width:1000px) {
+      .hospital-digital-marketing-page > hospital-digital-marketing-challenges { --seo-section-estimate:1290px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-outcomes { --seo-section-estimate:1125px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-intent { --seo-section-estimate:836px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-trust { --seo-section-estimate:991px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-expertise { --seo-section-estimate:772px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-process { --seo-section-estimate:1118px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-mapping { --seo-section-estimate:958px; }
+      .hospital-digital-marketing-page > #hospital-digital-marketing-related { --seo-section-estimate:1430px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-starting { --seo-section-estimate:577px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-example { --seo-section-estimate:585px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-progress { --seo-section-estimate:551px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-why { --seo-section-estimate:750px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-faq { --seo-section-estimate:1011px; }
+      .hospital-digital-marketing-page > hospital-digital-marketing-consultation { --seo-section-estimate:851px; }
+    }
+  }
+}
+@media print {
+  .hospital-digital-marketing-page > :is(hospital-digital-marketing-challenges,hospital-digital-marketing-outcomes,hospital-digital-marketing-intent,hospital-digital-marketing-trust,hospital-digital-marketing-expertise,hospital-digital-marketing-process,hospital-digital-marketing-mapping,#hospital-digital-marketing-related,hospital-digital-marketing-starting,hospital-digital-marketing-example,hospital-digital-marketing-progress,hospital-digital-marketing-why,hospital-digital-marketing-faq,hospital-digital-marketing-consultation) { content-visibility:visible; contain-intrinsic-block-size:none; }
+}

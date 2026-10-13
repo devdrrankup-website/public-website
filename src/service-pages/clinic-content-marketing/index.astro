@@ -1,0 +1,47 @@
+---
+// Destination-owned static page. Service-specific images are pending review before publication.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import ClinicContentMarketingHero from './components/ClinicContentMarketingHero.astro';
+import ClinicContentMarketingChallengesSection from './components/ClinicContentMarketingChallengesSection.astro';
+import ClinicContentMarketingOutcomesSection from './components/ClinicContentMarketingOutcomesSection.astro';
+import ClinicContentMarketingIntentSection from './components/ClinicContentMarketingIntentSection.astro';
+import ClinicContentMarketingTrustSection from './components/ClinicContentMarketingTrustSection.astro';
+import ClinicContentMarketingExpertiseSection from './components/ClinicContentMarketingExpertiseSection.astro';
+import ClinicContentMarketingProcessSection from './components/ClinicContentMarketingProcessSection.astro';
+import ClinicContentMarketingMappingSection from './components/ClinicContentMarketingMappingSection.astro';
+import ClinicContentMarketingRelatedSection from './components/ClinicContentMarketingRelatedSection.astro';
+import ClinicContentMarketingStartingSection from './components/ClinicContentMarketingStartingSection.astro';
+import ClinicContentMarketingExampleSection from './components/ClinicContentMarketingExampleSection.astro';
+import ClinicContentMarketingProgressSection from './components/ClinicContentMarketingProgressSection.astro';
+import ClinicContentMarketingWhySection from './components/ClinicContentMarketingWhySection.astro';
+import ClinicContentMarketingFaqSection from './components/ClinicContentMarketingFaqSection.astro';
+import ClinicContentMarketingConsultationSection from './components/ClinicContentMarketingConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { clinicContentMarketingHeroPreload } from './lib/clinic-content-marketing-hero-image';
+import './styles/clinic-content-marketing-rendering.css';
+import './styles/clinic-content-marketing-source-content.css';
+import { metadata } from './data/clinic-content-marketing-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={clinicContentMarketingHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="clinic-content-marketing-page" tabindex="-1">
+    <ClinicContentMarketingHero />
+    <ClinicContentMarketingChallengesSection />
+    <ClinicContentMarketingOutcomesSection />
+    <ClinicContentMarketingIntentSection />
+    <ClinicContentMarketingTrustSection />
+    <ClinicContentMarketingExpertiseSection />
+    <ClinicContentMarketingProcessSection />
+    <ClinicContentMarketingMappingSection />
+    <ClinicContentMarketingRelatedSection />
+    <ClinicContentMarketingStartingSection />
+    <ClinicContentMarketingExampleSection />
+    <ClinicContentMarketingProgressSection />
+    <ClinicContentMarketingWhySection />
+    <ClinicContentMarketingFaqSection />
+    <ClinicContentMarketingConsultationSection />
+  </main>
+  <Footer />
+</Layout>

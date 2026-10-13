@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/patient-fee-management/patient-fee-management-example-v1.webp';
+import { pageCopy } from '../data/patient-fee-management-source';
+const copy = pageCopy.example;
+import '../styles/patient-fee-management-example.css';
+---
+<patient-fee-management-example class="patient-fee-management-example-motion">
+  <section id="patient-fee-management-example" class="patient-fee-management-example" aria-labelledby="patient-fee-management-example-heading">
+    <div class="section-container patient-fee-management-example-layout">
+      <header class="patient-fee-management-example-header" data-example-entry>
+        <h2 id="patient-fee-management-example-heading">{copy.heading}</h2>
+        <span class="patient-fee-management-example-rule" data-example-rule aria-hidden="true"></span>
+      </header>
+      <figure class="patient-fee-management-example-photo" data-example-entry data-example-photo>
+        <Image src={photo} alt="Doctor explaining fee information to a patient in the chamber" title="Doctor explaining fee information to a patient in the chamber" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <div class="patient-fee-management-example-copy">
+        <div class="patient-fee-management-source-content" data-example-entry set:html={copy.html} />
+      </div>
+    </div>
+  </section>
+</patient-fee-management-example>
+<script>
+  import '../scripts/patient-fee-management-example';
+</script>

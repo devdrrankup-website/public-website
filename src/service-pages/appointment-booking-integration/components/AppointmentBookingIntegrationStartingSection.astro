@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/appointment-booking-integration/booking-workflow-planning-v1.webp';
+import { pageCopy } from '../data/appointment-booking-integration-source';
+const copy = pageCopy.starting;
+import '../styles/appointment-booking-integration-starting.css';
+---
+<appointment-booking-integration-starting class="appointment-booking-integration-starting-motion">
+  <section id="appointment-booking-integration-starting" class="appointment-booking-integration-starting" aria-labelledby="appointment-booking-integration-starting-heading">
+    <div class="section-container appointment-booking-integration-starting-layout">
+      <h2 id="appointment-booking-integration-starting-heading" data-starting-entry>{copy.heading}</h2>
+      <div class="appointment-booking-integration-starting-copy" data-starting-entry>
+        <div class="appointment-booking-integration-source-content" set:html={copy.html} />
+      </div>
+      <figure class="appointment-booking-integration-starting-visual" data-starting-entry data-starting-visual>
+        <Image src={photo} alt="Doctor and software specialist reviewing a chamber booking flowchart" title="Planning a doctor website booking workflow at the chamber" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 540px, (min-width:640px) 320px, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+    </div>
+  </section>
+</appointment-booking-integration-starting>
+<script>
+  import '../scripts/appointment-booking-integration-starting';
+</script>

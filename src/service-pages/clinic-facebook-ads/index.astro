@@ -1,0 +1,47 @@
+---
+// Destination-owned static page. Service-specific images are pending review before publication.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import ClinicFacebookAdsHero from './components/ClinicFacebookAdsHero.astro';
+import ClinicFacebookAdsChallengesSection from './components/ClinicFacebookAdsChallengesSection.astro';
+import ClinicFacebookAdsOutcomesSection from './components/ClinicFacebookAdsOutcomesSection.astro';
+import ClinicFacebookAdsIntentSection from './components/ClinicFacebookAdsIntentSection.astro';
+import ClinicFacebookAdsTrustSection from './components/ClinicFacebookAdsTrustSection.astro';
+import ClinicFacebookAdsExpertiseSection from './components/ClinicFacebookAdsExpertiseSection.astro';
+import ClinicFacebookAdsProcessSection from './components/ClinicFacebookAdsProcessSection.astro';
+import ClinicFacebookAdsMappingSection from './components/ClinicFacebookAdsMappingSection.astro';
+import ClinicFacebookAdsRelatedSection from './components/ClinicFacebookAdsRelatedSection.astro';
+import ClinicFacebookAdsStartingSection from './components/ClinicFacebookAdsStartingSection.astro';
+import ClinicFacebookAdsExampleSection from './components/ClinicFacebookAdsExampleSection.astro';
+import ClinicFacebookAdsProgressSection from './components/ClinicFacebookAdsProgressSection.astro';
+import ClinicFacebookAdsWhySection from './components/ClinicFacebookAdsWhySection.astro';
+import ClinicFacebookAdsFaqSection from './components/ClinicFacebookAdsFaqSection.astro';
+import ClinicFacebookAdsConsultationSection from './components/ClinicFacebookAdsConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { clinicFacebookAdsHeroPreload } from './lib/clinic-facebook-ads-hero-image';
+import './styles/clinic-facebook-ads-rendering.css';
+import './styles/clinic-facebook-ads-source-content.css';
+import { metadata } from './data/clinic-facebook-ads-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={clinicFacebookAdsHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="clinic-facebook-ads-page" tabindex="-1">
+    <ClinicFacebookAdsHero />
+    <ClinicFacebookAdsChallengesSection />
+    <ClinicFacebookAdsOutcomesSection />
+    <ClinicFacebookAdsIntentSection />
+    <ClinicFacebookAdsTrustSection />
+    <ClinicFacebookAdsExpertiseSection />
+    <ClinicFacebookAdsProcessSection />
+    <ClinicFacebookAdsMappingSection />
+    <ClinicFacebookAdsRelatedSection />
+    <ClinicFacebookAdsStartingSection />
+    <ClinicFacebookAdsExampleSection />
+    <ClinicFacebookAdsProgressSection />
+    <ClinicFacebookAdsWhySection />
+    <ClinicFacebookAdsFaqSection />
+    <ClinicFacebookAdsConsultationSection />
+  </main>
+  <Footer />
+</Layout>

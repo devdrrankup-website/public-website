@@ -1,0 +1,52 @@
+---
+import Icon from '../../../components/Icon.astro';
+import Search01Icon from '@hugeicons/core-free-icons/Search01Icon';
+import ShieldCheckIcon from '@hugeicons/core-free-icons/ShieldCheckIcon';
+import CallIcon from '@hugeicons/core-free-icons/CallIcon';
+import File01Icon from '@hugeicons/core-free-icons/File01Icon';
+import ChartIncreaseIcon from '@hugeicons/core-free-icons/ChartIncreaseIcon';
+interface Props { index: number }
+const { index } = Astro.props;
+const icons = [Search01Icon, ShieldCheckIcon, CallIcon, File01Icon, ChartIncreaseIcon];
+const titles = ['Search results connecting to a doctor profile', 'Clear credentials on a professional profile', 'A connected profile and contact pathway', 'Educational content with clinical review', 'Reviewing page discovery and navigation'];
+const visualIndex = index % icons.length;
+---
+<!-- Decorative conceptual diagrams; the adjacent source copy supplies their meaning. -->
+<div class:list={['hospital-seo-outcome-visual', `hospital-seo-outcome-visual-${visualIndex}`]} aria-hidden="true">
+  <svg viewBox="0 0 200 124" fill="none" focusable="false">
+    <title>{titles[visualIndex]}</title>
+    <ellipse cx="100" cy="112" rx="72" ry="7" fill="#AFA9EC" fill-opacity=".13" />
+    <rect x="24" y="14" width="142" height="94" rx="12" fill="#fff" stroke="#AFA9EC" stroke-width="1.2" />
+    <path d="M24 35H166" stroke="#AFA9EC" stroke-opacity=".5" />
+    <g fill="#AFA9EC"><circle cx="35" cy="25" r="2" /><circle cx="43" cy="25" r="2" /><circle cx="51" cy="25" r="2" /></g>
+    {visualIndex === 0 && <>
+      <rect x="36" y="44" width="105" height="13" rx="6.5" fill="#EEEDFE" />
+      <circle cx="44" cy="50.5" r="3" stroke="#6131C6" /><path d="M46 53L48 55" stroke="#6131C6" />
+      <path d="M55 50.5H117M59 69H133M59 75H113M59 90H133M59 96H104" stroke="#AFA9EC" stroke-width="3" stroke-linecap="round" />
+      <rect x="36" y="64" width="15" height="15" rx="4" fill="#BAE5FF" /><rect x="36" y="85" width="15" height="15" rx="4" fill="#E1FFB9" />
+    </>}
+    {visualIndex === 1 && <>
+      <circle cx="57" cy="60" r="18" fill="#BAE5FF" />
+      <circle cx="57" cy="56" r="5" fill="#6131C6" /><path d="M47 70C47 60 67 60 67 70" fill="#6131C6" />
+      <path d="M85 49H143M85 57H123M85 70H138M41 89H143M41 97H105" stroke="#AFA9EC" stroke-width="3" stroke-linecap="round" />
+      <path d="M84 68L87 71L93 65" stroke="#6131C6" stroke-width="2" />
+    </>}
+    {visualIndex === 2 && <>
+      <rect x="36" y="45" width="48" height="48" rx="7" fill="#EEEDFE" /><circle cx="60" cy="58" r="6" fill="#6131C6" /><path d="M49 76C49 62 71 62 71 76" fill="#6131C6" /><path d="M47 85H73" stroke="#AFA9EC" stroke-width="3" stroke-linecap="round" />
+      <path d="M88 69H108M103 64L108 69L103 74" stroke="#6131C6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <rect x="115" y="50" width="37" height="37" rx="8" fill="#E1FFB9" /><path d="M123 60H144M123 69H144M123 77H135" stroke="#000" stroke-opacity=".35" stroke-width="3" stroke-linecap="round" />
+    </>}
+    {visualIndex === 3 && <>
+      <rect x="36" y="45" width="36" height="48" rx="5" fill="#FEF2CC" /><path d="M44 56H64M44 64H64M44 72H57" stroke="#000" stroke-opacity=".35" stroke-width="2.5" stroke-linecap="round" />
+      <path d="M83 49H143M83 58H131M83 69H141M83 78H117" stroke="#AFA9EC" stroke-width="3" stroke-linecap="round" />
+      <rect x="83" y="87" width="60" height="13" rx="6.5" fill="#E1FFB9" /><path d="M91 93L94 96L99 90" stroke="#000" stroke-width="1.5" />
+    </>}
+    {visualIndex === 4 && <>
+      <path d="M38 46V94H150" stroke="#AFA9EC" stroke-opacity=".6" />
+      <rect x="47" y="74" width="12" height="19" rx="2" fill="#BAE5FF" /><rect x="70" y="63" width="12" height="30" rx="2" fill="#EEEDFE" /><rect x="93" y="68" width="12" height="25" rx="2" fill="#FEF2CC" /><rect x="116" y="49" width="12" height="44" rx="2" fill="#E1FFB9" />
+      <path d="M47 62L76 51L99 56L132 42" stroke="#6131C6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <g fill="#6131C6"><circle cx="47" cy="62" r="3" /><circle cx="76" cy="51" r="3" /><circle cx="99" cy="56" r="3" /><circle cx="132" cy="42" r="3" /></g>
+    </>}
+  </svg>
+  <span class="hospital-seo-outcome-badge"><Icon icon={icons[visualIndex]} size={23} strokeWidth={1.7} /></span>
+</div>

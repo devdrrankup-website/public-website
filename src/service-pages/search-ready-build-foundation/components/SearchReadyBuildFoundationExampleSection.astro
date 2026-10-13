@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/search-ready-build-foundation/search-ready-build-foundation-example-v1.webp';
+import { pageCopy } from '../data/search-ready-build-foundation-source';
+const copy = pageCopy.example;
+import '../styles/search-ready-build-foundation-example.css';
+---
+<search-ready-build-foundation-example class="search-ready-build-foundation-example-motion">
+  <section id="search-ready-build-foundation-example" class="search-ready-build-foundation-example" aria-labelledby="search-ready-build-foundation-example-heading">
+    <div class="section-container search-ready-build-foundation-example-layout">
+      <header class="search-ready-build-foundation-example-header" data-example-entry>
+        <h2 id="search-ready-build-foundation-example-heading">{copy.heading}</h2>
+        <span class="search-ready-build-foundation-example-rule" data-example-rule aria-hidden="true"></span>
+      </header>
+      <figure class="search-ready-build-foundation-example-photo" data-example-entry data-example-photo>
+        <Image src={photo} alt="Doctor explaining a search-ready website to a visitor" title="Doctor explaining a search-ready website to a visitor" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <div class="search-ready-build-foundation-example-copy">
+        <div class="search-ready-build-foundation-source-content" data-example-entry set:html={copy.html} />
+      </div>
+    </div>
+  </section>
+</search-ready-build-foundation-example>
+<script>
+  import '../scripts/search-ready-build-foundation-example';
+</script>

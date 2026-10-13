@@ -1,0 +1,64 @@
+---
+import { Image } from 'astro:assets';
+import Icon from '../../../components/Icon.astro';
+import Arrow from '../../../components/Arrow.astro';
+import Calendar03Icon from '@hugeicons/core-free-icons/Calendar03Icon';
+import Clock01Icon from '@hugeicons/core-free-icons/Clock01Icon';
+import WebDesign01Icon from '@hugeicons/core-free-icons/WebDesign01Icon';
+import { pageCopy } from '../data/appointment-booking-integration-source';
+const copy = pageCopy.related;
+import appointment from '../../../assets/patient-appointment-management/patient-appointment-management-related-preview-v1.webp';
+import schedule from '../../../assets/doctor-scheduling-software/doctor-scheduling-software-related-preview-v1.webp';
+import website from '../../../assets/related-services/doctor-website-development-preview-v1.webp';
+import '../styles/appointment-booking-integration-related.css';
+const visuals = [
+  { image: appointment, icon: Calendar03Icon, accent: '#BAE5FF', description: "At a doctor's chamber reception, a receptionist welcomes a visitor while another staff member checks a clearly blank appointment list on the front of a tablet." },
+  { image: schedule, icon: Clock01Icon, accent: '#EEEDFE', description: "At a quiet doctor's chamber desk, an assistant and doctor compare a weekly room timetable and session blocks on a front-facing laptop." },
+  { image: website, icon: WebDesign01Icon, accent: '#FEF2CC', description: "At a Bangladesh digital agency design studio, a civilian web designer and a doctor review large unbranded doctor-website wireframes showing profile, chamber and booking blocks, from the viewer's side." },
+];
+---
+<section id="appointment-booking-integration-related" class="appointment-booking-integration-related" aria-labelledby="appointment-booking-integration-related-heading">
+  <div class="section-container appointment-booking-integration-related-container">
+    <appointment-booking-integration-related>
+      <header class="appointment-booking-integration-related-header" data-related-entry>
+        <h2 id="appointment-booking-integration-related-heading">{copy.heading}</h2>
+        <div class="appointment-booking-integration-source-content" set:html={copy.introductionHtml} />
+      </header>
+      <div class="appointment-booking-integration-related-layout">
+        <div class="appointment-booking-integration-related-dock">
+          <div class="appointment-booking-integration-related-selectors" role="group" aria-label="Service image previews" hidden>
+            {copy.services.map((service, index) => <button type="button" aria-pressed={index === 0 ? 'true' : 'false'} aria-controls={`related-${service.key}`} data-related-select={index}>
+              <span>{service.name}</span>
+            </button>)}
+          </div>
+          <div class="appointment-booking-integration-related-stage" aria-hidden="true" hidden></div>
+        </div>
+        <div class="appointment-booking-integration-related-details">
+          <div class="appointment-booking-integration-related-labels"><span>{copy.headers[0]}</span><span>{copy.headers[1]}</span></div>
+          <dl class="appointment-booking-integration-related-list">
+            {copy.services.map((service, index) => <div class="appointment-booking-integration-related-row" id={`related-${service.key}`} data-service={service.key}>
+              <dt>
+                <span class="appointment-booking-integration-related-badge" style={`--related-accent:${visuals[index % visuals.length].accent}`}><Icon icon={visuals[index % visuals.length].icon} size={21} strokeWidth={1.8} /></span>
+                <span class="appointment-booking-integration-related-reveal" aria-hidden="true"></span>
+                {service.href ? <a class="appointment-booking-integration-related-name" href={service.href}>{service.name}</a>
+                  : <span class="appointment-booking-integration-related-name">{service.name}</span>}
+                <span class="appointment-booking-integration-related-arrow" aria-hidden="true"><Arrow /></span>
+              </dt>
+              <dd>
+                <span>{service.responsibility}</span>
+                <figure class="appointment-booking-integration-related-photo">
+                  <Image src={visuals[index % visuals.length].image} alt={visuals[index % visuals.length].description} title={visuals[index % visuals.length].description} width={960} widths={[360,640,960]} sizes="(min-width:1100px) 700px, (min-width:640px) 700px, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+                  <figcaption>{service.name}</figcaption>
+                </figure>
+              </dd>
+            </div>)}
+          </dl>
+          <div class="appointment-booking-integration-related-note appointment-booking-integration-source-content" set:html={copy.noteHtml} />
+        </div>
+      </div>
+    </appointment-booking-integration-related>
+  </div>
+</section>
+<script>
+  import '../scripts/appointment-booking-integration-related';
+</script>

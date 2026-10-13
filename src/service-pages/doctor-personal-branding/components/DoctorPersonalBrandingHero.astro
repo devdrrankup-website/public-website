@@ -1,0 +1,38 @@
+---
+import ActionIcon from '../../../components/ActionIcon.astro';
+import { pageCopy } from '../data/doctor-personal-branding-source';
+const copy = pageCopy.hero;
+import { doctorPersonalBrandingHeroImage as photo } from '../lib/doctor-personal-branding-hero-image';
+import '../styles/doctor-personal-branding-hero.css';
+---
+
+<section class="doctor-personal-branding-hero" aria-labelledby="doctor-personal-branding-heading">
+  <div class="section-container doctor-personal-branding-hero-layout">
+    <div class="doctor-personal-branding-hero-copy">
+      <h1 id="doctor-personal-branding-heading">{copy.heading}</h1>
+      <p class="doctor-personal-branding-hero-tagline">{copy.tagline}</p>
+      <div class="doctor-personal-branding-hero-description">
+        {copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+      </div>
+      <div class="doctor-personal-branding-hero-actions" aria-label={`${copy.heading} options`}>
+        <span class="button button-primary">
+          <span>{copy.primaryCta}</span><ActionIcon purpose="conversation" />
+        </span>
+        {copy.secondaryHref ? <a class="button button-secondary" href={copy.secondaryHref}>
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </a> : <span class="button button-secondary">
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </span>}
+      </div>
+    </div>
+    <div class="doctor-personal-branding-hero-visual">
+      <div class="doctor-personal-branding-hero-photo">
+        <img src={photo.src} srcset={photo.srcset} sizes={photo.sizes}
+          width={photo.width} height={photo.height}
+          alt="Photographer taking a doctor’s professional portrait inside her chamber"
+          title="Creating a credible doctor profile portrait"
+          loading="eager" fetchpriority="high" decoding="async" />
+      </div>
+    </div>
+  </div>
+</section>

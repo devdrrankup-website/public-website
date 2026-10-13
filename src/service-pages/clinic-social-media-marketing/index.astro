@@ -1,0 +1,47 @@
+---
+// Destination-owned static page. Service-specific images are pending review before publication.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import ClinicSocialMediaMarketingHero from './components/ClinicSocialMediaMarketingHero.astro';
+import ClinicSocialMediaMarketingChallengesSection from './components/ClinicSocialMediaMarketingChallengesSection.astro';
+import ClinicSocialMediaMarketingOutcomesSection from './components/ClinicSocialMediaMarketingOutcomesSection.astro';
+import ClinicSocialMediaMarketingIntentSection from './components/ClinicSocialMediaMarketingIntentSection.astro';
+import ClinicSocialMediaMarketingTrustSection from './components/ClinicSocialMediaMarketingTrustSection.astro';
+import ClinicSocialMediaMarketingExpertiseSection from './components/ClinicSocialMediaMarketingExpertiseSection.astro';
+import ClinicSocialMediaMarketingProcessSection from './components/ClinicSocialMediaMarketingProcessSection.astro';
+import ClinicSocialMediaMarketingMappingSection from './components/ClinicSocialMediaMarketingMappingSection.astro';
+import ClinicSocialMediaMarketingRelatedSection from './components/ClinicSocialMediaMarketingRelatedSection.astro';
+import ClinicSocialMediaMarketingStartingSection from './components/ClinicSocialMediaMarketingStartingSection.astro';
+import ClinicSocialMediaMarketingExampleSection from './components/ClinicSocialMediaMarketingExampleSection.astro';
+import ClinicSocialMediaMarketingProgressSection from './components/ClinicSocialMediaMarketingProgressSection.astro';
+import ClinicSocialMediaMarketingWhySection from './components/ClinicSocialMediaMarketingWhySection.astro';
+import ClinicSocialMediaMarketingFaqSection from './components/ClinicSocialMediaMarketingFaqSection.astro';
+import ClinicSocialMediaMarketingConsultationSection from './components/ClinicSocialMediaMarketingConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { clinicSocialMediaMarketingHeroPreload } from './lib/clinic-social-media-marketing-hero-image';
+import './styles/clinic-social-media-marketing-rendering.css';
+import './styles/clinic-social-media-marketing-source-content.css';
+import { metadata } from './data/clinic-social-media-marketing-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={clinicSocialMediaMarketingHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="clinic-social-media-marketing-page" tabindex="-1">
+    <ClinicSocialMediaMarketingHero />
+    <ClinicSocialMediaMarketingChallengesSection />
+    <ClinicSocialMediaMarketingOutcomesSection />
+    <ClinicSocialMediaMarketingIntentSection />
+    <ClinicSocialMediaMarketingTrustSection />
+    <ClinicSocialMediaMarketingExpertiseSection />
+    <ClinicSocialMediaMarketingProcessSection />
+    <ClinicSocialMediaMarketingMappingSection />
+    <ClinicSocialMediaMarketingRelatedSection />
+    <ClinicSocialMediaMarketingStartingSection />
+    <ClinicSocialMediaMarketingExampleSection />
+    <ClinicSocialMediaMarketingProgressSection />
+    <ClinicSocialMediaMarketingWhySection />
+    <ClinicSocialMediaMarketingFaqSection />
+    <ClinicSocialMediaMarketingConsultationSection />
+  </main>
+  <Footer />
+</Layout>

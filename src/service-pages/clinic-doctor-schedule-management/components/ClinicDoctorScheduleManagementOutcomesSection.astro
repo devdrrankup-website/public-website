@@ -1,0 +1,25 @@
+---
+import ClinicDoctorScheduleManagementOutcomeVisual from './ClinicDoctorScheduleManagementOutcomeVisual.astro';
+import { pageCopy } from '../data/clinic-doctor-schedule-management-source';
+const copy = pageCopy.outcomes;
+import '../styles/clinic-doctor-schedule-management-outcomes.css';
+---
+<clinic-doctor-schedule-management-outcomes class="clinic-doctor-schedule-management-outcomes">
+  <section id="clinic-doctor-schedule-management-outcomes" class="section-container" aria-labelledby="clinic-doctor-schedule-management-outcomes-heading">
+    <div class="clinic-doctor-schedule-management-outcomes-heading">
+      <h2 id="clinic-doctor-schedule-management-outcomes-heading">{copy.heading}</h2>
+      <div class="clinic-doctor-schedule-management-outcomes-introduction clinic-doctor-schedule-management-source-content" set:html={copy.before} />
+    </div>
+    <ul class="clinic-doctor-schedule-management-outcomes-list" role="list">
+      {copy.items.map((item, index) => <li class="clinic-doctor-schedule-management-outcome" data-seo-outcomes-motion>
+        <ClinicDoctorScheduleManagementOutcomeVisual index={index} />
+        <p><strong>{item.label}</strong><span>{item.description}</span></p>
+      </li>)}
+    </ul>
+    <div class="clinic-doctor-schedule-management-outcomes-conclusion clinic-doctor-schedule-management-source-content" set:html={copy.after} />
+  </section>
+</clinic-doctor-schedule-management-outcomes>
+
+<script>
+  import '../scripts/clinic-doctor-schedule-management-outcomes';
+</script>

@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/clinic-doctor-directory/clinic-doctor-directory-challenges-v1.webp';
+import { pageCopy } from '../data/clinic-doctor-directory-source';
+const copy = pageCopy.challenges;
+const introductionParagraph = copy.html.match(/^<p>([\s\S]*?)<\/p>/)?.[1] ?? '';
+const detailHtml = copy.html.replace(/^<p>[\s\S]*?<\/p>/, '');
+import '../styles/clinic-doctor-directory-challenges.css';
+---
+
+<clinic-doctor-directory-challenges class="clinic-doctor-directory-challenges">
+  <section id="clinic-doctor-directory-challenges" class="section-container clinic-doctor-directory-challenges-layout" aria-labelledby="clinic-doctor-directory-challenges-heading">
+    <div class="clinic-doctor-directory-challenges-editorial">
+      <h2 id="clinic-doctor-directory-challenges-heading">{copy.heading}</h2>
+      <p class="clinic-doctor-directory-challenges-introduction" set:html={introductionParagraph} />
+      <div class="clinic-doctor-directory-challenges-photo" data-seo-challenges-motion>
+        <Image src={photo} widths={[360, 540, 720, 960, 1200]} width={1536} height={1024}
+          sizes="(min-width: 1100px) min(41vw, 568px), (min-width: 640px) min(calc(100vw - 56px), 760px), calc(100vw - 32px)"
+          format="webp" quality={76}
+          alt="Clinic team comparing printed doctor schedules with a directory on screen"
+          title="Clinic team comparing printed doctor schedules with a directory on screen"
+          loading="lazy" decoding="async" />
+      </div>
+    </div>
+    <div class="clinic-doctor-directory-challenges-details clinic-doctor-directory-source-content" set:html={detailHtml} />
+  </section>
+</clinic-doctor-directory-challenges>
+
+<script>
+  import '../scripts/clinic-doctor-directory-challenges';
+</script>

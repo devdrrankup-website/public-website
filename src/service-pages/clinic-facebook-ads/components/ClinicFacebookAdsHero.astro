@@ -1,0 +1,38 @@
+---
+import ActionIcon from '../../../components/ActionIcon.astro';
+import { pageCopy } from '../data/clinic-facebook-ads-source';
+const copy = pageCopy.hero;
+import { clinicFacebookAdsHeroImage as photo } from '../lib/clinic-facebook-ads-hero-image';
+import '../styles/clinic-facebook-ads-hero.css';
+---
+
+<section class="clinic-facebook-ads-hero" aria-labelledby="clinic-facebook-ads-heading">
+  <div class="section-container clinic-facebook-ads-hero-layout">
+    <div class="clinic-facebook-ads-hero-copy">
+      <h1 id="clinic-facebook-ads-heading">{copy.heading}</h1>
+      <p class="clinic-facebook-ads-hero-tagline">{copy.tagline}</p>
+      <div class="clinic-facebook-ads-hero-description">
+        {copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+      </div>
+      <div class="clinic-facebook-ads-hero-actions" aria-label={`${copy.heading} options`}>
+        <span class="button button-primary">
+          <span>{copy.primaryCta}</span><ActionIcon purpose="conversation" />
+        </span>
+        {copy.secondaryHref ? <a class="button button-secondary" href={copy.secondaryHref}>
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </a> : <span class="button button-secondary">
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </span>}
+      </div>
+    </div>
+    <div class="clinic-facebook-ads-hero-visual">
+      <div class="clinic-facebook-ads-hero-photo">
+        <img src={photo.src} srcset={photo.srcset} sizes={photo.sizes}
+          width={photo.width} height={photo.height}
+          alt="Clinic doctor and marketing specialist reviewing an accurate clinic photo for an ad"
+          title="Planning a clinic Facebook campaign"
+          loading="eager" fetchpriority="high" decoding="async" />
+      </div>
+    </div>
+  </div>
+</section>

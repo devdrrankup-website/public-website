@@ -1,0 +1,38 @@
+---
+import ActionIcon from '../../../components/ActionIcon.astro';
+import { pageCopy } from '../data/appointment-booking-integration-source';
+const copy = pageCopy.hero;
+import { appointmentBookingIntegrationHeroImage as photo } from '../lib/appointment-booking-integration-hero-image';
+import '../styles/appointment-booking-integration-hero.css';
+---
+
+<section class="appointment-booking-integration-hero" aria-labelledby="appointment-booking-integration-heading">
+  <div class="section-container appointment-booking-integration-hero-layout">
+    <div class="appointment-booking-integration-hero-copy">
+      <h1 id="appointment-booking-integration-heading">{copy.heading}</h1>
+      <p class="appointment-booking-integration-hero-tagline">{copy.tagline}</p>
+      <div class="appointment-booking-integration-hero-description">
+        {copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+      </div>
+      <div class="appointment-booking-integration-hero-actions" aria-label={`${copy.heading} options`}>
+        <span class="button button-primary">
+          <span>{copy.primaryCta}</span><ActionIcon purpose="conversation" />
+        </span>
+        {copy.secondaryHref ? <a class="button button-secondary" href={copy.secondaryHref}>
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </a> : <span class="button button-secondary">
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </span>}
+      </div>
+    </div>
+    <div class="appointment-booking-integration-hero-visual">
+      <div class="appointment-booking-integration-hero-photo">
+        <img src={photo.src} srcset={photo.srcset} sizes={photo.sizes}
+          width={photo.width} height={photo.height}
+          alt="Patient selecting a doctor appointment on a tablet at home in Bangladesh"
+          title="Choosing a doctor appointment from home"
+          loading="eager" fetchpriority="high" decoding="async" />
+      </div>
+    </div>
+  </div>
+</section>

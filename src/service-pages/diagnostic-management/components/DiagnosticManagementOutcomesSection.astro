@@ -1,0 +1,25 @@
+---
+import DiagnosticManagementOutcomeVisual from './DiagnosticManagementOutcomeVisual.astro';
+import { pageCopy } from '../data/diagnostic-management-source';
+const copy = pageCopy.outcomes;
+import '../styles/diagnostic-management-outcomes.css';
+---
+<diagnostic-management-outcomes class="diagnostic-management-outcomes">
+  <section id="diagnostic-management-outcomes" class="section-container" aria-labelledby="diagnostic-management-outcomes-heading">
+    <div class="diagnostic-management-outcomes-heading">
+      <h2 id="diagnostic-management-outcomes-heading">{copy.heading}</h2>
+      <div class="diagnostic-management-outcomes-introduction diagnostic-management-source-content" set:html={copy.before} />
+    </div>
+    <ul class="diagnostic-management-outcomes-list" role="list">
+      {copy.items.map((item, index) => <li class="diagnostic-management-outcome" data-seo-outcomes-motion>
+        <DiagnosticManagementOutcomeVisual index={index} />
+        <p><strong>{item.label}</strong><span>{item.description}</span></p>
+      </li>)}
+    </ul>
+    <div class="diagnostic-management-outcomes-conclusion diagnostic-management-source-content" set:html={copy.after} />
+  </section>
+</diagnostic-management-outcomes>
+
+<script>
+  import '../scripts/diagnostic-management-outcomes';
+</script>

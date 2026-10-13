@@ -1,0 +1,31 @@
+---
+import Icon from '../../../components/Icon.astro';
+import Add01Icon from '@hugeicons/core-free-icons/Add01Icon';
+import { pageCopy } from '../data/clinic-local-seo-source';
+const copy = pageCopy.faq;
+import '../styles/clinic-local-seo-faq.css';
+---
+<clinic-local-seo-faq class="clinic-local-seo-faq-motion">
+  <section id="clinic-local-seo-faq" class="clinic-local-seo-faq" aria-labelledby="clinic-local-seo-faq-heading">
+    <div class="section-container clinic-local-seo-faq-layout">
+      <header class="clinic-local-seo-faq-header" data-faq-entry>
+        <h2 id="clinic-local-seo-faq-heading">{copy.heading}</h2>
+        <div class="clinic-local-seo-source-content" set:html={copy.preface} />
+      </header>
+      <div class="clinic-local-seo-faq-list">
+        {copy.items.map((item,index) => <article class="clinic-local-seo-faq-item" data-faq-entry aria-labelledby={`clinic-local-seo-faq-question-${index+1}`}>
+          <h3 class="clinic-local-seo-faq-question" id={`clinic-local-seo-faq-question-${index+1}`}>
+            <span class="clinic-local-seo-faq-label">{item.question}</span>
+            <span class="clinic-local-seo-faq-toggle" aria-hidden="true"><Icon icon={Add01Icon} size={20} strokeWidth={1.8} /></span>
+          </h3>
+          <div class="clinic-local-seo-faq-answer" id={`clinic-local-seo-faq-answer-${index+1}`} role="region" aria-labelledby={`clinic-local-seo-faq-question-${index+1}`}>
+            <div class="clinic-local-seo-source-content" set:html={item.answerHtml} />
+          </div>
+        </article>)}
+      </div>
+    </div>
+  </section>
+</clinic-local-seo-faq>
+<script>
+  import '../scripts/clinic-local-seo-faq';
+</script>

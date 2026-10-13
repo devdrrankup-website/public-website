@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/clinic-seo/clinic-seo-starting-v1.webp';
+import { pageCopy } from '../data/clinic-seo-source';
+const copy = pageCopy.starting;
+import '../styles/clinic-seo-starting.css';
+---
+<clinic-seo-starting class="clinic-seo-starting-motion">
+  <section id="clinic-seo-starting" class="clinic-seo-starting" aria-labelledby="clinic-seo-starting-heading">
+    <div class="section-container clinic-seo-starting-layout">
+      <h2 id="clinic-seo-starting-heading" data-starting-entry>{copy.heading}</h2>
+      <div class="clinic-seo-starting-copy" data-starting-entry>
+        <div class="clinic-seo-source-content" set:html={copy.html} />
+      </div>
+      <figure class="clinic-seo-starting-visual" data-starting-entry data-starting-visual>
+        <Image src={photo} alt="Clinic owner and specialist reviewing an organic search report" title="Clinic owner and specialist reviewing an organic search report" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 540px, (min-width:640px) 320px, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+    </div>
+  </section>
+</clinic-seo-starting>
+<script>
+  import '../scripts/clinic-seo-starting';
+</script>

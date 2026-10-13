@@ -1,0 +1,47 @@
+---
+// Destination-owned static page. Service-specific images are pending review before publication.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import PatientFeeManagementHero from './components/PatientFeeManagementHero.astro';
+import PatientFeeManagementChallengesSection from './components/PatientFeeManagementChallengesSection.astro';
+import PatientFeeManagementOutcomesSection from './components/PatientFeeManagementOutcomesSection.astro';
+import PatientFeeManagementIntentSection from './components/PatientFeeManagementIntentSection.astro';
+import PatientFeeManagementTrustSection from './components/PatientFeeManagementTrustSection.astro';
+import PatientFeeManagementExpertiseSection from './components/PatientFeeManagementExpertiseSection.astro';
+import PatientFeeManagementProcessSection from './components/PatientFeeManagementProcessSection.astro';
+import PatientFeeManagementMappingSection from './components/PatientFeeManagementMappingSection.astro';
+import PatientFeeManagementRelatedSection from './components/PatientFeeManagementRelatedSection.astro';
+import PatientFeeManagementStartingSection from './components/PatientFeeManagementStartingSection.astro';
+import PatientFeeManagementExampleSection from './components/PatientFeeManagementExampleSection.astro';
+import PatientFeeManagementProgressSection from './components/PatientFeeManagementProgressSection.astro';
+import PatientFeeManagementWhySection from './components/PatientFeeManagementWhySection.astro';
+import PatientFeeManagementFaqSection from './components/PatientFeeManagementFaqSection.astro';
+import PatientFeeManagementConsultationSection from './components/PatientFeeManagementConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { patientFeeManagementHeroPreload } from './lib/patient-fee-management-hero-image';
+import './styles/patient-fee-management-rendering.css';
+import './styles/patient-fee-management-source-content.css';
+import { metadata } from './data/patient-fee-management-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={patientFeeManagementHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="patient-fee-management-page" tabindex="-1">
+    <PatientFeeManagementHero />
+    <PatientFeeManagementChallengesSection />
+    <PatientFeeManagementOutcomesSection />
+    <PatientFeeManagementIntentSection />
+    <PatientFeeManagementTrustSection />
+    <PatientFeeManagementExpertiseSection />
+    <PatientFeeManagementProcessSection />
+    <PatientFeeManagementMappingSection />
+    <PatientFeeManagementRelatedSection />
+    <PatientFeeManagementStartingSection />
+    <PatientFeeManagementExampleSection />
+    <PatientFeeManagementProgressSection />
+    <PatientFeeManagementWhySection />
+    <PatientFeeManagementFaqSection />
+    <PatientFeeManagementConsultationSection />
+  </main>
+  <Footer />
+</Layout>

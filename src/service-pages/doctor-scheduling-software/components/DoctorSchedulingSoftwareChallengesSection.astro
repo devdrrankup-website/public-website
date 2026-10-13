@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/doctor-scheduling-software/doctor-scheduling-software-challenges-v1.webp';
+import { pageCopy } from '../data/doctor-scheduling-software-source';
+const copy = pageCopy.challenges;
+const introductionParagraph = copy.html.match(/^<p>([\s\S]*?)<\/p>/)?.[1] ?? '';
+const detailHtml = copy.html.replace(/^<p>[\s\S]*?<\/p>/, '');
+import '../styles/doctor-scheduling-software-challenges.css';
+---
+
+<doctor-scheduling-software-challenges class="doctor-scheduling-software-challenges">
+  <section id="doctor-scheduling-software-challenges" class="section-container doctor-scheduling-software-challenges-layout" aria-labelledby="doctor-scheduling-software-challenges-heading">
+    <div class="doctor-scheduling-software-challenges-editorial">
+      <h2 id="doctor-scheduling-software-challenges-heading">{copy.heading}</h2>
+      <p class="doctor-scheduling-software-challenges-introduction" set:html={introductionParagraph} />
+      <div class="doctor-scheduling-software-challenges-photo" data-seo-challenges-motion>
+        <Image src={photo} widths={[360, 540, 720, 960, 1200]} width={1536} height={1024}
+          sizes="(min-width: 1100px) min(41vw, 568px), (min-width: 640px) min(calc(100vw - 56px), 760px), calc(100vw - 32px)"
+          format="webp" quality={76}
+          alt="Doctor and reception team reconciling appointment schedules"
+          title="Doctor and reception team reconciling appointment schedules"
+          loading="lazy" decoding="async" />
+      </div>
+    </div>
+    <div class="doctor-scheduling-software-challenges-details doctor-scheduling-software-source-content" set:html={detailHtml} />
+  </section>
+</doctor-scheduling-software-challenges>
+
+<script>
+  import '../scripts/doctor-scheduling-software-challenges';
+</script>

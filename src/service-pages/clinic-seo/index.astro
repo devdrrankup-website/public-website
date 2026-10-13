@@ -1,0 +1,47 @@
+---
+// Destination-owned static page. Service-specific images are pending review before publication.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import ClinicSeoHero from './components/ClinicSeoHero.astro';
+import ClinicSeoChallengesSection from './components/ClinicSeoChallengesSection.astro';
+import ClinicSeoOutcomesSection from './components/ClinicSeoOutcomesSection.astro';
+import ClinicSeoIntentSection from './components/ClinicSeoIntentSection.astro';
+import ClinicSeoTrustSection from './components/ClinicSeoTrustSection.astro';
+import ClinicSeoExpertiseSection from './components/ClinicSeoExpertiseSection.astro';
+import ClinicSeoProcessSection from './components/ClinicSeoProcessSection.astro';
+import ClinicSeoMappingSection from './components/ClinicSeoMappingSection.astro';
+import ClinicSeoRelatedSection from './components/ClinicSeoRelatedSection.astro';
+import ClinicSeoStartingSection from './components/ClinicSeoStartingSection.astro';
+import ClinicSeoExampleSection from './components/ClinicSeoExampleSection.astro';
+import ClinicSeoProgressSection from './components/ClinicSeoProgressSection.astro';
+import ClinicSeoWhySection from './components/ClinicSeoWhySection.astro';
+import ClinicSeoFaqSection from './components/ClinicSeoFaqSection.astro';
+import ClinicSeoConsultationSection from './components/ClinicSeoConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { clinicSeoHeroPreload } from './lib/clinic-seo-hero-image';
+import './styles/clinic-seo-rendering.css';
+import './styles/clinic-seo-source-content.css';
+import { metadata } from './data/clinic-seo-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={clinicSeoHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="clinic-seo-page" tabindex="-1">
+    <ClinicSeoHero />
+    <ClinicSeoChallengesSection />
+    <ClinicSeoOutcomesSection />
+    <ClinicSeoIntentSection />
+    <ClinicSeoTrustSection />
+    <ClinicSeoExpertiseSection />
+    <ClinicSeoProcessSection />
+    <ClinicSeoMappingSection />
+    <ClinicSeoRelatedSection />
+    <ClinicSeoStartingSection />
+    <ClinicSeoExampleSection />
+    <ClinicSeoProgressSection />
+    <ClinicSeoWhySection />
+    <ClinicSeoFaqSection />
+    <ClinicSeoConsultationSection />
+  </main>
+  <Footer />
+</Layout>

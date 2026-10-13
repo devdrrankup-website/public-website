@@ -1,0 +1,67 @@
+---
+import { Image } from 'astro:assets';
+import Icon from '../../../components/Icon.astro';
+import Arrow from '../../../components/Arrow.astro';
+import MicroscopeIcon from '@hugeicons/core-free-icons/MicroscopeIcon';
+import CreditCardIcon from '@hugeicons/core-free-icons/CreditCardIcon';
+import PackageIcon from '@hugeicons/core-free-icons/PackageIcon';
+import Calendar03Icon from '@hugeicons/core-free-icons/Calendar03Icon';
+import { pageCopy } from '../data/pathology-reporting-software-source';
+const copy = pageCopy.related;
+import relatedImage0 from '../../../assets/diagnostic-management/diagnostic-management-related-preview-v1.webp';
+import relatedImage1 from '../../../assets/clinic-billing-software/clinic-billing-software-related-preview-v1.webp';
+import relatedImage2 from '../../../assets/clinic-inventory-management/clinic-inventory-management-related-preview-v1.webp';
+import relatedImage3 from '../../../assets/clinic-doctor-schedule-management/clinic-doctor-schedule-management-related-preview-v1.webp';
+import '../styles/pathology-reporting-software-related.css';
+const visuals = [
+  { image: relatedImage0, icon: MicroscopeIcon, accent: '#BAE5FF', description: "Inside a diagnostic centre, an administrator observes a technician moving sealed specimen tubes between clearly separate reception and processing trays." },
+  { image: relatedImage1, icon: CreditCardIcon, accent: '#EEEDFE', description: "At a clinic checkout counter, a cashier prints an itemised blank receipt after verifying charge categories on a properly oriented workstation." },
+  { image: relatedImage2, icon: PackageIcon, accent: '#FEF2CC', description: "In a clinic supply room, a stock controller scans a sealed supply carton while a colleague checks shelf locations; no pharmacy branding." },
+  { image: relatedImage3, icon: Calendar03Icon, accent: '#E4FFBD', description: "At a clinic reception before opening, a scheduling coordinator posts a doctor's weekly availability on an unmarked notice board while staff prepare the desk." },
+];
+---
+<section id="pathology-reporting-software-related" class="pathology-reporting-software-related" aria-labelledby="pathology-reporting-software-related-heading">
+  <div class="section-container pathology-reporting-software-related-container">
+    <pathology-reporting-software-related>
+      <header class="pathology-reporting-software-related-header" data-related-entry>
+        <h2 id="pathology-reporting-software-related-heading">{copy.heading}</h2>
+        <div class="pathology-reporting-software-source-content" set:html={copy.introductionHtml} />
+      </header>
+      <div class="pathology-reporting-software-related-layout">
+        <div class="pathology-reporting-software-related-dock">
+          <div class="pathology-reporting-software-related-selectors" role="group" aria-label="Service image previews" hidden>
+            {copy.services.map((service, index) => <button type="button" aria-pressed={index === 0 ? 'true' : 'false'} aria-controls={`related-${service.key}`} data-related-select={index}>
+              <span>{service.name}</span>
+            </button>)}
+          </div>
+          <div class="pathology-reporting-software-related-stage" aria-hidden="true" hidden></div>
+        </div>
+        <div class="pathology-reporting-software-related-details">
+          <div class="pathology-reporting-software-related-labels"><span>{copy.headers[0]}</span><span>{copy.headers[1]}</span></div>
+          <dl class="pathology-reporting-software-related-list">
+            {copy.services.map((service, index) => <div class="pathology-reporting-software-related-row" id={`related-${service.key}`} data-service={service.key}>
+              <dt>
+                <span class="pathology-reporting-software-related-badge" style={`--related-accent:${visuals[index % visuals.length].accent}`}><Icon icon={visuals[index % visuals.length].icon} size={21} strokeWidth={1.8} /></span>
+                <span class="pathology-reporting-software-related-reveal" aria-hidden="true"></span>
+                {service.href ? <a class="pathology-reporting-software-related-name" href={service.href}>{service.name}</a>
+                  : <span class="pathology-reporting-software-related-name">{service.name}</span>}
+                <span class="pathology-reporting-software-related-arrow" aria-hidden="true"><Arrow /></span>
+              </dt>
+              <dd>
+                <span>{service.responsibility}</span>
+                <figure class="pathology-reporting-software-related-photo">
+                  <Image src={visuals[index % visuals.length].image} alt={visuals[index % visuals.length].description} title={visuals[index % visuals.length].description} width={960} widths={[360,640,960]} sizes="(min-width:1100px) 700px, (min-width:640px) 700px, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+                  <figcaption>{service.name}</figcaption>
+                </figure>
+              </dd>
+            </div>)}
+          </dl>
+          <div class="pathology-reporting-software-related-note pathology-reporting-software-source-content" set:html={copy.noteHtml} />
+        </div>
+      </div>
+    </pathology-reporting-software-related>
+  </div>
+</section>
+<script>
+  import '../scripts/pathology-reporting-software-related';
+</script>

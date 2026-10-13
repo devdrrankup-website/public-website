@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/professional-profile-authority/professional-profile-authority-example-v1.webp';
+import { pageCopy } from '../data/professional-profile-authority-source';
+const copy = pageCopy.example;
+import '../styles/professional-profile-authority-example.css';
+---
+<professional-profile-authority-example class="professional-profile-authority-example-motion">
+  <section id="professional-profile-authority-example" class="professional-profile-authority-example" aria-labelledby="professional-profile-authority-example-heading">
+    <div class="section-container professional-profile-authority-example-layout">
+      <header class="professional-profile-authority-example-header" data-example-entry>
+        <h2 id="professional-profile-authority-example-heading">{copy.heading}</h2>
+        <span class="professional-profile-authority-example-rule" data-example-rule aria-hidden="true"></span>
+      </header>
+      <figure class="professional-profile-authority-example-photo" data-example-entry data-example-photo>
+        <Image src={photo} alt="Doctor showing professional profile information to a visitor" title="Doctor showing professional profile information to a visitor" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <div class="professional-profile-authority-example-copy">
+        <div class="professional-profile-authority-source-content" data-example-entry set:html={copy.html} />
+      </div>
+    </div>
+  </section>
+</professional-profile-authority-example>
+<script>
+  import '../scripts/professional-profile-authority-example';
+</script>

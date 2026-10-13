@@ -1,0 +1,57 @@
+---
+import { Image } from 'astro:assets';
+import { pageCopy } from '../data/online-consultation-integration-source';
+const copy = pageCopy.process;
+import processBackground from '../../../assets/online-consultation-integration/online-consultation-integration-process-workflow-v1.webp';
+import '../styles/online-consultation-integration-process.css';
+// Destination-owned copy of the approved For Doctors process composition.
+const titleParts = (title: string) => [title.match(/^\d+\.\s+/)?.[0] ?? '', title.replace(/^\d+\.\s+/, '')];
+---
+
+<online-consultation-integration-process class="online-consultation-integration-process-motion">
+  <section id="online-consultation-integration-process" class="online-consultation-integration-process" aria-labelledby="online-consultation-integration-process-heading">
+    <div class="online-consultation-integration-process-background" aria-hidden="true">
+      <Image src={processBackground} width={1024} widths={[480, 768, 1024]} sizes="100vw" format="webp" quality={40}
+        alt="" title="At a doctor's chamber, a clinician and civilian implementer test the camera and microphone alignment for an online consultation on a front-facing laptop; no patient on screen." loading="lazy" decoding="async" />
+    </div>
+    <div class="online-consultation-integration-process-atmosphere" aria-hidden="true"></div>
+    <div class="section-container online-consultation-integration-process-layout">
+      <header class="online-consultation-integration-process-header" data-seo-process-copy>
+        <span class="online-consultation-integration-process-range" aria-hidden="true">{`01—${String(copy.steps.length).padStart(2, '0')}`}</span>
+        <h2 id="online-consultation-integration-process-heading">{copy.heading}</h2>
+        <div class="online-consultation-integration-source-content" set:html={copy.introductionHtml} />
+      </header>
+
+      <div class="online-consultation-integration-process-flow" role="list" aria-label={`${copy.steps.length} service steps`}>
+        <svg class="online-consultation-integration-process-route" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="online-consultation-integration-process-route-gradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="100" y2="100">
+              <stop offset="0" stop-color="#6131c6" />
+              <stop offset="0.5" stop-color="#229f60" />
+              <stop offset="1" stop-color="#6131c6" />
+            </linearGradient>
+          </defs>
+          <path class="online-consultation-integration-process-route-base" />
+          <path class="online-consultation-integration-process-route-progress" />
+        </svg>
+
+        {copy.steps.map((step, index) => (
+          <div class="online-consultation-integration-process-step" role="listitem" data-seo-process-step>
+            <div class="online-consultation-integration-process-node-column" aria-hidden="true">
+              <span class="online-consultation-integration-process-node"><span>{String(index + 1).padStart(2, '0')}</span></span>
+              {index < copy.steps.length - 1 && <span class="online-consultation-integration-process-connector"></span>}
+            </div>
+            <div class="online-consultation-integration-process-copy" data-seo-process-copy>
+              <h3><span>{titleParts(step.title)[0]}</span>{titleParts(step.title)[1]}</h3>
+              <div class="online-consultation-integration-source-content" set:html={step.html} />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</online-consultation-integration-process>
+
+<script>
+  import '../scripts/online-consultation-integration-process';
+</script>

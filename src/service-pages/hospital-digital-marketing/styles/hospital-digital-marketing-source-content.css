@@ -1,0 +1,8 @@
+.hospital-digital-marketing-source-content:empty { display: none; }
+.hospital-digital-marketing-source-content :where(p) { margin: 0 0 1em; line-height: 1.7; }
+.hospital-digital-marketing-source-content :where(p:last-child) { margin-bottom: 0; }
+.hospital-digital-marketing-source-content ul, .hospital-digital-marketing-source-content ol { margin: .75em 0 1em; padding-left: 1.35em; }
+.hospital-digital-marketing-source-content li { margin: .42em 0; line-height: 1.65; }
+.hospital-digital-marketing-source-content strong { font-weight: 700; }
+.hospital-digital-marketing-source-content table { width: 100%; border-collapse: collapse; }
+.hospital-digital-marketing-source-content th, .hospital-digital-marketing-source-content td { padding: .7em; text-align: left; border-bottom: 1px solid #0002; }

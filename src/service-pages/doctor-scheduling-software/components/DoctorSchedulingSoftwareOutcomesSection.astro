@@ -1,0 +1,25 @@
+---
+import DoctorSchedulingSoftwareOutcomeVisual from './DoctorSchedulingSoftwareOutcomeVisual.astro';
+import { pageCopy } from '../data/doctor-scheduling-software-source';
+const copy = pageCopy.outcomes;
+import '../styles/doctor-scheduling-software-outcomes.css';
+---
+<doctor-scheduling-software-outcomes class="doctor-scheduling-software-outcomes">
+  <section id="doctor-scheduling-software-outcomes" class="section-container" aria-labelledby="doctor-scheduling-software-outcomes-heading">
+    <div class="doctor-scheduling-software-outcomes-heading">
+      <h2 id="doctor-scheduling-software-outcomes-heading">{copy.heading}</h2>
+      <div class="doctor-scheduling-software-outcomes-introduction doctor-scheduling-software-source-content" set:html={copy.before} />
+    </div>
+    <ul class="doctor-scheduling-software-outcomes-list" role="list">
+      {copy.items.map((item, index) => <li class="doctor-scheduling-software-outcome" data-seo-outcomes-motion>
+        <DoctorSchedulingSoftwareOutcomeVisual index={index} />
+        <p><strong>{item.label}</strong><span>{item.description}</span></p>
+      </li>)}
+    </ul>
+    <div class="doctor-scheduling-software-outcomes-conclusion doctor-scheduling-software-source-content" set:html={copy.after} />
+  </section>
+</doctor-scheduling-software-outcomes>
+
+<script>
+  import '../scripts/doctor-scheduling-software-outcomes';
+</script>

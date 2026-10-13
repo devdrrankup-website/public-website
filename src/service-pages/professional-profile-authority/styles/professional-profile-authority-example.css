@@ -1,0 +1,27 @@
+.professional-profile-authority-example-motion { display: block; background: #fff; }
+.professional-profile-authority-example { padding-block: 56px 64px; color: #000; background: linear-gradient(180deg,#fff 0%,#ffffff00 32%,#fff 100%),radial-gradient(ellipse at 100% 48%,#bae5ff40,transparent 65%),radial-gradient(ellipse at 0% 82%,#eeedfe80,transparent 65%),#fff; }
+.professional-profile-authority-example-layout { display: grid; grid-template-areas: 'heading' 'photo' 'copy'; gap: 28px; max-width: 1200px; }
+.professional-profile-authority-example-header { grid-area: heading; min-width: 0; }
+.professional-profile-authority-example h2 { margin: 0; color: #000; font-size: clamp(34px,9.2vw,42px); line-height: 1.17; letter-spacing: -.035em; font-weight: 650; text-wrap: pretty; }
+.professional-profile-authority-example-rule { display: block; height: 1px; margin-top: 28px; background: #afa9ec80; transform-origin: left; }
+.professional-profile-authority-example-photo { grid-area: photo; margin: 0; width: 100%; aspect-ratio: 3/2; overflow: hidden; border-radius: 18px; background: #eeedfe; }
+.professional-profile-authority-example-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.professional-profile-authority-example-copy { grid-area: copy; min-width: 0; }
+.professional-profile-authority-example p { margin: 0; color: #000; font-size: 16px; line-height: 1.85; }
+.professional-profile-authority-example p + p { margin-top: 24px; }
+@media (min-width:640px) {
+  .professional-profile-authority-example { padding-block: 72px 80px; }
+  .professional-profile-authority-example-layout { grid-template-areas: 'heading heading' 'copy photo'; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 36px; align-items: center; }
+  .professional-profile-authority-example h2 { font-size: clamp(40px,5.1vw,48px); }
+  .professional-profile-authority-example-rule { margin-top: 32px; }
+  .professional-profile-authority-example-photo { border-radius: 22px; }
+  .professional-profile-authority-example p { font-size: 17px; }
+}
+@media (min-width:1100px) {
+  .professional-profile-authority-example { padding-block: 88px 96px; }
+  .professional-profile-authority-example-layout { grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr); gap: 44px 72px; }
+  .professional-profile-authority-example h2 { font-size: clamp(44px,3.4vw,52px); }
+  .professional-profile-authority-example-rule { margin-top: 36px; }
+  .professional-profile-authority-example-photo { border-radius: 26px; }
+  .professional-profile-authority-example p + p { margin-top: 28px; }
+}

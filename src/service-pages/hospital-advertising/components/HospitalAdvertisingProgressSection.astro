@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/hospital-advertising/hospital-advertising-progress-v1.webp';
+import { pageCopy } from '../data/hospital-advertising-source';
+const copy = pageCopy.progress;
+import '../styles/hospital-advertising-progress.css';
+---
+<hospital-advertising-progress class="hospital-advertising-progress-motion">
+  <section id="hospital-advertising-progress" class="hospital-advertising-progress" aria-labelledby="hospital-advertising-progress-heading">
+    <div class="section-container hospital-advertising-progress-layout">
+      <h2 id="hospital-advertising-progress-heading" data-progress-entry>{copy.heading}</h2>
+      <p class="hospital-advertising-progress-baseline" data-progress-entry set:html={copy.paragraphsHtml[0]} />
+      <figure class="hospital-advertising-progress-photo" data-progress-entry data-progress-photo>
+        <Image src={photo} alt="Marketing specialist and hospital manager reviewing campaign results" title="Marketing specialist and hospital manager reviewing campaign results" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <p class="hospital-advertising-progress-evidence" data-progress-entry set:html={copy.paragraphsHtml[1]} />
+
+    </div>
+  </section>
+</hospital-advertising-progress>
+<script>
+  import '../scripts/hospital-advertising-progress';
+</script>

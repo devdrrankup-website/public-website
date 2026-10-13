@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/e-prescription-software/e-prescription-software-example-v1.webp';
+import { pageCopy } from '../data/e-prescription-software-source';
+const copy = pageCopy.example;
+import '../styles/e-prescription-software-example.css';
+---
+<e-prescription-software-example class="e-prescription-software-example-motion">
+  <section id="e-prescription-software-example" class="e-prescription-software-example" aria-labelledby="e-prescription-software-example-heading">
+    <div class="section-container e-prescription-software-example-layout">
+      <header class="e-prescription-software-example-header" data-example-entry>
+        <h2 id="e-prescription-software-example-heading">{copy.heading}</h2>
+        <span class="e-prescription-software-example-rule" data-example-rule aria-hidden="true"></span>
+      </header>
+      <figure class="e-prescription-software-example-photo" data-example-entry data-example-photo>
+        <Image src={photo} alt="Doctor checking prescription information during a consultation" title="Doctor checking prescription information during a consultation" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <div class="e-prescription-software-example-copy">
+        <div class="e-prescription-software-source-content" data-example-entry set:html={copy.html} />
+      </div>
+    </div>
+  </section>
+</e-prescription-software-example>
+<script>
+  import '../scripts/e-prescription-software-example';
+</script>

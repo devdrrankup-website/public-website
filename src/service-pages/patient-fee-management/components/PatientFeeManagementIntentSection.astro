@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/patient-fee-management/patient-fee-management-intent-v1.webp';
+import { pageCopy } from '../data/patient-fee-management-source';
+const copy = pageCopy.intent;
+import '../styles/patient-fee-management-intent.css';
+---
+<patient-fee-management-intent class="patient-fee-management-intent">
+  <section id="patient-fee-management-intent" class="section-container patient-fee-management-intent-layout" aria-labelledby="patient-fee-management-intent-heading">
+    <div class="patient-fee-management-intent-copy" data-seo-intent-motion>
+      <h2 id="patient-fee-management-intent-heading">{copy.heading}</h2>
+      <div class="patient-fee-management-source-content" set:html={copy.html} />
+    </div>
+    <div class="patient-fee-management-intent-photo" data-seo-intent-motion>
+      <Image src={photo} widths={[360, 540, 720, 960, 1200]} width={1536} height={1024}
+        sizes="(min-width: 1100px) min(43vw, 576px), (min-width: 640px) min(calc(100vw - 56px), 760px), calc(100vw - 32px)"
+        format="webp" quality={76} loading="lazy" decoding="async"
+        alt="Receptionist explaining fee options on a front-facing laptop"
+        title="Receptionist explaining fee options on a front-facing laptop" />
+    </div>
+  </section>
+</patient-fee-management-intent>
+
+<script>
+  import '../scripts/patient-fee-management-intent';
+</script>

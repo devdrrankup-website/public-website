@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/doctor-video-marketing/doctor-video-marketing-starting-v1.webp';
+import { pageCopy } from '../data/doctor-video-marketing-source';
+const copy = pageCopy.starting;
+import '../styles/doctor-video-marketing-starting.css';
+---
+<doctor-video-marketing-starting class="doctor-video-marketing-starting-motion">
+  <section id="doctor-video-marketing-starting" class="doctor-video-marketing-starting" aria-labelledby="doctor-video-marketing-starting-heading">
+    <div class="section-container doctor-video-marketing-starting-layout">
+      <h2 id="doctor-video-marketing-starting-heading" data-starting-entry>{copy.heading}</h2>
+      <div class="doctor-video-marketing-starting-copy" data-starting-entry>
+        <div class="doctor-video-marketing-source-content" set:html={copy.html} />
+      </div>
+      <figure class="doctor-video-marketing-starting-visual" data-starting-entry data-starting-visual>
+        <Image src={photo} alt="Doctor and producer planning a video timeline" title="Doctor and producer planning a video timeline" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 540px, (min-width:640px) 320px, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+    </div>
+  </section>
+</doctor-video-marketing-starting>
+<script>
+  import '../scripts/doctor-video-marketing-starting';
+</script>

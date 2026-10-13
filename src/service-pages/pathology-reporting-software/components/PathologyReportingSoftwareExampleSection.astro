@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/pathology-reporting-software/pathology-reporting-software-example-v1.webp';
+import { pageCopy } from '../data/pathology-reporting-software-source';
+const copy = pageCopy.example;
+import '../styles/pathology-reporting-software-example.css';
+---
+<pathology-reporting-software-example class="pathology-reporting-software-example-motion">
+  <section id="pathology-reporting-software-example" class="pathology-reporting-software-example" aria-labelledby="pathology-reporting-software-example-heading">
+    <div class="section-container pathology-reporting-software-example-layout">
+      <header class="pathology-reporting-software-example-header" data-example-entry>
+        <h2 id="pathology-reporting-software-example-heading">{copy.heading}</h2>
+        <span class="pathology-reporting-software-example-rule" data-example-rule aria-hidden="true"></span>
+      </header>
+      <figure class="pathology-reporting-software-example-photo" data-example-entry data-example-photo>
+        <Image src={photo} alt="Laboratory team checking a result against a digital report" title="Laboratory team checking a result against a digital report" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <div class="pathology-reporting-software-example-copy">
+        <div class="pathology-reporting-software-source-content" data-example-entry set:html={copy.html} />
+      </div>
+    </div>
+  </section>
+</pathology-reporting-software-example>
+<script>
+  import '../scripts/pathology-reporting-software-example';
+</script>

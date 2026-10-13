@@ -1,0 +1,38 @@
+---
+import ActionIcon from '../../../components/ActionIcon.astro';
+import { pageCopy } from '../data/clinic-doctor-directory-source';
+const copy = pageCopy.hero;
+import { clinicDoctorDirectoryHeroImage as photo } from '../lib/clinic-doctor-directory-hero-image';
+import '../styles/clinic-doctor-directory-hero.css';
+---
+
+<section class="clinic-doctor-directory-hero" aria-labelledby="clinic-doctor-directory-heading">
+  <div class="section-container clinic-doctor-directory-hero-layout">
+    <div class="clinic-doctor-directory-hero-copy">
+      <h1 id="clinic-doctor-directory-heading">{copy.heading}</h1>
+      <p class="clinic-doctor-directory-hero-tagline">{copy.tagline}</p>
+      <div class="clinic-doctor-directory-hero-description">
+        {copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+      </div>
+      <div class="clinic-doctor-directory-hero-actions" aria-label={`${copy.heading} options`}>
+        <span class="button button-primary">
+          <span>{copy.primaryCta}</span><ActionIcon purpose="conversation" />
+        </span>
+        {copy.secondaryHref ? <a class="button button-secondary" href={copy.secondaryHref}>
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </a> : <span class="button button-secondary">
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </span>}
+      </div>
+    </div>
+    <div class="clinic-doctor-directory-hero-visual">
+      <div class="clinic-doctor-directory-hero-photo">
+        <img src={photo.src} srcset={photo.srcset} sizes={photo.sizes}
+          width={photo.width} height={photo.height}
+          alt="Woman browsing a clinic doctor directory on a tablet at home in Dhaka"
+          title="Finding a doctor by specialty from home"
+          loading="eager" fetchpriority="high" decoding="async" />
+      </div>
+    </div>
+  </div>
+</section>

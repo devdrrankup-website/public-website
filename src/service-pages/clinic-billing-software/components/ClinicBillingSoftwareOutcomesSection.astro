@@ -1,0 +1,25 @@
+---
+import ClinicBillingSoftwareOutcomeVisual from './ClinicBillingSoftwareOutcomeVisual.astro';
+import { pageCopy } from '../data/clinic-billing-software-source';
+const copy = pageCopy.outcomes;
+import '../styles/clinic-billing-software-outcomes.css';
+---
+<clinic-billing-software-outcomes class="clinic-billing-software-outcomes">
+  <section id="clinic-billing-software-outcomes" class="section-container" aria-labelledby="clinic-billing-software-outcomes-heading">
+    <div class="clinic-billing-software-outcomes-heading">
+      <h2 id="clinic-billing-software-outcomes-heading">{copy.heading}</h2>
+      <div class="clinic-billing-software-outcomes-introduction clinic-billing-software-source-content" set:html={copy.before} />
+    </div>
+    <ul class="clinic-billing-software-outcomes-list" role="list">
+      {copy.items.map((item, index) => <li class="clinic-billing-software-outcome" data-seo-outcomes-motion>
+        <ClinicBillingSoftwareOutcomeVisual index={index} />
+        <p><strong>{item.label}</strong><span>{item.description}</span></p>
+      </li>)}
+    </ul>
+    <div class="clinic-billing-software-outcomes-conclusion clinic-billing-software-source-content" set:html={copy.after} />
+  </section>
+</clinic-billing-software-outcomes>
+
+<script>
+  import '../scripts/clinic-billing-software-outcomes';
+</script>
