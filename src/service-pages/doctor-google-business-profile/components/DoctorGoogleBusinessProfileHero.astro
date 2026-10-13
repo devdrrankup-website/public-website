@@ -1,0 +1,38 @@
+---
+import ActionIcon from '../../../components/ActionIcon.astro';
+import { pageCopy } from '../data/doctor-google-business-profile-source';
+const copy = pageCopy.hero;
+import { doctorGoogleBusinessProfileHeroImage as photo } from '../lib/doctor-google-business-profile-hero-image';
+import '../styles/doctor-google-business-profile-hero.css';
+---
+
+<section class="doctor-google-business-profile-hero" aria-labelledby="doctor-google-business-profile-heading">
+  <div class="section-container doctor-google-business-profile-hero-layout">
+    <div class="doctor-google-business-profile-hero-copy">
+      <h1 id="doctor-google-business-profile-heading">{copy.heading}</h1>
+      <p class="doctor-google-business-profile-hero-tagline">{copy.tagline}</p>
+      <div class="doctor-google-business-profile-hero-description">
+        {copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+      </div>
+      <div class="doctor-google-business-profile-hero-actions" aria-label={`${copy.heading} options`}>
+        <span class="button button-primary">
+          <span>{copy.primaryCta}</span><ActionIcon purpose="conversation" />
+        </span>
+        {copy.secondaryHref ? <a class="button button-secondary" href={copy.secondaryHref}>
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </a> : <span class="button button-secondary">
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </span>}
+      </div>
+    </div>
+    <div class="doctor-google-business-profile-hero-visual">
+      <div class="doctor-google-business-profile-hero-photo">
+        <img src={photo.src} srcset={photo.srcset} sizes={photo.sizes}
+          width={photo.width} height={photo.height}
+          alt="Doctor and chamber receptionist reviewing a public business listing and visiting hours"
+          title="Checking doctor chamber listing details"
+          loading="eager" fetchpriority="high" decoding="async" />
+      </div>
+    </div>
+  </div>
+</section>

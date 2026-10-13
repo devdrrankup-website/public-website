@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/doctor-google-business-profile/doctor-google-business-profile-example-v1.webp';
+import { pageCopy } from '../data/doctor-google-business-profile-source';
+const copy = pageCopy.example;
+import '../styles/doctor-google-business-profile-example.css';
+---
+<doctor-google-business-profile-example class="doctor-google-business-profile-example-motion">
+  <section id="doctor-google-business-profile-example" class="doctor-google-business-profile-example" aria-labelledby="doctor-google-business-profile-example-heading">
+    <div class="section-container doctor-google-business-profile-example-layout">
+      <header class="doctor-google-business-profile-example-header" data-example-entry>
+        <h2 id="doctor-google-business-profile-example-heading">{copy.heading}</h2>
+        <span class="doctor-google-business-profile-example-rule" data-example-rule aria-hidden="true"></span>
+      </header>
+      <figure class="doctor-google-business-profile-example-photo" data-example-entry data-example-photo>
+        <Image src={photo} alt="Family comparing two chamber locations on a laptop at home" title="Family comparing two chamber locations on a laptop at home" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <div class="doctor-google-business-profile-example-copy">
+        <div class="doctor-google-business-profile-source-content" data-example-entry set:html={copy.html} />
+      </div>
+    </div>
+  </section>
+</doctor-google-business-profile-example>
+<script>
+  import '../scripts/doctor-google-business-profile-example';
+</script>

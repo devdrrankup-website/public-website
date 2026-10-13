@@ -1,0 +1,39 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/doctor-google-business-profile/doctor-google-business-profile-challenges-v1.webp';
+import { pageCopy } from '../data/doctor-google-business-profile-source';
+const copy = pageCopy.challenges;
+import '../styles/doctor-google-business-profile-challenges.css';
+---
+
+<doctor-google-business-profile-challenges class="doctor-google-business-profile-challenges">
+  <section id="doctor-google-business-profile-challenges" class="section-container doctor-google-business-profile-challenges-layout" aria-labelledby="doctor-google-business-profile-challenges-heading">
+    <div class="doctor-google-business-profile-challenges-editorial">
+      <h2 id="doctor-google-business-profile-challenges-heading">{copy.heading}</h2>
+      <p class="doctor-google-business-profile-challenges-introduction" set:html={copy.introductionHtml} />
+      <div class="doctor-google-business-profile-challenges-photo" data-seo-challenges-motion>
+        <Image src={photo} widths={[360, 540, 720, 960, 1200]} width={1536} height={1024}
+          sizes="(min-width: 1100px) min(41vw, 568px), (min-width: 640px) min(calc(100vw - 56px), 760px), calc(100vw - 32px)"
+          format="webp" quality={76}
+          alt="Doctor and assistant checking a practice listing on a phone"
+          title="Doctor and assistant checking a practice listing on a phone"
+          loading="lazy" decoding="async" />
+      </div>
+    </div>
+    <div class="doctor-google-business-profile-challenges-details">
+      {copy.preListHtml && <p class="doctor-google-business-profile-challenges-prelist" set:html={copy.preListHtml} />}
+      <p id="doctor-google-business-profile-challenges-list-heading" class="doctor-google-business-profile-challenges-list-intro" set:html={copy.listIntroductionHtml} />
+      <ul class="doctor-google-business-profile-challenges-list" role="list" aria-labelledby="doctor-google-business-profile-challenges-list-heading" data-seo-challenges-motion>
+        {copy.challengesHtml.map((challenge, index) => <li>
+          <span class="doctor-google-business-profile-challenge-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+          <span set:html={challenge} />
+        </li>)}
+      </ul>
+      {copy.conclusionHtml && <p class="doctor-google-business-profile-challenges-conclusion" set:html={copy.conclusionHtml} />}
+    </div>
+  </section>
+</doctor-google-business-profile-challenges>
+
+<script>
+  import '../scripts/doctor-google-business-profile-challenges';
+</script>

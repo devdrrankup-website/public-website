@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/doctor-google-business-profile/doctor-google-business-profile-starting-v1.webp';
+import { pageCopy } from '../data/doctor-google-business-profile-source';
+const copy = pageCopy.starting;
+import '../styles/doctor-google-business-profile-starting.css';
+---
+<doctor-google-business-profile-starting class="doctor-google-business-profile-starting-motion">
+  <section id="doctor-google-business-profile-starting" class="doctor-google-business-profile-starting" aria-labelledby="doctor-google-business-profile-starting-heading">
+    <div class="section-container doctor-google-business-profile-starting-layout">
+      <h2 id="doctor-google-business-profile-starting-heading" data-starting-entry>{copy.heading}</h2>
+      <div class="doctor-google-business-profile-starting-copy" data-starting-entry>
+        <div class="doctor-google-business-profile-source-content" set:html={copy.html} />
+      </div>
+      <figure class="doctor-google-business-profile-starting-visual" data-starting-entry data-starting-visual>
+        <Image src={photo} alt="Doctor and specialist reviewing a practice location listing" title="Doctor and specialist reviewing a practice location listing" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 540px, (min-width:640px) 320px, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+    </div>
+  </section>
+</doctor-google-business-profile-starting>
+<script>
+  import '../scripts/doctor-google-business-profile-starting';
+</script>

@@ -1,0 +1,25 @@
+---
+import DoctorGoogleBusinessProfileOutcomeVisual from './DoctorGoogleBusinessProfileOutcomeVisual.astro';
+import { pageCopy } from '../data/doctor-google-business-profile-source';
+const copy = pageCopy.outcomes;
+import '../styles/doctor-google-business-profile-outcomes.css';
+---
+<doctor-google-business-profile-outcomes class="doctor-google-business-profile-outcomes">
+  <section id="doctor-google-business-profile-outcomes" class="section-container" aria-labelledby="doctor-google-business-profile-outcomes-heading">
+    <div class="doctor-google-business-profile-outcomes-heading">
+      <h2 id="doctor-google-business-profile-outcomes-heading">{copy.heading}</h2>
+      <div class="doctor-google-business-profile-outcomes-introduction doctor-google-business-profile-source-content" set:html={copy.before} />
+    </div>
+    <ul class="doctor-google-business-profile-outcomes-list" role="list">
+      {copy.items.map((item, index) => <li class="doctor-google-business-profile-outcome" data-seo-outcomes-motion>
+        <DoctorGoogleBusinessProfileOutcomeVisual index={index} />
+        <p><strong>{item.label}</strong><span>{item.description}</span></p>
+      </li>)}
+    </ul>
+    <div class="doctor-google-business-profile-outcomes-conclusion doctor-google-business-profile-source-content" set:html={copy.after} />
+  </section>
+</doctor-google-business-profile-outcomes>
+
+<script>
+  import '../scripts/doctor-google-business-profile-outcomes';
+</script>

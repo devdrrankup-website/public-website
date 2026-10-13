@@ -1,0 +1,47 @@
+---
+// Destination-owned static page.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import DoctorGoogleBusinessProfileHero from './components/DoctorGoogleBusinessProfileHero.astro';
+import DoctorGoogleBusinessProfileChallengesSection from './components/DoctorGoogleBusinessProfileChallengesSection.astro';
+import DoctorGoogleBusinessProfileOutcomesSection from './components/DoctorGoogleBusinessProfileOutcomesSection.astro';
+import DoctorGoogleBusinessProfileIntentSection from './components/DoctorGoogleBusinessProfileIntentSection.astro';
+import DoctorGoogleBusinessProfileTrustSection from './components/DoctorGoogleBusinessProfileTrustSection.astro';
+import DoctorGoogleBusinessProfileExpertiseSection from './components/DoctorGoogleBusinessProfileExpertiseSection.astro';
+import DoctorGoogleBusinessProfileProcessSection from './components/DoctorGoogleBusinessProfileProcessSection.astro';
+import DoctorGoogleBusinessProfileMappingSection from './components/DoctorGoogleBusinessProfileMappingSection.astro';
+import DoctorGoogleBusinessProfileRelatedSection from './components/DoctorGoogleBusinessProfileRelatedSection.astro';
+import DoctorGoogleBusinessProfileStartingSection from './components/DoctorGoogleBusinessProfileStartingSection.astro';
+import DoctorGoogleBusinessProfileExampleSection from './components/DoctorGoogleBusinessProfileExampleSection.astro';
+import DoctorGoogleBusinessProfileProgressSection from './components/DoctorGoogleBusinessProfileProgressSection.astro';
+import DoctorGoogleBusinessProfileWhySection from './components/DoctorGoogleBusinessProfileWhySection.astro';
+import DoctorGoogleBusinessProfileFaqSection from './components/DoctorGoogleBusinessProfileFaqSection.astro';
+import DoctorGoogleBusinessProfileConsultationSection from './components/DoctorGoogleBusinessProfileConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { doctorGoogleBusinessProfileHeroPreload } from './lib/doctor-google-business-profile-hero-image';
+import './styles/doctor-google-business-profile-rendering.css';
+import './styles/doctor-google-business-profile-source-content.css';
+import { metadata } from './data/doctor-google-business-profile-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={doctorGoogleBusinessProfileHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="doctor-google-business-profile-page" tabindex="-1">
+    <DoctorGoogleBusinessProfileHero />
+    <DoctorGoogleBusinessProfileChallengesSection />
+    <DoctorGoogleBusinessProfileOutcomesSection />
+    <DoctorGoogleBusinessProfileIntentSection />
+    <DoctorGoogleBusinessProfileTrustSection />
+    <DoctorGoogleBusinessProfileExpertiseSection />
+    <DoctorGoogleBusinessProfileProcessSection />
+    <DoctorGoogleBusinessProfileMappingSection />
+    <DoctorGoogleBusinessProfileRelatedSection />
+    <DoctorGoogleBusinessProfileStartingSection />
+    <DoctorGoogleBusinessProfileExampleSection />
+    <DoctorGoogleBusinessProfileProgressSection />
+    <DoctorGoogleBusinessProfileWhySection />
+    <DoctorGoogleBusinessProfileFaqSection />
+    <DoctorGoogleBusinessProfileConsultationSection />
+  </main>
+  <Footer />
+</Layout>
