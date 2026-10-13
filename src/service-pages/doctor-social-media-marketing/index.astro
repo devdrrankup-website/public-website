@@ -1,0 +1,47 @@
+---
+// Destination-owned static page.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import DoctorSocialMediaMarketingHero from './components/DoctorSocialMediaMarketingHero.astro';
+import DoctorSocialMediaMarketingChallengesSection from './components/DoctorSocialMediaMarketingChallengesSection.astro';
+import DoctorSocialMediaMarketingOutcomesSection from './components/DoctorSocialMediaMarketingOutcomesSection.astro';
+import DoctorSocialMediaMarketingIntentSection from './components/DoctorSocialMediaMarketingIntentSection.astro';
+import DoctorSocialMediaMarketingTrustSection from './components/DoctorSocialMediaMarketingTrustSection.astro';
+import DoctorSocialMediaMarketingExpertiseSection from './components/DoctorSocialMediaMarketingExpertiseSection.astro';
+import DoctorSocialMediaMarketingProcessSection from './components/DoctorSocialMediaMarketingProcessSection.astro';
+import DoctorSocialMediaMarketingMappingSection from './components/DoctorSocialMediaMarketingMappingSection.astro';
+import DoctorSocialMediaMarketingRelatedSection from './components/DoctorSocialMediaMarketingRelatedSection.astro';
+import DoctorSocialMediaMarketingStartingSection from './components/DoctorSocialMediaMarketingStartingSection.astro';
+import DoctorSocialMediaMarketingExampleSection from './components/DoctorSocialMediaMarketingExampleSection.astro';
+import DoctorSocialMediaMarketingProgressSection from './components/DoctorSocialMediaMarketingProgressSection.astro';
+import DoctorSocialMediaMarketingWhySection from './components/DoctorSocialMediaMarketingWhySection.astro';
+import DoctorSocialMediaMarketingFaqSection from './components/DoctorSocialMediaMarketingFaqSection.astro';
+import DoctorSocialMediaMarketingConsultationSection from './components/DoctorSocialMediaMarketingConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { doctorSocialMediaMarketingHeroPreload } from './lib/doctor-social-media-marketing-hero-image';
+import './styles/doctor-social-media-marketing-rendering.css';
+import './styles/doctor-social-media-marketing-source-content.css';
+import { metadata } from './data/doctor-social-media-marketing-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={doctorSocialMediaMarketingHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="doctor-social-media-marketing-page" tabindex="-1">
+    <DoctorSocialMediaMarketingHero />
+    <DoctorSocialMediaMarketingChallengesSection />
+    <DoctorSocialMediaMarketingOutcomesSection />
+    <DoctorSocialMediaMarketingIntentSection />
+    <DoctorSocialMediaMarketingTrustSection />
+    <DoctorSocialMediaMarketingExpertiseSection />
+    <DoctorSocialMediaMarketingProcessSection />
+    <DoctorSocialMediaMarketingMappingSection />
+    <DoctorSocialMediaMarketingRelatedSection />
+    <DoctorSocialMediaMarketingStartingSection />
+    <DoctorSocialMediaMarketingExampleSection />
+    <DoctorSocialMediaMarketingProgressSection />
+    <DoctorSocialMediaMarketingWhySection />
+    <DoctorSocialMediaMarketingFaqSection />
+    <DoctorSocialMediaMarketingConsultationSection />
+  </main>
+  <Footer />
+</Layout>

@@ -1,0 +1,25 @@
+---
+import DoctorSocialMediaMarketingOutcomeVisual from './DoctorSocialMediaMarketingOutcomeVisual.astro';
+import { pageCopy } from '../data/doctor-social-media-marketing-source';
+const copy = pageCopy.outcomes;
+import '../styles/doctor-social-media-marketing-outcomes.css';
+---
+<doctor-social-media-marketing-outcomes class="doctor-social-media-marketing-outcomes">
+  <section id="doctor-social-media-marketing-outcomes" class="section-container" aria-labelledby="doctor-social-media-marketing-outcomes-heading">
+    <div class="doctor-social-media-marketing-outcomes-heading">
+      <h2 id="doctor-social-media-marketing-outcomes-heading">{copy.heading}</h2>
+      <div class="doctor-social-media-marketing-outcomes-introduction doctor-social-media-marketing-source-content" set:html={copy.before} />
+    </div>
+    <ul class="doctor-social-media-marketing-outcomes-list" role="list">
+      {copy.items.map((item, index) => <li class="doctor-social-media-marketing-outcome" data-seo-outcomes-motion>
+        <DoctorSocialMediaMarketingOutcomeVisual index={index} />
+        <p><strong>{item.label}</strong><span>{item.description}</span></p>
+      </li>)}
+    </ul>
+    <div class="doctor-social-media-marketing-outcomes-conclusion doctor-social-media-marketing-source-content" set:html={copy.after} />
+  </section>
+</doctor-social-media-marketing-outcomes>
+
+<script>
+  import '../scripts/doctor-social-media-marketing-outcomes';
+</script>

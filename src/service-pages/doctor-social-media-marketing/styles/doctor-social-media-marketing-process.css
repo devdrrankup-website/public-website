@@ -1,0 +1,232 @@
+.doctor-social-media-marketing-process-motion {
+  display: block;
+  background: #fff;
+}
+
+.doctor-social-media-marketing-process {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  padding-block: 52px 68px;
+  border-radius: 28px 28px 0 0;
+  scroll-margin-top: calc(var(--header-height) + 12px);
+  color: #000;
+  background:
+    linear-gradient(180deg, transparent calc(100% - 72px), #f3f5ff 100%),
+    radial-gradient(ellipse at 92% 10%, #bae5ff80 0%, #bae5ff00 48%),
+    radial-gradient(ellipse at 4% 84%, #eeedfe 0%, #eeedfe00 52%),
+    #fff;
+}
+
+.doctor-social-media-marketing-process-atmosphere {
+  position: absolute;
+  z-index: -1;
+  top: 20px;
+  right: -120px;
+  width: 300px;
+  aspect-ratio: 1;
+  border: 1px solid #6131c61a;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 42px #ffffff70, inset 0 0 0 43px #229f6014, inset 0 0 0 88px #ffffff66, inset 0 0 0 89px #6131c612;
+  pointer-events: none;
+}
+
+.doctor-social-media-marketing-process-background {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  overflow: hidden;
+  opacity: .075;
+  pointer-events: none;
+  mask-image: linear-gradient(180deg, transparent 0%, #000 10%, #000 90%, transparent 100%);
+}
+.doctor-social-media-marketing-process-background img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 68% center;
+  filter: saturate(.58) contrast(.88);
+}
+
+.doctor-social-media-marketing-process-layout { display: grid; gap: 34px; }
+.doctor-social-media-marketing-process-header { max-width: 520px; }
+.doctor-social-media-marketing-process-range {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  color: #6131c6;
+  font-size: 11px;
+  font-weight: 750;
+  line-height: 1;
+  letter-spacing: .16em;
+}
+.doctor-social-media-marketing-process-range::after { content: ''; width: 48px; height: 1px; background: #6131c6; }
+.doctor-social-media-marketing-process h2 {
+  margin: 0;
+  color: #000;
+  font-size: clamp(36px, 10.8vw, 48px);
+  font-weight: 650;
+  line-height: 1.08;
+  letter-spacing: -.05em;
+}
+
+.doctor-social-media-marketing-process-flow { position: relative; }
+.doctor-social-media-marketing-process-route { display: none; visibility: hidden; }
+.doctor-social-media-marketing-process-motion[data-seo-route-measured] .doctor-social-media-marketing-process-route { visibility: visible; }
+.doctor-social-media-marketing-process-step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr);
+  gap: 16px;
+  min-width: 0;
+  padding-block: 18px 24px;
+  border-top: 1px solid #0000001a;
+}
+.doctor-social-media-marketing-process-step:last-child { border-bottom: 1px solid #0000001a; }
+.doctor-social-media-marketing-process-node-column { position: relative; align-self: stretch; min-height: 76px; }
+.doctor-social-media-marketing-process-node {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #6131c6;
+  border-radius: 50%;
+  color: #6131c6;
+  background: #fff;
+  box-shadow: 0 0 0 6px #ffffffcc;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: .08em;
+  transition: color 420ms, background-color 420ms, border-color 420ms, box-shadow 420ms;
+  transition-delay: var(--seo-process-delay, 0ms);
+}
+.doctor-social-media-marketing-process-connector {
+  position: absolute;
+  z-index: 1;
+  top: 44px;
+  bottom: -25px;
+  left: 21px;
+  width: 2px;
+  transform-origin: 50% 0;
+  background: linear-gradient(180deg, #6131c6 0%, #229f60 72%, #229f6028 100%);
+  transition: transform 640ms cubic-bezier(.2,.65,.3,1);
+  transition-delay: var(--seo-process-delay, 0ms);
+}
+.doctor-social-media-marketing-process-copy { min-width: 0; padding-top: 4px; }
+.doctor-social-media-marketing-process-step h3 {
+  margin: 0;
+  color: #000;
+  font-size: 22px;
+  font-weight: 650;
+  line-height: 1.25;
+  letter-spacing: -.03em;
+}
+.doctor-social-media-marketing-process-step h3 span { color: #6131c6; font-size: .62em; letter-spacing: .04em; }
+.doctor-social-media-marketing-process-step p {
+  max-width: 620px;
+  margin: 9px 0 0;
+  color: #000;
+  font-size: 14px;
+  line-height: 1.72;
+}
+
+.doctor-social-media-marketing-process-motion.is-enhanced .doctor-social-media-marketing-process-step:not(.is-active) .doctor-social-media-marketing-process-node {
+  color: #0000008f;
+  border-color: #0000002e;
+  box-shadow: 0 0 0 6px #ffffffcc;
+}
+.doctor-social-media-marketing-process-motion.is-enhanced .doctor-social-media-marketing-process-step:not(.is-active) .doctor-social-media-marketing-process-connector { transform: scaleY(.08); }
+.doctor-social-media-marketing-process-step.is-active .doctor-social-media-marketing-process-node {
+  color: #000;
+  border-color: #e1ffb9;
+  background: #e1ffb9;
+  box-shadow: 0 0 0 6px #ffffffcc, 0 8px 26px #229f6038;
+}
+
+@media (min-width: 640px) {
+  .doctor-social-media-marketing-process { padding-block: 72px 84px; border-radius: 36px 36px 0 0; }
+  .doctor-social-media-marketing-process-atmosphere { top: -50px; right: -170px; width: 470px; }
+  .doctor-social-media-marketing-process-background { opacity: .08; }
+  .doctor-social-media-marketing-process-background img { object-position: 70% center; }
+  .doctor-social-media-marketing-process-layout {
+    grid-template-columns: minmax(220px, .72fr) minmax(0, 1.28fr);
+    align-items: start;
+    gap: clamp(40px, 7vw, 76px);
+  }
+  .doctor-social-media-marketing-process-header { position: sticky; top: calc(var(--header-height) + 28px); }
+  .doctor-social-media-marketing-process h2 { font-size: clamp(48px, 7vw, 64px); }
+  .doctor-social-media-marketing-process-step { grid-template-columns: 50px minmax(0, 1fr); gap: 20px; padding-block: 24px 30px; }
+  .doctor-social-media-marketing-process-node { width: 48px; height: 48px; }
+  .doctor-social-media-marketing-process-connector { top: 48px; bottom: -31px; left: 23px; }
+  .doctor-social-media-marketing-process-step h3 { font-size: 25px; }
+  .doctor-social-media-marketing-process-step p { font-size: 15px; }
+}
+
+@media (min-width: 1100px) {
+  .doctor-social-media-marketing-process { padding-block: 88px 104px; border-radius: 40px 40px 0 0; }
+  .doctor-social-media-marketing-process-atmosphere { top: -220px; right: -130px; width: 680px; }
+  .doctor-social-media-marketing-process-background { opacity: .085; }
+  .doctor-social-media-marketing-process-background img { object-position: center; }
+  .doctor-social-media-marketing-process-layout { display: block; }
+  .doctor-social-media-marketing-process-header { position: static; max-width: none; margin-bottom: 72px; }
+  .doctor-social-media-marketing-process h2 { font-size: clamp(58px, 5vw, 76px); }
+  .doctor-social-media-marketing-process-flow {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(220px, auto));
+    column-gap: clamp(30px, 4vw, 64px);
+    row-gap: 62px;
+  }
+  .doctor-social-media-marketing-process-route { display: block; position: absolute; z-index: 0; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+  .doctor-social-media-marketing-process-route path,
+  .doctor-social-media-marketing-process-route line { fill: none; vector-effect: non-scaling-stroke; }
+  .doctor-social-media-marketing-process-route-base { stroke: #6131c626; stroke-width: 1.4; }
+  .doctor-social-media-marketing-process-route-progress line {
+    stroke: url('#doctor-social-media-marketing-process-route-gradient');
+    stroke-width: 2;
+    stroke-linecap: round;
+    transform: scaleX(1);
+    transform-box: fill-box;
+    transform-origin: left center;
+    transition: transform 480ms cubic-bezier(.2,.65,.3,1);
+  }
+  .doctor-social-media-marketing-process-route-progress .doctor-social-media-marketing-process-route-vertical { transform: scaleY(1); transform-origin: center top; }
+  .doctor-social-media-marketing-process-route-progress .doctor-social-media-marketing-process-route-reverse { transform-origin: right center; }
+  .doctor-social-media-marketing-process-route-progress line:nth-child(2) { transition-delay: 200ms; }
+  .doctor-social-media-marketing-process-route-progress line:nth-child(3) { transition-delay: 400ms; }
+  .doctor-social-media-marketing-process-route-progress line:nth-child(4) { transition-delay: 600ms; }
+  .doctor-social-media-marketing-process-route-progress line:nth-child(5) { transition-delay: 800ms; }
+  .doctor-social-media-marketing-process-route-progress line:nth-child(6) { transition-delay: 1000ms; }
+  .doctor-social-media-marketing-process-motion.is-enhanced:not(.is-route-active) .doctor-social-media-marketing-process-route-horizontal { transform: scaleX(0); }
+  .doctor-social-media-marketing-process-motion.is-enhanced:not(.is-route-active) .doctor-social-media-marketing-process-route-vertical { transform: scaleY(0); }
+  .doctor-social-media-marketing-process-step {
+    z-index: 1;
+    display: block;
+    padding: 0 12px;
+    border: 0;
+    text-align: center;
+  }
+  .doctor-social-media-marketing-process-step:last-child { border: 0; }
+  .doctor-social-media-marketing-process-step:nth-child(5) { grid-column: 3; grid-row: 2; }
+  .doctor-social-media-marketing-process-step:nth-child(6) { grid-column: 2; grid-row: 2; }
+  .doctor-social-media-marketing-process-node-column { min-height: 66px; }
+  .doctor-social-media-marketing-process-node { width: 58px; height: 58px; margin-inline: auto; font-size: 11px; box-shadow: 0 0 0 8px #ffffffcc; }
+  .doctor-social-media-marketing-process-connector { display: none; }
+  .doctor-social-media-marketing-process-copy { padding-top: 14px; }
+  .doctor-social-media-marketing-process-step h3 { font-size: 27px; }
+  .doctor-social-media-marketing-process-step p { max-width: 330px; margin: 12px auto 0; font-size: 15px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .doctor-social-media-marketing-process-node,
+  .doctor-social-media-marketing-process-connector,
+  .doctor-social-media-marketing-process-route-progress line { transition-property: none !important; transition-duration: 0ms !important; transition-delay: 0ms !important; }
+}
+
+
+.doctor-social-media-marketing-process-step p + p { margin-top: 14px; }

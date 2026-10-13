@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/doctor-social-media-marketing/doctor-social-media-marketing-example-v1.webp';
+import { pageCopy } from '../data/doctor-social-media-marketing-source';
+const copy = pageCopy.example;
+import '../styles/doctor-social-media-marketing-example.css';
+---
+<doctor-social-media-marketing-example class="doctor-social-media-marketing-example-motion">
+  <section id="doctor-social-media-marketing-example" class="doctor-social-media-marketing-example" aria-labelledby="doctor-social-media-marketing-example-heading">
+    <div class="section-container doctor-social-media-marketing-example-layout">
+      <header class="doctor-social-media-marketing-example-header" data-example-entry>
+        <h2 id="doctor-social-media-marketing-example-heading">{copy.heading}</h2>
+        <span class="doctor-social-media-marketing-example-rule" data-example-rule aria-hidden="true"></span>
+      </header>
+      <figure class="doctor-social-media-marketing-example-photo" data-example-entry data-example-photo>
+        <Image src={photo} alt="Doctor showing social information during a consultation" title="Doctor showing social information during a consultation" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <div class="doctor-social-media-marketing-example-copy">
+        <div class="doctor-social-media-marketing-source-content" data-example-entry set:html={copy.html} />
+      </div>
+    </div>
+  </section>
+</doctor-social-media-marketing-example>
+<script>
+  import '../scripts/doctor-social-media-marketing-example';
+</script>
