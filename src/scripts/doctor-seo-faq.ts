@@ -50,11 +50,15 @@ class DoctorSeoFaq extends HTMLElement {
     panel.style.removeProperty('height');
     const end=open?panel.scrollHeight:0;
     panel.style.overflow='hidden';
-    const animation=panel.animate([{height:`${start}px`},{height:`${end}px`}],{duration:360,easing:'cubic-bezier(.2,.65,.3,1)'});
+    // Hold the final height until the completion callback updates `hidden`.
+    // Without fill, a closing answer can briefly return to its full height.
+    const animation=panel.animate([{height:`${start}px`},{height:`${end}px`}],{duration:360,easing:'cubic-bezier(.2,.65,.3,1)',fill:'forwards'});
     this.panels.set(panel,{animation,open});
     animation.finished.then(()=> {
       if(this.panels.get(panel)?.animation!==animation)return;
-      panel.hidden=!open;this.clearPanelStyle(panel);this.panels.delete(panel);
+      if(open)panel.style.height=`${end}px`;
+      else panel.hidden=true;
+      animation.cancel();this.clearPanelStyle(panel);this.panels.delete(panel);
     },()=>{});
   }
   private clearPanelStyle(panel:HTMLElement){panel.style.removeProperty('height');panel.style.removeProperty('overflow');}

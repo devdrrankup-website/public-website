@@ -6,6 +6,8 @@ class DoctorSeoProcess extends HTMLElement {
   private cleanup?: AbortController;
   private resizeObserver?: ResizeObserver;
   private routeFrame?: number;
+  private routeActivation?: IntersectionObserver;
+  private routeNear = false;
 
   connectedCallback() {
     this.motion = matchMedia('(prefers-reduced-motion: reduce)');
@@ -14,15 +16,31 @@ class DoctorSeoProcess extends HTMLElement {
     this.configure();
     // Read geometry after size changes; never on scroll or every animation frame.
     const flow = this.querySelector<HTMLElement>('.doctor-seo-process-flow');
-    if (flow && 'ResizeObserver' in window) {
-      this.resizeObserver = new ResizeObserver(() => this.queueRoute());
-      this.resizeObserver.observe(flow);
-    }
-    addEventListener('resize', () => this.queueRoute(), { signal: this.cleanup.signal });
-    document.fonts.ready.then(() => {
-      if (!this.cleanup?.signal.aborted && this.isConnected) this.queueRoute();
-    });
-    this.queueRoute();
+    addEventListener('resize', () => {
+      if (this.routeNear) this.queueRoute();
+      else if (innerWidth < 640) activateRoute();
+    }, { signal: this.cleanup.signal });
+    const activateRoute = () => {
+      if (this.routeNear) return;
+      this.routeNear = true;
+      this.routeActivation?.disconnect();
+      if (flow && 'ResizeObserver' in window) {
+        this.resizeObserver = new ResizeObserver(() => this.queueRoute());
+        this.resizeObserver.observe(flow);
+      }
+      this.queueRoute();
+      document.fonts.ready.then(() => {
+        if (!this.cleanup?.signal.aborted && this.isConnected) this.queueRoute();
+      });
+    };
+    // Keep this far-below-fold timeline's geometry reads out of first paint.
+    if (innerWidth < 640) activateRoute();
+    else if ('IntersectionObserver' in window) {
+      this.routeActivation = new IntersectionObserver(entries => {
+        if (entries.some(entry => entry.isIntersecting)) activateRoute();
+      }, { rootMargin: '800px 0px' });
+      this.routeActivation.observe(this);
+    } else activateRoute();
   }
 
   private configure() {
@@ -126,8 +144,10 @@ class DoctorSeoProcess extends HTMLElement {
     this.stop();
     this.cleanup?.abort();
     this.resizeObserver?.disconnect();
+    this.routeActivation?.disconnect();
     if (this.routeFrame !== undefined) cancelAnimationFrame(this.routeFrame);
     this.routeFrame = undefined;
+    this.routeNear = false;
   }
 }
 

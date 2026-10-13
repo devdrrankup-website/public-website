@@ -34,9 +34,7 @@
   .doctor-seo-outcomes-introduction { margin: 0 0 4px; }
   .doctor-seo-outcomes-list { grid-template-columns: repeat(6, minmax(0, 1fr)); column-gap: 48px; row-gap: 12px; margin-top: 36px; }
   .doctor-seo-outcome { grid-column: span 2; padding-bottom: 32px; }
-  .doctor-seo-outcome:nth-last-child(-n + 2) { grid-column: span 3; display: grid; grid-template-columns: 170px minmax(0, 1fr); align-items: center; gap: 24px; }
-  .doctor-seo-outcome:last-child { width: 100%; }
-  .doctor-seo-outcome:nth-last-child(-n + 2) .doctor-seo-outcome-visual { width: 170px; height: 106px; }
-  .doctor-seo-outcome:nth-last-child(-n + 2) .doctor-seo-outcome-badge { top: 30px; }
-  .doctor-seo-outcome:nth-last-child(-n + 2) p { margin: 0; }
+  .doctor-seo-outcome:nth-child(4):nth-last-child(2),
+  .doctor-seo-outcome:nth-child(5):last-child { grid-column: span 3; }
+  .doctor-seo-outcome:last-child { grid-column: span 2; justify-self: stretch; width: 100%; }
 }
