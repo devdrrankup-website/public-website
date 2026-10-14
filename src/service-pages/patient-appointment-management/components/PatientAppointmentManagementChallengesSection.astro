@@ -21,7 +21,6 @@ import '../styles/patient-appointment-management-challenges.css';
       </div>
     </div>
     <div class="patient-appointment-management-challenges-details">
-      {copy.preListHtml && <p class="patient-appointment-management-challenges-prelist" set:html={copy.preListHtml} />}
       <p id="patient-appointment-management-challenges-list-heading" class="patient-appointment-management-challenges-list-intro" set:html={copy.listIntroductionHtml} />
       <ul class="patient-appointment-management-challenges-list" role="list" aria-labelledby="patient-appointment-management-challenges-list-heading" data-seo-challenges-motion>
         {copy.challengesHtml.map((challenge, index) => <li>
@@ -29,7 +28,7 @@ import '../styles/patient-appointment-management-challenges.css';
           <span set:html={challenge} />
         </li>)}
       </ul>
-      {copy.conclusionHtml && <p class="patient-appointment-management-challenges-conclusion" set:html={copy.conclusionHtml} />}
+      <p class="patient-appointment-management-challenges-conclusion" set:html={copy.preListHtml} />
     </div>
   </section>
 </patient-appointment-management-challenges>

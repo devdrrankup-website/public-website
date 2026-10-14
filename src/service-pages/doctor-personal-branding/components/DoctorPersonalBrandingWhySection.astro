@@ -4,8 +4,10 @@ import UserAccountIcon from '@hugeicons/core-free-icons/UserAccountIcon';
 import WorkflowSquare01Icon from '@hugeicons/core-free-icons/WorkflowSquare01Icon';
 import TaskEdit01Icon from '@hugeicons/core-free-icons/TaskEdit01Icon';
 import { pageCopy } from '../data/doctor-personal-branding-source';
-const copy = pageCopy.why;
+import { whyEditorial } from '../data/doctor-personal-branding-section-editorial';
 import '../styles/doctor-personal-branding-why.css';
+const copy = pageCopy.why;
+const reasons = whyEditorial;
 const visuals = [
   { icon: UserAccountIcon, accent: '#E1FFB9' },
   { icon: WorkflowSquare01Icon, accent: '#BAE5FF' },
@@ -16,14 +18,14 @@ const visuals = [
   <section id="doctor-personal-branding-why" class="doctor-personal-branding-why" aria-labelledby="doctor-personal-branding-why-heading">
     <div class="section-container doctor-personal-branding-why-layout">
       <h2 id="doctor-personal-branding-why-heading" data-why-entry>{copy.heading}</h2>
-      <div class="doctor-personal-branding-source-content" set:html={copy.before} />
-      {copy.items.length > 0 && <ul class="doctor-personal-branding-why-principles">
-        {copy.items.map((principle,index) => <li data-why-entry data-why-row>
-          <span class="doctor-personal-branding-why-icon" data-why-icon style={`--why-accent:${visuals[index % visuals.length].accent}`} aria-hidden="true"><Icon icon={visuals[index % visuals.length].icon} size={24} strokeWidth={1.7} /></span>
-          <p><strong>{principle.label}</strong>{' '}{principle.description}</p>
-        </li>)}
-      </ul>}
-      <div class="doctor-personal-branding-source-content" set:html={copy.after} />
+      <div class="doctor-personal-branding-why-body">
+        <ul class="doctor-personal-branding-why-principles">
+          {reasons.map((principle,index) => <li data-why-entry data-why-row>
+            <span class="doctor-personal-branding-why-icon" data-why-icon style={`--why-accent:${visuals[index % visuals.length].accent}`} aria-hidden="true"><Icon icon={visuals[index % visuals.length].icon} size={24} strokeWidth={1.7} /></span>
+            <p><strong>{principle.label}</strong>{' '}{principle.description}</p>
+          </li>)}
+        </ul>
+      </div>
     </div>
   </section>
 </doctor-personal-branding-why>

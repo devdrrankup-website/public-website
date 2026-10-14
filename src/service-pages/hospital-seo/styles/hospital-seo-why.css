@@ -22,3 +22,5 @@
   .hospital-seo-why h2 { max-width: 430px; font-size: clamp(42px,3.3vw,50px); }
   .hospital-seo-why strong { font-size: 26px; }
 }
+
+.hospital-seo-why-body { min-width: 0; }

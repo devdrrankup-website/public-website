@@ -4,8 +4,10 @@ import UserAccountIcon from '@hugeicons/core-free-icons/UserAccountIcon';
 import WorkflowSquare01Icon from '@hugeicons/core-free-icons/WorkflowSquare01Icon';
 import TaskEdit01Icon from '@hugeicons/core-free-icons/TaskEdit01Icon';
 import { pageCopy } from '../data/clinic-website-source';
-const copy = pageCopy.why;
+import { whyEditorial } from '../data/clinic-website-section-editorial';
 import '../styles/clinic-website-why.css';
+const copy = pageCopy.why;
+const reasons = whyEditorial;
 const visuals = [
   { icon: UserAccountIcon, accent: '#E1FFB9' },
   { icon: WorkflowSquare01Icon, accent: '#BAE5FF' },
@@ -16,14 +18,14 @@ const visuals = [
   <section id="clinic-website-why" class="clinic-website-why" aria-labelledby="clinic-website-why-heading">
     <div class="section-container clinic-website-why-layout">
       <h2 id="clinic-website-why-heading" data-why-entry>{copy.heading}</h2>
-      <div class="clinic-website-source-content" set:html={copy.before} />
-      {copy.items.length > 0 && <ul class="clinic-website-why-principles">
-        {copy.items.map((principle,index) => <li data-why-entry data-why-row>
-          <span class="clinic-website-why-icon" data-why-icon style={`--why-accent:${visuals[index % visuals.length].accent}`} aria-hidden="true"><Icon icon={visuals[index % visuals.length].icon} size={24} strokeWidth={1.7} /></span>
-          <p><strong>{principle.label}</strong>{' '}{principle.description}</p>
-        </li>)}
-      </ul>}
-      <div class="clinic-website-source-content" set:html={copy.after} />
+      <div class="clinic-website-why-body">
+        <ul class="clinic-website-why-principles">
+          {reasons.map((principle,index) => <li data-why-entry data-why-row>
+            <span class="clinic-website-why-icon" data-why-icon style={`--why-accent:${visuals[index % visuals.length].accent}`} aria-hidden="true"><Icon icon={visuals[index % visuals.length].icon} size={24} strokeWidth={1.7} /></span>
+            <p><strong>{principle.label}</strong>{' '}{principle.description}</p>
+          </li>)}
+        </ul>
+      </div>
     </div>
   </section>
 </clinic-website-why>

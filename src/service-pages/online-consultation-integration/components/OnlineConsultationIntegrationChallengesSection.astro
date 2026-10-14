@@ -3,8 +3,7 @@ import { Image } from 'astro:assets';
 import photo from '../../../assets/online-consultation-integration/online-consultation-integration-challenges-v1.webp';
 import { pageCopy } from '../data/online-consultation-integration-source';
 const copy = pageCopy.challenges;
-const introductionParagraph = copy.html.match(/^<p>([\s\S]*?)<\/p>/)?.[1] ?? '';
-const detailParagraphs = Array.from(copy.html.matchAll(/<p>([\s\S]*?)<\/p>/g), match => match[1]).slice(1);
+import { challengeEditorial as editorial } from '../data/online-consultation-integration-section-editorial';
 import '../styles/online-consultation-integration-challenges.css';
 ---
 
@@ -12,7 +11,7 @@ import '../styles/online-consultation-integration-challenges.css';
   <section id="online-consultation-integration-challenges" class="section-container online-consultation-integration-challenges-layout" aria-labelledby="online-consultation-integration-challenges-heading">
     <div class="online-consultation-integration-challenges-editorial">
       <h2 id="online-consultation-integration-challenges-heading">{copy.heading}</h2>
-      <p class="online-consultation-integration-challenges-introduction" set:html={introductionParagraph} />
+      <p class="online-consultation-integration-challenges-introduction" set:html={editorial.introduction} />
       <div class="online-consultation-integration-challenges-photo" data-seo-challenges-motion>
         <Image src={photo} widths={[360, 540, 720, 960, 1200]} width={1536} height={1024}
           sizes="(min-width: 1100px) min(41vw, 568px), (min-width: 640px) min(calc(100vw - 56px), 760px), calc(100vw - 32px)"
@@ -23,12 +22,14 @@ import '../styles/online-consultation-integration-challenges.css';
       </div>
     </div>
     <div class="online-consultation-integration-challenges-details">
-      <ul class="online-consultation-integration-challenges-list" role="list" data-seo-challenges-motion>
-        {detailParagraphs.map((paragraph, index) => <li>
+      <p id="online-consultation-integration-challenges-list-heading" class="online-consultation-integration-challenges-list-intro">{editorial.listIntro}</p>
+      <ul class="online-consultation-integration-challenges-list" role="list" aria-labelledby="online-consultation-integration-challenges-list-heading" data-seo-challenges-motion>
+        {editorial.points.map((paragraph, index) => <li>
           <span class="online-consultation-integration-challenge-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
           <span set:html={paragraph} />
         </li>)}
       </ul>
+      <p class="online-consultation-integration-challenges-conclusion">{editorial.conclusion}</p>
     </div>
   </section>
 </online-consultation-integration-challenges>

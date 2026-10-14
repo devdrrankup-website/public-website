@@ -22,3 +22,5 @@
   .e-prescription-software-why h2 { max-width: 430px; font-size: clamp(42px,3.3vw,50px); }
   .e-prescription-software-why strong { font-size: 26px; }
 }
+
+.e-prescription-software-why-body { min-width: 0; }

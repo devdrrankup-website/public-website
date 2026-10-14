@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import photo from '../../../assets/clinic-google-business-profile/clinic-google-business-profile-challenges-v1.webp';
 import { pageCopy } from '../data/clinic-google-business-profile-source';
+import { challengeEditorial as editorial } from '../data/clinic-google-business-profile-section-editorial';
 const copy = pageCopy.challenges;
 import '../styles/clinic-google-business-profile-challenges.css';
 ---
@@ -24,7 +25,7 @@ import '../styles/clinic-google-business-profile-challenges.css';
       {copy.preListHtml && <p class="clinic-google-business-profile-challenges-prelist" set:html={copy.preListHtml} />}
       <p id="clinic-google-business-profile-challenges-list-heading" class="clinic-google-business-profile-challenges-list-intro" set:html={copy.listIntroductionHtml} />
       <ul class="clinic-google-business-profile-challenges-list" role="list" aria-labelledby="clinic-google-business-profile-challenges-list-heading" data-seo-challenges-motion>
-        {copy.challengesHtml.map((challenge, index) => <li>
+        {editorial.points.map((challenge, index) => <li>
           <span class="clinic-google-business-profile-challenge-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
           <span set:html={challenge} />
         </li>)}

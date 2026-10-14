@@ -3,8 +3,7 @@ import { Image } from 'astro:assets';
 import photo from '../../../assets/search-ready-build-foundation/search-ready-build-foundation-challenges-v1.webp';
 import { pageCopy } from '../data/search-ready-build-foundation-source';
 const copy = pageCopy.challenges;
-const introductionParagraph = copy.html.match(/^<p>([\s\S]*?)<\/p>/)?.[1] ?? '';
-const detailParagraphs = Array.from(copy.html.matchAll(/<p>([\s\S]*?)<\/p>/g), match => match[1]).slice(1);
+import { challengeEditorial as editorial } from '../data/search-ready-build-foundation-section-editorial';
 import '../styles/search-ready-build-foundation-challenges.css';
 ---
 
@@ -12,7 +11,7 @@ import '../styles/search-ready-build-foundation-challenges.css';
   <section id="search-ready-build-foundation-challenges" class="section-container search-ready-build-foundation-challenges-layout" aria-labelledby="search-ready-build-foundation-challenges-heading">
     <div class="search-ready-build-foundation-challenges-editorial">
       <h2 id="search-ready-build-foundation-challenges-heading">{copy.heading}</h2>
-      <p class="search-ready-build-foundation-challenges-introduction" set:html={introductionParagraph} />
+      <p class="search-ready-build-foundation-challenges-introduction" set:html={editorial.introduction} />
       <div class="search-ready-build-foundation-challenges-photo" data-seo-challenges-motion>
         <Image src={photo} widths={[360, 540, 720, 960, 1200]} width={1536} height={1024}
           sizes="(min-width: 1100px) min(41vw, 568px), (min-width: 640px) min(calc(100vw - 56px), 760px), calc(100vw - 32px)"
@@ -23,12 +22,14 @@ import '../styles/search-ready-build-foundation-challenges.css';
       </div>
     </div>
     <div class="search-ready-build-foundation-challenges-details">
-      <ul class="search-ready-build-foundation-challenges-list" role="list" data-seo-challenges-motion>
-        {detailParagraphs.map((paragraph, index) => <li>
+      <p id="search-ready-build-foundation-challenges-list-heading" class="search-ready-build-foundation-challenges-list-intro">{editorial.listIntro}</p>
+      <ul class="search-ready-build-foundation-challenges-list" role="list" aria-labelledby="search-ready-build-foundation-challenges-list-heading" data-seo-challenges-motion>
+        {editorial.points.map((paragraph, index) => <li>
           <span class="search-ready-build-foundation-challenge-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
           <span set:html={paragraph} />
         </li>)}
       </ul>
+      <p class="search-ready-build-foundation-challenges-conclusion">{editorial.conclusion}</p>
     </div>
   </section>
 </search-ready-build-foundation-challenges>

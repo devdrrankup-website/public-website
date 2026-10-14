@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import photo from '../../../assets/clinic-facebook-ads/clinic-facebook-ads-challenges-v1.webp';
 import { pageCopy } from '../data/clinic-facebook-ads-source';
+import { challengeEditorial as editorial } from '../data/clinic-facebook-ads-section-editorial';
 const copy = pageCopy.challenges;
 import '../styles/clinic-facebook-ads-challenges.css';
 ---
@@ -24,7 +25,7 @@ import '../styles/clinic-facebook-ads-challenges.css';
       {copy.preListHtml && <p class="clinic-facebook-ads-challenges-prelist" set:html={copy.preListHtml} />}
       <p id="clinic-facebook-ads-challenges-list-heading" class="clinic-facebook-ads-challenges-list-intro" set:html={copy.listIntroductionHtml} />
       <ul class="clinic-facebook-ads-challenges-list" role="list" aria-labelledby="clinic-facebook-ads-challenges-list-heading" data-seo-challenges-motion>
-        {copy.challengesHtml.map((challenge, index) => <li>
+        {editorial.points.map((challenge, index) => <li>
           <span class="clinic-facebook-ads-challenge-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
           <span set:html={challenge} />
         </li>)}

@@ -3,8 +3,7 @@ import { Image } from 'astro:assets';
 import photo from '../../../assets/appointment-booking-integration/booking-reception-review-v1.webp';
 import { pageCopy } from '../data/appointment-booking-integration-source';
 const copy = pageCopy.challenges;
-const introductionParagraph = copy.html.match(/^<p>([\s\S]*?)<\/p>/)?.[1] ?? '';
-const detailParagraphs = Array.from(copy.html.matchAll(/<p>([\s\S]*?)<\/p>/g), match => match[1]).slice(1);
+import { challengeEditorial as editorial } from '../data/appointment-booking-integration-section-editorial';
 import '../styles/appointment-booking-integration-challenges.css';
 ---
 
@@ -12,7 +11,7 @@ import '../styles/appointment-booking-integration-challenges.css';
   <section id="appointment-booking-integration-challenges" class="section-container appointment-booking-integration-challenges-layout" aria-labelledby="appointment-booking-integration-challenges-heading">
     <div class="appointment-booking-integration-challenges-editorial">
       <h2 id="appointment-booking-integration-challenges-heading">{copy.heading}</h2>
-      <p class="appointment-booking-integration-challenges-introduction" set:html={introductionParagraph} />
+      <p class="appointment-booking-integration-challenges-introduction" set:html={editorial.introduction} />
       <div class="appointment-booking-integration-challenges-photo" data-seo-challenges-motion>
         <Image src={photo} widths={[360, 540, 720, 960, 1200]} width={1536} height={1024}
           sizes="(min-width: 1100px) min(41vw, 568px), (min-width: 640px) min(calc(100vw - 56px), 760px), calc(100vw - 32px)"
@@ -23,12 +22,14 @@ import '../styles/appointment-booking-integration-challenges.css';
       </div>
     </div>
     <div class="appointment-booking-integration-challenges-details">
-      <ul class="appointment-booking-integration-challenges-list" role="list" data-seo-challenges-motion>
-        {detailParagraphs.map((paragraph, index) => <li>
+      <p id="appointment-booking-integration-challenges-list-heading" class="appointment-booking-integration-challenges-list-intro">{editorial.listIntro}</p>
+      <ul class="appointment-booking-integration-challenges-list" role="list" aria-labelledby="appointment-booking-integration-challenges-list-heading" data-seo-challenges-motion>
+        {editorial.points.map((paragraph, index) => <li>
           <span class="appointment-booking-integration-challenge-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
           <span set:html={paragraph} />
         </li>)}
       </ul>
+      <p class="appointment-booking-integration-challenges-conclusion">{editorial.conclusion}</p>
     </div>
   </section>
 </appointment-booking-integration-challenges>

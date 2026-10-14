@@ -22,3 +22,5 @@
   .clinic-facebook-ads-why h2 { max-width: 430px; font-size: clamp(42px,3.3vw,50px); }
   .clinic-facebook-ads-why strong { font-size: 26px; }
 }
+
+.clinic-facebook-ads-why-body { min-width: 0; }

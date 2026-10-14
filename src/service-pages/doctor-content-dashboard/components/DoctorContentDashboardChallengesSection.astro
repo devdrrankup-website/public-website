@@ -3,8 +3,7 @@ import { Image } from 'astro:assets';
 import photo from '../../../assets/doctor-content-dashboard/doctor-content-dashboard-challenges-v1.webp';
 import { pageCopy } from '../data/doctor-content-dashboard-source';
 const copy = pageCopy.challenges;
-const introductionParagraph = copy.html.match(/^<p>([\s\S]*?)<\/p>/)?.[1] ?? '';
-const detailParagraphs = Array.from(copy.html.matchAll(/<p>([\s\S]*?)<\/p>/g), match => match[1]).slice(1);
+import { challengeEditorial as editorial } from '../data/doctor-content-dashboard-section-editorial';
 import '../styles/doctor-content-dashboard-challenges.css';
 ---
 
@@ -12,7 +11,7 @@ import '../styles/doctor-content-dashboard-challenges.css';
   <section id="doctor-content-dashboard-challenges" class="section-container doctor-content-dashboard-challenges-layout" aria-labelledby="doctor-content-dashboard-challenges-heading">
     <div class="doctor-content-dashboard-challenges-editorial">
       <h2 id="doctor-content-dashboard-challenges-heading">{copy.heading}</h2>
-      <p class="doctor-content-dashboard-challenges-introduction" set:html={introductionParagraph} />
+      <p class="doctor-content-dashboard-challenges-introduction" set:html={editorial.introduction} />
       <div class="doctor-content-dashboard-challenges-photo" data-seo-challenges-motion>
         <Image src={photo} widths={[360, 540, 720, 960, 1200]} width={1536} height={1024}
           sizes="(min-width: 1100px) min(41vw, 568px), (min-width: 640px) min(calc(100vw - 56px), 760px), calc(100vw - 32px)"
@@ -23,12 +22,14 @@ import '../styles/doctor-content-dashboard-challenges.css';
       </div>
     </div>
     <div class="doctor-content-dashboard-challenges-details">
-      <ul class="doctor-content-dashboard-challenges-list" role="list" data-seo-challenges-motion>
-        {detailParagraphs.map((paragraph, index) => <li>
+      <p id="doctor-content-dashboard-challenges-list-heading" class="doctor-content-dashboard-challenges-list-intro">{editorial.listIntro}</p>
+      <ul class="doctor-content-dashboard-challenges-list" role="list" aria-labelledby="doctor-content-dashboard-challenges-list-heading" data-seo-challenges-motion>
+        {editorial.points.map((paragraph, index) => <li>
           <span class="doctor-content-dashboard-challenge-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
           <span set:html={paragraph} />
         </li>)}
       </ul>
+      <p class="doctor-content-dashboard-challenges-conclusion">{editorial.conclusion}</p>
     </div>
   </section>
 </doctor-content-dashboard-challenges>

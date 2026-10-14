@@ -4,8 +4,9 @@ import UserAccountIcon from '@hugeicons/core-free-icons/UserAccountIcon';
 import WorkflowSquare01Icon from '@hugeicons/core-free-icons/WorkflowSquare01Icon';
 import TaskEdit01Icon from '@hugeicons/core-free-icons/TaskEdit01Icon';
 import { pageCopy } from '../data/doctor-local-seo-source';
-const copy = pageCopy.why;
 import '../styles/doctor-local-seo-why.css';
+const copy = pageCopy.why;
+const reasons = copy.items;
 const visuals = [
   { icon: UserAccountIcon, accent: '#E1FFB9' },
   { icon: WorkflowSquare01Icon, accent: '#BAE5FF' },
@@ -16,14 +17,14 @@ const visuals = [
   <section id="doctor-local-seo-why" class="doctor-local-seo-why" aria-labelledby="doctor-local-seo-why-heading">
     <div class="section-container doctor-local-seo-why-layout">
       <h2 id="doctor-local-seo-why-heading" data-why-entry>{copy.heading}</h2>
-      <div class="doctor-local-seo-source-content" set:html={copy.before} />
-      {copy.items.length > 0 && <ul class="doctor-local-seo-why-principles">
-        {copy.items.map((principle,index) => <li data-why-entry data-why-row>
-          <span class="doctor-local-seo-why-icon" data-why-icon style={`--why-accent:${visuals[index % visuals.length].accent}`} aria-hidden="true"><Icon icon={visuals[index % visuals.length].icon} size={24} strokeWidth={1.7} /></span>
-          <p><strong>{principle.label}</strong>{' '}{principle.description}</p>
-        </li>)}
-      </ul>}
-      <div class="doctor-local-seo-source-content" set:html={copy.after} />
+      <div class="doctor-local-seo-why-body">
+        <ul class="doctor-local-seo-why-principles">
+          {reasons.map((principle,index) => <li data-why-entry data-why-row>
+            <span class="doctor-local-seo-why-icon" data-why-icon style={`--why-accent:${visuals[index % visuals.length].accent}`} aria-hidden="true"><Icon icon={visuals[index % visuals.length].icon} size={24} strokeWidth={1.7} /></span>
+            <p><strong>{principle.label}</strong>{' '}{principle.description}</p>
+          </li>)}
+        </ul>
+      </div>
     </div>
   </section>
 </doctor-local-seo-why>

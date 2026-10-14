@@ -22,3 +22,5 @@
   .patient-fee-management-why h2 { max-width: 430px; font-size: clamp(42px,3.3vw,50px); }
   .patient-fee-management-why strong { font-size: 26px; }
 }
+
+.patient-fee-management-why-body { min-width: 0; }

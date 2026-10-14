@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import photo from '../../../assets/hospital-management-software/hospital-management-software-challenges-v1.webp';
 import { pageCopy } from '../data/hospital-management-software-source';
+import { challengeEditorial as editorial } from '../data/hospital-management-software-section-editorial';
 const copy = pageCopy.challenges;
 import '../styles/hospital-management-software-challenges.css';
 ---
@@ -24,7 +25,7 @@ import '../styles/hospital-management-software-challenges.css';
       {copy.preListHtml && <p class="hospital-management-software-challenges-prelist" set:html={copy.preListHtml} />}
       <p id="hospital-management-software-challenges-list-heading" class="hospital-management-software-challenges-list-intro" set:html={copy.listIntroductionHtml} />
       <ul class="hospital-management-software-challenges-list" role="list" aria-labelledby="hospital-management-software-challenges-list-heading" data-seo-challenges-motion>
-        {copy.challengesHtml.map((challenge, index) => <li>
+        {editorial.points.map((challenge, index) => <li>
           <span class="hospital-management-software-challenge-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
           <span set:html={challenge} />
         </li>)}

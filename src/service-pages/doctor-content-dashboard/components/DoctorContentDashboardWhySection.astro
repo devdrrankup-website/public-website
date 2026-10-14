@@ -4,9 +4,10 @@ import UserAccountIcon from '@hugeicons/core-free-icons/UserAccountIcon';
 import WorkflowSquare01Icon from '@hugeicons/core-free-icons/WorkflowSquare01Icon';
 import TaskEdit01Icon from '@hugeicons/core-free-icons/TaskEdit01Icon';
 import { pageCopy } from '../data/doctor-content-dashboard-source';
-const copy = pageCopy.why;
-const reasons = Array.from(copy.before.matchAll(/<p>([\s\S]*?)<\/p>/g), match => match[1]);
+import { whyEditorial } from '../data/doctor-content-dashboard-section-editorial';
 import '../styles/doctor-content-dashboard-why.css';
+const copy = pageCopy.why;
+const reasons = whyEditorial;
 const visuals = [
   { icon: UserAccountIcon, accent: '#E1FFB9' },
   { icon: WorkflowSquare01Icon, accent: '#BAE5FF' },
@@ -17,20 +18,14 @@ const visuals = [
   <section id="doctor-content-dashboard-why" class="doctor-content-dashboard-why" aria-labelledby="doctor-content-dashboard-why-heading">
     <div class="section-container doctor-content-dashboard-why-layout">
       <h2 id="doctor-content-dashboard-why-heading" data-why-entry>{copy.heading}</h2>
-      {copy.items.length > 0 && <div class="doctor-content-dashboard-source-content" set:html={copy.before} />}
-      {copy.items.length > 0 && <ul class="doctor-content-dashboard-why-principles">
-        {copy.items.map((principle,index) => <li data-why-entry data-why-row>
-          <span class="doctor-content-dashboard-why-icon" data-why-icon style={`--why-accent:${visuals[index % visuals.length].accent}`} aria-hidden="true"><Icon icon={visuals[index % visuals.length].icon} size={24} strokeWidth={1.7} /></span>
-          <p><strong>{principle.label}</strong>{' '}{principle.description}</p>
-        </li>)}
-      </ul>}
-      {copy.items.length === 0 && <ul class="doctor-content-dashboard-why-principles">
-        {reasons.map((reason,index) => <li data-why-entry data-why-row>
-          <span class="doctor-content-dashboard-why-icon" data-why-icon style={`--why-accent:${visuals[index % visuals.length].accent}`} aria-hidden="true"><Icon icon={visuals[index % visuals.length].icon} size={24} strokeWidth={1.7} /></span>
-          <p set:html={reason} />
-        </li>)}
-      </ul>}
-      <div class="doctor-content-dashboard-source-content" set:html={copy.after} />
+      <div class="doctor-content-dashboard-why-body">
+        <ul class="doctor-content-dashboard-why-principles">
+          {reasons.map((principle,index) => <li data-why-entry data-why-row>
+            <span class="doctor-content-dashboard-why-icon" data-why-icon style={`--why-accent:${visuals[index % visuals.length].accent}`} aria-hidden="true"><Icon icon={visuals[index % visuals.length].icon} size={24} strokeWidth={1.7} /></span>
+            <p><strong>{principle.label}</strong>{' '}{principle.description}</p>
+          </li>)}
+        </ul>
+      </div>
     </div>
   </section>
 </doctor-content-dashboard-why>

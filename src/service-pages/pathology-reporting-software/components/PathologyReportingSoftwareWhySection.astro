@@ -4,8 +4,10 @@ import UserAccountIcon from '@hugeicons/core-free-icons/UserAccountIcon';
 import WorkflowSquare01Icon from '@hugeicons/core-free-icons/WorkflowSquare01Icon';
 import TaskEdit01Icon from '@hugeicons/core-free-icons/TaskEdit01Icon';
 import { pageCopy } from '../data/pathology-reporting-software-source';
-const copy = pageCopy.why;
+import { whyEditorial } from '../data/pathology-reporting-software-section-editorial';
 import '../styles/pathology-reporting-software-why.css';
+const copy = pageCopy.why;
+const reasons = whyEditorial;
 const visuals = [
   { icon: UserAccountIcon, accent: '#E1FFB9' },
   { icon: WorkflowSquare01Icon, accent: '#BAE5FF' },
@@ -16,14 +18,14 @@ const visuals = [
   <section id="pathology-reporting-software-why" class="pathology-reporting-software-why" aria-labelledby="pathology-reporting-software-why-heading">
     <div class="section-container pathology-reporting-software-why-layout">
       <h2 id="pathology-reporting-software-why-heading" data-why-entry>{copy.heading}</h2>
-      <div class="pathology-reporting-software-source-content" set:html={copy.before} />
-      {copy.items.length > 0 && <ul class="pathology-reporting-software-why-principles">
-        {copy.items.map((principle,index) => <li data-why-entry data-why-row>
-          <span class="pathology-reporting-software-why-icon" data-why-icon style={`--why-accent:${visuals[index % visuals.length].accent}`} aria-hidden="true"><Icon icon={visuals[index % visuals.length].icon} size={24} strokeWidth={1.7} /></span>
-          <p><strong>{principle.label}</strong>{' '}{principle.description}</p>
-        </li>)}
-      </ul>}
-      <div class="pathology-reporting-software-source-content" set:html={copy.after} />
+      <div class="pathology-reporting-software-why-body">
+        <ul class="pathology-reporting-software-why-principles">
+          {reasons.map((principle,index) => <li data-why-entry data-why-row>
+            <span class="pathology-reporting-software-why-icon" data-why-icon style={`--why-accent:${visuals[index % visuals.length].accent}`} aria-hidden="true"><Icon icon={visuals[index % visuals.length].icon} size={24} strokeWidth={1.7} /></span>
+            <p><strong>{principle.label}</strong>{' '}{principle.description}</p>
+          </li>)}
+        </ul>
+      </div>
     </div>
   </section>
 </pathology-reporting-software-why>

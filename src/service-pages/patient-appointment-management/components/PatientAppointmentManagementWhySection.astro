@@ -4,9 +4,10 @@ import UserAccountIcon from '@hugeicons/core-free-icons/UserAccountIcon';
 import WorkflowSquare01Icon from '@hugeicons/core-free-icons/WorkflowSquare01Icon';
 import TaskEdit01Icon from '@hugeicons/core-free-icons/TaskEdit01Icon';
 import { pageCopy } from '../data/patient-appointment-management-source';
-const copy = pageCopy.why;
-const reasons = Array.from(copy.before.matchAll(/<p>([\s\S]*?)<\/p>/g), match => match[1]);
+import { whyEditorial } from '../data/patient-appointment-management-section-editorial';
 import '../styles/patient-appointment-management-why.css';
+const copy = pageCopy.why;
+const reasons = whyEditorial;
 const visuals = [
   { icon: UserAccountIcon, accent: '#E1FFB9' },
   { icon: WorkflowSquare01Icon, accent: '#BAE5FF' },
@@ -17,20 +18,14 @@ const visuals = [
   <section id="patient-appointment-management-why" class="patient-appointment-management-why" aria-labelledby="patient-appointment-management-why-heading">
     <div class="section-container patient-appointment-management-why-layout">
       <h2 id="patient-appointment-management-why-heading" data-why-entry>{copy.heading}</h2>
-      {copy.items.length > 0 && <div class="patient-appointment-management-source-content" set:html={copy.before} />}
-      {copy.items.length > 0 && <ul class="patient-appointment-management-why-principles">
-        {copy.items.map((principle,index) => <li data-why-entry data-why-row>
-          <span class="patient-appointment-management-why-icon" data-why-icon style={`--why-accent:${visuals[index % visuals.length].accent}`} aria-hidden="true"><Icon icon={visuals[index % visuals.length].icon} size={24} strokeWidth={1.7} /></span>
-          <p><strong>{principle.label}</strong>{' '}{principle.description}</p>
-        </li>)}
-      </ul>}
-      {copy.items.length === 0 && <ul class="patient-appointment-management-why-principles">
-        {reasons.map((reason,index) => <li data-why-entry data-why-row>
-          <span class="patient-appointment-management-why-icon" data-why-icon style={`--why-accent:${visuals[index % visuals.length].accent}`} aria-hidden="true"><Icon icon={visuals[index % visuals.length].icon} size={24} strokeWidth={1.7} /></span>
-          <p set:html={reason} />
-        </li>)}
-      </ul>}
-      <div class="patient-appointment-management-source-content" set:html={copy.after} />
+      <div class="patient-appointment-management-why-body">
+        <ul class="patient-appointment-management-why-principles">
+          {reasons.map((principle,index) => <li data-why-entry data-why-row>
+            <span class="patient-appointment-management-why-icon" data-why-icon style={`--why-accent:${visuals[index % visuals.length].accent}`} aria-hidden="true"><Icon icon={visuals[index % visuals.length].icon} size={24} strokeWidth={1.7} /></span>
+            <p><strong>{principle.label}</strong>{' '}{principle.description}</p>
+          </li>)}
+        </ul>
+      </div>
     </div>
   </section>
 </patient-appointment-management-why>

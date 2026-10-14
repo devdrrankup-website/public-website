@@ -22,3 +22,5 @@
   .clinic-doctor-schedule-management-why h2 { max-width: 430px; font-size: clamp(42px,3.3vw,50px); }
   .clinic-doctor-schedule-management-why strong { font-size: 26px; }
 }
+
+.clinic-doctor-schedule-management-why-body { min-width: 0; }

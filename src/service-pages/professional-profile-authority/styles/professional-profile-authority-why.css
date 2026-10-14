@@ -22,3 +22,5 @@
   .professional-profile-authority-why h2 { max-width: 430px; font-size: clamp(42px,3.3vw,50px); }
   .professional-profile-authority-why strong { font-size: 26px; }
 }
+
+.professional-profile-authority-why-body { min-width: 0; }

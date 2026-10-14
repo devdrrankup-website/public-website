@@ -22,3 +22,5 @@
   .doctor-personal-branding-why h2 { max-width: 430px; font-size: clamp(42px,3.3vw,50px); }
   .doctor-personal-branding-why strong { font-size: 26px; }
 }
+
+.doctor-personal-branding-why-body { min-width: 0; }

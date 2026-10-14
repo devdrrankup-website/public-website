@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import photo from '../../../assets/doctor-local-seo/chamber-listing-audit-v2.webp';
 import { pageCopy } from '../data/doctor-local-seo-source';
+import { challengeEditorial as editorial } from '../data/doctor-local-seo-section-editorial';
 const copy = pageCopy.challenges;
 import '../styles/doctor-local-seo-challenges.css';
 ---
@@ -23,7 +24,7 @@ import '../styles/doctor-local-seo-challenges.css';
     <div class="doctor-local-seo-challenges-details">
       <p id="doctor-local-seo-challenges-list-heading" class="doctor-local-seo-challenges-list-intro">{copy.listIntroduction}</p>
       <ul class="doctor-local-seo-challenges-list" role="list" aria-labelledby="doctor-local-seo-challenges-list-heading" data-seo-challenges-motion>
-        {copy.challenges.map((challenge, index) => <li>
+        {editorial.points.map((challenge, index) => <li>
           <span class="doctor-local-seo-challenge-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
           <span>{challenge}</span>
         </li>)}

@@ -22,3 +22,5 @@
   .diagnostic-management-why h2 { max-width: 430px; font-size: clamp(42px,3.3vw,50px); }
   .diagnostic-management-why strong { font-size: 26px; }
 }
+
+.diagnostic-management-why-body { min-width: 0; }

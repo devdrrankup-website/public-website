@@ -22,3 +22,5 @@
   .doctor-content-dashboard-why h2 { max-width: 430px; font-size: clamp(42px,3.3vw,50px); }
   .doctor-content-dashboard-why strong { font-size: 26px; }
 }
+
+.doctor-content-dashboard-why-body { min-width: 0; }

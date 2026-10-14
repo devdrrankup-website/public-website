@@ -4,8 +4,9 @@ import UserAccountIcon from '@hugeicons/core-free-icons/UserAccountIcon';
 import WorkflowSquare01Icon from '@hugeicons/core-free-icons/WorkflowSquare01Icon';
 import TaskEdit01Icon from '@hugeicons/core-free-icons/TaskEdit01Icon';
 import { pageCopy } from '../data/hospital-digital-marketing-source';
-const copy = pageCopy.why;
 import '../styles/hospital-digital-marketing-why.css';
+const copy = pageCopy.why;
+const reasons = copy.items;
 const visuals = [
   { icon: UserAccountIcon, accent: '#E1FFB9' },
   { icon: WorkflowSquare01Icon, accent: '#BAE5FF' },
@@ -16,14 +17,14 @@ const visuals = [
   <section id="hospital-digital-marketing-why" class="hospital-digital-marketing-why" aria-labelledby="hospital-digital-marketing-why-heading">
     <div class="section-container hospital-digital-marketing-why-layout">
       <h2 id="hospital-digital-marketing-why-heading" data-why-entry>{copy.heading}</h2>
-      <div class="hospital-digital-marketing-source-content" set:html={copy.before} />
-      {copy.items.length > 0 && <ul class="hospital-digital-marketing-why-principles">
-        {copy.items.map((principle,index) => <li data-why-entry data-why-row>
-          <span class="hospital-digital-marketing-why-icon" data-why-icon style={`--why-accent:${visuals[index % visuals.length].accent}`} aria-hidden="true"><Icon icon={visuals[index % visuals.length].icon} size={24} strokeWidth={1.7} /></span>
-          <p><strong>{principle.label}</strong>{' '}{principle.description}</p>
-        </li>)}
-      </ul>}
-      <div class="hospital-digital-marketing-source-content" set:html={copy.after} />
+      <div class="hospital-digital-marketing-why-body">
+        <ul class="hospital-digital-marketing-why-principles">
+          {reasons.map((principle,index) => <li data-why-entry data-why-row>
+            <span class="hospital-digital-marketing-why-icon" data-why-icon style={`--why-accent:${visuals[index % visuals.length].accent}`} aria-hidden="true"><Icon icon={visuals[index % visuals.length].icon} size={24} strokeWidth={1.7} /></span>
+            <p><strong>{principle.label}</strong>{' '}{principle.description}</p>
+          </li>)}
+        </ul>
+      </div>
     </div>
   </section>
 </hospital-digital-marketing-why>

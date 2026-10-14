@@ -4,9 +4,10 @@ import UserAccountIcon from '@hugeicons/core-free-icons/UserAccountIcon';
 import WorkflowSquare01Icon from '@hugeicons/core-free-icons/WorkflowSquare01Icon';
 import TaskEdit01Icon from '@hugeicons/core-free-icons/TaskEdit01Icon';
 import { pageCopy } from '../data/online-consultation-integration-source';
-const copy = pageCopy.why;
-const reasons = Array.from(copy.before.matchAll(/<p>([\s\S]*?)<\/p>/g), match => match[1]);
+import { whyEditorial } from '../data/online-consultation-integration-section-editorial';
 import '../styles/online-consultation-integration-why.css';
+const copy = pageCopy.why;
+const reasons = whyEditorial;
 const visuals = [
   { icon: UserAccountIcon, accent: '#E1FFB9' },
   { icon: WorkflowSquare01Icon, accent: '#BAE5FF' },
@@ -17,20 +18,14 @@ const visuals = [
   <section id="online-consultation-integration-why" class="online-consultation-integration-why" aria-labelledby="online-consultation-integration-why-heading">
     <div class="section-container online-consultation-integration-why-layout">
       <h2 id="online-consultation-integration-why-heading" data-why-entry>{copy.heading}</h2>
-      {copy.items.length > 0 && <div class="online-consultation-integration-source-content" set:html={copy.before} />}
-      {copy.items.length > 0 && <ul class="online-consultation-integration-why-principles">
-        {copy.items.map((principle,index) => <li data-why-entry data-why-row>
-          <span class="online-consultation-integration-why-icon" data-why-icon style={`--why-accent:${visuals[index % visuals.length].accent}`} aria-hidden="true"><Icon icon={visuals[index % visuals.length].icon} size={24} strokeWidth={1.7} /></span>
-          <p><strong>{principle.label}</strong>{' '}{principle.description}</p>
-        </li>)}
-      </ul>}
-      {copy.items.length === 0 && <ul class="online-consultation-integration-why-principles">
-        {reasons.map((reason,index) => <li data-why-entry data-why-row>
-          <span class="online-consultation-integration-why-icon" data-why-icon style={`--why-accent:${visuals[index % visuals.length].accent}`} aria-hidden="true"><Icon icon={visuals[index % visuals.length].icon} size={24} strokeWidth={1.7} /></span>
-          <p set:html={reason} />
-        </li>)}
-      </ul>}
-      <div class="online-consultation-integration-source-content" set:html={copy.after} />
+      <div class="online-consultation-integration-why-body">
+        <ul class="online-consultation-integration-why-principles">
+          {reasons.map((principle,index) => <li data-why-entry data-why-row>
+            <span class="online-consultation-integration-why-icon" data-why-icon style={`--why-accent:${visuals[index % visuals.length].accent}`} aria-hidden="true"><Icon icon={visuals[index % visuals.length].icon} size={24} strokeWidth={1.7} /></span>
+            <p><strong>{principle.label}</strong>{' '}{principle.description}</p>
+          </li>)}
+        </ul>
+      </div>
     </div>
   </section>
 </online-consultation-integration-why>
