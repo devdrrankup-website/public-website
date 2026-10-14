@@ -172,7 +172,7 @@ export const pageCopy = {
   },
   "example": {
     "heading": "Example: Search Traffic With the Wrong Destination",
-    "html": "<p>Imagine a specialist paying for location-specific searches while every ad leads to a generic homepage. A focused campaign could point to a verified chamber page, filter irrelevant queries and record appropriate enquiries. <strong>This is a hypothetical scenario, not a Dr RankUp client result.</strong></p>"
+    "html": "<p>Imagine a specialist paying for location-specific searches while every ad leads to a generic homepage.</p><p>A focused campaign could point to a verified chamber page, filter irrelevant queries and record appropriate enquiries. <strong>This is a hypothetical scenario, not a Dr RankUp client result.</strong></p>"
   },
   "progress": {
     "heading": "Measure Useful Actions, Not Just Click Volume",

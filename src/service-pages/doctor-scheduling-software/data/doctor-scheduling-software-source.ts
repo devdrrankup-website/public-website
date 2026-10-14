@@ -157,7 +157,7 @@ export const pageCopy = {
   },
   "example": {
     "heading": "Example: A Doctor Working Across Two Chambers",
-    "html": "<p><em>Hypothetical process, not a client case study.</em></p><p>Imagine a doctor with regular evening sessions at Chamber A and occasional sessions at Chamber B. A hospital-duty change closes one date, but old messages still show the original time.</p><p>The system could preserve recurring sessions, apply a one-day exception, flag overlaps and identify bookings for review. An authorized assistant would then check who needs a revised time before sending any update. Results depend on implementation.</p>"
+    "html": "<p><em>Hypothetical process, not a client case study.</em> Imagine a doctor with regular evening sessions at Chamber A and occasional sessions at Chamber B. A hospital-duty change closes one date, but old messages still show the original time.</p><p>The system could preserve recurring sessions, apply a one-day exception, flag overlaps and identify bookings for review. An authorized assistant would then check who needs a revised time before sending any update. Results depend on implementation.</p>"
   },
   "progress": {
     "heading": "Measure Scheduling Reliability, Not Just Calendar Activity",

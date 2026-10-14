@@ -5,6 +5,7 @@ import WorkflowSquare01Icon from '@hugeicons/core-free-icons/WorkflowSquare01Ico
 import TaskEdit01Icon from '@hugeicons/core-free-icons/TaskEdit01Icon';
 import { pageCopy } from '../data/appointment-booking-integration-source';
 const copy = pageCopy.why;
+const reasons = Array.from(copy.before.matchAll(/<p>([\s\S]*?)<\/p>/g), match => match[1]);
 import '../styles/appointment-booking-integration-why.css';
 const visuals = [
   { icon: UserAccountIcon, accent: '#E1FFB9' },
@@ -16,11 +17,17 @@ const visuals = [
   <section id="appointment-booking-integration-why" class="appointment-booking-integration-why" aria-labelledby="appointment-booking-integration-why-heading">
     <div class="section-container appointment-booking-integration-why-layout">
       <h2 id="appointment-booking-integration-why-heading" data-why-entry>{copy.heading}</h2>
-      <div class="appointment-booking-integration-source-content" set:html={copy.before} />
+      {copy.items.length > 0 && <div class="appointment-booking-integration-source-content" set:html={copy.before} />}
       {copy.items.length > 0 && <ul class="appointment-booking-integration-why-principles">
         {copy.items.map((principle,index) => <li data-why-entry data-why-row>
           <span class="appointment-booking-integration-why-icon" data-why-icon style={`--why-accent:${visuals[index % visuals.length].accent}`} aria-hidden="true"><Icon icon={visuals[index % visuals.length].icon} size={24} strokeWidth={1.7} /></span>
           <p><strong>{principle.label}</strong>{' '}{principle.description}</p>
+        </li>)}
+      </ul>}
+      {copy.items.length === 0 && <ul class="appointment-booking-integration-why-principles">
+        {reasons.map((reason,index) => <li data-why-entry data-why-row>
+          <span class="appointment-booking-integration-why-icon" data-why-icon style={`--why-accent:${visuals[index % visuals.length].accent}`} aria-hidden="true"><Icon icon={visuals[index % visuals.length].icon} size={24} strokeWidth={1.7} /></span>
+          <p set:html={reason} />
         </li>)}
       </ul>}
       <div class="appointment-booking-integration-source-content" set:html={copy.after} />

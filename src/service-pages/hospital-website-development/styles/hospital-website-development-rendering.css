@@ -7,7 +7,7 @@
       content-visibility: auto;
       contain-intrinsic-block-size: auto var(--seo-section-estimate,1000px);
     }
-      .hospital-website-development-page > hospital-website-development-challenges { --seo-section-estimate:1252px; }
+      .hospital-website-development-page > hospital-website-development-challenges { --seo-section-estimate:824px; }
       .hospital-website-development-page > hospital-website-development-outcomes { --seo-section-estimate:1780px; }
       .hospital-website-development-page > hospital-website-development-intent { --seo-section-estimate:698px; }
       .hospital-website-development-page > hospital-website-development-trust { --seo-section-estimate:906px; }
@@ -18,11 +18,11 @@
       .hospital-website-development-page > hospital-website-development-starting { --seo-section-estimate:804px; }
       .hospital-website-development-page > hospital-website-development-example { --seo-section-estimate:896px; }
       .hospital-website-development-page > hospital-website-development-progress { --seo-section-estimate:798px; }
-      .hospital-website-development-page > hospital-website-development-why { --seo-section-estimate:948px; }
+      .hospital-website-development-page > hospital-website-development-why { --seo-section-estimate:825px; }
       .hospital-website-development-page > hospital-website-development-faq { --seo-section-estimate:1111px; }
       .hospital-website-development-page > hospital-website-development-consultation { --seo-section-estimate:1621px; }
     @media (min-width:360px) {
-      .hospital-website-development-page > hospital-website-development-challenges { --seo-section-estimate:1148px; }
+      .hospital-website-development-page > hospital-website-development-challenges { --seo-section-estimate:794px; }
       .hospital-website-development-page > hospital-website-development-outcomes { --seo-section-estimate:1638px; }
       .hospital-website-development-page > hospital-website-development-intent { --seo-section-estimate:663px; }
       .hospital-website-development-page > hospital-website-development-trust { --seo-section-estimate:808px; }
@@ -33,12 +33,12 @@
       .hospital-website-development-page > hospital-website-development-starting { --seo-section-estimate:789px; }
       .hospital-website-development-page > hospital-website-development-example { --seo-section-estimate:920px; }
       .hospital-website-development-page > hospital-website-development-progress { --seo-section-estimate:789px; }
-      .hospital-website-development-page > hospital-website-development-why { --seo-section-estimate:866px; }
+      .hospital-website-development-page > hospital-website-development-why { --seo-section-estimate:716px; }
       .hospital-website-development-page > hospital-website-development-faq { --seo-section-estimate:1063px; }
       .hospital-website-development-page > hospital-website-development-consultation { --seo-section-estimate:1555px; }
     }
     @media (min-width:640px) {
-      .hospital-website-development-page > hospital-website-development-challenges { --seo-section-estimate:1225px; }
+      .hospital-website-development-page > hospital-website-development-challenges { --seo-section-estimate:891px; }
       .hospital-website-development-page > hospital-website-development-outcomes { --seo-section-estimate:1303px; }
       .hospital-website-development-page > hospital-website-development-intent { --seo-section-estimate:753px; }
       .hospital-website-development-page > hospital-website-development-trust { --seo-section-estimate:940px; }
@@ -49,12 +49,12 @@
       .hospital-website-development-page > hospital-website-development-starting { --seo-section-estimate:608px; }
       .hospital-website-development-page > hospital-website-development-example { --seo-section-estimate:779px; }
       .hospital-website-development-page > hospital-website-development-progress { --seo-section-estimate:668px; }
-      .hospital-website-development-page > hospital-website-development-why { --seo-section-estimate:794px; }
+      .hospital-website-development-page > hospital-website-development-why { --seo-section-estimate:652px; }
       .hospital-website-development-page > hospital-website-development-faq { --seo-section-estimate:1051px; }
       .hospital-website-development-page > hospital-website-development-consultation { --seo-section-estimate:1402px; }
     }
     @media (min-width:820px) {
-      .hospital-website-development-page > hospital-website-development-challenges { --seo-section-estimate:1304px; }
+      .hospital-website-development-page > hospital-website-development-challenges { --seo-section-estimate:989px; }
       .hospital-website-development-page > hospital-website-development-outcomes { --seo-section-estimate:1149px; }
       .hospital-website-development-page > hospital-website-development-intent { --seo-section-estimate:821px; }
       .hospital-website-development-page > hospital-website-development-trust { --seo-section-estimate:957px; }
@@ -65,12 +65,12 @@
       .hospital-website-development-page > hospital-website-development-starting { --seo-section-estimate:577px; }
       .hospital-website-development-page > hospital-website-development-example { --seo-section-estimate:640px; }
       .hospital-website-development-page > hospital-website-development-progress { --seo-section-estimate:544px; }
-      .hospital-website-development-page > hospital-website-development-why { --seo-section-estimate:718px; }
+      .hospital-website-development-page > hospital-website-development-why { --seo-section-estimate:578px; }
       .hospital-website-development-page > hospital-website-development-faq { --seo-section-estimate:1031px; }
       .hospital-website-development-page > hospital-website-development-consultation { --seo-section-estimate:1402px; }
     }
     @media (min-width:999px) {
-      .hospital-website-development-page > hospital-website-development-challenges { --seo-section-estimate:1290px; }
+      .hospital-website-development-page > hospital-website-development-challenges { --seo-section-estimate:1004px; }
       .hospital-website-development-page > hospital-website-development-outcomes { --seo-section-estimate:1125px; }
       .hospital-website-development-page > hospital-website-development-intent { --seo-section-estimate:836px; }
       .hospital-website-development-page > hospital-website-development-trust { --seo-section-estimate:991px; }
@@ -81,12 +81,12 @@
       .hospital-website-development-page > hospital-website-development-starting { --seo-section-estimate:577px; }
       .hospital-website-development-page > hospital-website-development-example { --seo-section-estimate:585px; }
       .hospital-website-development-page > hospital-website-development-progress { --seo-section-estimate:551px; }
-      .hospital-website-development-page > hospital-website-development-why { --seo-section-estimate:750px; }
+      .hospital-website-development-page > hospital-website-development-why { --seo-section-estimate:542px; }
       .hospital-website-development-page > hospital-website-development-faq { --seo-section-estimate:1011px; }
       .hospital-website-development-page > hospital-website-development-consultation { --seo-section-estimate:1413px; }
     }
     @media (min-width:1000px) {
-      .hospital-website-development-page > hospital-website-development-challenges { --seo-section-estimate:1290px; }
+      .hospital-website-development-page > hospital-website-development-challenges { --seo-section-estimate:1004px; }
       .hospital-website-development-page > hospital-website-development-outcomes { --seo-section-estimate:1125px; }
       .hospital-website-development-page > hospital-website-development-intent { --seo-section-estimate:836px; }
       .hospital-website-development-page > hospital-website-development-trust { --seo-section-estimate:991px; }
@@ -97,7 +97,7 @@
       .hospital-website-development-page > hospital-website-development-starting { --seo-section-estimate:577px; }
       .hospital-website-development-page > hospital-website-development-example { --seo-section-estimate:585px; }
       .hospital-website-development-page > hospital-website-development-progress { --seo-section-estimate:551px; }
-      .hospital-website-development-page > hospital-website-development-why { --seo-section-estimate:750px; }
+      .hospital-website-development-page > hospital-website-development-why { --seo-section-estimate:542px; }
       .hospital-website-development-page > hospital-website-development-faq { --seo-section-estimate:1011px; }
       .hospital-website-development-page > hospital-website-development-consultation { --seo-section-estimate:851px; }
     }

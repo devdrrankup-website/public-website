@@ -184,7 +184,7 @@ export const pageCopy = {
   },
   "example": {
     "heading": "Example: One Doctor, Two Chambers, Different Fee Rules",
-    "html": "<p><em>Hypothetical process—not a client case study.</em></p><p>Imagine a doctor seeing new patients at Chamber A and follow-ups at Chamber B. A patient pays part of the charge through a personal mobile wallet, but the assistant cannot initially confirm the transfer.</p><p>A configured system could retain the amount as pending, flag a duplicate reference, record manual verification and produce a chamber-wise closing summary. If a facility takes an agreed share, settlement rules could show the doctor and chamber portions separately without changing what the patient was charged.</p>"
+    "html": "<p><em>Hypothetical process—not a client case study.</em> Imagine a doctor seeing new patients at Chamber A and follow-ups at Chamber B. A patient pays part of the charge through a personal mobile wallet, but the assistant cannot initially confirm the transfer.</p><p>A configured system could retain the amount as pending, flag a duplicate reference, record manual verification and produce a chamber-wise closing summary. If a facility takes an agreed share, settlement rules could show the doctor and chamber portions separately without changing what the patient was charged.</p>"
   },
   "progress": {
     "heading": "Measure Financial Clarity Without Invented Results",

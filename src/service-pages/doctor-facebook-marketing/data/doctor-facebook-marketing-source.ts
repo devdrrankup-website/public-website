@@ -179,8 +179,8 @@ export const pageCopy = {
     "heading": "Why Dr RankUp for Doctor Facebook Marketing?",
     "items": [
       {
-        "label": "The doctor remains accountable for clinical accuracy",
-        "description": "; we manage communication, not medical decisions. Scope can include post drafts, schedules, moderation rules and an agreed reporting cadence, while the client retains control of account ownership and final publishing authority."
+        "label": "The doctor remains accountable for clinical accuracy;",
+        "description": "we manage communication, not medical decisions. Scope can include post drafts, schedules, moderation rules and an agreed reporting cadence, while the client retains control of account ownership and final publishing authority."
       }
     ],
     "before": "<p>We connect posts with real chamber information and coordinate needed website updates.</p>",

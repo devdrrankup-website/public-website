@@ -7,7 +7,7 @@
       content-visibility: auto;
       contain-intrinsic-block-size: auto var(--seo-section-estimate,1000px);
     }
-      .doctor-personal-branding-page > doctor-personal-branding-challenges { --seo-section-estimate:1252px; }
+      .doctor-personal-branding-page > doctor-personal-branding-challenges { --seo-section-estimate:1024px; }
       .doctor-personal-branding-page > doctor-personal-branding-outcomes { --seo-section-estimate:1780px; }
       .doctor-personal-branding-page > doctor-personal-branding-intent { --seo-section-estimate:698px; }
       .doctor-personal-branding-page > doctor-personal-branding-trust { --seo-section-estimate:906px; }
@@ -22,7 +22,7 @@
       .doctor-personal-branding-page > doctor-personal-branding-faq { --seo-section-estimate:1111px; }
       .doctor-personal-branding-page > doctor-personal-branding-consultation { --seo-section-estimate:1621px; }
     @media (min-width:360px) {
-      .doctor-personal-branding-page > doctor-personal-branding-challenges { --seo-section-estimate:1148px; }
+      .doctor-personal-branding-page > doctor-personal-branding-challenges { --seo-section-estimate:967px; }
       .doctor-personal-branding-page > doctor-personal-branding-outcomes { --seo-section-estimate:1638px; }
       .doctor-personal-branding-page > doctor-personal-branding-intent { --seo-section-estimate:663px; }
       .doctor-personal-branding-page > doctor-personal-branding-trust { --seo-section-estimate:808px; }
@@ -38,7 +38,7 @@
       .doctor-personal-branding-page > doctor-personal-branding-consultation { --seo-section-estimate:1555px; }
     }
     @media (min-width:640px) {
-      .doctor-personal-branding-page > doctor-personal-branding-challenges { --seo-section-estimate:1225px; }
+      .doctor-personal-branding-page > doctor-personal-branding-challenges { --seo-section-estimate:1048px; }
       .doctor-personal-branding-page > doctor-personal-branding-outcomes { --seo-section-estimate:1303px; }
       .doctor-personal-branding-page > doctor-personal-branding-intent { --seo-section-estimate:753px; }
       .doctor-personal-branding-page > doctor-personal-branding-trust { --seo-section-estimate:940px; }
@@ -54,7 +54,7 @@
       .doctor-personal-branding-page > doctor-personal-branding-consultation { --seo-section-estimate:1402px; }
     }
     @media (min-width:820px) {
-      .doctor-personal-branding-page > doctor-personal-branding-challenges { --seo-section-estimate:1304px; }
+      .doctor-personal-branding-page > doctor-personal-branding-challenges { --seo-section-estimate:1099px; }
       .doctor-personal-branding-page > doctor-personal-branding-outcomes { --seo-section-estimate:1149px; }
       .doctor-personal-branding-page > doctor-personal-branding-intent { --seo-section-estimate:821px; }
       .doctor-personal-branding-page > doctor-personal-branding-trust { --seo-section-estimate:957px; }
@@ -70,7 +70,7 @@
       .doctor-personal-branding-page > doctor-personal-branding-consultation { --seo-section-estimate:1402px; }
     }
     @media (min-width:999px) {
-      .doctor-personal-branding-page > doctor-personal-branding-challenges { --seo-section-estimate:1290px; }
+      .doctor-personal-branding-page > doctor-personal-branding-challenges { --seo-section-estimate:1085px; }
       .doctor-personal-branding-page > doctor-personal-branding-outcomes { --seo-section-estimate:1125px; }
       .doctor-personal-branding-page > doctor-personal-branding-intent { --seo-section-estimate:836px; }
       .doctor-personal-branding-page > doctor-personal-branding-trust { --seo-section-estimate:991px; }
@@ -86,7 +86,7 @@
       .doctor-personal-branding-page > doctor-personal-branding-consultation { --seo-section-estimate:1413px; }
     }
     @media (min-width:1000px) {
-      .doctor-personal-branding-page > doctor-personal-branding-challenges { --seo-section-estimate:1290px; }
+      .doctor-personal-branding-page > doctor-personal-branding-challenges { --seo-section-estimate:1085px; }
       .doctor-personal-branding-page > doctor-personal-branding-outcomes { --seo-section-estimate:1125px; }
       .doctor-personal-branding-page > doctor-personal-branding-intent { --seo-section-estimate:836px; }
       .doctor-personal-branding-page > doctor-personal-branding-trust { --seo-section-estimate:991px; }

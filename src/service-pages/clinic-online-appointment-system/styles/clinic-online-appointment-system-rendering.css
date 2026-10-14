@@ -7,7 +7,7 @@
       content-visibility: auto;
       contain-intrinsic-block-size: auto var(--seo-section-estimate,1000px);
     }
-      .clinic-online-appointment-system-page > clinic-online-appointment-system-challenges { --seo-section-estimate:1252px; }
+      .clinic-online-appointment-system-page > clinic-online-appointment-system-challenges { --seo-section-estimate:853px; }
       .clinic-online-appointment-system-page > clinic-online-appointment-system-outcomes { --seo-section-estimate:1780px; }
       .clinic-online-appointment-system-page > clinic-online-appointment-system-intent { --seo-section-estimate:698px; }
       .clinic-online-appointment-system-page > clinic-online-appointment-system-trust { --seo-section-estimate:906px; }
@@ -22,7 +22,7 @@
       .clinic-online-appointment-system-page > clinic-online-appointment-system-faq { --seo-section-estimate:1111px; }
       .clinic-online-appointment-system-page > clinic-online-appointment-system-consultation { --seo-section-estimate:1621px; }
     @media (min-width:360px) {
-      .clinic-online-appointment-system-page > clinic-online-appointment-system-challenges { --seo-section-estimate:1148px; }
+      .clinic-online-appointment-system-page > clinic-online-appointment-system-challenges { --seo-section-estimate:849px; }
       .clinic-online-appointment-system-page > clinic-online-appointment-system-outcomes { --seo-section-estimate:1638px; }
       .clinic-online-appointment-system-page > clinic-online-appointment-system-intent { --seo-section-estimate:663px; }
       .clinic-online-appointment-system-page > clinic-online-appointment-system-trust { --seo-section-estimate:808px; }
@@ -38,7 +38,7 @@
       .clinic-online-appointment-system-page > clinic-online-appointment-system-consultation { --seo-section-estimate:1555px; }
     }
     @media (min-width:640px) {
-      .clinic-online-appointment-system-page > clinic-online-appointment-system-challenges { --seo-section-estimate:1225px; }
+      .clinic-online-appointment-system-page > clinic-online-appointment-system-challenges { --seo-section-estimate:921px; }
       .clinic-online-appointment-system-page > clinic-online-appointment-system-outcomes { --seo-section-estimate:1303px; }
       .clinic-online-appointment-system-page > clinic-online-appointment-system-intent { --seo-section-estimate:753px; }
       .clinic-online-appointment-system-page > clinic-online-appointment-system-trust { --seo-section-estimate:940px; }
@@ -54,7 +54,7 @@
       .clinic-online-appointment-system-page > clinic-online-appointment-system-consultation { --seo-section-estimate:1402px; }
     }
     @media (min-width:820px) {
-      .clinic-online-appointment-system-page > clinic-online-appointment-system-challenges { --seo-section-estimate:1304px; }
+      .clinic-online-appointment-system-page > clinic-online-appointment-system-challenges { --seo-section-estimate:1018px; }
       .clinic-online-appointment-system-page > clinic-online-appointment-system-outcomes { --seo-section-estimate:1149px; }
       .clinic-online-appointment-system-page > clinic-online-appointment-system-intent { --seo-section-estimate:821px; }
       .clinic-online-appointment-system-page > clinic-online-appointment-system-trust { --seo-section-estimate:957px; }
@@ -70,7 +70,7 @@
       .clinic-online-appointment-system-page > clinic-online-appointment-system-consultation { --seo-section-estimate:1402px; }
     }
     @media (min-width:999px) {
-      .clinic-online-appointment-system-page > clinic-online-appointment-system-challenges { --seo-section-estimate:1290px; }
+      .clinic-online-appointment-system-page > clinic-online-appointment-system-challenges { --seo-section-estimate:1005px; }
       .clinic-online-appointment-system-page > clinic-online-appointment-system-outcomes { --seo-section-estimate:1125px; }
       .clinic-online-appointment-system-page > clinic-online-appointment-system-intent { --seo-section-estimate:836px; }
       .clinic-online-appointment-system-page > clinic-online-appointment-system-trust { --seo-section-estimate:991px; }
@@ -86,7 +86,7 @@
       .clinic-online-appointment-system-page > clinic-online-appointment-system-consultation { --seo-section-estimate:1413px; }
     }
     @media (min-width:1000px) {
-      .clinic-online-appointment-system-page > clinic-online-appointment-system-challenges { --seo-section-estimate:1290px; }
+      .clinic-online-appointment-system-page > clinic-online-appointment-system-challenges { --seo-section-estimate:1005px; }
       .clinic-online-appointment-system-page > clinic-online-appointment-system-outcomes { --seo-section-estimate:1125px; }
       .clinic-online-appointment-system-page > clinic-online-appointment-system-intent { --seo-section-estimate:836px; }
       .clinic-online-appointment-system-page > clinic-online-appointment-system-trust { --seo-section-estimate:991px; }

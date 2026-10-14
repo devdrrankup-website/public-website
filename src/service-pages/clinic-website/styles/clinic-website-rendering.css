@@ -7,7 +7,7 @@
       content-visibility: auto;
       contain-intrinsic-block-size: auto var(--seo-section-estimate,1000px);
     }
-      .clinic-website-page > clinic-website-challenges { --seo-section-estimate:1252px; }
+      .clinic-website-page > clinic-website-challenges { --seo-section-estimate:824px; }
       .clinic-website-page > clinic-website-outcomes { --seo-section-estimate:1780px; }
       .clinic-website-page > clinic-website-intent { --seo-section-estimate:698px; }
       .clinic-website-page > clinic-website-trust { --seo-section-estimate:906px; }
@@ -22,7 +22,7 @@
       .clinic-website-page > clinic-website-faq { --seo-section-estimate:1111px; }
       .clinic-website-page > clinic-website-consultation { --seo-section-estimate:1621px; }
     @media (min-width:360px) {
-      .clinic-website-page > clinic-website-challenges { --seo-section-estimate:1148px; }
+      .clinic-website-page > clinic-website-challenges { --seo-section-estimate:821px; }
       .clinic-website-page > clinic-website-outcomes { --seo-section-estimate:1638px; }
       .clinic-website-page > clinic-website-intent { --seo-section-estimate:663px; }
       .clinic-website-page > clinic-website-trust { --seo-section-estimate:808px; }
@@ -38,7 +38,7 @@
       .clinic-website-page > clinic-website-consultation { --seo-section-estimate:1555px; }
     }
     @media (min-width:640px) {
-      .clinic-website-page > clinic-website-challenges { --seo-section-estimate:1225px; }
+      .clinic-website-page > clinic-website-challenges { --seo-section-estimate:891px; }
       .clinic-website-page > clinic-website-outcomes { --seo-section-estimate:1303px; }
       .clinic-website-page > clinic-website-intent { --seo-section-estimate:753px; }
       .clinic-website-page > clinic-website-trust { --seo-section-estimate:940px; }
@@ -54,7 +54,7 @@
       .clinic-website-page > clinic-website-consultation { --seo-section-estimate:1402px; }
     }
     @media (min-width:820px) {
-      .clinic-website-page > clinic-website-challenges { --seo-section-estimate:1304px; }
+      .clinic-website-page > clinic-website-challenges { --seo-section-estimate:989px; }
       .clinic-website-page > clinic-website-outcomes { --seo-section-estimate:1149px; }
       .clinic-website-page > clinic-website-intent { --seo-section-estimate:821px; }
       .clinic-website-page > clinic-website-trust { --seo-section-estimate:957px; }
@@ -70,7 +70,7 @@
       .clinic-website-page > clinic-website-consultation { --seo-section-estimate:1402px; }
     }
     @media (min-width:999px) {
-      .clinic-website-page > clinic-website-challenges { --seo-section-estimate:1290px; }
+      .clinic-website-page > clinic-website-challenges { --seo-section-estimate:1004px; }
       .clinic-website-page > clinic-website-outcomes { --seo-section-estimate:1125px; }
       .clinic-website-page > clinic-website-intent { --seo-section-estimate:836px; }
       .clinic-website-page > clinic-website-trust { --seo-section-estimate:991px; }
@@ -86,7 +86,7 @@
       .clinic-website-page > clinic-website-consultation { --seo-section-estimate:1413px; }
     }
     @media (min-width:1000px) {
-      .clinic-website-page > clinic-website-challenges { --seo-section-estimate:1290px; }
+      .clinic-website-page > clinic-website-challenges { --seo-section-estimate:1004px; }
       .clinic-website-page > clinic-website-outcomes { --seo-section-estimate:1125px; }
       .clinic-website-page > clinic-website-intent { --seo-section-estimate:836px; }
       .clinic-website-page > clinic-website-trust { --seo-section-estimate:991px; }

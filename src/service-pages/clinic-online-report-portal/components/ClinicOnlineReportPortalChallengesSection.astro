@@ -4,7 +4,7 @@ import photo from '../../../assets/clinic-online-report-portal/clinic-online-rep
 import { pageCopy } from '../data/clinic-online-report-portal-source';
 const copy = pageCopy.challenges;
 const introductionParagraph = copy.html.match(/^<p>([\s\S]*?)<\/p>/)?.[1] ?? '';
-const detailHtml = copy.html.replace(/^<p>[\s\S]*?<\/p>/, '');
+const detailParagraphs = Array.from(copy.html.matchAll(/<p>([\s\S]*?)<\/p>/g), match => match[1]).slice(1);
 import '../styles/clinic-online-report-portal-challenges.css';
 ---
 
@@ -22,7 +22,14 @@ import '../styles/clinic-online-report-portal-challenges.css';
           loading="lazy" decoding="async" />
       </div>
     </div>
-    <div class="clinic-online-report-portal-challenges-details clinic-online-report-portal-source-content" set:html={detailHtml} />
+    <div class="clinic-online-report-portal-challenges-details">
+      <ul class="clinic-online-report-portal-challenges-list" role="list" data-seo-challenges-motion>
+        {detailParagraphs.map((paragraph, index) => <li>
+          <span class="clinic-online-report-portal-challenge-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+          <span set:html={paragraph} />
+        </li>)}
+      </ul>
+    </div>
   </section>
 </clinic-online-report-portal-challenges>
 

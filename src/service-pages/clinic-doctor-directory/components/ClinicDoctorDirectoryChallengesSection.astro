@@ -4,7 +4,7 @@ import photo from '../../../assets/clinic-doctor-directory/clinic-doctor-directo
 import { pageCopy } from '../data/clinic-doctor-directory-source';
 const copy = pageCopy.challenges;
 const introductionParagraph = copy.html.match(/^<p>([\s\S]*?)<\/p>/)?.[1] ?? '';
-const detailHtml = copy.html.replace(/^<p>[\s\S]*?<\/p>/, '');
+const detailParagraphs = Array.from(copy.html.matchAll(/<p>([\s\S]*?)<\/p>/g), match => match[1]).slice(1);
 import '../styles/clinic-doctor-directory-challenges.css';
 ---
 
@@ -22,7 +22,14 @@ import '../styles/clinic-doctor-directory-challenges.css';
           loading="lazy" decoding="async" />
       </div>
     </div>
-    <div class="clinic-doctor-directory-challenges-details clinic-doctor-directory-source-content" set:html={detailHtml} />
+    <div class="clinic-doctor-directory-challenges-details">
+      <ul class="clinic-doctor-directory-challenges-list" role="list" data-seo-challenges-motion>
+        {detailParagraphs.map((paragraph, index) => <li>
+          <span class="clinic-doctor-directory-challenge-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+          <span set:html={paragraph} />
+        </li>)}
+      </ul>
+    </div>
   </section>
 </clinic-doctor-directory-challenges>
 

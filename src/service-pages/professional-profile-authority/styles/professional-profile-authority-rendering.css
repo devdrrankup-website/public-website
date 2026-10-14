@@ -7,7 +7,7 @@
       content-visibility: auto;
       contain-intrinsic-block-size: auto var(--seo-section-estimate,1000px);
     }
-      .professional-profile-authority-page > professional-profile-authority-challenges { --seo-section-estimate:1252px; }
+      .professional-profile-authority-page > professional-profile-authority-challenges { --seo-section-estimate:979px; }
       .professional-profile-authority-page > professional-profile-authority-outcomes { --seo-section-estimate:1780px; }
       .professional-profile-authority-page > professional-profile-authority-intent { --seo-section-estimate:698px; }
       .professional-profile-authority-page > professional-profile-authority-trust { --seo-section-estimate:906px; }
@@ -18,11 +18,11 @@
       .professional-profile-authority-page > professional-profile-authority-starting { --seo-section-estimate:804px; }
       .professional-profile-authority-page > professional-profile-authority-example { --seo-section-estimate:896px; }
       .professional-profile-authority-page > professional-profile-authority-progress { --seo-section-estimate:798px; }
-      .professional-profile-authority-page > professional-profile-authority-why { --seo-section-estimate:948px; }
+      .professional-profile-authority-page > professional-profile-authority-why { --seo-section-estimate:923px; }
       .professional-profile-authority-page > professional-profile-authority-faq { --seo-section-estimate:1111px; }
       .professional-profile-authority-page > professional-profile-authority-consultation { --seo-section-estimate:1621px; }
     @media (min-width:360px) {
-      .professional-profile-authority-page > professional-profile-authority-challenges { --seo-section-estimate:1148px; }
+      .professional-profile-authority-page > professional-profile-authority-challenges { --seo-section-estimate:900px; }
       .professional-profile-authority-page > professional-profile-authority-outcomes { --seo-section-estimate:1638px; }
       .professional-profile-authority-page > professional-profile-authority-intent { --seo-section-estimate:663px; }
       .professional-profile-authority-page > professional-profile-authority-trust { --seo-section-estimate:808px; }
@@ -33,12 +33,12 @@
       .professional-profile-authority-page > professional-profile-authority-starting { --seo-section-estimate:789px; }
       .professional-profile-authority-page > professional-profile-authority-example { --seo-section-estimate:920px; }
       .professional-profile-authority-page > professional-profile-authority-progress { --seo-section-estimate:789px; }
-      .professional-profile-authority-page > professional-profile-authority-why { --seo-section-estimate:866px; }
+      .professional-profile-authority-page > professional-profile-authority-why { --seo-section-estimate:853px; }
       .professional-profile-authority-page > professional-profile-authority-faq { --seo-section-estimate:1063px; }
       .professional-profile-authority-page > professional-profile-authority-consultation { --seo-section-estimate:1555px; }
     }
     @media (min-width:640px) {
-      .professional-profile-authority-page > professional-profile-authority-challenges { --seo-section-estimate:1225px; }
+      .professional-profile-authority-page > professional-profile-authority-challenges { --seo-section-estimate:1002px; }
       .professional-profile-authority-page > professional-profile-authority-outcomes { --seo-section-estimate:1303px; }
       .professional-profile-authority-page > professional-profile-authority-intent { --seo-section-estimate:753px; }
       .professional-profile-authority-page > professional-profile-authority-trust { --seo-section-estimate:940px; }
@@ -49,12 +49,12 @@
       .professional-profile-authority-page > professional-profile-authority-starting { --seo-section-estimate:608px; }
       .professional-profile-authority-page > professional-profile-authority-example { --seo-section-estimate:779px; }
       .professional-profile-authority-page > professional-profile-authority-progress { --seo-section-estimate:668px; }
-      .professional-profile-authority-page > professional-profile-authority-why { --seo-section-estimate:794px; }
+      .professional-profile-authority-page > professional-profile-authority-why { --seo-section-estimate:700px; }
       .professional-profile-authority-page > professional-profile-authority-faq { --seo-section-estimate:1051px; }
       .professional-profile-authority-page > professional-profile-authority-consultation { --seo-section-estimate:1402px; }
     }
     @media (min-width:820px) {
-      .professional-profile-authority-page > professional-profile-authority-challenges { --seo-section-estimate:1304px; }
+      .professional-profile-authority-page > professional-profile-authority-challenges { --seo-section-estimate:1071px; }
       .professional-profile-authority-page > professional-profile-authority-outcomes { --seo-section-estimate:1149px; }
       .professional-profile-authority-page > professional-profile-authority-intent { --seo-section-estimate:821px; }
       .professional-profile-authority-page > professional-profile-authority-trust { --seo-section-estimate:957px; }
@@ -65,12 +65,12 @@
       .professional-profile-authority-page > professional-profile-authority-starting { --seo-section-estimate:577px; }
       .professional-profile-authority-page > professional-profile-authority-example { --seo-section-estimate:640px; }
       .professional-profile-authority-page > professional-profile-authority-progress { --seo-section-estimate:544px; }
-      .professional-profile-authority-page > professional-profile-authority-why { --seo-section-estimate:718px; }
+      .professional-profile-authority-page > professional-profile-authority-why { --seo-section-estimate:609px; }
       .professional-profile-authority-page > professional-profile-authority-faq { --seo-section-estimate:1031px; }
       .professional-profile-authority-page > professional-profile-authority-consultation { --seo-section-estimate:1402px; }
     }
     @media (min-width:999px) {
-      .professional-profile-authority-page > professional-profile-authority-challenges { --seo-section-estimate:1290px; }
+      .professional-profile-authority-page > professional-profile-authority-challenges { --seo-section-estimate:1086px; }
       .professional-profile-authority-page > professional-profile-authority-outcomes { --seo-section-estimate:1125px; }
       .professional-profile-authority-page > professional-profile-authority-intent { --seo-section-estimate:836px; }
       .professional-profile-authority-page > professional-profile-authority-trust { --seo-section-estimate:991px; }
@@ -81,12 +81,12 @@
       .professional-profile-authority-page > professional-profile-authority-starting { --seo-section-estimate:577px; }
       .professional-profile-authority-page > professional-profile-authority-example { --seo-section-estimate:585px; }
       .professional-profile-authority-page > professional-profile-authority-progress { --seo-section-estimate:551px; }
-      .professional-profile-authority-page > professional-profile-authority-why { --seo-section-estimate:750px; }
+      .professional-profile-authority-page > professional-profile-authority-why { --seo-section-estimate:593px; }
       .professional-profile-authority-page > professional-profile-authority-faq { --seo-section-estimate:1011px; }
       .professional-profile-authority-page > professional-profile-authority-consultation { --seo-section-estimate:1413px; }
     }
     @media (min-width:1000px) {
-      .professional-profile-authority-page > professional-profile-authority-challenges { --seo-section-estimate:1290px; }
+      .professional-profile-authority-page > professional-profile-authority-challenges { --seo-section-estimate:1086px; }
       .professional-profile-authority-page > professional-profile-authority-outcomes { --seo-section-estimate:1125px; }
       .professional-profile-authority-page > professional-profile-authority-intent { --seo-section-estimate:836px; }
       .professional-profile-authority-page > professional-profile-authority-trust { --seo-section-estimate:991px; }
@@ -97,7 +97,7 @@
       .professional-profile-authority-page > professional-profile-authority-starting { --seo-section-estimate:577px; }
       .professional-profile-authority-page > professional-profile-authority-example { --seo-section-estimate:585px; }
       .professional-profile-authority-page > professional-profile-authority-progress { --seo-section-estimate:551px; }
-      .professional-profile-authority-page > professional-profile-authority-why { --seo-section-estimate:750px; }
+      .professional-profile-authority-page > professional-profile-authority-why { --seo-section-estimate:593px; }
       .professional-profile-authority-page > professional-profile-authority-faq { --seo-section-estimate:1011px; }
       .professional-profile-authority-page > professional-profile-authority-consultation { --seo-section-estimate:851px; }
     }

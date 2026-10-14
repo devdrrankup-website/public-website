@@ -7,7 +7,7 @@
       content-visibility: auto;
       contain-intrinsic-block-size: auto var(--seo-section-estimate,1000px);
     }
-      .patient-medical-record-software-page > patient-medical-record-software-challenges { --seo-section-estimate:1252px; }
+      .patient-medical-record-software-page > patient-medical-record-software-challenges { --seo-section-estimate:798px; }
       .patient-medical-record-software-page > patient-medical-record-software-outcomes { --seo-section-estimate:1780px; }
       .patient-medical-record-software-page > patient-medical-record-software-intent { --seo-section-estimate:698px; }
       .patient-medical-record-software-page > patient-medical-record-software-trust { --seo-section-estimate:906px; }
@@ -18,11 +18,11 @@
       .patient-medical-record-software-page > patient-medical-record-software-starting { --seo-section-estimate:804px; }
       .patient-medical-record-software-page > patient-medical-record-software-example { --seo-section-estimate:896px; }
       .patient-medical-record-software-page > patient-medical-record-software-progress { --seo-section-estimate:798px; }
-      .patient-medical-record-software-page > patient-medical-record-software-why { --seo-section-estimate:948px; }
+      .patient-medical-record-software-page > patient-medical-record-software-why { --seo-section-estimate:834px; }
       .patient-medical-record-software-page > patient-medical-record-software-faq { --seo-section-estimate:1111px; }
       .patient-medical-record-software-page > patient-medical-record-software-consultation { --seo-section-estimate:1621px; }
     @media (min-width:360px) {
-      .patient-medical-record-software-page > patient-medical-record-software-challenges { --seo-section-estimate:1148px; }
+      .patient-medical-record-software-page > patient-medical-record-software-challenges { --seo-section-estimate:782px; }
       .patient-medical-record-software-page > patient-medical-record-software-outcomes { --seo-section-estimate:1638px; }
       .patient-medical-record-software-page > patient-medical-record-software-intent { --seo-section-estimate:663px; }
       .patient-medical-record-software-page > patient-medical-record-software-trust { --seo-section-estimate:808px; }
@@ -33,12 +33,12 @@
       .patient-medical-record-software-page > patient-medical-record-software-starting { --seo-section-estimate:789px; }
       .patient-medical-record-software-page > patient-medical-record-software-example { --seo-section-estimate:920px; }
       .patient-medical-record-software-page > patient-medical-record-software-progress { --seo-section-estimate:789px; }
-      .patient-medical-record-software-page > patient-medical-record-software-why { --seo-section-estimate:866px; }
+      .patient-medical-record-software-page > patient-medical-record-software-why { --seo-section-estimate:764px; }
       .patient-medical-record-software-page > patient-medical-record-software-faq { --seo-section-estimate:1063px; }
       .patient-medical-record-software-page > patient-medical-record-software-consultation { --seo-section-estimate:1555px; }
     }
     @media (min-width:640px) {
-      .patient-medical-record-software-page > patient-medical-record-software-challenges { --seo-section-estimate:1225px; }
+      .patient-medical-record-software-page > patient-medical-record-software-challenges { --seo-section-estimate:892px; }
       .patient-medical-record-software-page > patient-medical-record-software-outcomes { --seo-section-estimate:1303px; }
       .patient-medical-record-software-page > patient-medical-record-software-intent { --seo-section-estimate:753px; }
       .patient-medical-record-software-page > patient-medical-record-software-trust { --seo-section-estimate:940px; }
@@ -49,12 +49,12 @@
       .patient-medical-record-software-page > patient-medical-record-software-starting { --seo-section-estimate:608px; }
       .patient-medical-record-software-page > patient-medical-record-software-example { --seo-section-estimate:779px; }
       .patient-medical-record-software-page > patient-medical-record-software-progress { --seo-section-estimate:668px; }
-      .patient-medical-record-software-page > patient-medical-record-software-why { --seo-section-estimate:794px; }
+      .patient-medical-record-software-page > patient-medical-record-software-why { --seo-section-estimate:668px; }
       .patient-medical-record-software-page > patient-medical-record-software-faq { --seo-section-estimate:1051px; }
       .patient-medical-record-software-page > patient-medical-record-software-consultation { --seo-section-estimate:1402px; }
     }
     @media (min-width:820px) {
-      .patient-medical-record-software-page > patient-medical-record-software-challenges { --seo-section-estimate:1304px; }
+      .patient-medical-record-software-page > patient-medical-record-software-challenges { --seo-section-estimate:960px; }
       .patient-medical-record-software-page > patient-medical-record-software-outcomes { --seo-section-estimate:1149px; }
       .patient-medical-record-software-page > patient-medical-record-software-intent { --seo-section-estimate:821px; }
       .patient-medical-record-software-page > patient-medical-record-software-trust { --seo-section-estimate:957px; }
@@ -65,12 +65,12 @@
       .patient-medical-record-software-page > patient-medical-record-software-starting { --seo-section-estimate:577px; }
       .patient-medical-record-software-page > patient-medical-record-software-example { --seo-section-estimate:640px; }
       .patient-medical-record-software-page > patient-medical-record-software-progress { --seo-section-estimate:544px; }
-      .patient-medical-record-software-page > patient-medical-record-software-why { --seo-section-estimate:718px; }
+      .patient-medical-record-software-page > patient-medical-record-software-why { --seo-section-estimate:609px; }
       .patient-medical-record-software-page > patient-medical-record-software-faq { --seo-section-estimate:1031px; }
       .patient-medical-record-software-page > patient-medical-record-software-consultation { --seo-section-estimate:1402px; }
     }
     @media (min-width:999px) {
-      .patient-medical-record-software-page > patient-medical-record-software-challenges { --seo-section-estimate:1290px; }
+      .patient-medical-record-software-page > patient-medical-record-software-challenges { --seo-section-estimate:976px; }
       .patient-medical-record-software-page > patient-medical-record-software-outcomes { --seo-section-estimate:1125px; }
       .patient-medical-record-software-page > patient-medical-record-software-intent { --seo-section-estimate:836px; }
       .patient-medical-record-software-page > patient-medical-record-software-trust { --seo-section-estimate:991px; }
@@ -81,12 +81,12 @@
       .patient-medical-record-software-page > patient-medical-record-software-starting { --seo-section-estimate:577px; }
       .patient-medical-record-software-page > patient-medical-record-software-example { --seo-section-estimate:585px; }
       .patient-medical-record-software-page > patient-medical-record-software-progress { --seo-section-estimate:551px; }
-      .patient-medical-record-software-page > patient-medical-record-software-why { --seo-section-estimate:750px; }
+      .patient-medical-record-software-page > patient-medical-record-software-why { --seo-section-estimate:561px; }
       .patient-medical-record-software-page > patient-medical-record-software-faq { --seo-section-estimate:1011px; }
       .patient-medical-record-software-page > patient-medical-record-software-consultation { --seo-section-estimate:1413px; }
     }
     @media (min-width:1000px) {
-      .patient-medical-record-software-page > patient-medical-record-software-challenges { --seo-section-estimate:1290px; }
+      .patient-medical-record-software-page > patient-medical-record-software-challenges { --seo-section-estimate:976px; }
       .patient-medical-record-software-page > patient-medical-record-software-outcomes { --seo-section-estimate:1125px; }
       .patient-medical-record-software-page > patient-medical-record-software-intent { --seo-section-estimate:836px; }
       .patient-medical-record-software-page > patient-medical-record-software-trust { --seo-section-estimate:991px; }
@@ -97,7 +97,7 @@
       .patient-medical-record-software-page > patient-medical-record-software-starting { --seo-section-estimate:577px; }
       .patient-medical-record-software-page > patient-medical-record-software-example { --seo-section-estimate:585px; }
       .patient-medical-record-software-page > patient-medical-record-software-progress { --seo-section-estimate:551px; }
-      .patient-medical-record-software-page > patient-medical-record-software-why { --seo-section-estimate:750px; }
+      .patient-medical-record-software-page > patient-medical-record-software-why { --seo-section-estimate:561px; }
       .patient-medical-record-software-page > patient-medical-record-software-faq { --seo-section-estimate:1011px; }
       .patient-medical-record-software-page > patient-medical-record-software-consultation { --seo-section-estimate:851px; }
     }

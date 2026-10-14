@@ -168,15 +168,15 @@ export const pageCopy = {
   },
   "starting": {
     "heading": "When Doctor Content Marketing Is the Right Starting Point",
-    "html": "<p>Choose this service when your website explanations are thin, ideas remain in notebooks, medical articles lack a clear review owner or your social team repeatedly asks what to publish. If the main need is posting operations, Social Media Marketing may fit better. If technical search visibility is the bottleneck, start with Doctor SEO.</p>"
+    "html": "<p>Choose this service when your website explanations are thin, ideas remain in notebooks, medical articles lack a clear review owner or your social team repeatedly asks what to publish.</p><p>If the main need is posting operations, Social Media Marketing may fit better. If technical search visibility is the bottleneck, start with Doctor SEO.</p>"
   },
   "example": {
     "heading": "Example: Turning Scattered Questions Into an Editorial System",
-    "html": "<p>Imagine a specialist repeatedly answering the same general questions at the chamber. We could group those questions into an approved FAQ, a reviewed service explainer and a related article, each pointing to accurate practice information. This is a hypothetical process, <strong>not a claimed client result</strong>.</p>"
+    "html": "<p>Imagine a specialist repeatedly answering the same general questions at the chamber.</p><p>We could group those questions into an approved FAQ, a reviewed service explainer and a related article, each pointing to accurate practice information. This is a hypothetical process, <strong>not a claimed client result</strong>.</p>"
   },
   "progress": {
     "heading": "Measure Useful Content, Not Just Publishing Volume",
-    "html": "<p>A content performance review may examine relevant search impressions, topic coverage, meaningful reading behaviour, navigation to verified pages and content-assisted enquiries where measurement is appropriate. Evaluate each metric within its timeframe and page context. Published volume and unverified patient numbers are not proof of success.</p>"
+    "html": "<p>A content performance review may examine relevant search impressions, topic coverage, meaningful reading behaviour, navigation to verified pages and content-assisted enquiries where measurement is appropriate.</p><p>Evaluate each metric within its timeframe and page context. Published volume and unverified patient numbers are not proof of success.</p>"
   },
   "why": {
     "heading": "Why Dr RankUp for Doctor Content Marketing?",

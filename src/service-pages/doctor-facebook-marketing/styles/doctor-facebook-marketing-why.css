@@ -22,3 +22,6 @@
   .doctor-facebook-marketing-why h2 { max-width: 430px; font-size: clamp(42px,3.3vw,50px); }
   .doctor-facebook-marketing-why strong { font-size: 26px; }
 }
+
+.doctor-facebook-marketing-why-body { min-width: 0; display: grid; gap: 24px; align-content: start; }
+.doctor-facebook-marketing-why-body > :empty { display: none; }

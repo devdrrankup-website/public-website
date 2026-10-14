@@ -7,7 +7,7 @@
       content-visibility: auto;
       contain-intrinsic-block-size: auto var(--seo-section-estimate,1000px);
     }
-      .doctor-video-marketing-page > doctor-video-marketing-challenges { --seo-section-estimate:1252px; }
+      .doctor-video-marketing-page > doctor-video-marketing-challenges { --seo-section-estimate:853px; }
       .doctor-video-marketing-page > doctor-video-marketing-outcomes { --seo-section-estimate:1780px; }
       .doctor-video-marketing-page > doctor-video-marketing-intent { --seo-section-estimate:698px; }
       .doctor-video-marketing-page > doctor-video-marketing-trust { --seo-section-estimate:906px; }
@@ -18,11 +18,11 @@
       .doctor-video-marketing-page > doctor-video-marketing-starting { --seo-section-estimate:804px; }
       .doctor-video-marketing-page > doctor-video-marketing-example { --seo-section-estimate:896px; }
       .doctor-video-marketing-page > doctor-video-marketing-progress { --seo-section-estimate:798px; }
-      .doctor-video-marketing-page > doctor-video-marketing-why { --seo-section-estimate:948px; }
+      .doctor-video-marketing-page > doctor-video-marketing-why { --seo-section-estimate:874px; }
       .doctor-video-marketing-page > doctor-video-marketing-faq { --seo-section-estimate:1111px; }
       .doctor-video-marketing-page > doctor-video-marketing-consultation { --seo-section-estimate:1621px; }
     @media (min-width:360px) {
-      .doctor-video-marketing-page > doctor-video-marketing-challenges { --seo-section-estimate:1148px; }
+      .doctor-video-marketing-page > doctor-video-marketing-challenges { --seo-section-estimate:850px; }
       .doctor-video-marketing-page > doctor-video-marketing-outcomes { --seo-section-estimate:1638px; }
       .doctor-video-marketing-page > doctor-video-marketing-intent { --seo-section-estimate:663px; }
       .doctor-video-marketing-page > doctor-video-marketing-trust { --seo-section-estimate:808px; }
@@ -33,12 +33,12 @@
       .doctor-video-marketing-page > doctor-video-marketing-starting { --seo-section-estimate:789px; }
       .doctor-video-marketing-page > doctor-video-marketing-example { --seo-section-estimate:920px; }
       .doctor-video-marketing-page > doctor-video-marketing-progress { --seo-section-estimate:789px; }
-      .doctor-video-marketing-page > doctor-video-marketing-why { --seo-section-estimate:866px; }
+      .doctor-video-marketing-page > doctor-video-marketing-why { --seo-section-estimate:764px; }
       .doctor-video-marketing-page > doctor-video-marketing-faq { --seo-section-estimate:1063px; }
       .doctor-video-marketing-page > doctor-video-marketing-consultation { --seo-section-estimate:1555px; }
     }
     @media (min-width:640px) {
-      .doctor-video-marketing-page > doctor-video-marketing-challenges { --seo-section-estimate:1225px; }
+      .doctor-video-marketing-page > doctor-video-marketing-challenges { --seo-section-estimate:921px; }
       .doctor-video-marketing-page > doctor-video-marketing-outcomes { --seo-section-estimate:1303px; }
       .doctor-video-marketing-page > doctor-video-marketing-intent { --seo-section-estimate:753px; }
       .doctor-video-marketing-page > doctor-video-marketing-trust { --seo-section-estimate:940px; }
@@ -49,12 +49,12 @@
       .doctor-video-marketing-page > doctor-video-marketing-starting { --seo-section-estimate:608px; }
       .doctor-video-marketing-page > doctor-video-marketing-example { --seo-section-estimate:779px; }
       .doctor-video-marketing-page > doctor-video-marketing-progress { --seo-section-estimate:668px; }
-      .doctor-video-marketing-page > doctor-video-marketing-why { --seo-section-estimate:794px; }
+      .doctor-video-marketing-page > doctor-video-marketing-why { --seo-section-estimate:637px; }
       .doctor-video-marketing-page > doctor-video-marketing-faq { --seo-section-estimate:1051px; }
       .doctor-video-marketing-page > doctor-video-marketing-consultation { --seo-section-estimate:1402px; }
     }
     @media (min-width:820px) {
-      .doctor-video-marketing-page > doctor-video-marketing-challenges { --seo-section-estimate:1304px; }
+      .doctor-video-marketing-page > doctor-video-marketing-challenges { --seo-section-estimate:990px; }
       .doctor-video-marketing-page > doctor-video-marketing-outcomes { --seo-section-estimate:1149px; }
       .doctor-video-marketing-page > doctor-video-marketing-intent { --seo-section-estimate:821px; }
       .doctor-video-marketing-page > doctor-video-marketing-trust { --seo-section-estimate:957px; }
@@ -65,12 +65,12 @@
       .doctor-video-marketing-page > doctor-video-marketing-starting { --seo-section-estimate:577px; }
       .doctor-video-marketing-page > doctor-video-marketing-example { --seo-section-estimate:640px; }
       .doctor-video-marketing-page > doctor-video-marketing-progress { --seo-section-estimate:544px; }
-      .doctor-video-marketing-page > doctor-video-marketing-why { --seo-section-estimate:718px; }
+      .doctor-video-marketing-page > doctor-video-marketing-why { --seo-section-estimate:578px; }
       .doctor-video-marketing-page > doctor-video-marketing-faq { --seo-section-estimate:1031px; }
       .doctor-video-marketing-page > doctor-video-marketing-consultation { --seo-section-estimate:1402px; }
     }
     @media (min-width:999px) {
-      .doctor-video-marketing-page > doctor-video-marketing-challenges { --seo-section-estimate:1290px; }
+      .doctor-video-marketing-page > doctor-video-marketing-challenges { --seo-section-estimate:1005px; }
       .doctor-video-marketing-page > doctor-video-marketing-outcomes { --seo-section-estimate:1125px; }
       .doctor-video-marketing-page > doctor-video-marketing-intent { --seo-section-estimate:836px; }
       .doctor-video-marketing-page > doctor-video-marketing-trust { --seo-section-estimate:991px; }
@@ -81,12 +81,12 @@
       .doctor-video-marketing-page > doctor-video-marketing-starting { --seo-section-estimate:577px; }
       .doctor-video-marketing-page > doctor-video-marketing-example { --seo-section-estimate:585px; }
       .doctor-video-marketing-page > doctor-video-marketing-progress { --seo-section-estimate:551px; }
-      .doctor-video-marketing-page > doctor-video-marketing-why { --seo-section-estimate:750px; }
+      .doctor-video-marketing-page > doctor-video-marketing-why { --seo-section-estimate:593px; }
       .doctor-video-marketing-page > doctor-video-marketing-faq { --seo-section-estimate:1011px; }
       .doctor-video-marketing-page > doctor-video-marketing-consultation { --seo-section-estimate:1413px; }
     }
     @media (min-width:1000px) {
-      .doctor-video-marketing-page > doctor-video-marketing-challenges { --seo-section-estimate:1290px; }
+      .doctor-video-marketing-page > doctor-video-marketing-challenges { --seo-section-estimate:1005px; }
       .doctor-video-marketing-page > doctor-video-marketing-outcomes { --seo-section-estimate:1125px; }
       .doctor-video-marketing-page > doctor-video-marketing-intent { --seo-section-estimate:836px; }
       .doctor-video-marketing-page > doctor-video-marketing-trust { --seo-section-estimate:991px; }
@@ -97,7 +97,7 @@
       .doctor-video-marketing-page > doctor-video-marketing-starting { --seo-section-estimate:577px; }
       .doctor-video-marketing-page > doctor-video-marketing-example { --seo-section-estimate:585px; }
       .doctor-video-marketing-page > doctor-video-marketing-progress { --seo-section-estimate:551px; }
-      .doctor-video-marketing-page > doctor-video-marketing-why { --seo-section-estimate:750px; }
+      .doctor-video-marketing-page > doctor-video-marketing-why { --seo-section-estimate:593px; }
       .doctor-video-marketing-page > doctor-video-marketing-faq { --seo-section-estimate:1011px; }
       .doctor-video-marketing-page > doctor-video-marketing-consultation { --seo-section-estimate:851px; }
     }

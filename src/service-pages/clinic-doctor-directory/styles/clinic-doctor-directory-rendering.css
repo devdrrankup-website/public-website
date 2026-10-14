@@ -7,7 +7,7 @@
       content-visibility: auto;
       contain-intrinsic-block-size: auto var(--seo-section-estimate,1000px);
     }
-      .clinic-doctor-directory-page > clinic-doctor-directory-challenges { --seo-section-estimate:1252px; }
+      .clinic-doctor-directory-page > clinic-doctor-directory-challenges { --seo-section-estimate:880px; }
       .clinic-doctor-directory-page > clinic-doctor-directory-outcomes { --seo-section-estimate:1780px; }
       .clinic-doctor-directory-page > clinic-doctor-directory-intent { --seo-section-estimate:698px; }
       .clinic-doctor-directory-page > clinic-doctor-directory-trust { --seo-section-estimate:906px; }
@@ -22,7 +22,7 @@
       .clinic-doctor-directory-page > clinic-doctor-directory-faq { --seo-section-estimate:1111px; }
       .clinic-doctor-directory-page > clinic-doctor-directory-consultation { --seo-section-estimate:1621px; }
     @media (min-width:360px) {
-      .clinic-doctor-directory-page > clinic-doctor-directory-challenges { --seo-section-estimate:1148px; }
+      .clinic-doctor-directory-page > clinic-doctor-directory-challenges { --seo-section-estimate:849px; }
       .clinic-doctor-directory-page > clinic-doctor-directory-outcomes { --seo-section-estimate:1638px; }
       .clinic-doctor-directory-page > clinic-doctor-directory-intent { --seo-section-estimate:663px; }
       .clinic-doctor-directory-page > clinic-doctor-directory-trust { --seo-section-estimate:808px; }
@@ -38,7 +38,7 @@
       .clinic-doctor-directory-page > clinic-doctor-directory-consultation { --seo-section-estimate:1555px; }
     }
     @media (min-width:640px) {
-      .clinic-doctor-directory-page > clinic-doctor-directory-challenges { --seo-section-estimate:1225px; }
+      .clinic-doctor-directory-page > clinic-doctor-directory-challenges { --seo-section-estimate:921px; }
       .clinic-doctor-directory-page > clinic-doctor-directory-outcomes { --seo-section-estimate:1303px; }
       .clinic-doctor-directory-page > clinic-doctor-directory-intent { --seo-section-estimate:753px; }
       .clinic-doctor-directory-page > clinic-doctor-directory-trust { --seo-section-estimate:940px; }
@@ -54,7 +54,7 @@
       .clinic-doctor-directory-page > clinic-doctor-directory-consultation { --seo-section-estimate:1402px; }
     }
     @media (min-width:820px) {
-      .clinic-doctor-directory-page > clinic-doctor-directory-challenges { --seo-section-estimate:1304px; }
+      .clinic-doctor-directory-page > clinic-doctor-directory-challenges { --seo-section-estimate:1018px; }
       .clinic-doctor-directory-page > clinic-doctor-directory-outcomes { --seo-section-estimate:1149px; }
       .clinic-doctor-directory-page > clinic-doctor-directory-intent { --seo-section-estimate:821px; }
       .clinic-doctor-directory-page > clinic-doctor-directory-trust { --seo-section-estimate:957px; }
@@ -70,7 +70,7 @@
       .clinic-doctor-directory-page > clinic-doctor-directory-consultation { --seo-section-estimate:1402px; }
     }
     @media (min-width:999px) {
-      .clinic-doctor-directory-page > clinic-doctor-directory-challenges { --seo-section-estimate:1290px; }
+      .clinic-doctor-directory-page > clinic-doctor-directory-challenges { --seo-section-estimate:1005px; }
       .clinic-doctor-directory-page > clinic-doctor-directory-outcomes { --seo-section-estimate:1125px; }
       .clinic-doctor-directory-page > clinic-doctor-directory-intent { --seo-section-estimate:836px; }
       .clinic-doctor-directory-page > clinic-doctor-directory-trust { --seo-section-estimate:991px; }
@@ -86,7 +86,7 @@
       .clinic-doctor-directory-page > clinic-doctor-directory-consultation { --seo-section-estimate:1413px; }
     }
     @media (min-width:1000px) {
-      .clinic-doctor-directory-page > clinic-doctor-directory-challenges { --seo-section-estimate:1290px; }
+      .clinic-doctor-directory-page > clinic-doctor-directory-challenges { --seo-section-estimate:1005px; }
       .clinic-doctor-directory-page > clinic-doctor-directory-outcomes { --seo-section-estimate:1125px; }
       .clinic-doctor-directory-page > clinic-doctor-directory-intent { --seo-section-estimate:836px; }
       .clinic-doctor-directory-page > clinic-doctor-directory-trust { --seo-section-estimate:991px; }

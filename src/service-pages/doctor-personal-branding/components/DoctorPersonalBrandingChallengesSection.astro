@@ -4,7 +4,7 @@ import photo from '../../../assets/doctor-personal-branding/doctor-personal-bran
 import { pageCopy } from '../data/doctor-personal-branding-source';
 const copy = pageCopy.challenges;
 const introductionParagraph = copy.html.match(/^<p>([\s\S]*?)<\/p>/)?.[1] ?? '';
-const detailHtml = copy.html.replace(/^<p>[\s\S]*?<\/p>/, '');
+const detailParagraphs = Array.from(copy.html.matchAll(/<p>([\s\S]*?)<\/p>/g), match => match[1]).slice(1);
 import '../styles/doctor-personal-branding-challenges.css';
 ---
 
@@ -22,7 +22,14 @@ import '../styles/doctor-personal-branding-challenges.css';
           loading="lazy" decoding="async" />
       </div>
     </div>
-    <div class="doctor-personal-branding-challenges-details doctor-personal-branding-source-content" set:html={detailHtml} />
+    <div class="doctor-personal-branding-challenges-details">
+      <ul class="doctor-personal-branding-challenges-list" role="list" data-seo-challenges-motion>
+        {detailParagraphs.map((paragraph, index) => <li>
+          <span class="doctor-personal-branding-challenge-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+          <span set:html={paragraph} />
+        </li>)}
+      </ul>
+    </div>
   </section>
 </doctor-personal-branding-challenges>
 

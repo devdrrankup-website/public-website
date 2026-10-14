@@ -7,7 +7,7 @@
       content-visibility: auto;
       contain-intrinsic-block-size: auto var(--seo-section-estimate,1000px);
     }
-      .doctor-content-marketing-page > doctor-content-marketing-challenges { --seo-section-estimate:1252px; }
+      .doctor-content-marketing-page > doctor-content-marketing-challenges { --seo-section-estimate:934px; }
       .doctor-content-marketing-page > doctor-content-marketing-outcomes { --seo-section-estimate:1780px; }
       .doctor-content-marketing-page > doctor-content-marketing-intent { --seo-section-estimate:698px; }
       .doctor-content-marketing-page > doctor-content-marketing-trust { --seo-section-estimate:906px; }
@@ -17,12 +17,12 @@
       .doctor-content-marketing-page > #doctor-content-marketing-related { --seo-section-estimate:1284px; }
       .doctor-content-marketing-page > doctor-content-marketing-starting { --seo-section-estimate:804px; }
       .doctor-content-marketing-page > doctor-content-marketing-example { --seo-section-estimate:896px; }
-      .doctor-content-marketing-page > doctor-content-marketing-progress { --seo-section-estimate:798px; }
-      .doctor-content-marketing-page > doctor-content-marketing-why { --seo-section-estimate:948px; }
+      .doctor-content-marketing-page > doctor-content-marketing-progress { --seo-section-estimate:837px; }
+      .doctor-content-marketing-page > doctor-content-marketing-why { --seo-section-estimate:777px; }
       .doctor-content-marketing-page > doctor-content-marketing-faq { --seo-section-estimate:1111px; }
       .doctor-content-marketing-page > doctor-content-marketing-consultation { --seo-section-estimate:1621px; }
     @media (min-width:360px) {
-      .doctor-content-marketing-page > doctor-content-marketing-challenges { --seo-section-estimate:1148px; }
+      .doctor-content-marketing-page > doctor-content-marketing-challenges { --seo-section-estimate:886px; }
       .doctor-content-marketing-page > doctor-content-marketing-outcomes { --seo-section-estimate:1638px; }
       .doctor-content-marketing-page > doctor-content-marketing-intent { --seo-section-estimate:663px; }
       .doctor-content-marketing-page > doctor-content-marketing-trust { --seo-section-estimate:808px; }
@@ -32,13 +32,13 @@
       .doctor-content-marketing-page > #doctor-content-marketing-related { --seo-section-estimate:1305px; }
       .doctor-content-marketing-page > doctor-content-marketing-starting { --seo-section-estimate:789px; }
       .doctor-content-marketing-page > doctor-content-marketing-example { --seo-section-estimate:920px; }
-      .doctor-content-marketing-page > doctor-content-marketing-progress { --seo-section-estimate:789px; }
-      .doctor-content-marketing-page > doctor-content-marketing-why { --seo-section-estimate:866px; }
+      .doctor-content-marketing-page > doctor-content-marketing-progress { --seo-section-estimate:833px; }
+      .doctor-content-marketing-page > doctor-content-marketing-why { --seo-section-estimate:707px; }
       .doctor-content-marketing-page > doctor-content-marketing-faq { --seo-section-estimate:1063px; }
       .doctor-content-marketing-page > doctor-content-marketing-consultation { --seo-section-estimate:1555px; }
     }
     @media (min-width:640px) {
-      .doctor-content-marketing-page > doctor-content-marketing-challenges { --seo-section-estimate:1225px; }
+      .doctor-content-marketing-page > doctor-content-marketing-challenges { --seo-section-estimate:979px; }
       .doctor-content-marketing-page > doctor-content-marketing-outcomes { --seo-section-estimate:1303px; }
       .doctor-content-marketing-page > doctor-content-marketing-intent { --seo-section-estimate:753px; }
       .doctor-content-marketing-page > doctor-content-marketing-trust { --seo-section-estimate:940px; }
@@ -48,13 +48,13 @@
       .doctor-content-marketing-page > #doctor-content-marketing-related { --seo-section-estimate:1424px; }
       .doctor-content-marketing-page > doctor-content-marketing-starting { --seo-section-estimate:608px; }
       .doctor-content-marketing-page > doctor-content-marketing-example { --seo-section-estimate:779px; }
-      .doctor-content-marketing-page > doctor-content-marketing-progress { --seo-section-estimate:668px; }
-      .doctor-content-marketing-page > doctor-content-marketing-why { --seo-section-estimate:794px; }
+      .doctor-content-marketing-page > doctor-content-marketing-progress { --seo-section-estimate:683px; }
+      .doctor-content-marketing-page > doctor-content-marketing-why { --seo-section-estimate:572px; }
       .doctor-content-marketing-page > doctor-content-marketing-faq { --seo-section-estimate:1051px; }
       .doctor-content-marketing-page > doctor-content-marketing-consultation { --seo-section-estimate:1402px; }
     }
     @media (min-width:820px) {
-      .doctor-content-marketing-page > doctor-content-marketing-challenges { --seo-section-estimate:1304px; }
+      .doctor-content-marketing-page > doctor-content-marketing-challenges { --seo-section-estimate:1018px; }
       .doctor-content-marketing-page > doctor-content-marketing-outcomes { --seo-section-estimate:1149px; }
       .doctor-content-marketing-page > doctor-content-marketing-intent { --seo-section-estimate:821px; }
       .doctor-content-marketing-page > doctor-content-marketing-trust { --seo-section-estimate:957px; }
@@ -64,13 +64,13 @@
       .doctor-content-marketing-page > #doctor-content-marketing-related { --seo-section-estimate:1412px; }
       .doctor-content-marketing-page > doctor-content-marketing-starting { --seo-section-estimate:577px; }
       .doctor-content-marketing-page > doctor-content-marketing-example { --seo-section-estimate:640px; }
-      .doctor-content-marketing-page > doctor-content-marketing-progress { --seo-section-estimate:544px; }
-      .doctor-content-marketing-page > doctor-content-marketing-why { --seo-section-estimate:718px; }
+      .doctor-content-marketing-page > doctor-content-marketing-progress { --seo-section-estimate:593px; }
+      .doctor-content-marketing-page > doctor-content-marketing-why { --seo-section-estimate:513px; }
       .doctor-content-marketing-page > doctor-content-marketing-faq { --seo-section-estimate:1031px; }
       .doctor-content-marketing-page > doctor-content-marketing-consultation { --seo-section-estimate:1402px; }
     }
     @media (min-width:999px) {
-      .doctor-content-marketing-page > doctor-content-marketing-challenges { --seo-section-estimate:1290px; }
+      .doctor-content-marketing-page > doctor-content-marketing-challenges { --seo-section-estimate:1034px; }
       .doctor-content-marketing-page > doctor-content-marketing-outcomes { --seo-section-estimate:1125px; }
       .doctor-content-marketing-page > doctor-content-marketing-intent { --seo-section-estimate:836px; }
       .doctor-content-marketing-page > doctor-content-marketing-trust { --seo-section-estimate:991px; }
@@ -80,13 +80,13 @@
       .doctor-content-marketing-page > #doctor-content-marketing-related { --seo-section-estimate:1430px; }
       .doctor-content-marketing-page > doctor-content-marketing-starting { --seo-section-estimate:577px; }
       .doctor-content-marketing-page > doctor-content-marketing-example { --seo-section-estimate:585px; }
-      .doctor-content-marketing-page > doctor-content-marketing-progress { --seo-section-estimate:551px; }
-      .doctor-content-marketing-page > doctor-content-marketing-why { --seo-section-estimate:750px; }
+      .doctor-content-marketing-page > doctor-content-marketing-progress { --seo-section-estimate:607px; }
+      .doctor-content-marketing-page > doctor-content-marketing-why { --seo-section-estimate:496px; }
       .doctor-content-marketing-page > doctor-content-marketing-faq { --seo-section-estimate:1011px; }
       .doctor-content-marketing-page > doctor-content-marketing-consultation { --seo-section-estimate:1413px; }
     }
     @media (min-width:1000px) {
-      .doctor-content-marketing-page > doctor-content-marketing-challenges { --seo-section-estimate:1290px; }
+      .doctor-content-marketing-page > doctor-content-marketing-challenges { --seo-section-estimate:1034px; }
       .doctor-content-marketing-page > doctor-content-marketing-outcomes { --seo-section-estimate:1125px; }
       .doctor-content-marketing-page > doctor-content-marketing-intent { --seo-section-estimate:836px; }
       .doctor-content-marketing-page > doctor-content-marketing-trust { --seo-section-estimate:991px; }
@@ -96,8 +96,8 @@
       .doctor-content-marketing-page > #doctor-content-marketing-related { --seo-section-estimate:1430px; }
       .doctor-content-marketing-page > doctor-content-marketing-starting { --seo-section-estimate:577px; }
       .doctor-content-marketing-page > doctor-content-marketing-example { --seo-section-estimate:585px; }
-      .doctor-content-marketing-page > doctor-content-marketing-progress { --seo-section-estimate:551px; }
-      .doctor-content-marketing-page > doctor-content-marketing-why { --seo-section-estimate:750px; }
+      .doctor-content-marketing-page > doctor-content-marketing-progress { --seo-section-estimate:607px; }
+      .doctor-content-marketing-page > doctor-content-marketing-why { --seo-section-estimate:496px; }
       .doctor-content-marketing-page > doctor-content-marketing-faq { --seo-section-estimate:1011px; }
       .doctor-content-marketing-page > doctor-content-marketing-consultation { --seo-section-estimate:851px; }
     }
