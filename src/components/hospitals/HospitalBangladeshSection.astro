@@ -1,0 +1,43 @@
+---
+import { Image } from 'astro:assets';
+import Icon from '../Icon.astro';
+import HospitalEntrance from './HospitalEntrance.astro';
+import Search01Icon from '@hugeicons/core-free-icons/Search01Icon';
+import Location01Icon from '@hugeicons/core-free-icons/Location01Icon';
+import UserAccountIcon from '@hugeicons/core-free-icons/UserAccountIcon';
+import Calendar03Icon from '@hugeicons/core-free-icons/Calendar03Icon';
+import CheckmarkCircle02Icon from '@hugeicons/core-free-icons/CheckmarkCircle02Icon';
+import ShieldCheckIcon from '@hugeicons/core-free-icons/ShieldCheckIcon';
+import Call02Icon from '@hugeicons/core-free-icons/Call02Icon';
+import { hospitalBangladesh as copy } from '../../data/for-hospital-bangladesh';
+import background from '../../assets/audience-hubs/hospital-process-v1.webp';
+import '../../styles/hospital-bangladesh.css';
+const icons = [Search01Icon, Location01Icon, UserAccountIcon, Calendar03Icon, CheckmarkCircle02Icon, ShieldCheckIcon, Call02Icon];
+---
+<HospitalEntrance class="hospital-bangladesh-motion">
+  <section id="hospital-bangladesh" class="hospital-bangladesh" aria-labelledby="hospital-bangladesh-heading">
+    <div class="hospital-bangladesh-background" aria-hidden="true">
+      <Image src={background} width={960} widths={[480, 768, 960]} sizes="100vw" format="webp" quality={35}
+        alt="" title="Healthcare building in a Bangladesh urban neighborhood" loading="lazy" decoding="async" />
+    </div>
+    <div class="section-container hospital-bangladesh-layout">
+      <div class="hospital-bangladesh-header">
+        <h2 id="hospital-bangladesh-heading">{copy.heading}</h2>
+        <p>{copy.introduction}</p>
+      </div>
+      <div class="hospital-bangladesh-path" data-discovery-motion>
+        <ol role="list" aria-label="Hospital information journey in Bangladesh">
+          {copy.touchpoints.map((label, index) => <li>
+            <span class="hospital-bangladesh-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+            <span class="hospital-bangladesh-icon"><Icon icon={icons[index]} size={26} /></span>
+            <span class="hospital-bangladesh-label">{label}</span>
+            {index < copy.touchpoints.length - 1 && <span class="hospital-bangladesh-arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" focusable="false"><path d="M2 7h10m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </span>}
+          </li>)}
+        </ol>
+      </div>
+      <p class="hospital-bangladesh-conclusion">{copy.conclusion}</p>
+    </div>
+  </section>
+</HospitalEntrance>

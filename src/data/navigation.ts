@@ -66,7 +66,7 @@ export const navigationMenus:NavigationMenu[]=[
       item('Online Report Portal','Support an appropriate digital report-access journey.','clinic-online-report-portal'),
     ]},
   ]},
-  {id:'hospitals',title:'For Hospitals',description:'Digital growth for a connected hospital ecosystem.',viewAll:'View all hospital services',groups:[
+  {id:'hospitals',title:'For Hospitals',description:'Digital growth for a connected hospital ecosystem.',viewAll:'View all hospital services',viewAllHref:'/hospitals/',groups:[
     {title:'Hospital Digital Marketing',items:[
       item('Hospital Digital Marketing','Coordinate your hospital’s digital presence.','hospital-digital-marketing'),
       item('Hospital SEO','Help patients find departments and hospital services.','hospital-seo'),

@@ -1,0 +1,19 @@
+---
+import HospitalEntrance from './HospitalEntrance.astro';
+import { hospitalExpertise as copy } from '../../data/for-hospital-expertise';
+import '../../styles/hospital-expertise.css';
+const relationships = copy.relationship.split(/[↔→]/).map(label => label.trim()).filter(Boolean);
+---
+<HospitalEntrance class="hospital-expertise-motion">
+  <section id="hospital-expertise" class="hospital-expertise" aria-labelledby="hospital-expertise-heading">
+    <div class="section-container hospital-expertise-layout">
+      <header data-discovery-motion><h2 id="hospital-expertise-heading">{copy.heading}</h2></header>
+      <div class="hospital-expertise-content" data-discovery-motion>
+        {copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+      </div>
+      <ol class="hospital-expertise-map" aria-label="Hospital information relationships" data-discovery-motion>
+        {relationships.map((label,index) => <li><span class="hospital-expertise-number" aria-hidden="true">{String(index+1).padStart(2,'0')}</span><span>{label}</span></li>)}
+      </ol>
+    </div>
+  </section>
+</HospitalEntrance>

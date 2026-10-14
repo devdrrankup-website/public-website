@@ -1,0 +1,43 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import HospitalHero from '../../components/hospitals/HospitalHero.astro';
+import HospitalDiscoverySection from '../../components/hospitals/HospitalDiscoverySection.astro';
+import HospitalOutcomesSection from '../../components/hospitals/HospitalOutcomesSection.astro';
+import HospitalBangladeshSection from '../../components/hospitals/HospitalBangladeshSection.astro';
+import HospitalSolutionsSection from '../../components/hospitals/HospitalSolutionsSection.astro';
+import HospitalTrustSection from '../../components/hospitals/HospitalTrustSection.astro';
+import HospitalExpertiseSection from '../../components/hospitals/HospitalExpertiseSection.astro';
+import HospitalStartSection from '../../components/hospitals/HospitalStartSection.astro';
+import HospitalSpecialistsSection from '../../components/hospitals/HospitalSpecialistsSection.astro';
+import HospitalProofSection from '../../components/hospitals/HospitalProofSection.astro';
+import HospitalWhySection from '../../components/hospitals/HospitalWhySection.astro';
+import HospitalProcessSection from '../../components/hospitals/HospitalProcessSection.astro';
+import HospitalFaqSection from '../../components/hospitals/HospitalFaqSection.astro';
+import HospitalConsultationSection from '../../components/hospitals/HospitalConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { hospitalHeroPreload } from '../../lib/hospital-hero-image';
+import { pageMetadata } from '../../data/page-metadata';
+import '../../styles/hospital-rendering.css';
+---
+<Layout metadata={pageMetadata.hospitals} imagePreload={hospitalHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="hospital-page" tabindex="-1">
+    <HospitalHero />
+    <HospitalDiscoverySection />
+    <HospitalOutcomesSection />
+    <HospitalBangladeshSection />
+    <HospitalSolutionsSection />
+    <HospitalTrustSection />
+    <HospitalExpertiseSection />
+    <HospitalStartSection />
+    <HospitalSpecialistsSection />
+    <HospitalProofSection />
+    <HospitalWhySection />
+    <HospitalProcessSection />
+    <HospitalFaqSection />
+    <HospitalConsultationSection />
+  </main>
+  <Footer />
+</Layout>
+<script>import '../../scripts/healthcare-consultation';</script>

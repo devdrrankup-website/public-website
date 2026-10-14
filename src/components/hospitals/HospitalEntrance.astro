@@ -1,0 +1,8 @@
+---
+interface Props { class: string }
+const { class: className } = Astro.props;
+---
+<hospital-discovery class={className}><slot /></hospital-discovery>
+<script>
+  import '../../scripts/hospital-discovery';
+</script>

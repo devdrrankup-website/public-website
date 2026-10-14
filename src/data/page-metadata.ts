@@ -1,10 +1,12 @@
 import homeGraph from './seo/home.json';
 import doctorsGraph from './seo/doctors.json';
 import doctorSeoGraph from './seo/doctor-seo.json';
+import hospitalsGraph from './seo/hospitals.json';
 import clinicsGraph from './seo/clinics.json';
 import { homepageFaq } from './homepage-faq';
 import { doctorFaq } from './for-doctors-faq';
 import { doctorSeoFaq } from './doctor-seo-faq';
+import { hospitalFaq } from './for-hospital-faq';
 import { clinicFaq } from './for-clinic-faq';
 
 type FaqItem = { readonly question: string; readonly answer: string };
@@ -45,6 +47,13 @@ export const pageMetadata = {
     canonical: 'https://www.drrankup.com/doctors/',
     twitterCard: 'summary',
     schema: withVisibleFaq(doctorsGraph, doctorFaq.items),
+  },
+  hospitals: {
+    title: 'Hospital SEO, Websites & Software in BD | Dr RankUP',
+    description: 'Hospital SEO, responsible digital marketing, websites and management software planning for verified departments, doctors and branches in Bangladesh.',
+    canonical: 'https://www.drrankup.com/hospitals/',
+    twitterCard: 'summary',
+    schema: withVisibleFaq(hospitalsGraph, hospitalFaq.items),
   },
   clinics: {
     title: 'Clinic SEO, Websites & Software in Bangladesh | Dr RankUP',

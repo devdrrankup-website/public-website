@@ -1,0 +1,17 @@
+---
+import HospitalEntrance from './HospitalEntrance.astro';
+import { hospitalProof as copy } from '../../data/for-hospital-proof';
+import '../../styles/hospital-proof.css';
+---
+<HospitalEntrance class="hospital-proof-motion">
+  <section id="hospital-proof" class="hospital-proof" aria-labelledby="hospital-proof-heading">
+    <div class="section-container hospital-proof-layout">
+      <header data-discovery-motion><h2 id="hospital-proof-heading">{copy.heading}</h2></header>
+      <div class="hospital-proof-body" data-discovery-motion>
+        <ol aria-label="Evidence review sequence">{copy.sequence.map((step,index) => <li><span aria-hidden="true">{String(index+1).padStart(2,'0')}</span>{step}</li>)}</ol>
+        <p>{copy.paragraph}</p>
+        <span class="hospital-proof-link">{copy.cta}<span aria-hidden="true">↗</span></span>
+      </div>
+    </div>
+  </section>
+</HospitalEntrance>

@@ -1,0 +1,42 @@
+---
+import Icon from '../Icon.astro';
+import HospitalEntrance from './HospitalEntrance.astro';
+import Search01Icon from '@hugeicons/core-free-icons/Search01Icon';
+import UserAccountIcon from '@hugeicons/core-free-icons/UserAccountIcon';
+import LinkSquare01Icon from '@hugeicons/core-free-icons/LinkSquare01Icon';
+import Megaphone01Icon from '@hugeicons/core-free-icons/Megaphone01Icon';
+import Calendar03Icon from '@hugeicons/core-free-icons/Calendar03Icon';
+import Target01Icon from '@hugeicons/core-free-icons/Target01Icon';
+import ArrowRight01Icon from '@hugeicons/core-free-icons/ArrowRight01Icon';
+import {hospitalStart as copy} from '../../data/for-hospital-start';
+import '../../styles/hospital-start.css';
+const icons=[Search01Icon,UserAccountIcon,LinkSquare01Icon,Megaphone01Icon,Calendar03Icon,Target01Icon];
+---
+<HospitalEntrance class="hospital-start-motion">
+  <section id="hospital-start" class="hospital-start" aria-labelledby="hospital-start-heading">
+    <div class="section-container hospital-start-layout">
+      <header class="hospital-start-header">
+        <h2 id="hospital-start-heading" data-discovery-motion>{copy.heading}</h2>
+        <div class="hospital-start-map" aria-hidden="true" data-discovery-motion>
+          <div class="hospital-start-dial">
+            <span class="hospital-start-dial-index">01</span>
+            <span class="hospital-start-dial-label hospital-start-dial-label--assess">Assess</span>
+            <span class="hospital-start-dial-label hospital-start-dial-label--priority">Prioritize</span>
+            <span class="hospital-start-dial-label hospital-start-dial-label--begin">Begin</span>
+            <span class="hospital-start-dial-marker hospital-start-dial-marker--one"></span>
+            <span class="hospital-start-dial-marker hospital-start-dial-marker--two"></span>
+            <span class="hospital-start-dial-marker hospital-start-dial-marker--three"></span>
+            <span class="hospital-start-dial-line"></span>
+            <span class="hospital-start-dial-core"><small>Start with</small><strong>Clarity</strong></span>
+          </div>
+        </div>
+      </header>
+      <ul class="hospital-start-priorities" role="list">
+        {copy.priorities.map((item,index)=><li class="hospital-start-row" data-discovery-motion>
+          <span class="hospital-start-icon"><Icon icon={icons[index]} size={24} /></span>
+          <p><strong>{item.question}</strong>{' '}<span class="hospital-start-recommendation"><span class="hospital-start-direction"><Icon icon={ArrowRight01Icon} size={18} /></span><span>{item.recommendation}</span></span></p>
+        </li>)}
+      </ul>
+    </div>
+  </section>
+</HospitalEntrance>

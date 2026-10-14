@@ -5,7 +5,7 @@ export const homepageServices = {
   items: [
     { id: 'doctors', heading: 'For Doctors', href: '/doctors/', description: 'Build visibility around expertise, specialty, practice locations and professional identity.', services: 'Doctor SEO · Local SEO · Google Business Profile · Personal Branding · Content · Paid Advertising · Doctor Websites · Chamber Management Software' },
     { id: 'clinics', heading: 'For Clinics', href: '/clinics/', description: 'Connect clinic visibility with doctors, specialties, services, branches, appointments and operations.', services: 'Clinic SEO · Local SEO · Digital Marketing · Content · Advertising · Clinic Websites · Appointment Systems · Clinic Management Software' },
-    { id: 'hospitals', heading: 'For Hospitals', href: '/for-hospitals/', description: 'Support larger healthcare organizations with search visibility, communication, websites and scalable technology.', services: 'Hospital SEO · Digital Marketing · Advertising · Hospital Websites · Hospital Management Software' },
+    { id: 'hospitals', heading: 'For Hospitals', href: '/hospitals/', description: 'Support larger healthcare organizations with search visibility, communication, websites and scalable technology.', services: 'Hospital SEO · Digital Marketing · Advertising · Hospital Websites · Hospital Management Software' },
     { id: 'healthcare', heading: 'For Healthcare', href: '/healthcare-marketing/', description: 'Connect digital visibility, professional communication, patient-facing websites and healthcare technology.', services: 'Healthcare SEO · Local SEO · Google Business Profile · Digital Marketing · Personal Branding · Paid Advertising · Healthcare Websites · Healthcare Software · Search & Content Strategy' },
   ],
 };

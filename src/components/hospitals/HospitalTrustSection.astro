@@ -1,0 +1,42 @@
+---
+import {Image} from 'astro:assets';
+import Icon from '../Icon.astro';
+import HospitalEntrance from './HospitalEntrance.astro';
+import UserAccountIcon from '@hugeicons/core-free-icons/UserAccountIcon';
+import ShieldCheckIcon from '@hugeicons/core-free-icons/ShieldCheckIcon';
+import LockKeyIcon from '@hugeicons/core-free-icons/LockKeyIcon';
+import Calendar03Icon from '@hugeicons/core-free-icons/Calendar03Icon';
+import photo from '../../assets/audience-hubs/hospital-trust-v1.webp';
+import {hospitalTrust as copy} from '../../data/for-hospital-trust';
+import '../../styles/hospital-trust.css';
+const icons=[UserAccountIcon,ShieldCheckIcon,LockKeyIcon,Calendar03Icon];
+
+---
+<HospitalEntrance class="hospital-trust-motion">
+  <section id="hospital-trust" class="hospital-trust" aria-labelledby="hospital-trust-heading">
+    <div class="section-container">
+      <header class="hospital-trust-header">
+        <h2 id="hospital-trust-heading">{copy.heading}</h2>
+        {copy.introduction && <p>{copy.introduction}</p>}
+      </header>
+      <div class="hospital-trust-layout">
+        <div class="hospital-trust-visual">
+          <figure class="hospital-trust-photo" data-discovery-motion>
+            <Image src={photo} width={1536} height={1024} widths={[360,540,720,960,1200]}
+              sizes="(min-width: 1100px) min(43vw, 640px), (min-width: 640px) 640px, calc(100vw - 32px)"
+              format="webp" quality={78} loading="lazy" decoding="async"
+              alt="Hospital and healthcare content specialist reviewing educational material in a chamber"
+              title="Clinical content review in a hospital's chamber" />
+          </figure>
+        </div>
+        <div class="hospital-trust-principles">
+          {copy.principles.map((item,index)=><article class="hospital-trust-principle" aria-labelledby={`hospital-trust-principle-${index}`} data-discovery-motion>
+            <span class="hospital-trust-icon"><Icon icon={icons[index]} size={26} /></span>
+            <div><h3 id={`hospital-trust-principle-${index}`}>{item.heading}</h3>{item.paragraphs.map(paragraph=><p>{paragraph}</p>)}</div>
+          </article>)}
+        </div>
+      </div>
+      {copy.conclusion && <p class="hospital-trust-conclusion">{copy.conclusion}</p>}
+    </div>
+  </section>
+</HospitalEntrance>

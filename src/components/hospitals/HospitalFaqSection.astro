@@ -1,0 +1,41 @@
+---
+import Add01Icon from '@hugeicons/core-free-icons/Add01Icon';
+import Icon from '../Icon.astro';
+import HospitalEntrance from './HospitalEntrance.astro';
+import { hospitalFaq as copy } from '../../data/for-hospital-faq';
+import '../../styles/hospital-faq.css';
+
+---
+
+<HospitalEntrance class="hospital-faq-motion">
+  <section id="frequently-asked-questions" class="hospital-faq" aria-labelledby="hospital-faq-heading">
+    <div class="hospital-faq-atmosphere" aria-hidden="true">?</div>
+    <div class="section-container hospital-faq-layout">
+      <header class="hospital-faq-header" data-discovery-motion>
+        <span class="hospital-faq-range" aria-hidden="true">01—05</span>
+        <h2 id="hospital-faq-heading">{copy.heading}</h2>
+      </header>
+
+      <hospital-faq class="hospital-faq-list">
+        {copy.items.map((item, index) => (
+          <article class="hospital-faq-item" data-discovery-motion>
+            <span class="hospital-faq-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+            <div class="hospital-faq-content">
+              <h3 id={`hospital-faq-question-${index + 1}`} class="hospital-faq-question">
+                <span class="hospital-faq-question-label">{item.question}</span>
+                <span class="hospital-faq-toggle" aria-hidden="true"><Icon icon={Add01Icon} size={20} /></span>
+              </h3>
+              <div id={`hospital-faq-answer-${index + 1}`} class="hospital-faq-answer" role="region" aria-labelledby={`hospital-faq-question-${index + 1}`}>
+                <p>{item.answer}</p>
+              </div>
+            </div>
+          </article>
+        ))}
+      </hospital-faq>
+    </div>
+  </section>
+</HospitalEntrance>
+
+<script>
+  import '../../scripts/hospital-faq';
+</script>

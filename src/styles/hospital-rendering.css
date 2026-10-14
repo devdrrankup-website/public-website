@@ -1,0 +1,115 @@
+/* Keep all hospital copy and media in static HTML. Defer offscreen layout and
+   paint at whole-section boundaries so the hero's initial work stays small.
+   These estimates follow measured section heights at 320/390/820/1100/1440px;
+   `auto` replaces each hint with its real size after the section is rendered. */
+@supports (content-visibility: auto) {
+  .hospital-page > :is(
+    .hospital-discovery,
+    .hospital-outcomes-motion,
+    .hospital-bangladesh-motion,
+    #hospital-solutions,
+    .hospital-trust-motion,
+    .hospital-expertise-motion,
+    .hospital-start-motion,
+    .hospital-specialists-motion,
+    .hospital-proof-motion,
+    .hospital-why-motion,
+    .hospital-process-motion,
+    .hospital-faq-motion
+  ) {
+    content-visibility: auto;
+    contain-intrinsic-block-size: auto var(--hospital-section-estimate, 1000px);
+  }
+
+  .hospital-discovery { --hospital-section-estimate: 1305px; }
+  .hospital-outcomes-motion { --hospital-section-estimate: 2335px; }
+  .hospital-bangladesh-motion { --hospital-section-estimate: 1041px; }
+  #hospital-solutions { --hospital-section-estimate: 2908px; }
+  .hospital-trust-motion { --hospital-section-estimate: 1692px; }
+  .hospital-expertise-motion { --hospital-section-estimate: 903px; }
+  .hospital-start-motion { --hospital-section-estimate: 1361px; }
+  .hospital-specialists-motion { --hospital-section-estimate: 489px; }
+  .hospital-proof-motion { --hospital-section-estimate: 718px; }
+  .hospital-why-motion { --hospital-section-estimate: 1165px; }
+  .hospital-process-motion { --hospital-section-estimate: 1239px; }
+  .hospital-faq-motion { --hospital-section-estimate: 1035px; }
+
+  @media (min-width: 360px) {
+    .hospital-discovery { --hospital-section-estimate: 1280px; }
+    .hospital-outcomes-motion { --hospital-section-estimate: 2271px; }
+    .hospital-bangladesh-motion { --hospital-section-estimate: 956px; }
+    #hospital-solutions { --hospital-section-estimate: 3108px; }
+    .hospital-trust-motion { --hospital-section-estimate: 1498px; }
+    .hospital-expertise-motion { --hospital-section-estimate: 849px; }
+    .hospital-start-motion { --hospital-section-estimate: 1142px; }
+    .hospital-specialists-motion { --hospital-section-estimate: 455px; }
+    .hospital-proof-motion { --hospital-section-estimate: 656px; }
+    .hospital-why-motion { --hospital-section-estimate: 1020px; }
+    .hospital-process-motion { --hospital-section-estimate: 1064px; }
+    .hospital-faq-motion { --hospital-section-estimate: 893px; }
+  }
+
+  @media (min-width: 640px) {
+    .hospital-discovery { --hospital-section-estimate: 1229px; }
+    .hospital-outcomes-motion { --hospital-section-estimate: 1365px; }
+    .hospital-bangladesh-motion { --hospital-section-estimate: 615px; }
+    #hospital-solutions { --hospital-section-estimate: 5065px; }
+    .hospital-trust-motion { --hospital-section-estimate: 1411px; }
+    .hospital-expertise-motion { --hospital-section-estimate: 664px; }
+    .hospital-start-motion { --hospital-section-estimate: 1047px; }
+    .hospital-specialists-motion { --hospital-section-estimate: 495px; }
+    .hospital-proof-motion { --hospital-section-estimate: 558px; }
+    .hospital-why-motion { --hospital-section-estimate: 954px; }
+    .hospital-process-motion { --hospital-section-estimate: 1088px; }
+    .hospital-faq-motion { --hospital-section-estimate: 831px; }
+  }
+
+  @media (min-width: 1000px) {
+    .hospital-discovery { --hospital-section-estimate: 838px; }
+    .hospital-outcomes-motion { --hospital-section-estimate: 956px; }
+    .hospital-bangladesh-motion { --hospital-section-estimate: 639px; }
+    #hospital-solutions { --hospital-section-estimate: 6354px; }
+    .hospital-trust-motion { --hospital-section-estimate: 1094px; }
+    .hospital-expertise-motion { --hospital-section-estimate: 619px; }
+    .hospital-start-motion { --hospital-section-estimate: 847px; }
+    .hospital-specialists-motion { --hospital-section-estimate: 259px; }
+    .hospital-proof-motion { --hospital-section-estimate: 576px; }
+    .hospital-why-motion { --hospital-section-estimate: 845px; }
+    .hospital-process-motion { --hospital-section-estimate: 871px; }
+    .hospital-faq-motion { --hospital-section-estimate: 912px; }
+  }
+
+  @media (min-width: 1200px) {
+    .hospital-discovery { --hospital-section-estimate: 932px; }
+    .hospital-outcomes-motion { --hospital-section-estimate: 964px; }
+    #hospital-solutions { --hospital-section-estimate: 7155px; }
+    .hospital-trust-motion { --hospital-section-estimate: 1039px; }
+    .hospital-expertise-motion { --hospital-section-estimate: 687px; }
+    .hospital-start-motion { --hospital-section-estimate: 737px; }
+    .hospital-specialists-motion { --hospital-section-estimate: 228px; }
+    .hospital-proof-motion { --hospital-section-estimate: 633px; }
+    .hospital-why-motion { --hospital-section-estimate: 790px; }
+    .hospital-process-motion { --hospital-section-estimate: 869px; }
+    .hospital-faq-motion { --hospital-section-estimate: 790px; }
+  }
+}
+
+@media print {
+  .hospital-page > :is(
+    .hospital-discovery,
+    .hospital-outcomes-motion,
+    .hospital-bangladesh-motion,
+    #hospital-solutions,
+    .hospital-trust-motion,
+    .hospital-expertise-motion,
+    .hospital-start-motion,
+    .hospital-specialists-motion,
+    .hospital-proof-motion,
+    .hospital-why-motion,
+    .hospital-process-motion,
+    .hospital-faq-motion
+  ) {
+    content-visibility: visible;
+    contain-intrinsic-block-size: none;
+  }
+}

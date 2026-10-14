@@ -1,0 +1,46 @@
+---
+import ActionIcon from '../ActionIcon.astro';
+import Icon from '../Icon.astro';
+import ShieldCheckIcon from '@hugeicons/core-free-icons/ShieldCheckIcon';
+import LocationCheck01Icon from '@hugeicons/core-free-icons/LocationCheck01Icon';
+import BrowserIcon from '@hugeicons/core-free-icons/BrowserIcon';
+import Calendar03Icon from '@hugeicons/core-free-icons/Calendar03Icon';
+import { hospitalHero as copy } from '../../data/for-hospital-hero';
+import { hospitalHeroImage as photo } from '../../lib/hospital-hero-image';
+import '../../styles/hospital-hero.css';
+const icons = [ShieldCheckIcon, BrowserIcon, LocationCheck01Icon, Calendar03Icon];
+---
+<section class="hospital-hero" aria-labelledby="hospital-hero-heading">
+  <div class="section-container">
+    <div class="hospital-hero-layout">
+      <div class="hospital-hero-copy">
+        <h1 id="hospital-hero-heading">{copy.heading}</h1>
+        <p class="hospital-hero-tagline">{copy.tagline}</p>
+        <div class="hospital-hero-description">{copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}</div>
+        <div class="hospital-hero-actions" aria-label="Planned consultation and solution options">
+          <!-- Destinations remain deferred by the user. These are display-only labels,
+               without dead buttons, tabindex or links to pages not yet built. -->
+          <span class="button button-primary">{copy.primaryCta}<ActionIcon purpose="conversation" /></span>
+          <a class="button button-secondary" href="#hospital-solutions">{copy.secondaryCta}<ActionIcon purpose="conversation" /></a>
+        </div>
+      </div>
+      <div class="hospital-hero-visual">
+        <div class="hospital-hero-photo-frame">
+          <img src={photo.src} srcset={photo.srcset} sizes={photo.sizes} width={photo.width} height={photo.height}
+            alt="Hospital team reviewing digital information and service journeys in Bangladesh"
+            title="Hospital digital planning in Bangladesh"
+            loading="eager" fetchpriority="high" decoding="async" />
+        </div>
+        <div class="hospital-hero-photo-edge" aria-hidden="true"></div>
+      </div>
+      <aside class="hospital-hero-specialists" aria-labelledby="hospital-specialists-heading">
+        <h2 class="sr-only">Hospital growth specialists</h2>
+        <h3 id="hospital-specialists-heading">{copy.specialistsHeading}</h3>
+        <p>{copy.specialistsDescription}</p>
+      </aside>
+    </div>
+    <ul class="hospital-hero-principles" aria-label="Hospital practice considerations">
+      {copy.principles.map((principle, index) => <li><span class="hospital-principle-icon"><Icon icon={icons[index]} size={23} /></span>{principle}</li>)}
+    </ul>
+  </div>
+</section>

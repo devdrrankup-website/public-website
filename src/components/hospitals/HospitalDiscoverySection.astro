@@ -1,0 +1,44 @@
+---
+import { Image } from 'astro:assets';
+import Icon from '../Icon.astro';
+import HospitalEntrance from './HospitalEntrance.astro';
+import Search01Icon from '@hugeicons/core-free-icons/Search01Icon';
+import UserAccountIcon from '@hugeicons/core-free-icons/UserAccountIcon';
+import ShieldCheckIcon from '@hugeicons/core-free-icons/ShieldCheckIcon';
+import Calendar03Icon from '@hugeicons/core-free-icons/Calendar03Icon';
+import photo from '../../assets/audience-hubs/hospital-discovery-v1.webp';
+import { hospitalDiscovery as copy } from '../../data/for-hospital-discovery';
+import '../../styles/hospital-discovery.css';
+const icons = [Search01Icon, UserAccountIcon, ShieldCheckIcon, Calendar03Icon];
+---
+<HospitalEntrance class="hospital-discovery">
+  <section class="section-container" aria-labelledby="hospital-discovery-heading">
+    <h2 id="hospital-discovery-heading">{copy.heading}</h2>
+    <div class="hospital-discovery-editorial">
+      <div class="hospital-discovery-copy">
+        {copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+        <div class="hospital-discovery-journey">
+          {copy.goal && <p>{copy.goal}</p>}
+          <ol aria-label="Patient discovery journey">
+            {copy.journey.map((label, index) => <li>
+              <span class="hospital-discovery-chip">{label}</span>
+              {index < copy.journey.length - 1 && <span class="hospital-discovery-journey-arrow" aria-hidden="true">→</span>}
+            </li>)}
+          </ol>
+        </div>
+      </div>
+      <div class="hospital-discovery-photo" data-discovery-motion>
+        <Image src={photo} widths={[360, 540, 720, 960, 1200]} sizes="(min-width: 1100px) min(43vw, 640px), (min-width: 640px) calc(100vw - 56px), calc(100vw - 32px)"
+          format="webp" quality={78} width={1536} height={1024}
+          alt="Person at home researching hospital information online in Bangladesh"
+          title="Researching hospital information from home" loading="lazy" decoding="async" />
+      </div>
+    </div>
+    <ol class="hospital-discovery-stages" aria-label="Four parts of a clear hospital presence">
+      {copy.stages.map((stage, index) => <li data-discovery-motion>
+        <div class="hospital-discovery-stage-marker"><span class="hospital-discovery-stage-icon"><Icon icon={icons[index]} size={25} /></span><span class="hospital-discovery-stage-number" aria-hidden="true">0{index + 1}</span></div>
+        <div class="hospital-discovery-stage-copy"><h3>{stage.heading}</h3><p>{stage.description}</p></div>
+      </li>)}
+    </ol>
+  </section>
+</HospitalEntrance>

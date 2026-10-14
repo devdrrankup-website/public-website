@@ -1,0 +1,43 @@
+﻿.hospital-bangladesh-motion { display: block; }
+.hospital-bangladesh { position: relative; isolation: isolate; padding-block: 32px 56px; color: #000; background: linear-gradient(180deg, #fff 0%, #eaf7ff 24%, #eeedfe 58%, #eeedfe 76%, #fff 100%); }
+.hospital-bangladesh-background { position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: .12; mask-image: linear-gradient(180deg, transparent 0%, #000 18%, #000 78%, transparent 100%); }
+.hospital-bangladesh-background img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.hospital-bangladesh-layout { position: relative; display: grid; gap: 28px; }
+.hospital-bangladesh-header h2 { margin: 0; color: #000; font-size: clamp(28px, 7.3vw, 38px); font-weight: 650; line-height: 1.24; letter-spacing: -.035em; text-wrap: balance; }
+.hospital-bangladesh-header p { margin: 20px 0 0; color: #000; font-size: 15px; line-height: 1.85; }
+.hospital-bangladesh-path { min-width: 0; }
+.hospital-bangladesh-path ol { display: grid; list-style: none; padding: 0; margin: 0; }
+.hospital-bangladesh-path li { display: grid; grid-template-columns: 22px 48px minmax(0, 1fr) 14px; align-items: center; column-gap: 12px; min-width: 0; padding-block: 17px; border-top: 1px solid #afa9ec66; }
+.hospital-bangladesh-path li:last-child { border-bottom: 1px solid #afa9ec66; }
+.hospital-bangladesh-number { color: #000; font-size: 12px; font-weight: 550; font-variant-numeric: tabular-nums; }
+.hospital-bangladesh-icon { display: grid; place-items: center; width: 48px; height: 48px; color: #000; border-radius: var(--control-radius); border: 1px solid #d2edae; background: #e1ffb9; box-shadow: inset 0 1px 0 #ffffffcc; }
+.hospital-bangladesh-path li:nth-child(2) .hospital-bangladesh-icon { color: #6131c6; border-color: #a1d5f7; background: #bae5ff; }
+.hospital-bangladesh-path li:nth-child(3) .hospital-bangladesh-icon,
+.hospital-bangladesh-path li:nth-child(7) .hospital-bangladesh-icon { color: #6131c6; border-color: #afa9ec; background: #eeedfe; }
+.hospital-bangladesh-path li:nth-child(4) .hospital-bangladesh-icon { border-color: #e8daaf; background: #fef2cc; }
+.hospital-bangladesh-path li:nth-child(5) .hospital-bangladesh-icon { color: #6131c6; border-color: #dabfe9; background: #eddafa; }
+.hospital-bangladesh-label { color: #000; font-size: 16px; line-height: 1.55; font-weight: 600; }
+.hospital-bangladesh-arrow { display: flex; color: #6131c6; transform: rotate(90deg); }
+.hospital-bangladesh-conclusion { margin: 0; padding-left: 18px; border-left: 2px solid #afa9ec; color: #000; font-size: 15px; line-height: 1.85; }
+
+@media (min-width: 640px) {
+  .hospital-bangladesh { padding-block: 44px 72px; }
+  .hospital-bangladesh-layout { grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); grid-template-rows: min-content 1fr; gap: 32px; align-items: start; }
+  .hospital-bangladesh-header { grid-column: 1; grid-row: 1; }
+  .hospital-bangladesh-header h2 { font-size: clamp(34px, 4.6vw, 44px); }
+  .hospital-bangladesh-header p { font-size: 16px; }
+  .hospital-bangladesh-path { grid-column: 2; grid-row: 1 / 3; }
+  .hospital-bangladesh-label { font-size: 17px; }
+  .hospital-bangladesh-conclusion { grid-column: 1; grid-row: 2; font-size: 16px; }
+}
+
+@media (min-width: 1100px) {
+  .hospital-bangladesh { padding-block: 64px 88px; }
+  .hospital-bangladesh-layout { column-gap: clamp(48px, 7vw, 112px); }
+  .hospital-bangladesh-header h2 { max-width: 500px; font-size: clamp(40px, 3.15vw, 48px); }
+  .hospital-bangladesh-header p { max-width: 430px; margin-top: 28px; font-size: 17px; }
+  .hospital-bangladesh-path li { grid-template-columns: 32px 48px minmax(0, 1fr) 14px; column-gap: 20px; padding-block: 16px; }
+  .hospital-bangladesh-number { font-size: 13px; }
+  .hospital-bangladesh-label { font-size: 20px; }
+  .hospital-bangladesh-conclusion { max-width: 470px; align-self: end; padding-left: 24px; font-size: 17px; }
+}
