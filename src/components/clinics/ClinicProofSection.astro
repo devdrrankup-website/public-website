@@ -1,0 +1,17 @@
+---
+import ClinicEntrance from './ClinicEntrance.astro';
+import { clinicProof as copy } from '../../data/for-clinic-proof';
+import '../../styles/clinic-proof.css';
+---
+<ClinicEntrance class="clinic-proof-motion">
+  <section id="clinic-proof" class="clinic-proof" aria-labelledby="clinic-proof-heading">
+    <div class="section-container clinic-proof-layout">
+      <header data-discovery-motion><h2 id="clinic-proof-heading">{copy.heading}</h2></header>
+      <div class="clinic-proof-body" data-discovery-motion>
+        <ol aria-label="Evidence review sequence">{copy.sequence.map((step,index) => <li><span aria-hidden="true">{String(index+1).padStart(2,'0')}</span>{step}</li>)}</ol>
+        <p>{copy.paragraph}</p>
+        <span class="clinic-proof-link">{copy.cta}<span aria-hidden="true">↗</span></span>
+      </div>
+    </div>
+  </section>
+</ClinicEntrance>

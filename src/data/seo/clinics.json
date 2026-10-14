@@ -1,0 +1,184 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.drrankup.com/#organization",
+      "name": "Dr RankUP",
+      "legalName": "Dr RankUP",
+      "url": "https://www.drrankup.com/",
+      "description": "Healthcare-focused growth and technology partner providing SEO, digital marketing, professional branding, paid advertising, websites and software services for doctors, clinics and hospitals in Bangladesh.",
+      "slogan": "Rank Higher. Reach More Patients. Grow Your Practice.",
+      "telephone": "+8801342114762",
+      "email": "contact@drrankup.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "230A, 2nd Floor, Chowdhury Surgical Market, Topkhana Road, Dhaka South City Corporation",
+        "addressLocality": "Dhaka",
+        "postalCode": "1000",
+        "addressCountry": "BD"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Bangladesh"
+      },
+      "sameAs": [
+        "https://www.instagram.com/drrankup/",
+        "https://www.reddit.com/user/dr_rankup/",
+        "https://bsky.app/profile/drrankup.bsky.social",
+        "https://www.youtube.com/@drrankup",
+        "https://www.pinterest.com/drrankup/",
+        "https://linkedin.com/drrankup",
+        "https://www.facebook.com/drrankup",
+        "https://x.com/DrRankUp",
+        "https://medium.com/@drrankup",
+        "https://www.tiktok.com/@dr.rankup",
+        "https://www.quora.com/profile/Dr-RankUp",
+        "https://www.threads.com/@drrankup",
+        "https://www.snapchat.com/@drrankup"
+      ],
+      "founder": [
+        {
+          "@id": "https://www.drrankup.com/#person-hridoy-chowdhury"
+        },
+        {
+          "@id": "https://www.drrankup.com/#person-monwara-moni"
+        },
+        {
+          "@id": "https://www.drrankup.com/#person-sirajul-islam"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.drrankup.com/#person-hridoy-chowdhury",
+      "name": "Hridoy Chowdhury",
+      "jobTitle": "Founder",
+      "description": "SEO, technical search architecture and AI-search strategy",
+      "worksFor": {
+        "@id": "https://www.drrankup.com/#organization"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.drrankup.com/#person-monwara-moni",
+      "name": "Monwara Moni",
+      "jobTitle": "Co-Founder",
+      "description": "Content strategy, social media and professional communication",
+      "worksFor": {
+        "@id": "https://www.drrankup.com/#organization"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.drrankup.com/#person-sirajul-islam",
+      "name": "Sirajul Islam",
+      "jobTitle": "Co-Founder",
+      "description": "Full-stack development, software systems and technical engineering",
+      "worksFor": {
+        "@id": "https://www.drrankup.com/#organization"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.drrankup.com/#website",
+      "name": "Dr RankUP",
+      "url": "https://www.drrankup.com/",
+      "inLanguage": "en-BD",
+      "publisher": {
+        "@id": "https://www.drrankup.com/#organization"
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://www.drrankup.com/clinics/#webpage",
+      "url": "https://www.drrankup.com/clinics/",
+      "name": "Digital Marketing, SEO, Websites & Clinic Software in Bangladesh",
+      "description": "Compare Clinic SEO, local search, responsible marketing, website development and clinic software workflows for Bangladesh clinic teams.",
+      "inLanguage": "en-BD",
+      "isPartOf": {
+        "@id": "https://www.drrankup.com/#website"
+      },
+      "publisher": {
+        "@id": "https://www.drrankup.com/#organization"
+      },
+      "about": {
+        "@id": "https://www.drrankup.com/#organization"
+      },
+      "hasPart": {
+        "@id": "https://www.drrankup.com/clinics/#frequently-asked-questions"
+      },
+      "breadcrumb": {
+        "@id": "https://www.drrankup.com/clinics/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.drrankup.com/clinics/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.drrankup.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "For Clinics",
+          "item": "https://www.drrankup.com/clinics/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.drrankup.com/clinics/#frequently-asked-questions",
+      "name": "For Clinics - Frequently Asked Questions",
+      "isPartOf": {
+        "@id": "https://www.drrankup.com/clinics/#webpage"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What Services Does Dr RankUP Offer Clinics?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Clinic SEO, local search, marketing, content, branding, websites and scoped clinic software workflows."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do We Need Every Service Immediately?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Begin with the issue that matters most to your clinic and expand deliberately."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do You Guarantee Rankings or Patient Numbers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Search placement and enquiries depend on factors beyond an agency's control."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can You Build Clinic Websites and Software?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We offer website development and software services; individual functions, readiness and privacy requirements must be confirmed for each project."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can We Start With One Priority?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. A focused consultation can establish the first sensible step and its boundaries."
+          }
+        }
+      ]
+    }
+  ]
+}

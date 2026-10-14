@@ -1,0 +1,25 @@
+---
+import { clinicOutcomes as copy } from '../../data/for-clinic-outcomes';
+import ClinicOutcomeVisual from './ClinicOutcomeVisual.astro';
+import ClinicEntrance from './ClinicEntrance.astro';
+import '../../styles/clinic-outcomes.css';
+---
+<!-- Reuse the existing scoped, engine-free entrance element. Each instance
+     observes only its own descendants and retains a complete static fallback. -->
+<ClinicEntrance class="clinic-outcomes-motion">
+  <section id="clinic-outcomes" class="clinic-outcomes" aria-labelledby="clinic-outcomes-heading">
+    <div class="section-container">
+      <h2 id="clinic-outcomes-heading">{copy.heading}</h2>
+      <div class="clinic-outcomes-grid">
+        {copy.items.map((item, index) => <article class="clinic-outcome-card" aria-labelledby={`clinic-outcome-${index+1}`} data-discovery-motion>
+          <div class="clinic-outcome-copy">
+            <span class="clinic-outcome-number" aria-hidden="true">0{index+1}</span>
+            <h3 id={`clinic-outcome-${index+1}`}>{item.heading}</h3>
+            <p>{item.description}</p>
+          </div>
+          <ClinicOutcomeVisual index={index} />
+        </article>)}
+      </div>
+    </div>
+  </section>
+</ClinicEntrance>

@@ -1,0 +1,46 @@
+---
+import ActionIcon from '../ActionIcon.astro';
+import Icon from '../Icon.astro';
+import ShieldCheckIcon from '@hugeicons/core-free-icons/ShieldCheckIcon';
+import LocationCheck01Icon from '@hugeicons/core-free-icons/LocationCheck01Icon';
+import BrowserIcon from '@hugeicons/core-free-icons/BrowserIcon';
+import Calendar03Icon from '@hugeicons/core-free-icons/Calendar03Icon';
+import { clinicHero as copy } from '../../data/for-clinic-hero';
+import { clinicHeroImage as photo } from '../../lib/clinic-hero-image';
+import '../../styles/clinic-hero.css';
+const icons = [ShieldCheckIcon, BrowserIcon, LocationCheck01Icon, Calendar03Icon];
+---
+<section class="clinic-hero" aria-labelledby="clinic-hero-heading">
+  <div class="section-container">
+    <div class="clinic-hero-layout">
+      <div class="clinic-hero-copy">
+        <h1 id="clinic-hero-heading">{copy.heading}</h1>
+        <p class="clinic-hero-tagline">{copy.tagline}</p>
+        <div class="clinic-hero-description">{copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}</div>
+        <div class="clinic-hero-actions" aria-label="Planned consultation and solution options">
+          <!-- Destinations remain deferred by the user. These are display-only labels,
+               without dead buttons, tabindex or links to pages not yet built. -->
+          <span class="button button-primary">{copy.primaryCta}<ActionIcon purpose="conversation" /></span>
+          <a class="button button-secondary" href="#clinic-solutions">{copy.secondaryCta}<ActionIcon purpose="conversation" /></a>
+        </div>
+      </div>
+      <div class="clinic-hero-visual">
+        <div class="clinic-hero-photo-frame">
+          <img src={photo.src} srcset={photo.srcset} sizes={photo.sizes} width={photo.width} height={photo.height}
+            alt="Clinic team reviewing digital information and service journeys in Bangladesh"
+            title="Clinic digital planning in Bangladesh"
+            loading="eager" fetchpriority="high" decoding="async" />
+        </div>
+        <div class="clinic-hero-photo-edge" aria-hidden="true"></div>
+      </div>
+      <aside class="clinic-hero-specialists" aria-labelledby="clinic-specialists-heading">
+        <h2 class="sr-only">Clinic growth specialists</h2>
+        <h3 id="clinic-specialists-heading">{copy.specialistsHeading}</h3>
+        <p>{copy.specialistsDescription}</p>
+      </aside>
+    </div>
+    <ul class="clinic-hero-principles" aria-label="Clinic practice considerations">
+      {copy.principles.map((principle, index) => <li><span class="clinic-principle-icon"><Icon icon={icons[index]} size={23} /></span>{principle}</li>)}
+    </ul>
+  </div>
+</section>

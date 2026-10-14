@@ -1,0 +1,41 @@
+---
+import Add01Icon from '@hugeicons/core-free-icons/Add01Icon';
+import Icon from '../Icon.astro';
+import ClinicEntrance from './ClinicEntrance.astro';
+import { clinicFaq as copy } from '../../data/for-clinic-faq';
+import '../../styles/clinic-faq.css';
+
+---
+
+<ClinicEntrance class="clinic-faq-motion">
+  <section id="frequently-asked-questions" class="clinic-faq" aria-labelledby="clinic-faq-heading">
+    <div class="clinic-faq-atmosphere" aria-hidden="true">?</div>
+    <div class="section-container clinic-faq-layout">
+      <header class="clinic-faq-header" data-discovery-motion>
+        <span class="clinic-faq-range" aria-hidden="true">01—05</span>
+        <h2 id="clinic-faq-heading">{copy.heading}</h2>
+      </header>
+
+      <clinic-faq class="clinic-faq-list">
+        {copy.items.map((item, index) => (
+          <article class="clinic-faq-item" data-discovery-motion>
+            <span class="clinic-faq-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+            <div class="clinic-faq-content">
+              <h3 id={`clinic-faq-question-${index + 1}`} class="clinic-faq-question">
+                <span class="clinic-faq-question-label">{item.question}</span>
+                <span class="clinic-faq-toggle" aria-hidden="true"><Icon icon={Add01Icon} size={20} /></span>
+              </h3>
+              <div id={`clinic-faq-answer-${index + 1}`} class="clinic-faq-answer" role="region" aria-labelledby={`clinic-faq-question-${index + 1}`}>
+                <p>{item.answer}</p>
+              </div>
+            </div>
+          </article>
+        ))}
+      </clinic-faq>
+    </div>
+  </section>
+</ClinicEntrance>
+
+<script>
+  import '../../scripts/clinic-faq';
+</script>

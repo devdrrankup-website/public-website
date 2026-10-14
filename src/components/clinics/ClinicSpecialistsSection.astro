@@ -1,0 +1,46 @@
+---
+import { Image } from 'astro:assets';
+import ClinicEntrance from './ClinicEntrance.astro';
+import hridoy from '../../assets/team/founder-hridoy-chowdhury.jpeg';
+import monwara from '../../assets/team/monwara-moni-studio-v2.png';
+import sirajul from '../../assets/team/sirajul-islam-studio-v2.png';
+import { clinicSpecialists as copy } from '../../data/for-clinic-specialists';
+import '../../styles/clinic-specialists.css';
+
+const portraits = [hridoy, monwara, sirajul];
+---
+<ClinicEntrance class="clinic-specialists-motion">
+  <section id="clinic-specialists" class="clinic-specialists" aria-labelledby="clinic-specialists-heading">
+    <div class="section-container clinic-specialists-layout">
+      <header class="clinic-specialists-header" data-discovery-motion>
+        <h2 id="clinic-specialists-heading">{copy.heading}</h2>
+        {copy.note && <p class="clinic-specialists-note">{copy.note}</p>}
+      </header>
+
+      <div class="clinic-specialists-list">
+        {copy.profiles.map((profile, index) => (
+          <article class="clinic-specialist" aria-labelledby={`${profile.id}-heading`} data-discovery-motion>
+            <Image
+              src={portraits[index]}
+              alt={profile.alt}
+              title={profile.title}
+              width={128}
+              widths={[64, 96, 128, 192]}
+              sizes="(min-width: 1100px) 52px, (min-width: 640px) 64px, 54px"
+              format="webp"
+              quality={78}
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="clinic-specialist-copy">
+              <h3 id={`${profile.id}-heading`}>
+                <span>{profile.name}</span><span class="clinic-specialist-separator" aria-hidden="true"> - </span><span>{profile.specialty}</span>
+              </h3>
+              <p>{profile.description}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</ClinicEntrance>

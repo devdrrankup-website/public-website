@@ -1,0 +1,19 @@
+---
+import ClinicEntrance from './ClinicEntrance.astro';
+import { clinicExpertise as copy } from '../../data/for-clinic-expertise';
+import '../../styles/clinic-expertise.css';
+const relationships = copy.relationship.split(/[↔→]/).map(label => label.trim()).filter(Boolean);
+---
+<ClinicEntrance class="clinic-expertise-motion">
+  <section id="clinic-expertise" class="clinic-expertise" aria-labelledby="clinic-expertise-heading">
+    <div class="section-container clinic-expertise-layout">
+      <header data-discovery-motion><h2 id="clinic-expertise-heading">{copy.heading}</h2></header>
+      <div class="clinic-expertise-content" data-discovery-motion>
+        {copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+      </div>
+      <ol class="clinic-expertise-map" aria-label="Clinic information relationships" data-discovery-motion>
+        {relationships.map((label,index) => <li><span class="clinic-expertise-number" aria-hidden="true">{String(index+1).padStart(2,'0')}</span><span>{label}</span></li>)}
+      </ol>
+    </div>
+  </section>
+</ClinicEntrance>

@@ -1,0 +1,61 @@
+---
+import { Image } from 'astro:assets';
+import { clinicProcess as copy } from '../../data/for-clinic-process';
+import processBackground from '../../assets/audience-hubs/clinic-process-v1.webp';
+import '../../styles/clinic-process.css';
+---
+
+<clinic-process class="clinic-process-motion">
+  <section id="clinic-process" class="clinic-process" aria-labelledby="clinic-process-heading">
+    <div class="clinic-process-background" aria-hidden="true">
+      <Image src={processBackground} width={1600} widths={[480, 768, 1024, 1600]} sizes="100vw" format="webp" quality={55}
+        alt="" title="Clinic and digital team reviewing a healthcare growth workflow" loading="lazy" decoding="async" />
+    </div>
+    <div class="clinic-process-atmosphere" aria-hidden="true"></div>
+    <div class="section-container clinic-process-layout">
+      <header class="clinic-process-header" data-process-copy>
+        <span class="clinic-process-range" aria-hidden="true">01—06</span>
+        <h2 id="clinic-process-heading">{copy.heading}</h2>
+      </header>
+
+      <div class="clinic-process-flow" role="list" aria-label="Dr RankUP's six-step process">
+        <svg class="clinic-process-route" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="clinic-process-route-gradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="100" y2="100">
+              <stop offset="0" stop-color="#6131c6" />
+              <stop offset="0.5" stop-color="#229f60" />
+              <stop offset="1" stop-color="#6131c6" />
+            </linearGradient>
+          </defs>
+          <path class="clinic-process-route-base" d="M 16.667 12 H 50 H 83.333 H 98 V 58 H 83.333 H 50 H 16.667" />
+          <g class="clinic-process-route-progress">
+            <line class="clinic-process-route-horizontal" x1="16.667" y1="12" x2="50" y2="12" />
+            <line class="clinic-process-route-horizontal" x1="50" y1="12" x2="83.333" y2="12" />
+            <line class="clinic-process-route-horizontal" x1="83.333" y1="12" x2="98" y2="12" />
+            <line class="clinic-process-route-vertical" x1="98" y1="12" x2="98" y2="58" />
+            <line class="clinic-process-route-horizontal clinic-process-route-reverse" x1="98" y1="58" x2="83.333" y2="58" />
+            <line class="clinic-process-route-horizontal clinic-process-route-reverse" x1="83.333" y1="58" x2="50" y2="58" />
+            <line class="clinic-process-route-horizontal clinic-process-route-reverse" x1="50" y1="58" x2="16.667" y2="58" />
+          </g>
+        </svg>
+
+        {copy.steps.map((step, index) => (
+          <div class="clinic-process-step" role="listitem" data-process-step style={`--process-index:${index}`}>
+            <div class="clinic-process-node-column" aria-hidden="true">
+              <span class="clinic-process-node"><span>{step.number}</span></span>
+              {index < copy.steps.length - 1 && <span class="clinic-process-connector"></span>}
+            </div>
+            <div class="clinic-process-copy" data-process-copy>
+              <h3><span>{step.number} - </span>{step.title}</h3>
+              <p>{step.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</clinic-process>
+
+<script>
+  import '../../scripts/clinic-process';
+</script>

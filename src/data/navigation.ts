@@ -41,7 +41,7 @@ export const navigationMenus:NavigationMenu[]=[
       item('Doctor Marketing Packages','Explore coordinated marketing support for your practice.','doctor-marketing-packages'),
     ]},
   ]},
-  {id:'clinics',title:'For Clinics',description:'Connect visibility with everyday clinic operations.',viewAll:'View all clinic services',groups:[
+  {id:'clinics',title:'For Clinics',description:'Connect visibility with everyday clinic operations.',viewAll:'View all clinic services',viewAllHref:'/clinics/',groups:[
     {title:'Clinic Digital Marketing',items:[
       item('Clinic SEO','Help patients discover your clinic and services.','clinic-seo'),
       item('Clinic Local SEO','Make your clinic easier to find nearby.','clinic-local-seo'),

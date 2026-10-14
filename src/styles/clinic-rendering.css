@@ -1,0 +1,115 @@
+/* Keep all clinic copy and media in static HTML. Defer offscreen layout and
+   paint at whole-section boundaries so the hero's initial work stays small.
+   These estimates follow measured section heights at 320/390/820/1100/1440px;
+   `auto` replaces each hint with its real size after the section is rendered. */
+@supports (content-visibility: auto) {
+  .clinic-page > :is(
+    .clinic-discovery,
+    .clinic-outcomes-motion,
+    .clinic-bangladesh-motion,
+    #clinic-solutions,
+    .clinic-trust-motion,
+    .clinic-expertise-motion,
+    .clinic-start-motion,
+    .clinic-specialists-motion,
+    .clinic-proof-motion,
+    .clinic-why-motion,
+    .clinic-process-motion,
+    .clinic-faq-motion
+  ) {
+    content-visibility: auto;
+    contain-intrinsic-block-size: auto var(--clinic-section-estimate, 1000px);
+  }
+
+  .clinic-discovery { --clinic-section-estimate: 1353px; }
+  .clinic-outcomes-motion { --clinic-section-estimate: 2298px; }
+  .clinic-bangladesh-motion { --clinic-section-estimate: 1069px; }
+  #clinic-solutions { --clinic-section-estimate: 3413px; }
+  .clinic-trust-motion { --clinic-section-estimate: 1505px; }
+  .clinic-expertise-motion { --clinic-section-estimate: 803px; }
+  .clinic-start-motion { --clinic-section-estimate: 1219px; }
+  .clinic-specialists-motion { --clinic-section-estimate: 506px; }
+  .clinic-proof-motion { --clinic-section-estimate: 718px; }
+  .clinic-why-motion { --clinic-section-estimate: 1038px; }
+  .clinic-process-motion { --clinic-section-estimate: 1081px; }
+  .clinic-faq-motion { --clinic-section-estimate: 905px; }
+
+  @media (min-width: 360px) {
+    .clinic-discovery { --clinic-section-estimate: 1252px; }
+    .clinic-outcomes-motion { --clinic-section-estimate: 2295px; }
+    .clinic-bangladesh-motion { --clinic-section-estimate: 983px; }
+    #clinic-solutions { --clinic-section-estimate: 3499px; }
+    .clinic-trust-motion { --clinic-section-estimate: 1299px; }
+    .clinic-expertise-motion { --clinic-section-estimate: 749px; }
+    .clinic-start-motion { --clinic-section-estimate: 1106px; }
+    .clinic-specialists-motion { --clinic-section-estimate: 489px; }
+    .clinic-proof-motion { --clinic-section-estimate: 656px; }
+    .clinic-why-motion { --clinic-section-estimate: 946px; }
+    .clinic-process-motion { --clinic-section-estimate: 1014px; }
+    .clinic-faq-motion { --clinic-section-estimate: 866px; }
+  }
+
+  @media (min-width: 640px) {
+    .clinic-discovery { --clinic-section-estimate: 1229px; }
+    .clinic-outcomes-motion { --clinic-section-estimate: 1361px; }
+    .clinic-bangladesh-motion { --clinic-section-estimate: 615px; }
+    #clinic-solutions { --clinic-section-estimate: 5817px; }
+    .clinic-trust-motion { --clinic-section-estimate: 1332px; }
+    .clinic-expertise-motion { --clinic-section-estimate: 565px; }
+    .clinic-start-motion { --clinic-section-estimate: 991px; }
+    .clinic-specialists-motion { --clinic-section-estimate: 483px; }
+    .clinic-proof-motion { --clinic-section-estimate: 558px; }
+    .clinic-why-motion { --clinic-section-estimate: 924px; }
+    .clinic-process-motion { --clinic-section-estimate: 989px; }
+    .clinic-faq-motion { --clinic-section-estimate: 786px; }
+  }
+
+  @media (min-width: 1000px) {
+    .clinic-discovery { --clinic-section-estimate: 815px; }
+    .clinic-outcomes-motion { --clinic-section-estimate: 954px; }
+    .clinic-bangladesh-motion { --clinic-section-estimate: 639px; }
+    #clinic-solutions { --clinic-section-estimate: 7289px; }
+    .clinic-trust-motion { --clinic-section-estimate: 1043px; }
+    .clinic-expertise-motion { --clinic-section-estimate: 514px; }
+    .clinic-start-motion { --clinic-section-estimate: 716px; }
+    .clinic-specialists-motion { --clinic-section-estimate: 258px; }
+    .clinic-proof-motion { --clinic-section-estimate: 576px; }
+    .clinic-why-motion { --clinic-section-estimate: 818px; }
+    .clinic-process-motion { --clinic-section-estimate: 863px; }
+    .clinic-faq-motion { --clinic-section-estimate: 863px; }
+  }
+
+  @media (min-width: 1200px) {
+    .clinic-discovery { --clinic-section-estimate: 876px; }
+    .clinic-outcomes-motion { --clinic-section-estimate: 934px; }
+    #clinic-solutions { --clinic-section-estimate: 8204px; }
+    .clinic-trust-motion { --clinic-section-estimate: 987px; }
+    .clinic-expertise-motion { --clinic-section-estimate: 601px; }
+    .clinic-start-motion { --clinic-section-estimate: 682px; }
+    .clinic-specialists-motion { --clinic-section-estimate: 243px; }
+    .clinic-proof-motion { --clinic-section-estimate: 664px; }
+    .clinic-why-motion { --clinic-section-estimate: 776px; }
+    .clinic-process-motion { --clinic-section-estimate: 869px; }
+    .clinic-faq-motion { --clinic-section-estimate: 790px; }
+  }
+}
+
+@media print {
+  .clinic-page > :is(
+    .clinic-discovery,
+    .clinic-outcomes-motion,
+    .clinic-bangladesh-motion,
+    #clinic-solutions,
+    .clinic-trust-motion,
+    .clinic-expertise-motion,
+    .clinic-start-motion,
+    .clinic-specialists-motion,
+    .clinic-proof-motion,
+    .clinic-why-motion,
+    .clinic-process-motion,
+    .clinic-faq-motion
+  ) {
+    content-visibility: visible;
+    contain-intrinsic-block-size: none;
+  }
+}

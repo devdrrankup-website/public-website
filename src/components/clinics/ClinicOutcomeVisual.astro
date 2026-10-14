@@ -1,0 +1,53 @@
+---
+import { Image } from 'astro:assets';
+import Icon from '../Icon.astro';
+import Search01Icon from '@hugeicons/core-free-icons/Search01Icon';
+import UserAccountIcon from '@hugeicons/core-free-icons/UserAccountIcon';
+import ShieldCheckIcon from '@hugeicons/core-free-icons/ShieldCheckIcon';
+import LocationCheck01Icon from '@hugeicons/core-free-icons/LocationCheck01Icon';
+import Calendar03Icon from '@hugeicons/core-free-icons/Calendar03Icon';
+import recording from '../../assets/audience-hubs/clinic-outcome-content-v1.webp';
+import operations from '../../assets/audience-hubs/clinic-outcome-operations-v1.webp';
+interface Props { index: number }
+const { index } = Astro.props;
+const photo = index === 2 ? recording : operations;
+const nodes = [
+  {label:'Name',x:8,y:8}, {label:'Specialty',x:244,y:8},
+  {label:'Organization',x:8,y:72}, {label:'Location',x:244,y:72},
+  {label:'Content',x:8,y:136}, {label:'Services',x:244,y:136},
+];
+---
+{(index === 2 || index === 5) ? <div class="clinic-outcome-visual clinic-outcome-photograph">
+  <Image src={photo} widths={[320,480,640,880]} sizes="(min-width: 1100px) 280px, (min-width: 640px) calc(50vw - 76px), calc(100vw - 66px)"
+    width={1536} height={1024} format="webp" quality={78} loading="lazy" decoding="async"
+    alt={index === 2 ? 'Clinic doctor reviewing a patient information leaflet with a digital team member' : 'Clinic receptionist updating a visiting schedule beside her computer'}
+    title={index === 2 ? 'Reviewing clinic service information' : 'Coordinating clinic appointments'} />
+</div> : <div class:list={['clinic-outcome-visual', `clinic-outcome-diagram-${index}`]} aria-hidden="true">
+  {index === 0 && <div class="clinic-outcome-find">
+    <div class="clinic-outcome-search"><Icon icon={Search01Icon} size={18} /><span>Name, specialty or location</span></div>
+    <div class="clinic-outcome-map">
+      <svg viewBox="0 0 320 150" preserveAspectRatio="none" focusable="false"><path d="M-10 36L95 20L180 76L330 46M-10 119L110 97L214 140L330 115M70 -10L90 160M235 -10L197 160" fill="none" stroke="#fff" stroke-width="16" /><path d="M-10 36L95 20L180 76L330 46M-10 119L110 97L214 140L330 115M70 -10L90 160M235 -10L197 160" fill="none" stroke="#afa9ec" stroke-width="1" /></svg>
+      <span class="clinic-outcome-map-pin"><Icon icon={LocationCheck01Icon} size={30} /></span>
+      <span class="clinic-outcome-map-label">Clinic branch details</span>
+    </div>
+  </div>}
+  {index === 1 && <div class="clinic-outcome-profile">
+    <div class="clinic-outcome-profile-header"><span class="clinic-outcome-avatar"><Icon icon={UserAccountIcon} size={30} /></span><span>Clinic doctor<br />profile</span><Icon icon={ShieldCheckIcon} size={26} /></div>
+    <div class="clinic-outcome-profile-detail"><span>Specialty</span><span class="clinic-outcome-profile-line"></span></div>
+    <div class="clinic-outcome-profile-detail"><span>Affiliation</span><span class="clinic-outcome-profile-line"></span></div>
+    <div class="clinic-outcome-profile-detail"><span>Visiting schedule</span><span class="clinic-outcome-profile-line"></span></div>
+  </div>}
+  {index === 3 && <div class="clinic-outcome-booking">
+    <div class="clinic-outcome-calendar-heading"><Icon icon={Calendar03Icon} size={22} /><span>Appointment journey</span></div>
+    <div class="clinic-outcome-calendar">
+      {['M','T','W','T','F','S','S'].map(day => <span class="clinic-outcome-day">{day}</span>)}
+      {Array.from({length:14}, (_, day) => <span class:list={['clinic-outcome-date', {'clinic-outcome-date-selected':day===9}]}>{day+1}</span>)}
+    </div>
+    <div class="clinic-outcome-booking-path"><span>Clinic</span><span>→</span><span>Contact</span><span>→</span><span>Appointment</span></div>
+  </div>}
+  {index === 4 && <svg class="clinic-outcome-entity-map" viewBox="0 0 360 176" focusable="false">
+    <g fill="none" stroke="#6131c6" stroke-opacity=".35" stroke-width="1.5"><path d="M180 88L64 22M180 88L296 22M180 88H64M180 88H296M180 88L64 150M180 88L296 150" /></g>
+    {nodes.map(node => <g><rect x={node.x} y={node.y} width="108" height="28" rx="9" fill="#fff" stroke="#afa9ec" /><text x={node.x+54} y={node.y+19} text-anchor="middle" fill="#000" font-size={node.label==='Organization' ? '14' : '16'}>{node.label}</text></g>)}
+    <circle cx="180" cy="88" r="32" fill="#eeedfe" stroke="#afa9ec" /><text x="180" y="93" text-anchor="middle" fill="#000" font-size="16" font-weight="600">Clinic</text>
+  </svg>}
+</div>}

@@ -1,0 +1,43 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import ClinicHero from '../../components/clinics/ClinicHero.astro';
+import ClinicDiscoverySection from '../../components/clinics/ClinicDiscoverySection.astro';
+import ClinicOutcomesSection from '../../components/clinics/ClinicOutcomesSection.astro';
+import ClinicBangladeshSection from '../../components/clinics/ClinicBangladeshSection.astro';
+import ClinicSolutionsSection from '../../components/clinics/ClinicSolutionsSection.astro';
+import ClinicTrustSection from '../../components/clinics/ClinicTrustSection.astro';
+import ClinicExpertiseSection from '../../components/clinics/ClinicExpertiseSection.astro';
+import ClinicStartSection from '../../components/clinics/ClinicStartSection.astro';
+import ClinicSpecialistsSection from '../../components/clinics/ClinicSpecialistsSection.astro';
+import ClinicProofSection from '../../components/clinics/ClinicProofSection.astro';
+import ClinicWhySection from '../../components/clinics/ClinicWhySection.astro';
+import ClinicProcessSection from '../../components/clinics/ClinicProcessSection.astro';
+import ClinicFaqSection from '../../components/clinics/ClinicFaqSection.astro';
+import ClinicConsultationSection from '../../components/clinics/ClinicConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { clinicHeroPreload } from '../../lib/clinic-hero-image';
+import { pageMetadata } from '../../data/page-metadata';
+import '../../styles/clinic-rendering.css';
+---
+<Layout metadata={pageMetadata.clinics} imagePreload={clinicHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="clinic-page" tabindex="-1">
+    <ClinicHero />
+    <ClinicDiscoverySection />
+    <ClinicOutcomesSection />
+    <ClinicBangladeshSection />
+    <ClinicSolutionsSection />
+    <ClinicTrustSection />
+    <ClinicExpertiseSection />
+    <ClinicStartSection />
+    <ClinicSpecialistsSection />
+    <ClinicProofSection />
+    <ClinicWhySection />
+    <ClinicProcessSection />
+    <ClinicFaqSection />
+    <ClinicConsultationSection />
+  </main>
+  <Footer />
+</Layout>
+<script>import '../../scripts/healthcare-consultation';</script>
