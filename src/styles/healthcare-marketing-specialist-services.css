@@ -1,0 +1,28 @@
+.healthcare-marketing-specialist-services-motion { display: block; }
+.healthcare-marketing-specialist-services { padding-block: 52px 64px; color: #000; background: linear-gradient(180deg, #fff 0%, #eaf7ff 58%, #fff 100%); scroll-margin-top: calc(var(--header-height) + 12px); }
+.healthcare-marketing-specialist-services-layout { display: grid; gap: 32px; }
+.healthcare-marketing-specialist-services h2 { max-width: 750px; margin: 0; font-size: clamp(30px, 7.5vw, 42px); line-height: 1.2; letter-spacing: -.035em; font-weight: 650; text-wrap: balance; }
+.healthcare-marketing-specialist-services-header p { max-width: 740px; margin: 18px 0 0; font-size: 15px; line-height: 1.8; }
+.healthcare-marketing-specialist-services-list { border-top: 1px solid #afa9ec80; }
+.healthcare-marketing-specialist-service { display: grid; grid-template-columns: 44px minmax(0,1fr); gap: 16px; padding-block: 24px; border-bottom: 1px solid #afa9ec80; }
+.healthcare-marketing-specialist-service-marker { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 10px; background: #e1ffb9; }
+.healthcare-marketing-specialist-service:nth-child(2) .healthcare-marketing-specialist-service-marker { background: #bae5ff; }
+.healthcare-marketing-specialist-service:nth-child(3) .healthcare-marketing-specialist-service-marker { background: #eeedfe; }
+.healthcare-marketing-specialist-service-number { display: block; margin-bottom: 8px; color: #6131c6; font-size: 11px; font-weight: 700; letter-spacing: .14em; }
+.healthcare-marketing-specialist-service h3 { margin: 0; font-size: clamp(20px, 5.3vw, 25px); line-height: 1.35; font-weight: 650; letter-spacing: -.025em; }
+.healthcare-marketing-specialist-service p { margin: 12px 0 0; font-size: 14px; line-height: 1.8; }
+.healthcare-marketing-specialist-service-action { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin-top: 10px; color: #6131c6; font-size: 13px; font-weight: 650; line-height: 1.5; }
+.healthcare-marketing-specialist-services-note { margin: 0; font-size: 13px; line-height: 1.7; }
+@media (min-width: 640px) {
+  .healthcare-marketing-specialist-services { padding-block: 70px 82px; }
+  .healthcare-marketing-specialist-services h2 { font-size: clamp(36px, 4.6vw, 48px); }
+  .healthcare-marketing-specialist-services-header p { font-size: 16px; }
+  .healthcare-marketing-specialist-service { grid-template-columns: 52px minmax(0,1fr); gap: 24px; padding-block: 28px; }
+  .healthcare-marketing-specialist-service-marker { width: 52px; height: 52px; }
+  .healthcare-marketing-specialist-service p { font-size: 16px; }
+}
+@media (min-width: 1100px) {
+  .healthcare-marketing-specialist-services-layout { grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr); column-gap: clamp(50px,6vw,90px); align-items: start; }
+  .healthcare-marketing-specialist-services-header { position: sticky; top: calc(var(--header-height) + 24px); }
+  .healthcare-marketing-specialist-services-note { grid-column: 2; }
+}

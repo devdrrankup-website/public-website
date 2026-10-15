@@ -1,0 +1,44 @@
+---
+import { Image } from 'astro:assets';
+import Icon from '../Icon.astro';
+import HealthcareMarketingEntrance from './HealthcareMarketingEntrance.astro';
+import Target01Icon from '@hugeicons/core-free-icons/Target01Icon';
+import Search01Icon from '@hugeicons/core-free-icons/Search01Icon';
+import Megaphone01Icon from '@hugeicons/core-free-icons/Megaphone01Icon';
+import Call02Icon from '@hugeicons/core-free-icons/Call02Icon';
+import photo from '../../assets/healthcare-marketing/discovery/healthcare-marketing-priorities-v1.webp';
+import { healthcareMarketingDiscovery as copy } from '../../data/healthcare-marketing-discovery';
+import '../../styles/healthcare-marketing-discovery.css';
+const icons = [Target01Icon, Search01Icon, Megaphone01Icon, Call02Icon];
+---
+<HealthcareMarketingEntrance class="healthcare-marketing-discovery">
+  <section class="section-container" aria-labelledby="healthcare-marketing-discovery-heading">
+    <h2 id="healthcare-marketing-discovery-heading">{copy.heading}</h2>
+    <div class="healthcare-marketing-discovery-editorial">
+      <div class="healthcare-marketing-discovery-copy">
+        {copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+        <div class="healthcare-marketing-discovery-journey">
+          <p>{copy.goal}</p>
+          <ol aria-label="Responsible healthcare marketing pathway">
+            {copy.journey.map((label, index) => <li>
+              <span class="healthcare-marketing-discovery-chip">{label}</span>
+              {index < copy.journey.length - 1 && <span class="healthcare-marketing-discovery-journey-arrow" aria-hidden="true">→</span>}
+            </li>)}
+          </ol>
+        </div>
+      </div>
+      <div class="healthcare-marketing-discovery-photo" data-discovery-motion>
+        <Image src={photo} widths={[360, 540, 720, 960, 1200]} sizes="(min-width: 1100px) min(43vw, 640px), (min-width: 640px) calc(100vw - 56px), calc(100vw - 32px)"
+          format="webp" quality={78} width={1536} height={1024}
+          alt="Healthcare communications team comparing service pages, locations and channel priorities"
+          title="Choosing a clear healthcare marketing priority" loading="lazy" decoding="async" />
+      </div>
+    </div>
+    <ol class="healthcare-marketing-discovery-stages" aria-label="Four parts of a responsible marketing decision">
+      {copy.stages.map((stage, index) => <li data-discovery-motion>
+        <div class="healthcare-marketing-discovery-stage-marker"><span class="healthcare-marketing-discovery-stage-icon"><Icon icon={icons[index]} size={25} /></span><span class="healthcare-marketing-discovery-stage-number" aria-hidden="true">0{index + 1}</span></div>
+        <div class="healthcare-marketing-discovery-stage-copy"><h3>{stage.heading}</h3><p>{stage.description}</p></div>
+      </li>)}
+    </ol>
+  </section>
+</HealthcareMarketingEntrance>

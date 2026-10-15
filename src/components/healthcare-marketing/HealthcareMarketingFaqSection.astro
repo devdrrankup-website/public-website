@@ -1,0 +1,41 @@
+---
+import Add01Icon from '@hugeicons/core-free-icons/Add01Icon';
+import Icon from '../Icon.astro';
+import HealthcareMarketingEntrance from './HealthcareMarketingEntrance.astro';
+import { healthcareMarketingFaq as copy } from '../../data/healthcare-marketing-faq';
+import '../../styles/healthcare-marketing-faq.css';
+
+---
+
+<HealthcareMarketingEntrance class="healthcare-marketing-faq-motion">
+  <section id="healthcare-marketing-faq" class="healthcare-marketing-faq" aria-labelledby="healthcare-marketing-faq-heading">
+    <div class="healthcare-marketing-faq-atmosphere" aria-hidden="true">?</div>
+    <div class="section-container healthcare-marketing-faq-layout">
+      <header class="healthcare-marketing-faq-header" data-discovery-motion>
+        <span class="healthcare-marketing-faq-range" aria-hidden="true">01—06</span>
+        <h2 id="healthcare-marketing-faq-heading">{copy.heading}</h2>
+      </header>
+
+      <healthcare-marketing-faq class="healthcare-marketing-faq-list">
+        {copy.items.map((item, index) => (
+          <article class="healthcare-marketing-faq-item" data-discovery-motion>
+            <span class="healthcare-marketing-faq-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+            <div class="healthcare-marketing-faq-content">
+              <h3 id={`healthcare-marketing-faq-question-${index + 1}`} class="healthcare-marketing-faq-question">
+                <span class="healthcare-marketing-faq-question-label">{item.question}</span>
+                <span class="healthcare-marketing-faq-toggle" aria-hidden="true"><Icon icon={Add01Icon} size={20} /></span>
+              </h3>
+              <div id={`healthcare-marketing-faq-answer-${index + 1}`} class="healthcare-marketing-faq-answer" role="region" aria-labelledby={`healthcare-marketing-faq-question-${index + 1}`}>
+                <p>{item.answer}</p>
+              </div>
+            </div>
+          </article>
+        ))}
+      </healthcare-marketing-faq>
+    </div>
+  </section>
+</HealthcareMarketingEntrance>
+
+<script>
+  import '../../scripts/healthcare-marketing-faq';
+</script>

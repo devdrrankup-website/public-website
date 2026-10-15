@@ -1,0 +1,40 @@
+---
+import ActionIcon from '../ActionIcon.astro';
+import Icon from '../Icon.astro';
+import Search01Icon from '@hugeicons/core-free-icons/Search01Icon';
+import Target01Icon from '@hugeicons/core-free-icons/Target01Icon';
+import ShieldCheckIcon from '@hugeicons/core-free-icons/ShieldCheckIcon';
+import LocationCheck01Icon from '@hugeicons/core-free-icons/LocationCheck01Icon';
+import { healthcareMarketingHero as copy } from '../../data/healthcare-marketing-hero';
+import { healthcareMarketingHeroImage as photo } from '../../lib/healthcare-marketing-hero-image';
+import '../../styles/healthcare-marketing-hero.css';
+const icons = [Search01Icon, Target01Icon, ShieldCheckIcon, LocationCheck01Icon];
+---
+<section class="healthcare-marketing-hero" aria-labelledby="healthcare-marketing-hero-heading">
+  <div class="section-container">
+    <div class="healthcare-marketing-hero-layout">
+      <div class="healthcare-marketing-hero-copy">
+        <h1 id="healthcare-marketing-hero-heading">{copy.heading}</h1>
+        <p class="healthcare-marketing-hero-tagline">{copy.tagline}</p>
+        <div class="healthcare-marketing-hero-description">{copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}</div>
+        <div class="healthcare-marketing-hero-actions" aria-label="Consultation and marketing services">
+          <!-- The contact page is not live yet; this label does not masquerade as a working link. -->
+          <span class="button button-primary">{copy.primaryCta}<ActionIcon purpose="conversation" /></span>
+          <a class="button button-secondary" href="#healthcare-marketing-solutions">{copy.secondaryCta}<ActionIcon purpose="conversation" /></a>
+        </div>
+      </div>
+      <div class="healthcare-marketing-hero-visual">
+        <div class="healthcare-marketing-hero-photo-frame">
+          <img src={photo.src} srcset={photo.srcset} sizes={photo.sizes} width={photo.width} height={photo.height}
+            alt="Bangladeshi healthcare communications team reviewing a website and channel plan together"
+            title="Healthcare marketing strategy meeting in Bangladesh"
+            loading="eager" fetchpriority="high" decoding="async" />
+        </div>
+        <div class="healthcare-marketing-hero-photo-edge" aria-hidden="true"></div>
+      </div>
+    </div>
+    <ul class="healthcare-marketing-hero-principles" aria-label="Healthcare marketing approach">
+      {copy.principles.map((principle, index) => <li><span class="healthcare-marketing-principle-icon"><Icon icon={icons[index]} size={23} /></span>{principle}</li>)}
+    </ul>
+  </div>
+</section>

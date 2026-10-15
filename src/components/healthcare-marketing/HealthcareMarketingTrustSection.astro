@@ -1,0 +1,39 @@
+---
+import {Image} from 'astro:assets';
+import Icon from '../Icon.astro';
+import HealthcareMarketingEntrance from './HealthcareMarketingEntrance.astro';
+import LockKeyIcon from '@hugeicons/core-free-icons/LockKeyIcon';
+import ShieldCheckIcon from '@hugeicons/core-free-icons/ShieldCheckIcon';
+import UserAccountIcon from '@hugeicons/core-free-icons/UserAccountIcon';
+import photo from '../../assets/healthcare-marketing/trust/clinician-content-approval-v1.webp';
+import {healthcareMarketingTrust as copy} from '../../data/healthcare-marketing-trust';
+import '../../styles/healthcare-marketing-trust.css';
+const icons = [UserAccountIcon, ShieldCheckIcon, LockKeyIcon];
+---
+<HealthcareMarketingEntrance class="healthcare-marketing-trust-motion">
+  <section id="healthcare-marketing-trust" class="healthcare-marketing-trust" aria-labelledby="healthcare-marketing-trust-heading">
+    <div class="section-container">
+      <header class="healthcare-marketing-trust-header">
+        <h2 id="healthcare-marketing-trust-heading">{copy.heading}</h2>
+        <p>{copy.introduction}</p>
+      </header>
+      <div class="healthcare-marketing-trust-layout">
+        <div class="healthcare-marketing-trust-visual">
+          <figure class="healthcare-marketing-trust-photo" data-discovery-motion>
+            <Image src={photo} width={1536} height={1024} widths={[360,540,720,960,1200]}
+              sizes="(min-width: 1100px) min(43vw, 640px), (min-width: 640px) 640px, calc(100vw - 32px)"
+              format="webp" quality={78} loading="lazy" decoding="async"
+              alt="Bangladeshi physician and communications specialist reviewing healthcare copy before publication"
+              title="Clinician review of healthcare marketing content" />
+          </figure>
+        </div>
+        <div class="healthcare-marketing-trust-principles">
+          {copy.principles.map((item, index) => <article class="healthcare-marketing-trust-principle" aria-labelledby={`healthcare-marketing-trust-principle-${index + 1}`} data-discovery-motion>
+            <span class="healthcare-marketing-trust-icon" aria-hidden="true"><Icon icon={icons[index]} size={26} /></span>
+            <div><h3 id={`healthcare-marketing-trust-principle-${index + 1}`}>{item.heading}</h3><p>{item.description}</p></div>
+          </article>)}
+        </div>
+      </div>
+    </div>
+  </section>
+</HealthcareMarketingEntrance>

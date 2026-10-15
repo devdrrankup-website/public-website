@@ -1,0 +1,61 @@
+---
+import { Image } from 'astro:assets';
+import { healthcareMarketingProcess as copy } from '../../data/healthcare-marketing-process';
+import processBackground from '../../assets/healthcare-marketing/backgrounds/marketing-process-workshop-v1.webp';
+import '../../styles/healthcare-marketing-process.css';
+---
+
+<healthcare-marketing-process class="healthcare-marketing-process-motion">
+  <section id="healthcare-marketing-process" class="healthcare-marketing-process" aria-labelledby="healthcare-marketing-process-heading">
+    <div class="healthcare-marketing-process-background" aria-hidden="true">
+      <Image src={processBackground} width={1600} widths={[480, 768, 1024, 1600]} sizes="100vw" format="webp" quality={55}
+        alt="" title="Healthcare marketing planning workflow" loading="lazy" decoding="async" />
+    </div>
+    <div class="healthcare-marketing-process-atmosphere" aria-hidden="true"></div>
+    <div class="section-container healthcare-marketing-process-layout">
+      <header class="healthcare-marketing-process-header" data-process-copy>
+        <span class="healthcare-marketing-process-range" aria-hidden="true">01—06</span>
+        <h2 id="healthcare-marketing-process-heading">{copy.heading}</h2>
+      </header>
+
+      <div class="healthcare-marketing-process-flow" role="list" aria-label="Dr RankUP's six-step process">
+        <svg class="healthcare-marketing-process-route" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="healthcare-marketing-process-route-gradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="100" y2="100">
+              <stop offset="0" stop-color="#6131c6" />
+              <stop offset="0.5" stop-color="#229f60" />
+              <stop offset="1" stop-color="#6131c6" />
+            </linearGradient>
+          </defs>
+          <path class="healthcare-marketing-process-route-base" d="M 16.667 12 H 50 H 83.333 H 98 V 58 H 83.333 H 50 H 16.667" />
+          <g class="healthcare-marketing-process-route-progress">
+            <line class="healthcare-marketing-process-route-horizontal" x1="16.667" y1="12" x2="50" y2="12" />
+            <line class="healthcare-marketing-process-route-horizontal" x1="50" y1="12" x2="83.333" y2="12" />
+            <line class="healthcare-marketing-process-route-horizontal" x1="83.333" y1="12" x2="98" y2="12" />
+            <line class="healthcare-marketing-process-route-vertical" x1="98" y1="12" x2="98" y2="58" />
+            <line class="healthcare-marketing-process-route-horizontal healthcare-marketing-process-route-reverse" x1="98" y1="58" x2="83.333" y2="58" />
+            <line class="healthcare-marketing-process-route-horizontal healthcare-marketing-process-route-reverse" x1="83.333" y1="58" x2="50" y2="58" />
+            <line class="healthcare-marketing-process-route-horizontal healthcare-marketing-process-route-reverse" x1="50" y1="58" x2="16.667" y2="58" />
+          </g>
+        </svg>
+
+        {copy.steps.map((step, index) => (
+          <div class="healthcare-marketing-process-step" role="listitem" data-process-step style={`--process-index:${index}`}>
+            <div class="healthcare-marketing-process-node-column" aria-hidden="true">
+              <span class="healthcare-marketing-process-node"><span>{step.number}</span></span>
+              {index < copy.steps.length - 1 && <span class="healthcare-marketing-process-connector"></span>}
+            </div>
+            <div class="healthcare-marketing-process-copy" data-process-copy>
+              <h3><span>{step.number} — </span>{step.title}</h3>
+              <p>{step.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</healthcare-marketing-process>
+
+<script>
+  import '../../scripts/healthcare-marketing-process';
+</script>

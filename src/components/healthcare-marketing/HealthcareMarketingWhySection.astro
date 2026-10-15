@@ -1,0 +1,25 @@
+---
+import HealthcareMarketingEntrance from './HealthcareMarketingEntrance.astro';
+import { healthcareMarketingWhy as copy } from '../../data/healthcare-marketing-why';
+import '../../styles/healthcare-marketing-why.css';
+---
+<HealthcareMarketingEntrance class="healthcare-marketing-why-motion">
+  <section id="healthcare-marketing-why" class="healthcare-marketing-why" aria-labelledby="healthcare-marketing-why-heading">
+    <div class="healthcare-marketing-why-glow" aria-hidden="true"></div>
+    <div class="section-container healthcare-marketing-why-layout">
+      <header class="healthcare-marketing-why-header" data-discovery-motion>
+        <span class="healthcare-marketing-why-range" aria-hidden="true">01—04</span>
+        <h2 id="healthcare-marketing-why-heading">{copy.heading}</h2>
+      </header>
+
+      <div class="healthcare-marketing-why-principles">
+        {copy.principles.map((principle, index) => (
+          <article class="healthcare-marketing-why-principle" aria-labelledby={`healthcare-marketing-why-principle-${index + 1}`} data-discovery-motion>
+            <span class="healthcare-marketing-why-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+            <div><h3 id={`healthcare-marketing-why-principle-${index + 1}`}>{principle.title}</h3><p>{principle.description}</p></div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</HealthcareMarketingEntrance>

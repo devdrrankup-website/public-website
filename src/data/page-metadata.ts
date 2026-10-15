@@ -3,11 +3,13 @@ import doctorsGraph from './seo/doctors.json';
 import doctorSeoGraph from './seo/doctor-seo.json';
 import hospitalsGraph from './seo/hospitals.json';
 import clinicsGraph from './seo/clinics.json';
+import healthcareMarketingGraph from './seo/healthcare-marketing.json';
 import { homepageFaq } from './homepage-faq';
 import { doctorFaq } from './for-doctors-faq';
 import { doctorSeoFaq } from './doctor-seo-faq';
 import { hospitalFaq } from './for-hospital-faq';
 import { clinicFaq } from './for-clinic-faq';
+import { healthcareMarketingFaq } from './healthcare-marketing-faq';
 
 type FaqItem = { readonly question: string; readonly answer: string };
 type SchemaGraph = { '@context': string; '@graph': Record<string, unknown>[] };
@@ -61,6 +63,13 @@ export const pageMetadata = {
     canonical: 'https://www.drrankup.com/clinics/',
     twitterCard: 'summary',
     schema: withVisibleFaq(clinicsGraph, clinicFaq.items),
+  },
+  healthcareMarketing: {
+    title: 'Healthcare Marketing Services in Bangladesh | Dr RankUp',
+    description: 'Explore responsible healthcare marketing for doctors, clinics and hospitals in Bangladesh. Compare SEO, content, ads, audits, website improvements and reporting.',
+    canonical: 'https://www.drrankup.com/healthcare-marketing/',
+    twitterCard: 'summary',
+    schema: withVisibleFaq(healthcareMarketingGraph, healthcareMarketingFaq.items),
   },
   doctorSeo: {
     title: 'Doctor SEO Services in Bangladesh | Dr RankUp',

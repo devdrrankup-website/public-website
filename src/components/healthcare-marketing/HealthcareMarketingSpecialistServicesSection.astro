@@ -1,0 +1,33 @@
+---
+import Icon from '../Icon.astro';
+import Arrow from '../Arrow.astro';
+import ClipboardIcon from '@hugeicons/core-free-icons/TaskEdit01Icon';
+import BrowserIcon from '@hugeicons/core-free-icons/BrowserIcon';
+import AnalyticsIcon from '@hugeicons/core-free-icons/ChartIncreaseIcon';
+import HealthcareMarketingEntrance from './HealthcareMarketingEntrance.astro';
+import { healthcareMarketingSpecialistServices as copy } from '../../data/healthcare-marketing-specialist-services';
+import '../../styles/healthcare-marketing-specialist-services.css';
+const icons = [ClipboardIcon, BrowserIcon, AnalyticsIcon];
+---
+<HealthcareMarketingEntrance class="healthcare-marketing-specialist-services-motion">
+  <section id="healthcare-marketing-specialist-services" class="healthcare-marketing-specialist-services" aria-labelledby="healthcare-marketing-specialist-services-heading">
+    <div class="section-container healthcare-marketing-specialist-services-layout">
+      <header class="healthcare-marketing-specialist-services-header" data-discovery-motion>
+        <h2 id="healthcare-marketing-specialist-services-heading">{copy.heading}</h2>
+        <p>{copy.introduction}</p>
+      </header>
+      <div class="healthcare-marketing-specialist-services-list">
+        {copy.services.map((service, index) => <article class="healthcare-marketing-specialist-service" aria-labelledby={`healthcare-marketing-specialist-service-${index + 1}`} data-discovery-motion>
+          <div class="healthcare-marketing-specialist-service-marker" aria-hidden="true"><Icon icon={icons[index]} size={26} /></div>
+          <div>
+            <span class="healthcare-marketing-specialist-service-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+            <h3 id={`healthcare-marketing-specialist-service-${index + 1}`}>{service.heading}</h3>
+            <p>{service.description}</p>
+            <span class="healthcare-marketing-specialist-service-action">{service.action}<Arrow size={17} /></span>
+          </div>
+        </article>)}
+      </div>
+      <p class="healthcare-marketing-specialist-services-note">{copy.note}</p>
+    </div>
+  </section>
+</HealthcareMarketingEntrance>

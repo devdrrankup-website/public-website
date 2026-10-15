@@ -1,0 +1,28 @@
+.healthcare-marketing-organizations-motion { display: block; }
+.healthcare-marketing-organizations { padding-block: 48px 64px; color: #000; background: linear-gradient(180deg, #fff, #eeedfe 58%, #fff); scroll-margin-top: calc(var(--header-height) + 12px); }
+.healthcare-marketing-organizations-layout { display: grid; gap: 28px; }
+.healthcare-marketing-organizations h2 { max-width: 760px; margin: 0; font-size: clamp(30px, 7.5vw, 42px); line-height: 1.2; letter-spacing: -.035em; font-weight: 650; text-wrap: balance; }
+.healthcare-marketing-organizations-list { border-top: 1px solid #afa9ec80; }
+.healthcare-marketing-organization { display: grid; grid-template-columns: minmax(0,1fr) 92px; align-items: center; gap: 14px; padding-block: 20px; border-bottom: 1px solid #afa9ec80; }
+.healthcare-marketing-organization-copy { min-width: 0; }
+.healthcare-marketing-organization-number { display: block; margin-bottom: 8px; color: #6131c6; font-size: 11px; font-weight: 700; letter-spacing: .13em; }
+.healthcare-marketing-organization h3 { margin: 0; font-size: clamp(19px,5vw,24px); line-height: 1.32; letter-spacing: -.025em; font-weight: 650; }
+.healthcare-marketing-organization p { margin: 10px 0 0; font-size: 13px; line-height: 1.7; }
+.healthcare-marketing-organization a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin-top: 8px; color: #6131c6; font-size: 13px; font-weight: 650; text-decoration: underline; text-underline-offset: 4px; }
+.healthcare-marketing-organization a:focus-visible { outline: 2px solid #6131c6; outline-offset: 4px; }
+.healthcare-marketing-organization img { display: block; width: 92px; height: 100px; object-fit: cover; border-radius: 16px; }
+.healthcare-marketing-organizations-note { margin: 0; font-size: 13px; line-height: 1.7; }
+@media (min-width: 640px) {
+  .healthcare-marketing-organizations { padding-block: 64px 80px; }
+  .healthcare-marketing-organizations h2 { font-size: clamp(36px,4.6vw,48px); }
+  .healthcare-marketing-organization { grid-template-columns: minmax(0,1fr) 150px; gap: 30px; padding-block: 24px; }
+  .healthcare-marketing-organization p { max-width: 610px; font-size: 16px; }
+  .healthcare-marketing-organization img { width: 150px; height: 125px; border-radius: 20px; }
+}
+@media (min-width: 1100px) {
+  .healthcare-marketing-organizations-layout { grid-template-columns: minmax(0,.72fr) minmax(0,1.28fr); column-gap: clamp(50px,6vw,90px); align-items: start; }
+  .healthcare-marketing-organizations header { position: sticky; top: calc(var(--header-height) + 24px); }
+  .healthcare-marketing-organization { grid-template-columns: minmax(0,1fr) 180px; }
+  .healthcare-marketing-organization img { width: 180px; height: 140px; }
+  .healthcare-marketing-organizations-note { grid-column: 2; }
+}

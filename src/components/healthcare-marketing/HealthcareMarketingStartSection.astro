@@ -1,0 +1,43 @@
+---
+import Icon from '../Icon.astro';
+import HealthcareMarketingEntrance from './HealthcareMarketingEntrance.astro';
+import Search01Icon from '@hugeicons/core-free-icons/Search01Icon';
+import UserAccountIcon from '@hugeicons/core-free-icons/UserAccountIcon';
+import LinkSquare01Icon from '@hugeicons/core-free-icons/LinkSquare01Icon';
+import Megaphone01Icon from '@hugeicons/core-free-icons/Megaphone01Icon';
+import Calendar03Icon from '@hugeicons/core-free-icons/Calendar03Icon';
+import Target01Icon from '@hugeicons/core-free-icons/Target01Icon';
+import ArrowRight01Icon from '@hugeicons/core-free-icons/ArrowRight01Icon';
+import {healthcareMarketingStart as copy} from '../../data/healthcare-marketing-start';
+import '../../styles/healthcare-marketing-start.css';
+const icons=[Search01Icon,Target01Icon,LinkSquare01Icon,Megaphone01Icon,Calendar03Icon];
+---
+<HealthcareMarketingEntrance class="healthcare-marketing-start-motion">
+  <section id="healthcare-marketing-start" class="healthcare-marketing-start" aria-labelledby="healthcare-marketing-start-heading">
+    <div class="section-container healthcare-marketing-start-layout">
+      <header class="healthcare-marketing-start-header">
+        <h2 id="healthcare-marketing-start-heading" data-discovery-motion>{copy.heading}</h2>
+        <div class="healthcare-marketing-start-map" aria-hidden="true" data-discovery-motion>
+          <div class="healthcare-marketing-start-dial">
+            <span class="healthcare-marketing-start-dial-index">01</span>
+            <span class="healthcare-marketing-start-dial-label healthcare-marketing-start-dial-label--assess">Assess</span>
+            <span class="healthcare-marketing-start-dial-label healthcare-marketing-start-dial-label--priority">Prioritize</span>
+            <span class="healthcare-marketing-start-dial-label healthcare-marketing-start-dial-label--begin">Begin</span>
+            <span class="healthcare-marketing-start-dial-marker healthcare-marketing-start-dial-marker--one"></span>
+            <span class="healthcare-marketing-start-dial-marker healthcare-marketing-start-dial-marker--two"></span>
+            <span class="healthcare-marketing-start-dial-marker healthcare-marketing-start-dial-marker--three"></span>
+            <span class="healthcare-marketing-start-dial-line"></span>
+            <span class="healthcare-marketing-start-dial-core"><small>Start with</small><strong>Clarity</strong></span>
+          </div>
+        </div>
+      </header>
+      <ul class="healthcare-marketing-start-priorities" role="list">
+        {copy.priorities.map((item,index)=><li class="healthcare-marketing-start-row" data-discovery-motion>
+          <span class="healthcare-marketing-start-icon"><Icon icon={icons[index]} size={24} /></span>
+          <p><strong>{item.question}</strong>{' '}<span class="healthcare-marketing-start-recommendation"><span class="healthcare-marketing-start-direction"><Icon icon={ArrowRight01Icon} size={18} /></span><span>{item.recommendation}</span></span></p>
+        </li>)}
+      </ul>
+      <p class="healthcare-marketing-start-conclusion">{copy.conclusion}</p>
+    </div>
+  </section>
+</HealthcareMarketingEntrance>

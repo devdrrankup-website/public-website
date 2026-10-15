@@ -1,0 +1,42 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import HealthcareMarketingHero from '../../components/healthcare-marketing/HealthcareMarketingHero.astro';
+import HealthcareMarketingDiscoverySection from '../../components/healthcare-marketing/HealthcareMarketingDiscoverySection.astro';
+import HealthcareMarketingOutcomesSection from '../../components/healthcare-marketing/HealthcareMarketingOutcomesSection.astro';
+import HealthcareMarketingBangladeshSection from '../../components/healthcare-marketing/HealthcareMarketingBangladeshSection.astro';
+import HealthcareMarketingSolutionsSection from '../../components/healthcare-marketing/HealthcareMarketingSolutionsSection.astro';
+import HealthcareMarketingSpecialistServicesSection from '../../components/healthcare-marketing/HealthcareMarketingSpecialistServicesSection.astro';
+import HealthcareMarketingOrganizationsSection from '../../components/healthcare-marketing/HealthcareMarketingOrganizationsSection.astro';
+import HealthcareMarketingTrustSection from '../../components/healthcare-marketing/HealthcareMarketingTrustSection.astro';
+import HealthcareMarketingSpecialistsSection from '../../components/healthcare-marketing/HealthcareMarketingSpecialistsSection.astro';
+import HealthcareMarketingProcessSection from '../../components/healthcare-marketing/HealthcareMarketingProcessSection.astro';
+import HealthcareMarketingStartSection from '../../components/healthcare-marketing/HealthcareMarketingStartSection.astro';
+import HealthcareMarketingWhySection from '../../components/healthcare-marketing/HealthcareMarketingWhySection.astro';
+import HealthcareMarketingFaqSection from '../../components/healthcare-marketing/HealthcareMarketingFaqSection.astro';
+import HealthcareMarketingConsultationSection from '../../components/healthcare-marketing/HealthcareMarketingConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { healthcareMarketingHeroPreload } from '../../lib/healthcare-marketing-hero-image';
+import { pageMetadata } from '../../data/page-metadata';
+---
+<Layout metadata={pageMetadata.healthcareMarketing} imagePreload={healthcareMarketingHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="healthcare-marketing-page" tabindex="-1">
+    <HealthcareMarketingHero />
+    <HealthcareMarketingDiscoverySection />
+    <HealthcareMarketingOutcomesSection />
+    <HealthcareMarketingBangladeshSection />
+    <HealthcareMarketingSolutionsSection />
+    <HealthcareMarketingSpecialistServicesSection />
+    <HealthcareMarketingOrganizationsSection />
+    <HealthcareMarketingTrustSection />
+    <HealthcareMarketingSpecialistsSection />
+    <HealthcareMarketingProcessSection />
+    <HealthcareMarketingStartSection />
+    <HealthcareMarketingWhySection />
+    <HealthcareMarketingFaqSection />
+    <HealthcareMarketingConsultationSection />
+  </main>
+  <Footer />
+</Layout>
+<script>import '../../scripts/healthcare-marketing-consultation';</script>

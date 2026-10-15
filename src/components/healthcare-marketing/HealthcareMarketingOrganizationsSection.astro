@@ -1,0 +1,33 @@
+---
+import { Image } from 'astro:assets';
+import Arrow from '../Arrow.astro';
+import doctor from '../../assets/healthcare-marketing/organizations/independent-doctor-marketing-v1.webp';
+import clinic from '../../assets/audience-hubs/clinic-hero-v2.webp';
+import hospital from '../../assets/audience-hubs/hospital-hero-v2.webp';
+import HealthcareMarketingEntrance from './HealthcareMarketingEntrance.astro';
+import { healthcareMarketingOrganizations as copy } from '../../data/healthcare-marketing-organizations';
+import '../../styles/healthcare-marketing-organizations.css';
+const photos = [doctor, clinic, hospital];
+const alts = ['Independent doctor and communications adviser reviewing chamber information', 'Clinic team in a Bangladesh healthcare setting', 'Hospital setting in Bangladesh'];
+---
+<HealthcareMarketingEntrance class="healthcare-marketing-organizations-motion">
+  <section id="healthcare-marketing-organizations" class="healthcare-marketing-organizations" aria-labelledby="healthcare-marketing-organizations-heading">
+    <div class="section-container healthcare-marketing-organizations-layout">
+      <header data-discovery-motion>
+        <h2 id="healthcare-marketing-organizations-heading">{copy.heading}</h2>
+      </header>
+      <div class="healthcare-marketing-organizations-list">
+        {copy.audiences.map((audience, index) => <article class="healthcare-marketing-organization" aria-labelledby={`healthcare-marketing-organization-${index + 1}`} data-discovery-motion>
+          <div class="healthcare-marketing-organization-copy">
+            <span class="healthcare-marketing-organization-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+            <h3 id={`healthcare-marketing-organization-${index + 1}`}>{audience.heading}</h3>
+            <p>{audience.description}</p>
+            <a href={audience.href}>{audience.action}<Arrow size={17} /></a>
+          </div>
+          <Image src={photos[index]} widths={[240, 360, 480]} sizes="(min-width: 1100px) 180px, (min-width: 640px) 150px, 100px" format="webp" quality={72} loading="lazy" decoding="async" alt={alts[index]} title={alts[index]} />
+        </article>)}
+      </div>
+      <p class="healthcare-marketing-organizations-note">{copy.note}</p>
+    </div>
+  </section>
+</HealthcareMarketingEntrance>

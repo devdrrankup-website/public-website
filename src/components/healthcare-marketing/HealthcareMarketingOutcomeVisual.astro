@@ -1,0 +1,51 @@
+---
+import { Image } from 'astro:assets';
+import Icon from '../Icon.astro';
+import Search01Icon from '@hugeicons/core-free-icons/Search01Icon';
+import UserAccountIcon from '@hugeicons/core-free-icons/UserAccountIcon';
+import ShieldCheckIcon from '@hugeicons/core-free-icons/ShieldCheckIcon';
+import LocationCheck01Icon from '@hugeicons/core-free-icons/LocationCheck01Icon';
+import Calendar03Icon from '@hugeicons/core-free-icons/Calendar03Icon';
+import planning from '../../assets/hospital-digital-marketing/hospital-digital-strategy-meeting-v1.webp';
+interface Props { index: number }
+const { index } = Astro.props;
+const nodes = [
+  {label:'Audience',x:8,y:8}, {label:'Channel',x:244,y:8},
+  {label:'Budget',x:8,y:72}, {label:'Eligibility',x:244,y:72},
+  {label:'Evidence',x:8,y:136}, {label:'Next step',x:244,y:136},
+];
+---
+{index === 2 ? <div class="healthcare-marketing-outcome-visual healthcare-marketing-outcome-photograph">
+  <Image src={planning} widths={[320,480,640,880]} sizes="(min-width: 1100px) 280px, (min-width: 640px) calc(50vw - 76px), calc(100vw - 66px)"
+    format="webp" quality={78} loading="lazy" decoding="async"
+    alt="Healthcare team comparing service information across print and digital channels"
+    title="Keeping healthcare service messages consistent" />
+</div> : <div class:list={['healthcare-marketing-outcome-visual', `healthcare-marketing-outcome-diagram-${index}`]} aria-hidden="true">
+  {index === 0 && <div class="healthcare-marketing-outcome-find">
+    <div class="healthcare-marketing-outcome-search"><Icon icon={Search01Icon} size={18} /><span>Service, provider or location</span></div>
+    <div class="healthcare-marketing-outcome-map">
+      <svg viewBox="0 0 320 150" preserveAspectRatio="none" focusable="false"><path d="M-10 36L95 20L180 76L330 46M-10 119L110 97L214 140L330 115M70 -10L90 160M235 -10L197 160" fill="none" stroke="#fff" stroke-width="16" /><path d="M-10 36L95 20L180 76L330 46M-10 119L110 97L214 140L330 115M70 -10L90 160M235 -10L197 160" fill="none" stroke="#afa9ec" stroke-width="1" /></svg>
+      <span class="healthcare-marketing-outcome-map-pin"><Icon icon={LocationCheck01Icon} size={30} /></span>
+      <span class="healthcare-marketing-outcome-map-label">Verified location</span>
+    </div>
+  </div>}
+  {index === 1 && <div class="healthcare-marketing-outcome-profile">
+    <div class="healthcare-marketing-outcome-profile-header"><span class="healthcare-marketing-outcome-avatar"><Icon icon={UserAccountIcon} size={30} /></span><span>Service<br />information</span><Icon icon={ShieldCheckIcon} size={26} /></div>
+    <div class="healthcare-marketing-outcome-profile-detail"><span>Services</span><span class="healthcare-marketing-outcome-profile-line"></span></div>
+    <div class="healthcare-marketing-outcome-profile-detail"><span>Sources</span><span class="healthcare-marketing-outcome-profile-line"></span></div>
+    <div class="healthcare-marketing-outcome-profile-detail"><span>Contact route</span><span class="healthcare-marketing-outcome-profile-line"></span></div>
+  </div>}
+  {index === 3 && <div class="healthcare-marketing-outcome-booking">
+    <div class="healthcare-marketing-outcome-calendar-heading"><Icon icon={Calendar03Icon} size={22} /><span>Clear next step</span></div>
+    <div class="healthcare-marketing-outcome-calendar">
+      {['M','T','W','T','F','S','S'].map(day => <span class="healthcare-marketing-outcome-day">{day}</span>)}
+      {Array.from({length:14}, (_, day) => <span class:list={['healthcare-marketing-outcome-date', {'healthcare-marketing-outcome-date-selected':day===9}]}>{day+1}</span>)}
+    </div>
+    <div class="healthcare-marketing-outcome-booking-path"><span>Information</span><span>→</span><span>Contact</span><span>→</span><span>Care route</span></div>
+  </div>}
+  {index === 4 && <svg class="healthcare-marketing-outcome-entity-map" viewBox="0 0 360 176" focusable="false">
+    <g fill="none" stroke="#6131c6" stroke-opacity=".35" stroke-width="1.5"><path d="M180 88L64 22M180 88L296 22M180 88H64M180 88H296M180 88L64 150M180 88L296 150" /></g>
+    {nodes.map(node => <g><rect x={node.x} y={node.y} width="108" height="28" rx="9" fill="#fff" stroke="#afa9ec" /><text x={node.x+54} y={node.y+19} text-anchor="middle" fill="#000" font-size="16">{node.label}</text></g>)}
+    <circle cx="180" cy="88" r="32" fill="#eeedfe" stroke="#afa9ec" /><text x="180" y="93" text-anchor="middle" fill="#000" font-size="16" font-weight="600">Plan</text>
+  </svg>}
+</div>}

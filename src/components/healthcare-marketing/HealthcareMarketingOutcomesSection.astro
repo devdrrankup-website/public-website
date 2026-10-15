@@ -1,0 +1,25 @@
+---
+import { healthcareMarketingOutcomes as copy } from '../../data/healthcare-marketing-outcomes';
+import HealthcareMarketingOutcomeVisual from './HealthcareMarketingOutcomeVisual.astro';
+import HealthcareMarketingEntrance from './HealthcareMarketingEntrance.astro';
+import '../../styles/healthcare-marketing-outcomes.css';
+---
+<!-- Reuse the existing scoped, engine-free entrance element. Each instance
+     observes only its own descendants and retains a complete static fallback. -->
+<HealthcareMarketingEntrance class="healthcare-marketing-outcomes-motion">
+  <section id="healthcare-marketing-outcomes" class="healthcare-marketing-outcomes" aria-labelledby="healthcare-marketing-outcomes-heading">
+    <div class="section-container">
+      <h2 id="healthcare-marketing-outcomes-heading">{copy.heading}</h2>
+      <div class="healthcare-marketing-outcomes-grid">
+        {copy.items.map((item, index) => <article class="healthcare-marketing-outcome-card" aria-labelledby={`healthcare-marketing-outcome-${index+1}`} data-discovery-motion>
+          <div class="healthcare-marketing-outcome-copy">
+            <span class="healthcare-marketing-outcome-number" aria-hidden="true">0{index+1}</span>
+            <h3 id={`healthcare-marketing-outcome-${index+1}`}>{item.heading}</h3>
+            <p>{item.description}</p>
+          </div>
+          <HealthcareMarketingOutcomeVisual index={index} />
+        </article>)}
+      </div>
+    </div>
+  </section>
+</HealthcareMarketingEntrance>

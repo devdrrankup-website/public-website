@@ -15,7 +15,7 @@ import {navigationMenus} from '../data/navigation';
       <a class="brand" href="/" aria-label="Dr RankUP homepage" aria-current={Astro.url.pathname === '/' ? 'page' : undefined}><Image src={logo} width={224} widths={[190,224,380,448,570,672]} sizes="(min-width: 1100px) 190px, (min-width: 400px) 224px, (min-width: 358px) 56vw, 200px" format="webp" quality={100} title="Dr RankUP — healthcare growth and technology" alt="Dr RankUP" loading="eager"/></a>
       <nav id="main-navigation" class="main-navigation" aria-label="Main navigation">
         {navigationMenus.map(menu=><>
-          {menu.id==='about'&&<span class="nav-direct-item">Healthcare Marketing</span>}
+          {menu.id==='about'&&<a class="nav-direct-item" href="/healthcare-marketing/" aria-current={Astro.url.pathname === '/healthcare-marketing/' ? 'page' : undefined}>Healthcare Marketing</a>}
           {menu.id==='resources'&&<span class="nav-direct-item">Contact Us</span>}
           <NavigationMenu menu={menu}/>
         </>)}
