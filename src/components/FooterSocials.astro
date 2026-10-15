@@ -8,25 +8,34 @@ import YoutubeIcon from '@hugeicons/core-free-icons/YoutubeIcon';
 import TiktokIcon from '@hugeicons/core-free-icons/TiktokIcon';
 import ThreadsIcon from '@hugeicons/core-free-icons/ThreadsIcon';
 import PinterestIcon from '@hugeicons/core-free-icons/PinterestIcon';
-import WhatsappBusinessIcon from '@hugeicons/core-free-icons/WhatsappBusinessIcon';
 import SnapchatIcon from '@hugeicons/core-free-icons/SnapchatIcon';
 import RedditIcon from '@hugeicons/core-free-icons/RedditIcon';
 import QuoraIcon from '@hugeicons/core-free-icons/QuoraIcon';
 import MediumIcon from '@hugeicons/core-free-icons/MediumIcon';
 import BlueskyIcon from '@hugeicons/core-free-icons/BlueskyIcon';
-import VimeoIcon from '@hugeicons/core-free-icons/VimeoIcon';
-// Platforms supplied by the user; account URLs remain pending.
 const socials = [
-  ['Facebook',Facebook01Icon],['Instagram',InstagramIcon],['LinkedIn',Linkedin01Icon],['X (Twitter)',NewTwitterIcon],
-  ['YouTube',YoutubeIcon],['TikTok',TiktokIcon],['Pinterest',PinterestIcon],['Threads',ThreadsIcon],
-  ['WhatsApp Business',WhatsappBusinessIcon],['Reddit',RedditIcon],['Snapchat',SnapchatIcon],['Bluesky',BlueskyIcon],
-  ['Medium',MediumIcon],['Quora',QuoraIcon],['Vimeo',VimeoIcon],
+  ['Facebook', Facebook01Icon, 'https://www.facebook.com/drrankup'],
+  ['Instagram', InstagramIcon, 'https://www.instagram.com/drrankup/'],
+  ['LinkedIn', Linkedin01Icon, 'https://www.linkedin.com/drrankup'],
+  ['YouTube', YoutubeIcon, 'https://www.youtube.com/@drrankup'],
+  ['X (Twitter)', NewTwitterIcon, 'https://x.com/DrRankUp'],
+  ['Medium', MediumIcon, 'https://medium.com/@drrankup'],
+  ['Bluesky', BlueskyIcon, 'https://bsky.app/profile/drrankup.bsky.social'],
+  ['Pinterest', PinterestIcon, 'https://www.pinterest.com/drrankup/'],
+  ['TikTok', TiktokIcon, 'https://www.tiktok.com/@dr.rankup'],
+  ['Quora', QuoraIcon, 'https://www.quora.com/profile/Dr-RankUp'],
+  ['Threads', ThreadsIcon, 'https://www.threads.com/@drrankup'],
+  ['Snapchat', SnapchatIcon, 'https://www.snapchat.com/@drrankup'],
+  ['Reddit', RedditIcon, 'https://www.reddit.com/user/dr_rankup/'],
 ] as const;
 ---
-<ul class="footer-socials" aria-label="Social profile placeholders">
-  {socials.map(([name,icon])=><li><span class="footer-social-placeholder" role="img" aria-label={`${name} profile placeholder`} title={`${name} — placeholder`}><Icon icon={icon} size={21} strokeWidth={1.8} /></span></li>)}
+<ul class="footer-socials" aria-label="Dr RankUP social profiles">
+  {socials.map(([name, icon, href]) => <li><a class="footer-social-link" href={href} target="_blank" rel="noopener noreferrer" aria-label={`Dr RankUP on ${name} (opens in a new tab)`} title={`Dr RankUP on ${name}`}><Icon icon={icon} size={21} strokeWidth={1.8} /></a></li>)}
 </ul>
 <style>
   .footer-socials { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
-  .footer-social-placeholder { display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid #afa9ec59; border-radius: 11px; background: #afa9ec0d; color: #eeedfe; }
+  .footer-social-link { display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid #afa9ec59; border-radius: 11px; background: #afa9ec0d; color: #eeedfe; transition: background-color .2s ease, border-color .2s ease; }
+  .footer-social-link:hover { background: #afa9ec24; border-color: #afa9ec99; }
+  .footer-social-link:focus-visible { outline: 2px solid #c9f6a8; outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { .footer-social-link { transition: none; } }
 </style>

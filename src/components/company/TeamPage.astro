@@ -1,6 +1,9 @@
 ---
 import { Image } from 'astro:assets';
+import Linkedin01Icon from '@hugeicons/core-free-icons/Linkedin01Icon';
+import Mail01Icon from '@hugeicons/core-free-icons/Mail01Icon';
 import content from '../../data/company-pages/team.json';
+import Icon from '../Icon.astro';
 import hridoy from '../../assets/team/founder-hridoy-chowdhury.jpeg';
 import monwara from '../../assets/team/monwara-moni-studio-v2.webp';
 import sirajul from '../../assets/team/sirajul-islam-studio-v2.webp';
@@ -8,11 +11,23 @@ import '../../styles/company-team.css';
 const [leadership, collaboration, boundaries] = content.sections;
 const portraits = [hridoy, monwara, sirajul];
 const names = ['Hridoy Chowdhury', 'Monwara Moni', 'Sirajul Islam'];
+const linkedInProfiles = [
+  'https://www.linkedin.com/in/seo-expert-in-london/',
+  'https://www.linkedin.com/in/monwaraamoni/',
+  'https://www.linkedin.com/in/siraajul/',
+];
+const emails = [
+  'hridoy.chowdhury@drrankup.com',
+  'monwara.moni@drrankup.com',
+  'sirajul.islam@drrankup.com',
+];
 const profiles = [0, 3, 6].map((start, index) => ({
   heading: leadership.blocks[start].html,
   body: leadership.blocks.slice(start + 1, start + 3).map(block => block.html).join(''),
   portrait: portraits[index],
   name: names[index],
+  linkedIn: linkedInProfiles[index],
+  email: emails[index],
 }));
 const html = (section: typeof leadership) => section.blocks.map(block => block.html).join('');
 ---
@@ -38,6 +53,10 @@ const html = (section: typeof leadership) => section.blocks.map(block => block.h
             <p class="company-team-profile-number">0{index + 1}</p>
             <div set:html={profile.heading} />
             <div class="company-team-prose" set:html={profile.body} />
+            <div class="company-team-profile-links">
+              <a href={`mailto:${profile.email}`} aria-label={`Email ${profile.name} at ${profile.email}`}><Icon icon={Mail01Icon} size={18} />{profile.email}</a>
+              <a href={profile.linkedIn} target="_blank" rel="noopener noreferrer" aria-label={`${profile.name} on LinkedIn (opens in a new tab)`}><Icon icon={Linkedin01Icon} size={18} />LinkedIn profile</a>
+            </div>
           </div>
         </article>)}
       </div>

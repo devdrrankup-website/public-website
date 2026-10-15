@@ -20,6 +20,9 @@
 .company-team-profile-copy h3{max-width:690px;margin:0 0 26px;font-size:clamp(25px,2.9vw,40px);line-height:1.2;letter-spacing:-.04em;text-wrap:balance}
 .company-team-prose{font-size:clamp(15px,1.2vw,18px);line-height:1.85}
 .company-team-prose p{margin:0 0 22px}.company-team-prose p:last-child{margin-bottom:0}
+.company-team-profile-links{display:flex;flex-wrap:wrap;gap:10px 20px;margin-top:26px}
+.company-team-profile-links a{display:inline-flex;align-items:center;gap:8px;min-height:44px;max-width:100%;overflow-wrap:anywhere;font-size:14px;font-weight:650}
+.company-team-profile-links a:focus-visible{outline:2px solid #5026a6;outline-offset:4px;border-radius:4px}
 .company-team-collaboration,.company-team-boundaries{padding:clamp(72px,8vw,125px) 0}
 .company-team-collaboration{background:linear-gradient(140deg,#eaf7ff,#eeedfe 68%,#fff)}
 .company-team-collaboration-grid{display:grid;gap:28px}
