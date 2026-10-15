@@ -7,7 +7,7 @@
     },
     {
       "type": "paragraph",
-      "html": "<p>For a specific proposal, <span class=\"company-deferred-link\">contact Dr RankUP</span> and tell us what your organization needs.</p>"
+      "html": "<p>For a specific proposal, <a href=\"/contact/\">contact Dr RankUP</a> and tell us what your organization needs.</p>"
     }
   ],
   "sections": [
@@ -171,11 +171,11 @@
         },
         {
           "type": "paragraph",
-          "html": "<p>For a business enquiry, email contact@drrankup.com or call +8801342114762. The <span class=\"company-deferred-link\">Contact</span> page has the recorded Dhaka address and useful brief details. Do not send patient diagnoses, prescriptions or medical records in an initial message. Dr RankUP does not provide emergency medical help or patient treatment bookings.</p>"
+          "html": "<p>For a business enquiry, email contact@drrankup.com or call +8801342114762. The <a href=\"/contact/\">Contact</a> page has the recorded Dhaka address and useful brief details. Do not send patient diagnoses, prescriptions or medical records in an initial message. Dr RankUP does not provide emergency medical help or patient treatment bookings.</p>"
         },
         {
           "type": "paragraph",
-          "html": "<p><strong>Still unsure where to start?</strong> Visit <a href=\"/about/\">About Dr RankUP</a> or <span class=\"company-deferred-link\">contact our team</span> with your business question.</p>"
+          "html": "<p><strong>Still unsure where to start?</strong> Visit <a href=\"/about/\">About Dr RankUP</a> or <a href=\"/contact/\">contact our team</a> with your business question.</p>"
         }
       ]
     }

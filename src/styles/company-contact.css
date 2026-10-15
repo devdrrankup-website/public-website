@@ -1,0 +1,89 @@
+.company-contact-page{color:#000;background:#fff}
+.company-contact-hero{margin-top:-94px;padding:156px 0 88px;background:linear-gradient(135deg,#fff 0%,#eaf7ff 47%,#eeedfe 100%)}
+.company-contact-hero-grid{display:grid;gap:54px;align-items:start}
+.company-contact-eyebrow,.company-contact-index{display:block;margin:0 0 20px;color:#6131c6;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.company-contact-hero h1{max-width:850px;margin:0 0 26px;font-size:clamp(37px,5.7vw,78px);line-height:1.08;letter-spacing:-.055em;text-wrap:balance}
+.company-contact-intro{max-width:690px;margin:0;font-size:clamp(16px,1.4vw,19px);line-height:1.8}
+.company-contact-methods{min-width:0;padding:30px;border:1px solid #c9c9ec;border-radius:24px;background:#ffffffcc;box-shadow:0 20px 50px #34336d0d}
+.company-contact-methods h2{margin:0 0 20px;font-size:clamp(27px,2.8vw,39px);line-height:1.18;letter-spacing:-.04em}
+.company-contact-address{display:grid;margin:0;font-style:normal;border-top:1px solid #7573a64d}
+.company-contact-method{display:flex;align-items:start;gap:16px;min-width:0;padding:19px 0;border-bottom:1px solid #7573a64d;font-size:14px;line-height:1.7}
+.company-contact-method>div{display:grid;min-width:0;gap:2px}
+.company-contact-method-label{color:#4b4b63;font-size:12px;font-weight:700;letter-spacing:.03em}
+.company-contact-method a{width:fit-content;color:#000;font-size:clamp(16px,1.7vw,22px);font-weight:650;text-decoration:none;overflow-wrap:anywhere}
+.company-contact-method a:hover{text-decoration:underline;text-underline-offset:4px}
+.company-contact-method-icon{display:grid;place-items:center;flex:none;width:42px;height:42px;border-radius:12px;color:#6131c6;background:#eeedfe}
+.company-contact-method-icon-phone{color:#006b94;background:#bae5ff}
+.company-contact-method-icon-place{color:#205117;background:#e1ffb9}
+.company-contact-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.company-contact-action{display:inline-flex;align-items:center;justify-content:space-between;gap:15px;min-height:52px;padding:8px 10px 8px 19px;border:1px solid #6131c6;border-radius:var(--control-radius);font-size:13px;font-weight:700;text-decoration:none}
+.company-contact-action-primary{color:#fff;background:#6131c6}
+.company-contact-action-primary:hover{background:#5026a6}
+.company-contact-action-secondary{color:#000;background:#fff;border-color:#afa9ec}
+.company-contact-action-secondary:hover{background:#eeedfe}
+.company-contact-action-icon{display:grid;place-items:center;flex:none;width:34px;height:34px;border-radius:50%;background:#e1ffb9;color:#0a0a0a}
+.company-contact-brief,.company-contact-next{padding:clamp(78px,8vw,126px) 0}
+.company-contact-brief{position:relative;margin-top:-30px;border-radius:30px 30px 0 0;background:#fff}
+.company-contact-next{background:linear-gradient(145deg,#eaf7ff 0%,#eeedfe 68%,#fff 100%)}
+.company-contact-split{display:grid;gap:28px}
+.company-contact-section-head h2{max-width:630px;margin:0;font-size:clamp(31px,4vw,54px);line-height:1.15;letter-spacing:-.045em;text-wrap:balance}
+.company-contact-copy{font-size:clamp(15px,1.17vw,18px);line-height:1.85}
+.company-contact-copy p{margin:0 0 22px}.company-contact-copy p:last-child{margin-bottom:0}
+.company-contact-copy a{color:#5026a6;text-decoration:underline;text-underline-offset:4px}
+.company-contact-brief-list{display:grid;gap:0;margin:18px 0 28px;padding:0;list-style:none;border-top:1px solid #b6b4dc}
+.company-contact-brief-list li{position:relative;padding:16px 0 16px 33px;border-bottom:1px solid #b6b4dc}
+.company-contact-brief-list li::before{content:'';position:absolute;left:0;top:25px;width:12px;height:12px;border-radius:50%;background:#e1ffb9;box-shadow:0 0 0 3px #6131c6}
+.company-contact-next .company-contact-copy p:nth-child(2),.company-contact-next .company-contact-copy p:nth-child(3){padding:16px 0 16px 20px;border-left:2px solid #6131c6}
+.company-contact-next .company-contact-copy p:nth-child(3){border-color:#1c7854}
+.company-contact-enquiry{padding:40px 0;border-radius:28px 28px 0 0;color:#fff;background:radial-gradient(ellipse at 100% 0%,#229f606b,transparent 58%),#0a0a0a}
+.company-contact-enquiry-grid{display:grid;gap:48px;max-width:1250px}
+.company-contact-enquiry-copy{min-width:0}
+.company-contact-form-eyebrow{margin:0 0 18px;color:#e1ffb9;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.company-contact-form-title{max-width:550px;margin:0 0 24px;font-size:clamp(32px,3.7vw,48px);font-weight:650;line-height:1.2;letter-spacing:-.035em;text-wrap:balance}
+.company-contact-form-description{max-width:540px;margin:0;color:#dce5e0;font-size:15px;line-height:1.8}
+.company-contact-founder{margin:32px 0 15px}
+.company-contact-founder img{display:block;width:180px;height:180px;object-fit:contain;border-radius:20px;background:#eeedfe}
+.company-contact-founder figcaption{display:grid;gap:3px;margin-top:12px}
+.company-contact-founder strong{font-size:23px;font-weight:650;line-height:1.3;letter-spacing:-.025em}
+.company-contact-founder figcaption span{color:#bdcbc5;font-size:14px;line-height:1.7}
+.company-contact-direct{display:flex;align-items:center;gap:10px;width:fit-content;min-height:44px;color:#c7adff;font-size:14px;font-weight:650;text-decoration:none}
+.company-contact-direct-phone{color:#bae5ff}
+.company-contact-direct:hover{text-decoration:underline;text-underline-offset:4px}
+contact-preview-enquiry{display:block;min-width:0}
+.company-contact-form{display:flex;flex-direction:column;align-items:stretch;gap:26px}
+.company-contact-field{display:flex;flex-direction:column;min-width:0;gap:5px}
+.company-contact-field label,.company-contact-organization legend{padding:0;font-size:17px;font-weight:650;line-height:1.5}
+.company-contact-optional,.company-contact-organization legend>span{color:#bdcbc5;font-size:12px;font-weight:500}
+.company-contact-field input,.company-contact-field textarea{display:block;box-sizing:border-box;width:100%;min-width:0;min-height:48px;padding:10px 0 14px;border:0;border-bottom:1px solid #a0b9ac66;border-radius:0;background:transparent;color:#fff;font:inherit;font-size:16px;line-height:1.6;caret-color:#63df9d}
+.company-contact-field input::placeholder,.company-contact-field textarea::placeholder{color:#bdcbc5;opacity:1}
+.company-contact-field textarea{min-height:135px;resize:vertical}
+.company-contact-field input:focus-visible,.company-contact-field textarea:focus-visible{outline:2px solid #63df9d;outline-offset:5px;border-color:#63df9d}
+.company-contact-field-pair{display:grid;gap:26px;min-width:0}
+.company-contact-organization{min-width:0;margin:0;padding:0;border:0}
+.company-contact-organization-options{display:flex;flex-wrap:wrap;gap:12px;max-width:520px;margin-top:12px}
+.company-contact-organization-option{position:relative;max-width:100%;cursor:pointer}
+.company-contact-organization-option input{position:absolute;width:1px;height:1px;margin:0;clip-path:inset(50%);overflow:hidden}
+.company-contact-organization-option>span{display:flex;align-items:center;justify-content:center;min-height:48px;padding:10px 15px;border:1px solid #a0b9ac66;border-radius:var(--control-radius);color:#fff;font-size:14px;line-height:1.5;transition:background-color 160ms,border-color 160ms}
+.company-contact-organization-option:hover>span{border-color:#afa9ec}
+.company-contact-organization-option input:checked+span{background:#6131c64d;border-color:#afa9ec;color:#fff}
+.company-contact-organization-option input:focus-visible+span{outline:2px solid #bae5ff;outline-offset:4px}
+.company-contact-hint{margin:6px 0 0;color:#bdcbc5;font-size:12px;line-height:1.7}
+.company-contact-submit{display:inline-flex;align-items:center;align-self:flex-start;justify-content:center;gap:14px;min-height:54px;padding:14px 22px;border:1px solid #afa9ec80;border-radius:var(--control-radius);color:#fff;background:linear-gradient(130deg,#6131c6,#6131c6 65%,#793ee0);font-size:14px;font-weight:700}
+.company-contact-submit:hover{background:#5026a6}
+.company-contact-submit:focus-visible,.company-contact-action:focus-visible,.company-contact-direct:focus-visible{outline:2px solid #bae5ff;outline-offset:5px}
+.company-contact-submit:disabled{cursor:default;opacity:.65}
+.company-contact-status{min-height:44px;margin:-10px 0 0;color:#e1ffb9;font-size:13px;line-height:1.7}
+@media(min-width:640px){.company-contact-enquiry{padding:56px 0;border-radius:36px 36px 0 0}.company-contact-field-pair{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.company-contact-founder img{width:220px;height:220px}}
+@media(min-width:1000px){.company-contact-hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(50px,6vw,100px)}.company-contact-split{grid-template-columns:minmax(0,.78fr) minmax(0,1fr);gap:clamp(55px,8vw,130px)}.company-contact-enquiry{padding:64px 0;border-radius:40px 40px 0 0}.company-contact-enquiry-grid{width:min(100% - 112px,1250px);grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px}}
+@media(max-width:599px){.company-contact-hero{padding:145px 0 76px}.company-contact-methods{padding:22px 18px}.company-contact-method{gap:12px}.company-contact-action{width:100%}}
+@media(prefers-reduced-motion:no-preference){.company-contact-hero-copy{animation:company-contact-enter .72s ease-out both}.company-contact-methods{animation:company-contact-enter .82s .1s ease-out both}@keyframes company-contact-enter{from{opacity:.78;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}.company-contact-organization-option>span{transition:background-color 160ms,border-color 160ms}}
+@media(prefers-reduced-motion:reduce){.company-contact-organization-option>span{transition:none}}
+/* Defer the below-fold form's internal layout on compact screens. Its static
+   HTML, dimensions, background and native controls remain available on entry. */
+@supports (content-visibility:auto){
+  @media(max-width:1099px){.company-contact-enquiry{content-visibility:auto;contain-intrinsic-block-size:auto 1630px}}
+  @media(min-width:360px) and (max-width:599px){.company-contact-enquiry{contain-intrinsic-block-size:auto 1580px}}
+  @media(min-width:600px) and (max-width:999px){.company-contact-enquiry{contain-intrinsic-block-size:auto 1400px}}
+  @media(min-width:920px) and (max-width:999px){.company-contact-enquiry{contain-intrinsic-block-size:auto 1448px}}
+  @media(min-width:1000px) and (max-width:1099px){.company-contact-enquiry{contain-intrinsic-block-size:auto 851px}}
+}

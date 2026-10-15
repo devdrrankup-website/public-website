@@ -54,9 +54,9 @@ site-navigation[data-mobile-open] .main-navigation { display: block; }
 .mega-phone { font-size: 20px; font-weight: 650; }
 .mega-contact-label { overflow-wrap: anywhere; font-size: 12px; color: #eeedfe; }
 .mega-contact small { display: block; margin-top: 14px; color: #bdcbc5; font-size: 11px; line-height: 1.6; }
-.nav-cta { cursor: default; }
+.nav-cta { cursor: pointer; }
 .nav-direct-item { display: flex; align-items: center; min-height: 48px; padding: 10px 8px; color: inherit; font-size: 16px; font-weight: 600; border-bottom: 1px solid #dce9ef; }
-.nav-mobile-cta { display: inline-flex; width: 100%; margin-top: 16px; cursor: default; }
+.nav-mobile-cta { display: inline-flex; width: 100%; margin-top: 16px; cursor: pointer; }
 @media(max-width:639px) {
   .mega-service,.mega-category-summary,.nav-view-all { scroll-margin-block: 245px 16px; }
 }

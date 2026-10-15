@@ -16,12 +16,12 @@ import {navigationMenus} from '../data/navigation';
       <nav id="main-navigation" class="main-navigation" aria-label="Main navigation">
         {navigationMenus.map(menu=><>
           {menu.id==='about'&&<a class="nav-direct-item" href="/healthcare-marketing/" aria-current={Astro.url.pathname === '/healthcare-marketing/' ? 'page' : undefined}>Healthcare Marketing</a>}
-          {menu.id==='resources'&&<span class="nav-direct-item">Contact Us</span>}
+          {menu.id==='resources'&&<a class="nav-direct-item" href="/contact/" aria-current={Astro.url.pathname === '/contact/' ? 'page' : undefined}>Contact Us</a>}
           <NavigationMenu menu={menu}/>
         </>)}
-        <span class="button button-primary nav-mobile-cta">Let’s talk <ActionIcon purpose="conversation"/></span>
+        <a class="button button-primary nav-mobile-cta" href="/contact/">Let’s talk <ActionIcon purpose="conversation"/></a>
       </nav>
-      <span class="button button-primary nav-cta">Let’s talk <ActionIcon purpose="conversation"/></span>
+      <a class="button button-primary nav-cta" href="/contact/">Let’s talk <ActionIcon purpose="conversation"/></a>
       <button class="navigation-toggle" type="button" aria-controls="main-navigation" aria-expanded="false" aria-label="Open navigation menu" hidden>
         <Icon icon={Menu01Icon} class="menu-open" size={32}/><Icon icon={Cancel01Icon} class="menu-close" size={32}/>
       </button>

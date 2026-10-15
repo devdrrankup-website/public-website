@@ -1,0 +1,13 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import ContactPage from '../../components/company/ContactPage.astro';
+import { pageMetadata } from '../../data/page-metadata';
+---
+
+<Layout metadata={pageMetadata.contact}>
+  <Navbar />
+  <main id="main-content" tabindex="-1"><ContactPage /></main>
+  <Footer />
+</Layout>

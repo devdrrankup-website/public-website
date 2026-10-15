@@ -48,7 +48,7 @@ const year = new Intl.DateTimeFormat('en',{year:'numeric',timeZone:'Asia/Dhaka'}
         </div>
           <div class="footer-column footer-company" aria-label="Company information">
             <h2>Company</h2>
-            <ul>{content.company.map(item=><li>{item === 'About' ? <a href="/about/">{item}</a> : <span>{item}</span>}</li>)}</ul>
+            <ul>{content.company.map(item=><li>{item === 'About' ? <a href="/about/">{item}</a> : item === 'Contact' ? <a href="/contact/">{item}</a> : <span>{item}</span>}</li>)}</ul>
           </div>
           <div class="footer-column footer-services-column">
             <h2>Services</h2>

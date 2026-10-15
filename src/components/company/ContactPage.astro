@@ -1,0 +1,127 @@
+---
+import { Image } from 'astro:assets';
+import Mail01Icon from '@hugeicons/core-free-icons/Mail01Icon';
+import CallIcon from '@hugeicons/core-free-icons/CallIcon';
+import Location01Icon from '@hugeicons/core-free-icons/Location01Icon';
+import ArrowRight02Icon from '@hugeicons/core-free-icons/ArrowRight02Icon';
+import founderPortrait from '../../assets/team/founder-hridoy-chowdhury.jpeg';
+import Icon from '../Icon.astro';
+import '../../styles/company-contact.css';
+
+// Page copy: Desktop/website content/Contact/01-contact-CONTENT-ONLY.md.
+const organizationTypes = ['Doctor', 'Clinic', 'Hospital', 'Other Healthcare Organization'];
+---
+
+<div class="company-contact-page">
+  <section class="company-contact-hero" aria-labelledby="company-contact-title">
+    <div class="section-container company-contact-hero-grid">
+      <div class="company-contact-hero-copy">
+        <p class="company-contact-eyebrow">Business enquiries</p>
+        <h1 id="company-contact-title">Contact Dr RankUP — Healthcare Marketing, Websites &amp; Software</h1>
+        <p class="company-contact-intro">Have a business question about SEO, healthcare marketing, a website or a software project? Contact Dr RankUP directly. We work with doctors, clinics and hospitals in Bangladesh and can discuss the scope that fits your organization.</p>
+      </div>
+      <div class="company-contact-methods" aria-labelledby="company-contact-methods-title">
+        <h2 id="company-contact-methods-title">Contact Dr RankUP</h2>
+        <address class="company-contact-address">
+          <div class="company-contact-method">
+            <span class="company-contact-method-icon company-contact-method-icon-email" aria-hidden="true"><Icon icon={Mail01Icon} size={23} /></span>
+            <div><span class="company-contact-method-label">Email</span><a href="mailto:contact@drrankup.com">contact@drrankup.com</a></div>
+          </div>
+          <div class="company-contact-method">
+            <span class="company-contact-method-icon company-contact-method-icon-phone" aria-hidden="true"><Icon icon={CallIcon} size={23} /></span>
+            <div><span class="company-contact-method-label">Phone</span><a href="tel:+8801342114762">+8801342114762</a></div>
+          </div>
+          <div class="company-contact-method">
+            <span class="company-contact-method-icon company-contact-method-icon-place" aria-hidden="true"><Icon icon={Location01Icon} size={23} /></span>
+            <div><span class="company-contact-method-label">Recorded Dhaka address</span><span>230A, 2nd Floor, Chowdhury Surgical Market, Topkhana Road, Dhaka South City Corporation, Dhaka 1000, Bangladesh</span></div>
+          </div>
+        </address>
+        <div class="company-contact-actions">
+          <a class="company-contact-action company-contact-action-primary" href="mailto:contact@drrankup.com">Email Dr RankUP<span class="company-contact-action-icon" aria-hidden="true"><Icon icon={ArrowRight02Icon} size={18} /></span></a>
+          <a class="company-contact-action company-contact-action-secondary" href="tel:+8801342114762">Call Dr RankUP<span class="company-contact-action-icon" aria-hidden="true"><Icon icon={ArrowRight02Icon} size={18} /></span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="company-contact-brief" aria-labelledby="company-contact-brief-title">
+    <div class="section-container company-contact-split">
+      <div class="company-contact-section-head"><span class="company-contact-index">01 / PREPARE YOUR BRIEF</span><h2 id="company-contact-brief-title">Tell Us About Your Project</h2></div>
+      <div class="company-contact-copy">
+        <p>A short business brief helps us identify the relevant specialist and the next useful conversation. You can include:</p>
+        <ul class="company-contact-brief-list">
+          <li>Your organization type: doctor, clinic, hospital or another relevant business.</li>
+          <li>Your organization name, public website and main location, if applicable.</li>
+          <li>The specific problem: search visibility, marketing communication, website usability or an operational workflow.</li>
+          <li>Your preferred business contact details and any relevant deadline or dependency.</li>
+        </ul>
+        <p>For service exploration, see <a href="/doctors/">For Doctors</a>, <a href="/clinics/">For Clinics</a>, <a href="/hospitals/">For Hospitals</a> or <a href="/healthcare-marketing/">Healthcare Marketing</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="company-contact-next" aria-labelledby="company-contact-next-title">
+    <div class="section-container company-contact-split">
+      <div class="company-contact-section-head"><span class="company-contact-index">02 / WHAT HAPPENS NEXT</span><h2 id="company-contact-next-title">What Happens Next and What Not to Send</h2></div>
+      <div class="company-contact-copy">
+        <p>We first review whether the request fits the agency's services and whether additional business information is needed. A project estimate, delivery date, advertising eligibility or proposed feature is not confirmed until the relevant scope and approvals are agreed. Our <a href="/about/how-we-work/">How We Work</a> page explains the planned handoff and review process.</p>
+        <p><strong>Protect confidential information.</strong> Do not email patient names, diagnoses, prescriptions, medical records, test results or other sensitive clinical details in an initial enquiry. If a later technical engagement requires protected information, purpose, authorization and a suitable secure process must be defined first.</p>
+        <p><strong>Dr RankUP is not a medical helpline.</strong> We do not provide diagnosis, treatment, urgent clinical advice or patient appointment services. For urgent medical help, contact an appropriate healthcare provider or local emergency service directly.</p>
+        <p><strong>Ready to start?</strong> <a href="mailto:contact@drrankup.com">Email contact@drrankup.com</a>. For common business questions, visit our <a href="/faq/">FAQ</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="business-enquiry" class="company-contact-enquiry" aria-label="Business enquiry form">
+    <div class="section-container company-contact-enquiry-grid">
+      <div class="company-contact-enquiry-copy">
+        <p class="company-contact-form-eyebrow">Start a business conversation</p>
+        <p class="company-contact-form-title">Tell us what your organization needs.</p>
+        <p class="company-contact-form-description">A clear starting point helps us discuss the right scope and specialist. Please share business needs only, without patient or medical information.</p>
+        <figure class="company-contact-founder">
+          <Image src={founderPortrait} widths={[240,360,480]} sizes="(min-width:640px) 220px, 180px" format="webp" quality={80} alt="Hridoy Chowdhury, Founder of Dr RankUP" title="Hridoy Chowdhury — Dr RankUP founder" loading="lazy" decoding="async" />
+          <figcaption><strong>Hridoy Chowdhury</strong><span>Founder · SEO Consultant &amp; AI Search Specialist</span></figcaption>
+        </figure>
+        <a class="company-contact-direct" href="mailto:contact@drrankup.com">Email Dr RankUP <Icon icon={ArrowRight02Icon} size={18} /></a>
+        <a class="company-contact-direct company-contact-direct-phone" href="tel:+8801342114762">Call Dr RankUP <Icon icon={ArrowRight02Icon} size={18} /></a>
+      </div>
+      <contact-preview-enquiry>
+        <form class="company-contact-form" action="#business-enquiry" method="post" aria-label="Business project enquiry preview">
+          <div class="company-contact-field">
+            <label for="contact-name">Full Name<span aria-hidden="true">*</span><span class="sr-only"> (required)</span></label>
+            <input id="contact-name" name="name" autocomplete="name" placeholder="Your full name" maxlength="100" required />
+          </div>
+          <div class="company-contact-field-pair">
+            <div class="company-contact-field">
+              <label for="contact-email">Your Email <span class="company-contact-optional">(optional)</span></label>
+              <input id="contact-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" maxlength="254" />
+            </div>
+            <div class="company-contact-field">
+              <label for="contact-phone">Phone Number<span aria-hidden="true">*</span><span class="sr-only"> (required)</span></label>
+              <input id="contact-phone" name="phone" type="tel" autocomplete="tel" placeholder="+880 1XXX XXXXXX" maxlength="30" required />
+            </div>
+          </div>
+          <fieldset class="company-contact-organization">
+            <legend>I’m enquiring for <span>(optional)</span></legend>
+            <div class="company-contact-organization-options">
+              {organizationTypes.map((organization, index) => <label class="company-contact-organization-option" for={`contact-organization-${index}`}>
+                <input id={`contact-organization-${index}`} type="radio" name="organization" value={organization} />
+                <span>{organization}</span>
+              </label>)}
+            </div>
+          </fieldset>
+          <div class="company-contact-field">
+            <label for="contact-details">Project Details<span aria-hidden="true">*</span><span class="sr-only"> (required)</span></label>
+            <textarea id="contact-details" name="details" rows="4" placeholder="Tell us about your organization and what you’d like to improve…" maxlength="4000" aria-describedby="contact-details-hint" required></textarea>
+            <p id="contact-details-hint" class="company-contact-hint">Please share business needs only, without patient or medical information.</p>
+          </div>
+          <button class="company-contact-submit" type="submit" disabled>Send enquiry <Icon icon={ArrowRight02Icon} size={24} /></button>
+          <p class="company-contact-status" role="status" aria-live="polite" aria-atomic="true"></p>
+          <noscript><p class="company-contact-hint">This form is a preview. Enquiries cannot be sent yet.</p></noscript>
+        </form>
+      </contact-preview-enquiry>
+    </div>
+  </section>
+</div>
+
+<script>import '../../scripts/company-contact';</script>

@@ -8,6 +8,7 @@ import aboutGraph from './seo/company-about.json';
 import teamGraph from './seo/company-team.json';
 import workGraph from './seo/company-work.json';
 import faqGraph from './seo/company-faq.json';
+import contactGraph from './seo/company-contact.json';
 import { homepageFaq } from './homepage-faq';
 import { doctorFaq } from './for-doctors-faq';
 import { doctorSeoFaq } from './doctor-seo-faq';
@@ -67,6 +68,13 @@ export const pageMetadata = {
     canonical: 'https://www.drrankup.com/faq/',
     twitterCard: 'summary',
     schema: faqGraph,
+  },
+  contact: {
+    title: 'Contact Dr RankUP | Healthcare Marketing & Technology',
+    description: 'Email contact@drrankup.com or call +8801342114762 about healthcare SEO, marketing, websites or software. Find our recorded Dhaka address.',
+    canonical: 'https://www.drrankup.com/contact/',
+    twitterCard: 'summary',
+    schema: contactGraph,
   },
   home: {
     title: 'Healthcare SEO, Marketing & Software in BD | Dr RankUp',
