@@ -85,12 +85,12 @@ export const navigationMenus:NavigationMenu[]=[
       item('About Dr RankUP','Our focus on doctors, clinics and hospitals in Bangladesh.','about-dr-rankup'),
       item('Our Team','Meet the people behind Dr RankUP.','about-our-team'),
       item('How We Work','Understand our approach from discovery to improvement.','how-we-work'),
+      item('FAQ','Common questions about working with Dr RankUP.','resources-faq'),
     ]},
   ]},
   {id:'resources',title:'Resources',description:'Explore healthcare insights and project stories.',viewAll:'View all resources',groups:[
     {title:'Explore Resources',items:[
       item('Blog','Healthcare marketing, search and technology insights.','resources-blog'),
-      item('FAQ','Common questions about working with Dr RankUP.','resources-faq'),
       item('Case Studies','Explore our case study area.','resources-case-studies'),
     ]},
   ]},
