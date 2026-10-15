@@ -1,0 +1,60 @@
+---
+import { Image } from 'astro:assets';
+import content from '../../data/company-pages/team.json';
+import hridoy from '../../assets/team/founder-hridoy-chowdhury.jpeg';
+import monwara from '../../assets/team/monwara-moni-studio-v2.webp';
+import sirajul from '../../assets/team/sirajul-islam-studio-v2.webp';
+import '../../styles/company-team.css';
+const [leadership, collaboration, boundaries] = content.sections;
+const portraits = [hridoy, monwara, sirajul];
+const names = ['Hridoy Chowdhury', 'Monwara Moni', 'Sirajul Islam'];
+const profiles = [0, 3, 6].map((start, index) => ({
+  heading: leadership.blocks[start].html,
+  body: leadership.blocks.slice(start + 1, start + 3).map(block => block.html).join(''),
+  portrait: portraits[index],
+  name: names[index],
+}));
+const html = (section: typeof leadership) => section.blocks.map(block => block.html).join('');
+---
+<div class="company-team-page">
+  <section class="company-team-hero" aria-labelledby="company-team-title">
+    <div class="section-container company-team-hero-inner">
+      <p class="company-team-eyebrow">The people behind Dr RankUP</p>
+      <h1 id="company-team-title">{content.h1}</h1>
+      <div class="company-team-hero-lead" set:html={content.intro[0].html} />
+      <div class="company-team-hero-links" set:html={content.intro[1].html} />
+    </div>
+  </section>
+
+  <section class="company-team-leadership" aria-labelledby="company-team-leadership-title">
+    <div class="section-container">
+      <header class="company-team-section-heading"><span>01 / LEADERSHIP</span><h2 id="company-team-leadership-title">{leadership.heading}</h2></header>
+      <div class="company-team-profiles">
+        {profiles.map((profile, index) => <article class="company-team-profile" aria-label={profile.name}>
+          <div class="company-team-photo">
+            <Image src={profile.portrait} width={720} widths={[360,540,720]} sizes="(min-width:1000px) 38vw, (min-width:640px) 42vw, calc(100vw - 32px)" format="webp" quality={82} alt={`${profile.name} in a professional portrait`} title={`${profile.name} — Dr RankUP leadership`} loading={index===0 ? 'eager' : 'lazy'} decoding="async" />
+          </div>
+          <div class="company-team-profile-copy">
+            <p class="company-team-profile-number">0{index + 1}</p>
+            <div set:html={profile.heading} />
+            <div class="company-team-prose" set:html={profile.body} />
+          </div>
+        </article>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="company-team-collaboration" aria-labelledby="company-team-collaboration-title">
+    <div class="section-container company-team-collaboration-grid">
+      <div><span class="company-team-kicker">02 / COLLABORATION</span><h2 id="company-team-collaboration-title">{collaboration.heading}</h2></div>
+      <div class="company-team-prose" set:html={html(collaboration)} />
+    </div>
+  </section>
+
+  <section class="company-team-boundaries" aria-labelledby="company-team-boundaries-title">
+    <div class="section-container company-team-collaboration-grid">
+      <div><span class="company-team-kicker">03 / ACCOUNTABILITY</span><h2 id="company-team-boundaries-title">{boundaries.heading}</h2></div>
+      <div class="company-team-prose" set:html={html(boundaries)} />
+    </div>
+  </section>
+</div>

@@ -1,0 +1,93 @@
+{
+  "h1": "Our Team — Meet the People Behind Dr RankUP",
+  "intro": [
+    {
+      "type": "paragraph",
+      "html": "<p>Dr RankUP's confirmed founder and co-founders bring together search, content and software expertise for healthcare-focused digital projects. Here is who they are, what each discipline contributes and where responsibility for medical information remains with qualified people.</p>"
+    },
+    {
+      "type": "paragraph",
+      "html": "<p><strong>Related pages:</strong> <a href=\"/about/\">About Dr RankUP</a> · <span class=\"company-deferred-link\">How We Work</span> · <span class=\"company-deferred-link\">Contact</span></p>"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Meet Our Founder and Co-Founders",
+      "blocks": [
+        {
+          "type": "h3",
+          "text": "Hridoy Chowdhury — Founder, SEO & Search Strategy",
+          "html": "<h3>Hridoy Chowdhury — Founder, SEO &amp; Search Strategy</h3>"
+        },
+        {
+          "type": "paragraph",
+          "html": "<p>Hridoy works across search engine optimization, technical website structure, local search, entity relationships and emerging AI-assisted discovery. His supplied professional profile describes consulting, practical search work and SEO education across multiple business sectors.</p>"
+        },
+        {
+          "type": "paragraph",
+          "html": "<p>For a healthcare website, his relevant contribution is to clarify which pages answer which searches: a doctor's professional profile, a clinic's services, a hospital's departments or a location's contact details. This helps visitors find the right information without presenting ranking or AI-search visibility as guaranteed outcomes.</p>"
+        },
+        {
+          "type": "h3",
+          "text": "Monwara Moni — Co-Founder, Content & Social Communication",
+          "html": "<h3>Monwara Moni — Co-Founder, Content &amp; Social Communication</h3>"
+        },
+        {
+          "type": "paragraph",
+          "html": "<p>Monwara's professional work covers content strategy, social media, brand communication and organized publishing. Her supplied profile describes experience with professional brands and international markets, with a focus on useful, consistent messages for healthcare-related audiences.</p>"
+        },
+        {
+          "type": "paragraph",
+          "html": "<p>Her role is to plan clear explanations and an appropriate publishing process: identify the audience, confirm source information, agree a message and arrange the review it needs. She is not represented as a medical practitioner, and professional marketing experience alone does not verify a diagnosis or clinical claim.</p>"
+        },
+        {
+          "type": "h3",
+          "text": "Sirajul Islam — Co-Founder, Websites & Software Engineering",
+          "html": "<h3>Sirajul Islam — Co-Founder, Websites &amp; Software Engineering</h3>"
+        },
+        {
+          "type": "paragraph",
+          "html": "<p>Sirajul's background includes full-stack engineering, front-end and back-end systems, databases, integrations and software-quality considerations. His supplied profile also covers technical work outside healthcare; it must not be presented as proof of a specific hospital or clinic deployment.</p>"
+        },
+        {
+          "type": "paragraph",
+          "html": "<p>His contribution is to translate approved requirements into testable website or software behavior: useful page navigation, appropriate system connections, role-specific access and implementation checks. Whether a feature is available or suitable depends on the actual project scope and validation.</p>"
+        }
+      ]
+    },
+    {
+      "heading": "How the Specialties Work Together",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "html": "<p>A clinic may need to explain its services more clearly and make its contact pathway easier to use. Search planning can define page purpose; content can prepare factual explanations; engineering can implement a responsive, usable page. Each contribution has a defined review boundary.</p>"
+        },
+        {
+          "type": "table",
+          "html": "<div class=\"company-table-wrap\"><table><thead><tr><th scope=\"col\">Project need</th><th scope=\"col\">Relevant discipline</th><th scope=\"col\">What still requires approval</th></tr></thead><tbody><tr><td data-label=\"Project need\">Search structure and discovery</td><td data-label=\"Relevant discipline\">Hridoy — SEO and search intent</td><td data-label=\"What still requires approval\">Client business facts and medical claims</td></tr><tr><td data-label=\"Project need\">Service descriptions and social content</td><td data-label=\"Relevant discipline\">Monwara — editorial and communication</td><td data-label=\"What still requires approval\">Clinical accuracy, consent and approved wording</td></tr><tr><td data-label=\"Project need\">Website or software delivery</td><td data-label=\"Relevant discipline\">Sirajul — engineering and testing</td><td data-label=\"What still requires approval\">Functional acceptance, access rules and final release</td></tr></tbody></table></div>"
+        },
+        {
+          "type": "paragraph",
+          "html": "<p>Cross-team comments and change requests should refer to the actual version being reviewed. Read <span class=\"company-deferred-link\">How We Work</span> for the proposed assignment, review and handoff process.</p>"
+        }
+      ]
+    },
+    {
+      "heading": "Expertise, Accountability and Clinical Boundaries",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "html": "<p>Our leadership's expertise is in digital growth, communication and technology—not healthcare diagnosis, prescribing or independent clinical authorization. Names, qualifications, medical claims, patient images and sensitive information must be handled with appropriate source checks, professional review and permission from the responsible healthcare organization.</p>"
+        },
+        {
+          "type": "paragraph",
+          "html": "<p>There is no reason to claim awards, clinical credentials, team size or completed Bangladesh healthcare case studies without supporting records. For each engagement, the actual responsible specialists and client approvers should be identified in the agreed scope.</p>"
+        },
+        {
+          "type": "paragraph",
+          "html": "<p><strong>Need to know who can help with your project?</strong> Explore <a href=\"/healthcare-marketing/\">Healthcare Marketing</a> or <span class=\"company-deferred-link\">contact Dr RankUP</span> with the business problem and kind of organization involved.</p>"
+        }
+      ]
+    }
+  ]
+}

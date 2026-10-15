@@ -5,6 +5,7 @@ import hospitalsGraph from './seo/hospitals.json';
 import clinicsGraph from './seo/clinics.json';
 import healthcareMarketingGraph from './seo/healthcare-marketing.json';
 import aboutGraph from './seo/company-about.json';
+import teamGraph from './seo/company-team.json';
 import { homepageFaq } from './homepage-faq';
 import { doctorFaq } from './for-doctors-faq';
 import { doctorSeoFaq } from './doctor-seo-faq';
@@ -43,6 +44,13 @@ export const pageMetadata = {
     canonical: 'https://www.drrankup.com/about/',
     twitterCard: 'summary',
     schema: aboutGraph,
+  },
+  team: {
+    title: 'Our Team | Dr RankUP Founder & Co-Founders',
+    description: 'Meet Hridoy Chowdhury, Monwara Moni and Sirajul Islam, and understand the search, content and engineering roles behind Dr RankUP.',
+    canonical: 'https://www.drrankup.com/about/our-team/',
+    twitterCard: 'summary',
+    schema: teamGraph,
   },
   home: {
     title: 'Healthcare SEO, Marketing & Software in BD | Dr RankUp',

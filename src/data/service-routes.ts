@@ -1,6 +1,7 @@
 // Built service destinations. Marketing Packages and unbuilt parent pages stay unlinked.
 export const serviceRoutes: Readonly<Record<string, string>> = {
   'about-dr-rankup': '/about/',
+  'about-our-team': '/about/our-team/',
   'doctor-seo': '/doctors/seo/',
   'doctor-local-seo': '/doctors/local-seo/',
   'doctor-google-business-profile': '/doctors/google-business-profile/',

@@ -11,7 +11,7 @@
     },
     {
       "type": "paragraph",
-      "html": "<p><strong>Explore:</strong> <span class=\"company-deferred-link\">Our Team</span> · <span class=\"company-deferred-link\">How We Work</span> · <span class=\"company-deferred-link\">Contact Dr RankUP</span></p>"
+      "html": "<p><strong>Explore:</strong> <a href=\"/about/our-team/\">Our Team</a> · <span class=\"company-deferred-link\">How We Work</span> · <span class=\"company-deferred-link\">Contact Dr RankUP</span></p>"
     }
   ],
   "sections": [
@@ -54,7 +54,7 @@
         },
         {
           "type": "paragraph",
-          "html": "<p>Search specialists can help assign the right purpose to each page; content specialists can make verified information understandable; engineers can implement and test the intended experience. None of those roles substitutes for a qualified clinical reviewer. Meet the people and their responsibilities on <span class=\"company-deferred-link\">Our Team</span>.</p>"
+          "html": "<p>Search specialists can help assign the right purpose to each page; content specialists can make verified information understandable; engineers can implement and test the intended experience. None of those roles substitutes for a qualified clinical reviewer. Meet the people and their responsibilities on <a href=\"/about/our-team/\">Our Team</a>.</p>"
         }
       ]
     },
@@ -84,7 +84,7 @@
       "blocks": [
         {
           "type": "paragraph",
-          "html": "<p>If you know your organization type, explore the relevant Doctors, Clinics or Hospitals page above. If you are still evaluating marketing channels, start with <a href=\"/healthcare-marketing/\">Healthcare Marketing</a>. To check who would work on a project, visit <span class=\"company-deferred-link\">Our Team</span>; for practical questions, see the <span class=\"company-deferred-link\">FAQ</span>.</p>"
+          "html": "<p>If you know your organization type, explore the relevant Doctors, Clinics or Hospitals page above. If you are still evaluating marketing channels, start with <a href=\"/healthcare-marketing/\">Healthcare Marketing</a>. To check who would work on a project, visit <a href=\"/about/our-team/\">Our Team</a>; for practical questions, see the <span class=\"company-deferred-link\">FAQ</span>.</p>"
         },
         {
           "type": "paragraph",

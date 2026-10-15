@@ -1,0 +1,35 @@
+.company-team-page{color:#000;background:#fff}
+.company-team-hero{margin-top:-94px;padding:160px 0 96px;background:linear-gradient(145deg,#fff 0%,#eaf7ff 45%,#eeedfe 100%)}
+.company-team-hero-inner{max-width:1250px}
+.company-team-eyebrow,.company-team-section-heading span,.company-team-kicker{display:block;margin:0 0 20px;color:#6131c6;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.company-team-hero h1{max-width:1020px;margin:0 0 28px;font-size:clamp(38px,6.5vw,90px);line-height:1.08;letter-spacing:-.055em;text-wrap:balance}
+.company-team-hero-lead{max-width:790px;font-size:clamp(16px,1.5vw,20px);line-height:1.75}
+.company-team-hero-lead p,.company-team-hero-links p{margin:0}
+.company-team-hero-links{margin-top:24px;padding-top:18px;border-top:1px solid #8985c063;font-size:14px;line-height:1.9}
+.company-team-page a{color:#5026a6;text-decoration:underline;text-underline-offset:4px}
+.company-team-page .company-deferred-link{font-weight:650}
+.company-team-leadership{padding:clamp(72px,8vw,128px) 0}
+.company-team-section-heading{margin-bottom:30px}
+.company-team-page h2{max-width:700px;margin:0;font-size:clamp(31px,4vw,54px);line-height:1.14;letter-spacing:-.045em;text-wrap:balance}
+.company-team-profiles{border-top:1px solid #b9b4e480}
+.company-team-profile{display:grid;gap:25px;align-items:center;padding:clamp(34px,6vw,80px) 0;border-bottom:1px solid #b9b4e480}
+.company-team-photo{overflow:hidden;border-radius:24px;background:#eeedfe;aspect-ratio:4/3}
+.company-team-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 23%}
+.company-team-profile:nth-child(1) img{object-position:50% 28%}
+.company-team-profile-number{margin:0 0 20px;color:#6131c6;font-size:13px;font-weight:700}
+.company-team-profile-copy h3{max-width:690px;margin:0 0 26px;font-size:clamp(25px,2.9vw,40px);line-height:1.2;letter-spacing:-.04em;text-wrap:balance}
+.company-team-prose{font-size:clamp(15px,1.2vw,18px);line-height:1.85}
+.company-team-prose p{margin:0 0 22px}.company-team-prose p:last-child{margin-bottom:0}
+.company-team-collaboration,.company-team-boundaries{padding:clamp(72px,8vw,125px) 0}
+.company-team-collaboration{background:linear-gradient(140deg,#eaf7ff,#eeedfe 68%,#fff)}
+.company-team-collaboration-grid{display:grid;gap:28px}
+.company-team-boundaries{color:#fff;background:radial-gradient(ellipse at 12% 18%,#165f3a 0%,transparent 45%),linear-gradient(145deg,#0a0a0a,#102419)}
+.company-team-boundaries .company-team-kicker{color:#e1ffb9}.company-team-boundaries a{color:#bae5ff}
+.company-team-boundaries .company-team-prose p{padding-bottom:20px;border-bottom:1px solid #ffffff2d}.company-team-boundaries .company-team-prose p:last-child{border-bottom:0}
+.company-table-wrap{width:100%;max-width:100%;margin:28px 0;overflow:hidden}
+.company-table-wrap table{width:100%;border-collapse:collapse;text-align:left;line-height:1.6}
+.company-table-wrap th{padding:12px 14px 14px 0;border-bottom:1px solid #6f69bf8c;font-size:13px}.company-table-wrap td{padding:17px 14px 17px 0;border-bottom:1px solid #6f69bf4d;vertical-align:top;font-size:14px}
+@media(min-width:750px){.company-team-profile{grid-template-columns:minmax(0,.82fr) minmax(0,1fr);gap:clamp(42px,6vw,100px)}.company-team-profile:nth-child(2) .company-team-photo{order:2}}
+@media(min-width:1000px){.company-team-collaboration-grid{grid-template-columns:minmax(0,.78fr) minmax(0,1fr);gap:clamp(60px,8vw,130px)}}
+@media(max-width:700px){.company-team-hero{padding:145px 0 74px}.company-team-photo{aspect-ratio:1.15}.company-table-wrap table,.company-table-wrap tbody,.company-table-wrap tr,.company-table-wrap td{display:block}.company-table-wrap thead{display:none}.company-table-wrap tr{padding:14px 0;border-bottom:1px solid #6f69bf55}.company-table-wrap td{padding:4px 0;border:0}.company-table-wrap td::before{content:attr(data-label);display:block;color:#6131c6;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}}
+@media(prefers-reduced-motion:no-preference){.company-team-hero-inner{animation:company-team-enter .72s ease-out both}@keyframes company-team-enter{from{opacity:.78;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}.company-team-photo img{transition:transform .7s ease}.company-team-profile:hover .company-team-photo img{transform:scale(1.025)}}
