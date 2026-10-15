@@ -122,7 +122,7 @@
         },
         {
           "type": "paragraph",
-          "html": "<p><strong>A completed project is a reviewed deliverable, not a guarantee of rankings, leads or patient outcomes.</strong> To discuss scope, owners and practical next steps, <span class=\"company-deferred-link\">contact Dr RankUP</span>. You can also read the <span class=\"company-deferred-link\">FAQ</span> before preparing a brief.</p>"
+          "html": "<p><strong>A completed project is a reviewed deliverable, not a guarantee of rankings, leads or patient outcomes.</strong> To discuss scope, owners and practical next steps, <span class=\"company-deferred-link\">contact Dr RankUP</span>. You can also read the <a href=\"/faq/\">FAQ</a> before preparing a brief.</p>"
         }
       ]
     }

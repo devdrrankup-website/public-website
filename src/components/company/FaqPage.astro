@@ -1,0 +1,59 @@
+---
+import content from '../../data/company-pages/faq.json';
+import '../../styles/company-faq.css';
+const categories = content.sections.map((section, categoryIndex) => ({
+  title: section.heading,
+  id: `faq-category-${categoryIndex + 1}`,
+  questions: Array.from({length: Math.floor(section.blocks.filter(block => block.type === 'h3').length)}, (_, index) => ({
+    heading: section.blocks[index * 2].text,
+    answer: section.blocks[index * 2 + 1].html,
+  })),
+}));
+const closing = content.sections.at(-1)?.blocks.at(-1)?.html;
+---
+<div class="company-faq-page">
+  <section class="company-faq-hero" aria-labelledby="company-faq-title">
+    <div class="section-container">
+      <p class="company-faq-eyebrow">Helpful answers before we begin</p>
+      <h1 id="company-faq-title">{content.h1}</h1>
+      <div class="company-faq-intro" set:html={content.intro.map(block => block.html).join('')} />
+      <nav class="company-faq-categories" aria-label="FAQ topics">
+        {categories.map((category, index) => <a href={`#${category.id}`}><span>0{index + 1}</span>{category.title}</a>)}
+      </nav>
+    </div>
+  </section>
+
+  {categories.map((category, categoryIndex) => <section id={category.id} class:list={['company-faq-group', {'company-faq-group-tinted': categoryIndex % 2 === 1}]} aria-labelledby={`${category.id}-title`}>
+    <div class="section-container company-faq-grid">
+      <header class="company-faq-group-heading">
+        <p>0{categoryIndex + 1} / QUESTIONS</p>
+        <h2 id={`${category.id}-title`}>{category.title}</h2>
+      </header>
+      <div class="company-faq-list">
+        {category.questions.map(question => <details class="company-faq-item" open>
+          <summary><h3>{question.heading}</h3><span class="company-faq-toggle" aria-hidden="true">+</span></summary>
+          <div class="company-faq-answer" set:html={question.answer} />
+        </details>)}
+      </div>
+    </div>
+  </section>)}
+
+  <section class="company-faq-end" aria-label="Next step">
+    <div class="section-container"><div set:html={closing} /></div>
+  </section>
+</div>
+<script is:inline>
+  (() => {
+    const root = document.querySelector('.company-faq-page');
+    if (!root) return;
+    root.querySelectorAll('.company-faq-list').forEach(list => {
+      const items = [...list.querySelectorAll('details')];
+      items.forEach((item, index) => {
+        if (index > 0) item.open = false;
+        item.addEventListener('toggle', () => {
+          if (item.open) items.forEach(other => { if (other !== item) other.open = false; });
+        });
+      });
+    });
+  })();
+</script>

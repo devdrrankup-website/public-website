@@ -3,6 +3,7 @@ export const serviceRoutes: Readonly<Record<string, string>> = {
   'about-dr-rankup': '/about/',
   'about-our-team': '/about/our-team/',
   'how-we-work': '/about/how-we-work/',
+  'resources-faq': '/faq/',
   'doctor-seo': '/doctors/seo/',
   'doctor-local-seo': '/doctors/local-seo/',
   'doctor-google-business-profile': '/doctors/google-business-profile/',

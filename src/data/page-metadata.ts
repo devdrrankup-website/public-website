@@ -7,6 +7,7 @@ import healthcareMarketingGraph from './seo/healthcare-marketing.json';
 import aboutGraph from './seo/company-about.json';
 import teamGraph from './seo/company-team.json';
 import workGraph from './seo/company-work.json';
+import faqGraph from './seo/company-faq.json';
 import { homepageFaq } from './homepage-faq';
 import { doctorFaq } from './for-doctors-faq';
 import { doctorSeoFaq } from './doctor-seo-faq';
@@ -59,6 +60,13 @@ export const pageMetadata = {
     canonical: 'https://www.drrankup.com/about/how-we-work/',
     twitterCard: 'summary',
     schema: workGraph,
+  },
+  faq: {
+    title: 'Dr RankUP FAQs | Services, Process & Contact',
+    description: 'Answers about Dr RankUP, healthcare marketing and software services, project pricing and revisions, clinical review, privacy and how to contact us.',
+    canonical: 'https://www.drrankup.com/faq/',
+    twitterCard: 'summary',
+    schema: faqGraph,
   },
   home: {
     title: 'Healthcare SEO, Marketing & Software in BD | Dr RankUp',

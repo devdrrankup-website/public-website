@@ -1,0 +1,12 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import FaqPage from '../../components/company/FaqPage.astro';
+import { pageMetadata } from '../../data/page-metadata';
+---
+<Layout metadata={pageMetadata.faq}>
+  <Navbar />
+  <main id="main-content" tabindex="-1"><FaqPage /></main>
+  <Footer />
+</Layout>

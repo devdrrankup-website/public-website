@@ -1,0 +1,262 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://www.drrankup.com/#organization",
+      "name": "Dr RankUP",
+      "legalName": "Dr RankUP",
+      "url": "https://www.drrankup.com/",
+      "description": "Healthcare-focused growth and technology partner providing SEO, digital marketing, professional branding, paid advertising, websites and software services for doctors, clinics and hospitals in Bangladesh.",
+      "slogan": "Rank Higher. Reach More Patients. Grow Your Practice.",
+      "telephone": "+8801342114762",
+      "email": "contact@drrankup.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "230A, 2nd Floor, Chowdhury Surgical Market, Topkhana Road, Dhaka South City Corporation",
+        "addressLocality": "Dhaka",
+        "postalCode": "1000",
+        "addressCountry": "BD"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Bangladesh"
+      },
+      "sameAs": [
+        "https://www.instagram.com/drrankup/",
+        "https://www.reddit.com/user/dr_rankup/",
+        "https://bsky.app/profile/drrankup.bsky.social",
+        "https://www.youtube.com/@drrankup",
+        "https://www.pinterest.com/drrankup/",
+        "https://linkedin.com/drrankup",
+        "https://www.facebook.com/drrankup",
+        "https://x.com/DrRankUp",
+        "https://medium.com/@drrankup",
+        "https://www.tiktok.com/@dr.rankup",
+        "https://www.quora.com/profile/Dr-RankUp",
+        "https://www.threads.com/@drrankup",
+        "https://www.snapchat.com/@drrankup"
+      ],
+      "founder": [
+        {
+          "@id": "https://www.drrankup.com/#person-hridoy-chowdhury"
+        },
+        {
+          "@id": "https://www.drrankup.com/#person-monwara-moni"
+        },
+        {
+          "@id": "https://www.drrankup.com/#person-sirajul-islam"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.drrankup.com/#person-hridoy-chowdhury",
+      "name": "Hridoy Chowdhury",
+      "jobTitle": "Founder",
+      "description": "SEO, technical search architecture and AI-search strategy",
+      "worksFor": {
+        "@id": "https://www.drrankup.com/#organization"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.drrankup.com/#person-monwara-moni",
+      "name": "Monwara Moni",
+      "jobTitle": "Co-Founder",
+      "description": "Content strategy, social media and professional communication",
+      "worksFor": {
+        "@id": "https://www.drrankup.com/#organization"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.drrankup.com/#person-sirajul-islam",
+      "name": "Sirajul Islam",
+      "jobTitle": "Co-Founder",
+      "description": "Full-stack development, software systems and technical engineering",
+      "worksFor": {
+        "@id": "https://www.drrankup.com/#organization"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.drrankup.com/#website",
+      "name": "Dr RankUP",
+      "url": "https://www.drrankup.com/",
+      "inLanguage": "en-BD",
+      "publisher": {
+        "@id": "https://www.drrankup.com/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.drrankup.com/faq/#webpage",
+      "url": "https://www.drrankup.com/faq/",
+      "name": "Frequently Asked Questions — Dr RankUP",
+      "description": "Answers about Dr RankUP, healthcare marketing and software services, project pricing and revisions, clinical review, privacy and how to contact us.",
+      "inLanguage": "en-BD",
+      "isPartOf": {
+        "@id": "https://www.drrankup.com/#website"
+      },
+      "publisher": {
+        "@id": "https://www.drrankup.com/#organization"
+      },
+      "about": {
+        "@id": "https://www.drrankup.com/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://www.drrankup.com/faq/#breadcrumb"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Dr RankUP?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dr RankUP is a healthcare-focused digital growth and technology agency serving doctors, clinics and hospitals in Bangladesh. Its work includes SEO, responsible digital marketing, content and professional communication, websites and appropriately scoped software. Read About Dr RankUP for the company's positioning and boundaries."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who leads Dr RankUP?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hridoy Chowdhury is the Founder, with a background in SEO and search strategy. Monwara Moni and Sirajul Islam are Co-Founders working in content and social communication, and software engineering respectively. Their responsibilities are described on the Our Team page."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Dr RankUP a medical provider?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Dr RankUP is a digital agency, not a hospital, clinic, telemedicine provider or clinical regulator. It does not diagnose conditions, prescribe medicine or make treatment decisions. Medical facts and professional approvals belong to the responsible healthcare professionals and organizations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which healthcare organizations do you work with?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The agency primarily focuses on doctors, clinics and hospitals in Bangladesh. Work for other healthcare-related businesses depends on the actual requirements, service scope and applicable professional or platform obligations. We do not assume every healthcare organization can use every marketing channel or software feature."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I choose between For Doctors, For Clinics and For Hospitals?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Choose the page that matches who will buy and use the service: For Doctors for an individual practice and chamber needs, For Clinics for clinic services and workflows, or For Hospitals for departments, specialists and institutional operations. Each leads to more specific service options."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is Healthcare Marketing different from those audience pages?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Healthcare Marketing compares marketing needs and channels across healthcare organizations. The Doctor, Clinic and Hospital pages focus on the situation of each buyer type. A specialist service page then explains the actual SEO, content, advertising or other agreed deliverable without requiring another duplicate generic page."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can we begin with only one service?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. A project may address one defined problem, such as a search audit, a website improvement, clearer service content or a scoped software workflow. The deliverables, dependencies and approvals should be agreed first; there is no requirement to buy an entire marketing or technology bundle."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you develop healthcare websites and software?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dr RankUP offers website and appropriately scoped software engineering services. Requirements for booking, scheduling, reports, integrations or record access must be examined before features and timelines are committed. A website capability is not automatically a standalone software product, and sensitive healthcare functions need additional access and privacy review."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What information should we prepare before contacting you?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Share your organization type, main business location, public website if available, the problem you want to solve and a business contact responsible for decisions. A concise list of priorities is more helpful than sending confidential clinical data. Do not submit patient records through a general business enquiry."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do SEO, content and development work together?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A project plan assigns the request, draft, reviewer, change owner and final approver. For a website, SEO might define page intent, content might prepare verified text and engineering might implement it. Each stage needs specific feedback and approval; see How We Work for the proposed process."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can we ask for revisions after reviewing a draft?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Feedback should identify the deliverable, version and requested change. Corrections within the agreed scope can be reviewed and updated; requests for additional pages, campaigns or features need a scope discussion. Approval is recorded rather than assumed from the absence of comments."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How are project prices and timelines decided?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "They depend on the service scope, deliverables, technical dependencies, source information and necessary reviews. This page does not publish a universal fixed price or turnaround time. A quote and schedule should be based on a specific agreed brief, not on an unsupported promise."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you guarantee Google rankings, leads or AI-search mentions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Dr RankUP can work on relevant technical foundations, information quality and marketing execution, but search platforms and real people determine visibility and outcomes. We do not guarantee first-page rankings, AI-generated citations, leads or patient numbers. Reporting should distinguish actual observations from assumptions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can every healthcare service be advertised on Google or Meta?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Advertising eligibility depends on the client, service, market, proposed claim, targeting and current platform policies, alongside applicable Bangladesh professional obligations. Eligibility must be checked before a campaign is planned or launched; an available advertising tool is not permission to publish a medical promotion."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who approves medical facts and protects patient information?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The responsible client and appropriately qualified clinical reviewer must verify relevant medical claims, professional titles and patient-facing accuracy. Patient information requires suitable consent, purpose and access controls. Sensitive diagnoses, treatment details or records should not be sent into unrelated marketing pixels, ad audiences or ordinary enquiry forms."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can we contact Dr RankUP, and what should we avoid sending?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For a business enquiry, email contact@drrankup.com or call +8801342114762. The Contact page has the recorded Dhaka address and useful brief details. Do not send patient diagnoses, prescriptions or medical records in an initial message. Dr RankUP does not provide emergency medical help or patient treatment bookings."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.drrankup.com/faq/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.drrankup.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "FAQ",
+          "item": "https://www.drrankup.com/faq/"
+        }
+      ]
+    }
+  ]
+}
