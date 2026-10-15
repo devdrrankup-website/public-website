@@ -1,0 +1,96 @@
+{
+  "h1": "About Dr RankUP — Healthcare Marketing & Technology in Bangladesh",
+  "intro": [
+    {
+      "type": "paragraph",
+      "html": "<p><strong>Rank Higher. Reach More Patients. Grow Your Practice.</strong></p>"
+    },
+    {
+      "type": "paragraph",
+      "html": "<p>Dr RankUP is a healthcare-focused digital growth and technology agency serving doctors, clinics and hospitals in Bangladesh. We connect search strategy, responsible marketing, clear content, website development and appropriately scoped software work. Our aim is to make reliable professional and service information easier to find, understand and use.</p>"
+    },
+    {
+      "type": "paragraph",
+      "html": "<p><strong>Explore:</strong> <span class=\"company-deferred-link\">Our Team</span> · <span class=\"company-deferred-link\">How We Work</span> · <span class=\"company-deferred-link\">Contact Dr RankUP</span></p>"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Who We Are",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "html": "<p>Healthcare organizations need more than website traffic or a schedule of social posts. People searching for a doctor, clinic or hospital also need to understand who provides a service, where it is available and how to take an appropriate next step. We approach digital work with those real-world questions in mind.</p>"
+        },
+        {
+          "type": "paragraph",
+          "html": "<p>Dr RankUP is an <strong>agency</strong>, not a doctor, hospital, clinic, telemedicine provider or clinical regulator. We do not diagnose illnesses, prescribe treatment or make decisions on behalf of patients. Medical facts and professional claims must come from reliable sources and the responsible healthcare provider.</p>"
+        }
+      ]
+    },
+    {
+      "heading": "Who We Support and What We Do",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "html": "<p>The right solution depends on the organization, its audience and its current systems. We do not assume one marketing package or software feature fits everyone.</p>"
+        },
+        {
+          "type": "list",
+          "html": "<ul><li><strong><a href=\"/doctors/\">For Doctors</a>:</strong> professional identity, verifiable credentials, chamber information, search visibility and relevant digital tools.</li><li><strong><a href=\"/clinics/\">For Clinics</a>:</strong> service information, doctor schedules, local discovery, websites and clinic workflow needs.</li><li><strong><a href=\"/hospitals/\">For Hospitals</a>:</strong> departments, specialists, branches, public information, larger websites and operational systems.</li><li><strong><a href=\"/healthcare-marketing/\">Healthcare Marketing</a>:</strong> choosing and coordinating the right search, content, social and suitable advertising activities.</li></ul>"
+        },
+        {
+          "type": "paragraph",
+          "html": "<p>Across these areas, the agency's work may involve SEO, content and professional-brand communication, advertising where eligible, websites or software planning and development. A service is included only when it is agreed in the project scope.</p>"
+        }
+      ]
+    },
+    {
+      "heading": "The People Behind Dr RankUP",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "html": "<p>Our confirmed leadership combines three disciplines. <strong>Hridoy Chowdhury, Founder</strong>, works in SEO and search architecture. <strong>Monwara Moni, Co-Founder</strong>, focuses on content strategy and social communication. <strong>Sirajul Islam, Co-Founder</strong>, brings full-stack software and website engineering expertise.</p>"
+        },
+        {
+          "type": "paragraph",
+          "html": "<p>Search specialists can help assign the right purpose to each page; content specialists can make verified information understandable; engineers can implement and test the intended experience. None of those roles substitutes for a qualified clinical reviewer. Meet the people and their responsibilities on <span class=\"company-deferred-link\">Our Team</span>.</p>"
+        }
+      ]
+    },
+    {
+      "heading": "How We Approach Trust and Responsibility",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "html": "<p><strong>Accurate before persuasive.</strong> We distinguish verified credentials, available services and actual locations from promotional language. Material medical claims require suitable professional review before public use.</p>"
+        },
+        {
+          "type": "paragraph",
+          "html": "<p><strong>Useful before complicated.</strong> A patient-facing page should make important information and relevant contact routes easy to find. Technical features should solve a defined organizational problem rather than exist only to make a proposal sound comprehensive.</p>"
+        },
+        {
+          "type": "paragraph",
+          "html": "<p><strong>Accountable before launch.</strong> Scope, handoffs, revisions and acceptance checks should be clear to the people doing and approving the work. We review appropriate professional, privacy and advertising requirements for the actual project and channel; a platform's technical capability alone is not permission to use sensitive patient information.</p>"
+        },
+        {
+          "type": "paragraph",
+          "html": "<p>We do not promise first-page rankings, appearances in AI answers, guaranteed patient numbers or treatment outcomes. Any published result or case study must have evidence, context and appropriate permission. Read <span class=\"company-deferred-link\">How We Work</span> for the planned delivery and review process.</p>"
+        }
+      ]
+    },
+    {
+      "heading": "Choose Your Next Step",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "html": "<p>If you know your organization type, explore the relevant Doctors, Clinics or Hospitals page above. If you are still evaluating marketing channels, start with <a href=\"/healthcare-marketing/\">Healthcare Marketing</a>. To check who would work on a project, visit <span class=\"company-deferred-link\">Our Team</span>; for practical questions, see the <span class=\"company-deferred-link\">FAQ</span>.</p>"
+        },
+        {
+          "type": "paragraph",
+          "html": "<p><strong>Ready to discuss a specific problem?</strong> <span class=\"company-deferred-link\">Contact Dr RankUP</span> with your organization type, public website if available and the outcome you want to improve. We can then discuss an appropriate scope without assuming you need every service.</p>"
+        }
+      ]
+    }
+  ]
+}

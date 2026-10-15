@@ -1,0 +1,44 @@
+.company-about-page{color:#000;background:#fff}
+.company-about-hero{margin-top:-94px;padding:160px 0 80px;color:#fff;background:radial-gradient(ellipse at 90% 30%,#165f3a 0%,transparent 43%),linear-gradient(145deg,#0a0a0a 38%,#0c1b13 100%)}
+.company-about-hero-grid{display:grid;gap:48px;align-items:center}
+.company-about-eyebrow,.company-about-index{margin:0 0 20px;color:#e1ffb9;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.company-about-hero h1{max-width:770px;margin:0 0 24px;font-size:clamp(37px,5.6vw,78px);line-height:1.08;letter-spacing:-.055em;text-wrap:balance}
+.company-about-hero-intro p{max-width:700px;margin:0 0 16px;color:#fff;font-size:clamp(16px,1.5vw,19px);line-height:1.75}
+.company-about-hero-intro strong{color:#e1ffb9}
+.company-about-hero-links{margin-top:28px;padding-top:20px;border-top:1px solid #ffffff40}
+.company-about-hero-links p{margin:0;color:#fff;font-size:14px;line-height:1.9}
+.company-about-hero-links a{color:#bae5ff;text-decoration:underline;text-underline-offset:4px}
+.company-about-portraits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:end}
+.company-about-portrait{min-width:0;margin:0;overflow:hidden;border-radius:20px;background:#142a1f;border:1px solid #d9ffe436}
+.company-about-portrait:nth-child(2){transform:translateY(-18px)}
+.company-about-portrait img{display:block;width:100%;height:clamp(185px,30vw,330px);object-fit:cover;object-position:50% 24%}
+.company-about-portrait figcaption{display:flex;justify-content:space-between;gap:8px;padding:12px;color:#fff;font-size:12px;font-weight:700}
+.company-about-portrait figcaption span{color:#e1ffb9;font-weight:500}
+.company-about-identity,.company-about-people,.company-about-responsibility,.company-about-next{padding:clamp(72px,8vw,132px) 0}
+.company-about-identity{border-radius:32px 32px 0 0;margin-top:-32px;background:#fff;position:relative}
+.company-about-split{display:grid;gap:28px}
+.company-about-page h2{max-width:650px;margin:0;font-size:clamp(31px,4vw,54px);line-height:1.15;letter-spacing:-.045em;text-wrap:balance}
+.company-about-prose{font-size:clamp(15px,1.2vw,18px);line-height:1.85}
+.company-about-prose p{margin:0 0 22px}
+.company-about-prose p:last-child{margin-bottom:0}
+.company-about-prose a{color:#5026a6;text-decoration:underline;text-underline-offset:4px}
+.company-deferred-link{font-weight:650}
+.company-about-audiences{padding:clamp(72px,8vw,120px) 0;background:linear-gradient(140deg,#eaf7ff 0%,#eeedfe 70%,#fff 100%)}
+.company-about-section-intro{display:grid;gap:24px;margin-bottom:36px}
+.company-about-audience-list ul{display:grid;gap:0;margin:0;padding:0;list-style:none;border-top:1px solid #6f69bf4d}
+.company-about-audience-list li{display:grid;gap:10px;min-width:0;padding:22px 0;border-bottom:1px solid #6f69bf4d}
+.company-about-audience-list li a{display:inline-block;min-width:140px;font-size:clamp(20px,2vw,28px);font-weight:700;letter-spacing:-.03em;color:#000}
+.company-about-audience-list li a::after{content:' ↗';color:#6131c6}
+.company-about-audience-ending{max-width:850px;margin-top:36px}
+.company-about-people{background:#fff}
+.company-about-people .company-about-index{color:#6131c6}
+.company-about-responsibility{color:#fff;background:radial-gradient(ellipse at 10% 22%,#154d32 0%,transparent 49%),linear-gradient(145deg,#0a0a0a,#0d2519)}
+.company-about-responsibility .company-about-prose p{padding:0 0 20px;border-bottom:1px solid #ffffff2e}
+.company-about-responsibility .company-about-prose p:last-child{border:0}
+.company-about-responsibility .company-about-prose a{color:#bae5ff}
+.company-about-next{background:linear-gradient(150deg,#eaf7ff,#eeedfe 72%,#fff)}
+.company-about-next .company-about-prose{max-width:730px}
+@media(min-width:700px){.company-about-audience-list li{grid-template-columns:minmax(190px,.45fr) 1fr;align-items:baseline;gap:32px}.company-about-section-intro{grid-template-columns:1fr 1fr;align-items:end}}
+@media(min-width:1000px){.company-about-hero-grid{grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr)}.company-about-split{grid-template-columns:minmax(0,.78fr) minmax(0,1fr);gap:clamp(50px,7vw,120px)}.company-about-portrait img{height:310px}}
+@media(max-width:699px){.company-about-hero{padding:145px 0 74px}.company-about-portraits{gap:6px}.company-about-portrait{border-radius:12px}.company-about-portrait img{height:150px}.company-about-portrait figcaption{display:block;padding:8px;font-size:10px}.company-about-portrait figcaption span{display:block}.company-about-portrait:nth-child(2){transform:translateY(-10px)}}
+@media(prefers-reduced-motion:no-preference){.company-about-hero-copy{animation:company-about-enter .72s ease-out both}.company-about-portraits{animation:company-about-enter .82s .1s ease-out both}@keyframes company-about-enter{from{opacity:.78;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}.company-about-audience-list a{transition:color .2s ease,transform .2s ease}.company-about-audience-list a:hover{color:#6131c6;transform:translateX(5px)}}

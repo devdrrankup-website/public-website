@@ -1,0 +1,75 @@
+---
+import { Image } from 'astro:assets';
+import content from '../../data/company-pages/about.json';
+import hridoy from '../../assets/team/founder-hridoy-chowdhury.jpeg';
+import monwara from '../../assets/team/monwara-moni-studio-v2.webp';
+import sirajul from '../../assets/team/sirajul-islam-studio-v2.webp';
+import '../../styles/company-about.css';
+const [identity, audiences, people, responsibility, next] = content.sections;
+const html = (section: typeof identity) => section.blocks.map(block => block.html).join('');
+---
+<div class="company-about-page">
+  <section class="company-about-hero" aria-labelledby="company-about-title">
+    <div class="section-container company-about-hero-grid">
+      <div class="company-about-hero-copy">
+        <p class="company-about-eyebrow">The agency behind the work</p>
+        <h1 id="company-about-title">{content.h1}</h1>
+        <div class="company-about-hero-intro" set:html={content.intro[0].html + content.intro[1].html} />
+        <div class="company-about-hero-links" set:html={content.intro[2].html} />
+      </div>
+      <div class="company-about-portraits" aria-label="Dr RankUP founder and co-founders">
+        <figure class="company-about-portrait company-about-portrait-founder">
+          <Image src={hridoy} width={440} widths={[220,330,440]} sizes="(min-width:1100px) 230px, (min-width:640px) 190px, 44vw" format="webp" quality={80} alt="Hridoy Chowdhury, Founder of Dr RankUP" title="Hridoy Chowdhury — Founder" loading="eager" decoding="async" />
+          <figcaption>Hridoy <span>Search</span></figcaption>
+        </figure>
+        <figure class="company-about-portrait company-about-portrait-content">
+          <Image src={monwara} width={440} widths={[220,330,440]} sizes="(min-width:1100px) 230px, (min-width:640px) 190px, 44vw" format="webp" quality={80} alt="Monwara Moni, Co-Founder of Dr RankUP" title="Monwara Moni — Co-Founder" loading="eager" decoding="async" />
+          <figcaption>Monwara <span>Content</span></figcaption>
+        </figure>
+        <figure class="company-about-portrait company-about-portrait-engineering">
+          <Image src={sirajul} width={440} widths={[220,330,440]} sizes="(min-width:1100px) 230px, (min-width:640px) 190px, 44vw" format="webp" quality={80} alt="Sirajul Islam, Co-Founder of Dr RankUP" title="Sirajul Islam — Co-Founder" loading="eager" decoding="async" />
+          <figcaption>Sirajul <span>Engineering</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="company-about-identity" aria-labelledby="company-about-identity-title">
+    <div class="section-container company-about-split">
+      <h2 id="company-about-identity-title">{identity.heading}</h2>
+      <div class="company-about-prose" set:html={html(identity)} />
+    </div>
+  </section>
+
+  <section class="company-about-audiences" aria-labelledby="company-about-audiences-title">
+    <div class="section-container">
+      <div class="company-about-section-intro">
+        <h2 id="company-about-audiences-title">{audiences.heading}</h2>
+        <div class="company-about-prose" set:html={audiences.blocks[0].html} />
+      </div>
+      <div class="company-about-audience-list company-about-prose" set:html={audiences.blocks[1].html} />
+      <div class="company-about-audience-ending company-about-prose" set:html={audiences.blocks[2].html} />
+    </div>
+  </section>
+
+  <section class="company-about-people" aria-labelledby="company-about-people-title">
+    <div class="section-container company-about-split">
+      <div><p class="company-about-index">01 / PEOPLE</p><h2 id="company-about-people-title">{people.heading}</h2></div>
+      <div class="company-about-prose" set:html={html(people)} />
+    </div>
+  </section>
+
+  <section class="company-about-responsibility" aria-labelledby="company-about-responsibility-title">
+    <div class="section-container company-about-split">
+      <div><p class="company-about-index">02 / RESPONSIBILITY</p><h2 id="company-about-responsibility-title">{responsibility.heading}</h2></div>
+      <div class="company-about-prose" set:html={html(responsibility)} />
+    </div>
+  </section>
+
+  <section class="company-about-next" aria-labelledby="company-about-next-title">
+    <div class="section-container company-about-split">
+      <h2 id="company-about-next-title">{next.heading}</h2>
+      <div class="company-about-prose" set:html={html(next)} />
+    </div>
+  </section>
+</div>

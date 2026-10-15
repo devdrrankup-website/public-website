@@ -4,6 +4,7 @@ import doctorSeoGraph from './seo/doctor-seo.json';
 import hospitalsGraph from './seo/hospitals.json';
 import clinicsGraph from './seo/clinics.json';
 import healthcareMarketingGraph from './seo/healthcare-marketing.json';
+import aboutGraph from './seo/company-about.json';
 import { homepageFaq } from './homepage-faq';
 import { doctorFaq } from './for-doctors-faq';
 import { doctorSeoFaq } from './doctor-seo-faq';
@@ -36,6 +37,13 @@ const withVisibleFaq = (source: unknown, items: readonly FaqItem[]): SchemaGraph
 };
 
 export const pageMetadata = {
+  about: {
+    title: 'About Dr RankUP | Healthcare Marketing & Technology',
+    description: 'Learn what Dr RankUP does for doctors, clinics and hospitals in Bangladesh, who leads the agency, and how we approach responsible digital work.',
+    canonical: 'https://www.drrankup.com/about/',
+    twitterCard: 'summary',
+    schema: aboutGraph,
+  },
   home: {
     title: 'Healthcare SEO, Marketing & Software in BD | Dr RankUp',
     description: 'Healthcare SEO, responsible marketing, websites and scoped software for doctors, clinics and hospitals in Bangladesh. Explore Dr RankUp solutions.',

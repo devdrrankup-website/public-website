@@ -80,7 +80,7 @@ export const navigationMenus:NavigationMenu[]=[
       item('Hospital Website Development','Create a clear, responsive hospital website.','hospital-website-development'),
     ]},
   ]},
-  {id:'about',title:'About',description:'The people and thinking behind Dr RankUP.',viewAll:'View all about Dr RankUP',groups:[
+  {id:'about',title:'About',description:'The people and thinking behind Dr RankUP.',viewAll:'View all about Dr RankUP',viewAllHref:'/about/',groups:[
     {title:'About Dr RankUP',items:[
       item('About Dr RankUP','Our focus on doctors, clinics and hospitals in Bangladesh.','about-dr-rankup'),
       item('Our Team','Meet the people behind Dr RankUP.','about-our-team'),
