@@ -1,0 +1,130 @@
+{
+  "h1": "How We Work — Dr RankUP's Project and Approval Process",
+  "intro": [
+    {
+      "type": "paragraph",
+      "html": "<p>A useful healthcare marketing, website or software project needs clear responsibilities as well as good ideas. This is the working framework Dr RankUP uses to plan what should be done, move work between specialists, review sensitive information and define what is ready for delivery. The exact stages and approvers are confirmed for each engagement.</p>"
+    },
+    {
+      "type": "paragraph",
+      "html": "<p><strong>Explore:</strong> <a href=\"/about/our-team/\">Our Team</a> · <a href=\"/healthcare-marketing/\">Healthcare Marketing</a> · <span class=\"company-deferred-link\">Contact</span></p>"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Before We Start: Understand the Problem",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "html": "<p>We begin with the organization type, intended audience, existing website or operational process and the change the client wants. A clinic with poor local visibility may need accurate branch information rather than an advertising campaign; a hospital software request may need workflow discovery before any feature can be priced.</p>"
+        },
+        {
+          "type": "paragraph",
+          "html": "<p>Useful inputs include the public website, relevant locations, service information, existing content or system constraints and a named business decision-maker. Sensitive patient records, diagnoses and prescription details are not required in an ordinary first enquiry. We agree additional data-access safeguards separately if a real technical project requires them.</p>"
+        }
+      ]
+    },
+    {
+      "heading": "Our Seven-Step Delivery Workflow",
+      "blocks": [
+        {
+          "type": "h3",
+          "text": "01 — Discovery and Priorities",
+          "html": "<h3>01 — Discovery and Priorities</h3>"
+        },
+        {
+          "type": "paragraph",
+          "html": "<p>Clarify the main problem, relevant users and desired result. Record which facts are confirmed, which assumptions need testing and what an acceptable next step looks like. This avoids treating every problem as a request for more SEO, posts or software features.</p>"
+        },
+        {
+          "type": "h3",
+          "text": "02 — Scope, Owners and Acceptance Criteria",
+          "html": "<h3>02 — Scope, Owners and Acceptance Criteria</h3>"
+        },
+        {
+          "type": "paragraph",
+          "html": "<p>Define deliverables, responsibilities, dependencies and the person authorized to approve each stage. Separate a website build from ongoing marketing, and separate a new software feature from an existing system capability. Timeline and commercial commitments are confirmed in the project agreement, not assumed from a generic page.</p>"
+        },
+        {
+          "type": "h3",
+          "text": "03 — Research and Source Verification",
+          "html": "<h3>03 — Research and Source Verification</h3>"
+        },
+        {
+          "type": "paragraph",
+          "html": "<p>Review the relevant audience journey, website condition, search intent or operational process. For public healthcare information, identify who owns the underlying facts and which claims need qualified clinical review. Platform and professional rules are checked against the actual content and campaign proposed.</p>"
+        },
+        {
+          "type": "h3",
+          "text": "04 — Create, Build and Hand Off",
+          "html": "<h3>04 — Create, Build and Hand Off</h3>"
+        },
+        {
+          "type": "paragraph",
+          "html": "<p>Assign work to the relevant search, content or engineering specialist. A common website sequence is SEO page brief → content draft → content review → development implementation. A different scope may require design, software requirements or another approved workflow; no team member automatically signs off for another discipline.</p>"
+        },
+        {
+          "type": "h3",
+          "text": "05 — Review, Revise and Approve",
+          "html": "<h3>05 — Review, Revise and Approve</h3>"
+        },
+        {
+          "type": "paragraph",
+          "html": "<p>Reviewers comment on a specific draft or implementation. Changes return to the responsible owner with a clear request, updated version and review decision. A content correction is not the same as a new feature request; material scope changes are discussed before additional work is treated as approved.</p>"
+        },
+        {
+          "type": "h3",
+          "text": "06 — Test and Release",
+          "html": "<h3>06 — Test and Release</h3>"
+        },
+        {
+          "type": "paragraph",
+          "html": "<p>Check the deliverable against agreed requirements. For a website, that may include mobile layout, working links, contact paths, approved facts and technical search controls. For software, it may include roles, access permissions, workflows and agreed user tests. Launch follows the required client and specialist approvals.</p>"
+        },
+        {
+          "type": "h3",
+          "text": "07 — Report and Improve",
+          "html": "<h3>07 — Report and Improve</h3>"
+        },
+        {
+          "type": "paragraph",
+          "html": "<p>Share evidence appropriate to the work: approved content, completed website tests, implemented functionality, search observations or responsibly defined campaign signals. Report the period and limitations; activity should not be presented as guaranteed patient results. Agree further improvements as a new task or next phase.</p>"
+        }
+      ]
+    },
+    {
+      "heading": "How Feedback and Team Handoffs Work",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "html": "<p>SEO, content and development often depend on one another. The request owner specifies what is needed; the contributor shares a version for review; the reviewer records acceptance or a specific change; the implementer confirms what was built. For example, an SEO recommendation can lead to revised service copy, then a website update, then a final content-and-link check.</p>"
+        },
+        {
+          "type": "table",
+          "html": "<div class=\"company-table-wrap\"><table><thead><tr><th scope=\"col\">Review area</th><th scope=\"col\">Responsible perspective</th><th scope=\"col\">What it does not authorize</th></tr></thead><tbody><tr><td data-label=\"Review area\">Search intent and page ownership</td><td data-label=\"Responsible perspective\">SEO specialist</td><td data-label=\"What it does not authorize\">Clinical accuracy or client approval</td></tr><tr><td data-label=\"Review area\">Editorial wording and channel fit</td><td data-label=\"Responsible perspective\">Content specialist</td><td data-label=\"What it does not authorize\">Clinical claims without qualified review</td></tr><tr><td data-label=\"Review area\">Functional implementation</td><td data-label=\"Responsible perspective\">Engineering specialist</td><td data-label=\"What it does not authorize\">Medical correctness or final business sign-off</td></tr><tr><td data-label=\"Review area\">Client facts and clinical statements</td><td data-label=\"Responsible perspective\">Responsible client or qualified clinical reviewer</td><td data-label=\"What it does not authorize\">Unapproved changes to scope or code</td></tr><tr><td data-label=\"Review area\">Final acceptance and launch</td><td data-label=\"Responsible perspective\">Named approver for the deliverable</td><td data-label=\"What it does not authorize\">Assumed approval from silence</td></tr></tbody></table></div>"
+        },
+        {
+          "type": "paragraph",
+          "html": "<p>If feedback requires work outside the agreed scope, the owner records the proposed addition, its impact and the approval required before it is scheduled.</p>"
+        }
+      ]
+    },
+    {
+      "heading": "Healthcare Safeguards and Delivery Standards",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "html": "<p>Public doctor qualifications, specialties, healthcare services and contact details must be checked with reliable owners. Clinical educational claims require suitable qualified review. Advertising eligibility needs a separate policy check for the client, channel, geography and actual message; marketing teams do not grant medical or regulatory approval.</p>"
+        },
+        {
+          "type": "paragraph",
+          "html": "<p>For forms, patient-facing portals and software, permissions and personal information deserve additional care. Sensitive diagnoses, treatment details and medical records should not be added to ordinary marketing analytics or shared through a general business enquiry.</p>"
+        },
+        {
+          "type": "paragraph",
+          "html": "<p><strong>A completed project is a reviewed deliverable, not a guarantee of rankings, leads or patient outcomes.</strong> To discuss scope, owners and practical next steps, <span class=\"company-deferred-link\">contact Dr RankUP</span>. You can also read the <span class=\"company-deferred-link\">FAQ</span> before preparing a brief.</p>"
+        }
+      ]
+    }
+  ]
+}

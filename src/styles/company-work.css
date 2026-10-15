@@ -1,0 +1,42 @@
+.company-work-page{color:#000;background:#fff}
+.company-work-hero{margin-top:-94px;padding:156px 0 92px;color:#fff;background:radial-gradient(ellipse at 80% 32%,#165f3a 0%,transparent 47%),linear-gradient(145deg,#0a0a0a,#0d2418)}
+.company-work-hero-grid{display:grid;gap:38px;align-items:center}
+.company-work-eyebrow,.company-work-kicker{display:block;margin:0 0 20px;color:#e1ffb9;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.company-work-hero h1{margin:0 0 27px;max-width:850px;font-size:clamp(36px,5.4vw,75px);line-height:1.08;letter-spacing:-.055em;text-wrap:balance}
+.company-work-intro{max-width:730px;font-size:clamp(16px,1.4vw,19px);line-height:1.8}
+.company-work-intro p,.company-work-links p{margin:0}
+.company-work-links{margin-top:26px;padding-top:18px;border-top:1px solid #ffffff3d;font-size:14px;line-height:1.9}
+.company-work-hero a,.company-work-safeguards a{color:#bae5ff;text-decoration:underline;text-underline-offset:4px}
+.company-work-hero-photo{margin:0;overflow:hidden;border-radius:24px;background:#133426;border:1px solid #e1ffb940}
+.company-work-hero-photo img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
+.company-work-hero-photo figcaption{padding:12px 16px;color:#e1ffb9;font-size:12px;letter-spacing:.03em}
+.company-work-before,.company-work-workflow,.company-work-handoffs,.company-work-safeguards{padding:clamp(72px,8vw,128px) 0}
+.company-work-before{position:relative;margin-top:-30px;border-radius:30px 30px 0 0;background:#fff}
+.company-work-page h2{max-width:690px;margin:0;font-size:clamp(31px,4vw,54px);line-height:1.15;letter-spacing:-.045em;text-wrap:balance}
+.company-work-split{display:grid;gap:30px}
+.company-work-before .company-work-kicker,.company-work-handoffs .company-work-kicker{color:#6131c6}
+.company-work-prose{font-size:clamp(15px,1.15vw,18px);line-height:1.85}
+.company-work-prose p{margin:0 0 22px}.company-work-prose p:last-child{margin-bottom:0}
+.company-work-prose a{color:#5026a6;text-decoration:underline;text-underline-offset:4px}
+.company-work-workflow{background:linear-gradient(150deg,#eaf7ff 0%,#eeedfe 56%,#fff 100%)}
+.company-work-workflow .company-work-kicker{color:#6131c6}
+.company-work-workflow-header{margin-bottom:40px}
+.company-work-steps{position:relative;display:grid;gap:0;max-width:1120px;margin:0;padding:0;list-style:none;border-top:1px solid #716bc758}
+.company-work-step{display:grid;grid-template-columns:48px minmax(0,1fr);gap:18px;padding:26px 0;border-bottom:1px solid #716bc758}
+.company-work-step-marker{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;color:#0a0a0a;background:#e1ffb9;font-size:12px;font-weight:700;box-shadow:0 0 0 5px #fff}
+.company-work-step:nth-child(3n+2) .company-work-step-marker{background:#bae5ff}.company-work-step:nth-child(3n) .company-work-step-marker{background:#eeedfe}
+.company-work-step-content h3{margin:0 0 12px;font-size:clamp(21px,2vw,28px);line-height:1.3;letter-spacing:-.03em}
+.company-work-step-content p{max-width:750px}
+.company-work-handoffs{background:#fff}
+.company-work-safeguards{color:#fff;background:radial-gradient(ellipse at 5% 20%,#154b31 0%,transparent 45%),linear-gradient(150deg,#0a0a0a,#0d2519)}
+.company-work-safeguards .company-work-prose p{padding:0 0 20px;border-bottom:1px solid #ffffff2d}.company-work-safeguards .company-work-prose p:last-child{border:0}
+.company-work-safeguards .company-work-prose a{color:#bae5ff}
+.company-work-page .company-deferred-link{font-weight:650}
+.company-work-page .company-table-wrap{max-width:100%;margin:26px 0;overflow:hidden}
+.company-work-page table{width:100%;border-collapse:collapse;text-align:left;line-height:1.6}
+.company-work-page th{padding:12px 14px 14px 0;border-bottom:1px solid #6f69bf8c;font-size:13px}
+.company-work-page td{padding:17px 14px 17px 0;border-bottom:1px solid #6f69bf4d;vertical-align:top;font-size:14px}
+@media(min-width:780px){.company-work-step{grid-template-columns:100px minmax(0,1fr);gap:40px;padding:30px 0}.company-work-step-marker{width:54px;height:54px}}
+@media(min-width:1000px){.company-work-hero-grid{grid-template-columns:minmax(0,1.03fr) minmax(0,.97fr);gap:clamp(50px,6vw,100px)}.company-work-split{grid-template-columns:minmax(0,.78fr) minmax(0,1fr);gap:clamp(60px,8vw,130px)}}
+@media(max-width:699px){.company-work-hero{padding:144px 0 77px}.company-work-page table,.company-work-page tbody,.company-work-page tr,.company-work-page td{display:block}.company-work-page thead{display:none}.company-work-page tr{padding:14px 0;border-bottom:1px solid #6f69bf55}.company-work-page td{padding:4px 0;border:0}.company-work-page td::before{content:attr(data-label);display:block;color:#6131c6;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}}
+@media(prefers-reduced-motion:no-preference){.company-work-hero-copy{animation:company-work-enter .75s ease-out both}.company-work-hero-photo{animation:company-work-enter .85s .1s ease-out both}@keyframes company-work-enter{from{opacity:.78;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}.company-work-step-marker{transition:transform .25s ease}.company-work-step:hover .company-work-step-marker{transform:scale(1.12)}}

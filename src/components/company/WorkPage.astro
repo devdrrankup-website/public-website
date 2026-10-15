@@ -1,0 +1,64 @@
+---
+import { Image } from 'astro:assets';
+import content from '../../data/company-pages/work.json';
+import reviewPhoto from '../../assets/company/how-we-work-agency-review-v1.webp';
+import '../../styles/company-work.css';
+const [before, workflow, handoffs, safeguards] = content.sections;
+const steps = Array.from({length: 7}, (_, index) => ({
+  heading: workflow.blocks[index * 2].html,
+  body: workflow.blocks[index * 2 + 1].html,
+}));
+const html = (section: typeof before) => section.blocks.map(block => block.html).join('');
+---
+<div class="company-work-page">
+  <section class="company-work-hero" aria-labelledby="company-work-title">
+    <div class="section-container company-work-hero-grid">
+      <div class="company-work-hero-copy">
+        <p class="company-work-eyebrow">From the first question to the final review</p>
+        <h1 id="company-work-title">{content.h1}</h1>
+        <div class="company-work-intro" set:html={content.intro[0].html} />
+        <div class="company-work-links" set:html={content.intro[1].html} />
+      </div>
+      <figure class="company-work-hero-photo">
+        <Image src={reviewPhoto} width={1200} widths={[360,640,960,1200]} sizes="(min-width:1100px) 43vw, (min-width:640px) 80vw, calc(100vw - 32px)" format="webp" quality={78} alt="Digital agency colleagues reviewing website plans and a laptop together" title="Collaborative website planning and review" loading="eager" decoding="async" />
+        <figcaption>Clear scope. Named owners. Reviewed delivery.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="company-work-before" aria-labelledby="company-work-before-title">
+    <div class="section-container company-work-split">
+      <div><span class="company-work-kicker">01 / STARTING POINT</span><h2 id="company-work-before-title">{before.heading}</h2></div>
+      <div class="company-work-prose" set:html={html(before)} />
+    </div>
+  </section>
+
+  <section class="company-work-workflow" aria-labelledby="company-work-workflow-title">
+    <div class="section-container">
+      <div class="company-work-workflow-header"><span class="company-work-kicker">02 / DELIVERY</span><h2 id="company-work-workflow-title">{workflow.heading}</h2></div>
+      <ol class="company-work-steps">
+        {steps.map((step, index) => <li class="company-work-step">
+          <span class="company-work-step-marker" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+          <div class="company-work-step-content">
+            <div set:html={step.heading} />
+            <div class="company-work-prose" set:html={step.body} />
+          </div>
+        </li>)}
+      </ol>
+    </div>
+  </section>
+
+  <section class="company-work-handoffs" aria-labelledby="company-work-handoffs-title">
+    <div class="section-container company-work-split">
+      <div><span class="company-work-kicker">03 / HANDOFFS</span><h2 id="company-work-handoffs-title">{handoffs.heading}</h2></div>
+      <div class="company-work-prose" set:html={html(handoffs)} />
+    </div>
+  </section>
+
+  <section class="company-work-safeguards" aria-labelledby="company-work-safeguards-title">
+    <div class="section-container company-work-split">
+      <div><span class="company-work-kicker">04 / RESPONSIBILITY</span><h2 id="company-work-safeguards-title">{safeguards.heading}</h2></div>
+      <div class="company-work-prose" set:html={html(safeguards)} />
+    </div>
+  </section>
+</div>

@@ -7,7 +7,7 @@
     },
     {
       "type": "paragraph",
-      "html": "<p><strong>Related pages:</strong> <a href=\"/about/\">About Dr RankUP</a> · <span class=\"company-deferred-link\">How We Work</span> · <span class=\"company-deferred-link\">Contact</span></p>"
+      "html": "<p><strong>Related pages:</strong> <a href=\"/about/\">About Dr RankUP</a> · <a href=\"/about/how-we-work/\">How We Work</a> · <span class=\"company-deferred-link\">Contact</span></p>"
     }
   ],
   "sections": [
@@ -68,7 +68,7 @@
         },
         {
           "type": "paragraph",
-          "html": "<p>Cross-team comments and change requests should refer to the actual version being reviewed. Read <span class=\"company-deferred-link\">How We Work</span> for the proposed assignment, review and handoff process.</p>"
+          "html": "<p>Cross-team comments and change requests should refer to the actual version being reviewed. Read <a href=\"/about/how-we-work/\">How We Work</a> for the proposed assignment, review and handoff process.</p>"
         }
       ]
     },

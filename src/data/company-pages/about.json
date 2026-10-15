@@ -11,7 +11,7 @@
     },
     {
       "type": "paragraph",
-      "html": "<p><strong>Explore:</strong> <a href=\"/about/our-team/\">Our Team</a> · <span class=\"company-deferred-link\">How We Work</span> · <span class=\"company-deferred-link\">Contact Dr RankUP</span></p>"
+      "html": "<p><strong>Explore:</strong> <a href=\"/about/our-team/\">Our Team</a> · <a href=\"/about/how-we-work/\">How We Work</a> · <span class=\"company-deferred-link\">Contact Dr RankUP</span></p>"
     }
   ],
   "sections": [
@@ -75,7 +75,7 @@
         },
         {
           "type": "paragraph",
-          "html": "<p>We do not promise first-page rankings, appearances in AI answers, guaranteed patient numbers or treatment outcomes. Any published result or case study must have evidence, context and appropriate permission. Read <span class=\"company-deferred-link\">How We Work</span> for the planned delivery and review process.</p>"
+          "html": "<p>We do not promise first-page rankings, appearances in AI answers, guaranteed patient numbers or treatment outcomes. Any published result or case study must have evidence, context and appropriate permission. Read <a href=\"/about/how-we-work/\">How We Work</a> for the planned delivery and review process.</p>"
         }
       ]
     },
