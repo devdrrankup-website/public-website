@@ -2,6 +2,7 @@
 import {Image} from 'astro:assets';
 import CallIcon from '@hugeicons/core-free-icons/CallIcon';
 import Mail01Icon from '@hugeicons/core-free-icons/Mail01Icon';
+import Location01Icon from '@hugeicons/core-free-icons/Location01Icon';
 import Clock01Icon from '@hugeicons/core-free-icons/Clock01Icon';
 import logo from '../assets/brand/dr-rankup-logo.png';
 import Icon from './Icon.astro';
@@ -23,7 +24,7 @@ const year = new Intl.DateTimeFormat('en',{year:'numeric',timeZone:'Asia/Dhaka'}
         </div>
         <div class="footer-column footer-contact-column">
           <h2>Contact &amp; Hours</h2>
-        <address class="footer-contact" aria-label="Contact details and office hours">
+        <address class="footer-contact" aria-label="Contact details, office address and hours">
           <div class="footer-contact-item">
             <span class="footer-contact-icon"><Icon icon={CallIcon} size={22} /></span>
             <div><p class="footer-label">Call us</p><p class="footer-contact-value">{content.phone}</p></div>
@@ -31,6 +32,10 @@ const year = new Intl.DateTimeFormat('en',{year:'numeric',timeZone:'Asia/Dhaka'}
           <div class="footer-contact-item">
             <span class="footer-contact-icon"><Icon icon={Mail01Icon} size={22} /></span>
             <div><p class="footer-label">Email us</p><p class="footer-contact-value footer-email">{content.email}</p></div>
+          </div>
+          <div class="footer-contact-item footer-office">
+            <span class="footer-contact-icon"><Icon icon={Location01Icon} size={22} /></span>
+            <div><p class="footer-label">Office address</p><p class="footer-contact-value">{content.address}</p></div>
           </div>
           <div class="footer-contact-item footer-hours">
             <span class="footer-contact-icon"><Icon icon={Clock01Icon} size={22} /></span>
@@ -77,7 +82,8 @@ const year = new Intl.DateTimeFormat('en',{year:'numeric',timeZone:'Asia/Dhaka'}
   .footer-contact-item > div { min-width: 0; }
   .footer-contact-icon { display: grid; place-items: center; flex-shrink: 0; width: 40px; height: 40px; border: 1px solid #bae5ff66; border-radius: 12px; color: #bae5ff; background: #bae5ff0d; }
   .footer-contact-item:nth-child(2) .footer-contact-icon { color: #eeedfe; background: #afa9ec14; border-color: #afa9ec80; }
-  .footer-contact-item:nth-child(3) .footer-contact-icon { color: #fef2cc; background: #fef2cc0d; border-color: #fef2cc66; }
+  .footer-office .footer-contact-icon { color: #c9f6a8; background: #c9f6a80d; border-color: #c9f6a866; }
+  .footer-hours .footer-contact-icon { color: #fef2cc; background: #fef2cc0d; border-color: #fef2cc66; }
   .footer-label { margin: 0 0 4px; color: #bdcbc5; font-size: 12px; line-height: 1.5; }
   .footer-contact-value { margin: 0; font-size: 16px; font-weight: 550; line-height: 1.5; }
   .footer-email { overflow-wrap: anywhere; }

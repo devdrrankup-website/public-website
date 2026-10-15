@@ -3,6 +3,7 @@
 export const footer = {
   phone: '01342114762',
   email: 'contact@drrankup.com',
+  address: '230A, 2nd Floor, Chowdhury Surgical Market, Topkhana Road, Dhaka South City Corporation, Dhaka 1000',
   hours: '10 AM – 10 PM',
   days: 'Saturday – Thursday',
   closed: 'Friday closed · Bangladesh time',
