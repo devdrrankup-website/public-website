@@ -1,0 +1,47 @@
+---
+// Destination-owned static page.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import HealthcareAnalyticsReportingHero from './components/HealthcareAnalyticsReportingHero.astro';
+import HealthcareAnalyticsReportingChallengesSection from './components/HealthcareAnalyticsReportingChallengesSection.astro';
+import HealthcareAnalyticsReportingOutcomesSection from './components/HealthcareAnalyticsReportingOutcomesSection.astro';
+import HealthcareAnalyticsReportingIntentSection from './components/HealthcareAnalyticsReportingIntentSection.astro';
+import HealthcareAnalyticsReportingTrustSection from './components/HealthcareAnalyticsReportingTrustSection.astro';
+import HealthcareAnalyticsReportingExpertiseSection from './components/HealthcareAnalyticsReportingExpertiseSection.astro';
+import HealthcareAnalyticsReportingProcessSection from './components/HealthcareAnalyticsReportingProcessSection.astro';
+import HealthcareAnalyticsReportingMappingSection from './components/HealthcareAnalyticsReportingMappingSection.astro';
+import HealthcareAnalyticsReportingRelatedSection from './components/HealthcareAnalyticsReportingRelatedSection.astro';
+import HealthcareAnalyticsReportingStartingSection from './components/HealthcareAnalyticsReportingStartingSection.astro';
+import HealthcareAnalyticsReportingExampleSection from './components/HealthcareAnalyticsReportingExampleSection.astro';
+import HealthcareAnalyticsReportingProgressSection from './components/HealthcareAnalyticsReportingProgressSection.astro';
+import HealthcareAnalyticsReportingWhySection from './components/HealthcareAnalyticsReportingWhySection.astro';
+import HealthcareAnalyticsReportingFaqSection from './components/HealthcareAnalyticsReportingFaqSection.astro';
+import HealthcareAnalyticsReportingConsultationSection from './components/HealthcareAnalyticsReportingConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { healthcareAnalyticsReportingHeroPreload } from './lib/healthcare-analytics-reporting-hero-image';
+import './styles/healthcare-analytics-reporting-rendering.css';
+import './styles/healthcare-analytics-reporting-source-content.css';
+import { metadata } from './data/healthcare-analytics-reporting-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={healthcareAnalyticsReportingHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="healthcare-analytics-reporting-page" tabindex="-1">
+    <HealthcareAnalyticsReportingHero />
+    <HealthcareAnalyticsReportingChallengesSection />
+    <HealthcareAnalyticsReportingOutcomesSection />
+    <HealthcareAnalyticsReportingIntentSection />
+    <HealthcareAnalyticsReportingTrustSection />
+    <HealthcareAnalyticsReportingExpertiseSection />
+    <HealthcareAnalyticsReportingProcessSection />
+    <HealthcareAnalyticsReportingMappingSection />
+    <HealthcareAnalyticsReportingRelatedSection />
+    <HealthcareAnalyticsReportingStartingSection />
+    <HealthcareAnalyticsReportingExampleSection />
+    <HealthcareAnalyticsReportingProgressSection />
+    <HealthcareAnalyticsReportingWhySection />
+    <HealthcareAnalyticsReportingFaqSection />
+    <HealthcareAnalyticsReportingConsultationSection />
+  </main>
+  <Footer />
+</Layout>

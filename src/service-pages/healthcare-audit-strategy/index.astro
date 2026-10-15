@@ -1,0 +1,47 @@
+---
+// Destination-owned static page.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import HealthcareAuditStrategyHero from './components/HealthcareAuditStrategyHero.astro';
+import HealthcareAuditStrategyChallengesSection from './components/HealthcareAuditStrategyChallengesSection.astro';
+import HealthcareAuditStrategyOutcomesSection from './components/HealthcareAuditStrategyOutcomesSection.astro';
+import HealthcareAuditStrategyIntentSection from './components/HealthcareAuditStrategyIntentSection.astro';
+import HealthcareAuditStrategyTrustSection from './components/HealthcareAuditStrategyTrustSection.astro';
+import HealthcareAuditStrategyExpertiseSection from './components/HealthcareAuditStrategyExpertiseSection.astro';
+import HealthcareAuditStrategyProcessSection from './components/HealthcareAuditStrategyProcessSection.astro';
+import HealthcareAuditStrategyMappingSection from './components/HealthcareAuditStrategyMappingSection.astro';
+import HealthcareAuditStrategyRelatedSection from './components/HealthcareAuditStrategyRelatedSection.astro';
+import HealthcareAuditStrategyStartingSection from './components/HealthcareAuditStrategyStartingSection.astro';
+import HealthcareAuditStrategyExampleSection from './components/HealthcareAuditStrategyExampleSection.astro';
+import HealthcareAuditStrategyProgressSection from './components/HealthcareAuditStrategyProgressSection.astro';
+import HealthcareAuditStrategyWhySection from './components/HealthcareAuditStrategyWhySection.astro';
+import HealthcareAuditStrategyFaqSection from './components/HealthcareAuditStrategyFaqSection.astro';
+import HealthcareAuditStrategyConsultationSection from './components/HealthcareAuditStrategyConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { healthcareAuditStrategyHeroPreload } from './lib/healthcare-audit-strategy-hero-image';
+import './styles/healthcare-audit-strategy-rendering.css';
+import './styles/healthcare-audit-strategy-source-content.css';
+import { metadata } from './data/healthcare-audit-strategy-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={healthcareAuditStrategyHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="healthcare-audit-strategy-page" tabindex="-1">
+    <HealthcareAuditStrategyHero />
+    <HealthcareAuditStrategyChallengesSection />
+    <HealthcareAuditStrategyOutcomesSection />
+    <HealthcareAuditStrategyIntentSection />
+    <HealthcareAuditStrategyTrustSection />
+    <HealthcareAuditStrategyExpertiseSection />
+    <HealthcareAuditStrategyProcessSection />
+    <HealthcareAuditStrategyMappingSection />
+    <HealthcareAuditStrategyRelatedSection />
+    <HealthcareAuditStrategyStartingSection />
+    <HealthcareAuditStrategyExampleSection />
+    <HealthcareAuditStrategyProgressSection />
+    <HealthcareAuditStrategyWhySection />
+    <HealthcareAuditStrategyFaqSection />
+    <HealthcareAuditStrategyConsultationSection />
+  </main>
+  <Footer />
+</Layout>

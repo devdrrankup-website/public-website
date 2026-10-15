@@ -12,6 +12,8 @@
 .healthcare-marketing-specialist-service h3 { margin: 0; font-size: clamp(20px, 5.3vw, 25px); line-height: 1.35; font-weight: 650; letter-spacing: -.025em; }
 .healthcare-marketing-specialist-service p { margin: 12px 0 0; font-size: 14px; line-height: 1.8; }
 .healthcare-marketing-specialist-service-action { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin-top: 10px; color: #6131c6; font-size: 13px; font-weight: 650; line-height: 1.5; }
+.healthcare-marketing-specialist-service-action:hover { text-decoration: underline; text-underline-offset: 4px; }
+.healthcare-marketing-specialist-service-action:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; border-radius: 2px; }
 .healthcare-marketing-specialist-services-note { margin: 0; font-size: 13px; line-height: 1.7; }
 @media (min-width: 640px) {
   .healthcare-marketing-specialist-services { padding-block: 70px 82px; }

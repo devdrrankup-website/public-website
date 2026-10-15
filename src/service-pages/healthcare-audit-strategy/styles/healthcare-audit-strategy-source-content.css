@@ -1,0 +1,8 @@
+.healthcare-audit-strategy-source-content:empty { display: none; }
+.healthcare-audit-strategy-source-content :where(p) { margin: 0 0 1em; line-height: 1.7; }
+.healthcare-audit-strategy-source-content :where(p:last-child) { margin-bottom: 0; }
+.healthcare-audit-strategy-source-content ul, .healthcare-audit-strategy-source-content ol { margin: .75em 0 1em; padding-left: 1.35em; }
+.healthcare-audit-strategy-source-content li { margin: .42em 0; line-height: 1.65; }
+.healthcare-audit-strategy-source-content strong { font-weight: 700; }
+.healthcare-audit-strategy-source-content table { width: 100%; border-collapse: collapse; }
+.healthcare-audit-strategy-source-content th, .healthcare-audit-strategy-source-content td { padding: .7em; text-align: left; border-bottom: 1px solid #0002; }

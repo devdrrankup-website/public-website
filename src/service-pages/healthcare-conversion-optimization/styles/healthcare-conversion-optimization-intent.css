@@ -1,0 +1,20 @@
+.healthcare-conversion-optimization-intent { display: block; padding-block: 32px 56px; color: #000; background: linear-gradient(180deg, #fff 0%, #eaf7ff 42%, #eeedfe 76%, #fff 100%); }
+.healthcare-conversion-optimization-intent-layout { display: grid; grid-template-areas: "copy" "photo"; gap: 28px; max-width: 1200px; }
+.healthcare-conversion-optimization-intent-copy { grid-area: copy; min-width: 0; }
+.healthcare-conversion-optimization-intent h2 { margin: 0; color: #000; font-size: clamp(28px, 7.3vw, 38px); font-weight: 650; line-height: 1.24; letter-spacing: -.035em; text-wrap: pretty; }
+.healthcare-conversion-optimization-intent-copy p { margin: 20px 0 0; color: #000; font-size: 15px; line-height: 1.85; }
+.healthcare-conversion-optimization-intent-photo { grid-area: photo; width: 100%; min-width: 0; aspect-ratio: 3 / 2; overflow: hidden; border-radius: 24px; background: #eaf7ff; }
+.healthcare-conversion-optimization-intent-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+@media (min-width: 640px) {
+  .healthcare-conversion-optimization-intent { padding-block: 44px 72px; }
+  .healthcare-conversion-optimization-intent-layout { gap: 32px; }
+  .healthcare-conversion-optimization-intent h2 { max-width: 820px; font-size: clamp(34px, 4.6vw, 44px); }
+  .healthcare-conversion-optimization-intent-copy p { max-width: 820px; font-size: 16px; }
+  .healthcare-conversion-optimization-intent-photo { max-width: 760px; justify-self: center; border-radius: 30px; }
+}
+@media (min-width: 1100px) {
+  .healthcare-conversion-optimization-intent { padding-block: 56px 80px; }
+  .healthcare-conversion-optimization-intent-layout { grid-template-areas: "photo copy"; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); align-items: center; gap: clamp(40px, 4.5vw, 64px); }
+  .healthcare-conversion-optimization-intent h2 { font-size: clamp(40px, 3.15vw, 46px); }
+  .healthcare-conversion-optimization-intent-photo { max-width: none; }
+}

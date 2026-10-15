@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/healthcare-marketing-services/healthcare-conversion-optimization/example-v1.webp';
+import { pageCopy } from '../data/healthcare-conversion-optimization-source';
+const copy = pageCopy.example;
+import '../styles/healthcare-conversion-optimization-example.css';
+---
+<healthcare-conversion-optimization-example class="healthcare-conversion-optimization-example-motion">
+  <section id="healthcare-conversion-optimization-example" class="healthcare-conversion-optimization-example" aria-labelledby="healthcare-conversion-optimization-example-heading">
+    <div class="section-container healthcare-conversion-optimization-example-layout">
+      <header class="healthcare-conversion-optimization-example-header" data-example-entry>
+        <h2 id="healthcare-conversion-optimization-example-heading">{copy.heading}</h2>
+        <span class="healthcare-conversion-optimization-example-rule" data-example-rule aria-hidden="true"></span>
+      </header>
+      <figure class="healthcare-conversion-optimization-example-photo" data-example-entry data-example-photo>
+        <Image src={photo} alt="Clinic team comparing a service page and mobile contact route in a hypothetical usability review" title="Clinic team comparing a service page and mobile contact route in a hypothetical usability review" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <div class="healthcare-conversion-optimization-example-copy">
+        {copy.paragraphs.map(paragraph => <p data-example-entry>{paragraph}</p>)}
+      </div>
+    </div>
+  </section>
+</healthcare-conversion-optimization-example>
+<script>
+  import '../scripts/healthcare-conversion-optimization-example';
+</script>

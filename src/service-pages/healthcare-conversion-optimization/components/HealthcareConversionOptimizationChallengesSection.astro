@@ -1,0 +1,39 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/healthcare-marketing-services/healthcare-conversion-optimization/challenges-v1.webp';
+import { pageCopy } from '../data/healthcare-conversion-optimization-source';
+import { challengeEditorial as editorial } from '../data/healthcare-conversion-optimization-section-editorial';
+const copy = pageCopy.challenges;
+import '../styles/healthcare-conversion-optimization-challenges.css';
+---
+
+<healthcare-conversion-optimization-challenges class="healthcare-conversion-optimization-challenges">
+  <section id="healthcare-conversion-optimization-challenges" class="section-container healthcare-conversion-optimization-challenges-layout" aria-labelledby="healthcare-conversion-optimization-challenges-heading">
+    <div class="healthcare-conversion-optimization-challenges-editorial">
+      <h2 id="healthcare-conversion-optimization-challenges-heading">{copy.heading}</h2>
+      <p class="healthcare-conversion-optimization-challenges-introduction">{copy.introduction}</p>
+      <div class="healthcare-conversion-optimization-challenges-photo" data-seo-challenges-motion>
+        <Image src={photo} widths={[360, 540, 720, 960, 1200]} width={1536} height={1024}
+          sizes="(min-width: 1100px) min(41vw, 568px), (min-width: 640px) min(calc(100vw - 56px), 760px), calc(100vw - 32px)"
+          format="webp" quality={76}
+          alt="Visitor studying a clinic contact journey on her phone in a Bangladesh waiting area"
+          title="Visitor studying a clinic contact journey on her phone in a Bangladesh waiting area"
+          loading="lazy" decoding="async" />
+      </div>
+    </div>
+    <div class="healthcare-conversion-optimization-challenges-details">
+      <p id="healthcare-conversion-optimization-challenges-list-heading" class="healthcare-conversion-optimization-challenges-list-intro">{copy.listIntroduction}</p>
+      <ul class="healthcare-conversion-optimization-challenges-list" role="list" aria-labelledby="healthcare-conversion-optimization-challenges-list-heading" data-seo-challenges-motion>
+        {editorial.points.map((challenge, index) => <li>
+          <span class="healthcare-conversion-optimization-challenge-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+          <span>{challenge}</span>
+        </li>)}
+      </ul>
+      <p class="healthcare-conversion-optimization-challenges-conclusion">{copy.conclusion}</p>
+    </div>
+  </section>
+</healthcare-conversion-optimization-challenges>
+
+<script>
+  import '../scripts/healthcare-conversion-optimization-challenges';
+</script>

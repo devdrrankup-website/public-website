@@ -1,0 +1,25 @@
+---
+import HealthcareAuditStrategyOutcomeVisual from './HealthcareAuditStrategyOutcomeVisual.astro';
+import { pageCopy } from '../data/healthcare-audit-strategy-source';
+const copy = pageCopy.outcomes;
+import '../styles/healthcare-audit-strategy-outcomes.css';
+---
+<healthcare-audit-strategy-outcomes class="healthcare-audit-strategy-outcomes">
+  <section id="healthcare-audit-strategy-outcomes" class="section-container" aria-labelledby="healthcare-audit-strategy-outcomes-heading">
+    <div class="healthcare-audit-strategy-outcomes-heading">
+      <h2 id="healthcare-audit-strategy-outcomes-heading">{copy.heading}</h2>
+      <div class="healthcare-audit-strategy-outcomes-introduction healthcare-audit-strategy-source-content" set:html={copy.before} />
+    </div>
+    <ul class="healthcare-audit-strategy-outcomes-list" role="list">
+      {copy.items.map((item, index) => <li class="healthcare-audit-strategy-outcome" data-seo-outcomes-motion>
+        <HealthcareAuditStrategyOutcomeVisual index={index} />
+        <p><strong>{item.label}</strong><span>{item.description}</span></p>
+      </li>)}
+    </ul>
+    <div class="healthcare-audit-strategy-outcomes-conclusion healthcare-audit-strategy-source-content" set:html={copy.after} />
+  </section>
+</healthcare-audit-strategy-outcomes>
+
+<script>
+  import '../scripts/healthcare-audit-strategy-outcomes';
+</script>

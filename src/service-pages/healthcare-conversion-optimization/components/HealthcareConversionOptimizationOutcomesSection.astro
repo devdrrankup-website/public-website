@@ -1,0 +1,25 @@
+---
+import HealthcareConversionOptimizationOutcomeVisual from './HealthcareConversionOptimizationOutcomeVisual.astro';
+import { pageCopy } from '../data/healthcare-conversion-optimization-source';
+const copy = pageCopy.outcomes;
+import '../styles/healthcare-conversion-optimization-outcomes.css';
+---
+<healthcare-conversion-optimization-outcomes class="healthcare-conversion-optimization-outcomes">
+  <section id="healthcare-conversion-optimization-outcomes" class="section-container" aria-labelledby="healthcare-conversion-optimization-outcomes-heading">
+    <div class="healthcare-conversion-optimization-outcomes-heading">
+      <h2 id="healthcare-conversion-optimization-outcomes-heading">{copy.heading}</h2>
+      <div class="healthcare-conversion-optimization-outcomes-introduction healthcare-conversion-optimization-source-content" set:html={copy.before} />
+    </div>
+    <ul class="healthcare-conversion-optimization-outcomes-list" role="list">
+      {copy.items.map((item, index) => <li class="healthcare-conversion-optimization-outcome" data-seo-outcomes-motion>
+        <HealthcareConversionOptimizationOutcomeVisual index={index} />
+        <p><strong>{item.label}</strong><span>{item.description}</span></p>
+      </li>)}
+    </ul>
+    <div class="healthcare-conversion-optimization-outcomes-conclusion healthcare-conversion-optimization-source-content" set:html={copy.after} />
+  </section>
+</healthcare-conversion-optimization-outcomes>
+
+<script>
+  import '../scripts/healthcare-conversion-optimization-outcomes';
+</script>

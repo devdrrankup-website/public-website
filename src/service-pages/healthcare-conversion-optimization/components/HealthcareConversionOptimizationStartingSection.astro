@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/healthcare-marketing-services/healthcare-conversion-optimization/starting-v1.webp';
+import { pageCopy } from '../data/healthcare-conversion-optimization-source';
+const copy = pageCopy.starting;
+import '../styles/healthcare-conversion-optimization-starting.css';
+---
+<healthcare-conversion-optimization-starting class="healthcare-conversion-optimization-starting-motion">
+  <section id="healthcare-conversion-optimization-starting" class="healthcare-conversion-optimization-starting" aria-labelledby="healthcare-conversion-optimization-starting-heading">
+    <div class="section-container healthcare-conversion-optimization-starting-layout">
+      <h2 id="healthcare-conversion-optimization-starting-heading" data-starting-entry>{copy.heading}</h2>
+      <div class="healthcare-conversion-optimization-starting-copy" data-starting-entry>
+        <div class="healthcare-conversion-optimization-source-content" set:html={copy.html} />
+      </div>
+      <figure class="healthcare-conversion-optimization-starting-visual" data-starting-entry data-starting-visual>
+        <Image src={photo} alt="Clinic manager and website specialist reviewing a focused mobile contact journey" title="Clinic manager and website specialist reviewing a focused mobile contact journey" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 540px, (min-width:640px) 320px, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+    </div>
+  </section>
+</healthcare-conversion-optimization-starting>
+<script>
+  import '../scripts/healthcare-conversion-optimization-starting';
+</script>

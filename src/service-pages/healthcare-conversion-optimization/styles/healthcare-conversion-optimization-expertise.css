@@ -1,0 +1,51 @@
+.healthcare-conversion-optimization-expertise-motion { display: block; background: #0a0a0a; }
+.healthcare-conversion-optimization-expertise { padding-block: 40px 56px; border-radius: 28px 28px 0 0; color: #000; background: linear-gradient(180deg, #fff 0%, #eaf7ff 42%, #eeedfe 76%, #fff 100%); }
+.healthcare-conversion-optimization-expertise-layout { display: grid; grid-template-areas: "heading" "portrait" "record" "principles"; gap: 30px; max-width: 1200px; }
+.healthcare-conversion-optimization-expertise h2 { grid-area: heading; margin: 0; color: #000; font-size: clamp(28px, 7.3vw, 38px); font-weight: 650; line-height: 1.24; letter-spacing: -.035em; text-wrap: pretty; }
+.healthcare-conversion-optimization-expertise-portrait { grid-area: portrait; margin: 0; width: 100%; max-width: 360px; justify-self: center; min-width: 0; }
+.healthcare-conversion-optimization-expertise-photo { aspect-ratio: 1; border-radius: 28px; overflow: hidden; background: #d4d4d4; }
+.healthcare-conversion-optimization-expertise-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.healthcare-conversion-optimization-expertise-portrait figcaption { padding-top: 16px; color: #000; font-size: 23px; line-height: 1.4; font-weight: 650; letter-spacing: -.025em; }
+.healthcare-conversion-optimization-expertise-record { grid-area: record; min-width: 0; }
+.healthcare-conversion-optimization-expertise-metrics { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 20px; list-style: none; margin: 0 0 24px; padding: 0; }
+.healthcare-conversion-optimization-expertise-metrics li { min-width: 0; }
+.healthcare-conversion-optimization-expertise-metrics strong { display: block; color: #000; font-size: clamp(36px, 12vw, 52px); font-weight: 650; line-height: 1.15; letter-spacing: -.055em; font-variant-numeric: tabular-nums; }
+.healthcare-conversion-optimization-expertise-metrics span { display: block; color: #000; margin-top: 8px; font-size: 14px; line-height: 1.6; }
+.healthcare-conversion-optimization-expertise-context { margin: 0; color: #000; font-size: 15px; line-height: 1.85; }
+.healthcare-conversion-optimization-expertise-principles { grid-area: principles; min-width: 0; }
+.healthcare-conversion-optimization-expertise-rule { display: block; height: 1px; background: #afa9ec80; transform-origin: left center; }
+.healthcare-conversion-optimization-expertise-principles ul { display: grid; gap: 20px; list-style: disc; margin: 24px 0 0; padding-left: 20px; color: #000; font-size: 15px; line-height: 1.85; }
+.healthcare-conversion-optimization-expertise-principles li { padding-left: 4px; min-width: 0; }
+
+@media (min-width: 640px) {
+  .healthcare-conversion-optimization-expertise { padding-block: 48px 72px; border-radius: 36px 36px 0 0; }
+  .healthcare-conversion-optimization-expertise-layout { grid-template-areas: "heading heading" "portrait record" "principles principles"; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 36px; align-items: start; }
+  .healthcare-conversion-optimization-expertise h2 { max-width: 860px; font-size: clamp(34px, 4.6vw, 44px); }
+  .healthcare-conversion-optimization-expertise-portrait { justify-self: start; }
+  .healthcare-conversion-optimization-expertise-photo { border-radius: 32px; }
+  .healthcare-conversion-optimization-expertise-portrait figcaption { font-size: 25px; }
+  .healthcare-conversion-optimization-expertise-metrics { margin-bottom: 28px; }
+  .healthcare-conversion-optimization-expertise-metrics strong { font-size: clamp(40px, 5.8vw, 56px); }
+  .healthcare-conversion-optimization-expertise-metrics span { font-size: 15px; }
+  .healthcare-conversion-optimization-expertise-context,.healthcare-conversion-optimization-expertise-principles ul { font-size: 16px; }
+  .healthcare-conversion-optimization-expertise-principles ul { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 36px; }
+}
+
+@media (min-width: 900px) {
+  .healthcare-conversion-optimization-expertise { border-radius: 40px 40px 0 0; }
+}
+
+@media (min-width: 1100px) {
+  .healthcare-conversion-optimization-expertise { padding-block: 56px 88px; }
+  .healthcare-conversion-optimization-expertise-layout { grid-template-areas: "heading heading" "portrait record" "portrait principles"; grid-template-columns: minmax(0, .95fr) minmax(0, 1.15fr); gap: 36px clamp(44px, 5vw, 72px); }
+  .healthcare-conversion-optimization-expertise h2 { max-width: 1000px; margin-bottom: 8px; font-size: clamp(40px, 3.25vw, 46px); }
+  .healthcare-conversion-optimization-expertise-portrait { max-width: 480px; }
+  .healthcare-conversion-optimization-expertise-photo { border-radius: 40px; }
+  .healthcare-conversion-optimization-expertise-portrait figcaption { padding-top: 22px; font-size: 30px; }
+  .healthcare-conversion-optimization-expertise-metrics { margin-bottom: 32px; gap: 28px; }
+  .healthcare-conversion-optimization-expertise-metrics strong { font-size: clamp(54px, 5vw, 72px); }
+  .healthcare-conversion-optimization-expertise-metrics span { font-size: 16px; }
+  .healthcare-conversion-optimization-expertise-principles ul { grid-template-columns: minmax(0, 1fr); gap: 22px; margin-top: 28px; }
+}
+
+.healthcare-conversion-optimization-expertise-record p {margin:0 0 1em;font-size:clamp(15px,1.2vw,17px);line-height:1.8;color:#000;}

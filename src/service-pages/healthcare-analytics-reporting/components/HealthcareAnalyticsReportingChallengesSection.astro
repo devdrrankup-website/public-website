@@ -1,0 +1,39 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/healthcare-marketing-services/healthcare-analytics-reporting/challenges-v1.webp';
+import { pageCopy } from '../data/healthcare-analytics-reporting-source';
+import { challengeEditorial as editorial } from '../data/healthcare-analytics-reporting-section-editorial';
+const copy = pageCopy.challenges;
+import '../styles/healthcare-analytics-reporting-challenges.css';
+---
+
+<healthcare-analytics-reporting-challenges class="healthcare-analytics-reporting-challenges">
+  <section id="healthcare-analytics-reporting-challenges" class="section-container healthcare-analytics-reporting-challenges-layout" aria-labelledby="healthcare-analytics-reporting-challenges-heading">
+    <div class="healthcare-analytics-reporting-challenges-editorial">
+      <h2 id="healthcare-analytics-reporting-challenges-heading">{copy.heading}</h2>
+      <p class="healthcare-analytics-reporting-challenges-introduction">{copy.introduction}</p>
+      <div class="healthcare-analytics-reporting-challenges-photo" data-seo-challenges-motion>
+        <Image src={photo} widths={[360, 540, 720, 960, 1200]} width={1536} height={1024}
+          sizes="(min-width: 1100px) min(41vw, 568px), (min-width: 640px) min(calc(100vw - 56px), 760px), calc(100vw - 32px)"
+          format="webp" quality={76}
+          alt="Analyst and manager comparing different anonymous marketing reports"
+          title="Analyst and manager comparing different anonymous marketing reports"
+          loading="lazy" decoding="async" />
+      </div>
+    </div>
+    <div class="healthcare-analytics-reporting-challenges-details">
+      <p id="healthcare-analytics-reporting-challenges-list-heading" class="healthcare-analytics-reporting-challenges-list-intro">{copy.listIntroduction}</p>
+      <ul class="healthcare-analytics-reporting-challenges-list" role="list" aria-labelledby="healthcare-analytics-reporting-challenges-list-heading" data-seo-challenges-motion>
+        {editorial.points.map((challenge, index) => <li>
+          <span class="healthcare-analytics-reporting-challenge-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+          <span>{challenge}</span>
+        </li>)}
+      </ul>
+      <p class="healthcare-analytics-reporting-challenges-conclusion">{copy.conclusion}</p>
+    </div>
+  </section>
+</healthcare-analytics-reporting-challenges>
+
+<script>
+  import '../scripts/healthcare-analytics-reporting-challenges';
+</script>

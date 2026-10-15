@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/healthcare-marketing-services/healthcare-audit-strategy/example-v1.webp';
+import { pageCopy } from '../data/healthcare-audit-strategy-source';
+const copy = pageCopy.example;
+import '../styles/healthcare-audit-strategy-example.css';
+---
+<healthcare-audit-strategy-example class="healthcare-audit-strategy-example-motion">
+  <section id="healthcare-audit-strategy-example" class="healthcare-audit-strategy-example" aria-labelledby="healthcare-audit-strategy-example-heading">
+    <div class="section-container healthcare-audit-strategy-example-layout">
+      <header class="healthcare-audit-strategy-example-header" data-example-entry>
+        <h2 id="healthcare-audit-strategy-example-heading">{copy.heading}</h2>
+        <span class="healthcare-audit-strategy-example-rule" data-example-rule aria-hidden="true"></span>
+      </header>
+      <figure class="healthcare-audit-strategy-example-photo" data-example-entry data-example-photo>
+        <Image src={photo} alt="Hospital manager and strategist discussing a hypothetical department priority roadmap" title="Hospital manager and strategist discussing a hypothetical department priority roadmap" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <div class="healthcare-audit-strategy-example-copy">
+        {copy.paragraphs.map(paragraph => <p data-example-entry>{paragraph}</p>)}
+      </div>
+    </div>
+  </section>
+</healthcare-audit-strategy-example>
+<script>
+  import '../scripts/healthcare-audit-strategy-example';
+</script>

@@ -1,0 +1,31 @@
+---
+import Icon from '../../../components/Icon.astro';
+import Add01Icon from '@hugeicons/core-free-icons/Add01Icon';
+import { pageCopy } from '../data/healthcare-analytics-reporting-source';
+const copy = pageCopy.faq;
+import '../styles/healthcare-analytics-reporting-faq.css';
+---
+<healthcare-analytics-reporting-faq class="healthcare-analytics-reporting-faq-motion">
+  <section id="healthcare-analytics-reporting-faq" class="healthcare-analytics-reporting-faq" aria-labelledby="healthcare-analytics-reporting-faq-heading">
+    <div class="section-container healthcare-analytics-reporting-faq-layout">
+      <header class="healthcare-analytics-reporting-faq-header" data-faq-entry>
+        <h2 id="healthcare-analytics-reporting-faq-heading">{copy.heading}</h2>
+        <div class="healthcare-analytics-reporting-source-content" set:html={copy.preface} />
+      </header>
+      <div class="healthcare-analytics-reporting-faq-list">
+        {copy.items.map((item,index) => <article class="healthcare-analytics-reporting-faq-item" data-faq-entry aria-labelledby={`healthcare-analytics-reporting-faq-question-${index+1}`}>
+          <h3 class="healthcare-analytics-reporting-faq-question" id={`healthcare-analytics-reporting-faq-question-${index+1}`}>
+            <span class="healthcare-analytics-reporting-faq-label">{item.question}</span>
+            <span class="healthcare-analytics-reporting-faq-toggle" aria-hidden="true"><Icon icon={Add01Icon} size={20} strokeWidth={1.8} /></span>
+          </h3>
+          <div class="healthcare-analytics-reporting-faq-answer" id={`healthcare-analytics-reporting-faq-answer-${index+1}`} role="region" aria-labelledby={`healthcare-analytics-reporting-faq-question-${index+1}`}>
+            <div class="healthcare-analytics-reporting-source-content" set:html={item.answerHtml} />
+          </div>
+        </article>)}
+      </div>
+    </div>
+  </section>
+</healthcare-analytics-reporting-faq>
+<script>
+  import '../scripts/healthcare-analytics-reporting-faq';
+</script>

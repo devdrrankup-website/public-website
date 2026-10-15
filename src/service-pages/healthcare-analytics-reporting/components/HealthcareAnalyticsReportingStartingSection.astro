@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/healthcare-marketing-services/healthcare-analytics-reporting/starting-v1.webp';
+import { pageCopy } from '../data/healthcare-analytics-reporting-source';
+const copy = pageCopy.starting;
+import '../styles/healthcare-analytics-reporting-starting.css';
+---
+<healthcare-analytics-reporting-starting class="healthcare-analytics-reporting-starting-motion">
+  <section id="healthcare-analytics-reporting-starting" class="healthcare-analytics-reporting-starting" aria-labelledby="healthcare-analytics-reporting-starting-heading">
+    <div class="section-container healthcare-analytics-reporting-starting-layout">
+      <h2 id="healthcare-analytics-reporting-starting-heading" data-starting-entry>{copy.heading}</h2>
+      <div class="healthcare-analytics-reporting-starting-copy" data-starting-entry>
+        <div class="healthcare-analytics-reporting-source-content" set:html={copy.html} />
+      </div>
+      <figure class="healthcare-analytics-reporting-starting-visual" data-starting-entry data-starting-visual>
+        <Image src={photo} alt="Healthcare manager and analyst discussing a privacy safe measurement plan" title="Healthcare manager and analyst discussing a privacy safe measurement plan" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 540px, (min-width:640px) 320px, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+    </div>
+  </section>
+</healthcare-analytics-reporting-starting>
+<script>
+  import '../scripts/healthcare-analytics-reporting-starting';
+</script>

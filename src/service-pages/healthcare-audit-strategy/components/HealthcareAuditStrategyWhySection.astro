@@ -1,0 +1,33 @@
+---
+import Icon from '../../../components/Icon.astro';
+import File01Icon from '@hugeicons/core-free-icons/File01Icon';
+import WorkflowSquare01Icon from '@hugeicons/core-free-icons/WorkflowSquare01Icon';
+import ShieldCheckIcon from '@hugeicons/core-free-icons/ShieldCheckIcon';
+import { pageCopy } from '../data/healthcare-audit-strategy-source';
+import '../styles/healthcare-audit-strategy-why.css';
+const copy = pageCopy.why;
+const reasons = copy.items;
+const visuals = [
+  { icon: File01Icon, accent: '#E1FFB9' },
+  { icon: WorkflowSquare01Icon, accent: '#BAE5FF' },
+  { icon: ShieldCheckIcon, accent: '#EEEDFE' },
+];
+---
+<healthcare-audit-strategy-why class="healthcare-audit-strategy-why-motion">
+  <section id="healthcare-audit-strategy-why" class="healthcare-audit-strategy-why" aria-labelledby="healthcare-audit-strategy-why-heading">
+    <div class="section-container healthcare-audit-strategy-why-layout">
+      <h2 id="healthcare-audit-strategy-why-heading" data-why-entry>{copy.heading}</h2>
+      <div class="healthcare-audit-strategy-why-body">
+        <ul class="healthcare-audit-strategy-why-principles">
+          {reasons.map((principle,index) => <li data-why-entry data-why-row>
+            <span class="healthcare-audit-strategy-why-icon" data-why-icon style={`--why-accent:${visuals[index % visuals.length].accent}`} aria-hidden="true"><Icon icon={visuals[index % visuals.length].icon} size={24} strokeWidth={1.7} /></span>
+            <p><strong>{principle.label}</strong>{' '}{principle.description}</p>
+          </li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+</healthcare-audit-strategy-why>
+<script>
+  import '../scripts/healthcare-audit-strategy-why';
+</script>

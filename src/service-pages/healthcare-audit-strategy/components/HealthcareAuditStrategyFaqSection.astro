@@ -1,0 +1,31 @@
+---
+import Icon from '../../../components/Icon.astro';
+import Add01Icon from '@hugeicons/core-free-icons/Add01Icon';
+import { pageCopy } from '../data/healthcare-audit-strategy-source';
+const copy = pageCopy.faq;
+import '../styles/healthcare-audit-strategy-faq.css';
+---
+<healthcare-audit-strategy-faq class="healthcare-audit-strategy-faq-motion">
+  <section id="healthcare-audit-strategy-faq" class="healthcare-audit-strategy-faq" aria-labelledby="healthcare-audit-strategy-faq-heading">
+    <div class="section-container healthcare-audit-strategy-faq-layout">
+      <header class="healthcare-audit-strategy-faq-header" data-faq-entry>
+        <h2 id="healthcare-audit-strategy-faq-heading">{copy.heading}</h2>
+        <div class="healthcare-audit-strategy-source-content" set:html={copy.preface} />
+      </header>
+      <div class="healthcare-audit-strategy-faq-list">
+        {copy.items.map((item,index) => <article class="healthcare-audit-strategy-faq-item" data-faq-entry aria-labelledby={`healthcare-audit-strategy-faq-question-${index+1}`}>
+          <h3 class="healthcare-audit-strategy-faq-question" id={`healthcare-audit-strategy-faq-question-${index+1}`}>
+            <span class="healthcare-audit-strategy-faq-label">{item.question}</span>
+            <span class="healthcare-audit-strategy-faq-toggle" aria-hidden="true"><Icon icon={Add01Icon} size={20} strokeWidth={1.8} /></span>
+          </h3>
+          <div class="healthcare-audit-strategy-faq-answer" id={`healthcare-audit-strategy-faq-answer-${index+1}`} role="region" aria-labelledby={`healthcare-audit-strategy-faq-question-${index+1}`}>
+            <div class="healthcare-audit-strategy-source-content" set:html={item.answerHtml} />
+          </div>
+        </article>)}
+      </div>
+    </div>
+  </section>
+</healthcare-audit-strategy-faq>
+<script>
+  import '../scripts/healthcare-audit-strategy-faq';
+</script>

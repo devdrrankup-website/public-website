@@ -1,0 +1,25 @@
+---
+import HealthcareAnalyticsReportingOutcomeVisual from './HealthcareAnalyticsReportingOutcomeVisual.astro';
+import { pageCopy } from '../data/healthcare-analytics-reporting-source';
+const copy = pageCopy.outcomes;
+import '../styles/healthcare-analytics-reporting-outcomes.css';
+---
+<healthcare-analytics-reporting-outcomes class="healthcare-analytics-reporting-outcomes">
+  <section id="healthcare-analytics-reporting-outcomes" class="section-container" aria-labelledby="healthcare-analytics-reporting-outcomes-heading">
+    <div class="healthcare-analytics-reporting-outcomes-heading">
+      <h2 id="healthcare-analytics-reporting-outcomes-heading">{copy.heading}</h2>
+      <div class="healthcare-analytics-reporting-outcomes-introduction healthcare-analytics-reporting-source-content" set:html={copy.before} />
+    </div>
+    <ul class="healthcare-analytics-reporting-outcomes-list" role="list">
+      {copy.items.map((item, index) => <li class="healthcare-analytics-reporting-outcome" data-seo-outcomes-motion>
+        <HealthcareAnalyticsReportingOutcomeVisual index={index} />
+        <p><strong>{item.label}</strong><span>{item.description}</span></p>
+      </li>)}
+    </ul>
+    <div class="healthcare-analytics-reporting-outcomes-conclusion healthcare-analytics-reporting-source-content" set:html={copy.after} />
+  </section>
+</healthcare-analytics-reporting-outcomes>
+
+<script>
+  import '../scripts/healthcare-analytics-reporting-outcomes';
+</script>

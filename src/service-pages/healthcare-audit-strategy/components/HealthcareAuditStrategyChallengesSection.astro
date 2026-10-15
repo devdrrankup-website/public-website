@@ -1,0 +1,39 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/healthcare-marketing-services/healthcare-audit-strategy/challenges-v1.webp';
+import { pageCopy } from '../data/healthcare-audit-strategy-source';
+import { challengeEditorial as editorial } from '../data/healthcare-audit-strategy-section-editorial';
+const copy = pageCopy.challenges;
+import '../styles/healthcare-audit-strategy-challenges.css';
+---
+
+<healthcare-audit-strategy-challenges class="healthcare-audit-strategy-challenges">
+  <section id="healthcare-audit-strategy-challenges" class="section-container healthcare-audit-strategy-challenges-layout" aria-labelledby="healthcare-audit-strategy-challenges-heading">
+    <div class="healthcare-audit-strategy-challenges-editorial">
+      <h2 id="healthcare-audit-strategy-challenges-heading">{copy.heading}</h2>
+      <p class="healthcare-audit-strategy-challenges-introduction">{copy.introduction}</p>
+      <div class="healthcare-audit-strategy-challenges-photo" data-seo-challenges-motion>
+        <Image src={photo} widths={[360, 540, 720, 960, 1200]} width={1536} height={1024}
+          sizes="(min-width: 1100px) min(41vw, 568px), (min-width: 640px) min(calc(100vw - 56px), 760px), calc(100vw - 32px)"
+          format="webp" quality={76}
+          alt="Strategist comparing hospital pages and channel reports during a marketing audit"
+          title="Strategist comparing hospital pages and channel reports during a marketing audit"
+          loading="lazy" decoding="async" />
+      </div>
+    </div>
+    <div class="healthcare-audit-strategy-challenges-details">
+      <p id="healthcare-audit-strategy-challenges-list-heading" class="healthcare-audit-strategy-challenges-list-intro">{copy.listIntroduction}</p>
+      <ul class="healthcare-audit-strategy-challenges-list" role="list" aria-labelledby="healthcare-audit-strategy-challenges-list-heading" data-seo-challenges-motion>
+        {editorial.points.map((challenge, index) => <li>
+          <span class="healthcare-audit-strategy-challenge-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+          <span>{challenge}</span>
+        </li>)}
+      </ul>
+      <p class="healthcare-audit-strategy-challenges-conclusion">{copy.conclusion}</p>
+    </div>
+  </section>
+</healthcare-audit-strategy-challenges>
+
+<script>
+  import '../scripts/healthcare-audit-strategy-challenges';
+</script>

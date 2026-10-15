@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/healthcare-marketing-services/healthcare-audit-strategy/starting-v1.webp';
+import { pageCopy } from '../data/healthcare-audit-strategy-source';
+const copy = pageCopy.starting;
+import '../styles/healthcare-audit-strategy-starting.css';
+---
+<healthcare-audit-strategy-starting class="healthcare-audit-strategy-starting-motion">
+  <section id="healthcare-audit-strategy-starting" class="healthcare-audit-strategy-starting" aria-labelledby="healthcare-audit-strategy-starting-heading">
+    <div class="section-container healthcare-audit-strategy-starting-layout">
+      <h2 id="healthcare-audit-strategy-starting-heading" data-starting-entry>{copy.heading}</h2>
+      <div class="healthcare-audit-strategy-starting-copy" data-starting-entry>
+        <div class="healthcare-audit-strategy-source-content" set:html={copy.html} />
+      </div>
+      <figure class="healthcare-audit-strategy-starting-visual" data-starting-entry data-starting-visual>
+        <Image src={photo} alt="Doctor and strategist deciding whether an evidence based marketing audit is the right first step" title="Doctor and strategist deciding whether an evidence based marketing audit is the right first step" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 540px, (min-width:640px) 320px, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+    </div>
+  </section>
+</healthcare-audit-strategy-starting>
+<script>
+  import '../scripts/healthcare-audit-strategy-starting';
+</script>

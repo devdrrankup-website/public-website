@@ -1,0 +1,65 @@
+---
+import { Image } from 'astro:assets';
+import Icon from '../../../components/Icon.astro';
+import Arrow from '../../../components/Arrow.astro';
+import Search02Icon from '@hugeicons/core-free-icons/Search02Icon';
+import WebDesign01Icon from '@hugeicons/core-free-icons/WebDesign01Icon';
+import TaskEdit01Icon from '@hugeicons/core-free-icons/TaskEdit01Icon';
+import { pageCopy } from '../data/healthcare-analytics-reporting-source';
+const copy = pageCopy.related;
+import preview0 from '../../../assets/clinic-google-ads/clinic-google-ads-related-preview-v1.webp';
+import preview1 from '../../../assets/healthcare-marketing-services/healthcare-conversion-optimization/hero-v1.webp';
+import preview2 from '../../../assets/healthcare-marketing-services/healthcare-audit-strategy/hero-v1.webp';
+import '../styles/healthcare-analytics-reporting-related.css';
+const visuals = [
+  { image: preview0, icon: Search02Icon, accent: '#EEEDFE', description: 'Clinic Google Ads service planning in Bangladesh' },
+  { image: preview1, icon: WebDesign01Icon, accent: '#FEF2CC', description: 'Healthcare Website Conversion Optimization service planning in Bangladesh' },
+  { image: preview2, icon: TaskEdit01Icon, accent: '#DFFFB7', description: 'Healthcare Marketing Audit & Strategy service planning in Bangladesh' },
+];
+if (visuals.length !== copy.services.length) throw new Error('Healthcare Marketing related service visual count mismatch');
+---
+<section id="healthcare-analytics-reporting-related" class="healthcare-analytics-reporting-related" aria-labelledby="healthcare-analytics-reporting-related-heading">
+  <div class="section-container healthcare-analytics-reporting-related-container">
+    <healthcare-analytics-reporting-related>
+      <header class="healthcare-analytics-reporting-related-header" data-related-entry>
+        <h2 id="healthcare-analytics-reporting-related-heading">{copy.heading}</h2>
+        <div class="healthcare-analytics-reporting-source-content" set:html={copy.introductionHtml} />
+      </header>
+      <div class="healthcare-analytics-reporting-related-layout">
+        <div class="healthcare-analytics-reporting-related-dock">
+          <div class="healthcare-analytics-reporting-related-selectors" role="group" aria-label="Service image previews" hidden>
+            {copy.services.map((service, index) => <button type="button" aria-pressed={index === 0 ? 'true' : 'false'} aria-controls={`related-${service.key}`} data-related-select={index}>
+              <span>{service.name}</span>
+            </button>)}
+          </div>
+          <div class="healthcare-analytics-reporting-related-stage" aria-hidden="true" hidden></div>
+        </div>
+        <div class="healthcare-analytics-reporting-related-details">
+          <div class="healthcare-analytics-reporting-related-labels"><span>{copy.headers[0]}</span><span>{copy.headers[1]}</span></div>
+          <dl class="healthcare-analytics-reporting-related-list">
+            {copy.services.map((service, index) => <div class="healthcare-analytics-reporting-related-row" id={`related-${service.key}`} data-service={service.key}>
+              <dt>
+                <span class="healthcare-analytics-reporting-related-badge" style={`--related-accent:${visuals[index].accent}`}><Icon icon={visuals[index].icon} size={21} strokeWidth={1.8} /></span>
+                <span class="healthcare-analytics-reporting-related-reveal" aria-hidden="true"></span>
+                {service.href ? <a class="healthcare-analytics-reporting-related-name" href={service.href}>{service.name}</a>
+                  : <span class="healthcare-analytics-reporting-related-name">{service.name}</span>}
+                <span class="healthcare-analytics-reporting-related-arrow" aria-hidden="true"><Arrow /></span>
+              </dt>
+              <dd>
+                <span>{service.responsibility}</span>
+                <figure class="healthcare-analytics-reporting-related-photo">
+                  <Image src={visuals[index].image} alt={visuals[index].description} title={visuals[index].description} width={960} widths={[360,640,960]} sizes="(min-width:1100px) 700px, (min-width:640px) 700px, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+                  <figcaption>{service.name}</figcaption>
+                </figure>
+              </dd>
+            </div>)}
+          </dl>
+          <div class="healthcare-analytics-reporting-related-note healthcare-analytics-reporting-source-content" set:html={copy.noteHtml} />
+        </div>
+      </div>
+    </healthcare-analytics-reporting-related>
+  </div>
+</section>
+<script>
+  import '../scripts/healthcare-analytics-reporting-related';
+</script>

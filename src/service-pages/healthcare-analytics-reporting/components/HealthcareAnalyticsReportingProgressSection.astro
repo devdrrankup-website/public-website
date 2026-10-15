@@ -1,0 +1,22 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/healthcare-marketing-services/healthcare-analytics-reporting/progress-v1.webp';
+import { pageCopy } from '../data/healthcare-analytics-reporting-source';
+const copy = pageCopy.progress;
+import '../styles/healthcare-analytics-reporting-progress.css';
+---
+<healthcare-analytics-reporting-progress class="healthcare-analytics-reporting-progress-motion">
+  <section id="healthcare-analytics-reporting-progress" class="healthcare-analytics-reporting-progress" aria-labelledby="healthcare-analytics-reporting-progress-heading">
+    <div class="section-container healthcare-analytics-reporting-progress-layout">
+      <h2 id="healthcare-analytics-reporting-progress-heading" data-progress-entry>{copy.heading}</h2>
+      <p class="healthcare-analytics-reporting-progress-baseline" data-progress-entry>{copy.paragraphs[0]}</p>
+      <figure class="healthcare-analytics-reporting-progress-photo" data-progress-entry data-progress-photo>
+        <Image src={photo} alt="Analyst checking privacy-safe aggregate marketing reporting definitions" title="Analyst checking privacy-safe aggregate marketing reporting definitions" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <div class="healthcare-analytics-reporting-progress-evidence" data-progress-entry>{copy.paragraphs.slice(1).map(paragraph => <p>{paragraph}</p>)}</div>
+    </div>
+  </section>
+</healthcare-analytics-reporting-progress>
+<script>
+  import '../scripts/healthcare-analytics-reporting-progress';
+</script>

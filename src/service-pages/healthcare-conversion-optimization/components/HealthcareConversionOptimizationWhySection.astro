@@ -1,0 +1,33 @@
+---
+import Icon from '../../../components/Icon.astro';
+import WebDesign01Icon from '@hugeicons/core-free-icons/WebDesign01Icon';
+import WorkflowSquare01Icon from '@hugeicons/core-free-icons/WorkflowSquare01Icon';
+import ShieldCheckIcon from '@hugeicons/core-free-icons/ShieldCheckIcon';
+import { pageCopy } from '../data/healthcare-conversion-optimization-source';
+import '../styles/healthcare-conversion-optimization-why.css';
+const copy = pageCopy.why;
+const reasons = copy.items;
+const visuals = [
+  { icon: WebDesign01Icon, accent: '#E1FFB9' },
+  { icon: WorkflowSquare01Icon, accent: '#BAE5FF' },
+  { icon: ShieldCheckIcon, accent: '#EEEDFE' },
+];
+---
+<healthcare-conversion-optimization-why class="healthcare-conversion-optimization-why-motion">
+  <section id="healthcare-conversion-optimization-why" class="healthcare-conversion-optimization-why" aria-labelledby="healthcare-conversion-optimization-why-heading">
+    <div class="section-container healthcare-conversion-optimization-why-layout">
+      <h2 id="healthcare-conversion-optimization-why-heading" data-why-entry>{copy.heading}</h2>
+      <div class="healthcare-conversion-optimization-why-body">
+        <ul class="healthcare-conversion-optimization-why-principles">
+          {reasons.map((principle,index) => <li data-why-entry data-why-row>
+            <span class="healthcare-conversion-optimization-why-icon" data-why-icon style={`--why-accent:${visuals[index % visuals.length].accent}`} aria-hidden="true"><Icon icon={visuals[index % visuals.length].icon} size={24} strokeWidth={1.7} /></span>
+            <p><strong>{principle.label}</strong>{' '}{principle.description}</p>
+          </li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+</healthcare-conversion-optimization-why>
+<script>
+  import '../scripts/healthcare-conversion-optimization-why';
+</script>

@@ -1,0 +1,39 @@
+---
+import { Image } from 'astro:assets';
+import hridoy from '../../../assets/team/founder-hridoy-chowdhury.jpeg';
+import { pageCopy } from '../data/healthcare-conversion-optimization-source';
+const copy = pageCopy.expertise;
+const teamParagraphs = [...copy.teamHtml.matchAll(/<p>(.*?)<\/p>/gs)].map(match => match[1]);
+const approvalPoints = (teamParagraphs[1] ?? '').split(/(?<=\.)\s+(?=[A-Z])/).filter(Boolean);
+import '../styles/healthcare-conversion-optimization-expertise.css';
+---
+<healthcare-conversion-optimization-expertise class="healthcare-conversion-optimization-expertise-motion">
+  <section id="healthcare-conversion-optimization-expertise" class="healthcare-conversion-optimization-expertise" aria-labelledby="healthcare-conversion-optimization-expertise-heading">
+    <div class="section-container healthcare-conversion-optimization-expertise-layout">
+      <h2 id="healthcare-conversion-optimization-expertise-heading">{copy.heading}</h2>
+      <figure class="healthcare-conversion-optimization-expertise-portrait">
+        <div class="healthcare-conversion-optimization-expertise-photo">
+          <Image src={hridoy} widths={[320, 480, 640, 960]} width={1254} height={1254}
+            sizes="(min-width: 1100px) min(40vw, 480px), (min-width: 640px) min(36vw, 360px), min(calc(100vw - 32px), 360px)"
+            format="webp" quality={80} loading="lazy" decoding="async"
+            alt="Hridoy Chowdhury in a navy blazer against a grey studio background"
+            title="Hridoy Chowdhury, founder of Dr RankUP"
+            data-expertise-reveal="portrait" />
+        </div>
+        <figcaption data-expertise-reveal="copy">{copy.founder}</figcaption>
+      </figure>
+      <div class="healthcare-conversion-optimization-expertise-record">
+        <p class="healthcare-conversion-optimization-expertise-context" data-expertise-reveal="copy" set:html={teamParagraphs[0]} />
+      </div>
+      <div class="healthcare-conversion-optimization-expertise-principles">
+        <span class="healthcare-conversion-optimization-expertise-rule" data-expertise-reveal="rule" aria-hidden="true"></span>
+        <ul role="list">
+          {approvalPoints.map(point => <li data-expertise-reveal="copy" data-expertise-delay="60" set:html={point} />)}
+        </ul>
+      </div>
+    </div>
+  </section>
+</healthcare-conversion-optimization-expertise>
+<script>
+  import '../scripts/healthcare-conversion-optimization-expertise';
+</script>

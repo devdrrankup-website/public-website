@@ -1,0 +1,33 @@
+---
+import Icon from '../../../components/Icon.astro';
+import ChartIncreaseIcon from '@hugeicons/core-free-icons/ChartIncreaseIcon';
+import WorkflowSquare01Icon from '@hugeicons/core-free-icons/WorkflowSquare01Icon';
+import ShieldCheckIcon from '@hugeicons/core-free-icons/ShieldCheckIcon';
+import { pageCopy } from '../data/healthcare-analytics-reporting-source';
+import '../styles/healthcare-analytics-reporting-why.css';
+const copy = pageCopy.why;
+const reasons = copy.items;
+const visuals = [
+  { icon: ChartIncreaseIcon, accent: '#E1FFB9' },
+  { icon: WorkflowSquare01Icon, accent: '#BAE5FF' },
+  { icon: ShieldCheckIcon, accent: '#EEEDFE' },
+];
+---
+<healthcare-analytics-reporting-why class="healthcare-analytics-reporting-why-motion">
+  <section id="healthcare-analytics-reporting-why" class="healthcare-analytics-reporting-why" aria-labelledby="healthcare-analytics-reporting-why-heading">
+    <div class="section-container healthcare-analytics-reporting-why-layout">
+      <h2 id="healthcare-analytics-reporting-why-heading" data-why-entry>{copy.heading}</h2>
+      <div class="healthcare-analytics-reporting-why-body">
+        <ul class="healthcare-analytics-reporting-why-principles">
+          {reasons.map((principle,index) => <li data-why-entry data-why-row>
+            <span class="healthcare-analytics-reporting-why-icon" data-why-icon style={`--why-accent:${visuals[index % visuals.length].accent}`} aria-hidden="true"><Icon icon={visuals[index % visuals.length].icon} size={24} strokeWidth={1.7} /></span>
+            <p><strong>{principle.label}</strong>{' '}{principle.description}</p>
+          </li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+</healthcare-analytics-reporting-why>
+<script>
+  import '../scripts/healthcare-analytics-reporting-why';
+</script>

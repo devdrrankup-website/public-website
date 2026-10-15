@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/healthcare-marketing-services/healthcare-analytics-reporting/example-v1.webp';
+import { pageCopy } from '../data/healthcare-analytics-reporting-source';
+const copy = pageCopy.example;
+import '../styles/healthcare-analytics-reporting-example.css';
+---
+<healthcare-analytics-reporting-example class="healthcare-analytics-reporting-example-motion">
+  <section id="healthcare-analytics-reporting-example" class="healthcare-analytics-reporting-example" aria-labelledby="healthcare-analytics-reporting-example-heading">
+    <div class="section-container healthcare-analytics-reporting-example-layout">
+      <header class="healthcare-analytics-reporting-example-header" data-example-entry>
+        <h2 id="healthcare-analytics-reporting-example-heading">{copy.heading}</h2>
+        <span class="healthcare-analytics-reporting-example-rule" data-example-rule aria-hidden="true"></span>
+      </header>
+      <figure class="healthcare-analytics-reporting-example-photo" data-example-entry data-example-photo>
+        <Image src={photo} alt="Clinic manager comparing hypothetical click and consultation summaries with an analyst" title="Clinic manager comparing hypothetical click and consultation summaries with an analyst" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <div class="healthcare-analytics-reporting-example-copy">
+        {copy.paragraphs.map(paragraph => <p data-example-entry>{paragraph}</p>)}
+      </div>
+    </div>
+  </section>
+</healthcare-analytics-reporting-example>
+<script>
+  import '../scripts/healthcare-analytics-reporting-example';
+</script>

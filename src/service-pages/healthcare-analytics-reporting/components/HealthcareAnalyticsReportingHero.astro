@@ -1,0 +1,38 @@
+---
+import ActionIcon from '../../../components/ActionIcon.astro';
+import { pageCopy } from '../data/healthcare-analytics-reporting-source';
+const copy = pageCopy.hero;
+import { healthcareAnalyticsReportingHeroImage as photo } from '../lib/healthcare-analytics-reporting-hero-image';
+import '../styles/healthcare-analytics-reporting-hero.css';
+---
+
+<section class="healthcare-analytics-reporting-hero" aria-labelledby="healthcare-analytics-reporting-heading">
+  <div class="section-container healthcare-analytics-reporting-hero-layout">
+    <div class="healthcare-analytics-reporting-hero-copy">
+      <h1 id="healthcare-analytics-reporting-heading">{copy.heading}</h1>
+      <p class="healthcare-analytics-reporting-hero-tagline">{copy.tagline}</p>
+      <div class="healthcare-analytics-reporting-hero-description">
+        {copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+      </div>
+      <div class="healthcare-analytics-reporting-hero-actions" aria-label={`${copy.heading} options`}>
+        <span class="button button-primary">
+          <span>{copy.primaryCta}</span><ActionIcon purpose="conversation" />
+        </span>
+        {copy.secondaryHref ? <a class="button button-secondary" href={copy.secondaryHref}>
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </a> : <span class="button button-secondary">
+          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
+        </span>}
+      </div>
+    </div>
+    <div class="healthcare-analytics-reporting-hero-visual">
+      <div class="healthcare-analytics-reporting-hero-photo">
+        <img src={photo.src} srcset={photo.srcset} sizes={photo.sizes}
+          width={photo.width} height={photo.height}
+          alt="Analyst and healthcare manager reviewing anonymous aggregate marketing charts in Dhaka"
+          title="Analyst and healthcare manager reviewing anonymous aggregate marketing charts in Dhaka"
+          loading="eager" fetchpriority="high" decoding="async" />
+      </div>
+    </div>
+  </div>
+</section>

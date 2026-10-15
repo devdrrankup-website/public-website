@@ -1,0 +1,65 @@
+---
+import { Image } from 'astro:assets';
+import Icon from '../../../components/Icon.astro';
+import Arrow from '../../../components/Arrow.astro';
+import WebDesign01Icon from '@hugeicons/core-free-icons/WebDesign01Icon';
+import Store01Icon from '@hugeicons/core-free-icons/Store01Icon';
+import ChartIncreaseIcon from '@hugeicons/core-free-icons/ChartIncreaseIcon';
+import { pageCopy } from '../data/healthcare-conversion-optimization-source';
+const copy = pageCopy.related;
+import preview0 from '../../../assets/related-services/doctor-website-development-preview-v1.webp';
+import preview1 from '../../../assets/clinic-website/clinic-website-related-preview-v1.webp';
+import preview2 from '../../../assets/healthcare-marketing-services/healthcare-analytics-reporting/hero-v1.webp';
+import '../styles/healthcare-conversion-optimization-related.css';
+const visuals = [
+  { image: preview0, icon: WebDesign01Icon, accent: '#EEEDFE', description: 'Doctor Website Development service planning in Bangladesh' },
+  { image: preview1, icon: Store01Icon, accent: '#FEF2CC', description: 'Clinic Website Development service planning in Bangladesh' },
+  { image: preview2, icon: ChartIncreaseIcon, accent: '#DFFFB7', description: 'Healthcare Marketing Analytics & Reporting service planning in Bangladesh' },
+];
+if (visuals.length !== copy.services.length) throw new Error('Healthcare Marketing related service visual count mismatch');
+---
+<section id="healthcare-conversion-optimization-related" class="healthcare-conversion-optimization-related" aria-labelledby="healthcare-conversion-optimization-related-heading">
+  <div class="section-container healthcare-conversion-optimization-related-container">
+    <healthcare-conversion-optimization-related>
+      <header class="healthcare-conversion-optimization-related-header" data-related-entry>
+        <h2 id="healthcare-conversion-optimization-related-heading">{copy.heading}</h2>
+        <div class="healthcare-conversion-optimization-source-content" set:html={copy.introductionHtml} />
+      </header>
+      <div class="healthcare-conversion-optimization-related-layout">
+        <div class="healthcare-conversion-optimization-related-dock">
+          <div class="healthcare-conversion-optimization-related-selectors" role="group" aria-label="Service image previews" hidden>
+            {copy.services.map((service, index) => <button type="button" aria-pressed={index === 0 ? 'true' : 'false'} aria-controls={`related-${service.key}`} data-related-select={index}>
+              <span>{service.name}</span>
+            </button>)}
+          </div>
+          <div class="healthcare-conversion-optimization-related-stage" aria-hidden="true" hidden></div>
+        </div>
+        <div class="healthcare-conversion-optimization-related-details">
+          <div class="healthcare-conversion-optimization-related-labels"><span>{copy.headers[0]}</span><span>{copy.headers[1]}</span></div>
+          <dl class="healthcare-conversion-optimization-related-list">
+            {copy.services.map((service, index) => <div class="healthcare-conversion-optimization-related-row" id={`related-${service.key}`} data-service={service.key}>
+              <dt>
+                <span class="healthcare-conversion-optimization-related-badge" style={`--related-accent:${visuals[index].accent}`}><Icon icon={visuals[index].icon} size={21} strokeWidth={1.8} /></span>
+                <span class="healthcare-conversion-optimization-related-reveal" aria-hidden="true"></span>
+                {service.href ? <a class="healthcare-conversion-optimization-related-name" href={service.href}>{service.name}</a>
+                  : <span class="healthcare-conversion-optimization-related-name">{service.name}</span>}
+                <span class="healthcare-conversion-optimization-related-arrow" aria-hidden="true"><Arrow /></span>
+              </dt>
+              <dd>
+                <span>{service.responsibility}</span>
+                <figure class="healthcare-conversion-optimization-related-photo">
+                  <Image src={visuals[index].image} alt={visuals[index].description} title={visuals[index].description} width={960} widths={[360,640,960]} sizes="(min-width:1100px) 700px, (min-width:640px) 700px, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+                  <figcaption>{service.name}</figcaption>
+                </figure>
+              </dd>
+            </div>)}
+          </dl>
+          <div class="healthcare-conversion-optimization-related-note healthcare-conversion-optimization-source-content" set:html={copy.noteHtml} />
+        </div>
+      </div>
+    </healthcare-conversion-optimization-related>
+  </div>
+</section>
+<script>
+  import '../scripts/healthcare-conversion-optimization-related';
+</script>

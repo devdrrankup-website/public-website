@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/healthcare-marketing-services/healthcare-audit-strategy/intent-v1.webp';
+import { pageCopy } from '../data/healthcare-audit-strategy-source';
+const copy = pageCopy.intent;
+import '../styles/healthcare-audit-strategy-intent.css';
+---
+<healthcare-audit-strategy-intent class="healthcare-audit-strategy-intent">
+  <section id="healthcare-audit-strategy-intent" class="section-container healthcare-audit-strategy-intent-layout" aria-labelledby="healthcare-audit-strategy-intent-heading">
+    <div class="healthcare-audit-strategy-intent-copy" data-seo-intent-motion>
+      <h2 id="healthcare-audit-strategy-intent-heading">{copy.heading}</h2>
+      <div class="healthcare-audit-strategy-source-content" set:html={copy.html} />
+    </div>
+    <div class="healthcare-audit-strategy-intent-photo" data-seo-intent-motion>
+      <Image src={photo} widths={[360, 540, 720, 960, 1200]} width={1536} height={1024}
+        sizes="(min-width: 1100px) min(43vw, 576px), (min-width: 640px) min(calc(100vw - 56px), 760px), calc(100vw - 32px)"
+        format="webp" quality={76} loading="lazy" decoding="async"
+        alt="Healthcare decision makers discussing different marketing needs in Bangladesh"
+        title="Healthcare decision makers discussing different marketing needs in Bangladesh" />
+    </div>
+  </section>
+</healthcare-audit-strategy-intent>
+
+<script>
+  import '../scripts/healthcare-audit-strategy-intent';
+</script>

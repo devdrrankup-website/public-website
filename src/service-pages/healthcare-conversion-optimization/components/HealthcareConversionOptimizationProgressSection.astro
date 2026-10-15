@@ -1,0 +1,22 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/healthcare-marketing-services/healthcare-conversion-optimization/progress-v1.webp';
+import { pageCopy } from '../data/healthcare-conversion-optimization-source';
+const copy = pageCopy.progress;
+import '../styles/healthcare-conversion-optimization-progress.css';
+---
+<healthcare-conversion-optimization-progress class="healthcare-conversion-optimization-progress-motion">
+  <section id="healthcare-conversion-optimization-progress" class="healthcare-conversion-optimization-progress" aria-labelledby="healthcare-conversion-optimization-progress-heading">
+    <div class="section-container healthcare-conversion-optimization-progress-layout">
+      <h2 id="healthcare-conversion-optimization-progress-heading" data-progress-entry>{copy.heading}</h2>
+      <p class="healthcare-conversion-optimization-progress-baseline" data-progress-entry>{copy.paragraphs[0]}</p>
+      <figure class="healthcare-conversion-optimization-progress-photo" data-progress-entry data-progress-photo>
+        <Image src={photo} alt="Website specialist testing a clinic page on desktop and mobile during a usability review" title="Website specialist testing a clinic page on desktop and mobile during a usability review" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <div class="healthcare-conversion-optimization-progress-evidence" data-progress-entry>{copy.paragraphs.slice(1).map(paragraph => <p>{paragraph}</p>)}</div>
+    </div>
+  </section>
+</healthcare-conversion-optimization-progress>
+<script>
+  import '../scripts/healthcare-conversion-optimization-progress';
+</script>

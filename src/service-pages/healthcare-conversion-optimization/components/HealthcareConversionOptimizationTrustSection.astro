@@ -1,0 +1,33 @@
+---
+import { Image } from 'astro:assets';
+import Icon from '../../../components/Icon.astro';
+import LockKeyIcon from '@hugeicons/core-free-icons/LockKeyIcon';
+import photo from '../../../assets/healthcare-marketing-services/healthcare-conversion-optimization/trust-v1.webp';
+import { pageCopy } from '../data/healthcare-conversion-optimization-source';
+const copy = pageCopy.trust;
+import '../styles/healthcare-conversion-optimization-trust.css';
+---
+
+<healthcare-conversion-optimization-trust class="healthcare-conversion-optimization-trust-motion">
+  <section id="healthcare-conversion-optimization-trust" class="healthcare-conversion-optimization-trust" aria-labelledby="healthcare-conversion-optimization-trust-heading">
+    <div class="section-container healthcare-conversion-optimization-trust-layout">
+      <h2 id="healthcare-conversion-optimization-trust-heading">{copy.heading}</h2>
+      <div class="healthcare-conversion-optimization-trust-profile healthcare-conversion-optimization-source-content" data-seo-trust-motion set:html={copy.firstHtml} />
+      <div class="healthcare-conversion-optimization-trust-photo" data-seo-trust-motion>
+        <Image src={photo} widths={[360, 540, 720, 960, 1200]} width={1536} height={1024}
+          sizes="(min-width: 1100px) min(43vw, 576px), (min-width: 640px) min(calc(100vw - 56px), 760px), calc(100vw - 32px)"
+          format="webp" quality={76} loading="lazy" decoding="async"
+          alt="Doctor and website specialist checking public clinic information together"
+          title="Doctor and website specialist checking public clinic information together" />
+      </div>
+      <div class="healthcare-conversion-optimization-trust-privacy" data-seo-trust-motion>
+        <span class="healthcare-conversion-optimization-trust-lock" aria-hidden="true"><Icon icon={LockKeyIcon} size={24} /></span>
+        <div class="healthcare-conversion-optimization-source-content" set:html={copy.restHtml} />
+      </div>
+    </div>
+  </section>
+</healthcare-conversion-optimization-trust>
+
+<script>
+  import '../scripts/healthcare-conversion-optimization-trust';
+</script>

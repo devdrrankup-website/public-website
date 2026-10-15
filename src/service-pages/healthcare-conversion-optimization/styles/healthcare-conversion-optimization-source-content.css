@@ -1,0 +1,8 @@
+.healthcare-conversion-optimization-source-content:empty { display: none; }
+.healthcare-conversion-optimization-source-content :where(p) { margin: 0 0 1em; line-height: 1.7; }
+.healthcare-conversion-optimization-source-content :where(p:last-child) { margin-bottom: 0; }
+.healthcare-conversion-optimization-source-content ul, .healthcare-conversion-optimization-source-content ol { margin: .75em 0 1em; padding-left: 1.35em; }
+.healthcare-conversion-optimization-source-content li { margin: .42em 0; line-height: 1.65; }
+.healthcare-conversion-optimization-source-content strong { font-weight: 700; }
+.healthcare-conversion-optimization-source-content table { width: 100%; border-collapse: collapse; }
+.healthcare-conversion-optimization-source-content th, .healthcare-conversion-optimization-source-content td { padding: .7em; text-align: left; border-bottom: 1px solid #0002; }

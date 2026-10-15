@@ -23,7 +23,7 @@ const icons = [ClipboardIcon, BrowserIcon, AnalyticsIcon];
             <span class="healthcare-marketing-specialist-service-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
             <h3 id={`healthcare-marketing-specialist-service-${index + 1}`}>{service.heading}</h3>
             <p>{service.description}</p>
-            <span class="healthcare-marketing-specialist-service-action">{service.action}<Arrow size={17} /></span>
+            <a class="healthcare-marketing-specialist-service-action" href={service.href}>{service.action}<Arrow size={17} /></a>
           </div>
         </article>)}
       </div>

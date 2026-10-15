@@ -1,0 +1,33 @@
+---
+import { Image } from 'astro:assets';
+import Icon from '../../../components/Icon.astro';
+import LockKeyIcon from '@hugeicons/core-free-icons/LockKeyIcon';
+import photo from '../../../assets/healthcare-marketing-services/healthcare-analytics-reporting/trust-v1.webp';
+import { pageCopy } from '../data/healthcare-analytics-reporting-source';
+const copy = pageCopy.trust;
+import '../styles/healthcare-analytics-reporting-trust.css';
+---
+
+<healthcare-analytics-reporting-trust class="healthcare-analytics-reporting-trust-motion">
+  <section id="healthcare-analytics-reporting-trust" class="healthcare-analytics-reporting-trust" aria-labelledby="healthcare-analytics-reporting-trust-heading">
+    <div class="section-container healthcare-analytics-reporting-trust-layout">
+      <h2 id="healthcare-analytics-reporting-trust-heading">{copy.heading}</h2>
+      <div class="healthcare-analytics-reporting-trust-profile healthcare-analytics-reporting-source-content" data-seo-trust-motion set:html={copy.firstHtml} />
+      <div class="healthcare-analytics-reporting-trust-photo" data-seo-trust-motion>
+        <Image src={photo} widths={[360, 540, 720, 960, 1200]} width={1536} height={1024}
+          sizes="(min-width: 1100px) min(43vw, 576px), (min-width: 640px) min(calc(100vw - 56px), 760px), calc(100vw - 32px)"
+          format="webp" quality={76} loading="lazy" decoding="async"
+          alt="Privacy officer and analyst checking anonymous tracking settings"
+          title="Privacy officer and analyst checking anonymous tracking settings" />
+      </div>
+      <div class="healthcare-analytics-reporting-trust-privacy" data-seo-trust-motion>
+        <span class="healthcare-analytics-reporting-trust-lock" aria-hidden="true"><Icon icon={LockKeyIcon} size={24} /></span>
+        <div class="healthcare-analytics-reporting-source-content" set:html={copy.restHtml} />
+      </div>
+    </div>
+  </section>
+</healthcare-analytics-reporting-trust>
+
+<script>
+  import '../scripts/healthcare-analytics-reporting-trust';
+</script>

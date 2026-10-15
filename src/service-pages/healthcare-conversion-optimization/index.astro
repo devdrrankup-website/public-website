@@ -1,0 +1,47 @@
+---
+// Destination-owned static page.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import HealthcareConversionOptimizationHero from './components/HealthcareConversionOptimizationHero.astro';
+import HealthcareConversionOptimizationChallengesSection from './components/HealthcareConversionOptimizationChallengesSection.astro';
+import HealthcareConversionOptimizationOutcomesSection from './components/HealthcareConversionOptimizationOutcomesSection.astro';
+import HealthcareConversionOptimizationIntentSection from './components/HealthcareConversionOptimizationIntentSection.astro';
+import HealthcareConversionOptimizationTrustSection from './components/HealthcareConversionOptimizationTrustSection.astro';
+import HealthcareConversionOptimizationExpertiseSection from './components/HealthcareConversionOptimizationExpertiseSection.astro';
+import HealthcareConversionOptimizationProcessSection from './components/HealthcareConversionOptimizationProcessSection.astro';
+import HealthcareConversionOptimizationMappingSection from './components/HealthcareConversionOptimizationMappingSection.astro';
+import HealthcareConversionOptimizationRelatedSection from './components/HealthcareConversionOptimizationRelatedSection.astro';
+import HealthcareConversionOptimizationStartingSection from './components/HealthcareConversionOptimizationStartingSection.astro';
+import HealthcareConversionOptimizationExampleSection from './components/HealthcareConversionOptimizationExampleSection.astro';
+import HealthcareConversionOptimizationProgressSection from './components/HealthcareConversionOptimizationProgressSection.astro';
+import HealthcareConversionOptimizationWhySection from './components/HealthcareConversionOptimizationWhySection.astro';
+import HealthcareConversionOptimizationFaqSection from './components/HealthcareConversionOptimizationFaqSection.astro';
+import HealthcareConversionOptimizationConsultationSection from './components/HealthcareConversionOptimizationConsultationSection.astro';
+import Footer from '../../components/Footer.astro';
+import { healthcareConversionOptimizationHeroPreload } from './lib/healthcare-conversion-optimization-hero-image';
+import './styles/healthcare-conversion-optimization-rendering.css';
+import './styles/healthcare-conversion-optimization-source-content.css';
+import { metadata } from './data/healthcare-conversion-optimization-metadata';
+---
+
+<Layout metadata={metadata} imagePreload={healthcareConversionOptimizationHeroPreload}>
+  <Navbar />
+  <main id="main-content" class="healthcare-conversion-optimization-page" tabindex="-1">
+    <HealthcareConversionOptimizationHero />
+    <HealthcareConversionOptimizationChallengesSection />
+    <HealthcareConversionOptimizationOutcomesSection />
+    <HealthcareConversionOptimizationIntentSection />
+    <HealthcareConversionOptimizationTrustSection />
+    <HealthcareConversionOptimizationExpertiseSection />
+    <HealthcareConversionOptimizationProcessSection />
+    <HealthcareConversionOptimizationMappingSection />
+    <HealthcareConversionOptimizationRelatedSection />
+    <HealthcareConversionOptimizationStartingSection />
+    <HealthcareConversionOptimizationExampleSection />
+    <HealthcareConversionOptimizationProgressSection />
+    <HealthcareConversionOptimizationWhySection />
+    <HealthcareConversionOptimizationFaqSection />
+    <HealthcareConversionOptimizationConsultationSection />
+  </main>
+  <Footer />
+</Layout>

@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/healthcare-marketing-services/healthcare-analytics-reporting/intent-v1.webp';
+import { pageCopy } from '../data/healthcare-analytics-reporting-source';
+const copy = pageCopy.intent;
+import '../styles/healthcare-analytics-reporting-intent.css';
+---
+<healthcare-analytics-reporting-intent class="healthcare-analytics-reporting-intent">
+  <section id="healthcare-analytics-reporting-intent" class="section-container healthcare-analytics-reporting-intent-layout" aria-labelledby="healthcare-analytics-reporting-intent-heading">
+    <div class="healthcare-analytics-reporting-intent-copy" data-seo-intent-motion>
+      <h2 id="healthcare-analytics-reporting-intent-heading">{copy.heading}</h2>
+      <div class="healthcare-analytics-reporting-source-content" set:html={copy.html} />
+    </div>
+    <div class="healthcare-analytics-reporting-intent-photo" data-seo-intent-motion>
+      <Image src={photo} widths={[360, 540, 720, 960, 1200]} width={1536} height={1024}
+        sizes="(min-width: 1100px) min(43vw, 576px), (min-width: 640px) min(calc(100vw - 56px), 760px), calc(100vw - 32px)"
+        format="webp" quality={76} loading="lazy" decoding="async"
+        alt="Healthcare marketing team comparing channel reports and separate phone enquiries"
+        title="Healthcare marketing team comparing channel reports and separate phone enquiries" />
+    </div>
+  </section>
+</healthcare-analytics-reporting-intent>
+
+<script>
+  import '../scripts/healthcare-analytics-reporting-intent';
+</script>

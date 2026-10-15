@@ -1,0 +1,22 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../../../assets/healthcare-marketing-services/healthcare-audit-strategy/progress-v1.webp';
+import { pageCopy } from '../data/healthcare-audit-strategy-source';
+const copy = pageCopy.progress;
+import '../styles/healthcare-audit-strategy-progress.css';
+---
+<healthcare-audit-strategy-progress class="healthcare-audit-strategy-progress-motion">
+  <section id="healthcare-audit-strategy-progress" class="healthcare-audit-strategy-progress" aria-labelledby="healthcare-audit-strategy-progress-heading">
+    <div class="section-container healthcare-audit-strategy-progress-layout">
+      <h2 id="healthcare-audit-strategy-progress-heading" data-progress-entry>{copy.heading}</h2>
+      <p class="healthcare-audit-strategy-progress-baseline" data-progress-entry>{copy.paragraphs[0]}</p>
+      <figure class="healthcare-audit-strategy-progress-photo" data-progress-entry data-progress-photo>
+        <Image src={photo} alt="Analyst reviewing source evidence and priorities for a healthcare marketing audit" title="Analyst reviewing source evidence and priorities for a healthcare marketing audit" width={960} widths={[360,640,960]} sizes="(min-width:1100px) 640px, (min-width:640px) 50vw, calc(100vw - 32px)" format="webp" quality={75} loading="lazy" decoding="async" />
+      </figure>
+      <div class="healthcare-audit-strategy-progress-evidence" data-progress-entry>{copy.paragraphs.slice(1).map(paragraph => <p>{paragraph}</p>)}</div>
+    </div>
+  </section>
+</healthcare-audit-strategy-progress>
+<script>
+  import '../scripts/healthcare-audit-strategy-progress';
+</script>
