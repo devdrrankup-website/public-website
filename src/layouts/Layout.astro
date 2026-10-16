@@ -22,6 +22,7 @@ interface Props {
 
 const { title = 'Dr RankUP', description = 'Healthcare digital marketing, SEO, websites and software for doctors, clinics and hospitals across Bangladesh.', imagePreload, metadata } = Astro.props;
 const imagePreloads = imagePreload ? (Array.isArray(imagePreload) ? imagePreload : [imagePreload]) : [];
+const unpublishedRoute = /^\/(?:resources|case-studies|blog|service-drafts)(?:\/|$)/.test(Astro.url.pathname);
 ---
 
 <!doctype html>
@@ -31,6 +32,8 @@ const imagePreloads = imagePreload ? (Array.isArray(imagePreload) ? imagePreload
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={metadata?.description ?? description} />
+    <meta name="robots" content={unpublishedRoute ? 'noindex, follow' : 'index, follow'} />
+    {!unpublishedRoute && <link rel="describedby" href="/llms.txt" />}
     <meta name="theme-color" content="#6131C6" />
     {metadata && <>
       <link rel="canonical" href={metadata.canonical} />

@@ -4,6 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   // The entire website must use SSG, as requested by the user.
   output: 'static',
+  site: 'https://www.drrankup.com',
   // Retain fast cold first paint. Externalizing this completed stylesheet
   // improved simulated Lighthouse scores but regressed actual-throttling
   // first paint in the deep audit. Keep the approved styles available inline.
