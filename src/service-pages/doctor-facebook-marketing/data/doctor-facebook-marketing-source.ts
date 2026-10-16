@@ -158,7 +158,7 @@ export const pageCopy = {
       }
     ],
     "introductionHtml": "",
-    "noteHtml": "<p>These proposed links should be activated only when their target service pages are approved and published.</p>"
+    "noteHtml": "<p>Explore a related service when its focus matches the support your practice needs.</p>"
   },
   "starting": {
     "heading": "When Facebook Page Management Is the Right Starting Point",

@@ -47,3 +47,4 @@
   .doctor-facebook-ads-hero-visual { animation: doctor-facebook-ads-photo-arrive 600ms cubic-bezier(.2,.65,.3,1) both; }
   @keyframes doctor-facebook-ads-photo-arrive { from { transform: translateY(12px); } to { transform: translateY(0); } }
 }
+.doctor-facebook-ads-hero-actions a.button { cursor: pointer; }

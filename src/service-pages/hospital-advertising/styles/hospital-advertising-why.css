@@ -24,3 +24,4 @@
 }
 
 .hospital-advertising-why-body { min-width: 0; }
+.hospital-advertising-why-body > .button { margin-top: 24px; }

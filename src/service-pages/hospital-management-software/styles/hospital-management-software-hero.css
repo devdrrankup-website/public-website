@@ -47,3 +47,4 @@
   .hospital-management-software-hero-visual { animation: hospital-management-software-photo-arrive 600ms cubic-bezier(.2,.65,.3,1) both; }
   @keyframes hospital-management-software-photo-arrive { from { transform: translateY(12px); } to { transform: translateY(0); } }
 }
+.hospital-management-software-hero-actions a.button { cursor: pointer; }

@@ -156,7 +156,7 @@ export const pageCopy = {
       }
     ],
     "introductionHtml": "<p>This proposed service <strong>evaluates and recommends</strong>; it does not automatically implement recurring search or ads work. For organic implementation, use <a href=\"/doctors/seo/\">Doctor SEO</a>, <a href=\"/clinics/seo/\">Clinic SEO</a> or <a href=\"/hospitals/seo/\">Hospital SEO</a>.</p>",
-    "noteHtml": "<p>For paid implementation, evaluate <a href=\"/clinics/google-ads/\">Clinic Google Ads</a> or an approved hospital advertising offering. <strong><a href=\"/healthcare-marketing/conversion-optimization/\">Healthcare Website Conversion Optimization</a></strong> owns focused implementation on an existing visitor journey, while <strong><a href=\"/healthcare-marketing/analytics-reporting/\">Healthcare Marketing Analytics &amp; Reporting</a></strong> owns a separate measurement system.</p>"
+    "noteHtml": "<p>For paid implementation, evaluate <a href=\"/clinics/google-ads/\">Clinic Google Ads</a> or an approved <a href=\"/hospitals/advertising/\">hospital advertising offering</a>. <strong>Healthcare Website Conversion Optimization</strong> owns focused implementation on an existing visitor journey, while <strong>Healthcare Marketing Analytics &amp; Reporting</strong> owns a separate measurement system.</p>"
   },
   "starting": {
     "heading": "When a Healthcare Marketing Audit Is the Right First Step",

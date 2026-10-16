@@ -63,7 +63,7 @@ export const pageCopy = {
   "trust": {
     "heading": "Healthcare Advertising Requires Extra Checks",
     "firstHtml": "<p>BM&amp;DC professional conduct must be considered whenever registered doctors appear in promotional claims. A qualified hospital reviewer should approve substantive clinical descriptions; no agency should promise cures, superior treatment or guaranteed outcomes.</p>",
-    "restHtml": "<p>Google restricts advertiser-curated audiences for sensitive health interests, and Meta has separate rules on health-related ad claims and personal attributes. Retargeting based on a person's illness or diagnosis is not an acceptable default plan.</p><p>The account owner must confirm current platform eligibility, country restrictions, creative requirements and policy status. Patient names, symptoms and report details must not be sent into standard ad measurement tools.</p>"
+    "restHtml": "<p><a href=\"https://support.google.com/adspolicy/answer/16701855?hl=en\" target=\"_blank\" rel=\"noopener noreferrer\">Google restricts advertiser-curated audiences for sensitive health interests</a>, and Meta has separate rules on health-related ad claims and personal attributes. Retargeting based on a person's illness or diagnosis is not an acceptable default plan.</p><p>The account owner must confirm current platform eligibility, country restrictions, creative requirements and policy status. Patient names, symptoms and report details must not be sent into standard ad measurement tools.</p>"
   },
   "expertise": {
     "heading": "Advertising Planning Expertise Behind Dr RankUp",

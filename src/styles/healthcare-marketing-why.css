@@ -23,6 +23,7 @@
 }
 .healthcare-marketing-why-layout { display: grid; gap: 28px; }
 .healthcare-marketing-why-header { max-width: 430px; }
+.healthcare-marketing-why-header > .button { margin-top: 24px; }
 .healthcare-marketing-why-range {
   display: flex;
   align-items: center;

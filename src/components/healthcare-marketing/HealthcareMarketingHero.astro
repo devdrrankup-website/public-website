@@ -18,8 +18,7 @@ const icons = [Search01Icon, Target01Icon, ShieldCheckIcon, LocationCheck01Icon]
         <p class="healthcare-marketing-hero-tagline">{copy.tagline}</p>
         <div class="healthcare-marketing-hero-description">{copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}</div>
         <div class="healthcare-marketing-hero-actions" aria-label="Consultation and marketing services">
-          <!-- The contact page is not live yet; this label does not masquerade as a working link. -->
-          <span class="button button-primary">{copy.primaryCta}<ActionIcon purpose="conversation" /></span>
+          <a class="button button-primary" href="/contact/">{copy.primaryCta}<ActionIcon purpose="conversation" /></a>
           <a class="button button-secondary" href="#healthcare-marketing-solutions">{copy.secondaryCta}<ActionIcon purpose="conversation" /></a>
         </div>
       </div>

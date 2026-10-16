@@ -155,7 +155,7 @@ export const pageCopy = {
       }
     ],
     "introductionHtml": "",
-    "noteHtml": "<p><a href=\"/doctors/personal-branding/\">Explore Doctor Personal Branding</a> · <a href=\"/doctors/#doctor-solutions\">Explore Doctor Website Development</a></p>"
+    "noteHtml": "<p>Doctor Personal Branding and Doctor Website Development address different, broader project needs.</p>"
   },
   "starting": {
     "heading": "When a Dedicated Profile Website Is the Right Starting Point",

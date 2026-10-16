@@ -24,3 +24,4 @@
 }
 
 .hospital-website-development-why-body { min-width: 0; }
+.hospital-website-development-why-body > .button { margin-top: 24px; }

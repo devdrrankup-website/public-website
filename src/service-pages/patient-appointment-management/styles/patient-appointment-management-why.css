@@ -24,3 +24,4 @@
 }
 
 .patient-appointment-management-why-body { min-width: 0; }
+.patient-appointment-management-why-body > .button { margin-top: 24px; }

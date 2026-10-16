@@ -162,7 +162,7 @@ export const pageCopy = {
       }
     ],
     "introductionHtml": "",
-    "noteHtml": "<p><a href=\"/doctors/content-marketing/\">Explore Doctor Content Marketing</a> · <a href=\"/doctors/#doctor-solutions\">Explore Doctor Website Development</a></p>"
+    "noteHtml": "<p>Doctor Content Marketing plans editorial work; Doctor Website Development covers the broader site.</p>"
   },
   "starting": {
     "heading": "When a Content Dashboard Is the Right Starting Point",

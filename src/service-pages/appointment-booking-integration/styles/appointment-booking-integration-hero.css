@@ -47,3 +47,4 @@
   .appointment-booking-integration-hero-visual { animation: appointment-booking-integration-photo-arrive 600ms cubic-bezier(.2,.65,.3,1) both; }
   @keyframes appointment-booking-integration-photo-arrive { from { transform: translateY(12px); } to { transform: translateY(0); } }
 }
+.appointment-booking-integration-hero-actions a.button { cursor: pointer; }

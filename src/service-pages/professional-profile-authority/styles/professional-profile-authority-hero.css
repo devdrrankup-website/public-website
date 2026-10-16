@@ -47,3 +47,4 @@
   .professional-profile-authority-hero-visual { animation: professional-profile-authority-photo-arrive 600ms cubic-bezier(.2,.65,.3,1) both; }
   @keyframes professional-profile-authority-photo-arrive { from { transform: translateY(12px); } to { transform: translateY(0); } }
 }
+.professional-profile-authority-hero-actions a.button { cursor: pointer; }

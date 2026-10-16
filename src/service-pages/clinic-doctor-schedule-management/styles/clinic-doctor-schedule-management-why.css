@@ -24,3 +24,4 @@
 }
 
 .clinic-doctor-schedule-management-why-body { min-width: 0; }
+.clinic-doctor-schedule-management-why-body > .button { margin-top: 24px; }

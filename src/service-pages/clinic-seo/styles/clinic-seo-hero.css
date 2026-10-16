@@ -47,3 +47,4 @@
   .clinic-seo-hero-visual { animation: clinic-seo-photo-arrive 600ms cubic-bezier(.2,.65,.3,1) both; }
   @keyframes clinic-seo-photo-arrive { from { transform: translateY(12px); } to { transform: translateY(0); } }
 }
+.clinic-seo-hero-actions a.button { cursor: pointer; }

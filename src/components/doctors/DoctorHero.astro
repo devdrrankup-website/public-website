@@ -17,11 +17,9 @@ const icons = [ShieldCheckIcon, BrowserIcon, LocationCheck01Icon, Calendar03Icon
         <h1 id="doctor-hero-heading">{copy.heading}</h1>
         <p class="doctor-hero-tagline">{copy.tagline}</p>
         <div class="doctor-hero-description">{copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}</div>
-        <div class="doctor-hero-actions" aria-label="Planned consultation and solution options">
-          <!-- Destinations remain deferred by the user. These are display-only labels,
-               without dead buttons, tabindex or links to pages not yet built. -->
-          <span class="button button-primary">{copy.primaryCta}<ActionIcon purpose="conversation" /></span>
-          <span class="button button-secondary">{copy.secondaryCta}<ActionIcon purpose="conversation" /></span>
+        <div class="doctor-hero-actions" aria-label="Consultation and doctor solutions">
+          <a class="button button-primary" href="/contact/">{copy.primaryCta}<ActionIcon purpose="conversation" /></a>
+          <a class="button button-secondary" href="#doctor-solutions">{copy.secondaryCta}<ActionIcon purpose="conversation" /></a>
         </div>
       </div>
       <div class="doctor-hero-visual">

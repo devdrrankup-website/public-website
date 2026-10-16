@@ -47,3 +47,4 @@
   .hospital-seo-hero-visual { animation: hospital-seo-photo-arrive 600ms cubic-bezier(.2,.65,.3,1) both; }
   @keyframes hospital-seo-photo-arrive { from { transform: translateY(12px); } to { transform: translateY(0); } }
 }
+.hospital-seo-hero-actions a.button { cursor: pointer; }

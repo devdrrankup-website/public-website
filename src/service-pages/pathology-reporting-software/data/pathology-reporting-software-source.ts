@@ -57,7 +57,7 @@ export const pageCopy = {
   },
   "trust": {
     "heading": "Laboratory Quality and Patient Confidentiality Come First",
-    "firstHtml": "<p>The World Health Organization recommends checking reported information and authorising laboratory reports before release. It also describes procedures for urgent or critical results to reach the responsible requester promptly through authorised staff.</p>",
+    "firstHtml": "<p>The <a href=\"https://extranet.who.int/lqsi/content/start-reviewing-and-authorizing-results-ie-validation-results-releasing-report\" target=\"_blank\" rel=\"noopener noreferrer\">World Health Organization</a> recommends checking reported information and authorising laboratory reports before release. It also describes procedures for urgent or critical results to reach the responsible requester promptly through authorised staff.</p>",
     "restHtml": "<p>Dr RankUp can plan a critical-result notification process, but the laboratory decides appropriate thresholds, escalation contacts and clinical actions. Report software must not invent reference ranges, override the qualified signatory or issue a diagnosis on its own.</p><p>Restricted links, patient identity checks and audit records matter when reports are shared electronically. Actual operators must review applicable Bangladesh requirements.</p>"
   },
   "expertise": {

@@ -24,3 +24,4 @@
 }
 
 .professional-profile-authority-why-body { min-width: 0; }
+.professional-profile-authority-why-body > .button { margin-top: 24px; }

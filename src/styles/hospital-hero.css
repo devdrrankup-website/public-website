@@ -55,3 +55,4 @@
   .hospital-hero-visual { animation: hospital-photo-arrive 650ms cubic-bezier(.2,.65,.3,1) both; }
   @keyframes hospital-photo-arrive { from { transform: translateY(12px); } to { transform: translateY(0); } }
 }
+.hospital-hero-actions a.button { cursor: pointer; }

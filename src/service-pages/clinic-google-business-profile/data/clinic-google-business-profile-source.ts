@@ -58,7 +58,7 @@ export const pageCopy = {
   },
   "trust": {
     "heading": "Platform Rules and Patient Confidentiality Are Non-Negotiable",
-    "firstHtml": "<p>Google requires eligible, accurately represented businesses and restricts misleading or duplicate profiles. Review access, categories and address rules before making edits; never promise that Google will approve a requested change.</p>",
+    "firstHtml": "<p><a href=\"https://support.google.com/business/answer/3038177\" target=\"_blank\" rel=\"noopener noreferrer\">Google requires eligible, accurately represented businesses</a> and restricts misleading or duplicate profiles. Review access, categories and address rules before making edits; never promise that Google will approve a requested change.</p>",
     "restHtml": "<p>Do not purchase reviews or encourage false ratings. A reply must not acknowledge a reviewer's patient status, treatment, diagnosis or test result. Clinical service descriptions and doctor credentials also need appropriate professional review under relevant BM&amp;DC conduct safeguards.</p><p>The clinic owns its profile credentials and retains authority over operational facts.</p>"
   },
   "expertise": {

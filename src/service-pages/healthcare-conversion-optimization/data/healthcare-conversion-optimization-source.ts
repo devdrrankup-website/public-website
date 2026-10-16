@@ -155,8 +155,8 @@ export const pageCopy = {
         "href": "/healthcare-marketing/analytics-reporting/"
       }
     ],
-    "introductionHtml": "<p><strong>Healthcare Website Conversion Optimization</strong> improves an existing public visitor experience. New sites and major builds belong to the relevant Doctor Website Development or <a href=\"/clinics/website-development/\">Clinic Website</a> service, subject to approved route naming.</p>",
-    "noteHtml": "<p>A new booking capability belongs to <a href=\"/clinics/online-appointment-system/\">Online Appointment System</a> if that dedicated route is approved. <strong><a href=\"/healthcare-marketing/analytics-reporting/\">Healthcare Marketing Analytics &amp; Reporting</a></strong> owns cross-channel measurement design, rather than page-level usability improvements.</p>"
+    "introductionHtml": "<p><strong>Healthcare Website Conversion Optimization</strong> improves an existing public visitor experience. New sites and major builds belong to the relevant Doctor Website Development or Clinic Website service.</p>",
+    "noteHtml": "<p>A new booking capability belongs to <a href=\"/clinics/online-appointment-system/\">Online Appointment System</a>. <strong>Healthcare Marketing Analytics &amp; Reporting</strong> owns cross-channel measurement design, rather than page-level usability improvements.</p>"
   },
   "starting": {
     "heading": "When This Website Service Is the Right First Step",

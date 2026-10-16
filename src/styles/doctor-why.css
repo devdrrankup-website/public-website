@@ -23,6 +23,7 @@
 }
 .doctor-why-layout { display: grid; gap: 28px; }
 .doctor-why-header { max-width: 430px; }
+.doctor-why-header > .button { margin-top: 24px; }
 .doctor-why-range {
   display: flex;
   align-items: center;

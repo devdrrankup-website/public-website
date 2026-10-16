@@ -47,3 +47,4 @@
   .patient-appointment-management-hero-visual { animation: patient-appointment-management-photo-arrive 600ms cubic-bezier(.2,.65,.3,1) both; }
   @keyframes patient-appointment-management-photo-arrive { from { transform: translateY(12px); } to { transform: translateY(0); } }
 }
+.patient-appointment-management-hero-actions a.button { cursor: pointer; }

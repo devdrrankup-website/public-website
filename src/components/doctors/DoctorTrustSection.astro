@@ -7,6 +7,7 @@ import ShieldCheckIcon from '@hugeicons/core-free-icons/ShieldCheckIcon';
 import LockKeyIcon from '@hugeicons/core-free-icons/LockKeyIcon';
 import photo from '../../assets/for-doctors/clinical-content-review-v1.webp';
 import {doctorTrust as copy} from '../../data/for-doctors-trust';
+import {officialGuidanceParts} from '../../lib/official-guidance';
 import '../../styles/doctor-trust.css';
 const icons=[UserAccountIcon,ShieldCheckIcon,LockKeyIcon];
 const emphasis='registered-doctor responsibility';
@@ -32,7 +33,7 @@ const [start,end]=copy.conclusion.split(emphasis);
         <div class="doctor-trust-principles">
           {copy.principles.map((item,index)=><article class="doctor-trust-principle" aria-labelledby={`doctor-trust-principle-${index}`} data-discovery-motion>
             <span class="doctor-trust-icon"><Icon icon={icons[index]} size={26} /></span>
-            <div><h3 id={`doctor-trust-principle-${index}`}>{item.heading}</h3>{item.paragraphs.map(paragraph=><p>{paragraph}</p>)}</div>
+            <div><h3 id={`doctor-trust-principle-${index}`}>{item.heading}</h3>{item.paragraphs.map(paragraph=><p>{officialGuidanceParts(paragraph).map(part => part.href ? <a href={part.href} target="_blank" rel="noopener noreferrer" aria-label={`${part.text} guidance (opens in a new tab)`}>{part.text}</a> : part.text)}</p>)}</div>
           </article>)}
         </div>
       </div>

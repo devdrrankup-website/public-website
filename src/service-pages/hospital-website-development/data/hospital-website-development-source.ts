@@ -7,7 +7,8 @@ export const pageCopy = {
       "Dr RankUp designs hospital websites in Bangladesh around genuine departments, doctors, branches, responsive pages and scoped integrations—not unverified functionality."
     ],
     "primaryCta": "Book a Hospital Website Consultation",
-    "secondaryCta": "Explore Solutions for Hospitals"
+    "secondaryCta": "Explore Solutions for Hospitals",
+    "secondaryHref": "/hospitals/"
   },
   "challenges": {
     "heading": "When a Hospital Website Makes Simple Decisions Difficult",

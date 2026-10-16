@@ -54,7 +54,7 @@ export const pageCopy = {
   },
   "intent": {
     "heading": "Designed for How Doctors Practise in Bangladesh",
-    "html": "<p>A doctor might consult independently, share a clinic with colleagues or visit more than one chamber during the week. Those arrangements influence which practitioner listing is eligible and what information it should display.</p><p>We assess each real location and schedule; the structure follows the actual practitioner role.</p>"
+    "html": "<p>A doctor might consult independently, share a clinic with colleagues or visit more than one chamber during the week. Those arrangements influence which <a href=\"https://support.google.com/business/answer/3038177\" target=\"_blank\" rel=\"noopener noreferrer\">practitioner listing is eligible</a> and what information it should display.</p><p>We assess each real location and schedule; the structure follows the actual practitioner role.</p>"
   },
   "trust": {
     "heading": "Professional Accuracy Supports Healthcare Trust",

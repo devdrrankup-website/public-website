@@ -156,7 +156,7 @@ export const pageCopy = {
       }
     ],
     "introductionHtml": "",
-    "noteHtml": "<p><a href=\"/doctors/patient-appointment-management/\">Explore Patient Appointment Management</a> · <a href=\"/doctors/scheduling-software/\">Explore Doctor Scheduling Software</a></p>"
+    "noteHtml": "<p>Patient Appointment Management handles serials; Doctor Scheduling Software defines available sessions.</p>"
   },
   "starting": {
     "heading": "When Booking Integration Is the Right Starting Point",

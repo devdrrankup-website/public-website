@@ -1,13 +1,13 @@
 // Snapshot adapted from the supplied CONTENT ONLY file.
 export const hospitalSolutions = {
   "heading": "Explore Hospital Solutions",
-  "introduction": "Choose one priority; category labels are not separate live pages.",
+  "introduction": "Choose one priority; explore the dedicated page for each available category.",
   "groups": [
     {
       "id": "marketing",
       "heading": "Hospital Digital Marketing",
       "lead": "",
-      "cta": "Discuss Hospital Marketing Priorities",
+      "cta": "Explore Hospital Digital Marketing",
       "services": [
         [
           "Hospital SEO",
@@ -43,7 +43,7 @@ export const hospitalSolutions = {
       "id": "websites",
       "heading": "Hospital Website Development",
       "lead": "",
-      "cta": "Discuss Hospital Website Development",
+      "cta": "Explore Hospital Website Development",
       "services": [
         [
           "Hospital Website Development",
@@ -75,7 +75,7 @@ export const hospitalSolutions = {
       "id": "software",
       "heading": "Hospital Management Software",
       "lead": "",
-      "cta": "Discuss Hospital Management Software",
+      "cta": "Explore Hospital Management Software",
       "services": [
         [
           "Reception & Patient Registration",

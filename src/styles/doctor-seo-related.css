@@ -75,3 +75,5 @@ doctor-seo-related { display: block; }
   .doctor-seo-related-reveal figcaption { display: none; }
 }
 @media (prefers-reduced-motion:reduce) { .doctor-seo-related-selectors button::after, .doctor-seo-related-selectors button span, .doctor-seo-related-name, .doctor-seo-related-reveal { transition: none !important; } }
+.doctor-seo-related-note a { color: inherit; text-decoration: underline; text-underline-offset: .16em; }
+.doctor-seo-related-note a:focus-visible { outline: 2px solid #bae5ff; outline-offset: 3px; }

@@ -24,3 +24,4 @@
 }
 
 .healthcare-conversion-optimization-why-body { min-width: 0; }
+.healthcare-conversion-optimization-why-body > .button { margin-top: 24px; }

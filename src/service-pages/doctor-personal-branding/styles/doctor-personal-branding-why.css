@@ -24,3 +24,4 @@
 }
 
 .doctor-personal-branding-why-body { min-width: 0; }
+.doctor-personal-branding-why-body > .button { margin-top: 24px; }

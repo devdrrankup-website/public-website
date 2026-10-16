@@ -58,8 +58,8 @@ export const pageCopy = {
   },
   "trust": {
     "heading": "Google Healthcare Policy and Privacy Must Be Checked First",
-    "firstHtml": "<p>Google's healthcare rules restrict some services and countries; certain categories require certification. Check the real service and advertising account before launch.</p>",
-    "restHtml": "<p>Google's personalised-advertising rules restrict targeting based on sensitive health interests. Patient diagnoses, appointment lists or treatment signals are not safe default remarketing audiences. Measurement settings also have separate limits for health-related information.</p><p>BM&amp;DC professional conduct and other applicable Bangladesh requirements independently govern physician promotion. Platform approval never replaces local clinical or legal review.</p>"
+    "firstHtml": "<p><a href=\"https://support.google.com/adspolicy/answer/176031\" target=\"_blank\" rel=\"noopener noreferrer\">Google's healthcare rules</a> restrict some services and countries; certain categories require certification. Check the real service and advertising account before launch.</p>",
+    "restHtml": "<p><a href=\"https://support.google.com/adspolicy/answer/16701855?hl=en\" target=\"_blank\" rel=\"noopener noreferrer\">Google's personalised-advertising rules</a> restrict targeting based on sensitive health interests. Patient diagnoses, appointment lists or treatment signals are not safe default remarketing audiences. Measurement settings also have separate limits for health-related information.</p><p>BM&amp;DC professional conduct and other applicable Bangladesh requirements independently govern physician promotion. Platform approval never replaces local clinical or legal review.</p>"
   },
   "expertise": {
     "heading": "Search Advertising Expertise Behind Dr RankUp",

@@ -14,12 +14,12 @@ import '../../../styles/doctor-seo-hero.css';
         {copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}
       </div>
       <div class="doctor-seo-hero-actions" aria-label="Planned consultation and doctor solution options">
-        <span class="button button-primary">
+        <a class="button button-primary" href="/contact/">
           <span>{copy.primaryCta}</span><ActionIcon purpose="conversation" />
-        </span>
-        <span class="button button-secondary">
+        </a>
+        <a class="button button-secondary" href="/doctors/">
           <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
-        </span>
+        </a>
       </div>
     </div>
     <div class="doctor-seo-hero-visual">

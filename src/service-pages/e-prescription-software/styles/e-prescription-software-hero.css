@@ -47,3 +47,4 @@
   .e-prescription-software-hero-visual { animation: e-prescription-software-photo-arrive 600ms cubic-bezier(.2,.65,.3,1) both; }
   @keyframes e-prescription-software-photo-arrive { from { transform: translateY(12px); } to { transform: translateY(0); } }
 }
+.e-prescription-software-hero-actions a.button { cursor: pointer; }

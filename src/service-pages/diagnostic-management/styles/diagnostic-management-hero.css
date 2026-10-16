@@ -47,3 +47,4 @@
   .diagnostic-management-hero-visual { animation: diagnostic-management-photo-arrive 600ms cubic-bezier(.2,.65,.3,1) both; }
   @keyframes diagnostic-management-photo-arrive { from { transform: translateY(12px); } to { transform: translateY(0); } }
 }
+.diagnostic-management-hero-actions a.button { cursor: pointer; }

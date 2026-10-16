@@ -156,7 +156,7 @@ export const pageCopy = {
       }
     ],
     "introductionHtml": "",
-    "noteHtml": "<p><a href=\"/doctors/seo/\">Explore Doctor SEO</a> · <a href=\"/doctors/local-seo/\">Explore Doctor Local SEO</a></p>"
+    "noteHtml": "<p>Doctor SEO supports ongoing search strategy; Doctor Local SEO focuses on genuine location discovery.</p>"
   },
   "starting": {
     "heading": "When Search-Ready Setup Is the Right Starting Point",

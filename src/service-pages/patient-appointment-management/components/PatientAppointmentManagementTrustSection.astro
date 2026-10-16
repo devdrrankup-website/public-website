@@ -1,10 +1,14 @@
 ---
+import {linkOfficialGuidanceHtml} from '../../../lib/official-guidance';
 import { Image } from 'astro:assets';
 import Icon from '../../../components/Icon.astro';
 import LockKeyIcon from '@hugeicons/core-free-icons/LockKeyIcon';
 import photo from '../../../assets/patient-appointment-management/patient-appointment-management-trust-v1.webp';
 import { pageCopy } from '../data/patient-appointment-management-source';
 const copy = pageCopy.trust;
+const officialLinks = new Set<string>();
+const trustFirstHtml = linkOfficialGuidanceHtml(copy.firstHtml, officialLinks);
+const trustRestHtml = linkOfficialGuidanceHtml(copy.restHtml, officialLinks);
 import '../styles/patient-appointment-management-trust.css';
 ---
 
@@ -12,7 +16,7 @@ import '../styles/patient-appointment-management-trust.css';
   <section id="patient-appointment-management-trust" class="patient-appointment-management-trust" aria-labelledby="patient-appointment-management-trust-heading">
     <div class="section-container patient-appointment-management-trust-layout">
       <h2 id="patient-appointment-management-trust-heading">{copy.heading}</h2>
-      <div class="patient-appointment-management-trust-profile patient-appointment-management-source-content" data-seo-trust-motion set:html={copy.firstHtml} />
+      <div class="patient-appointment-management-trust-profile patient-appointment-management-source-content" data-seo-trust-motion set:html={trustFirstHtml} />
       <div class="patient-appointment-management-trust-photo" data-seo-trust-motion>
         <Image src={photo} widths={[360, 540, 720, 960, 1200]} width={1536} height={1024}
           sizes="(min-width: 1100px) min(43vw, 576px), (min-width: 640px) min(calc(100vw - 56px), 760px), calc(100vw - 32px)"
@@ -22,7 +26,7 @@ import '../styles/patient-appointment-management-trust.css';
       </div>
       <div class="patient-appointment-management-trust-privacy" data-seo-trust-motion>
         <span class="patient-appointment-management-trust-lock" aria-hidden="true"><Icon icon={LockKeyIcon} size={24} /></span>
-        <div class="patient-appointment-management-source-content" set:html={copy.restHtml} />
+        <div class="patient-appointment-management-source-content" set:html={trustRestHtml} />
       </div>
     </div>
   </section>

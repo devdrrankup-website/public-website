@@ -58,7 +58,7 @@ export const pageCopy = {
   "trust": {
     "heading": "Clinic Location Trust and Patient Privacy Matter",
     "firstHtml": "<p>Show your clinic’s name and address, not search words or invented branches. If doctor listings appear, confirm each doctor’s specialty, visiting hours and qualifications with staff.</p>",
-    "restHtml": "<p>Google’s listing rules still matter; only eligible, real clinic locations belong on a profile. BM&amp;DC guidance may also apply to promotional claims about individual doctors.</p><p>Never reveal a patient’s visit or diagnosis when replying to reviews. Do not buy ratings, pressure patients or share their details without approval.</p>"
+    "restHtml": "<p><a href=\"https://support.google.com/business/answer/3038177\" target=\"_blank\" rel=\"noopener noreferrer\">Google’s listing rules</a> still matter; only eligible, real clinic locations belong on a profile. BM&amp;DC guidance may also apply to promotional claims about individual doctors.</p><p>Never reveal a patient’s visit or diagnosis when replying to reviews. Do not buy ratings, pressure patients or share their details without approval.</p>"
   },
   "expertise": {
     "heading": "Local Search Expertise Behind Dr RankUp",

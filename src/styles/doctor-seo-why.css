@@ -22,3 +22,4 @@
   .doctor-seo-why h2 { max-width: 430px; font-size: clamp(42px,3.3vw,50px); }
   .doctor-seo-why strong { font-size: 26px; }
 }
+.doctor-seo-why-introduction > .button { margin-top: 24px; }

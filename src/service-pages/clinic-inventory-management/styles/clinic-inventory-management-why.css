@@ -24,3 +24,4 @@
 }
 
 .clinic-inventory-management-why-body { min-width: 0; }
+.clinic-inventory-management-why-body > .button { margin-top: 24px; }

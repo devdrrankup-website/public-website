@@ -47,3 +47,4 @@
   .search-ready-build-foundation-hero-visual { animation: search-ready-build-foundation-photo-arrive 600ms cubic-bezier(.2,.65,.3,1) both; }
   @keyframes search-ready-build-foundation-photo-arrive { from { transform: translateY(12px); } to { transform: translateY(0); } }
 }
+.search-ready-build-foundation-hero-actions a.button { cursor: pointer; }

@@ -47,3 +47,4 @@
   .clinic-online-report-portal-hero-visual { animation: clinic-online-report-portal-photo-arrive 600ms cubic-bezier(.2,.65,.3,1) both; }
   @keyframes clinic-online-report-portal-photo-arrive { from { transform: translateY(12px); } to { transform: translateY(0); } }
 }
+.clinic-online-report-portal-hero-actions a.button { cursor: pointer; }

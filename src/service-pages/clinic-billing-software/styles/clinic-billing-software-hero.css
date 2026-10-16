@@ -47,3 +47,4 @@
   .clinic-billing-software-hero-visual { animation: clinic-billing-software-photo-arrive 600ms cubic-bezier(.2,.65,.3,1) both; }
   @keyframes clinic-billing-software-photo-arrive { from { transform: translateY(12px); } to { transform: translateY(0); } }
 }
+.clinic-billing-software-hero-actions a.button { cursor: pointer; }

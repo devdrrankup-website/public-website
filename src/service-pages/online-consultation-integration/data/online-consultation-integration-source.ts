@@ -52,7 +52,7 @@ export const pageCopy = {
   },
   "trust": {
     "heading": "Clinical Responsibility, Consent and Privacy Come First",
-    "firstHtml": "<p>Bangladesh Medical &amp; Dental Council telemedicine guidance and applicable DGHS telehealth requirements must be assessed for the specific service. A <strong>consent process</strong> records the patient's informed choice and relevant consultation context rather than treating a general checkbox as sufficient for every situation.</p>",
+    "firstHtml": "<p><a href=\"https://www.bmdc.org.bd/docs/BMDC_Telemedicine_Guidelines_July2020.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Bangladesh Medical &amp; Dental Council telemedicine guidance</a> and applicable DGHS telehealth requirements must be assessed for the specific service. A <strong>consent process</strong> records the patient's informed choice and relevant consultation context rather than treating a general checkbox as sufficient for every situation.</p>",
     "restHtml": "<p>Patient identity, doctor identity, confidentiality, record handling, prescribing limitations and in-person referral need professional review. Do not describe all conditions or medicines as suitable for remote management.</p><p>The technical platform should not independently diagnose, prescribe or promise clinical outcomes.</p>"
   },
   "expertise": {
@@ -162,7 +162,7 @@ export const pageCopy = {
       }
     ],
     "introductionHtml": "",
-    "noteHtml": "<p><a href=\"/doctors/patient-appointment-management/\">Explore Patient Appointment Management</a> · <a href=\"/doctors/e-prescription-software/\">Explore E-Prescription Software</a></p>"
+    "noteHtml": "<p>Patient Appointment Management and E-Prescription Software support different steps outside the consultation connection.</p>"
   },
   "starting": {
     "heading": "When This Integration Is the Right Starting Point",

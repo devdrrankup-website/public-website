@@ -47,7 +47,7 @@ export const pageCopy = {
   },
   "trust": {
     "heading": "Professional Identity and Patient Trust Need Care",
-    "firstHtml": "<p>BM&amp;DC registration details, qualifications, titles and practice relationships must not be invented. Request source documents or clinic-authorised records before publishing. A profile should not imply a specialist registration or hospital affiliation that has not been verified.</p>",
+    "firstHtml": "<p><a href=\"https://verify.bmdc.org.bd/\" target=\"_blank\" rel=\"noopener noreferrer\">BM&amp;DC registration details</a>, qualifications, titles and practice relationships must not be invented. Request source documents or clinic-authorised records before publishing. A profile should not imply a specialist registration or hospital affiliation that has not been verified.</p>",
     "restHtml": "<p>Keep descriptions factual and avoid unsupported comparisons such as 'best surgeon'. Consent is necessary for appropriate professional photographs and quotation use. Profile contact routes should not invite detailed symptoms into public forms.</p><p>Doctor records may change after a rotation or contract ends. Design a auditable profile correction and removal process; unapproved profiles should not remain publicly promoted.</p>"
   },
   "expertise": {

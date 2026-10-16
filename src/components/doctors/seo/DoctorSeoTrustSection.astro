@@ -4,6 +4,7 @@ import Icon from '../../Icon.astro';
 import LockKeyIcon from '@hugeicons/core-free-icons/LockKeyIcon';
 import photo from '../../../assets/doctor-seo/clinical-review-doctor-seo-v1.webp';
 import { doctorSeoTrust as copy } from '../../../data/doctor-seo-trust';
+import {officialGuidanceParts} from '../../../lib/official-guidance';
 import '../../../styles/doctor-seo-trust.css';
 ---
 
@@ -21,7 +22,7 @@ import '../../../styles/doctor-seo-trust.css';
       </div>
       <div class="doctor-seo-trust-privacy" data-seo-trust-motion>
         <span class="doctor-seo-trust-lock" aria-hidden="true"><Icon icon={LockKeyIcon} size={24} /></span>
-        <p>{copy.paragraphs[1]}</p>
+        <p>{officialGuidanceParts(copy.paragraphs[1]).map(part => part.href ? <a href={part.href} target="_blank" rel="noopener noreferrer" aria-label={`${part.text} guidance (opens in a new tab)`}>{part.text}</a> : part.text)}</p>
       </div>
     </div>
   </section>

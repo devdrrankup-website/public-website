@@ -23,7 +23,6 @@ const headingEmphasis = copy.heading.slice(headingBreak + 1);
           <div class="consultation-portrait"><Image src={hridoy} widths={[240,360,480]} sizes="(min-width: 640px) 220px, 180px" format="webp" quality={80} alt="Hridoy Chowdhury, Founder and SEO Consultant at Dr RankUP" title="Hridoy Chowdhury — Dr RankUP consultation" loading="lazy" decoding="async" /></div>
           <p class="consultation-founder-name">Hridoy Chowdhury</p><p>SEO Consultant &amp; AI Search Specialist, Dr RankUP</p>
           <span class="consultation-link">{copy.primary}<Arrow size={18} /></span>
-          <a class="consultation-solutions" href="#hospital-solutions">{copy.secondary}<Arrow size={18} /></a>
         </div>
       </div>
       <healthcare-enquiry>
@@ -92,10 +91,8 @@ const headingEmphasis = copy.heading.slice(headingBreak + 1);
   .consultation-contact h3 { margin: 14px 0 4px; font-size: 23px; font-weight: 650; line-height: 1.3; letter-spacing: -.025em; }
   .consultation-contact .consultation-founder-name { margin: 14px 0 4px; font-size: 23px; font-weight: 650; line-height: 1.3; letter-spacing: -.025em; }
   .consultation-contact > p { margin: 0 0 10px; color: #bdcbc5; font-size: 14px; line-height: 1.7; }
-  .consultation-link,.consultation-solutions { display: flex; align-items: center; gap: 10px; width: fit-content; max-width: 100%; min-height: 44px; font-size: 14px; font-weight: 650; line-height: 1.5; }
+  .consultation-link { display: flex; align-items: center; gap: 10px; width: fit-content; max-width: 100%; min-height: 44px; font-size: 14px; font-weight: 650; line-height: 1.5; }
   .consultation-link { color: #c7adff; }
-  .consultation-solutions { color: #bae5ff; font-size: 13px; font-weight: 550; }
-  .consultation-solutions:hover { text-decoration: underline; text-underline-offset: 4px; }
   healthcare-enquiry { display: block; min-width: 0; }
   .consultation-form { display: grid; align-content: start; gap: 26px; }
   .consultation-field { display: grid; min-width: 0; gap: 5px; }
@@ -118,7 +115,7 @@ const headingEmphasis = copy.heading.slice(headingBreak + 1);
   .consultation-hint { margin: 6px 0 0; color: #bdcbc5; font-size: 12px; line-height: 1.7; }
   .consultation-submit { display: inline-flex; align-items: center; justify-content: center; justify-self: start; gap: 14px; min-height: 54px; padding: 14px 22px; border: 1px solid #afa9ec80; border-radius: var(--control-radius); color: #fff; background: linear-gradient(130deg,#6131c6,#6131c6 65%,#793ee0); font-size: 14px; font-weight: 700; }
   .consultation-submit:hover { background: #5026a6; }
-  .consultation-submit:focus-visible,.consultation-solutions:focus-visible { outline: 2px solid #bae5ff; outline-offset: 5px; }
+  .consultation-submit:focus-visible { outline: 2px solid #bae5ff; outline-offset: 5px; }
   .consultation-submit:disabled { cursor: default; opacity: .65; }
   .consultation-status { min-height: 44px; margin: -10px 0 0; color: #e1ffb9; font-size: 13px; line-height: 1.7; }
   @media(min-width:640px) {

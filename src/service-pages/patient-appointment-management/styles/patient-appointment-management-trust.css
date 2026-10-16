@@ -32,3 +32,5 @@
   .patient-appointment-management-trust h2 { max-width: 1000px; margin-bottom: 8px; font-size: clamp(40px, 3.25vw, 46px); }
   .patient-appointment-management-trust-photo { max-width: none; }
 }
+.patient-appointment-management-trust a { color: inherit; text-decoration: underline; text-underline-offset: .15em; }
+.patient-appointment-management-trust a:focus-visible { outline: 2px solid #bae5ff; outline-offset: 3px; }

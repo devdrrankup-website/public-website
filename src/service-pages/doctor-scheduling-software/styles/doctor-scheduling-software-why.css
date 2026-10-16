@@ -24,3 +24,4 @@
 }
 
 .doctor-scheduling-software-why-body { min-width: 0; }
+.doctor-scheduling-software-why-body > .button { margin-top: 24px; }

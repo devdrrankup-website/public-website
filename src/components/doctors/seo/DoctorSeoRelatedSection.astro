@@ -16,6 +16,7 @@ const visuals = [
   { image: profile, icon: Store01Icon, accent: '#EEEDFE', description: 'Chamber administrator reviewing listing address, hours and contact details at reception' },
   { image: website, icon: WebDesign01Icon, accent: '#FEF2CC', description: 'Sirajul Islam reviewing printed website layouts with a doctor at an agency table' },
 ];
+const [noteBeforeAds, noteAfterAds] = copy.note.split('Doctor Google Ads');
 ---
 <section id="doctor-seo-related" class="doctor-seo-related" aria-labelledby="doctor-seo-related-heading">
   <div class="section-container doctor-seo-related-container">
@@ -51,7 +52,7 @@ const visuals = [
               </dd>
             </div>)}
           </dl>
-          <p class="doctor-seo-related-note">{copy.note}</p>
+          <p class="doctor-seo-related-note">{noteBeforeAds}<a href="/doctors/google-ads/">Doctor Google Ads</a>{noteAfterAds}</p>
         </div>
       </div>
     </doctor-seo-related>

@@ -47,3 +47,4 @@
   .hospital-advertising-hero-visual { animation: hospital-advertising-photo-arrive 600ms cubic-bezier(.2,.65,.3,1) both; }
   @keyframes hospital-advertising-photo-arrive { from { transform: translateY(12px); } to { transform: translateY(0); } }
 }
+.hospital-advertising-hero-actions a.button { cursor: pointer; }

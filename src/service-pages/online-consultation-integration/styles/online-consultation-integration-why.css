@@ -24,3 +24,4 @@
 }
 
 .online-consultation-integration-why-body { min-width: 0; }
+.online-consultation-integration-why-body > .button { margin-top: 24px; }

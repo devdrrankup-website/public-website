@@ -57,7 +57,7 @@ export const pageCopy = {
   "trust": {
     "heading": "Sensitive Health Data Must Stay Outside Marketing Analytics",
     "firstHtml": "<p>An appointment request can reveal health-related information even when a name is omitted. Diagnosis, treatment, prescriptions, test results, free-text symptoms and identifiable patient journeys should not be transferred to ordinary marketing platforms.</p>",
-    "restHtml": "<p>Google's enhanced-conversions policies restrict measurement involving sensitive health or medical categories. Meta and other platforms require separate reviews before any relevant data-sharing feature is considered. We do not assume that hashing makes restricted information safe to upload.</p><p>Consent, lawful basis, tool settings and client governance need case-specific review before implementation.</p>"
+    "restHtml": "<p><a href=\"https://support.google.com/google-ads/answer/7475709?hl=en\" target=\"_blank\" rel=\"noopener noreferrer\">Google's enhanced-conversions policies</a> restrict measurement involving sensitive health or medical categories. Meta and other platforms require separate reviews before any relevant data-sharing feature is considered. We do not assume that hashing makes restricted information safe to upload.</p><p>Consent, lawful basis, tool settings and client governance need case-specific review before implementation.</p>"
   },
   "expertise": {
     "heading": "Who Helps Define the Measurement System?",
@@ -155,8 +155,8 @@ export const pageCopy = {
         "href": "/healthcare-marketing/audit-strategy/"
       }
     ],
-    "introductionHtml": "<p><strong>Healthcare Marketing Analytics &amp; Reporting</strong> establishes a cross-channel decision framework. <a href=\"/clinics/google-ads/\">Clinic Google Ads</a>, <a href=\"/doctors/google-ads/\">Doctor Google Ads</a> and <a href=\"/hospitals/seo/\">Hospital SEO</a> own their respective channel execution.</p>",
-    "noteHtml": "<p><strong><a href=\"/healthcare-marketing/conversion-optimization/\">Healthcare Website Conversion Optimization</a></strong> changes a defined visitor journey, whereas analytics defines what can be observed safely. Hospital billing, appointments, diagnostic outcomes and internal clinical operations belong to authorized hospital systems, not this marketing dashboard.</p>"
+    "introductionHtml": "<p><strong>Healthcare Marketing Analytics &amp; Reporting</strong> establishes a cross-channel decision framework. Clinic Google Ads, <a href=\"/doctors/google-ads/\">Doctor Google Ads</a> and <a href=\"/hospitals/seo/\">Hospital SEO</a> own their respective channel execution.</p>",
+    "noteHtml": "<p><strong>Healthcare Website Conversion Optimization</strong> changes a defined visitor journey, whereas analytics defines what can be observed safely. Hospital billing, appointments, diagnostic outcomes and internal clinical operations belong to authorized hospital systems, not this marketing dashboard.</p>"
   },
   "starting": {
     "heading": "When This Service Is the Right First Step",

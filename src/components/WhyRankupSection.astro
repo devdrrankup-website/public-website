@@ -2,6 +2,7 @@
 import {Image} from 'astro:assets';
 import brand from '../assets/brand/dr-rankup-icon.png';
 import Icon from './Icon.astro';
+import ActionIcon from './ActionIcon.astro';
 import Tick02Icon from '@hugeicons/core-free-icons/Tick02Icon';
 import Briefcase01Icon from '@hugeicons/core-free-icons/Briefcase01Icon';
 import UserGroupIcon from '@hugeicons/core-free-icons/UserGroupIcon';
@@ -16,6 +17,7 @@ const [headingStart, headingEnd] = content.heading.split('Dr RankUP');
     <div class="section-container why-container">
       <header class="why-introduction">
         <h2 id="why-heading">{headingStart}<em>Dr RankUP</em>{headingEnd}</h2>
+        <a class="button button-secondary" href="/about/">About Dr RankUP <ActionIcon purpose="explore" /></a>
       </header>
       <div class="why-comparison-scroll" role="region" aria-label="Dr RankUP features and delivery approaches" aria-describedby="why-context">
         <table class="why-comparison" role="table">

@@ -48,7 +48,7 @@ export const pageCopy = {
   },
   "trust": {
     "heading": "Healthcare Trust Must Guide Every Paid Advertisement",
-    "firstHtml": "<p>A paid placement must not make unverified qualifications or exaggerated treatment promises look credible. We check proposed doctor promotion against applicable BM&amp;DC professional-conduct requirements and Google's Healthcare and Medicines, personalized advertising and destination rules before recommending launch.</p>",
+    "firstHtml": "<p>A paid placement must not make unverified qualifications or exaggerated treatment promises look credible. We check proposed doctor promotion against applicable BM&amp;DC professional-conduct requirements and <a href=\"https://support.google.com/adspolicy/answer/176031\" target=\"_blank\" rel=\"noopener noreferrer\">Google's Healthcare and Medicines</a>, <a href=\"https://support.google.com/adspolicy/answer/16701855?hl=en\" target=\"_blank\" rel=\"noopener noreferrer\">personalized advertising</a> and destination rules before recommending launch.</p>",
     "restHtml": "<p>Some medical categories require restrictions or certification; eligibility depends on the actual advertised service and location. Health-related audience targeting also needs extra care. Enquiry forms and analytics must avoid unnecessary sensitive patient information. Eligibility is checked before launch.</p>"
   },
   "expertise": {

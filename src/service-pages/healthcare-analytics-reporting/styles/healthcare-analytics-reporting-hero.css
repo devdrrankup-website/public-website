@@ -47,3 +47,4 @@
   .healthcare-analytics-reporting-hero-visual { animation: healthcare-analytics-reporting-photo-arrive 600ms cubic-bezier(.2,.65,.3,1) both; }
   @keyframes healthcare-analytics-reporting-photo-arrive { from { transform: translateY(12px); } to { transform: translateY(0); } }
 }
+.healthcare-analytics-reporting-hero-actions a.button { cursor: pointer; }

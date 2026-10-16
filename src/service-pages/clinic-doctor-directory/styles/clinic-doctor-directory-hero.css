@@ -47,3 +47,4 @@
   .clinic-doctor-directory-hero-visual { animation: clinic-doctor-directory-photo-arrive 600ms cubic-bezier(.2,.65,.3,1) both; }
   @keyframes clinic-doctor-directory-photo-arrive { from { transform: translateY(12px); } to { transform: translateY(0); } }
 }
+.clinic-doctor-directory-hero-actions a.button { cursor: pointer; }

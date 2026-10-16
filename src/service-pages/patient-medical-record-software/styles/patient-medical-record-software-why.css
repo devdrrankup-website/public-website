@@ -24,3 +24,4 @@
 }
 
 .patient-medical-record-software-why-body { min-width: 0; }
+.patient-medical-record-software-why-body > .button { margin-top: 24px; }

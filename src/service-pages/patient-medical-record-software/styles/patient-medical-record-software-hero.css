@@ -47,3 +47,4 @@
   .patient-medical-record-software-hero-visual { animation: patient-medical-record-software-photo-arrive 600ms cubic-bezier(.2,.65,.3,1) both; }
   @keyframes patient-medical-record-software-photo-arrive { from { transform: translateY(12px); } to { transform: translateY(0); } }
 }
+.patient-medical-record-software-hero-actions a.button { cursor: pointer; }

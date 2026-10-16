@@ -47,3 +47,4 @@
   .healthcare-audit-strategy-hero-visual { animation: healthcare-audit-strategy-photo-arrive 600ms cubic-bezier(.2,.65,.3,1) both; }
   @keyframes healthcare-audit-strategy-photo-arrive { from { transform: translateY(12px); } to { transform: translateY(0); } }
 }
+.healthcare-audit-strategy-hero-actions a.button { cursor: pointer; }

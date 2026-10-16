@@ -173,7 +173,7 @@ export const pageCopy = {
       }
     ],
     "introductionHtml": "",
-    "noteHtml": "<p>Modules may connect without duplicating responsibilities. <a href=\"/doctors/e-prescription-software/\">Explore E-Prescription Software</a> when the immediate problem is prescription writing rather than fragmented history.</p>"
+    "noteHtml": "<p>Modules may connect without duplicating responsibilities. The most useful starting point depends on whether fragmented history or prescription writing is the immediate problem.</p>"
   },
   "starting": {
     "heading": "When Patient Medical Records Are the Right Starting Point",

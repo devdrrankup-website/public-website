@@ -41,3 +41,5 @@
   .healthcare-marketing-trust-visual { position: sticky; top: calc(var(--header-height) + 24px); }
   .healthcare-marketing-trust-conclusion { margin-top: 44px; padding: 20px 32px; border-radius: 48px; font-size: 20px; }
 }
+.healthcare-marketing-trust-principles a { color: inherit; text-decoration: underline; text-underline-offset: .15em; }
+.healthcare-marketing-trust-principles a:focus-visible { outline: 2px solid #bae5ff; outline-offset: 3px; }

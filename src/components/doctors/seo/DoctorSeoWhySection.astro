@@ -14,7 +14,10 @@ const visuals = [
 <doctor-seo-why class="doctor-seo-why-motion">
   <section id="doctor-seo-why" class="doctor-seo-why" aria-labelledby="doctor-seo-why-heading">
     <div class="section-container doctor-seo-why-layout">
-      <h2 id="doctor-seo-why-heading" data-why-entry>{copy.heading}</h2>
+      <div class="doctor-seo-why-introduction">
+        <h2 id="doctor-seo-why-heading" data-why-entry>{copy.heading}</h2>
+        <a class="button button-secondary" href="/about/" data-why-entry>About Dr RankUP</a>
+      </div>
       <ul class="doctor-seo-why-principles">
         {copy.principles.map((principle,index) => <li data-why-entry data-why-row>
           <span class="doctor-seo-why-icon" data-why-icon style={`--why-accent:${visuals[index].accent}`} aria-hidden="true"><Icon icon={visuals[index].icon} size={24} strokeWidth={1.7} /></span>

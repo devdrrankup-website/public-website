@@ -9,6 +9,7 @@ import { serviceRoutes } from '../../data/service-routes';
 import '../../styles/hospital-solutions.css';
 let visualOffset = 0;
 const groupVisuals = copy.groups.map(group => { const groupImages = visuals.slice(visualOffset, visualOffset + group.services.length); visualOffset += group.services.length; return groupImages; });
+const groupRoutes = ['/hospitals/digital-marketing/', '/hospitals/website-development/', '/hospitals/management-software/'];
 ---
 <section id="hospital-solutions" class="hospital-solutions" aria-labelledby="hospital-solutions-heading">
   <div class="section-container hospital-solutions-inner">
@@ -51,7 +52,7 @@ const groupVisuals = copy.groups.map(group => { const groupImages = visuals.slic
               </dd>
             </div>)}
           </dl>
-          <span class="hospital-solution-cta">{group.cta}<ActionIcon purpose="conversation" /></span>
+          <a class="hospital-solution-cta" href={groupRoutes[index]}>{group.cta}<ActionIcon purpose="conversation" /></a>
         </div>)}
       </div>
     </hospital-solutions>

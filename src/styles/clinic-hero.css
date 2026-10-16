@@ -55,3 +55,4 @@
   .clinic-hero-visual { animation: clinic-photo-arrive 650ms cubic-bezier(.2,.65,.3,1) both; }
   @keyframes clinic-photo-arrive { from { transform: translateY(12px); } to { transform: translateY(0); } }
 }
+.clinic-hero-actions a.button { cursor: pointer; }

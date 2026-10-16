@@ -47,3 +47,4 @@
   .clinic-facebook-ads-hero-visual { animation: clinic-facebook-ads-photo-arrive 600ms cubic-bezier(.2,.65,.3,1) both; }
   @keyframes clinic-facebook-ads-photo-arrive { from { transform: translateY(12px); } to { transform: translateY(0); } }
 }
+.clinic-facebook-ads-hero-actions a.button { cursor: pointer; }

@@ -24,3 +24,4 @@
 }
 
 .patient-fee-management-why-body { min-width: 0; }
+.patient-fee-management-why-body > .button { margin-top: 24px; }

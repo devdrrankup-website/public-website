@@ -8,6 +8,7 @@ import LockKeyIcon from '@hugeicons/core-free-icons/LockKeyIcon';
 import Calendar03Icon from '@hugeicons/core-free-icons/Calendar03Icon';
 import photo from '../../assets/audience-hubs/hospital-trust-v1.webp';
 import {hospitalTrust as copy} from '../../data/for-hospital-trust';
+import {officialGuidanceParts} from '../../lib/official-guidance';
 import '../../styles/hospital-trust.css';
 const icons=[UserAccountIcon,ShieldCheckIcon,LockKeyIcon,Calendar03Icon];
 
@@ -32,7 +33,7 @@ const icons=[UserAccountIcon,ShieldCheckIcon,LockKeyIcon,Calendar03Icon];
         <div class="hospital-trust-principles">
           {copy.principles.map((item,index)=><article class="hospital-trust-principle" aria-labelledby={`hospital-trust-principle-${index}`} data-discovery-motion>
             <span class="hospital-trust-icon"><Icon icon={icons[index]} size={26} /></span>
-            <div><h3 id={`hospital-trust-principle-${index}`}>{item.heading}</h3>{item.paragraphs.map(paragraph=><p>{paragraph}</p>)}</div>
+            <div><h3 id={`hospital-trust-principle-${index}`}>{item.heading}</h3>{item.paragraphs.map(paragraph=><p>{officialGuidanceParts(paragraph).map(part => part.href ? <a href={part.href} target="_blank" rel="noopener noreferrer" aria-label={`${part.text} guidance (opens in a new tab)`}>{part.text}</a> : part.text)}</p>)}</div>
           </article>)}
         </div>
       </div>

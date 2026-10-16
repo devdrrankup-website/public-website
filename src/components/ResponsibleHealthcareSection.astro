@@ -4,6 +4,18 @@ import communication from '../assets/responsibility/responsible-communication.pn
 import telehealth from '../assets/responsibility/private-telehealth.png';
 import {homepageResponsibility as content} from '../data/homepage-responsibility';
 const sizes = '(min-width: 1340px) 589px, (min-width: 900px) calc((100vw - 128px) / 2), (min-width: 640px) calc(100vw - 56px), calc(100vw - 32px)';
+const guidelineUrls: Record<string, string> = {
+  'BM&DC professional rules': 'https://www.bmdc.org.bd/docs/EthicsBookMakeupfinal.pdf',
+  "Google's search guidance": 'https://developers.google.com/search/docs/fundamentals/creating-helpful-content',
+  Google: 'https://support.google.com/adspolicy/answer/176031',
+  Meta: 'https://transparency.meta.com/policies/ad-standards/',
+  'BM&DC': 'https://www.bmdc.org.bd/docs/BMDC_Telemedicine_Guidelines_July2020.pdf',
+  DGHS: 'https://dghs.gov.bd/pages/miscellaneous-infos/69c958ba55db8e93577d3fd5',
+};
+const linkedGuidance = (paragraph: string) => paragraph
+  .split(/(BM&DC professional rules|Google's search guidance|Google|Meta|BM&DC|DGHS)/g)
+  .filter(Boolean)
+  .map(text => ({ text, href: guidelineUrls[text] }));
 ---
 <responsible-healthcare>
   <section id="responsible-healthcare" class="responsibility-section" aria-labelledby="responsibility-heading">
@@ -30,7 +42,9 @@ const sizes = '(min-width: 1340px) 589px, (min-width: 900px) calc((100vw - 128px
           </div>
           <div class="responsibility-copy">
             {content.communication.paragraphs.map(paragraph => (
-              <p>{paragraph}</p>
+              <p>{linkedGuidance(paragraph).map(part => part.href
+                ? <a href={part.href} target="_blank" rel="noopener noreferrer" aria-label={`${part.text} guidance (opens in a new tab)`}>{part.text}</a>
+                : part.text)}</p>
             ))}
           </div>
         </article>
@@ -49,7 +63,9 @@ const sizes = '(min-width: 1340px) 589px, (min-width: 900px) calc((100vw - 128px
             </div>
           </div>
           <div class="responsibility-copy">
-            {content.privacy.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+            {content.privacy.paragraphs.map(paragraph => <p>{linkedGuidance(paragraph).map(part => part.href
+              ? <a href={part.href} target="_blank" rel="noopener noreferrer" aria-label={`${part.text} guidance (opens in a new tab)`}>{part.text}</a>
+              : part.text)}</p>)}
             <div class="responsibility-considerations">
               <ul aria-label="Telehealth and patient-data considerations">
                 {content.privacy.considerations.map(item => <li>{item}</li>)}
@@ -89,6 +105,8 @@ const sizes = '(min-width: 1340px) 589px, (min-width: 900px) calc((100vw - 128px
   .responsibility-considerations li:nth-child(3) { --pill-accent: #e1ffb9; --pill-surface: #e1ffb966; }
   .responsibility-considerations li:nth-child(4) { --pill-accent: #eddafa; --pill-surface: #eddafa66; }
   .responsibility-considerations li:nth-child(5) { --pill-accent: #fef2cc; --pill-surface: #fef2cc80; }
+  .responsibility-copy a { color: inherit; text-decoration: underline; text-underline-offset: .16em; }
+  .responsibility-copy a:focus-visible { outline: 2px solid var(--purple); outline-offset: 3px; }
   @media (min-width: 640px) {
     .responsibility-section { padding-block: 40px 72px; }
     .responsibility-introduction { gap: 20px; }

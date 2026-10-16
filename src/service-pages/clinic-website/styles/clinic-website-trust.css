@@ -32,3 +32,5 @@
   .clinic-website-trust h2 { max-width: 1000px; margin-bottom: 8px; font-size: clamp(40px, 3.25vw, 46px); }
   .clinic-website-trust-photo { max-width: none; }
 }
+.clinic-website-trust a { color: inherit; text-decoration: underline; text-underline-offset: .15em; }
+.clinic-website-trust a:focus-visible { outline: 2px solid #bae5ff; outline-offset: 3px; }

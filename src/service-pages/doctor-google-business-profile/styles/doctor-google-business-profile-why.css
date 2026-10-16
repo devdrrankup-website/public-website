@@ -24,3 +24,4 @@
 }
 
 .doctor-google-business-profile-why-body { min-width: 0; }
+.doctor-google-business-profile-why-body > .button { margin-top: 24px; }

@@ -24,3 +24,4 @@
 }
 
 .pathology-reporting-software-why-body { min-width: 0; }
+.pathology-reporting-software-why-body > .button { margin-top: 24px; }

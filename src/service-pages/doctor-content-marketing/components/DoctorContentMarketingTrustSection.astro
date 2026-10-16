@@ -1,10 +1,14 @@
 ---
+import {linkOfficialGuidanceHtml} from '../../../lib/official-guidance';
 import { Image } from 'astro:assets';
 import Icon from '../../../components/Icon.astro';
 import LockKeyIcon from '@hugeicons/core-free-icons/LockKeyIcon';
 import photo from '../../../assets/doctor-content-marketing/doctor-content-marketing-trust-v1.webp';
 import { pageCopy } from '../data/doctor-content-marketing-source';
 const copy = pageCopy.trust;
+const officialLinks = new Set<string>();
+const trustFirstHtml = linkOfficialGuidanceHtml(copy.firstHtml, officialLinks);
+const trustRestHtml = linkOfficialGuidanceHtml(copy.restHtml, officialLinks);
 import '../styles/doctor-content-marketing-trust.css';
 ---
 
@@ -12,7 +16,7 @@ import '../styles/doctor-content-marketing-trust.css';
   <section id="doctor-content-marketing-trust" class="doctor-content-marketing-trust" aria-labelledby="doctor-content-marketing-trust-heading">
     <div class="section-container doctor-content-marketing-trust-layout">
       <h2 id="doctor-content-marketing-trust-heading">{copy.heading}</h2>
-      <div class="doctor-content-marketing-trust-profile doctor-content-marketing-source-content" data-seo-trust-motion set:html={copy.firstHtml} />
+      <div class="doctor-content-marketing-trust-profile doctor-content-marketing-source-content" data-seo-trust-motion set:html={trustFirstHtml} />
       <div class="doctor-content-marketing-trust-photo" data-seo-trust-motion>
         <Image src={photo} widths={[360, 540, 720, 960, 1200]} width={1536} height={1024}
           sizes="(min-width: 1100px) min(43vw, 576px), (min-width: 640px) min(calc(100vw - 56px), 760px), calc(100vw - 32px)"
@@ -22,7 +26,7 @@ import '../styles/doctor-content-marketing-trust.css';
       </div>
       <div class="doctor-content-marketing-trust-privacy" data-seo-trust-motion>
         <span class="doctor-content-marketing-trust-lock" aria-hidden="true"><Icon icon={LockKeyIcon} size={24} /></span>
-        <div class="doctor-content-marketing-source-content" set:html={copy.restHtml} />
+        <div class="doctor-content-marketing-source-content" set:html={trustRestHtml} />
       </div>
     </div>
   </section>

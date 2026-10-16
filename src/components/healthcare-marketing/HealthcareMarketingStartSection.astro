@@ -34,7 +34,7 @@ const icons=[Search01Icon,Target01Icon,LinkSquare01Icon,Megaphone01Icon,Calendar
       <ul class="healthcare-marketing-start-priorities" role="list">
         {copy.priorities.map((item,index)=><li class="healthcare-marketing-start-row" data-discovery-motion>
           <span class="healthcare-marketing-start-icon"><Icon icon={icons[index]} size={24} /></span>
-          <p><strong>{item.question}</strong>{' '}<span class="healthcare-marketing-start-recommendation"><span class="healthcare-marketing-start-direction"><Icon icon={ArrowRight01Icon} size={18} /></span><span>{item.recommendation}</span></span></p>
+          <p><strong>{item.question}</strong>{' '}<span class="healthcare-marketing-start-recommendation"><span class="healthcare-marketing-start-direction"><Icon icon={ArrowRight01Icon} size={18} /></span>{'href' in item ? <a href={item.href}>{item.recommendation}</a> : <span>{item.recommendation}</span>}</span></p>
         </li>)}
       </ul>
       <p class="healthcare-marketing-start-conclusion">{copy.conclusion}</p>

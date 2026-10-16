@@ -171,7 +171,7 @@ export const pageCopy = {
       }
     ],
     "introductionHtml": "",
-    "noteHtml": "<p>Doctor SEO separately owns website visibility.</p>"
+    "noteHtml": "<p><a href=\"/doctors/seo/\">Doctor SEO</a> separately owns website visibility.</p>"
   },
   "starting": {
     "heading": "When Social Media Management Is the Right Starting Point",

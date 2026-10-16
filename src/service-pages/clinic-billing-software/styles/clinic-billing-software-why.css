@@ -24,3 +24,4 @@
 }
 
 .clinic-billing-software-why-body { min-width: 0; }
+.clinic-billing-software-why-body > .button { margin-top: 24px; }

@@ -55,3 +55,4 @@
   .doctor-hero-visual { animation: doctor-photo-arrive 650ms cubic-bezier(.2,.65,.3,1) both; }
   @keyframes doctor-photo-arrive { from { transform: translateY(12px); } to { transform: translateY(0); } }
 }
+.doctor-hero-actions a.button { cursor: pointer; }

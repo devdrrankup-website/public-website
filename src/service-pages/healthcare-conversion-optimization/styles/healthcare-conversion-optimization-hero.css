@@ -47,3 +47,4 @@
   .healthcare-conversion-optimization-hero-visual { animation: healthcare-conversion-optimization-photo-arrive 600ms cubic-bezier(.2,.65,.3,1) both; }
   @keyframes healthcare-conversion-optimization-photo-arrive { from { transform: translateY(12px); } to { transform: translateY(0); } }
 }
+.healthcare-conversion-optimization-hero-actions a.button { cursor: pointer; }

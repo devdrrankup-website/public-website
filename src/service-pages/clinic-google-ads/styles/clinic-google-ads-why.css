@@ -24,3 +24,4 @@
 }
 
 .clinic-google-ads-why-body { min-width: 0; }
+.clinic-google-ads-why-body > .button { margin-top: 24px; }

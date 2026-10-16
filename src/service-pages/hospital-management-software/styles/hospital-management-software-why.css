@@ -24,3 +24,4 @@
 }
 
 .hospital-management-software-why-body { min-width: 0; }
+.hospital-management-software-why-body > .button { margin-top: 24px; }

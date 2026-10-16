@@ -47,3 +47,4 @@
   .doctor-seo-hero-visual { animation: doctor-seo-photo-arrive 600ms cubic-bezier(.2,.65,.3,1) both; }
   @keyframes doctor-seo-photo-arrive { from { transform: translateY(12px); } to { transform: translateY(0); } }
 }
+.doctor-seo-hero-actions .button { cursor: pointer; }

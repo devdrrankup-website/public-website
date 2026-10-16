@@ -24,3 +24,4 @@
 }
 
 .clinic-doctor-directory-why-body { min-width: 0; }
+.clinic-doctor-directory-why-body > .button { margin-top: 24px; }

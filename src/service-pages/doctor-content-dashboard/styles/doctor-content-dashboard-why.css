@@ -24,3 +24,4 @@
 }
 
 .doctor-content-dashboard-why-body { min-width: 0; }
+.doctor-content-dashboard-why-body > .button { margin-top: 24px; }

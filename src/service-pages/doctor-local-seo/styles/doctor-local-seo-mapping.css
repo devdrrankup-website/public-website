@@ -56,3 +56,5 @@
 }
 
 .doctor-local-seo-mapping-conclusion p { line-height: inherit; }
+.doctor-local-seo-mapping-conclusion a { color: inherit; text-decoration: underline; text-underline-offset: .16em; }
+.doctor-local-seo-mapping-conclusion a:focus-visible { outline: 2px solid #6131c6; outline-offset: 3px; }

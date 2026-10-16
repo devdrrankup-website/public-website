@@ -41,3 +41,5 @@
   .clinic-trust-visual { position: sticky; top: calc(var(--header-height) + 24px); }
   .clinic-trust-conclusion { margin-top: 44px; padding: 20px 32px; border-radius: 48px; font-size: 20px; }
 }
+.clinic-trust-principles a { color: inherit; text-decoration: underline; text-underline-offset: .15em; }
+.clinic-trust-principles a:focus-visible { outline: 2px solid #bae5ff; outline-offset: 3px; }

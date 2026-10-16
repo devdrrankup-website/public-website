@@ -23,6 +23,7 @@
 }
 .clinic-why-layout { display: grid; gap: 28px; }
 .clinic-why-header { max-width: 430px; }
+.clinic-why-header > .button { margin-top: 24px; }
 .clinic-why-range {
   display: flex;
   align-items: center;

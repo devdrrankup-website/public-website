@@ -15,14 +15,12 @@ import '../styles/clinic-inventory-management-hero.css';
         {copy.paragraphs.map(paragraph => <p>{paragraph}</p>)}
       </div>
       <div class="clinic-inventory-management-hero-actions" aria-label={`${copy.heading} options`}>
-        <span class="button button-primary">
+        <a class="button button-primary" href="/contact/">
           <span>{copy.primaryCta}</span><ActionIcon purpose="conversation" />
-        </span>
-        {copy.secondaryHref ? <a class="button button-secondary" href={copy.secondaryHref}>
+        </a>
+        <a class="button button-secondary" href={copy.secondaryHref}>
           <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
-        </a> : <span class="button button-secondary">
-          <span>{copy.secondaryCta}</span><ActionIcon purpose="conversation" />
-        </span>}
+        </a>
       </div>
     </div>
     <div class="clinic-inventory-management-hero-visual">

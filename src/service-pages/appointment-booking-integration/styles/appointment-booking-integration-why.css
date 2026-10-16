@@ -24,3 +24,4 @@
 }
 
 .appointment-booking-integration-why-body { min-width: 0; }
+.appointment-booking-integration-why-body > .button { margin-top: 24px; }

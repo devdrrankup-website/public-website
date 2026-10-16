@@ -47,3 +47,4 @@
   .doctor-google-business-profile-hero-visual { animation: doctor-google-business-profile-photo-arrive 600ms cubic-bezier(.2,.65,.3,1) both; }
   @keyframes doctor-google-business-profile-photo-arrive { from { transform: translateY(12px); } to { transform: translateY(0); } }
 }
+.doctor-google-business-profile-hero-actions a.button { cursor: pointer; }

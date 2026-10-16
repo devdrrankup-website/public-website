@@ -23,6 +23,7 @@
 }
 .hospital-why-layout { display: grid; gap: 28px; }
 .hospital-why-header { max-width: 430px; }
+.hospital-why-header > .button { margin-top: 24px; }
 .hospital-why-range {
   display: flex;
   align-items: center;

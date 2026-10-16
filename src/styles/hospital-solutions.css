@@ -43,6 +43,8 @@ a.hospital-solution-name:focus-visible { outline: 2px solid #afa9ec; outline-off
 .hospital-solution-row dd { margin: 12px 0 0 32px; color: #fff; font-size: 14px; line-height: 1.8; }
 .hospital-solution-reveal { display: none; }
 .hospital-solution-cta { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-top: 28px; padding-top: 4px; color: #fff; font-size: 14px; line-height: 1.6; font-weight: 600; }
+.hospital-solution-cta { text-decoration: none; }
+.hospital-solution-cta:focus-visible { outline: 2px solid #afa9ec; outline-offset: 5px; }
 .hospital-solution-cta .action-icon { flex: none; color: #000; background: #e1ffb9; border: 1px solid #ffffff40; box-shadow: inset 0 1px 0 #ffffff80; }
 @media (min-width: 640px) {
   .hospital-solutions { padding-block: 80px 88px; border-radius: 36px 36px 0 0; }

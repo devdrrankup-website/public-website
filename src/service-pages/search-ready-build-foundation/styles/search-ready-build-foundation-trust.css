@@ -32,3 +32,5 @@
   .search-ready-build-foundation-trust h2 { max-width: 1000px; margin-bottom: 8px; font-size: clamp(40px, 3.25vw, 46px); }
   .search-ready-build-foundation-trust-photo { max-width: none; }
 }
+.search-ready-build-foundation-trust a { color: inherit; text-decoration: underline; text-underline-offset: .15em; }
+.search-ready-build-foundation-trust a:focus-visible { outline: 2px solid #bae5ff; outline-offset: 3px; }

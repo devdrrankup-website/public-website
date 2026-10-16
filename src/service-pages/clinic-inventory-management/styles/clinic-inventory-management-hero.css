@@ -47,3 +47,4 @@
   .clinic-inventory-management-hero-visual { animation: clinic-inventory-management-photo-arrive 600ms cubic-bezier(.2,.65,.3,1) both; }
   @keyframes clinic-inventory-management-photo-arrive { from { transform: translateY(12px); } to { transform: translateY(0); } }
 }
+.clinic-inventory-management-hero-actions a.button { cursor: pointer; }

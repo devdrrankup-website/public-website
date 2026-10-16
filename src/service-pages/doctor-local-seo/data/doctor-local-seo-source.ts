@@ -136,7 +136,7 @@ export const pageCopy = {
       }
     ],
     "introductionHtml": "",
-    "conclusionHtml": "<p>Clear pages prevent duplicate details. Google considers relevance, distance and prominence; correct information helps patients reach you.</p>"
+    "conclusionHtml": "<p>Clear pages prevent duplicate details. <a href=\"https://support.google.com/business/answer/7091\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"Google local ranking guidance (opens in a new tab)\">Google</a> considers relevance, distance and prominence; correct information helps patients reach you.</p>"
   },
   "related": {
     "heading": "How Local SEO Fits Other Doctor Services",

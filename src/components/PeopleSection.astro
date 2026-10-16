@@ -34,8 +34,7 @@ const sizes = '(min-width: 768px) 320px, (min-width: 640px) calc((100vw - 128px)
                 <p class="people-role">{profile.role}</p>
               </header>
               <p>{profile.introduction}</p>
-              {/* Profile destinations will be connected when internal pages exist. */}
-              <span class="people-profile-link">{profile.meetLabel}<Arrow/></span>
+              <a class="people-profile-link" href="/about/our-team/">{profile.meetLabel}<Arrow/></a>
             </div>
           </article>
         ))}

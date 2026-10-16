@@ -24,3 +24,4 @@
 }
 
 .healthcare-audit-strategy-why-body { min-width: 0; }
+.healthcare-audit-strategy-why-body > .button { margin-top: 24px; }
